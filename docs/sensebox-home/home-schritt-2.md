@@ -40,8 +40,3 @@ Bei einigen Sensoren musst du noch auswählen, an welchen Port du diese angeschl
 Wenn du die Registrierung abgeschlossen hast, musst du noch einmal der Veröffentlichung deiner Daten zustimmen. Danach erhälst du eine Übersicht deiner Registrierung. Dort wird dir deine senseBox-ID, deine Sensoren-IDs und der Arduino Code angezeigt.
 
 Die senseBox-ID ist ein eindeutiger Identifikator deiner senseBox. Damit kannst du deine senseBox z.B. über die URL finden (opensensemap.org/explore/HIER-DEINE-SENSEBOX-ID-EINGEBEN) oder in Datensätzen aufspüren. Des Weiteren wird sie für verschiedene Applications und Funktionen rund um die senseBox und die openSenseMap verwendet.
-
-
-<!-- <hr>
-<a href="/sensebox-home/home-schritt-1/" class="button">Zurück zu Schritt 1</a>
-<a href="/sensebox-home/home-schritt-3/" style="float: right;" class="button">Weiter mit Schritt 3</a> -->

@@ -30,7 +30,3 @@ Unter MacOS funktioniert das Kopieren der .BIN per Drag & Drop leider zurzeit no
 #### Kopieren unter Linux
 
 Unter Linux kannst du die erstellte .BIN Datei einfach per Drag & Drop auf den Wechseldatenträger <b>SENSEBOX</b> kopieren. Die rote LED am Button wird kurz flackern und anschließend startet das Board selbstständig neu und führt deinen Programmcode aus.
-
-<!-- <hr>
-
-<a href="/sensebox-home/home-schritt-2/" class="button">Zurück zu Schritt 2</a> -->
