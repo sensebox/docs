@@ -8,45 +8,43 @@ const collapse = require('remark-collapse')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'senseBox Docs',
-  tagline: '',
-  url: 'https://kb.sensebox.de',
-  baseUrl: '/',
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  title: "senseBox Docs",
+  tagline: "",
+  url: "https://kb.sensebox.de",
+  baseUrl: "/",
+  onBrokenLinks: "warn",
+  onBrokenMarkdownLinks: "warn",
+  favicon: "img/favicon.ico",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'sensebox', // Usually your GitHub org/user name.
-  projectName: 'docs.sensebox.de', // Usually your repo name.
+  organizationName: "sensebox", // Usually your GitHub org/user name.
+  projectName: "docs.sensebox.de", // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'de',
-    locales: ['de', 'en'],
+    defaultLocale: "de",
+    locales: ["de", "en"],
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve("./sidebars.js"),
           showLastUpdateTime: true,
-          remarkPlugins: [
-            [collapse, {test: 'tango'}]
-          ],
+          showLastUpdateAuthor: true,
+          remarkPlugins: [[collapse, { test: "tango" }]],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: "https://github.com/sensebox/knowledge-base/tree/main",
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       }),
     ],
@@ -56,57 +54,57 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'senseBox Docs',
+        title: "senseBox Docs",
         logo: {
-          alt: 'senseBox Logo',
-          src: 'img/logo.svg',
+          alt: "senseBox Logo",
+          src: "img/logo.svg",
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Tutorial',
+            type: "doc",
+            docId: "intro",
+            position: "left",
+            label: "Tutorial",
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
-            type: 'localeDropdown',
-            position: 'right'
+            type: "localeDropdown",
+            position: "right",
           },
           {
-            href: 'https://github.com/sensebox/knowledge-base',
-            label: 'GitHub',
-            position: 'right',
-          }
+            href: "https://github.com/sensebox/knowledge-base",
+            label: "GitHub",
+            position: "right",
+          },
         ],
       },
       footer: {
-        style: 'dark',
+        style: "dark",
         links: [
           {
-            title: 'Docs',
+            title: "Docs",
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: "Tutorial",
+                to: "/docs/intro",
               },
             ],
           },
           {
-            title: 'Community',
+            title: "Community",
             items: [
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/sensebox_de',
+                label: "Twitter",
+                href: "https://twitter.com/sensebox_de",
               },
             ],
           },
           {
-            title: 'More',
+            title: "More",
             items: [
               {
-                label: 'GitHub',
-                href: 'https://github.com/sensebox/knowledge-base',
+                label: "GitHub",
+                href: "https://github.com/sensebox/knowledge-base",
               },
             ],
           },
@@ -116,7 +114,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['arduino']
+        additionalLanguages: ["arduino"],
       },
     }),
 };
