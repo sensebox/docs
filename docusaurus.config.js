@@ -9,7 +9,7 @@ const collapse = require('remark-collapse')
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'senseBox Docs',
-  tagline: 'Dinosaurs are cool',
+  tagline: '',
   url: 'https://kb.sensebox.de',
   baseUrl: '/',
   onBrokenLinks: 'warn',

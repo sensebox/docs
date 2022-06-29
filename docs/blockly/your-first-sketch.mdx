@@ -14,6 +14,12 @@ Blockly ist die vom senseBox-Team entwickelte grafische Programmierumgebung für
 
 Nachdem du deine senseBox-Version ausgewählt hast, befindest du dich auf der Programmieroberfläche. Diese lässt sich in fünf wichtige Bereiche einteilen.
 
+````mdx-code-block
+import YouTube from 'react-youtube';
+
+<YouTube videoId="GN0xHSk2P8Q" />
+````
+
 1. **Die Menüleiste:**
     In der Menüleiste findest du von links nach rechts das Menü, den Namen deines Projektes, die Schaltflächen zum Öffnen und Speichern von Blöcken, dem Speichern eines kompilierten Sketches und dem Löschen des gesamten Projektes.
     :::caution
@@ -64,3 +70,21 @@ Um dein Programm übertragen zu können, musst du deine MCU nun in den Lern-Modu
 ### Übertragen
 
 Schließt du deine senseBox MCU an deinen Computer an und führst einen Doppelklick auf dem roten Button aus, wird diese als Wechseldatendräger erkannt. Mit einem Klick auf “Code Kompilieren” in der Weboberfläche wird dein Programmcode auf dem Server kompiliert und eine .BIN-Datei wird dir zum Download angeboten. Je nachdem welches Betriebssystem du verwendest, unterscheidet sich nun der Kopiervorgang.
+
+````mdx-code-block
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs groupId="operating-systems">
+  <TabItem value="win" label="Windows">
+    Hier ist der Windowsbereich.
+  </TabItem>
+  <TabItem value="mac" label="macOS">
+    Hier kommen die macOS beschreibung hin.
+  </TabItem>
+  <TabItem value="linux" label="Linux">
+    Und hier natürlich Linux.
+  </TabItem>
+</Tabs>
+````
