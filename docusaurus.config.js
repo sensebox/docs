@@ -6,6 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 const collapse = require('remark-collapse')
 
+require("dotenv").config();
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "senseBox Docs",
@@ -110,6 +112,11 @@ const config = {
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      },
+      algolia: {
+        appId: process.env.ALGOLIA_APPID,
+        apiKey: process.env.ALGOLIA_APIKEY,
+        indexName: process.env.ALGOLIA_INDEXNAME
       },
       prism: {
         theme: lightCodeTheme,

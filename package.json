@@ -28,7 +28,8 @@
     "remark-collapse": "^0.1.2"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.0.0-beta.21"
+    "@docusaurus/module-type-aliases": "2.0.0-beta.21",
+    "dotenv": "^16.0.1"
   },
   "browserslist": {
     "production": [
