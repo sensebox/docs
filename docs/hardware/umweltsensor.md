@@ -4,10 +4,11 @@ title: Umweltsensor
 hide_title: false
 description: Luftdruck- und Temperatursensor (BME680)
 ---
+# Umweltsensor
 
 Mit dem Sensor BME680 kannst du eine verschiedene Auswahl an Phänomenen messen. Lufttemperatur, relative Luftfeuchtigkeit, Luftdruck und Luftqualität können mit dem BME680 bestimmt werden. Er ist also ein echter Alleskönner.
 
-{% include image.html image=page.image %}
+![](/img/hardware-bilder/umweltsensor/bme.png)
 
 ## Technische Details
 * Schnelle Reaktionszeit von weniger als 10 Sekunden
@@ -26,7 +27,7 @@ Ist dies erledigt, können wir nun im Programmcode den Sensor initialisieren und
 
 In Blockly kann der Sensor über folgenden Block ausgelesen werden:
 
-{% include image.html image=page.block %}
+![](/img/hardware-bilder/umweltsensor/block_umweltsensor.svg)
 
 Im Block kannst du zwischen den verschiedenen Parametern des Umweltsensors auswählen:
 
@@ -48,3 +49,7 @@ Den Status der Kalibrierung kann über den Wert IAQ Accuracy abgelesen werden. E
 - IAQ Accuracy = 3 heißt Sensor erfolgreich kalibriert.
 
 Der IAQ Index ist also nur aussagekräftig bei IAQ Accuracy = 3. Neben dem Wert für IAQ stellt uns BSEC noch K und VOC äquivalente Werte bereit.
+
+
+>- [Shop](https://sensebox.kaufen/product/sensebox-mini)
+>- [Bosch BME680](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme680-ds001.pdf)

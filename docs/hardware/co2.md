@@ -1,6 +1,6 @@
 ---
 sidebar_position: 11
-title: CO<sub>2</sub>-Sensor
+title: CO2-Sensor
 hide_title: false
 ---
 
@@ -10,7 +10,7 @@ Neben der CO<sub>2</sub>-Erkennung kommt ein erstklassiger Sensirion Feuchte- un
 
 Der CO<sub>2</sub>-Sensor sollte nicht dauerhaft im Außenbereich verwendet werden.
 
-{% include image.html image=page.image1 %}
+![](/img/hardware-bilder/co2/DSCF9389.jpg)
 
 ## Technische Spezifikationen
 
@@ -31,11 +31,11 @@ Der CO<sub>2</sub>-Sensor sollte nicht dauerhaft im Außenbereich verwendet werd
 - Reaktionszeit: >10s
 
 
-## Kalibrieren des CO2 Sensors (Auto Kalibrierung)
+## Kalibrieren des CO<sub>2</sub>-Sensors (Auto Kalibrierung)
 
-Im Regelfall kommt der CO<sub>2</sub> Sensor bereits kalibriert bei dir an. Grobe Handhabung, Versand oder Löten kann die Genauigkeit des Sensors reduzieren, was eine Kalibrierung notwendig macht. Für diesen Sketch benötigst du das Display. Hast du kein Display vorhanden, kannst du die Display relevanten Teile löschen, dies beeinflusst die Kalibrierung des Sensors nicht!
+Im Regelfall kommt der CO<sub>2</sub>-Sensor bereits kalibriert bei dir an. Grobe Handhabung, Versand oder Löten kann die Genauigkeit des Sensors reduzieren, was eine Kalibrierung notwendig macht. Für diesen Sketch benötigst du das Display. Hast du kein Display vorhanden, kannst du die Display relevanten Teile löschen, dies beeinflusst die Kalibrierung des Sensors nicht!
 
-Um den CO<sub>2</sub> Sensor zu kalibieren, muss dieser über einen Zeitraum von **mindestens 7 Tage** jeweils **täglich** mindestens eine Stunde Frischluft mit einer CO<sub>2</sub> Konzentration von `400ppm` ausgesetzt sein. Solange der Sensor nicht in unmittelbarer Nähe einer CO<sub>2</sub>-Quelle (z.B. eigene Atmung, Verbrennungsprozess o.Ä.) aufgebaut wird, können wir davon ausgehen dass die Atmosphäre eine Konzentration von ca. `400ppm` aufweist <a href="https://www.esrl.noaa.gov/gmd/ccgg/trends//">(Tendenz steigend)</a>.
+Um den CO<sub>2</sub>-Sensor zu kalibieren, muss dieser über einen Zeitraum von **mindestens 7 Tage** jeweils **täglich** mindestens eine Stunde Frischluft mit einer CO<sub>2</sub>-Konzentration von `400ppm` ausgesetzt sein. Solange der Sensor nicht in unmittelbarer Nähe einer C<sub>2</sub>O-Quelle (z.B. eigene Atmung, Verbrennungsprozess o.Ä.) aufgebaut wird, können wir davon ausgehen dass die Atmosphäre eine Konzentration von ca. `400ppm` aufweist [Tendenz steigend](https://www.esrl.noaa.gov/gmd/ccgg/trends//).
 
 Installiere das [Board-Support-Package](https://docs.sensebox.de/arduino/board-support-package-installieren/) der senseBox und zusätzlich über den Bibliotheksverwalter in der Arduino IDE die `SparkFun_SCD30_Arduino_Library`. Daraufhin kannst du folgenden Sketch auf die MCU hochladen.
 
@@ -106,10 +106,12 @@ void loop() {
 }
 ```
 
-Nachdem der Sketch hochgeladen ist, bringe den CO<sub>2</sub> Sensor über einen Zeitraum von 7 Tage täglich für mindestens 1 Stunde nach draußen an die frische Luft. Auf dem Display wird dir angezeigt, wieviel Zeit seit dem Upload vergangen ist. Für eine möglichst gute Kalibrierung des Sensors wiederhole dies für 7 Tage. Beachte dabei, dass die senseBox in dieser Zeitspanne nicht ausgeschaltet werden darf, sonst muss die Kalibrierung neu gestartet werden!
+Nachdem der Sketch hochgeladen ist, bringe den CO<sub>2</sub>-Sensor über einen Zeitraum von 7 Tage täglich für mindestens 1 Stunde nach draußen an die frische Luft. Auf dem Display wird dir angezeigt, wieviel Zeit seit dem Upload vergangen ist. Für eine möglichst gute Kalibrierung des Sensors wiederhole dies für 7 Tage. Beachte dabei, dass die senseBox in dieser Zeitspanne nicht ausgeschaltet werden darf, sonst muss die Kalibrierung neu gestartet werden!
 
-## Kalibrieren des CO<sub>2</sub> Sensors (Manuelle Kalibrierung)
+## Kalibrieren des CO<sub>2</sub>-Sensors (Manuelle Kalibrierung)
 
 Im Gegensatz zur Auto Kalibrierung des CO2 Sensors, welche mindestens 7 Tage dauert, kannst du alternativ auch die manuelle Kalibrierung durchführen. [Dazu wurde im senseBox Forum eine hervorragende Anleitung geschrieben](https://forum.sensebox.de/t/co2-ampel-kalibrieren/1108).
 
 Die kompilierte `.bin` Datei kann [hier](/docs/sensebox_co2_calibrate_manual.bin) heruntergeladen werden.
+
+- [Shop](https://sensebox.kaufen/product/co2-sensor)

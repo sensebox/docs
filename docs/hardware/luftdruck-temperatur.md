@@ -4,10 +4,12 @@ title: Luftdruck- und Temperatursensor
 hide_title: false
 description: Luftdruck- und Temperatursensor (BMP280)
 ---
+# Luftdruck- und Temperatursensor
+
 Dieser Sensor misst den Luftdruck und die Temperatur und basiert auf dem BMP280 Sensor von Bosch.
 
-{% include image.html image=page.image %}
 
+![](/img/hardware-bilder/luftdruck/bmp_top.png)
 
 ## Technische Informationen
 
@@ -46,10 +48,15 @@ void loop() {
 
 In Blockly kann der Sensor über folgenden Block ausgelesen werden:
 
-{% include image.html image=page.block %}
+![](/img/hardware-bilder/luftdruck/block_luftdruck_temperatur.svg)
+
 
 Im Block kannst du zwischen den verschiedenen Parametern des Luftdruck-/Temperatursensor auswählen:
 
 - Luftdruck in Pascal (Pa)
 - Temperatur in Celsius (°C)
 - Höhe über NN in m (dazu wird ein Referenzluftdruck benötigt)
+
+
+>- [Shop](https://sensebox.kaufen/product/luftdruck-temperatur)
+>- [Bosch BMP280 Data sheet](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp280-ds001.pdf)

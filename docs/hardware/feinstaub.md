@@ -6,7 +6,7 @@ hide_title: false
 
 Mit diesem Sensor SDS011 ist es möglich, die Feinstaubkonzentration in der Luft zu bestimmen. Der Sensor gibt zwei Werte aus: Die Konzentration von PM2.5 (Partikel < 2.5 um) und PM10 (Partikel < 10 um). Dieser Sensor ist mit einem kleinen Ventilator ausgestattet, um Luft anzusaugen. In seinem Inneren befindet sich ein Laser, der zusammen mit einer Photodiode die Anzahl der Partikel misst. Die Ergebnisse der Messungen werden in µg/m³ (Mikrogramm pro Kubikmeter) angegeben.
 
-{% include image.html image=page.image %}
+![](/img/hardware-bilder/feinstaub/sensoren_feinstaub.png)
 
 ## Technische Details
 * "Plug-in-and-Go" senseBox kompatibel
@@ -53,9 +53,12 @@ void loop(){
 
 In Blockly kann der Sensor über folgenden Block ausgelesen werden:
 
-{% include image.html image=page.block %}
+![](/img/hardware-bilder/feinstaub/block_feinstaubsensor.svg)
 
 Wähle den Port, an dem du den Sensor angeschlossen hast und den Messwert über das Dropdown Menü aus.
 
 - PM2.5: Feinstaubfraktion unterhalb von 2.5 µg/m^3
 - PM10: Feinstaubfratkion unterhalb von 10µg/m^3
+
+>- [Shop](https://sensebox.kaufen/product/feinstaub-sds011)
+>- [Datenblatt NOVA SDS011](https://cdn-reichelt.de/documents/datenblatt/X200/SDS011-DATASHEET.pdf)

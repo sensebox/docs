@@ -4,13 +4,15 @@ title: Helligkeits- und UV-Sensor
 hide_title: false
 description: Helligkeits- und UV-Sensor
 ---
+# Helligkeits- und UV-Sensor
+
 Auf diesem senseBox-Bauteil sind zwei Sensoren zusammengelegt.
 
 Die Lichtintensität wird mit dem TSL45315-Sensor von AMS-TAOS gemessen oder dem LiteOn LTR329ALS-01 gemessen (seit 02/21). Dieser Sensor erkennt die Lichtverhältnisse ähnlich dem menschlichen Auge und gibt die Helligkeitswerte direkt in Lux, mit großem Dynamikbereich (3 Lux bis 220k Lux), aus.
 
 Der zweite Sensor ist ein Vishay VEML6070 Ultravioletter (UV)-Lichtsensor. Dieser wandelt die Intensität des UV-Lichts der Sonne in digitale Daten um. Der Sensor hat eine hervorragende UV-Empfindlichkeit und Linearität über Filtron™-Technologie. Er hat eine gute UV-Strahlungsmessung auch bei langer Sonnen-UV-Belastung und kann exzellent Temperaturschwankungen ausgleichen.
 
-{% include image.html image=page.image %}
+![](/img/hardware-bilder/helligkeit-uv/sensor_helligkeit_uv.png)
 
 ## Technische Details
 
@@ -60,9 +62,15 @@ void loop() {
 
 In Blockly kann der Sensor über folgenden Block ausgelesen werden:
 
-{% include image.html image=page.block %}
+
+![](/img/hardware-bilder/helligkeit-uv/block_helligkeit_uv.svg)
+
 
 Im Block kannst du zwischen den verschiedenen Parametern des Helligkeits-/UV-Sensors auswählen:
 
 * Helligkeit in LUX
 * UV-Belastung in µW/cm^2
+
+>- [Datenblatt](https://sensebox.kaufen/assets/datenblatt/senseBox-VEML-TSL_v20.pdf)
+>- [Datenblatt Vishay VEML6070](https://www.vishay.com/docs/84277/veml6070.pdf)
+>- [Datenblatt LTR329](https://optoelectronics.liteon.com/upload/download/DS86-2014-0006/LTR-329ALS-01_DS_V1.pdf)

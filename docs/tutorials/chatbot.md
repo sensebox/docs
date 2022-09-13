@@ -3,6 +3,10 @@ sidebar_position: 7
 title: "Tutorial 5: Umweltdatenchatbot"
 description: 🎬 In diesem Video zeigt dir David, wie du einen Umweltdatenchatbot mit der Telegram App und der senseBox programmierst.
 ---
+# Tutorial 5: Umweltdatenchatbot
+
+[![](/img/tutorials/umweltdatenchatbot/Bildschirmfoto-vom-2022-09-08-12-15-36.png)](https://youtu.be/dZo_oR-YtNk)
+
 🎬 In diesem Video zeigt dir David, wie du einen Umweltdatenchatbot mit der Telegram App und der senseBox programmierst.
 
 🧰 Du brauchst:
@@ -14,12 +18,12 @@ description: 🎬 In diesem Video zeigt dir David, wie du einen Umweltdatenchatb
 - Verbindungskabel
 
 
-🎥 Dieses Video entstand in Zusammenarbeit mit der Hopp Foundation for Computer Literacy & Informatics (https://www.hopp-foundation.de/).
+🎥 Dieses Video entstand in Zusammenarbeit mit der [Hopp Foundation for Computer Literacy & Informatics](https://www.hopp-foundation.de/).
 
- 🔎 Weitere Informationen zum Projekt und zusätzliche Materialien findest du auf https://www.sensebox.de.
+ 🔎 Weitere Informationen zum Projekt und zusätzliche Materialien findest du [hier](https://www.sensebox.de).
 
 
 👍 Folgt uns in den sozialen Netzwerken:
-Facebook: https://www.facebook.com/sensebox.de
-Twitter: https://twitter.com/sensebox_de
-Instagram: https://www.instagram.com/sensebox_de
+- [Facebook](https://www.facebook.com/sensebox.de)
+- [Twitter](https://twitter.com/sensebox_de)
+- [Instagram](https://www.instagram.com/sensebox_de)

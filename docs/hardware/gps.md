@@ -4,10 +4,11 @@ title: GPS
 hide_title: false
 description: GPS u-blox CAM-M8Q Multi GNSS Modul
 ---
+# GPS
 
 Das GPS-Modul empfängt die Position (Längengrad/Breitengrad/Höhe) der senseBox. Diese kann für mobile Anwendungen, z.B. die mobile Datenübertragung auf die openSenseMap, genutzt werden. Dieser Sensor ist kompatibel mit den gängingen GNS Systemen (GPS, QZSS, GLONASS, BeiDou, Galileo) und basiert auf dem u-blox CAM-M8Q Multi GNSS Modul.
 
-{% include image.html image=page.image %}
+![](/img/hardware-bilder/gps/gps.png)
 
 Der GPS Sensor wird an einen I2C-Port angeschlossen.
 
@@ -68,7 +69,7 @@ void loop()
 
 In Blockly kann der Sensor über folgenden Block ausgelesen werden:
 
-{% include image.html image=page.block %}
+![](/img/hardware-bilder/gps/block_gps.svg)
 
 Im Block kannst du zwischen den verschiedenen Parametern des GPS Modules auswählen:
 - Längengrad
@@ -78,3 +79,6 @@ Im Block kannst du zwischen den verschiedenen Parametern des GPS Modules auswäh
 - Geschwindigkeit
 - Datum
 - Zeit
+
+>- [Shop](https://sensebox.kaufen/product/gps)
+>- [CAM M8Q](https://sensebox.kaufen/assets/datenblatt/senseBox-CAM-M8Q_v20.pdf)

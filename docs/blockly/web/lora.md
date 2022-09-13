@@ -4,15 +4,19 @@ title: LoRa
 hide_title: false
 ---
 
+# Web-LoRa
+
 ## Aktivierung
 
-{% include image.html image=page.image1 %}
+![](/img/blockly-bilder/web-lora/blockly-lora-1.svg)
 
 Mit diesen Blöcken kannst du das Lora-Bee initialisieren und dich mit dem [The Things Network](https://www.thethingsnetwork.org/) verbinden. Je nachdem, welche Aktivierungsmethode du verwendest (OTAA oder ABP), musst du die entsprechenden ID's in den Block eintragen. Zusätzlich kann das Übertragungsintervall in Minuten eingestellt werden.
 
 
 ## Lora-Nachricht
-{% include image.html image=page.image2 %}
+
+![](/img/blockly-bilder/web-lora/blockly-lora-2.svg)
+
 
 Verwende diese Blöcke, um eine Nachricht über das LoRa-Netzwerk zu versenden. Hierbei wird kein spezielles Format für die Nachricht (oft auch Payload genannt) verwendet. Die Daten werden hierbei als Byte codiert, sodass diese schnell und effizient über das LoRa-Netz übertragen werden können. Anschließend müssen die Daten in der TTN Console wieder über einen speziellen Decoder in ein lesbares Format umgewandelt werden.
 
@@ -45,20 +49,23 @@ Stelle dir vor, wir messen 85,42%. Ein einfacher Ansatz wäre es, die Messung zu
 __Blockly__:
 Auf der Arduino Seite wird die [lora-serialization](https://github.com/thesolarnomad/lora-serialization) Bibliothek verwendet. Die Dokumentation zeigt eine [Funktion](https://github.com/thesolarnomad/lora-serialization#unsigned-16bit-integer-2-bytes), um einen Wert mit 16 Bit zu versenden. Diese Funktion kann genutzt werden, um die Werte für die Luftfeuchtigkeit zu versenden. Der Wert für die Luftfeuchtigkeit liegt zwischen 0 und 100%, sodass folgende Blöcke zum Versenden verwendet werden können:
 
-{% include image.html image=page.imageHumidty %}
+![](/img/blockly-bilder/web-lora/blockly-lora-humidity.svg)
+
 
 Der Messwert wird mit 100 multipliziert, um die zwei Nachkommastellen beizubehalten.
 
 Da der Wert für die Temperatur auch in den negativen Bereich fallen kann, muss zunächst der Wert in einen positven konvertviert werden und anschließend mit einem Wert multipliziert werden, um die Nachkommastellen zu behalten.
 
-{% include image.html image=page.imageTemperatur %}
+![](/img/blockly-bilder/web-lora/blockly-lora-temperatur.svg)
+
 
 In diesem Beispiel wird ein Temperatursensor verwendet, der Werte ab -18 Grad Celsius gemessen hat und die Temperatur mit einer Genauigkeit von 0.0013 Grad Celsius rausgibt.
 
 __TTN__:
 In der TTN Console kommen nun zwei verschiedene Werte von der senseBox an. Diese Werte müssen nun mithilfe eines Decoders wieder von Bytes zu den ursprünglichen Werten decodiert werden. Den Decoder kannst du unter Payloads definieren:
 
-{% include image.html image=page.image13 %}
+![](/img/blockly-bilder/web-lora/blockly-lora-13.png)
+
 
 ```js
 /**
@@ -110,7 +117,8 @@ Einige wichtige Punkte sind zu beachten:
 
 → Beim Senden von Werten, die größer als 3 Bytes sind, ist es ein wenig anders. Werte für die Helligkeit können im Maximum größer sein als ein 2 Byte Integer. Daher werden 3 Bytes benötigt. Du kannst das Ganze wie folgt senden:
 
-{% include image.html image=page.imageIlluminance%}
+![](/img/blockly-bilder/web-lora/blockly-lora-illuminance.svg)
+
 
 
 und wie folgt decodieren:
@@ -120,18 +128,33 @@ i = i + 3 // increment counter afterwards
 ```
 
 ## Cayenne LPP
-{% include image.html image=page.image3 %}
+
+![](/img/blockly-bilder/web-lora/blockly-lora-3.svg)
+
+
 Das [Cayenne Low Power Payload Format](https://community.mydevices.com/t/cayenne-lpp-2-0/7510) bietet eine einfache Möglichkeit Daten über das LoRaWAN Netzwerk zu versenden. Die Daten können direkt über einen vorhanenden Decoder wieder in ein lesbares Format decodiert werden. Für unterschiedliche Messwerte stehen verschiedenen Blöcke bereit, um zu Gewährleiten, dass alle Nachkommastellen korrekt übertragen werden.
 
-{% include image.html image=page.image5 %}
-{% include image.html image=page.image6 %}
-{% include image.html image=page.image7 %}
-{% include image.html image=page.image8 %}
-{% include image.html image=page.image9 %}
-{% include image.html image=page.image10 %}
-{% include image.html image=page.image11 %}
-{% include image.html image=page.image12 %}
+![](/img/blockly-bilder/web-lora/blockly-lora-5.svg)
+
+![](/img/blockly-bilder/web-lora/blockly-lora-6.svg)
+
+![](/img/blockly-bilder/web-lora/blockly-lora-7.svg)
+
+![](/img/blockly-bilder/web-lora/blockly-lora-8.svg)
+
+![](/img/blockly-bilder/web-lora/blockly-lora-9.svg)
+
+![](/img/blockly-bilder/web-lora/blockly-lora-10.svg)
+
+![](/img/blockly-bilder/web-lora/blockly-lora-11.svg)
+
+![](/img/blockly-bilder/web-lora/blockly-lora-12.svg)
+
 
 In der TTN Konsole kannst du unter __Payload__ den Decoder auswählen. Wähle dort Cayenne LPP aus und die Werte werden automatisch decodiert.
 
-{% include image.html image=page.image14 %}
+![](/img/blockly-bilder/web-lora/blockly-lora-14.png)
+
+
+
+> - [Blockly.senseBox.de](https://blockly.sensebox.de/)
