@@ -4,10 +4,12 @@ title: RTC-Modul
 hide_title: false
 description: Mit dem RTC-Modul kann die Uhrzeit auch ohne Stromversorgung gespeichert werden.
 ---
+# RTC-Modul
+
 Das RTC-Modul ermöglicht es dir, die Uhrzeit auch ohne Stromversorgung zu speichern. Dies kann besonders nützlich sein, wenn keine Internetverbindung verfügbar ist und Messwerte offline z.B. auf der SD Karte gespeichert werden sollen. Damit die Uhrzeit auch ohne Stromversorgung gespeichert werden kann, ist zudem eine Knopfzellenbatterie von Nöten.
 
 
-{% include image.html image=page.image1 %}
+![](../../../static/img/hardware-bilder/rtc/rtc.png)
 
 
 ## Anschluss

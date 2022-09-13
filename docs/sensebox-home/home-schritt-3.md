@@ -3,13 +3,14 @@ sidebar_position: 7
 title: "Schritt 3: Programmcode übertragen"
 description: Schritt 3 zum Aufbau der senseBox:home
 ---
+Schritt 3: Programmcode übertragen
 
 Nach der Registrierung muss der Programmcode auf die senseBox kopiert werden. Wenn du eine senseBox mit WiFi-Bee oder Lan-Bee hast, kannst du den Programmcode einfach und schnell online kompilieren und per Drag-and-Drop übertragen. Dazu brauchst du keine Software auf dem Computer installieren.
 
 ## Online kompilieren
 Der einfachste Weg deinen Code auf die senseBox zu bekommen ist unseren Online Compiler zu benutzen. Dafür musst du in der Maske einige Angaben machen. Wenn etwas nicht auf deinen individuellen Aufbau der senseBox passt, kannst du das Feld einfach frei lassen. Zum Abschluss drückst du auf "Kompilieren" und eine Datei im Format .BIN wird von deinem Browser heruntergeladen.
 
-{% include image.html image=page.image1 %}
+![](../../static/img/sensebox-home-bilder/home-schritt-3/compile.png)
 
 ### Übertragen auf die senseBox MCU
 

@@ -3,6 +3,10 @@ sidebar_position: 1
 title: senseBox:home Aufbauvideo
 description: Aufbau der senseBox:home im Video
 ---
+# senseBox:home Aufbauvideo
+
+> [![](../../static/img/sensebox-home-bilder/aufbau-video/Bildschirmfoto%20vom%202022-09-01%2015-37-31.png)](https://www.youtube.com/watch?v=dUuRfZI39U8&ab_channel=senseBox)
+
 Dieses Tutorial zeigt dir den Zusammenbau deiner senseBox:home.
 Das Video ist in verschiedene Kapitel unterteilt, über die Links kannst du direkt zu den einzelnen Kapiteln springen:
 

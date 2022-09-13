@@ -3,6 +3,7 @@ sidebar_position: 1
 title: "Aufstellen der senseBox:home"
 description: Aufstellen der senseBox:home
 ---
+# Aufstellen der senseBox:home
 
 Um eine erfolgreiche Datenübertragung sowie die Vergleichbarkeit der Daten zu maximieren, gibt es einige Tipps, was du beim Aufstellen der senseBox:home beachten solltest.
 
