@@ -9,7 +9,7 @@ description: HC-SR04
 Der HC-SR04 misst Distanzen mit Hilfe von Ultraschall und gibt diese in Zentimetern (cm) aus.
 
 
-![](../../static/img/hardware-bilder/distanz/US-Sensor.png)
+![](/img/hardware-bilder/distanz/US-Sensor.png)
 
 ## Technische Informationen
 
@@ -17,7 +17,7 @@ Der HC-SR04 misst Distanzen mit Hilfe von Ultraschall und gibt diese in Zentimet
 * Versorgungsspannung von 5V bei einer Stromaufnahme weniger als 2mA
 *  bis zu 50 Messungen pro Sekunde möglich
 
-![](../../static/img/hardware-bilder/distanz/Aufbau-Ultraschall.png)
+![](/img/hardware-bilder/distanz/Aufbau-Ultraschall.png)
 
 
 ## Programmierung (Arduino)
@@ -49,7 +49,7 @@ Serial.println(distance);
 
 In Blockly kann der Sensor über folgenden Block ausgelesen werden:
 
-![](../../static/img/hardware-bilder/distanz/ultraschall-block.svg)
+![](/img/hardware-bilder/distanz/ultraschall-block.svg)
 
 
 Wähle den Port, an dem du den Sensor angeschlossen hast über das Dropdown-Menü aus. Trigger und Echo Pin werden dann automatisch angepasst.

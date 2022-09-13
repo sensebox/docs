@@ -9,7 +9,7 @@ description: Kondensator Mikrofon
 Das Kondesatormikrofon von Watterott Electronics ist mit einem Verstärker ausgestattet und kann Geräusche zwischen 58 und 110 dB wahrnehmen.
 Es gibt die gemessenen Geräusche in einem Pegel von 0-5V aus.
 
-![](../../static/img/hardware-bilder/mikro/mic.png)
+![](/img/hardware-bilder/mikro/mic.png)
 
 ## Technische Informationen
 
@@ -17,7 +17,7 @@ Es gibt die gemessenen Geräusche in einem Pegel von 0-5V aus.
 * Betriebsspannung von 2,7 - 5,5V DC
 * Wahrnehmung von Geräuschen zwischen 58 und 110dB
 
-![](../../static/img/hardware-bilder/mikro/mikro-aufbau.png)
+![](/img/hardware-bilder/mikro/mikro-aufbau.png)
 
 
 ## Programmierung (Arduino)
@@ -72,7 +72,7 @@ Serial.println(" Volt");
 
 In Blockly kann der Sensor über folgenden Block ausgelesen werden:
 
-![](../../static/img/hardware-bilder/mikro/mikro-block.svg)
+![](/img/hardware-bilder/mikro/mikro-block.svg)
 
 
 Wähle den Port, an dem du den Sensor angeschlossen hast über das Dropdown-Menü aus.

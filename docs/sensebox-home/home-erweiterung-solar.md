@@ -8,7 +8,7 @@ description: Erweitere deine senseBox:home um ein Solarpanel
 
 ## Solarzelle
 
-![](../../static/img/sensebox-home-bilder/home-erweiterung-solar/solar_top.png)
+![](/img/sensebox-home-bilder/home-erweiterung-solar/solar_top.png)
 
 ### Technische Details
    * Model-Nummer: VB-010P
@@ -23,7 +23,7 @@ description: Erweitere deine senseBox:home um ein Solarpanel
 
 Der [Adafruit Powerboost 1000C](https://www.adafruit.com/product/2465) sorgt durch einen integrierten Lade-Kreislauf dafür, dass die Solarzelle den Akku auflädt und der Akku seinerseits dann die senseBox betreibt.
 
-![](../../static/img/sensebox-home-bilder/home-erweiterung-solar/powerboost-top.png)
+![](/img/sensebox-home-bilder/home-erweiterung-solar/powerboost-top.png)
 
 
 ### Technische Details
@@ -37,7 +37,7 @@ Der [Adafruit Powerboost 1000C](https://www.adafruit.com/product/2465) sorgt dur
 ## Anschluss
 Um die senseBox mit einer Solarzelle zu benutzen, bedarf es lediglich einem Powerboost und und einem [LiPo Akku](https://eckstein-shop.de/LiPo-Akku-Lithium-Ion-Polymer-Batterie-37V-2000mAh-JST-PH-Connector), etwas um die 1000 mAh sollte genügen. Wie die Komponenten verbunden werden, siehst du im Bild unten. Wir empfehlen eine [Brandschutztasche](https://www.amazon.de/Jamara-141360-LiPo-Guard-Lipobrandschutztasche/dp/B003OFCUIS/ref=sr_1_18?keywords=LIPO+TRESOR&qid=1556284975&s=gateway&sr=8-18) für den Akku, da bei einer Beschädigung hohe Verletzungsgefahr besteht.
 
-![](../../static/img/sensebox-home-bilder/home-erweiterung-solar/solar_powerboost.jpg)
+![](/img/sensebox-home-bilder/home-erweiterung-solar/solar_powerboost.jpg)
 
 
 > Wichtig:

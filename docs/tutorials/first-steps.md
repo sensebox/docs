@@ -6,7 +6,7 @@ hide_title: false
 
 # Tutorial 1: Erste Schritte mit der senseBox
 
-[![](../../static/img/tutorials/firststeps/Bildschirmfoto%20vom%202022-09-08%2012-22-28.png)](https://youtu.be/f3UqvTFt7Ek)
+[![](/img/tutorials/firststeps/Bildschirmfoto-vom-2022-09-08-12-22-28.png)](https://youtu.be/f3UqvTFt7Ek)
 
 🎬 In diesem Video zeigt dir Björn, wie du dein erstes Programm für die senseBox erstellst und überträgst.
 

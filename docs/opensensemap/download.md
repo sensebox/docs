@@ -22,7 +22,7 @@ Durch einen Klick auf den Reiter "Filter" in der openSenseMap kannst du dir zun�
 Solltest du nach einem Namen filtern, kannst du auch die Werte einer einzelnen senseBox herunterladen.
 Dass der Filter aktiv ist, erkennst du an einem roten Dreieck unter dem Reiter "Namen".
 
-![](../../static/img/open-sensemap-bilder/datendownload/1-filter.png)
+![](/img/open-sensemap-bilder/datendownload/1-filter.png)
 
 ## Graphische Darstellung von Daten
 
@@ -32,7 +32,7 @@ Neben der Funktion zum Filtern kannst du dir auch die Statistiken der einzelnen 
 
 Wenn du auf der Seite der openSenseMap den Reiter "Datendownload" auswählst, kannst du eine Reihe von räumlichen und zeitlichen Filtern auf die bereits von den senseBoxen gemessenen Werte anwenden.
 
-![](../../static/img/open-sensemap-bilder/datendownload/1-download.png)
+![](/img/open-sensemap-bilder/datendownload/1-download.png)
 
 
 

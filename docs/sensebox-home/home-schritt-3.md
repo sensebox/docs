@@ -10,7 +10,7 @@ Nach der Registrierung muss der Programmcode auf die senseBox kopiert werden. We
 ## Online kompilieren
 Der einfachste Weg deinen Code auf die senseBox zu bekommen ist unseren Online Compiler zu benutzen. Dafür musst du in der Maske einige Angaben machen. Wenn etwas nicht auf deinen individuellen Aufbau der senseBox passt, kannst du das Feld einfach frei lassen. Zum Abschluss drückst du auf "Kompilieren" und eine Datei im Format .BIN wird von deinem Browser heruntergeladen.
 
-![](../../static/img/sensebox-home-bilder/home-schritt-3/compile.png)
+![](/img/sensebox-home-bilder/home-schritt-3/compile.png)
 
 ### Übertragen auf die senseBox MCU
 

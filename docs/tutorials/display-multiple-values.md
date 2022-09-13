@@ -5,7 +5,7 @@ description: 🎬 In diesem Video zeigt dir Björn, wie du mehrere Messwerte gle
 ---
 # Tutorial 2c: Mehrere Messwerte auf dem Display
 
-[![](../../static/img/tutorials/display-values-multiple/Bildschirmfoto%20vom%202022-09-08%2012-34-05.png)](https://youtu.be/rkhnJq19l2A)
+[![](/img/tutorials/display-values-multiple/Bildschirmfoto-vom-2022-09-08-12-34-05.png)](https://youtu.be/rkhnJq19l2A)
 
 🎬 In diesem Video zeigt dir Björn, wie du die Messwerte eines Umweltsensors auf dem Display anzeigen lassen kannst.
 

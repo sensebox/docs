@@ -13,7 +13,7 @@ Damit dein Programm von der senseBox ausgeführt werden kann, muss es zuerst in 
 
 Um deinen Sketch kompilieren zu lassen, klicke in Blockly oben rechts auf den orangenen Knopf mit dem Notizblocksymbol.
 
-![](../../static/img/blockly-bilder/kompilieren/kompilieren.png)
+![](/img/blockly-bilder/kompilieren/kompilieren.png)
 
 Wenn dein Sketch fertig kompiliert ist, wird er dir in Form einer .BIN-Datei zum Download angeboten. Speichere ihn an einem Ort, wo du ihn später wiederfindest.
 
@@ -21,19 +21,19 @@ Wenn dein Sketch fertig kompiliert ist, wird er dir in Form einer .BIN-Datei zum
 
 Schließe nun deine senseBox MCU mit Hilfe des USB-Kabels an deinen Computer an. Deine senseBox startet nun automatisch im *Programm-Modus*. Den *Programm-Modus* erkennst du daran, dass die Status-LEDs auf der senseBox MCU grün leuchten.
 
-![](../../static/img/blockly-bilder/kompilieren/Programm.png)
+![](/img/blockly-bilder/kompilieren/Programm.png)
 
 Damit die senseBox als Wechseldatenträger erkannt wird und Programme übertragen werden können, muss diese in den *Lern-Modus* versetzt werden. Klicke dazu doppelt auf den roten Reset-Knopf auf der senseBox.
 
 Befindet sich deine senseBox im Lern-Modus erlöschen die grünen Status-LEDs und nur eine rote LED neben dem Reset-Knopf beginnt zu leuchten/pulsieren.
 
-![](../../static/img/blockly-bilder/kompilieren/Lern.png)
+![](/img/blockly-bilder/kompilieren/Lern.png)
 
 #### Kopieren unter Windows & Linux
 
 Unter Windows und Linux kannst du die zuvor heruntergeladene .BIN-Datei einfach per Drag & Drop auf den Wechseldatenträger <b>SENSEBOX</b> kopieren. Die rote LED am Button wird kurz flackern und anschließend startet das Board selbstständig neu und führt deinen Programmcode aus.
 
-![](../../static/img/blockly-bilder/kompilieren/copy_to_mcu.gif)
+![](/img/blockly-bilder/kompilieren/copy_to_mcu.gif)
 
 #### Kopieren unter MacOS
 
@@ -41,7 +41,7 @@ Unter MacOS funktioniert das Kopieren der .BIN-Datei mit dem Finder leider zurze
 
 Eine Möglichkeit ist einen alternativen Dateimanager wie zum Beispiel [muCommander](http://www.mucommander.com/).
 
-![](../../static/img/blockly-bilder/kompilieren/copy-to-mcu-mac.gif)
+![](/img/blockly-bilder/kompilieren/copy-to-mcu-mac.gif)
 
 Erfahrene Nutzer können die Datei auch im Terminal per dd-Befehl kopieren.
 

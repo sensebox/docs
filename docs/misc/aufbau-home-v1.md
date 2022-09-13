@@ -18,7 +18,7 @@ image1: /images/2021-01-28-rtc-modul/rtc.png
 Die senseBox:home ist in zwei Ausgaben verfügbar: Einmal mit LAN-, und einmal mit WLAN-Netzwerkverbindung.
 Je nach Ausgabe ist ein W5500 Ethernet Shield, oder ein Watterott WLAN-Shield enthalten.
 
-![](../../static/img/aufbau-home-v1-bilder/sensebox_home_platinen.jpg)
+![](/img/aufbau-home-v1-bilder/sensebox_home_platinen.jpg)
 
 |Platine|Beschreibung|
 | ----- | ------ |
@@ -28,7 +28,7 @@ Je nach Ausgabe ist ein W5500 Ethernet Shield, oder ein Watterott WLAN-Shield en
 
 #### Grundausstattung mit vier Sensoren
 
-![](../../static/img/aufbau-home-v1-bilder/sensebox_home_sensoren.jpg)
+![](/img/aufbau-home-v1-bilder/sensebox_home_sensoren.jpg)
 
 
 |Sensor|Beschreibung|
@@ -50,7 +50,7 @@ Je nach Ausgabe ist ein W5500 Ethernet Shield, oder ein Watterott WLAN-Shield en
 
 #### Gesamtüberblick:
 
-![](../../static/img/aufbau-home-v1-bilder/sensebox_home_alles.jpg)
+![](/img/aufbau-home-v1-bilder/sensebox_home_alles.jpg)
 
 
 ## Zusätzliche Materialien (NICHT im Lieferumfang enthalten)
@@ -68,7 +68,7 @@ Du kannst deine Messstation kann in wenigen Schritten zusammenbauen.
 
 Im Bausatz der senseBox:home befinden sich vier kleinen Platinen mit den Sensoren. Die eigentlichen Sensoren sind nur wenige Millimeter groß und befinden sich auf der Oberseite der Platinen. Um einer Beschädigung vorzubeugen, solltest du die kleinen Sensoren nicht berühren, sondern die Platinen nur am Rand anfassen. Der Anschluss der Sensoren ist denkbar einfach: Benutze die Verbindungskabel, um die Sensoren mit den mittleren Steckplätzen auf der Basisstation zu verbinden. Welcher Anschluss dabei gewählt wird spielt keine Rolle.
 
-![](../../static/img/aufbau-home-v1-bilder/02_connection.png)
+![](/img/aufbau-home-v1-bilder/02_connection.png)
 
 
 > Das lange Verbindungskabel ist für den HDC1008 gedacht, um ihn außerhalb eines Gehäuses anbringen zu können!
@@ -84,12 +84,12 @@ Falls etwas bei dem Testlauf schief geht, melde dich am besten [per Mail](mailto
 
 Das Mainboard der senseBox ist eine modifizierte Version des Arduino Uno Mikrocontrollers. Um ein Programm auf das Board zu laden, brauchst du die integrierte Entwicklungsumgebung von Arduino, kurz *Arduino IDE*. Lade die neueste Version als zip-Datei von der [Arduino Homepage](https://www.arduino.cc/en/main/software) herunter:
 
-![](../../static/img/aufbau-home-v1-bilder/03_arduino-dl.png)
+![](/img/aufbau-home-v1-bilder/03_arduino-dl.png)
 
 
 Arduino ist ein Open-Source Projekt und wird durch Spenden finanziert. Daher wirst du vor dem Download nach einer Spende gefragt; das kannst du überspringen indem du auf „just download“ klickst.
 
-![](../../static/img/aufbau-home-v1-bilder/04_donate.png)
+![](/img/aufbau-home-v1-bilder/04_donate.png)
 
 
 Lege auf deiner Festplatte einen neuen Ordner an und entpacke darin die Zip-Datei.
@@ -124,12 +124,12 @@ Um die Sensoren und die Netzwerkkarte nutzen zu können, müssen noch ein paar B
 Lade dieses zip-Archiv herunter und integriere nun die beiden Ordner `examples` und `libraries` aus dem Archiv in deinen Arduino Ordner.
 Wenn ihr gefragt werdet ob bestehende Dateien ersetzt werden sollen, folge den Anweisungen unten auf der Seite.
 
-![](../../static/img/aufbau-home-v1-bilder/06_copy.png)
+![](/img/aufbau-home-v1-bilder/06_copy.png)
 
 
 Setze nun wie unten dargestellt im ersten Dialogfeld den Haken unten und bestätigt mit „Ja“. Daraufhin öffnet sich ein neues Fenster, in dem du wieder den Haken setzt, und „Kopieren und ersetzen“ auswählst.
 
-![](../../static/img/aufbau-home-v1-bilder/07_replace.png)
+![](/img/aufbau-home-v1-bilder/07_replace.png)
 
 
 Das folgende Video zeigt den Kopiervorgang noch einmal im Detail:
@@ -154,7 +154,7 @@ Ladet nun das Programm, um die Sensoren zu testen und übertragt es auf die Mess
 3. warten bis das Programm übertragen wurde
 4. den seriellen Monitor über das **Lupe** Icon öffnen
 
-![](../../static/img/aufbau-home-v1-bilder/11_serial1.png)
+![](/img/aufbau-home-v1-bilder/11_serial1.png)
 
 
 Du kannst durch experimente prüfen, ob sich die gemessene Temperatur, Luftfeuchtigkeit oder Beleuchtungsstärke verändern.
@@ -177,7 +177,7 @@ Nach dem selben Schema kann noch die Internetverbindung der senseBox:home getest
 
 Wenn die Verbindung klappt, bekommst du eine entsprechende Meldung im seriellen Monitor angezeigt.
 
-![](../../static/img/aufbau-home-v1-bilder/12_serial2.png)
+![](/img/aufbau-home-v1-bilder/12_serial2.png)
 
 
 # Web-Integration

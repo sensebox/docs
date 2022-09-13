@@ -5,7 +5,7 @@ description: 🎬 In diesem Video zeigt dir Björ,n wie du Messwerte auf dem Dis
 ---
 #Tutorial 2b: Messwerte auf dem Display beschriften
 
-[![](../../static/img/tutorials/display-values-text/Bildschirmfoto%20vom%202022-09-08%2012-48-22.png)](https://youtu.be/dYiqcBYGwAQ)
+[![](/img/tutorials/display-values-text/Bildschirmfoto-vom-2022-09-08-12-48-22.png)](https://youtu.be/dYiqcBYGwAQ)
 
 🎬 In diesem Video zeigt dir Björn, wie du Messwerte auf dem Display beschriften kannst.
 

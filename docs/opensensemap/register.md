@@ -26,5 +26,5 @@ Es besteht die Möglichkeit neben der [HTTP REST API](https://docs.opensensemap.
 Einstellungen hierfür müssen unter dem entsprechenden Reiter im Abschnitt *Erweitert* vorgenommen werden.
 Detaillierte Anleitungen dazu sind hier zu finden:
 
-- [MQTT](mqtt_client.md)
-- [TheThingsNetwork](ttn_integration.md)
+> - [MQTT](mqtt_client.md)
+> - [TheThingsNetwork](ttn_integration.md)

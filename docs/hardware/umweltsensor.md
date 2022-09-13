@@ -8,7 +8,7 @@ description: Luftdruck- und Temperatursensor (BME680)
 
 Mit dem Sensor BME680 kannst du eine verschiedene Auswahl an Phänomenen messen. Lufttemperatur, relative Luftfeuchtigkeit, Luftdruck und Luftqualität können mit dem BME680 bestimmt werden. Er ist also ein echter Alleskönner.
 
-![](../../static/img/hardware-bilder/umweltsensor/bme.png)
+![](/img/hardware-bilder/umweltsensor/bme.png)
 
 ## Technische Details
 * Schnelle Reaktionszeit von weniger als 10 Sekunden
@@ -27,7 +27,7 @@ Ist dies erledigt, können wir nun im Programmcode den Sensor initialisieren und
 
 In Blockly kann der Sensor über folgenden Block ausgelesen werden:
 
-![](../../static/img/hardware-bilder/umweltsensor/block_umweltsensor.svg)
+![](/img/hardware-bilder/umweltsensor/block_umweltsensor.svg)
 
 Im Block kannst du zwischen den verschiedenen Parametern des Umweltsensors auswählen:
 

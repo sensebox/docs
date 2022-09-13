@@ -12,7 +12,7 @@ Dazu musst du zuerst deinen hackAIR Sensor wie folgt [zusammenbauen](http://www.
 
 Danach steht dir die openSenseMap-Konfiguration im Webinterface zur Verfügung. 
 
-![](../../static/img/open-sensemap-bilder/hackair/02_Sensor_Konfiguration.png)
+![](/img/open-sensemap-bilder/hackair/02_Sensor_Konfiguration.png)
 
 Danach muss eine senseBox auf der openSenseMap mit der korrekten Hardware registriert werden.
 
@@ -20,7 +20,7 @@ Danach muss eine senseBox auf der openSenseMap mit der korrekten Hardware regist
 - User, Standort, Aufstellungsort und Namen ausfüllen. Gruppenkennzeichnung könnte z.B. hackAIR sein.
 - Unter dem Punkt **"Hardware"** im Schritt **"meine senseBox"** das Feld **"hackAIR"** ausklappen und die passende Sensorkonfiguration auswählen. 
 
-![](../../static/img/open-sensemap-bilder/hackair/01_openSenseMap_Konfiguration.png)
+![](/img/open-sensemap-bilder/hackair/01_openSenseMap_Konfiguration.png)
 
 
 - Registrierung abschließen.

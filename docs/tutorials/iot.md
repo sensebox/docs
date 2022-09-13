@@ -5,7 +5,7 @@ description: 🎬 In diesem Video zeigt dir Björn, wie du deine senseBox Messst
 ---
 # Tutorial 3: IoT Umweltmessstation
 
-[![](../../static/img/tutorials/IoT/Bildschirmfoto%20vom%202022-09-08%2012-05-35.png)](https://youtu.be/Gz9RzoVp_NI)
+[![](/img/tutorials/IoT/Bildschirmfoto-vom-2022-09-08-12-05-35.png)](https://youtu.be/Gz9RzoVp_NI)
 
 🎬 In diesem Video zeigt dir Björn, wie du deine senseBox Messstation mit dem Internet verbindest und deine Messwerte auf die openSenseMap überträgst. So kannst du deine Messwerte von überall anschauen.
 

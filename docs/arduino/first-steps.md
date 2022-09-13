@@ -23,12 +23,12 @@ Im schwarzen Bereich darunter werden dir Status- und Fehlermeldungen angezeigt. 
 
 Zuletzt solltest du dir noch die kleinen Schaltflächen über dem weißen Bereich anschauen.
 
-<!-- ![](/img/arduino-bilder/erste%20schritte/arduino-buttons-1.png) -->
+![](/img/arduino-bilder/erste-schritte/button-one.png)
 
 Das Häkchen und der Pfeil sind die beiden wichtigsten Symbole für dich:
 Mit dem Häkchen kannst du dein Programm auf Schreibfehler überprüfen lassen, und mit den Pfeil überträgst du dein Programm an die senseBox MCU.
 
-<!-- ![](/img/arduino-bilder/erste%20schritte/arduino-buttons-2.png) -->
+![](/img/arduino-bilder/erste-schritte/button-two.png)
 
 Die anderen drei Symbole - angefangen mit dem kleinen Blatt ganz links - stehen dafür ein neues Programm zu erstellen, ein gespeichertes zu öffnen und dein geschriebenes Programm zu speichern.
 

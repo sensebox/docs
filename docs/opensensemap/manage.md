@@ -11,7 +11,7 @@ Jeder registrierte Nutzer kann beliebig viele Boxen auf der openSenseMap verwalt
 Wenn die Einstellungen einer Box nachträglich geändert oder der Sketch heruntergeladen werden sollen, ist dies über das **Dashboard** möglich.
 Dieses ist in der Menuleiste unter dem User-Icon verfügbar, sobald ein Nutzer eingeloggt ist:
 
-![](../../static/img/open-sensemap-bilder/manage/osem_dashboard.png)
+![](/img/open-sensemap-bilder/manage/osem_dashboard.png)
 
 Im Dashboard können...
 

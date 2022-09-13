@@ -10,7 +10,7 @@ Neben der CO<sub>2</sub>-Erkennung kommt ein erstklassiger Sensirion Feuchte- un
 
 Der CO<sub>2</sub>-Sensor sollte nicht dauerhaft im Außenbereich verwendet werden.
 
-![](../../static/img/hardware-bilder/co2/DSCF9389.jpg)
+![](/img/hardware-bilder/co2/DSCF9389.jpg)
 
 ## Technische Spezifikationen
 

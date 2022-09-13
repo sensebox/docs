@@ -9,24 +9,24 @@ hide_title: false
 ## LED
 Mit dem `LED an digitalen Pin`-Block kannst du eine an einem der sechs digitalen Pins angeschlossene LED ansteuern. Im Dropdown-Menü __Pin__ wählst du den jeweiligen Pin aus und unter __Status__, ob die LED ein- oder ausgeschaltet werden soll.
 
-![](../../static/img/blockly-bilder/led/blockly-led-1.svg)
+![](/img/blockly-bilder/led/blockly-led-1.svg)
 
 > BUILTIN_1 und BUILTIN_2 sind die auf der senseBox MCU fest verbauten LEDs neben dem roten RESET-Knopf.
 
 ## RGB-LED
 Mit dem `RGB-LED`Block kannst du eine an einem der sechs digitalen Pins angeschlossene RGB-LED ansteuern. Im Dropdown-Menü __Pin__ wählst du den jeweiligen Pin aus. An die Blockabschnitte __rot__, __grün__ und  __blau__ können Zahlen von 0 bis 255 angeknüpft werden, um die Intesität der verschiedenen Farbanteile festzulegen. Bei einem Wert von 0 ist kein Farbanteil vorhanden, bei einem Wert von 255 ist der maximale Farbanteil vorhanden.
 
-![](../../static/img/blockly-bilder/led/blockly-led-2.svg)
+![](/img/blockly-bilder/led/blockly-led-2.svg)
 
 > Der Farbcode für senseBox Grün lautet zum Beispiel:
 
-![](../../static/img/blockly-bilder/led/blockly-led-3.svg)
+![](/img/blockly-bilder/led/blockly-led-3.svg)
 
 ## RGB-LED
 
 Die verkettbare RGB-Led, welche über ein JST-Kabel direkt mit der senseBox MCU verbunden wird kann über folgenden Block programmiert werden:
 
-![](../../static/img/blockly-bilder/led/blockly-led-4.svg)
+![](/img/blockly-bilder/led/blockly-led-4.svg)
 
 Folgende Parameter können eingestellt werden:
 

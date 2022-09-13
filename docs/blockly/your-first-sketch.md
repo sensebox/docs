@@ -12,14 +12,14 @@ Blockly ist die vom senseBox-Team entwickelte grafische Programmierumgebung für
 
 Öffne Blockly für senseBox in deinem Browser unter [https://blockly.sensebox.de](https://blockly.sensebox.de/). Dort musst du zuerst deine senseBox-Version auswählen.
 
-![](../../static/img/blockly-bilder/erster%20sketch/Auswahl.png)
+![](/img/blockly-bilder/erster-sketch/Auswahl.png)
 
 
 ## Oberfläche
 
 Nachdem du deine senseBox-Version ausgewählt hast, befindest du dich auf der Programmieroberfläche. Diese lässt sich in fünf wichtige Bereiche einteilen.
 
-![](../../static/img/blockly-bilder/erster%20sketch/Oberflaeche.png)
+![](/img/blockly-bilder/erster-sketch/Oberflaeche.png)
 
 
 1. **Die Menüleiste:**
@@ -45,14 +45,14 @@ Um dein Programm zu schreiben, müssen die Blöcke aus der Toolbar per Drag & Dr
 Dieser Block wird direkt beim Starten der Oberfläche geladen und sollte immer verwendet werden. Die zwei Basisfunktionen `Setup()` und `Endlosschleife()` werden immer benötigt, um ein funtkionsfähiges Programm zu schreiben.
 Alle Blöcke, die innerhalb der `Setup()`-Funktion stehen, werden nur zu Beginn des Programmes einmal ausgeführt. In dieser Funktion wird zum Beispiel das Display initialsiert oder die WLAN Verbindung hergestellt. Alle Blöcke, die innerhalb der `Endlosschleife()` stehen, werden fortlaufend ausgeführt. Der Mikrocontroller führt hierbei alle Blöcke immer wieder von oben nach unten hin aus. In der `Endlosschleife()` werden zum Beispiel die Sensoren ausgelesen oder auch die Messwerte auf SD-Karte gespeichert oder ins Internet übertragen.
 
-![](../../static/img/blockly-bilder/erster%20sketch/blockly-es-1.svg)
+![](/img/blockly-bilder/erster-sketch/blockly-es-1.svg)
 
 
 ### Schritt 2: Die eingebaute LED einschalten
 
 Um die eingebaute LED anzuschalten, musst du den `LED an digital`-Block in die Endlosschleife ziehen. Anschließend wählst du unter PIN "BUILTIN_1" und unter Status "Ein" aus.
 
-![](../../static/img/blockly-bilder/erster%20sketch/blockly-es-2.svg)
+![](/img/blockly-bilder/erster-sketch/blockly-es-2.svg)
 
 
 >Die eingebaute LED findest du über dem roten Reset-Knopf auf der senseBox MCU.
@@ -61,7 +61,7 @@ Um die eingebaute LED anzuschalten, musst du den `LED an digital`-Block in die E
 
 Um die eingebaute LED blinken zu lassen, ist es nötig, sie mit einem weiteren `LED an digital` Block wieder auszuschalten. Zusätzlich muss nach dem An- sowie Ausschalten eine Pause eingefügt werden, damit das Blinken überhaupt sichtbar ist. Den `Warte` Block findest du in der Kategorie `Zeit`.
 
-![](../../static/img/blockly-bilder/erster%20sketch/blockly-es-3.svg)
+![](/img/blockly-bilder/erster-sketch/blockly-es-3.svg)
 
 
 ## Herunterladen und Übertragen
@@ -76,11 +76,11 @@ Im **Programm-Modus** wird ein übertragenes Programm ausgeführt. Du erkennst i
 
 Im **Lern-Modus** wird die senseBox als Wechseldatenträger erkannt und es können neue Programme übertragen werden. Du erkennst ihn daran, dass die rote LED neben dem Reset-Knopf dauerhaft leuchtet/pulsiert.
 
-![](../../static/img/blockly-bilder/erster%20sketch/modi.png)
+![](/img/blockly-bilder/erster-sketch/modi.png)
 
 Um dein Programm übertragen zu können, musst du deine MCU nun in den Lern-Modus versetzen.
 
-[![Image-alt](../../static/img/blockly-bilder/erster%20sketch/Bildschirmfoto%20vom%202022-08-30%2010-53-35.png)](https://www.youtube.com/watch?v=jzlOJ7Zuqqw&ab_channel=senseBox)
+[![Image-alt](/img/blockly-bilder/erster-sketch/Bildschirmfoto-vom-2022-08-30-10-53-35.png)](https://www.youtube.com/watch?v=jzlOJ7Zuqqw&ab_channel=senseBox)
 
 
 ### Übertragen

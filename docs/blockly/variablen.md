@@ -11,23 +11,23 @@ Variablen sind Platzhalter für Zahlen, Buchstaben und Zeichenketten. Das bedeut
 
 Variablen lassen sich durch den `Schreibe Element`-Block definieren.
 
-![](../../static/img/blockly-bilder/variablen/blockly-variablen-1.svg)
+![](/img/blockly-bilder/variablen/blockly-variablen-1.svg)
 
 Im Drodown-Menü des Blocks lässt sich die Variable umbenennen und eine neue Variable erstellen.
 
 ## Beispiel
 Nach einem Fußballspiel soll in einer Variable gespeichert werden, wie viele Tore gefallen sind. Diese Variable wird dann auf dem Display angezeigt.
 
-![](../../static/img/blockly-bilder/variablen/blockly-variablen-2.svg)
+![](/img/blockly-bilder/variablen/blockly-variablen-2.svg)
 
 Um das einfache Beispiel etwas zu erweitern, sollen nun live Punkte dazugezählt werden können. Für jedes gefallene Tor muss der eingebaute Knopf auf der MCU einmal gedrückt werden.
 
-![](../../static/img/blockly-bilder/variablen/blockly-variablen-3.svg)
+![](/img/blockly-bilder/variablen/blockly-variablen-3.svg)
 
 ## Datentypen
 Je nachdem was in einer Variable gespeichert wird, sollte man den richtigen Datentyp festlegen. Den Datentyp legst du mit Hilfe des `als Zeichen`-Blocks fest. Dieser Block wird an einen `Schreibe Element`-Block angeknüpft. Anschließend wird im freien Blockabschnitt der zu speichernde Wert eingefügt und im Dropdown-Menü der Datentyp gewählt.
 
-![](../../static/img/blockly-bilder/variablen/blockly-variablen-4.svg)
+![](/img/blockly-bilder/variablen/blockly-variablen-4.svg)
 
 
 In Blockly gibt es folgende Datentypen:

@@ -9,7 +9,7 @@ description: senseBox OLED Display
 
 Mit dem senseBox OLED Display lassen sich auf 128x64 Pixeln Messwerte, Statusmeldungen und vieles mehr anzeigen.
 
-![](../../../static/img/hardware-bilder/oled/display.png)
+![](/img/hardware-bilder/oled/display.png)
 ## Technische Informationen
 
 * "Plug-in-and-Go" senseBox kompatibel durch Breakout-Board mit JST-Anschluss

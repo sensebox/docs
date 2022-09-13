@@ -19,20 +19,20 @@ Im ersten Schritt wird die MCU in das Gehäuse eingesetzt. Das System wurde im L
 ### senseBox:home ab Dezember 2020
 senseBoxen die seit Dezember 2020 gekauft wurden, sind mit einem neuen Gehäuse ausgestattet. Hierbei unterscheidet sich der Zusammenbau nur in den ersten Schritten leicht von der alten Variante. Zuerst verschaffen wir uns einen Überblick über die verfügbaren Bauteile.
 
-![](../../static/img/sensebox-home-bilder/home-schritt-1/sensebox-home-32.jpeg)
+![](/img/sensebox-home-bilder/home-schritt-1/sensebox-home-32.jpeg)
 
 Von der Acrylplatte kann nun die Folie entfernt werden.
 
-![](../../static/img/sensebox-home-bilder/home-schritt-1/sensebox-home-33.jpeg)
+![](/img/sensebox-home-bilder/home-schritt-1/sensebox-home-33.jpeg)
 
 
 Nun schraubst du die Acryllplatte in das Gehäuse fest. Achte darauf, dass die Öffnung für den USB-Anschluss zur Öffnung des Gehäuses zeigt.
 Danach kannst du mit den schwarzen Schrauben die senseBox MCU auf die Acryllplatte befestigen. Hier muss wieder darauf geachtet werden, dass der USB-Anschluss zur Öffnung des Gehäuses ausgerichtet ist.
 
-![](../../static/img/sensebox-home-bilder/home-schritt-1/sensebox-home-34.jpeg)
+![](/img/sensebox-home-bilder/home-schritt-1/sensebox-home-34.jpeg)
 
 
-![](../../static/img/sensebox-home-bilder/home-schritt-1/sensebox-home-35.jpeg)
+![](/img/sensebox-home-bilder/home-schritt-1/sensebox-home-35.jpeg)
 
 
 Die folgenden Schritte können analog zum alten Gehäuse/Befestigungssystem durchgeführt werden.
@@ -41,11 +41,11 @@ Die folgenden Schritte können analog zum alten Gehäuse/Befestigungssystem durc
 
 Zuerst zeigen wir, wie der Microcontroller in das Gehäuse eingesetzt wird.
 
-![](../../static/img/sensebox-home-bilder/home-schritt-1/sensebox-home-1.jpg)
+![](/img/sensebox-home-bilder/home-schritt-1/sensebox-home-1.jpg)
 
 Dazu nimmst du das Gehäuse und richtest es mit der Aufbohrung nach unten aus. Der grüne senseBox Microcontroller wird nun auf der gegenüberliegenden Seite aufgelegt, sodass der rote Reset-Knopf und der USB-Port nach vorne zeigen.
 
-![](../../static/img/sensebox-home-bilder/home-schritt-1/sensebox-home-2.jpg)
+![](/img/sensebox-home-bilder/home-schritt-1/sensebox-home-2.jpg)
 
 
 Nun nimmst du die zwei beiliegenden kleineren Schrauben und befestigst die Platine über die mittleren Bohrlöcher am Gehäuse. Wenn die Platine etwas Spielraum hat, ist das kein Problem.
@@ -55,13 +55,13 @@ Als nächstes zeigen wir, wie das Wifi-Bee aufgesetzt wird.
 
 Dazu haben wir auf alle Bees eine Kennzeichnung aufgedruckt, welche die Richtung anzeigt. Wenn du ein anderes Datenübertragungsmodul hast, z.B. LAN, oder LoRaWAN, erfolgt das Aufsetzen aber genau gleich.
 
-![](../../static/img/sensebox-home-bilder/home-schritt-1/sensebox-home-3.jpg)
+![](/img/sensebox-home-bilder/home-schritt-1/sensebox-home-3.jpg)
 
 
 Das Wifi-Bee wird auf den XBee-Port 1 aufgesetzt und vorsichtig in die Sockelleiste eingedrückt, sodass alle Pins des Bees eingesteckt sind.
 
 
-![](../../static/img/sensebox-home-bilder/home-schritt-1/sensebox-home-4.jpg)
+![](/img/sensebox-home-bilder/home-schritt-1/sensebox-home-4.jpg)
 
 
 ## Aufbau des Strahlenschutz-Gehäuse
@@ -69,7 +69,7 @@ Das Wifi-Bee wird auf den XBee-Port 1 aufgesetzt und vorsichtig in die Sockellei
 Nun zeigen wir den Aufbau des Stahlenschutz-Gehäuses, in welchem der Temperatur- und Luftfeuchtigkeitssensor angebracht wird.
 Im Strahlenschutz befinden sich einige Befestigungsteile, um diesen später außen anzubringen. Diese brauchen wir erstmal nicht.
 
-![](../../static/img/sensebox-home-bilder/home-schritt-1/sensebox-home-5.jpg)
+![](/img/sensebox-home-bilder/home-schritt-1/sensebox-home-5.jpg)
 
 
 Zuerst wird ein langes senseBox Kabel durch die Öffnung im Boden des Strahlenschutzes gezogen und der Temperatur- und Luftfeuchtigkeitssensor innen angesteckt.
@@ -81,15 +81,15 @@ Nun kann das Strahlenschutzgehäuse noch zusammengesteckt werden und später wir
 
 ## Aufbau des Feinstaubsensors
 
-![](../../static/img/sensebox-home-bilder/home-schritt-1/sensebox-home-10.jpg)
+![](/img/sensebox-home-bilder/home-schritt-1/sensebox-home-10.jpg)
 
 Als Nächstes zeigen wir den Aufbau des Feinstaubsensors.
 
-![](../../static/img/sensebox-home-bilder/home-schritt-1/sensebox-home-11.jpg)
+![](/img/sensebox-home-bilder/home-schritt-1/sensebox-home-11.jpg)
 
 
 
-![](../../static/img/sensebox-home-bilder/home-schritt-1/sensebox-home-13.jpg)
+![](/img/sensebox-home-bilder/home-schritt-1/sensebox-home-13.jpg)
 
 
 Dazu muss das Gehäuse für den Sensor mit Öffnungen für Kabel und die Luftzufuhr versehen werden.
@@ -99,7 +99,7 @@ Aus Sicherheitsgründen empfehlen wir die Öffnungen aufzubohren. Theoretisch, k
 
 Als Nächstes nehmen wir den Feinstaubsensor und legen ihn in das Gehäuse, sodass der Kabel-Anschluss und der Luftansaugstutzen an den gerade gebohrten Öffnungen liegen.
 
-![](../../static/img/sensebox-home-bilder/home-schritt-1/sensebox-home-14.jpg)
+![](/img/sensebox-home-bilder/home-schritt-1/sensebox-home-14.jpg)
 
 Das Kabel für den Feinstaubsensor hat eine andere Farbe und wird mit dem größeren Anschluss am Sensor angebracht.
 
@@ -107,57 +107,57 @@ Das Kabel für den Feinstaubsensor hat eine andere Farbe und wird mit dem größ
 Dann werden die Verschraubungen für den Kabelanschluss angebracht.
 Einfach die Kabelverschraubung auseinanderschrauben und dann die einzelnen Teile in der richtige Reihenfolge einsortieren. Dann noch schnell zusammenschrauben und das war´s.
 
-![](../../static/img/sensebox-home-bilder/home-schritt-1/sensebox-home-15.jpg)
+![](/img/sensebox-home-bilder/home-schritt-1/sensebox-home-15.jpg)
 
  Auf der anderen Seite des Sensors wird nun der Schlauch auf den Luftansaugstutzen aufgesteckt.
 
 > Der Luftansaugstutzen wird seit einiger Zeit mit einem Filter ausgeliefert. Dieser Filter sorgt dafür, dass grober Dreck und Insekten nicht in den Sensor gelangen.
 Hier benutzen wir auch eine Kabelverschraubung, um den Schlauch abzudichten. Dann heißt es wieder alles richtig einsortieren. Am Ende ist etwas Druck auf den Schlauch nötig, um ihn auf den Stutzen aufzusetzen. Als letztes noch den Deckel aufsetzen und der Feinstaubsensor ist fertig.
 
-![](../../static/img/sensebox-home-bilder/home-schritt-1/sensebox-home-16.jpg)
+![](/img/sensebox-home-bilder/home-schritt-1/sensebox-home-16.jpg)
 
 ## Anschluss der externen Sensoren an die MCU
 
-![](../../static/img/sensebox-home-bilder/home-schritt-1/sensebox-home-17.jpg)
+![](/img/sensebox-home-bilder/home-schritt-1/sensebox-home-17.jpg)
 
 Die außenliegenden Sensoren, also der Sensor für Temperatur und Luftfeuchtigkeit, sowie der Feinstaubsensor werden jetzt an die MCU angeschlossen.
 Dafür nehmen wir zuerst das Kabel aus dem Strahlenschutz und fädeln es durch die letzte Kabelverschraubung in das Gehäuse.
 {% include image.html image=page.image13 %}
 Dort wird das Kabel in einen der Steckplätze mit der Aufschrift I2C/Wire eingesteckt.
 
-![](../../static/img/sensebox-home-bilder/home-schritt-1/sensebox-home-19.jpg)
+![](/img/sensebox-home-bilder/home-schritt-1/sensebox-home-19.jpg)
 
 
 Danach wird das Kabel aus dem Feinstaubsensor genommen und durch die Verschraubung eingefädelt.
 Dieses Kabel kommt in einen der Steckplätze welche mit UART/Serial beschriftet sind.
 
-![](../../static/img/sensebox-home-bilder/home-schritt-1/sensebox-home-20.jpg)
+![](/img/sensebox-home-bilder/home-schritt-1/sensebox-home-20.jpg)
 
 
 ## Verbinden des USB-Kabels
 
-![](../../static/img/sensebox-home-bilder/home-schritt-1/sensebox-home-23.jpg)
+![](/img/sensebox-home-bilder/home-schritt-1/sensebox-home-23.jpg)
 
 
 Als letztes schließen wir noch das Mini-USB Kabel an, über welches der Microcontroller programmiert wird sowie die senseBox später im Betrieb mit Strom versorgt wird.
 Bitte beachte, dass der Mini-USB Port empfindlich ist und außerdem der Hebelwirkung des Kabels ausgesetzt ist. Deshalb sollte später möglichst nicht am USB-Kabel gerissen werden.
 
-![](../../static/img/sensebox-home-bilder/home-schritt-1/sensebox-home-24.jpg)
+![](/img/sensebox-home-bilder/home-schritt-1/sensebox-home-24.jpg)
 
 ## Anschluss der internen Sensoren an die MCU
 
-![](../../static/img/sensebox-home-bilder/home-schritt-1/sensebox-home-25.jpg)
+![](/img/sensebox-home-bilder/home-schritt-1/sensebox-home-25.jpg)
 
 Nachdem die äußeren Sensoren angeschlossen sind, werden die übrigen Sensoren im Gehäuse angebracht.
 Dafür wird eine Montageebene aufgebaut. Zuerst werden vier Abstandhalter in die außenliegenden Löcher des Mikrocontrollers eingesteckt.
 Die Abstandshalter haben einen Rastermechanismus. Deshalb sollten diese, falls sie mal gelöst werden müssen, nicht mit Gewalt rausgerissen werden, sondern leicht am Kopf eingedrückt werden.
 Danach schließen wir zwei senseBox Kabel in die I2C/Wire Steckplätze, um dort den Luftdruck Sensor und den Lichtsensor anzubringen.
 
-![](../../static/img/sensebox-home-bilder/home-schritt-1/sensebox-home-26.jpg)
+![](/img/sensebox-home-bilder/home-schritt-1/sensebox-home-26.jpg)
 
 Die Kabel werden durch die mittleren Aussparungen der Montageplatte gefädelt.
 
-![](../../static/img/sensebox-home-bilder/home-schritt-1/sensebox-home-27.jpg)
+![](/img/sensebox-home-bilder/home-schritt-1/sensebox-home-27.jpg)
 
 
 Dann wird die Montageplatte auf die Abstandshalter gedrückt und die Kabel mit den Sensoren verbunden.
@@ -165,13 +165,13 @@ Die Sensoren werden mit jeweils zwei Abstandhalter ausgestattet und auf der Mont
 Hast du einen Lichtsensor gewählt, sollte dieser möglichst mittig im Gehäuse angebracht werden, um gute Messwerte zu erhalten.
 Der Luftdruck-Sensor kann in den äußeren Steckplatz.
 
-![](../../static/img/sensebox-home-bilder/home-schritt-1/sensebox-home-28.jpg)
+![](/img/sensebox-home-bilder/home-schritt-1/sensebox-home-28.jpg)
 
 Als letztes wird der Deckel mit den Schrauben versehen und ein Silikagelbeutel zum weiteren Schutz vor entstehende Feuchtigkeit in das Gehäuse gelegt.
 
-![](../../static/img/sensebox-home-bilder/home-schritt-1/sensebox-home-29.jpg)
+![](/img/sensebox-home-bilder/home-schritt-1/sensebox-home-29.jpg)
 
-![](../../static/img/sensebox-home-bilder/home-schritt-1/sensebox-home-30.jpg)
+![](/img/sensebox-home-bilder/home-schritt-1/sensebox-home-30.jpg)
 
 
 Nun werden noch die Schnellverschlussschrauben eingedreht und damit die senseBox verschlossen.

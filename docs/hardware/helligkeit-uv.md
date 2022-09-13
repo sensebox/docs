@@ -12,7 +12,7 @@ Die Lichtintensität wird mit dem TSL45315-Sensor von AMS-TAOS gemessen oder dem
 
 Der zweite Sensor ist ein Vishay VEML6070 Ultravioletter (UV)-Lichtsensor. Dieser wandelt die Intensität des UV-Lichts der Sonne in digitale Daten um. Der Sensor hat eine hervorragende UV-Empfindlichkeit und Linearität über Filtron™-Technologie. Er hat eine gute UV-Strahlungsmessung auch bei langer Sonnen-UV-Belastung und kann exzellent Temperaturschwankungen ausgleichen.
 
-![](../../static/img/hardware-bilder/helligkeit%2Buv/sensor_helligkeit_uv.png)
+![](/img/hardware-bilder/helligkeit-uv/sensor_helligkeit_uv.png)
 
 ## Technische Details
 
@@ -63,7 +63,7 @@ void loop() {
 In Blockly kann der Sensor über folgenden Block ausgelesen werden:
 
 
-![](../../static/img/hardware-bilder/helligkeit%2Buv/block_helligkeit_uv.svg)
+![](/img/hardware-bilder/helligkeit-uv/block_helligkeit_uv.svg)
 
 
 Im Block kannst du zwischen den verschiedenen Parametern des Helligkeits-/UV-Sensors auswählen:

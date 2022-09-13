@@ -6,7 +6,7 @@ description: RGB-LED
 ---
 # RGB-LED
 
-![](../../../static/img/hardware-bilder/rgb/rgb_modul.jpeg)
+![](/img/hardware-bilder/rgb/rgb_modul.jpeg)
 
 
 Auf der Platine ist eine WS2812 multi-color RGB LED angebracht. Auf der Rückseite befinden sich zwei JST Buchsen für Eingang und Ausgang. Der Eingang wird mit einem digitalen Anschluss auf der senseBox MCU verbunden. Über den Ausgang lassen sich weitere, baugleiche RGB-LED Module anschließen, um eine Lichterkette zu erstellen.

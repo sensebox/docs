@@ -8,7 +8,7 @@ description: DFRobot SEN0232 Gravity
 
 Der DFRobot SEN0232 misst die Lautstärke und gibt die Messwerte in Dezibel aus.
 
-![](../../static/img/hardware-bilder/lautstaerke/sound.png)
+![](/img/hardware-bilder/lautstaerke/sound.png)
 
 ## Technische Informationen
 
@@ -19,7 +19,7 @@ Der DFRobot SEN0232 misst die Lautstärke und gibt die Messwerte in Dezibel aus.
 * Messspanne: zwischen 30dBA und 130 dBA akkurat
 * Messintervall: 125ms
 
-![](../../static/img/hardware-bilder/lautstaerke/sound-anschluss.png)
+![](/img/hardware-bilder/lautstaerke/sound-anschluss.png)
 
 
 ## Programmierung (Arduino)

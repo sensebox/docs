@@ -7,7 +7,7 @@ description: Sicherer Datenupload zur openSenseMap
 
 Es besteht die Möglichkeit, deine senseBox mit einem Token vor falscher Dateneingabe zu schützen. Diese Option lässt sich auf der openSenseMap in deinem Dashboard pro senseBox aktivieren oder deaktivieren. Zudem hast du dort die Möglichkeit, einen neuen Token zu generieren, falls dieser in die falschen Hände gefallen sein sollte.
 
-![](../../static/img/open-sensemap-bilder/security/security_osem_de.jpg)
+![](/img/open-sensemap-bilder/security/security_osem_de.jpg)
 
 ## Wie wird der Token genutzt?
 

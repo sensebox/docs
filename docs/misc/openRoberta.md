@@ -23,14 +23,14 @@ openRoberta ist eine vom Fraunhofer-Institut entwickelte graphische Programmiero
 ## Erste Schritte
 Öffne das openroberta lab unter [lab.open-roberta.org](https://lab.open-roberta.org/). Dort musst du zuerst dein System, also die senseBox, auswählen.
 
-![](../../static/img/openRoberta-bilder/openroberta-carousel.png)
+![](/img/open-roberta-bilder/openroberta-carousel.png)
 
 
 ## Die Oberfläche
 Nachdem du dein System gewählt hast, befindest du dich auf der Programmieroberfläche. Diese lässt sich grob in drei Bereiche aufteilen:
 Die Navigationsleiste oben, die Toolbox links und der große weiße Arbeitsbereich. 
 
-![](../../static/img/openRoberta-bilder/openroberta-oberflaeche.png)
+![](/img/open-roberta-bilder/openroberta-oberflaeche.png)
 
 ### Navigationsleiste
 Die *Navigationsleiste* lässt sich in zwei Bereiche aufteilen. In der oberen Hälfte die Schaltflächen "Bearbeiten", "Roboter", "Hilfe" etc. Dort lassen sich beispielsweise gespeicherte Programme öffnen oder das System wechseln.
@@ -45,7 +45,7 @@ Hinter der *Toolbox* verbergen sich alle Blöcke, die du zum Programmieren der s
 Im *Arbeitsbereich* programmierst du deine senseBox. Wie du siehst befinden sich standardmäßig bereits zwei Blöcke im Arbeitsbereich `Start`und `Wiederhole undendlich oft`. Diese Blöcke sind für jedes Programm unerlässlich und lassen sich deswegen auch nicht entfernen.
 Weiterhin findest du unten rechts im Arbeitsbereich die Schaltfläche zum Übertragen deines Programms auf die senseBox, Speichern des Programms in der Cloud, zum Vergrößern und Verkleinern deiner Blöcke im Arbeitsbereich und den Mülleimer zum Löschen von Blöcken.
 
-![](../../static/img/openRoberta-bilder/openroberta-buttons.png)
+![](/img/open-roberta-bilder/openroberta-buttons.png)
 
 ## Übertragen von Programmen
 Um dein Programm auf die senseBox übertragen zu können, musst du die senseBox über das USB-Kabel mit deinem Computer verbinden. Als Nächstes kannst du es mit einem Klick auf die "Play-Schaltfläche" unten links im Arbeitsbereich herunterladen. Folge nun den Anweisungen in dem Pop-Up Fenster.
@@ -54,3 +54,5 @@ Um dein Programm auf die senseBox übertragen zu können, musst du die senseBox 
 ## openroberta Wiki
 Diese und alle weiteren Informationen zum openroberta-lab findest du online in der [Dokumentation zum openroberta-lab vom Fraunhofer Institut](https://jira.iais.fraunhofer.de/wiki/display/ORInfo ).
 
+> - [openroberta lab](https://lab.openroberta.org/)
+> - [openroberta Wiki](https://jira.iais.fraunhofer.de/wiki/display/ORInfo)

@@ -12,15 +12,15 @@ Mit [Telegram](https://www.telegram.org) kannst du einen Chatbot bauen, der dir 
 
 Mit dem `Telegram Bot initialisieren`-Block wird im Setup() die senseBox darauf vorbereitet Daten auf Anfrage an den Chatbot zu senden. Im Textfeld "Token" musst du den beim Erstellen deines Chatbots angezeigten Token eintragen.
 
-![](../../../static/img/blockly-bilder/web-telegram/blockly-Web-Telegram-1.svg)
+![](/img/blockly-bilder/web-telegram/blockly-Web-Telegram-1.svg)
 
 Anschließend kann mit dem Block `Telegram mache` in der Endlosschleife() programmiert werden, was genau der Chatbot ausführen soll.
 
-![](../../../static/img/blockly-bilder/web-telegram/blockly-Web-Telegram-2.svg)
+![](/img/blockly-bilder/web-telegram/blockly-Web-Telegram-2.svg)
 
 Die Blöcke `Bei Nachricht` und `Sende Nachricht` können im freien Blockabschnitt des `Telegam mache`-Blocks platziert werden, um festzulegen, was die senseBox beim Empfang einer bestimmten Nachricht ausführen soll.
 
-![](../../../static/img/blockly-bilder/web-telegram/blockly-Web-Telegram-3.svg) ![](../../../static/img/blockly-bilder/web-telegram/blockly-Web-Telegram-4.svg)
+![](/img/blockly-bilder/web-telegram/blockly-Web-Telegram-3.svg) ![](/img/blockly-bilder/web-telegram/blockly-Web-Telegram-4.svg)
 
 
 

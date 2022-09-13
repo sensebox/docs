@@ -31,8 +31,8 @@ Der Feinstaubsensor sollte nun seine Daten an die openSenseMap senden.
 
 ## Abbildung 1: Webinterface Feinstaubsensor
 
-![](../../static/img/open-sensemap-bilder/luftdaten/02_Sensor_Konfiguration%20(1).png)
+![](/img/open-sensemap-bilder/luftdaten/02_Sensor_Konfiguration.png)
 
 ## Abbildung 2: Registrierung openSenseMap
 
-![](../../static/img/open-sensemap-bilder/luftdaten/01_openSenseMap_Konfiguration.png)
+![](/img/open-sensemap-bilder/luftdaten/01_openSenseMap_Konfiguration.png)

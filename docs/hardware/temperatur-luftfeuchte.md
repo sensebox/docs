@@ -10,7 +10,7 @@ description: Temperatur- und Luftfeuchtigkeitssensor (HDC1080)
 Der HDC1080 ist ein digitaler Feuchtigkeits- und Temperatursensor. Der Sensor hat eine hohe Genauigkeit und eine sehr geringe Stromaufnahme und passt dadurch ideal zur senseBox. Die Sensoren sind ab Werk kalibirert und können direkt eingesetzt werden.
 
 
-![](../../static/img/hardware-bilder/temperatur-luftfeuchte/sensor_temperatur_luftfeuchte.png)
+![](/img/hardware-bilder/temperatur-luftfeuchte/sensor_temperatur_luftfeuchte.png)
 
 ## Technische Information
 
@@ -50,7 +50,7 @@ void loop(){
 
 In Blockly kann der Sensor über folgenden Block ausgelesen werden:
 
-![](../../static/img/hardware-bilder/temperatur-luftfeuchte/block_temperatur_luftfeuchte.svg)
+![](/img/hardware-bilder/temperatur-luftfeuchte/block_temperatur_luftfeuchte.svg)
 
 Im Block kannst du zwischen den verschiedenen Parametern des Temperatur und Luftfeuchtigkeitsensor auswählen:
 

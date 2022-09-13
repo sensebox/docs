@@ -5,7 +5,7 @@ description: 🎬 In diesem Video zeigt dir David, wie du einen Umweltdatenchatb
 ---
 # Tutorial 5: Umweltdatenchatbot
 
-[![](../../static/img/tutorials/umweltdatenchatbot/Bildschirmfoto%20vom%202022-09-08%2012-15-36.png)](https://youtu.be/dZo_oR-YtNk)
+[![](/img/tutorials/umweltdatenchatbot/Bildschirmfoto-vom-2022-09-08-12-15-36.png)](https://youtu.be/dZo_oR-YtNk)
 
 🎬 In diesem Video zeigt dir David, wie du einen Umweltdatenchatbot mit der Telegram App und der senseBox programmierst.
 

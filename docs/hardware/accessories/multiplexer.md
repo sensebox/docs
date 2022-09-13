@@ -8,7 +8,7 @@ description: senseBox I2C-Multiplexer
 
 Mit einem senseBox I2C-Multiplexer lassen sich bis zu acht Geräte mit gleicher Adressierung parallel über den I2C-Bus betreiben. Dadurch können zum Beispiel mehrere baugleiche Temperatursensoren angeschlossen werden.
 
-![](../../../static/img/hardware-bilder/multiplexer/hub_bottom.png)
+![](/img/hardware-bilder/multiplexer/hub_bottom.png)
 
 ## Technische Informationen
 
@@ -69,6 +69,6 @@ Nun lassen sich die Sensoren einzeln auslesen. Man erkennt dabei minimale Abweic
 
 Äquivalent lässt sich jedes I2C Gerät mehrfach mit dem Multiplexer nutzen. Falls mehr als acht Geräte mit gleicher Kennung parallel betrieben werden sollen, lässt sich die Adressierung vom Multiplex anhand der drei Lötstellen auf seiner Rückseite und der folgenden Tabelle aus seinem [Datenblatt](http://www.ti.com/lit/ds/symlink/tca9548a.pdf) anpassen:
 
-![](../../../static/img/hardware-bilder/multiplexer/datasheet_table.png)
+![](/img/hardware-bilder/multiplexer/datasheet_table.png)
 
 Hervorgehoben in der Tabelle wurde die Standardeinstellung mit der Adressierung 0x77.

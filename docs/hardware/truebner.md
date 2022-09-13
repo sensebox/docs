@@ -9,7 +9,7 @@ description: Bodenfeuchte- und Temperatursensor Truebner SMT50
 
 Der Truebner SMT50 ist ein kapazitiver Bodentemperatur- und Feuchtigkeitssensor und eignet sich daher gut für diverse Anwendungen im heimischen Garten. Kapazitive Bodenfeuchtesensoren erzeugen ein elektrisches Feld um ihre Messelektroden herum. Das Feld dringt in den umgebenden Boden ein. Die Messelektronik des Sensors ermittelt die resultierende elektrische Kapazität der Elektroden. Je höher der Wassergehalt im Boden ist, desto größer wird die Messkapazität des Sensors.
 
-![](../../static/img/hardware-bilder/bodenfeuchte-temperatursensor/sensoren_bodenfeuchte_temperatur.png)
+![](/img/hardware-bilder/bodenfeuchte-temperatursensor/sensoren_bodenfeuchte_temperatur.png)
 
 ## Technische Details
 - Versorgungsspannung: 3.3 - 30 VDC (Gleichspannung)
@@ -31,7 +31,7 @@ Der Truebner SMT50 ist ein kapazitiver Bodentemperatur- und Feuchtigkeitssensor 
 
 In Blockly kann der Sensor über folgenden Block ausgelesen werden:
 
-![](../../static/img/hardware-bilder/bodenfeuchte-temperatursensor/block_bodenfeuchte_temperatur.svg)
+![](/img/hardware-bilder/bodenfeuchte-temperatursensor/block_bodenfeuchte_temperatur.svg)
 
 Im Block kannst du zwischen den verschiedenen Parametern des Bodenfeuchte- und Temperatursensors auswählen:
 

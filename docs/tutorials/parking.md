@@ -5,7 +5,7 @@ description: 🎬 In diesem Video zeigt dir Felix, wir du eine Einparkhilfe wie 
 ---
 # Tutorial 4: Einparkhilfe
 
-[![](../../static/img/tutorials/parken/Bildschirmfoto%20vom%202022-09-08%2010-47-02.png)](https://youtu.be/_VPqKrjeTNo)
+[![](/img/tutorials/parken/Bildschirmfoto-vom-2022-09-08-10-47-02.png)](https://youtu.be/_VPqKrjeTNo)
 
 🎬 In diesem Video zeigt dir Felix, wir du eine Einparkhilfe wie im Auto mit der senseBox bauen und programmieren kannst.
 

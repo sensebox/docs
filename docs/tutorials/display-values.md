@@ -4,7 +4,7 @@ title: "Tutorial 2a: Messwerte auf dem Display anzeigen"
 description: 🎬 In diesem Video zeigt dir Björn, wie du die Messwerte eines Umweltsensors auf dem Display anzeigen lassen kannst.
 ---
 
-[![](../../static/img/tutorials/display-values-show/Bildschirmfoto%20vom%202022-09-08%2012-44-09.png)](https://youtu.be/ZEdxzyDnzF4)
+[![](/img/tutorials/display-values-show/Bildschirmfoto-vom-2022-09-08-12-44-09.png)](https://youtu.be/ZEdxzyDnzF4)
 
 🎬 In diesem Video zeigt dir Björn, wie du die Messwerte eines Umweltsensors auf dem Display anzeigen lassen kannst.
 
