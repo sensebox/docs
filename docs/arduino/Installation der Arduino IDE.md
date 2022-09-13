@@ -17,7 +17,7 @@ categories: arduino
 ---
 # Installation der Arduino IDE
 
-Bevor du die senseBox über die Arduino IDE programmieren kannst, musst du Treiber sowie eine Software auf deinem Computer installieren. 
+Bevor du die senseBox über die Arduino IDE programmieren kannst, musst du Treiber sowie eine Software auf deinem Computer installieren.
 
 Schau dir die Anleitung für dein Betriebsystem an und folge den angegebenen Schritten.
 
@@ -25,16 +25,16 @@ Schau dir die Anleitung für dein Betriebsystem an und folge den angegebenen Sch
 
 Die senseBox ist ein Microcontroller mit verschiedenen Komponenten und Sensoren. Sie wird über die Entwicklungsumgebung *Arduino IDE* programmiert. Lade die neueste Version 1.8.16 von der [Arduino Homepage](https://www.arduino.cc/en/Main/OldSoftwareReleases#previous) herunter:
 
-![](../../static/img/arduino-bilder/instalation/arduino-download.png)
+![](/img/arduino-bilder/instalation/arduino-download.png)
 
 >  	Lade bitte die zip-Datei herunter und <b> nicht </b> den Windows-Installer, um mögliche Probleme zu vermeiden!
 
 Arduino ist ein Open-Source Projekt und wird durch Spenden finanziert. Daher wirst du vor dem Download nach einer Spende gefragt; falls du nichts spenden möchtest, kannst du auf `JUST DOWNLOAD` klicken.
 
-![](../../static/img/arduino-bilder/instalation/arduino-donate.png)
+![](/img/arduino-bilder/instalation/arduino-donate.png)
 
 
-Lege auf deiner Festplatte einen neuen Ordner an und entpacke darin die zip-Datei. Durch das Ausführen der Datei `arduino.exe` kann die IDE gestartet werden.  
+Lege auf deiner Festplatte einen neuen Ordner an und entpacke darin die zip-Datei. Durch das Ausführen der Datei `arduino.exe` kann die IDE gestartet werden.
 
 ## Arduino Software für Mac(OSX) herunterladen
 
@@ -42,14 +42,14 @@ Lege auf deiner Festplatte einen neuen Ordner an und entpacke darin die zip-Date
 
 Die senseBox ist ein Microcontroller mit verschiedenen Komponenten und Sensoren. Sie wird über die Entwicklungsumgebung *Arduino IDE* programmiert. Lade die Version 1.8.7 von der [Arduino Homepage](https://www.arduino.cc/en/Main/OldSoftwareReleases#previous) herunter:
 
-![](../../static/img/arduino-bilder/instalation/arduino-download.png)
+![](/img/arduino-bilder/instalation/arduino-download.png)
 
 
 Arduino ist ein Open-Source Projekt und wird durch Spenden finanziert. Daher wirst du vor dem Download nach einer Spende gefragt; das kannst du überspringen, indem du auf `JUST DOWNLOAD` klickst.
 
-![](../../static/img/arduino-bilder/instalation/arduino-donate.png)
+![](/img/arduino-bilder/instalation/arduino-donate.png)
 
-In deinem Downloads-Ordner sollte eine Arduino.app-Datei erscheinen. Verschiebe diese Datei in deinen "Programme"-Ordner. Durch Öffnen der Datei `Arduino.app` kann die IDE gestartet werden. 
+In deinem Downloads-Ordner sollte eine Arduino.app-Datei erscheinen. Verschiebe diese Datei in deinen "Programme"-Ordner. Durch Öffnen der Datei `Arduino.app` kann die IDE gestartet werden.
 
 ## Arduino Software für Linux herunterladen
 
@@ -57,11 +57,11 @@ In deinem Downloads-Ordner sollte eine Arduino.app-Datei erscheinen. Verschiebe 
 
 Die senseBox ist ein Microcontroller mit verschiedenen Komponenten und Sensoren. Sie wird über die Entwicklungsumgebung *Arduino IDE* programmiert. Lade die Version 1.8.7 von der [Arduino Homepage](https://www.arduino.cc/en/Main/OldSoftwareReleases#previous) herunter:
 
-![](../../static/img/arduino-bilder/instalation/arduino-download.png)
+![](/img/arduino-bilder/instalation/arduino-download.png)
 
 Arduino ist ein Open-Source Projekt und wird durch Spenden finanziert. Daher wirst du vor dem Download nach einer Spende gefragt; das kannst du überspringen, indem du auf `JUST DOWNLOAD` klickst.
 
-![](../../static/img/arduino-bilder/instalation/arduino-donate.png)
+![](/img/arduino-bilder/instalation/arduino-donate.png)
 
 ### Installation der IDE unter Linux {#installation-der-ide-unter-linux}
 
@@ -69,7 +69,7 @@ Linux-Nutzer können die Linuxvariante herunterladen und entpacken. Das enthalte
 
 ```text
 # sollte die heruntergeladene Datei nicht im Downloads-Ordner abgespeichert sein, ersetze "Downloads" durch den Pfad zum entsprechenden Ordner
-cd Downloads 
+cd Downloads
 ```
 
 ```text
@@ -92,4 +92,3 @@ Nach einem Logout und erneutem Login sollte der Arduino aus der Arduino IDE prog
 
 > - [Arduino](https://www.arduino.cc/)
 > - [Arduino Old Releases](https://www.arduino.cc/en/software/OldSoftwareReleases#previous)
-
