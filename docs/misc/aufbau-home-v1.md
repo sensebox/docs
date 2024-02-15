@@ -9,7 +9,7 @@ image1: /images/2021-01-28-rtc-modul/rtc.png
 
 # **Aufbau der senseBox:home**
 
-> Diese Anleitung ist nur für Nutzer:innen der senseBox:home v1, die mit einem Arduino/Genuino Uno ausgeliefert wurde. Diese Version der senseBox wird seit Anfang 2018 nicht mehr verkauft! Die Dokumentation zur aktuellen Version der senseBox:home mit senseBox MCU ist [hier](/sensebox-home/home-schritt-1/) zu finden.
+Diese Anleitung ist nur für Nutzer:innen der senseBox:home v1, die mit einem Arduino/Genuino Uno ausgeliefert wurde. Diese Version der senseBox wird seit Anfang 2018 nicht mehr verkauft! Die Dokumentation zur aktuellen Version der senseBox:home mit senseBox MCU ist `[hier](/sensebox-home/home-schritt-1/)` zu finden.
 
 ## Inhalt der senseBox
 
@@ -184,7 +184,7 @@ Wenn die Verbindung klappt, bekommst du eine entsprechende Meldung im seriellen 
 Hier wird die Einbindung der senseBox in unser Sensornetzwerk durch die Registrierung auf der openSenseMap beschrieben.
 
 ## Registrierung auf der openSenseMap
-Unter <https://opensensemap.org/register> kann eine neue Sensorstation für das openSenseMap Sensornetzwerk registriert werden.
+Unter `https://opensensemap.org/register` kann eine neue Sensorstation für das openSenseMap Sensornetzwerk registriert werden.
 <!--Eine detaillierte Anleitung dazu findet sich in der [openSenseMap Dokumentation](https://books.sensebox.de/books/osem/de/osem_registrierung.html).-->
 Während der Registrierung wirst du nach einem Hardware Setup gefragt. Wähle dort die „senseBox:home“ aus und setze danach je nach Variante den Haken bei „senseBox:home (Ethernet)“ oder „senseBox:home (WLAN)“.
 

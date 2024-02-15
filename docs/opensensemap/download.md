@@ -13,7 +13,7 @@ Bei den von der senseBox aufgenommenen Daten handelt es sich um Open Data, das h
 
 ## Daten zu einer Box
 
-Unter <https://archive.opensensemap.org> wird ein Archiv für sämtliche Messungen in der openSenseMap-Datenbank geführt.
+Unter `https://archive.opensensemap.org` wird ein Archiv für sämtliche Messungen in der openSenseMap-Datenbank geführt.
 Hier sind nach Tag und Box gegliederte Messwerte als CSV beziehungsweise ZIP-Archiv verfügbar.
 
 ## Filter

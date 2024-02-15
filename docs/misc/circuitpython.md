@@ -18,7 +18,7 @@ CircuitPython ist eine Programmiersprache, die das Experimentieren und Programmi
 
 ## Installation von Circuit Python
 
-Die aktuellste Version kann immer über die offizielle [CircuitPython Website](https://circuitpython.org/board/sensebox_mcu/){:target="_blank"} heruntergeladen werden. 
+Die aktuellste Version kann immer über die offizielle [CircuitPython Website](https://circuitpython.org/board/sensebox_mcu/) heruntergeladen werden. 
 Schließe die senseBox MCU mit einem USB Kabel an deinen Computer an und versetzte diese über einen Doppelklick auf den roten Reset-Button in den Programmiermodus. Kopiere die .uf2 Datei auf deine senseBox MCU. Anschließend wird die senseBox als neues Gerät mit den Namen "CircuitPy" erkannt.
 
 ## Programmieren
@@ -46,14 +46,14 @@ Als Alternative kann auch folgender Web Editor (nur mit Google Chrome) verwendet
 [https://circuitpython.sensebox.de/](https://circuitpython.sensebox.de/)
 
 
-Viele weitere Informationen zur Programmierung mit CircuitPython sind über die offizielle [CircuitPython Website](https://circuitpython.org/awesome){:target="_blank"} erhältlich.
+Viele weitere Informationen zur Programmierung mit CircuitPython sind über die offizielle [CircuitPython Website](https://circuitpython.org/awesome)erhältlich.
 
 ## Bibliotheken
 Für die meisten Komponenten der senseBox stehen Bibliotheken bereit, die verwendet werden können. Hierbei ist allerdings zu beachten, dass die Bibliotheken auf das CIRCUITPY Laufwerk kopiert werden müssen. Insgesamt stehen hierfür 48Kb Speicher zur Verfügung. 
 
 >Beachtet: Durch den geringen Speicherplatz, der für Bibliotheken zur Verfügung steht, können komplexere Projekte wie z.B. die CO2-Ampel oder auch die Umweltmessstation nicht mit CircuitPython umgesetzt werden. Der Speicherplatz sollte aber ausreichend sein z.B. um einzelne Sensoren auszulesen.
 
-Das gesamte Paket mit den Bibliotheken kann [hier](https://circuitpython.org/libraries){:target="_blank"} heruntergeladen werden. Achtet darauf die *.mpy Version* herunterzuladen. 
+Das gesamte Paket mit den Bibliotheken kann [hier](https://circuitpython.org/libraries) heruntergeladen werden. Achtet darauf die *.mpy Version* herunterzuladen. 
 
 
 ### Unterstütze Komponenten

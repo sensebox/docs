@@ -55,8 +55,8 @@ ______________________________________________________________________________
 | :-------------------: | :----------: |
 | gleich | = |
 | ungleich | ≠ |
-| kleiner | < |
-| größer | > |
+| kleiner | &lt |
+| größer | &#60 |
 | kleiner oder gleich | &le; |
 | größer oder gleich | &ge; |
 ______________________________________________________________________________ 
@@ -85,5 +85,5 @@ Mit dem `teste`-Block lässt sich eine Bedingung überprüfen und Aktionen festl
 ![](/img/blockly-bilder/logik/blockly-entscheidungen-8.svg)
 
 
-> - [Blockly.senseBox.de](https://blockly.sensebox.de/)
+&#60 - [Blockly.senseBox.de](https://blockly.sensebox.de/)
 
