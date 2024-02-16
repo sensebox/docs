@@ -33,7 +33,7 @@
     "dotenv": "^16.0.1"
   },
   "engines": {
-    "node": ">=16.0"
+    "node": ">=18.0"
   },
   "browserslist": {
     "production": [
