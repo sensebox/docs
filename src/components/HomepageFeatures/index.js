@@ -18,7 +18,7 @@ const FeatureList = [
         Informationen zur visuellen Programmierumgebung Blockly für senseBox.
       </>
     ),
-    to: '/blockly'
+    to: '/docs/category/blockly'
   },
   {
     title: 'Arduino',
@@ -27,7 +27,7 @@ const FeatureList = [
       <>Erste Schritte mit deiner senseBox und der Arduino IDE
       </>
     ),
-    to: '/arduino'
+    to: '/docs/category/arduino'
   },
   {
     title: 'Hardware & Komponenten',
@@ -37,7 +37,7 @@ const FeatureList = [
         Informationen zum Anschluss und Programmierung der Sensoren, Bees und weiteren Bauteilen
       </>
     ),
-    to: '/hardware'
+    to: '/docs/category/hardware'
 
   },
   {
@@ -48,7 +48,7 @@ const FeatureList = [
         Verschiedene Dokumentationen zur senseBox
       </>
     ),
-    to: '/misc'
+    to: '/docs/category/misc'
   },
   {
     title: 'senseBox:home',
@@ -58,7 +58,7 @@ const FeatureList = [
         Informationen zum Aufbau & Erweiterungen
       </>
     ),
-    to: '/sensebox-home'
+    to: '/docs/category/sensebox-home'
   },
   {
     title: 'openSenseMap',
@@ -68,7 +68,7 @@ const FeatureList = [
         Informationen zur API, zum Verwalten der senseBox, zum Datendownload, luftdaten.info, hackAIR
       </>
     ),
-    to: '/openSenseMap'
+    to: '/docs/category/openSenseMap'
   },
   {
     title: 'senseBox:tutorials',
@@ -78,7 +78,7 @@ const FeatureList = [
         Informationen zum Aufbau & Erweiterungen
       </>
     ),
-    to: '/sensebox-tutorials'
+    to: '/docs/category/sensebox-tutorials'
   },
 ];
 
