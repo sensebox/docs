@@ -31,7 +31,19 @@ const config = {
     defaultLocale: "de",
     locales: ["de", "en"],
   },
-
+  plugins: [
+    async function myPlugin(context, options) {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
+        },
+      };
+    },
+  ],
   presets: [
     [
       "classic",
@@ -79,6 +91,21 @@ const config = {
             label: "GitHub",
             position: "right",
           },
+          {
+            type: "dropdown", 
+            position: "right",
+            label: "Board",
+            items: [
+              {
+                label: "senseBox MCU",
+                to: "/sensebox-mcu",
+              }, 
+              {
+                label: "senseBox MCU-S2",
+                to: "/sensebox-mcu-s2"
+              }
+            ]
+          }
         ],
       },
       footer: {

@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'Blockly',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
@@ -14,17 +14,17 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Arduino',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
+      <>Docusaurus lets yo
+        u focus on your docs, and we&apos;ll do the chores. Go
         ahead and move your docs into the <code>docs</code> directory.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Hardware & Komponenten',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
@@ -57,6 +57,9 @@ export default function HomepageFeatures() {
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}
+        </div>
+        <div clas>
+
         </div>
       </div>
     </section>
