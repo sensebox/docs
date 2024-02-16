@@ -14,12 +14,12 @@ function HomepageHeader() {
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
+        <br></br>
+        <div className='text-xl font-bold'>
+         Alles was du für deine senseBox benötigst
+        </div>
+        <div>
+          Klicke auf die unten stehenden Kategorien um durch die Dokumenation zu navigieren!
         </div>
       </div>
     </header>

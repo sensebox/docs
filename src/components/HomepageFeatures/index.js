@@ -1,51 +1,99 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
-
+import Link from '@docusaurus/Link';
+import ArduinoCategoryIcon from '@site/static/img/category-icons/arduino.png';
+import BlocklyCategoryIcon from '@site/static/img/category-icons/blockly.png';
+import HardwareCategoryIcon from '@site/static/img/category-icons/hardware.png';
+import openSenseMapCategoryIcon from '@site/static/img/category-icons/osem.png';
+import homeCategoryIcon from '@site/static/img/category-icons/home.png';
+import senseBoxCategoryIcon from '@site/static/img/category-icons/senseBox.png';
+import miscCategoryIcon from '@site/static/img/category-icons/allgemein.png';
 const FeatureList = [
   {
     title: 'Blockly',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Image: BlocklyCategoryIcon,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Informationen zur visuellen Programmierumgebung Blockly für senseBox.
       </>
     ),
+    to: '/blockly'
   },
   {
     title: 'Arduino',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Image: ArduinoCategoryIcon,
     description: (
-      <>Docusaurus lets yo
-        u focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+      <>Erste Schritte mit deiner senseBox und der Arduino IDE
       </>
     ),
+    to: '/arduino'
   },
   {
     title: 'Hardware & Komponenten',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Image: HardwareCategoryIcon,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Informationen zum Anschluss und Programmierung der Sensoren, Bees und weiteren Bauteilen
       </>
     ),
+    to: '/hardware'
+
+  },
+  {
+    title: 'Verschiedenes',
+    Image: miscCategoryIcon,
+    description: (
+      <>
+        Verschiedene Dokumentationen zur senseBox
+      </>
+    ),
+    to: '/misc'
+  },
+  {
+    title: 'senseBox:home',
+    Image: homeCategoryIcon,
+    description: (
+      <>
+        Informationen zum Aufbau & Erweiterungen
+      </>
+    ),
+    to: '/sensebox-home'
+  },
+  {
+    title: 'openSenseMap',
+    Image: openSenseMapCategoryIcon,
+    description: (
+      <>
+        Informationen zur API, zum Verwalten der senseBox, zum Datendownload, luftdaten.info, hackAIR
+      </>
+    ),
+    to: '/openSenseMap'
+  },
+  {
+    title: 'senseBox:tutorials',
+    Image: senseBoxCategoryIcon,
+    description: (
+      <>
+        Informationen zum Aufbau & Erweiterungen
+      </>
+    ),
+    to: '/sensebox-tutorials'
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({Image, title, description, to}) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+    <Link className={clsx('w-[30%] flex flex-col items-center border-2 shadow-xl rounded-lg border-slate-200 p-6 hover:shadow-2xl ')} to={to}>
+      <div className="border-slate-400">
+        <img src={Image} alt={title} />
       </div>
       <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
+        <h1 className='text-2xl font-bold'>{title}</h1>
         <p>{description}</p>
       </div>
-    </div>
+    </Link>
+
   );
 }
 
@@ -53,13 +101,10 @@ export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
+        <div className="flex flex-row flex-wrap justify-center gap-4">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}
-        </div>
-        <div clas>
-
         </div>
       </div>
     </section>

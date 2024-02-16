@@ -108,39 +108,6 @@ const config = {
           }
         ],
       },
-      footer: {
-        style: "dark",
-        links: [
-          {
-            title: "Docs",
-            items: [
-              {
-                label: "Tutorial",
-                to: "/docs/intro",
-              },
-            ],
-          },
-          {
-            title: "Community",
-            items: [
-              {
-                label: "Twitter",
-                href: "https://twitter.com/sensebox_de",
-              },
-            ],
-          },
-          {
-            title: "More",
-            items: [
-              {
-                label: "GitHub",
-                href: "https://github.com/sensebox/knowledge-base",
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-      },
       algolia: {
         appId: process.env.ALGOLIA_APPID,
         apiKey: process.env.ALGOLIA_APIKEY,
