@@ -48,7 +48,7 @@ const FeatureList = [
         Verschiedene Dokumentationen zur senseBox
       </>
     ),
-    to: '/docs/category/misc'
+    to: '/docs/category/verschiedenes'
   },
   {
     title: 'senseBox:home',
@@ -58,7 +58,7 @@ const FeatureList = [
         Informationen zum Aufbau & Erweiterungen
       </>
     ),
-    to: '/docs/category/sensebox-home'
+    to: '/docs/category/senseboxhome'
   },
   {
     title: 'openSenseMap',
@@ -68,7 +68,7 @@ const FeatureList = [
         Informationen zur API, zum Verwalten der senseBox, zum Datendownload, luftdaten.info, hackAIR
       </>
     ),
-    to: '/docs/category/openSenseMap'
+    to: '/docs/category/opensensemap'
   },
   {
     title: 'senseBox:tutorials',
@@ -78,7 +78,7 @@ const FeatureList = [
         Informationen zum Aufbau & Erweiterungen
       </>
     ),
-    to: '/docs/category/sensebox-tutorials'
+    to: '/docs/category/tutorials'
   },
 ];
 
