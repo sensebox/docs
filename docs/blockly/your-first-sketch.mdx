@@ -3,16 +3,14 @@ sidebar_position: 1
 title: Dein erster Sketch
 hide_title: false
 ---
-import BoardDropdown from '@site/src/components/BoardDropdown/BoardDropdown'
-import  {useBoardStore}  from "@site/src/lib/stores/store";
 
+import Layout from '@site/src/Layout';
+import { useBoardStore } from "@site/src/lib/stores/store";
 
-<div className='flex items-end justify-end'>
-    <BoardDropdown />
-</div>
+{/* /// access board store with useBoardStore((state)=>state.board) */}
 
+<Layout>
 
-# Dein erster Sketch
 
 Blockly ist die vom senseBox-Team entwickelte grafische Programmierumgebung für die senseBox. Sie ist online kostenlos und ohne Softwareinstallation verfügbar und basiert auf dem [Blockly Framework](https://developers.google.com/blockly) von Google.
 
@@ -105,3 +103,5 @@ Schließt du deine senseBox MCU an deinen Computer an und führst einen Doppelkl
 
 
 > - [Blockly.senseBox.de](https://blockly.sensebox.de/)
+
+</Layout>

@@ -9,7 +9,8 @@ import {
     SelectValue,
   } from "@site/src/components/ui/select"
 import  {useBoardStore}  from "@site/src/lib/stores/store";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMicrochip } from '@fortawesome/free-solid-svg-icons';
   const BoardDropdown = () => {
     const board = useBoardStore((state) => state.board);
     const handleBoardChange = (selectedBoard) => {
@@ -19,13 +20,18 @@ import  {useBoardStore}  from "@site/src/lib/stores/store";
     };
 
   return (
-    <Select onValueChange={(value)=>handleBoardChange(value)}>
+    <Select onValueChange={(value)=>handleBoardChange(value)} default>
     <SelectTrigger className="w-[180px]">
-        <SelectValue placeholder={board} />
+        <SelectValue placeholder={board ? board: "Wähle dein Board aus"} />
     </SelectTrigger>
     <SelectContent>
-        <SelectItem value="senseBoxMCU">senseBoxMCU</SelectItem>
-        <SelectItem value="senseBoxMCU-S2">senseBoxMCU-S2</SelectItem>
+        <SelectItem value="senseBoxMCU">
+            <FontAwesomeIcon icon={faMicrochip} className="mr-2" />
+             MCU</SelectItem>
+        <SelectItem value="senseBoxMCU-S2">
+        <FontAwesomeIcon icon={faMicrochip} className="mr-2" />
+             MCU-S2
+        </SelectItem>
     </SelectContent>
     </Select>
   );
