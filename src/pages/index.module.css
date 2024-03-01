@@ -3,16 +3,10 @@
  * and scoped locally.
  */
 
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
 
 @media screen and (max-width: 996px) {
   .heroBanner {
-    padding: 2rem;
+    padding: 0rem;
   }
 }
 
@@ -20,4 +14,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.senseBoxGreenBanner {
+  background-image: radial-gradient(circle, #64b55b, #43a238);
+  padding: 0rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }

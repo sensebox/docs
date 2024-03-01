@@ -84,11 +84,11 @@ const FeatureList = [
 
 function Feature({Image, title, description, to}) {
   return (
-    <Link className={clsx('w-[30%] flex flex-col items-center border-2 shadow-xl rounded-lg border-slate-200 p-6 hover:shadow-2xl ')} to={to}>
+    <Link className={clsx('w-[25docs%] flex flex-col items-center border-2 shadow-xl rounded-lg border-slate-200 hover:no-underline hover:text-green transition duration-300 ease-in-out hover:scale-105 hover:shadow-2xl p-4 ')} to={to}>
       <div className="border-slate-400">
-        <img src={Image} alt={title} />
+        <img  src={Image} alt={title} />
       </div>
-      <div className="text--center padding-horiz--md">
+      <div className="text-center">
         <h1 className='text-2xl font-bold'>{title}</h1>
         <p>{description}</p>
       </div>
@@ -99,14 +99,12 @@ function Feature({Image, title, description, to}) {
 
 export default function HomepageFeatures() {
   return (
-    <section className={styles.features}>
-      <div className="container">
-        <div className="flex flex-row flex-wrap justify-center gap-4">
+    <section>
+        <div className="flex flex-row flex-wrap justify-center gap-6 pt-4">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}
         </div>
-      </div>
     </section>
   );
 }

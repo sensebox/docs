@@ -42,7 +42,8 @@ const config = {
           return postcssOptions;
         },
       };
-    },
+    }
+
   ],
   presets: [
     [
@@ -91,22 +92,12 @@ const config = {
             label: "GitHub",
             position: "right",
           },
-          {
-            type: "dropdown", 
-            position: "right",
-            label: "Board",
-            items: [
-              {
-                label: "senseBox MCU",
-                to: "/sensebox-mcu",
-              }, 
-              {
-                label: "senseBox MCU-S2",
-                to: "/sensebox-mcu-s2"
-              }
-            ]
-          }
         ],
+      },
+      customFields: {
+        setBoardVersion: (version) => {
+          console.log(version);
+        } 
       },
       algolia: {
         appId: process.env.ALGOLIA_APPID,
@@ -118,7 +109,7 @@ const config = {
         darkTheme: darkCodeTheme,
         additionalLanguages: ["arduino"],
       },
-    }),
+    })
 };
 
 module.exports = config;
