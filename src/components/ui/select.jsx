@@ -14,13 +14,13 @@ const SelectTrigger = React.forwardRef(({ className, children, ...props }, ref) 
   <SelectPrimitive.Trigger
     ref={ref}
     className={cn(
-      "flex h-10 w-full items-center justify-between  border-input bg-background font-extrabold border-green border-2 text-green rounded-2xl  px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
+      "flex h-10 w-full items-center justify-between  border-input bg-background font-bold border-green border-2 text-green rounded-2xl  px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
       className
     )}
     {...props}>
     {children}
     <SelectPrimitive.Icon asChild>
-      <ChevronDown className="h-4 w-4 opacity-50" />
+      <ChevronDown className="h-7 w-7 font-medium" />
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
 ))
@@ -31,7 +31,7 @@ const SelectScrollUpButton = React.forwardRef(({ className, ...props }, ref) => 
     ref={ref}
     className={cn("flex cursor-default items-center justify-center py-1", className)}
     {...props}>
-    <ChevronUp className="h-4 w-4" />
+    <ChevronUp className="h-4 w-4 " />
   </SelectPrimitive.ScrollUpButton>
 ))
 SelectScrollUpButton.displayName = SelectPrimitive.ScrollUpButton.displayName
@@ -39,9 +39,9 @@ SelectScrollUpButton.displayName = SelectPrimitive.ScrollUpButton.displayName
 const SelectScrollDownButton = React.forwardRef(({ className, ...props }, ref) => (
   <SelectPrimitive.ScrollDownButton
     ref={ref}
-    className={cn("flex cursor-default items-center justify-center py-1", className)}
+    className={cn("flex cursor-default items-center justify-center py-1 ", className)}
     {...props}>
-    <ChevronDown className="h-4 w-4" />
+    <ChevronDown className="h-4 w-4 " />
   </SelectPrimitive.ScrollDownButton>
 ))
 SelectScrollDownButton.displayName =

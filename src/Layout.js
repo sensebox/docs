@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
 
   return (
     <div>
-      <div className='flex items-end justify-end'>
+      <div className='flex items-end justify-end mb-4'>
         <BoardDropdown onChange={handleBoardChange} value={board} />
       </div>
       <div>{children}</div>

@@ -22,7 +22,7 @@ import { faMicrochip } from '@fortawesome/free-solid-svg-icons';
   return (
     <Select onValueChange={(value)=>handleBoardChange(value)} default>
     <SelectTrigger className="w-[180px]">
-        <SelectValue placeholder={board ? board: "Wähle dein Board aus"} />
+        <SelectValue placeholder={board ? board: "Board auswählen"} />
     </SelectTrigger>
     <SelectContent>
         <SelectItem value="senseBoxMCU">
