@@ -24,8 +24,8 @@ import  {useBoardStore}  from "@site/src/lib/stores/store";
         <SelectValue placeholder={board} />
     </SelectTrigger>
     <SelectContent>
-        <SelectItem value="MCU">senseBoxMCU</SelectItem>
-        <SelectItem value="S2">senseBoxMCU-S2</SelectItem>
+        <SelectItem value="senseBoxMCU">senseBoxMCU</SelectItem>
+        <SelectItem value="senseBoxMCU-S2">senseBoxMCU-S2</SelectItem>
     </SelectContent>
     </Select>
   );
