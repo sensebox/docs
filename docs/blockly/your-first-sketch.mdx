@@ -11,13 +11,14 @@ import  {useBoardStore}  from "@site/src/lib/stores/store";
     <BoardDropdown />
 </div>
 
+
 # Dein erster Sketch
 
 Blockly ist die vom senseBox-Team entwickelte grafische Programmierumgebung für die senseBox. Sie ist online kostenlos und ohne Softwareinstallation verfügbar und basiert auf dem [Blockly Framework](https://developers.google.com/blockly) von Google.
 
 ## Erste Schritte 
 
-{ useBoardStore((state)=>state.board) === 'senseBox MCU' ? 'Hier siehst du nur die MCU' : 'Hier siehst du nur die senseBox' }
+{ useBoardStore((state)=>state.board) === 'senseBoxMCU' ? 'Hier siehst du nur die MCU' : 'Hier siehst du nur die senseBox' }
 
 Öffne Blockly für senseBox in deinem Browser unter [https://blockly.sensebox.de](https://blockly.sensebox.de/). Dort musst du zuerst deine senseBox-Version auswählen.
 

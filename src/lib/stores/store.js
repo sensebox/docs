@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 
 export const useBoardStore = create ((set)=>({
-    board: 'senseBox MCU',
+    board: 'senseBoxMCU',
     setBoard: (board) => set({board}),
     
 }))
