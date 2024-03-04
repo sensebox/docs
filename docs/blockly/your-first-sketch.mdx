@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Blockly
+title: Dein erster Sketch
 hide_title: false
 ---
 
@@ -9,7 +9,7 @@ import { useBoardStore } from "@site/src/lib/stores/store";
 
 {/* /// access board store with useBoardStore((state)=>state.board) */}
 
-<Layout>
+<Layout title="Blockly">
 
 
 Blockly ist die vom senseBox-Team entwickelte grafische Programmierumgebung für die senseBox. Sie ist online kostenlos und ohne Softwareinstallation verfügbar und basiert auf dem [Blockly Framework](https://developers.google.com/blockly) von Google.
@@ -75,7 +75,8 @@ Um die eingebaute LED blinken zu lassen, ist es nötig, sie mit einem weiteren `
 
 Nachdem dein Programm fertig ist, klickst du den orangenen "Sketch kompilieren" Button und es wird dir eine .BIN-Datei zum Download angeboten. Diese musst du an einem beliebigen Ort speichern.
 
-### Modus der senseBox MCU wechseln
+{ useBoardStore((state)=>state.board) === 'senseBoxMCU' ? 
+    ### Modus der senseBox MCU wechseln
 
 Die senseBox MCU verfügt über zwei Modi. Den Programm- und den Lern-Modus.
 
@@ -100,6 +101,13 @@ Schließt du deine senseBox MCU an deinen Computer an und führst einen Doppelkl
 
 **Kopieren unter Linux** Unter Linux kannst du die erstellte .BIN-Datei einfach per Drag & Drop auf den Wechseldatenträger SENSEBOX kopieren. Die rote LED am Button wird kurz flackern und anschließend startet das Board selbstständig neu und führt deinen Programmcode aus.
 
+    :''}
+
+{{version === 'senseBoxMCU' ? 
+    :''}
+
+{{version === 'senseBoxMCU' ? 
+    ### Übertragen}
 
 > - [Blockly.senseBox.de](https://blockly.sensebox.de/)
 
