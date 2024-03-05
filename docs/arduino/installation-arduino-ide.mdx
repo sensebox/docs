@@ -1,0 +1,121 @@
+---
+set: erste-schritte-arduino
+resources:
+  - name: Arduino
+    link: https://www.arduino.cc
+  - name: Arduino Old Releases
+    link: https://www.arduino.cc/en/Main/OldSoftwareReleases#previous
+title_order: 2
+date: 2020-03-11
+set_order: 3
+image1: /images/2020-03-11-allgemein-arduino-ide-installieren/arduino-download.png
+image2: /images/2020-03-11-allgemein-arduino-ide-installieren/arduino-donate.png
+type: Document
+title: Installation der Arduino IDE
+description: Installation der Arduino IDE
+categories: arduino
+---
+
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@site/src/components/ui/tabs";
+
+# Installation der Arduino IDE
+
+Bevor du die senseBox über die Arduino IDE programmieren kannst, musst du Treiber sowie eine Software auf deinem Computer installieren.
+
+Schau dir die Anleitung für dein Betriebsystem an und folge den angegebenen Schritten.
+
+<Tabs defaultValue="windows">
+  <TabsList>
+    <TabsTrigger value="windows">Windows</TabsTrigger>
+    <TabsTrigger value="mac">Mac</TabsTrigger>
+    <TabsTrigger value="linux">Linux</TabsTrigger>
+  </TabsList>
+  <TabsContent value="windows">
+    <h2>Arduino Software für Windows herunterladen</h2>
+    <p>
+      Die senseBox ist ein Microcontroller mit verschiedenen Komponenten und
+      Sensoren. Sie wird über die Entwicklungsumgebung _Arduino IDE_
+      programmiert. Lade die neueste Version von der{" "}
+      <a href="https://www.arduino.cc/en/software">Arduino Homepage</a>{" "}
+      herunter:
+    </p>
+    <img
+      src="/img/arduino-bilder/instalation/arduino-download.png"
+      alt="arduino install"
+    />
+    <p>
+      Arduino ist ein Open-Source Projekt und wird durch Spenden finanziert.
+      Daher wirst du vor dem Download nach einer Spende gefragt; falls du nichts
+      spenden möchtest, kannst du auf `JUST DOWNLOAD` klicken.
+    </p>
+    <p>
+      Führe den Installer aus und folge den Anweisungen. Die Installation ist in
+      wenigen Minuten abgeschlossen.
+    </p>
+  </TabsContent>
+  <TabsContent value="mac">
+    <h2>Arduino Software für Mac(OSX) herunterladen</h2>
+    <p>
+      Die senseBox ist ein Microcontroller mit verschiedenen Komponenten und
+      Sensoren. Sie wird über die Entwicklungsumgebung _Arduino IDE_
+      programmiert. Lade die neueste Version von der{" "}
+      <a href="https://www.arduino.cc/en/software">Arduino Homepage</a>{" "}
+      herunter:
+    </p>
+    <img
+      src="/img/arduino-bilder/instalation/arduino-download.png"
+      alt="arduino install"
+    />
+    <p>
+      Arduino ist ein Open-Source Projekt und wird durch Spenden finanziert.
+      Daher wirst du vor dem Download nach einer Spende gefragt; falls du nichts
+      spenden möchtest, kannst du auf `JUST DOWNLOAD` klicken.
+    </p>
+    <p>
+      In deinem Downloads-Ordner sollte eine Arduino.app-Datei erscheinen.
+      Verschiebe diese Datei in deinen "Programme"-Ordner. Durch Öffnen der
+      Datei `Arduino.app` kann die IDE gestartet werden.
+    </p>
+  </TabsContent>
+  <TabsContent value="linux">
+    <h2>Arduino Software für Linux herunterladen</h2>
+    <p>
+      Die senseBox ist ein Microcontroller mit verschiedenen Komponenten und
+      Sensoren. Sie wird über die Entwicklungsumgebung _Arduino IDE_
+      programmiert. Lade die neueste Version von der{" "}
+      <a href="https://www.arduino.cc/en/software">Arduino Homepage</a>{" "}
+      herunter:
+    </p>
+    <img
+      src="/img/arduino-bilder/instalation/arduino-download.png"
+      alt="arduino install"
+    />
+    <p>
+      Arduino ist ein Open-Source Projekt und wird durch Spenden finanziert.
+      Daher wirst du vor dem Download nach einer Spende gefragt; falls du nichts
+      spenden möchtest, kannst du auf `JUST DOWNLOAD` klicken.
+    </p>
+    <p>
+      Linux-Nutzer können das von Arduino bereitgestellte `AppImage` benutzen um
+      Arduino zu installieren. Dafür muss das AppImage nach dem herunterladen
+      noch Berechtigungen zum ausführen bekommen,
+    </p>
+    <code>cd Downloads</code> <br />
+    <code>chmod +x arduino-ide_2.2.1_Linux_64bit.AppImage</code> <br />
+    <code>./arduino-ide_2.2.1_Linux_64bit.AppImage</code>
+    <p>
+      Alternativ kann das AppImage auch über das Graphic User Interface
+      ausführbar gemacht werden. Wie das geht wird dir{" "}
+      <a href="https://docs.appimage.org/introduction/quickstart.html">hier </a>{" "}
+      beschrieben.
+    </p>
+  </TabsContent>
+</Tabs>
+
+> - [Arduino](https://www.arduino.cc/)
+> - [Arduino Old Releases](https://www.arduino.cc/en/software/OldSoftwareReleases#previous)
