@@ -1,7 +1,7 @@
 // src/Layout.js
 
-import React from 'react';
-import BoardDropdown from '@site/src/components/BoardDropdown/BoardDropdown';
+import React from "react";
+import BoardDropdown from "@site/src/components/BoardDropdown/BoardDropdown";
 import { useBoardStore } from "@site/src/lib/stores/store";
 
 const Layout = ({ children, title }) => {
@@ -14,9 +14,9 @@ const Layout = ({ children, title }) => {
 
   return (
     <div>
-      <div className='flex flex-row items-baseline justify-between mb-4'> 
+      <div className="flex flex-row items-baseline justify-between mb-4">
         <h1> {title}</h1>
-        <BoardDropdown onChange={handleBoardChange} value={board} />
+        <BoardDropdown />
       </div>
       <div>{children}</div>
     </div>

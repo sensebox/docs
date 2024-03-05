@@ -12,6 +12,7 @@ resources:
 image1: /images/2020-03-11-allgemein-einfuehrung-arduino/arduino-buttons-1.png
 image2: /images/2020-03-11-allgemein-einfuehrung-arduino/arduino-buttons-2.png
 ---
+
 # Erste Schritte mit der Arduino IDE
 
 Bevor du loslegen kannst, musst du die Arduino IDE installieren. Wie dies funktioniert findest du [hier](/allgemein/allgemein-arduino-ide-installieren//)
@@ -23,16 +24,13 @@ Im schwarzen Bereich darunter werden dir Status- und Fehlermeldungen angezeigt. 
 
 Zuletzt solltest du dir noch die kleinen Schaltflächen über dem weißen Bereich anschauen.
 
-![](/img/arduino-bilder/erste-schritte/button-one.png)
+![](/img/arduino-bilder/erste-schritte/arduino-buttons-1.png)
 
 Das Häkchen und der Pfeil sind die beiden wichtigsten Symbole für dich:
 Mit dem Häkchen kannst du dein Programm auf Schreibfehler überprüfen lassen, und mit den Pfeil überträgst du dein Programm an die senseBox MCU.
 
-![](/img/arduino-bilder/erste-schritte/button-two.png)
-
-Die anderen drei Symbole - angefangen mit dem kleinen Blatt ganz links - stehen dafür ein neues Programm zu erstellen, ein gespeichertes zu öffnen und dein geschriebenes Programm zu speichern.
-
 ## Der Arduino-Sketch
+
 Ein Arduino Programm (auch "Sketch" genannt) hat einen sehr einfachen Aufbau, der aus zwei Hauptbestandteilen besteht. Diese zwei benötigten Funktionen enthalten Blöcke von Anweisungen, welche den Programmablauf beschreiben:
 
 ```arduino
@@ -43,6 +41,7 @@ void loop(){
     // Anweisung
 }
 ```
+
 Die `setup`-Funktion wird nur einmal beim Start des Programmes ausgeführt. In der `loop`-Funktion werden hingegen alle Anweisungen in einer endlosen Schleife wiederholt. Beide Funktionen sind zwingend notwendig, um das Programm erfolgreich kompilieren und ausführen zu können. "Kompilieren" bezeichnet die Übersetzung des Programms in einen Maschinencode, welcher vom Arduino-Prozessor verstanden werden kann; dies übernimmt die Arduino-IDE für uns.
 
 Mit einem doppelten Schrägstrich (`//`) lassen sich Kommentare zum Programmcode hinzufügen. Es ist immer wichtig seinen Programmcode zu kommentieren, damit auch andere nachvollziehen können, was an einer bestimmten Stelle passiert.
