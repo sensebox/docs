@@ -84,6 +84,7 @@ const config = {
             type: "doc",
             docId: "tutorials/first-steps",
             position: "left",
+
             label: "Videos",
           },
           {
