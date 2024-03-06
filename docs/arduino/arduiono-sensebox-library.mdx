@@ -9,9 +9,17 @@ resources:
     link: https://github.com/sensebox/senseBoxMCU-core/tree/master/arduino/samd/libraries/senseBoxIO
 ---
 
+<div className="alert alert--warning">
+  <h2> Warnung </h2>
+  <div>
+    Die senseBoxIO Library ist nur für die senseBoxMCU und <b>nicht</b> für die
+    senseBoxMCU-S2 verfügbar.
+  </div>
+</div>
+
 # senseBoxIO Library
 
-Die senseBoxIO Library ist Bestandteil des Board-Support-Package und wird automatisch installiert. 
+Die senseBoxIO Library ist Bestandteil des Board-Support-Package und wird automatisch installiert.
 
 Die senseBoxIO Library lässt sich einzeln über folgenden Befehl einbinden:
 
@@ -29,28 +37,30 @@ include <senseBoxIO.h>
 
 ```arduino
  void powerNone(void)
-```  
+```
+
 #### Aktivieren aller Ports
 
 ```arduino
   void powerAll(void)
-```  
+```
+
 #### Selektives Ein-/Ausschalten von Ports und Anschlüssen
 
 ```arduino
 
   void powerI2C(bool on) //power the I2C Ports
-  
+
   void powerUART(bool on) //power the UART Ports
 
   void powerXB1(bool on) //power XBEE Port 1
- 
+
   void powerXB2(bool on) //power XBEE Port 2
- 
+
   void SPIselectNone(void) //
- 
+
   void SPIselectXB1(void) //
- 
+
   void SPIselectXB2(void) //
 
 ```
@@ -58,7 +68,6 @@ include <senseBoxIO.h>
 ## Ein-/Ausschalten der Status LED
 
 Erlaubt das Ein-/Ausschalten der Status LED's
-
 
 ```arduino
   void statusNone(void) // deaktiviere alle Status LED's
