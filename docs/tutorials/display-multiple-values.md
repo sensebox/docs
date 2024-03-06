@@ -3,13 +3,15 @@ sidebar_position: 4
 title: "Tutorial 2c: Mehrere Messwerte auf dem Display"
 description: 🎬 In diesem Video zeigt dir Björn, wie du mehrere Messwerte gleichzeitig auf dem Display anzeigen lassen kannst.
 ---
+
 # Tutorial 2c: Mehrere Messwerte auf dem Display
 
-[![](/img/tutorials/display-values-multiple/Bildschirmfoto-vom-2022-09-08-12-34-05.png)](https://youtu.be/rkhnJq19l2A)
+<iframe width="560" height="315" src="https://youtube.com/embed/rkhnJq19l2A" frameborder="0" allowfullscreen></iframe>
 
 🎬 In diesem Video zeigt dir Björn, wie du die Messwerte eines Umweltsensors auf dem Display anzeigen lassen kannst.
 
 🧰 Du brauchst:
+
 - senseBox MCU
 - OLED-Display
 - USB-Kabel
@@ -19,7 +21,7 @@ description: 🎬 In diesem Video zeigt dir Björn, wie du mehrere Messwerte gle
 
 🎥 Dieses Video entstand in Zusammenarbeit mit der [Hopp Foundation for Computer Literacy & Informatics](https://www.hopp-foundation.de/).
 
- 🔎 Weitere Informationen zum Projekt und zusätzliche Materialien findest du [hier](https://www.sensebox.de).
+🔎 Weitere Informationen zum Projekt und zusätzliche Materialien findest du [hier](https://www.sensebox.de).
 
 👍 Folgt uns in den sozialen Netzwerken:
 

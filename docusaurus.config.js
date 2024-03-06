@@ -1,11 +1,10 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-
- const {themes} = require('prism-react-renderer');
- const lightCodeTheme = themes.github;
- const darkCodeTheme = themes.dracula;
-const collapse = require('remark-collapse')
+const { themes } = require("prism-react-renderer");
+const lightCodeTheme = themes.github;
+const darkCodeTheme = themes.dracula;
+const collapse = require("remark-collapse");
 
 require("dotenv").config();
 
@@ -42,8 +41,7 @@ const config = {
           return postcssOptions;
         },
       };
-    }
-
+    },
   ],
   presets: [
     [
@@ -78,14 +76,20 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "intro",
+            docId: "arduino/first-steps",
             position: "left",
-            label: "Tutorial",
+            label: "Get started",
           },
-          // {to: '/blog', label: 'Blog', position: 'left'},
           {
-            type: "localeDropdown",
-            position: "right",
+            type: "doc",
+            docId: "tutorials/first-steps",
+            position: "left",
+            label: "Videos",
+          },
+          {
+            href: "www.sensebox.de",
+            position: "left",
+            label: "senseBox.de",
           },
           {
             href: "https://github.com/sensebox/knowledge-base",
@@ -97,19 +101,19 @@ const config = {
       customFields: {
         setBoardVersion: (version) => {
           console.log(version);
-        } 
+        },
       },
       algolia: {
         appId: process.env.ALGOLIA_APPID,
         apiKey: process.env.ALGOLIA_APIKEY,
-        indexName: process.env.ALGOLIA_INDEXNAME
+        indexName: process.env.ALGOLIA_INDEXNAME,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
         additionalLanguages: ["arduino"],
       },
-    })
+    }),
 };
 
 module.exports = config;

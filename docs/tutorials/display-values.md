@@ -4,11 +4,12 @@ title: "Tutorial 2a: Messwerte auf dem Display anzeigen"
 description: 🎬 In diesem Video zeigt dir Björn, wie du die Messwerte eines Umweltsensors auf dem Display anzeigen lassen kannst.
 ---
 
-[![](/img/tutorials/display-values-show/Bildschirmfoto-vom-2022-09-08-12-44-09.png)](https://youtu.be/ZEdxzyDnzF4)
+<iframe width="560" height="315" src="https://youtube.com/embed/dYiqcBYGwAQ" frameborder="0" allowfullscreen></iframe>
 
 🎬 In diesem Video zeigt dir Björn, wie du die Messwerte eines Umweltsensors auf dem Display anzeigen lassen kannst.
 
 🧰 Du brauchst:
+
 - senseBox MCU
 - OLED-Display
 - USB-Kabel
@@ -18,7 +19,7 @@ description: 🎬 In diesem Video zeigt dir Björn, wie du die Messwerte eines U
 
 🎥 Dieses Video entstand in Zusammenarbeit mit der [Hopp Foundation for Computer Literacy & Informatics](https://www.hopp-foundation.de/).
 
- 🔎 Weitere Informationen zum Projekt und zusätzliche Materialien findest du [hier](https://www.sensebox.de).
+🔎 Weitere Informationen zum Projekt und zusätzliche Materialien findest du [hier](https://www.sensebox.de).
 
 👍 Folgt uns in den sozialen Netzwerken:
 
