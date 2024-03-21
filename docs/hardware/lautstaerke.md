@@ -25,7 +25,7 @@ Der DFRobot SEN0232 misst die Lautstärke und gibt die Messwerte in Dezibel aus.
 ## Programmierung (Arduino)
 
 
-```arduino
+````c++
 #define SoundSensorPin A1  //this pin read the analog voltage from the sound level meter
 #define VREF  5.0  //voltage on AREF pin,default:operating voltage
 

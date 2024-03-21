@@ -21,7 +21,7 @@ import {
 
 <Layout title="Installation des Board-Support-Packages">
 
-{ useBoardStore((state)=> state.board) === 'senseBoxMCU' && (
+{ useBoardStore((state)=> state.board) === 'MCU' && (
 
 <div>
   <div class="description">
@@ -152,7 +152,7 @@ import {
 </div>
 )}
 
-{useBoardStore((state)=>state.board === 'senseBoxMCU-S2') && (
+{useBoardStore((state)=>state.board === 'MCU-S2') && (
 
   <div>
     <div class="description">

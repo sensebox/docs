@@ -21,7 +21,7 @@ const BoardSelection = ({ setOpen }) => {
           <div className="m-4 p-2 rounded-full hover:bg-gray-100">
             <button
               className="bg-transparent border-none focus:outline-none"
-              onClick={(e) => handleBoardChange("senseBoxMCU")}
+              onClick={(e) => handleBoardChange("MCU")}
             >
               <img
                 src={BlocklyMcu}
@@ -30,13 +30,13 @@ const BoardSelection = ({ setOpen }) => {
               />
             </button>
           </div>
-          <div className="text-center mt-2">senseBox MCU-S2</div>
+          <div className="text-center mt-2">MCU</div>
         </div>
         <div className="flex flex-col align-baseline ">
           <div className="m-4 p-2 rounded-full hover:bg-gray-100">
             <button
               className="bg-transparent border-none focus:outline-none"
-              onClick={(e) => handleBoardChange("senseBoxMCU-S2")}
+              onClick={(e) => handleBoardChange("MCU-S2")}
             >
               <img
                 src={BlocklyEsp}
@@ -46,7 +46,7 @@ const BoardSelection = ({ setOpen }) => {
             </button>
           </div>
 
-          <div className="text-center mt-2">senseBox MCU</div>
+          <div className="text-center mt-2">MCU-S2</div>
         </div>
       </div>
       <hr></hr>

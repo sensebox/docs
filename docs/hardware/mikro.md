@@ -23,7 +23,7 @@ Es gibt die gemessenen Geräusche in einem Pegel von 0-5V aus.
 ## Programmierung (Arduino)
 
 
-```arduino
+````c++
  /*
  * This code has been adapted from the
  * Example Sound Level Sketch for the Adafruit Microphone Amplifier

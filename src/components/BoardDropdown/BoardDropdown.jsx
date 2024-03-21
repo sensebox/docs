@@ -25,13 +25,13 @@ const BoardDropdown = () => {
         <SelectValue placeholder={board ? board : "Board auswählen"} />
       </SelectTrigger>
       <SelectContent>
-        <SelectItem value="senseBoxMCU">
+        <SelectItem value="MCU">
           <FontAwesomeIcon icon={faMicrochip} className="mr-2" />
-          senseBoxMCU
+          MCU
         </SelectItem>
-        <SelectItem value="senseBoxMCU-S2">
+        <SelectItem value="MCU-S2">
           <FontAwesomeIcon icon={faMicrochip} className="mr-2" />
-          senseBoxMCU-S2
+          MCU-S2
         </SelectItem>
       </SelectContent>
     </Select>

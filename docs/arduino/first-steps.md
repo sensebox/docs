@@ -33,7 +33,7 @@ Mit dem Häkchen kannst du dein Programm auf Schreibfehler überprüfen lassen, 
 
 Ein Arduino Programm (auch "Sketch" genannt) hat einen sehr einfachen Aufbau, der aus zwei Hauptbestandteilen besteht. Diese zwei benötigten Funktionen enthalten Blöcke von Anweisungen, welche den Programmablauf beschreiben:
 
-```arduino
+````c++
 void setup(){
     // Anweisung
 }

@@ -29,7 +29,7 @@ Das Ethernet-Bee ist ein Verbindungsstück, um die senseBox via Kabel mit dem In
 
 ## Programmierung
 
-```arduino
+````c++
 #include <SPI.h>
 #include <Ethernet.h>
 #include <senseBoxIO.h>

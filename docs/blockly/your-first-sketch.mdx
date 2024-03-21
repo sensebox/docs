@@ -65,7 +65,7 @@ Um die eingebaute LED blinken zu lassen, ist es nötig, sie mit einem weiteren `
 
 Nachdem dein Programm fertig ist, klickst du den orangenen "Sketch kompilieren" Button und es wird dir eine .BIN-Datei zum Download angeboten. Diese musst du an einem beliebigen Ort speichern.
 
-{useBoardStore((state) => state.board) === "senseBoxMCU" && (
+{useBoardStore((state) => state.board) === "MCU" && (
 
   <div>
     <h3> Modus der senseBox MCU wechseln</h3>
@@ -130,7 +130,7 @@ Nachdem dein Programm fertig ist, klickst du den orangenen "Sketch kompilieren" 
 
   </div>
 )}
-{useBoardStore((state) => state.board) === "senseBoxMCU-S2" && (
+{useBoardStore((state) => state.board) === "MCU-S2" && (
   <div>
     <h3> Übertragen</h3>
     <p>

@@ -23,7 +23,7 @@ Die senseBoxIO Library ist Bestandteil des Board-Support-Package und wird automa
 
 Die senseBoxIO Library lässt sich einzeln über folgenden Befehl einbinden:
 
-```arduino
+```c++
 include <senseBoxIO.h>
 ```
 
@@ -35,19 +35,19 @@ include <senseBoxIO.h>
 
 #### Deaktivieren aller Ports
 
-```arduino
+```c++
  void powerNone(void)
 ```
 
 #### Aktivieren aller Ports
 
-```arduino
+```c++
   void powerAll(void)
 ```
 
 #### Selektives Ein-/Ausschalten von Ports und Anschlüssen
 
-```arduino
+```c++
 
   void powerI2C(bool on) //power the I2C Ports
 
@@ -69,7 +69,7 @@ include <senseBoxIO.h>
 
 Erlaubt das Ein-/Ausschalten der Status LED's
 
-```arduino
+```c++
   void statusNone(void) // deaktiviere alle Status LED's
 
   void statusRed(void) //aktiviere die rote Status LED

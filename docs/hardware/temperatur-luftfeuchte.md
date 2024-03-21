@@ -26,7 +26,7 @@ Der HDC1080 ist ein digitaler Feuchtigkeits- und Temperatursensor. Der Sensor ha
 
 ## Programmierung
 
-```arduino
+````c++
 #include "SenseBoxMCU.h"
 #include <SPI.h>
 

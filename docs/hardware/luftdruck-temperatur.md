@@ -23,7 +23,7 @@ Dieser Sensor misst den Luftdruck und die Temperatur und basiert auf dem BMP280 
 
 ## Programmierung
 
-```arduino
+````c++
 #include "SenseBoxMCU.h"
 #include <SPI.h>
 
