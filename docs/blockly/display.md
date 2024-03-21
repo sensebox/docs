@@ -1,5 +1,4 @@
 ---
-sidebar_position: 3
 title: Display
 hide_title: false
 ---

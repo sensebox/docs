@@ -12,6 +12,7 @@ set_order: 4
 import Layout from "@site/src/Layout";
 import { useBoardStore } from "@site/src/lib/stores/store";
 import BoardDropdown from "@site/src/components/BoardDropdown/BoardDropdown";
+import BoardSelection from "@site/src/components/BoardSelection/BoardSelection";
 import {
   Tabs,
   TabsContent,
@@ -180,11 +181,7 @@ import {
 {useBoardStore((state) => state.board) === "" && (
 
 <div className="flex justify-center items-baseline">
-  <h3 className="text-center m-5">
-    {" "}
-    Bitte wähle dein Board aus, um die Informationen zu sehen.{" "}
-  </h3>
-  <BoardDropdown />
+  <BoardSelection size={"sm"}/>
 </div>
 )}
 </Layout>

@@ -3,7 +3,7 @@ import BlocklyEsp from "@site/static/img/blockly_esp.png";
 import BlocklyMcu from "@site/static/img/blockly_mcu.png";
 import { useBoardStore } from "@site/src/lib/stores/store";
 
-const BoardSelection = ({ setOpen }) => {
+const BoardSelection = ({ setOpen = function (tmp){} }) => {
   const board = useBoardStore((state) => state.board);
   const handleBoardChange = (selectedBoard) => {
     // Verwende die setBoard-Funktion direkt, um das Board im Store zu aktualisieren
