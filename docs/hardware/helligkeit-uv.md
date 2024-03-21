@@ -37,7 +37,7 @@ Der zweite Sensor ist ein Vishay VEML6070 Ultravioletter (UV)-Lichtsensor. Diese
 
 ## Programmierung
 
-````c++
+```c++
 #include "SenseBoxMCU.h"
 #include <SPI.h>
 

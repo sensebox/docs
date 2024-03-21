@@ -23,7 +23,7 @@ Der GPS Sensor wird an einen I2C-Port angeschlossen.
 
 ## Programmierung
 
-````c++
+```c++
 #include <SenseBoxMCU.h>
 
 GPS gps;

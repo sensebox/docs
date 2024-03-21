@@ -23,7 +23,7 @@ Der HC-SR04 misst Distanzen mit Hilfe von Ultraschall und gibt diese in Zentimet
 ## Programmierung (Arduino)
 
 
-````c++
+```c++
 int trig = 1;  // Trig-Pin des Sensors ist an Pin 1 angeschlossen.
 int echo = 2;  // Echo-Pin des Sensors ist an Pin 2 angeschlossen.
 

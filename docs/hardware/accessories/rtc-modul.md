@@ -22,7 +22,7 @@ Nachdem die Knopfzellenbatterie in die Halterung eingefügt wurde, wird das RTC-
 Bevor du das RTC Modul verwendest, muss als Erstes die Anfangsuhrzeit gesetzt werden. Dies muss nur ein einziges Mal geschehen vorausgesetzt, die Batterie wird nicht von dem Modul getrennt. In folgendem Sketch wird die Uhrzeit und das Datum im `setup` gesetzt und im `loop` auf dem seriellen Monitor ausgegeben.
 Denk dran, die aktuelle Zeit im `setup` beim Befehl `rtc.set(...)` selbst zu setzen.
 
-````c++
+```c++
 #include <RV8523.h>
 //#inlcude <SenseBoxMCU.h> only use with blockly code and commend out senseBoxIO.h
 #include <senseBoxIO.h>
@@ -79,7 +79,7 @@ void loop()
 
 Ist die Uhrzeit gesetzt und die RTC-Uhr zählt die Sekunden, kann diese nun in jedem beliebigen Sketch ausgelesen werden. Die RTC-Uhr startest du dann wie alle anderen I2C Sensoren auch. Achte bei der RTC-Uhr nur darauf, dass du nicht aus Versehen den `rtc.set()` Befehl erneut aufrufst und somit die Uhrzeit wieder zurücksetzt.
 
-````c++
+```c++
 #include <RV8523.h>
 //#inlcude <SenseBoxMCU.h> only use with blockly code and commend out senseBoxIO.h
 #include <senseBoxIO.h>
