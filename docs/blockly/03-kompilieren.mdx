@@ -7,6 +7,12 @@ hide_title: false
 import Layout from "@site/src/Layout";
 import { useBoardStore } from "@site/src/lib/stores/store";
 import BoardDropdown from "@site/src/components/BoardDropdown/BoardDropdown";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@site/src/components/ui/tabs";
 
 <Layout title="Kompilieren und Übertragen">
 
@@ -45,15 +51,24 @@ Wenn dein Sketch fertig kompiliert ist, wird er dir in Form einer .BIN-Datei zum
   nur eine rote LED neben dem Reset-Knopf beginnt zu leuchten/pulsieren.{" "}
 </p>
 <img src="/img/blockly-bilder/kompilieren/Lern.png" />
-
+<Tabs defaultValue="windows">
+  <TabsList>
+    <TabsTrigger value="windows">Windows & Linux</TabsTrigger>
+    <TabsTrigger value="mac">Mac</TabsTrigger>
+  </TabsList>
+  <TabsContent value="windows">
     <h3> Kopieren unter Windows & Linux </h3>
     <p> Unter Windows und Linux kannst du die zuvor heruntergeladene .BIN-Datei einfach per Drag & Drop auf den Wechseldatenträger <b>SENSEBOX</b> kopieren. Die rote LED am Button wird kurz flackern und anschließend startet das Board selbstständig neu und führt deinen Programmcode aus. </p>
     <img src="/img/blockly-bilder/kompilieren/copy_to_mcu.gif"/>
+  </TabsContent>
+  <TabsContent value="mac">
     <h3> Kopieren unter MacOS </h3>
     <p> Unter MacOS funktioniert das Kopieren der .BIN-Datei mit dem Finder leider zurzeit noch nicht. </p>
     <p> Eine Möglichkeit ist einen alternativen Dateimanager wie zum Beispiel <a href="http://www.mucommander.com/">muCommander</a>. </p>
     <img src="/img/blockly-bilder/kompilieren/copy-to-mcu-mac.gif"/>
     <p> Erfahrene Nutzer können die Datei auch im Terminal per dd-Befehl kopieren. </p>
+  </TabsContent>
+</Tabs>
 
 </div>
 )}

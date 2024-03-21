@@ -7,6 +7,12 @@ hide_title: false
 import Layout from "@site/src/Layout";
 import { useBoardStore } from "@site/src/lib/stores/store";
 import BoardDropdown from "@site/src/components/BoardDropdown/BoardDropdown";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@site/src/components/ui/tabs";
 
 <Layout title="Dein erster Sketch">
 
@@ -100,34 +106,46 @@ Nachdem dein Programm fertig ist, klickst du den orangenen "Sketch kompilieren" 
 
       <h3> Übertragen </h3>
         <p>
-            Schließt du deine senseBox MCU an deinen Computer an und führst einen
-            Doppelklick auf dem roten Button aus, wird diese als Wechseldatendräger
-            erkannt. Mit einem Klick auf “Code Kompilieren” in der Weboberfläche
-            wird dein Programmcode auf dem Server kompiliert und eine .BIN-Datei
-            wird dir zum Download angeboten. Je nachdem welches Betriebssystem du
-            verwendest, unterscheidet sich nun der Kopiervorgang.
-        </p>
-        <p>
-            <b>Kopieren unter Windows</b> Unter Windows kannst du die erstellte
-            .BIN-Datei einfach per Drag & Drop auf den Wechseldatenträger SENSEBOX
-            kopieren. Die rote LED am Button wird kurz flackern und anschließend
-            startet das Board selbstständig neu und führt deinen Programmcode aus.
-        </p>
-        <p>
-            <b>Kopieren unter MacOS</b> Unter MacOS funktioniert das Kopieren der
-            .BIN-Datei per Drag & Drop leider zurzeit noch nicht. Eine Möglichkeit
-            ist die Datei im Terminal per dd-Befehl zu kopieren (nur erfahrenen
-            Nutzern zu empfehlen!) oder einen alternativen Dateimanager wie zum
-            Beispiel muCommander zu verwenden.
-        </p>
-        <p>
-            <b>Kopieren unter Linux</b> Unter Linux kannst du die erstellte
-            .BIN-Datei einfach per Drag & Drop auf den Wechseldatenträger SENSEBOX
-            kopieren. Die rote LED am Button wird kurz flackern und anschließend
-            startet das Board selbstständig neu und führt deinen Programmcode aus.
-        </p>
+        Schließt du deine senseBox MCU an deinen Computer an und führst einen
+        Doppelklick auf dem roten Button aus, wird diese als Wechseldatendräger
+        erkannt. Mit einem Klick auf “Code Kompilieren” in der Weboberfläche
+        wird dein Programmcode auf dem Server kompiliert und eine .BIN-Datei
+        wird dir zum Download angeboten. Je nachdem welches Betriebssystem du
+        verwendest, unterscheidet sich nun der Kopiervorgang.
+      </p>
+      <Tabs defaultValue="windows">
+        <TabsList>
+          <TabsTrigger value="windows">Windows</TabsTrigger>
+          <TabsTrigger value="mac">Mac</TabsTrigger>
+          <TabsTrigger value="linux">Linux</TabsTrigger>
+        </TabsList>
+          <TabsContent value="windows">
+            <p>
+              <b>Kopieren unter Windows</b> Unter Windows kannst du die erstellte
+              .BIN-Datei einfach per Drag & Drop auf den Wechseldatenträger SENSEBOX
+              kopieren. Die rote LED am Button wird kurz flackern und anschließend
+              startet das Board selbstständig neu und führt deinen Programmcode aus.
+            </p>
+          </TabsContent>
+          <TabsContent value="mac">
+            <p>
+              <b>Kopieren unter MacOS</b> Unter MacOS funktioniert das Kopieren der
+              .BIN-Datei per Drag & Drop leider zurzeit noch nicht. Eine Möglichkeit
+              ist die Datei im Terminal per dd-Befehl zu kopieren (nur erfahrenen
+              Nutzern zu empfehlen!) oder einen alternativen Dateimanager wie zum
+              Beispiel muCommander zu verwenden.
+            </p>
+          </TabsContent>
+          <TabsContent value="linux">
+            <p>
+              <b>Kopieren unter Linux</b> Unter Linux kannst du die erstellte
+              .BIN-Datei einfach per Drag & Drop auf den Wechseldatenträger SENSEBOX
+              kopieren. Die rote LED am Button wird kurz flackern und anschließend
+              startet das Board selbstständig neu und führt deinen Programmcode aus.
+            </p>
+          </TabsContent>
+        </Tabs>
     </div>
-
   </div>
 )}
 {useBoardStore((state) => state.board) === "MCU-S2" && (
