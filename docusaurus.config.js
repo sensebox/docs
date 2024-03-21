@@ -84,11 +84,10 @@ const config = {
             type: "doc",
             docId: "tutorials/first-steps",
             position: "left",
-
             label: "Videos",
           },
           {
-            href: "www.sensebox.de",
+            href: "https://www.sensebox.de",
             position: "left",
             label: "senseBox.de",
           },
@@ -99,21 +98,12 @@ const config = {
           },
         ],
       },
-      customFields: {
-        setBoardVersion: (version) => {
-          console.log(version);
-        },
-      },
       algolia: {
         appId: process.env.ALGOLIA_APPID,
         apiKey: process.env.ALGOLIA_APIKEY,
         indexName: process.env.ALGOLIA_INDEXNAME,
       },
-      prism: {
-        theme: lightCodeTheme,
-        // darkTheme: darkCodeTheme,
-        additionalLanguages: ["arduino"],
-      },
+
     }),
 };
 
