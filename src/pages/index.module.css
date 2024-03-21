@@ -3,6 +3,7 @@
  * and scoped locally.
  */
 
+/* @import must be at top of file, otherwise CSS will not work */
 
 @media screen and (max-width: 996px) {
   .heroBanner {

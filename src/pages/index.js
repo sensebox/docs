@@ -4,11 +4,26 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
+import BoardSelection from "@site/src/components/BoardSelection/BoardSelection";
 
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@site/src/components/ui/dialog"
 import styles from "./index.module.css";
+import { useBoardStore } from "@site/src/lib/stores/store";
+
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
+  const board = useBoardStore((state) => state.board);
+
+  const [open, setOpen] = React.useState(board === '' ? true : false);
+
   return (
     <header
       className={clsx(
@@ -27,6 +42,11 @@ function HomepageHeader() {
           Klicke auf die unten stehenden Kategorien um durch die Dokumenation zu
           navigieren!
         </div>
+        <Dialog open={open}>
+          <DialogContent>
+              <BoardSelection setOpen={setOpen}/>
+          </DialogContent>
+        </Dialog>
       </div>
     </header>
   );

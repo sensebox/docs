@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+
+html {
+  font-family: 'Roboto', "Helvetica", "Arial", sans-serif;
+}
 header {
   display: none;
 }
