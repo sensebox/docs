@@ -70,7 +70,7 @@ function Feature({ Image, title, description, to }) {
   return (
     <Link
       className={clsx(
-        "w-[25%] flex flex-col items-center text-black border-2 border-solid border-slate-100 shadow-2xl rounded-lg hover:no-underline hover:text-green transition duration-300 ease-in-out hover:scale-105 hover:shadow-4xl p-4 "
+        "w-full md:w-1/3 lg:w-1/4 flex flex-col items-center text-black border-2 border-solid border-slate-100 shadow-2xl rounded-lg hover:no-underline hover:text-green transition duration-300 ease-in-out hover:scale-105 hover:shadow-4xl p-4 "
       )}
       to={to}
     >
@@ -88,7 +88,7 @@ function Feature({ Image, title, description, to }) {
 export default function HomepageFeatures() {
   return (
     <section>
-      <div className="flex flex-row flex-wrap justify-center gap-6 pt-4">
+      <div className="flex flex-row flex-wrap justify-center gap-6 p-4">
         {FeatureList.map((props, idx) => (
           <Feature key={idx} {...props} />
         ))}
