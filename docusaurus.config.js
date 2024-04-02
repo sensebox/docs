@@ -73,6 +73,7 @@ const config = {
           alt: "senseBox Logo",
           src: "img/logo.svg",
         },
+        hideOnScroll: true,
         items: [
           {
             type: "doc",

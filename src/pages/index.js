@@ -31,7 +31,7 @@ function HomepageHeader() {
         styles.senseBoxGreenBanner
       )}
     >
-      <div className="flex flex-col p-6 ">
+      {/* <div className="flex flex-col p-6 ">
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <br></br>
@@ -47,7 +47,7 @@ function HomepageHeader() {
               <BoardSelection setOpen={setOpen}/>
           </DialogContent>
         </Dialog>
-      </div>
+      </div> */}
     </header>
   );
 }
@@ -60,7 +60,7 @@ export default function Home() {
       description="Description will go into a meta tag in <head />"
     >
       <HomepageHeader />
-      <main>
+      <main className="">
         <HomepageFeatures />
       </main>
     </Layout>
