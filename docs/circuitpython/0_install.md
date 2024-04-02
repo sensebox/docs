@@ -48,8 +48,8 @@ print("Hello World!")
 ## CircuitPython deinstallieren
 Wenn du CircuitPython von deiner senseBox MCU-S2 deinstallieren möchtest um wieder Arduino verwenden zu können, musst du die folgenden Schritte durchführen:
 1. Gehe in den Bootloader Modus, indem du kurz den Reset-Button drückst und direkt danach kurz den Boot-Button drückst. Die RGB-LED sollte nun grün leuchten.
-2. Lade dir die [flash-arduino.uf2](./assets/flash-arduino.uf2) Datei herunter.
-3. Kopiere die heruntergeladene Datei in das Laufwerk `senseBox`.
+2. Lade dir die [flash-arduino.zip](./assets/flash-arduino.zip) Datei herunter und entpacke diese.
+3. Kopiere die `flash-arduino.uf2` Datei in das Laufwerk `senseBox`.
 4. Die senseBox MCU-S2 startet nun neu und du kannst wie gewohnt Blockly oder Arduino verwenden.
 
 
