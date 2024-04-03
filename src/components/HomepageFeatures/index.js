@@ -20,65 +20,69 @@ const FeatureList = [
     title: ":bike",
     Image: bikeCategory,
     description: (
-      <>Alle relevanten Informationen zur senseBox:bike</>
+      <>Alle relevanten Informationen zur senseBox:bike für Fahrradprojekte</>
     ),
-    to: "/docs/category/blockly",
+    to: "/docs/category/bike",
   },
   {
     title: ":CO2-Ampel",
     Image: trafficLight,
-    description: <>Erste Schritte mit deiner senseBox und der Arduino IDE</>,
-    to: "/docs/category/arduino",
+    description: (
+      <>Alle relevanten Informationen zur CO2-Ampel der senseBox für Luftqualitätsüberwachung</>
+    ),
+    to: "/docs/category/co2-ampel",
   },
   {
-    title: "edu",
+    title: ":edu",
     Image: homeCategoryIcon,
     description: (
       <>
         Informationen zum Anschluss und Programmierung der Sensoren, Bees und
-        weiteren Bauteilen
+        weiteren Bauteilen für Bildungszwecke
       </>
     ),
-    to: "/docs/category/hardware",
+    to: "/docs/category/edu",
   },
   {
-    title: ":edu-S2",
+    title: ":edu S2",
     Image: homeCategoryIcon,
-    description: <>Verschiedene Dokumentationen zur senseBox</>,
-    to: "/docs/category/verschiedenes",
+    description: (
+      <>Verschiedene Dokumentationen zur Bildungsversion der senseBox in der 2. Generation</>
+    ),
+    to: "/docs/categories/edu-s2-overview",
   },
   {
     title: ":home",
     Image: homeCategoryIcon,
-    description: <>Informationen zum Aufbau & Erweiterungen</>,
+    description: (
+      <>Informationen zum Aufbau & Erweiterungen für die senseBox:home</>
+    ),
     to: "/docs/category/senseboxhome",
   },
   {
     title: ":mini",
     Image: openSenseMapCategoryIcon,
     description: (
-      <>
-        Informationen zur API, zum Verwalten der senseBox, zum Datendownload,
-        luftdaten.info, hackAIR
-      </>
+      <>Alle relevanten Informationen zur senseBox:mini</>
     ),
-    to: "/docs/category/opensensemap",
+    to: "/docs/category/mini",
   },
 ];
+
 
 const ThumbNailPreviewList = [
   {
     title: "openSenseMap",
     Image: osem,
     description: (
-      <>Informationen zur visuellen Programmierumgebung Blockly für senseBox.</>
+      <>Die openSenseMap unsere Dattenplattform für offene Daten jeglicher Art</>
     ),
     to: "https://opensensemap.org/",
   },
   {
     title: "Blockly",
     Image: blockly,
-    description: <>Erste Schritte mit deiner senseBox und der Arduino IDE</>,
+    description: <>Die frei verfügbare grafische Oberfläche zum Programmieren der senseBox </>,
     to: "https://blockly.sensebox.de/",
   },
   {
@@ -96,7 +100,7 @@ const ThumbNailPreviewList = [
 
 function ThumbailPreview({ Image, title, description, to }) {
   return (
-    <Link className="w-full lg:w-[25%] bg-gradient-to-r from-green-3 to-green mx-auto hover:text-white hover:no-underline  text-white rounded-lg overflow-hidden hover:shadow-[rgba(0,0,15,0.5)_-7px_7px_0px_0px] hover:shadow-yellow  hover:-translate-y-1 transition duration-300" to={to}>
+    <Link className="w-full lg:w-[25%] bg-gradient-to-r from-green-3 to-green mx-auto hover:text-white hover:no-underline  text-white rounded-lg overflow-hidden hover:shadow-[rgba(0,0,15,0.5)_-7px_7px_0px_0px] hover:shadow-blue  hover:-translate-y-1 transition duration-300" to={to}>
     <div>
       <img className="w-full h-48 object-cover" src={Image} alt={title} />
       <div className="p-4">
@@ -113,8 +117,8 @@ function Feature({ Image, title, description, to }) {
   return (
     <Link
       className={clsx(
-        "w-full lg:w-[15%] flex flex-col items-center text-white border-3 border-dotted border-yellow hover:text-white shadow-2xl rounded-lg p-4",
-        "transition duration-300 ease-in-out hover:bg-yellow hover:no-underline hover:shadow-4xl "
+        "w-full lg:w-[15%] flex flex-col items-center text-white border-3 border-dotted border-blue hover:text-white shadow-2xl rounded-lg p-4",
+        "transition duration-300 ease-in-out hover:bg-blue hover:no-underline hover:shadow-4xl "
       )}
       to={to}
     >

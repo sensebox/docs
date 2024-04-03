@@ -31,23 +31,6 @@ function HomepageHeader() {
         styles.senseBoxGreenBanner
       )}
     >
-      {/* <div className="flex flex-col p-6 ">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <br></br>
-        <div className="text-xl font-bold">
-          Alles was du für deine senseBox benötigst
-        </div>
-        <div>
-          Klicke auf die unten stehenden Kategorien um durch die Dokumenation zu
-          navigieren!
-        </div>
-        <Dialog open={open}>
-          <DialogContent>
-              <BoardSelection setOpen={setOpen}/>
-          </DialogContent>
-        </Dialog>
-      </div> */}
     </header>
   );
 }

@@ -3,6 +3,7 @@ sidebar_position: 9
 title: Temperatur- und Luftfeuchtigkeitssensor
 hide_title: false
 description: Temperatur- und Luftfeuchtigkeitssensor (HDC1080)
+
 ---
 
 # Temperatur- und Luftfeuchtesensor 

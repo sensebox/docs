@@ -53,6 +53,7 @@ const config = {
           showLastUpdateTime: true,
           showLastUpdateAuthor: true,
           remarkPlugins: [[collapse, { test: "tango" }]],
+          breadcrumbs: false,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: "https://github.com/sensebox/knowledge-base/tree/main",
@@ -65,7 +66,7 @@ const config = {
   ],
 
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+      /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
         title: "senseBox Docs",
@@ -99,6 +100,41 @@ const config = {
           },
         ],
       },
+      footer: {
+        copyright: `© senseBox 2023. All rights reserved. Impressum`,
+        links:[
+          {
+            title: "Materials", 
+            items: [
+              {
+                label: "senseBox",
+                to: "https://sensebox.de/impressum",
+              },
+              {
+                label: "OpenSenseMap",
+                to: "https://opensensemap.org/impressum",
+              }
+        ]
+      }, 
+      {
+        title: "Community", 
+        items: [
+          {
+            label: "Forum",
+            to: "https://forum.sensebox.de",
+          },
+          {
+            label: "GitHub",
+            to: "https://github.com/sensebox"
+          },
+          {
+            label: "Support", 
+            to: "https://sensebox.de/support"
+          }
+        ]
+      }
+    ]
+      }, 
       algolia: {
         appId: process.env.ALGOLIA_APPID,
         apiKey: process.env.ALGOLIA_APIKEY,
