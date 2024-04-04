@@ -14,7 +14,6 @@ import {
   TabsTrigger,
 } from "@site/src/components/ui/tabs";
 
-{/* <Layout title="Kompilieren und Übertragen"> */}
 
 
 ## Kompilieren
@@ -43,83 +42,3 @@ Wenn dein Sketch fertig kompiliert ist, wird er dir in Form einer .BIN-Datei zum
   </p>
   <img src="/img/blockly-bilder/kompilieren/copy_to_mcu.gif" />
 </div>
-{/* 
-{ useBoardStore((state)=> state.board) === 'MCU' && (
-
-<div>
-<h2> Übertragen </h2>
-<p>
-  {" "}
-  Schließe nun deine senseBox MCU mit Hilfe des USB-Kabels an deinen Computer an.
-  Deine senseBox startet nun automatisch im _Programm-Modus_. Den _Programm-Modus_
-  erkennst du daran, dass die Status-LEDs auf der senseBox MCU grün leuchten.{" "}
-</p>
-<img src="/img/blockly-bilder/kompilieren/Programm.png" />
-<p>
-  {" "}
-  Damit die senseBox als Wechseldatenträger erkannt wird und Programme übertragen
-  werden können, muss diese in den _Lern-Modus_ versetzt werden. Klicke dazu doppelt
-  auf den roten Reset-Knopf auf der senseBox.{" "}
-</p>
-<p>
-  {" "}
-  Befindet sich deine senseBox im Lern-Modus erlöschen die grünen Status-LEDs und
-  nur eine rote LED neben dem Reset-Knopf beginnt zu leuchten/pulsieren.{" "}
-</p>
-<img src="/img/blockly-bilder/kompilieren/Lern.png" />
-<Tabs defaultValue="windows">
-  <TabsList>
-    <TabsTrigger value="windows">Windows & Linux</TabsTrigger>
-    <TabsTrigger value="mac">Mac</TabsTrigger>
-  </TabsList>
-  <TabsContent value="windows">
-    <h3> Kopieren unter Windows & Linux </h3>
-    <p> Unter Windows und Linux kannst du die zuvor heruntergeladene .BIN-Datei einfach per Drag & Drop auf den Wechseldatenträger <b>SENSEBOX</b> kopieren. Die rote LED am Button wird kurz flackern und anschließend startet das Board selbstständig neu und führt deinen Programmcode aus. </p>
-    <img src="/img/blockly-bilder/kompilieren/copy_to_mcu.gif"/>
-  </TabsContent>
-  <TabsContent value="mac">
-    <h3> Kopieren unter MacOS </h3>
-    <p> Unter MacOS funktioniert das Kopieren der .BIN-Datei mit dem Finder leider zurzeit noch nicht. </p>
-    <p> Eine Möglichkeit ist einen alternativen Dateimanager wie zum Beispiel <a href="http://www.mucommander.com/">muCommander</a>. </p>
-    <img src="/img/blockly-bilder/kompilieren/copy-to-mcu-mac.gif"/>
-    <p> Erfahrene Nutzer können die Datei auch im Terminal per dd-Befehl kopieren. </p>
-  </TabsContent>
-</Tabs>
-
-</div>
-)}
-
-{ useBoardStore((state)=> state.board) === 'MCU-S2' && (
-
-<div>
-  <h2> Übertragen </h2>
-  <p>
-    {" "}
-    Schließe nun deine senseBox MCU-S2 mit Hilfe des USB-Kabels an deinen Computer
-    an. Deine senseBox sollte nun als Wechseldatenträger von deinem Computer erkannt
-    werden.{" "}
-  </p>
-  <h3> Kopieren </h3>
-  <p>
-    Nun kannst du die zuvor heruntergeladene .BIN-Datei einfach per Drag & Drop
-    auf den Wechseldatenträger <b>SENSEBOX</b> kopieren. Die senseBox wird nun
-    deinen hochgeladenen Sketch abspielen.
-  </p>
-  <img src="/img/blockly-bilder/kompilieren/copy_to_mcu.gif" />
-</div>
-)}
-
-{useBoardStore((state) => state.board) === "" && (
-
-<div className="flex justify-center items-baseline">
-  <h3 className="text-center m-5">
-    {" "}
-    Bitte wähle dein Board aus, um die Informationen zum Übertragen zu sehen.{" "}
-  </h3>
-  <BoardDropdown />
-</div>
-)} */}
-
-> - [Blockly.senseBox.de](https://blockly.sensebox.de/)
-
-{/* </Layout> */}
