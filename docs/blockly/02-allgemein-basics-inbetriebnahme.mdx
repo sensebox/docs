@@ -8,11 +8,29 @@ import Layout from "@site/src/Layout";
 import { useBoardStore } from "@site/src/lib/stores/store";
 import BoardDropdown from "@site/src/components/BoardDropdown/BoardDropdown";
 
-<Layout title="Die senseBox in Betrieb nehmen">
+{/* <Layout title="Die senseBox in Betrieb nehmen"> */}
 
 ## Die senseBox mit Strom versorgen
 
-{ useBoardStore((state)=> state.board) === 'MCU' &&(
+
+<div>
+<p>
+Um die senseBox zu verwenden, muss sie natürlich mit Strom versorgt werden. Es gibt zwei Möglichkeiten die senseBox mit Strom zu versorgen:
+</p>
+<h3> 1. USB-Kabel        </h3>
+<p>
+Du kannst die senseBox mit Hilfe des beiliegenden USB-C-Kabels mit Strom versorgen. Diese Möglichkeit ist die einfachste, wenn du sowieso am Computer programmierst.
+Stecke das kleinere Ende des USB-Kabels in den USB-Anschluss des senseBox MCU. Dieser befindet sich oben neben dem roten Reset-Knopf. Das andere Ende des Kabels wird in den USB-Anschluss deines Computers oder einer Powerbank gesteckt.
+</p>
+<img src="/img/blockly-bilder/inbetriebnahme/s2/1.png" alt="akku"/>
+<h3> 2. Akku       </h3>
+<p>
+Wenn du deine senseBox über einen Akku mit Strom versorgen möchtest, kannst du dies über den zweipoligen JST-Stecker auf der senseBox MCU tun. Stecke dazu einfach den JST-Stecker des Akkus in den JST-Anschluss auf der senseBox MCU. Dieser befindet sich oben, neben dem USB-Anschluss.
+</p>
+<img src="/img/blockly-bilder/inbetriebnahme/s2/2.png" alt="akku"/>
+
+</div>
+{/* { useBoardStore((state)=> state.board) === 'MCU' &&(
 
 <div>
   <p>
@@ -40,9 +58,9 @@ import BoardDropdown from "@site/src/components/BoardDropdown/BoardDropdown";
   <img src="/img/blockly-bilder/inbetriebnahme/2.png" alt="akku" />
 </div>
 
-)}
+)} */}
 
-{ useBoardStore((state)=>state.board)=== 'MCU-S2' && (
+{/* { useBoardStore((state)=>state.board)=== 'MCU-S2' && (
 
         <div>
         <p>
@@ -64,9 +82,9 @@ import BoardDropdown from "@site/src/components/BoardDropdown/BoardDropdown";
 
             </div>
 
-)}
+)} */}
 
-{useBoardStore((state) => state.board) === "" && (
+{/* {useBoardStore((state) => state.board) === "" && (
 
 <div className="flex justify-center items-baseline">
   <h3 className="text-center m-5">
@@ -79,4 +97,4 @@ import BoardDropdown from "@site/src/components/BoardDropdown/BoardDropdown";
 
 > - [Blockly.senseBox.de](https://blockly.sensebox.de/)
 
-</Layout>
+</Layout> */}

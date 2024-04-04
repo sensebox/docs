@@ -14,9 +14,8 @@ import {
   TabsTrigger,
 } from "@site/src/components/ui/tabs";
 
-<Layout title="Kompilieren und Übertragen">
+{/* <Layout title="Kompilieren und Übertragen"> */}
 
-Nachdem du deinen ersten Sketch programmiert hast, muss dieser nun kompiliert und auf die senseBox MCU übertragen werden.
 
 ## Kompilieren
 
@@ -28,6 +27,23 @@ Um deinen Sketch kompilieren zu lassen, klicke in Blockly oben rechts auf den or
 
 Wenn dein Sketch fertig kompiliert ist, wird er dir in Form einer .BIN-Datei zum Download angeboten. Speichere ihn an einem Ort, wo du ihn später wiederfindest.
 
+<div>
+  <h2> Übertragen </h2>
+  <p>
+    {" "}
+    Schließe nun deine senseBox MCU-S2 mit Hilfe des USB-Kabels an deinen Computer
+    an. Deine senseBox sollte nun als Wechseldatenträger von deinem Computer erkannt
+    werden.{" "}
+  </p>
+  <h3> Kopieren </h3>
+  <p>
+    Nun kannst du die zuvor heruntergeladene .BIN-Datei einfach per Drag & Drop
+    auf den Wechseldatenträger <b>SENSEBOX</b> kopieren. Die senseBox wird nun
+    deinen hochgeladenen Sketch abspielen.
+  </p>
+  <img src="/img/blockly-bilder/kompilieren/copy_to_mcu.gif" />
+</div>
+{/* 
 { useBoardStore((state)=> state.board) === 'MCU' && (
 
 <div>
@@ -102,8 +118,8 @@ Wenn dein Sketch fertig kompiliert ist, wird er dir in Form einer .BIN-Datei zum
   </h3>
   <BoardDropdown />
 </div>
-)}
+)} */}
 
 > - [Blockly.senseBox.de](https://blockly.sensebox.de/)
 
-</Layout>
+{/* </Layout> */}

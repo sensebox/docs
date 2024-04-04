@@ -2,6 +2,7 @@
 sidebar_position: 1
 title: Dein erster Sketch
 hide_title: false
+
 ---
 
 import Layout from "@site/src/Layout";
@@ -14,11 +15,12 @@ import {
   TabsTrigger,
 } from "@site/src/components/ui/tabs";
 
-<Layout title="Dein erster Sketch">
+{/* <Layout title="Dein erster Sketch"> */}
 
-Blockly ist die vom senseBox-Team entwickelte grafische Programmierumgebung für die senseBox. Sie ist online kostenlos und ohne Softwareinstallation verfügbar und basiert auf dem [Blockly Framework](https://developers.google.com/blockly) von Google.
 
 ## Erste Schritte
+Blockly ist die vom senseBox-Team entwickelte grafische Programmierumgebung für die senseBox. Sie ist online kostenlos und ohne Softwareinstallation verfügbar und basiert auf dem [Blockly Framework](https://developers.google.com/blockly) von Google.
+
 
 Öffne Blockly für senseBox in deinem Browser unter [https://blockly.sensebox.de](https://blockly.sensebox.de/). Dort musst du zuerst deine senseBox-Version auswählen.
 
@@ -71,7 +73,16 @@ Um die eingebaute LED blinken zu lassen, ist es nötig, sie mit einem weiteren `
 
 Nachdem dein Programm fertig ist, klickst du den orangenen "Sketch kompilieren" Button und es wird dir eine .BIN-Datei zum Download angeboten. Diese musst du an einem beliebigen Ort speichern.
 
-{useBoardStore((state) => state.board) === "MCU" && (
+  <div>
+    <h3> Übertragen</h3>
+    <p>
+    Schließt du deine senseBox MCU-S2 an deinen Computer an und führst einen Doppelklick auf dem roten Button aus, wird diese als Wechseldatendräger erkannt. Mit einem Klick auf “Code Kompilieren” in der Weboberfläche wird dein Programmcode auf dem Server kompiliert und eine .BIN-Datei wird dir zum Download angeboten.
+    </p>
+    <p>
+        Nun kannst du die heruntergaldene .BIN-Datei einfach per Drag & Drop auf den neu erscheinenden Wechseldatenträger ('SENSEBOX') kopieren. Die senseBox startet neu und spielt nun deinen Sketch ab.
+    </p>
+  </div>
+{/* {useBoardStore((state) => state.board) === "MCU" && (
 
   <div>
     <h3> Modus der senseBox MCU wechseln</h3>
@@ -90,7 +101,6 @@ Nachdem dein Programm fertig ist, klickst du den orangenen "Sketch kompilieren" 
         und es können neue Programme übertragen werden. Du erkennst ihn daran,
         dass die rote LED neben dem Reset-Knopf dauerhaft leuchtet/pulsiert.
       </p>
-      {/* Füge hier das Bild ein */}
       <img
         src="/img/blockly-bilder/erster-sketch/modi.png"
         alt="Beschreibung des Bildes"
@@ -169,8 +179,8 @@ Nachdem dein Programm fertig ist, klickst du den orangenen "Sketch kompilieren" 
   </h3>
   <BoardDropdown />
 </div>
-)}
+)} */}
 
 > - [Blockly.senseBox.de](https://blockly.sensebox.de/)
 
-</Layout>
+{/* </Layout> */}
