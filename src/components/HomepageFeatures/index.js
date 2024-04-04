@@ -21,7 +21,7 @@ const FeatureList2 = [
     title: ":edu S2",
     Image: homeCategoryIcon,
     description: (
-      <>Verschiedene Dokumentationen zur Bildungsversion der senseBox in der 2. Generation</>
+      <>Dokumentation zur Bildungsversion der senseBox in der 2. Generation</>
     ),
     to: "/docs/blockly/allgemein-basics-inbetriebnahme",
   }

@@ -98,6 +98,15 @@ const eduS2Sidebar =   {
       ]
     }, 
     {
+      type: 'category', 
+      label: 'Hardware', 
+      link: {
+        type : 'generated-index',
+        title: 'Hardware',
+      },
+      items: eduS2Hardware.map(id => `hardware/${id}`)
+    }, 
+    {
       type: 'category',
       label: 'Blockly',
       link: {
@@ -132,15 +141,7 @@ const eduS2Sidebar =   {
 
       ]
     },
-    {
-      type: 'category', 
-      label: 'Hardware', 
-      link: {
-        type : 'generated-index',
-        title: 'Hardware',
-      },
-      items: eduS2Hardware.map(id => `hardware/${id}`)
-    }, 
+
     {
       type: 'category',
       label: 'Besonderheiten',
