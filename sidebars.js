@@ -87,21 +87,12 @@ const eduS2Sidebar =   {
   items: [
     {
       type: 'category', 
-      label: 'Hardware', 
-      link: {
-        type : 'generated-index',
-        title: 'Hardware',
-      },
-      items: eduS2Hardware.map(id => `hardware/${id}`)
-    }, 
-    {
-      type: 'category', 
       label: 'Erste Schritte', 
-      link: {
-        type: 'generated-index',
-        title: 'Erste Schritte',
-      },
-      items: ["arduino/installation-arduino-ide","arduino/installation-bsp", "arduino/libraries",  "arduino/arduiono-sensebox-library", "blockly/your-first-sketch", "blockly/allgemein-basics-inbetriebnahme", "blockly/kompilieren" ]
+      items: [
+        "blockly/allgemein-basics-inbetriebnahme",
+        "blockly/your-first-sketch",
+        "blockly/kompilieren"
+      ]
     }, 
     {
       type: 'category',
@@ -111,27 +102,41 @@ const eduS2Sidebar =   {
         title: 'Blockly',
       },
     items: [
-      "blockly/allgemein-basics-inbetriebnahme",
-      "blockly/audio",
       "blockly/display",
-      "blockly/kompilieren",
       "blockly/led",
       "blockly/logik",
-      "blockly/lora",
       "blockly/mathematik",
       "blockly/schleifen",
       "blockly/sd",
       "blockly/sensoren",
       "blockly/text",
       "blockly/variablen",
-      "blockly/web/lora",
       "blockly/web/opensensemap",
-      "blockly/web/telegram",
-      "blockly/web/webserver",
       "blockly/web/wifi",
-      "blockly/your-first-sketch",
       "blockly/zeit"
     ]
+    }, 
+    {
+      type: 'category',
+      label: 'Arduino',
+      link: {
+        type: 'generated-index',
+        title: 'Arduino',
+      },
+      items: [
+        "arduino/installation-arduino-ide",
+        "arduino/installation-bsp",
+
+      ]
+    },
+    {
+      type: 'category', 
+      label: 'Hardware', 
+      link: {
+        type : 'generated-index',
+        title: 'Hardware',
+      },
+      items: eduS2Hardware.map(id => `hardware/${id}`)
     }, 
     {
       type: 'category',
@@ -206,12 +211,12 @@ const miniSidebar =   {
 
 export default {
   senseBoxSidebar: [
-    bikeSidebar,
-    eduSidebar,
+    // bikeSidebar,
+    // eduSidebar,
     eduS2Sidebar,
-    homeSidebar,
-    trafficLightSidebard, 
-    miniSidebar
+    // homeSidebar,
+    // trafficLightSidebard, 
+    // miniSidebar
   ]
 }
 

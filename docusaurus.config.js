@@ -78,15 +78,9 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "arduino/first-steps",
+            docId: "blockly/allgemein-basics-inbetriebnahme",
             position: "left",
             label: "Get started",
-          },
-          {
-            type: "doc",
-            docId: "tutorials/first-steps",
-            position: "left",
-            label: "Videos",
           },
           {
             href: "https://www.sensebox.de",
