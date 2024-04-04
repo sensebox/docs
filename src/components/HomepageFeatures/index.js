@@ -169,6 +169,7 @@ export default function HomepageFeatures() {
       <div className="flex flex-col  lg:flex-row justify-center gap-4 lg:gap-0 p-4 lg:p-20">
         {ThumbNailPreviewList.map((props, idx) => (
           <ThumbailPreview key={idx} {...props} />
+
         ))}
       </div>
     </section>
