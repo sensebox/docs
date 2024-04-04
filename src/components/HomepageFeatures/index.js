@@ -15,6 +15,17 @@ import bikeCategory from "@site/static/img/category-icons/bikesilhouette.png";
 import osem from "@site/static/img/osem.png";
 import blockly from "@site/static/img/blockly.png";
 import hardware from "@site/static/img/hardware.jpg";
+
+const FeatureList2 = [
+  {
+    title: ":edu S2",
+    Image: homeCategoryIcon,
+    description: (
+      <>Verschiedene Dokumentationen zur Bildungsversion der senseBox in der 2. Generation</>
+    ),
+    to: "/docs/categories/edu-s2-overview",
+  }
+];
 const FeatureList = [
   {
     title: ":bike",
@@ -100,7 +111,7 @@ const ThumbNailPreviewList = [
 
 function ThumbailPreview({ Image, title, description, to }) {
   return (
-    <Link className="w-full lg:w-[25%] bg-gradient-to-r from-green-3 to-green mx-auto hover:text-white hover:no-underline  text-white rounded-lg overflow-hidden hover:shadow-[rgba(0,0,15,0.5)_-7px_7px_0px_0px] hover:shadow-blue  hover:-translate-y-1 transition duration-300" to={to}>
+    <Link className="w-full lg:w-[25%] bg-gradient-to-r from-green-3 to-green mx-auto hover:text-white hover:no-underline  text-white rounded-lg overflow-hidden hover:shadow-[rgba(0,0,15,0.5)_-7px_7px_0px_0px] hover:shadow-yellow  hover:-translate-y-1 transition duration-300" to={to}>
     <div>
       <img className="w-full h-48 object-cover" src={Image} alt={title} />
       <div className="p-4">
@@ -117,9 +128,8 @@ function Feature({ Image, title, description, to }) {
   return (
     <Link
       className={clsx(
-        "w-full lg:w-[15%] flex flex-col items-center text-white border-3 border-dotted border-blue hover:text-white shadow-2xl rounded-lg p-4",
-        "transition duration-300 ease-in-out hover:bg-blue hover:no-underline hover:shadow-4xl "
-
+        "w-full lg:w-[15%] flex flex-col items-center text-white border-3 border-dotted border-yellow hover:text-white shadow-2xl rounded-lg p-4",
+        "transition duration-300 ease-in-out hover:bg-yellow hover:no-underline hover:shadow-4xl "
       )}
       to={to}
     >
@@ -148,7 +158,7 @@ export default function HomepageFeatures() {
             </div>
           </div>
           <div className="flex lg:flex-row  flex-wrap justify-center gap-4">
-            {FeatureList.map((props, idx) => (
+            {FeatureList2.map((props, idx) => (
               <Feature key={idx} {...props} />
             ))}
           </div>
