@@ -119,6 +119,7 @@ function Feature({ Image, title, description, to }) {
       className={clsx(
         "w-full lg:w-[15%] flex flex-col items-center text-white border-3 border-dotted border-blue hover:text-white shadow-2xl rounded-lg p-4",
         "transition duration-300 ease-in-out hover:bg-blue hover:no-underline hover:shadow-4xl "
+
       )}
       to={to}
     >
@@ -158,6 +159,7 @@ export default function HomepageFeatures() {
       <div className="flex flex-col  lg:flex-row justify-center gap-4 lg:gap-0 p-4 lg:p-20">
         {ThumbNailPreviewList.map((props, idx) => (
           <ThumbailPreview key={idx} {...props} />
+
         ))}
       </div>
     </section>
