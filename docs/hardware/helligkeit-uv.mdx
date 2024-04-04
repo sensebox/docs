@@ -41,8 +41,7 @@ Der zweite Sensor ist ein Vishay VEML6070 Ultravioletter (UV)-Lichtsensor. Diese
 
 ## Programmierung
 
-```c++
-#include "SenseBoxMCU.h"
+```js
 #include <SPI.h>
 
 Lightsensor lightsensor;
@@ -70,11 +69,17 @@ In Blockly kann der Sensor über folgenden Block ausgelesen werden:
 ![](/img/hardware-bilder/helligkeit-uv/block_helligkeit_uv.svg)
 
 
+
 Im Block kannst du zwischen den verschiedenen Parametern des Helligkeits-/UV-Sensors auswählen:
 
 * Helligkeit in LUX
 * UV-Belastung in µW/cm^2
 
+## Projekte
+
+### [IoT Messtation](https://sensebox.de/projects/de/2024-01-10-iotmesstation_s2)
+
+## Extras
 >- [Datenblatt](https://sensebox.kaufen/assets/datenblatt/senseBox-VEML-TSL_v20.pdf)
 >- [Datenblatt Vishay VEML6070](https://www.vishay.com/docs/84277/veml6070.pdf)
 >- [Datenblatt LTR329](https://optoelectronics.liteon.com/upload/download/DS86-2014-0006/LTR-329ALS-01_DS_V1.pdf)
