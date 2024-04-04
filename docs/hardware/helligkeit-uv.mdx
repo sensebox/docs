@@ -4,6 +4,10 @@ title: Helligkeits- und UV-Sensor
 hide_title: false
 description: Helligkeits- und UV-Sensor
 ---
+
+import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
+import lightSensor from "@site/static/img/hardware-bilder/helligkeit-uv/sensor_helligkeit_uv.png"
+
 # Helligkeits- und UV-Sensor
 
 Auf diesem senseBox-Bauteil sind zwei Sensoren zusammengelegt.
@@ -12,7 +16,7 @@ Die Lichtintensität wird mit dem TSL45315-Sensor von AMS-TAOS gemessen oder dem
 
 Der zweite Sensor ist ein Vishay VEML6070 Ultravioletter (UV)-Lichtsensor. Dieser wandelt die Intensität des UV-Lichts der Sonne in digitale Daten um. Der Sensor hat eine hervorragende UV-Empfindlichkeit und Linearität über Filtron™-Technologie. Er hat eine gute UV-Strahlungsmessung auch bei langer Sonnen-UV-Belastung und kann exzellent Temperaturschwankungen ausgleichen.
 
-![](/img/hardware-bilder/helligkeit-uv/sensor_helligkeit_uv.png)
+<ImageWithText src={lightSensor} alt="Licht Sensor" title="Helligkeit und UV Sensor"/>
 
 ## Technische Details
 
