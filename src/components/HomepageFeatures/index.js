@@ -23,7 +23,7 @@ const FeatureList2 = [
     description: (
       <>Verschiedene Dokumentationen zur Bildungsversion der senseBox in der 2. Generation</>
     ),
-    to: "/docs/categories/edu-s2-overview",
+    to: "/docs/blockly/allgemein-basics-inbetriebnahme",
   }
 ];
 const FeatureList = [

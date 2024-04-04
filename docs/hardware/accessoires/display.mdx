@@ -22,6 +22,26 @@ Mit dem senseBox OLED Display lassen sich auf 128x64 Pixeln Messwerte, Statusmel
 * Panel Größe: 26,70x19,26x1,45 (mm)
 
 
-## Programmierung
+## Programmierung (Blockly)
+Um Informationen auf dem Display anzeigen zu lassen, muss dieses zuerst im `Setup()` initalisiert werden. Anschließend können in der `Endlosschleife()` die `Zeige auf dem Display`-Schleife und der `Display löschen`-Block platziert werden. Im freien Abschnitt des `Zeige auf Display`-Blocks kann dann anschließend festgelegt werden, was genau angezeigt werden soll. Der `Display löschen`-Block muss hinzugefügt werden, damit verschiedene Informationen nicht übereinander geschrieben werden.
 
-Zur Programmierung des Displays siehe im Kapitel [Blockly für die senseBox - Display](/blockly/blockly-Display/).
+![Text/Zahl anzeigen](/img/blockly-bilder/display/blockly-display-1.svg)
+
+### Text/Zahl anzeigen
+Um Text oder eine Zahl anzeigen zu lassen, ziehe den `Schreibe Text/Zahl`-Block in den freien Abschnitt des `Zeige auf Display`-Blocks.
+
+![Text/Zahl anzeigen](/img/blockly-bilder/display/blockly-display-2.svg)
+
+Der `Schreibe Text/Zahl`-Block verfügt über fünf Einstellungsmöglichkeiten:
+* **Schriftfarbe:** Hier kannst du wählen ob du mit weißer Schrift auf schwarzem Grund, oder mit schwarzer Schrift auf weißem Grund schreiben möchtest.
+* **Schriftgröße:** Hier kannst du einstellen, in welcher Größe dein Text, bzw. deine Zahl angezeigt werden soll. In Schriftgröße 1 ist ein Zeichen 8 Pixel hoch, in Schriftgröße 2 bereits 16 Pixel.
+* **x-Koordinate:** Hier legst du fest, an welcher x-Koordinate (siehe Abb. oben) du beginnen möchtest zu schreiben.
+* **y-Koordinate:** Hier legst du fest, an welcher y-Koordinate (siehe Abb. oben) du beginnen möchtest zu schreiben.
+* **Wert:** An diesen freien Blockabschnitt kann der jeweilige Text, die Zahl oder der Messwert angefügt werden.
+ 
+ ![Text/Zahl anzeigen](/img/blockly-bilder/display/blockly-display-3.svg)
+
+
+## Projekte
+
+### [IoT Messtation](https://sensebox.de/projects/de/2024-01-10-iotmesstation_s2)
