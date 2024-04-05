@@ -18,22 +18,66 @@ Mit der senseBox kannst du mithilfe des SD-Bees Daten auf einer microSD-Karte sp
 
 <AlertBox type="success" title="Modul onBoard!" description="Das SD-Modul ist auf der MCU S2 verbaut! Du musst hier also nichts weiter anschließen." />
 
-## Werte auf SD-Karte speichern
+## Programmierung (Arduino)
+In diesem Sketch werden die Werte von einem Sensor(in diesem Fall der HDC1080) ausgelesen und auf der SD-Karte gespeichert. Wir verwenden hier ein Interval welches alle 60 Sekunden feuert. 
+
+```cpp	
+#include <SD.h>
+#include <SPI.h>
+#include "FS.h"
+#include <Adafruit_HDC1000.h> // http://librarymanager/All#Adafruit_HDC1000_Library
+
+const long intervalInterval = 60000;
+long time_startInterval = 0;
+long time_actualInterval = 0;
+
+File Daten;
+Adafruit_HDC1000 hdc = Adafruit_HDC1000();
+SPIClass sdspi = SPIClass();
+
+void setup() {
+
+    pinMode(SD_ENABLE,OUTPUT);
+    digitalWrite(SD_ENABLE,LOW);
+    sdspi.begin(VSPI_SCLK,VSPI_MISO,VSPI_MOSI,VSPI_SS);
+    SD.begin(VSPI_SS,sdspi);
+    Daten = SD.open("/Daten.csv", FILE_WRITE);
+    Daten.close();
+    hdc.begin();
+}
+
+void loop() {
+    time_startInterval = millis();
+    if (time_startInterval > time_actualInterval + intervalInterval)
+    {
+        time_actualInterval = millis();
+        Daten = SD.open("/Daten.csv", FILE_WRITE);
+        Daten.println(hdc.readTemperature());
+        Daten.close();
+    }
+
+}
+
+```
+
+
+## Programmierung (Blockly)
+
 Mit dem `Erstelle Datei auf SD-Karte`-Block kann im Setup() eine neue Datei auf der SD-Karte erstellt werden. Im Dropdown-Menü des Blocks kann der Name der Datei geändert werden.
 
-![](/img/blockly-bilder/sd-karte/blockly-SD-1.svg)
+![](/img/blockly-bilder/sd-karte/blockly-sd-1.svg)
 
 Mit dem `Öffne Datei auf SD-Karte`-Block kann anschließend in der Endlosschleife die zuvor erstellte Datei geöffnet werden.
 
-![](/img/blockly-bilder/sd-karte/blockly-SD-2.svg)
+![](/img/blockly-bilder/sd-karte/blockly-sd-2.svg)
 
 Im freien Blockabschnitt des `Öffne Datei auf SD-Karte`-Blocks kann dann der `Schreibe Daten auf SD-Karte`-Block platziert werden. In diesem kann im freien Blockabschnitt wiederum der zu schreibende Text oder die zu schreibende Zahl platziert werden. Zusätzlich kann durch setzen des Häkchens bei `Zeilenumbruch` festgelegt werden, ob nach jedem Messwert ein Zeilenumbruch eingefügt werden soll oder nicht.
 
-![](/img/blockly-bilder/sd-karte/blockly-SD-3.svg)
+Zusätzlich holen wir aus der Kategorie `Zeit` den Block für ein Interval und aus der Kategorie `Sensoren` den gewünschten Sensor. Danach fügen wir alles zusammen und erhalten folgenden Sketch. 
 
-## Beispiel
-Im folgenden Beispiel wird die Temperatur in einer Variable gespeichert und anschließend auf die SD-Karte geschrieben. Mehr zum Thema Variablen findest du im gleichnamigen Kapitel.
+![](/img/blockly-bilder/sd-karte/blockly-sd-3.svg)
 
-![](/img/blockly-bilder/sd-karte/blockly-SD-4.svg)
+
+
 
 > - [Blockly.senseBox.de](https://blockly.sensebox.de/)

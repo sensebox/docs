@@ -118,7 +118,6 @@ const eduS2Sidebar =   {
       "blockly/logik",
       "blockly/mathematik",
       "blockly/schleifen",
-      "blockly/sd",
       "blockly/sensoren",
       "blockly/text",
       "blockly/variablen",
@@ -148,7 +147,7 @@ const eduS2Sidebar =   {
         type: 'generated-index',
         title: 'Besonderheiten',
       },
-      items: ["circuitpython/circuitpython_esp32"]
+      items: ["circuitpython/circuitpython_esp32", "misc/espnow"]
     }
   ]
 }
