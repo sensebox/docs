@@ -19,7 +19,7 @@ const mcuS2Board = []
 
 const bikeHardware = ["feinstaub", "temperatur-luftfeuchte", "distanz", "bmx055", "bee/bluetooth-bee", "bee/sd-bee"]
 const eduHardware = ["bee/wifi-bee", "bee/sd-bee", "temperatur-luftfeuchte", "helligkeit-uv", "distanz", "mikro", "luftdruck-temperatur", "accessoires/display"]
-const eduS2Hardware = ["temperatur-luftfeuchte","helligkeit-uv","luftdruck-temperatur",  "photodiode", "mpu6050","tof",   "bee/bluetooth-bee", "sd",
+const eduS2Hardware = ["temperatur-luftfeuchte","helligkeit-uv","luftdruck-temperatur",  "photodiode", "mpu6050","tof",   "bee/bluetooth-bee","wifi",  "sd",
 "accessoires/display", "rgb-led-esp32", "accessoires/led-matrix", ]
 const homeHardware = ["temperatur-luftfeuchte", "luftdruck-temperatur", "helligkeit-uv", "distanz", "mikro", "accessoires/display", "bee/wifi-bee", "feinstaub"]
 const trafficLight = ["co2", "accessoires/display", "accessoires/rgb-led"]
@@ -122,7 +122,6 @@ const eduS2Sidebar =   {
       "blockly/text",
       "blockly/variablen",
       "blockly/web/opensensemap",
-      "blockly/web/wifi",
       "blockly/zeit"
     ]
     }, 
