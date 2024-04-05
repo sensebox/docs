@@ -67,7 +67,7 @@ In der TTN Console kommen nun zwei verschiedene Werte von der senseBox an. Diese
 ![](/img/blockly-bilder/web-lora/blockly-lora-13.png)
 
 
-```js
+```cpp
 /**
  * Convert the array of bytes to an unsigned integer, LSB.
  *
@@ -85,7 +85,7 @@ function uint(bytes) {
 ```
 
 Hier kann nun der Decoder definiert werden:
-```js
+```cpp
 function Decoder(bytes) {
 
   var i = 0;
@@ -122,7 +122,7 @@ Einige wichtige Punkte sind zu beachten:
 
 
 und wie folgt decodieren:
-```js
+```cpp
 var lux = bytes[i] | bytes[i+1]<<8 | bytes[i+2]<<16;
 i = i + 3 // increment counter afterwards
 ```

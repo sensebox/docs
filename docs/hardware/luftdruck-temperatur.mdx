@@ -26,25 +26,29 @@ Dieser Sensor misst den Luftdruck und die Temperatur und basiert auf dem BMP280 
 * Gewicht: 2,4 g
 
 ## Programmierung
+Dieser Sketch liest den Luftdruck und die Temperatur aus und gibt die Werte über die serielle Schnittstelle aus.
+```cpp
+#include <Adafruit_DPS310.h> // http://librarymanager/All#Adafruit_DPS310
 
-```js
-#include "SenseBoxMCU.h"
-#include <SPI.h>
-
-BMP280 bmp_sensor;
+Adafruit_DPS310 dps;
 
 void setup() {
   Serial.begin(9600);
-  bmp_sensor.begin();
+
+  dps.begin_I2C(0x76);
+  dps.configurePressure(DPS310_64HZ, DPS310_64SAMPLES);
+  dps.configureTemperature(DPS310_64HZ, DPS310_64SAMPLES);
+
 }
 
 void loop() {
+    sensors_event_t temp_event, pressure_event;
+    dps.getEvents(&temp_event, &pressure_event);
+
     Serial.print("Pressure: ");
-    Serial.println(bmp_sensor.getPressure());
+    Serial.println(pressure_event.pressure);
     Serial.print("Temperature: ");
-    Serial.println(bmp_sensor.getTemperature());
-    Serial.print("Altitude: ");
-    Serial.println(bmp_sensor.getAltitude(1000));
+    Serial.println(temp_event.temperature);
 }
 ```
 

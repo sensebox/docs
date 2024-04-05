@@ -19,7 +19,7 @@ const mcuS2Board = []
 
 const bikeHardware = ["feinstaub", "temperatur-luftfeuchte", "distanz", "bmx055", "bee/bluetooth-bee", "bee/sd-bee"]
 const eduHardware = ["bee/wifi-bee", "bee/sd-bee", "temperatur-luftfeuchte", "helligkeit-uv", "distanz", "mikro", "luftdruck-temperatur", "accessoires/display"]
-const eduS2Hardware = ["temperatur-luftfeuchte", "bee/bluetooth-bee", "helligkeit-uv", "luftdruck-temperatur", "accessoires/display", "rgb-led-esp32", "led-matrix", "photodiode", "tof"]
+const eduS2Hardware = ["temperatur-luftfeuchte", "bee/bluetooth-bee", "helligkeit-uv", "luftdruck-temperatur", "accessoires/display", "rgb-led-esp32", "led-matrix", "photodiode", "tof", "mpu6050"]
 const homeHardware = ["temperatur-luftfeuchte", "luftdruck-temperatur", "helligkeit-uv", "distanz", "mikro", "accessoires/display", "bee/wifi-bee", "feinstaub"]
 const trafficLight = ["co2", "accessoires/display", "accessoires/rgb-led"]
 const mini = ["umweltsensor", "accessoires/display","bee/wifi-bee"]

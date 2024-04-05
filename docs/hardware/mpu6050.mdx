@@ -1,0 +1,57 @@
+---
+title: Beschleunigungssensor (MPU6050)
+---
+
+# Beschleunigungssensor (MPU6050)
+
+Mit einem Beschleunigungssensor kannst du die unsichtbare Kraft der Beschleunigung erfassen und messen, die auftritt, wenn sich ein Objekt schneller bewegt, langsamer wird oder seine Richtung ändert. Stell dir vor, du fährst Fahrrad und lehnst dich in eine Kurve – genau in diesem Moment wirken Beschleunigungskräfte. Diese Sensoren sind wie superempfindliche Werkzeuge, die nicht nur spüren können, wie schnell du beschleunigst oder abbremsst, sondern auch, in welche Richtung du dich bewegst.
+
+## Programmierung (Arduino)
+Dieser Sketch liest die Beschleunigungswerte des MPU6050 aus und gibt sie über die serielle Schnittstelle aus. Über den Seriellen Plotter kannst du dir die Werte in einem Diagramm anzeigen lassen. 
+
+```cpp
+#include <Wire.h>
+#include <Adafruit_MPU6050.h>
+
+Adafruit_MPU6050 mpu;
+sensors_event_t a, g, temp;
+
+void setup() {
+  // Serielle Kommunikation starten
+  Serial.begin(115200);
+  
+  Wire1.begin();
+  mpu.begin(0x68, &Wire1);
+  mpu.setAccelerometerRange(MPU6050_RANGE_8_G);
+
+
+  Serial.println("MPU6050 bereit!");
+}
+
+void loop() {
+  mpu.getEvent(&a, &g, &temp);
+
+  
+  // Beschleunigungsdaten ausgeben
+  Serial.print("X:"); 
+  Serial.print(a.acceleration.x);
+  Serial.print(",Y:"); 
+  Serial.print(a.acceleration.y); 
+  Serial.print(",Z:"); 
+  Serial.println(a.acceleration.z);
+    
+  // Kurze Pause, um die Ausgabe lesbar zu halten
+  delay(100);
+}
+```
+
+Die Ergebnisse kannst du in Arduino anzeigen unter `Werkzeuge -> Serieller Plotter` oder über das Terminalprogramm deiner Wahl.
+
+![](/img/hardware-bilder/mpu6050/mpu-6050-plotter.png)
+
+
+## Programmierung (Blockly)
+
+In Blockly kannst du den Sensor über folgenden Block auslesen: 
+
+![](/img/hardware-bilder/mpu6050/mpu-6050-block.svg)
