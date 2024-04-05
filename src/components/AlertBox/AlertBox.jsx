@@ -17,13 +17,19 @@ const icons = {
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
     </svg>
   ),
+  info: (
+    <svg className="text-[#055160]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h1m0-4h.01M12 22a9 9 0 100-18 9 9 0 000 18z" />
+    </svg>
+  )
 };
 
 const AlertBox = ({ type, title, description }) => (
   <div className={clsx(`flex p-4 mb-4 text-sm text-${type}-700 bg-${type}-100 rounded-lg items-center`, 
     type === 'success' ? `bg-[#d1e7dd] text-[#0f5132]`: '',
     type === 'warning' ? `bg-[#fff3cd] text-[#664d03]`: '',
-    type === 'error' ? `bg-[#f8d7da] text-[#842029]`: '' )}
+    type === 'error' ? `bg-[#f8d7da] text-[#842029]`: '' , 
+    type === 'info' ? `bg-[#d1ecf1] text-[#055160]`: '')}
     role="alert">
     <div className="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-${type}-500 bg-${type}-200 rounded-lg mr-3">
       {icons[type]}

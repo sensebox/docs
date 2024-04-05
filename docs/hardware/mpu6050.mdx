@@ -1,10 +1,13 @@
 ---
-title: Beschleunigungssensor (MPU6050)
+title: Beschleunigungssensor
 ---
+import  AlertBox from "@site/src/components/AlertBox/AlertBox";
 
 # Beschleunigungssensor (MPU6050)
 
 Mit einem Beschleunigungssensor kannst du die unsichtbare Kraft der Beschleunigung erfassen und messen, die auftritt, wenn sich ein Objekt schneller bewegt, langsamer wird oder seine Richtung ändert. Stell dir vor, du fährst Fahrrad und lehnst dich in eine Kurve – genau in diesem Moment wirken Beschleunigungskräfte. Diese Sensoren sind wie superempfindliche Werkzeuge, die nicht nur spüren können, wie schnell du beschleunigst oder abbremsst, sondern auch, in welche Richtung du dich bewegst.
+
+<AlertBox type="success" title="Sensor onBoard!" description="Der Beschleunigungssensor ist auf der MCU S2 verbaut! Du musst hier also nichts weiter anschließen." />
 
 ## Programmierung (Arduino)
 Dieser Sketch liest die Beschleunigungswerte des MPU6050 aus und gibt sie über die serielle Schnittstelle aus. Über den Seriellen Plotter kannst du dir die Werte in einem Diagramm anzeigen lassen. 

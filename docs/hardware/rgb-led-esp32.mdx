@@ -5,12 +5,15 @@ title: ESP32 RGB-LED
 
 import rgbLed from "@site/static/img/hardware-bilder/rgb-esp32/ledRed.png"
 import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
+import  AlertBox from "@site/src/components/AlertBox/AlertBox";
 
 # ESP32 RGB-LED
 
 Mit der RGB-LED kannst du verschiedene Farben darstellen. Die RGB-LED besteht aus drei LEDs, die in den Farben Rot, Grün und Blau leuchten. Durch das Mischen dieser Farben können viele verschiedene Farben dargestellt werden.
 
 <ImageWithText src={rgbLed} alt="RGB LED" title="RGB-LED"/> 
+
+<AlertBox type="success" title="LED onBoard!" description="Die RGB-LED ist auf der MCU S2 verbaut! Du musst hier also nichts weiter anschließen." />
 
 ## Programmierung (Arduino)
 
@@ -43,4 +46,3 @@ In Blockly kann der Sensor über folgenden Block ausgelesen werden:
 
 ### [RGB-LED Fader](https://sensebox.de/projects/de/2024-01-10-rgb-led_s2)
 
-## Extras

@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0 0 176.476 67.437" xmlns="http://www.w3.org/2000/svg">
-  <g xmlns="http://www.w3.org/2000/svg" class="blocklyBlockCanvas" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -111.15135955810547, 16.84464836120604)">
+<svg viewBox="0 0 192.483 70.965" xmlns="http://www.w3.org/2000/svg">
+  <g xmlns="http://www.w3.org/2000/svg" class="blocklyBlockCanvas" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -263.7334899902344, 201.1262817382812)">
     <g class="blocklyCursor">
       <g width="100" height="5">
-        <rect width="100" height="5" style="display: none; paint-order: fill;"/>
-        <rect class="blocklyVerticalMarker" rx="10" ry="10" style="display: none; fill: rgba(255, 255, 255, 0.5); pointer-events: none; stroke-width: 3px; paint-order: fill;"/>
-        <path transform="" style="display: none; paint-order: fill;"/>
-        <path transform="" style="display: none; paint-order: fill;" fill="none" stroke-width="4"/>
+        <rect width="100" height="5" style="display: none"/>
+        <rect class="blocklyVerticalMarker" rx="10" ry="10" style="display: none; fill: rgba(255, 255, 255, 0.5); pointer-events: none; stroke-width: 3px;"/>
+        <path transform="" style="display: none"/>
+        <path transform="" style="display: none" fill="none" stroke-width="4"/>
       </g>
     </g>
-    <g data-id="QWW|$jB8+*EL;}|#uA" class="blocklyDraggable" transform="translate(55, 80)" style="cursor: grabbing;"/>
-    <g data-id="xh^zJc#^N1x%62HBpn~j" class="blocklyDraggable blocklySelected" transform="matrix(1, 0, 0, 1, 115.079704, -10.374117)" style="cursor: grabbing;">
-      <path class="blocklyPathDark" transform="translate(1,1)" fill="#498449" d=" m 8,0 h 156 v 5 H 164 V 5 H 164 V 22 H 164 V 32 H 164 V 49 H 164 V 49 V 53 h -156 H 8 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z " style="cursor: grabbing; display: flex; paint-order: fill;"/>
-      <path class="blocklyPath" fill="#5ba55b" d=" m 8,0 h 156 v 5 H 164 V 5 H 164 V 22 H 164 V 32 H 164 V 49 H 164 V 49 V 53 h -156 H 8 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z " style="cursor: grabbing; stroke-width: 3px; paint-order: fill; stroke: rgba(255, 204, 51, 0);"/>
-      <path class="blocklyPathLight" stroke="#8cc08c" d=" m 8,0 m 0.5,0.5 H 163.5 H 163.5 M 8.5,52.5 M 8.5,52.5 V 20 v -1.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 " style="cursor: grabbing; display: none; fill: none; perspective-origin: 50% 50%; stroke-linecap: round; paint-order: fill;"/>
+    <g data-id="-p7FbM6?7cu$x)aD@tkA" class="blocklyDraggable" transform="matrix(1, 0, 0, 1, 274.47998, -193.8367)" style="cursor: grabbing;">
+      <path class="blocklyPathDark" transform="translate(1,1)" fill="#498449" d=" m 8,0 h 156 v 5 H 164 V 5 H 164 V 22 H 164 V 32 H 164 V 49 H 164 V 49 V 53 h -156 H 8 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z " style="cursor: grabbing; display: flex;"/>
+      <path class="blocklyPath" stroke="none" fill="#5ba55b" d=" m 8,0 h 156 v 5 H 164 V 5 H 164 V 22 H 164 V 32 H 164 V 49 H 164 V 49 V 53 h -156 H 8 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z " style="cursor: grabbing;"/>
+      <path class="blocklyPathLight" stroke="#8cc08c" d=" m 8,0 m 0.5,0.5 H 163.5 H 163.5 M 8.5,52.5 M 8.5,52.5 V 20 v -1.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 " style="cursor: grabbing; display: flex; fill: none; stroke-linecap: round;"/>
       <g transform="translate(18,5)">
-        <text class="blocklyText" style="fill: rgb(255, 255, 255); font-size: 14.6667px; line-height: normal; paint-order: fill; white-space: pre;" x="0" y="14">ESP32-S2 MPU6050</text>
+        <text class="blocklyText" x="0" y="14" style="white-space: pre; cursor: grabbing; fill: rgb(255, 255, 255); font-family: sans-serif; font-size: 14.6667px; font-weight: 400; line-height: normal; perspective-origin: 68.8594px 8.5px;">ESP32-S2 MPU6050</text>
       </g>
       <g transform="translate(51.39999961853027,32)">
-        <text class="blocklyText" style="fill: rgb(255, 255, 255); font-size: 14.6667px; line-height: normal; paint-order: fill; white-space: pre;" x="0" y="14">Messwert:</text>
+        <text class="blocklyText" x="0" y="14" style="white-space: pre; cursor: grabbing; fill: rgb(255, 255, 255); font-family: sans-serif; font-size: 14.6667px; font-weight: 400; line-height: normal; perspective-origin: 33.3906px 8.5px;">Messwert:</text>
       </g>
       <g class="blocklyEditableText" style="cursor: default;" transform="translate(123.39999961853027,32)">
-        <rect rx="4" ry="4" x="0" y="0" height="17" width="35.60000038146973" class="blocklyFieldRect blocklyDropdownRect" stroke="#8cc08c" fill="transparent" style="fill: rgb(255, 255, 255); fill-opacity: 0.6; stroke: none; paint-order: fill;"/>
-        <text class="blocklyText blocklyDropdownText" style="font-size: 14.6667px; line-height: normal; paint-order: fill; white-space: pre;"><tspan x="5" y="14">X</tspan><tspan style="fill: rgb(91, 165, 91);"> ▾</tspan></text>
+        <rect rx="4" ry="4" x="0" y="0" height="17" width="35.60000038146973" class="blocklyFieldRect blocklyDropdownRect" stroke="#8cc08c" fill="transparent" style="fill: rgb(255, 255, 255); fill-opacity: 0.6; stroke: none;"/>
+        <text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="14" style="white-space: pre; font-family: sans-serif; font-size: 14.6667px; font-weight: 400; line-height: normal; perspective-origin: 15.5469px 8.5px;">X<tspan style="fill: rgb(91, 165, 91);"> ▾</tspan></text>
         <image style="display: none;"/>
       </g>
     </g>

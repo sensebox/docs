@@ -1,10 +1,22 @@
 ---
 sidebar_position: 10
-title: SD-Modul
+title: SD-Karte
 hide_title: false
 ---
+import  AlertBox from "@site/src/components/AlertBox/AlertBox";
+import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
+import sdModul from "@site/static/img/mcus2/mcus2top.png"
+
+
+
+# SD-Modul
+
+<ImageWithText src={sdModul} alt="SD Modul" title="Das SD Modul findest du hier auf der rechten Seite der MCU S2"/> 
 
 Mit der senseBox kannst du mithilfe des SD-Bees Daten auf einer microSD-Karte speichern, um sie später am Computer auszuwerten.
+
+
+<AlertBox type="success" title="Modul onBoard!" description="Das SD-Modul ist auf der MCU S2 verbaut! Du musst hier also nichts weiter anschließen." />
 
 ## Werte auf SD-Karte speichern
 Mit dem `Erstelle Datei auf SD-Karte`-Block kann im Setup() eine neue Datei auf der SD-Karte erstellt werden. Im Dropdown-Menü des Blocks kann der Name der Datei geändert werden.

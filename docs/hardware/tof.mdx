@@ -17,7 +17,7 @@ Time-of-Flight (ToF)-Kameras sind in der Lage, hochauflösende Tiefenbilder zu e
 * VL53L8CX ToF Sensor
 
 ## Programmierung (Arduino)
-Für die Programmierung des Time-of-Flight Sensors muss zusätzlich noch [diese](https://github.com/stm32duino/VL53L8CX/tree/main) Library in Arduino installiert werden.
+Für die Programmierung des Time-of-Flight Sensors muss zusätzlich noch [diese](https://github.com/stm32duino/VL53L8CX/tree/main) Library in Arduino installiert werden. Dieser Sketch gibt die minimale Distanz in cm im Seriellen Monitor aus, die der Sensor gemessen hat.
 ```cpp
 #include <SPI.h>
 #include <Wire.h>
@@ -76,10 +76,10 @@ void loop(){
 
 In Blockly kann der Sensor über folgenden Block ausgelesen werden:
 
-![](/img/hardware-bilder/tof/tofBlock.png)
+![](/img/hardware-bilder/tof/tof_block.svg)
 
 
 ## Projekte
 
-### [Tiefenbilder auf der LED-Matrix anzeigen](https://sensebox.de/projects/de/2024-04-02-tof-led)
-### [Überwachungskamera](https://sensebox.de/projects/de/2024-04-02-%C3%BCberwachungskamera)
+* #### [Tiefenbilder auf der LED-Matrix anzeigen](https://sensebox.de/projects/de/2024-04-02-tof-led)
+* #### [Überwachungskamera](https://sensebox.de/projects/de/2024-04-02-%C3%BCberwachungskamera)
