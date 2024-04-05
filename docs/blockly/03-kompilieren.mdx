@@ -13,7 +13,7 @@ import {
   TabsList,
   TabsTrigger,
 } from "@site/src/components/ui/tabs";
-
+import  AlertBox from "@site/src/components/AlertBox/AlertBox";
 
 
 ## Kompilieren
@@ -42,3 +42,5 @@ Wenn dein Sketch fertig kompiliert ist, wird er dir in Form einer .BIN-Datei zum
   </p>
   <img src="/img/blockly-bilder/kompilieren/copy_to_mcu.gif" />
 </div>
+
+<AlertBox type="warning" title="Lange Übertragungsdauer!" description="Momentan kann die Übertragung einer .bin Datei auf die senseBox noch etwas länger dauern. Der Übertragunsvorgang ist vollständig abgeschlossen, wenn die LED grün leuchtet!" />
