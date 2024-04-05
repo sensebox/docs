@@ -1,10 +1,10 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-
-const collapse = require('remark-collapse')
+const { themes } = require("prism-react-renderer");
+const lightCodeTheme = themes.github;
+const darkCodeTheme = themes.dracula;
+const collapse = require("remark-collapse");
 
 require("dotenv").config();
 
@@ -30,7 +30,19 @@ const config = {
     defaultLocale: "de",
     locales: ["de", "en"],
   },
-
+  plugins: [
+    async function myPlugin(context, options) {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
+        },
+      };
+    },
+  ],
   presets: [
     [
       "classic",
@@ -41,6 +53,7 @@ const config = {
           showLastUpdateTime: true,
           showLastUpdateAuthor: true,
           remarkPlugins: [[collapse, { test: "tango" }]],
+          breadcrumbs: false,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: "https://github.com/sensebox/knowledge-base/tree/main",
@@ -53,25 +66,31 @@ const config = {
   ],
 
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+      /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        defaultMode: "light",
+        disableSwitch: true,
+
+      },
       navbar: {
         title: "senseBox Docs",
         logo: {
           alt: "senseBox Logo",
           src: "img/logo.svg",
         },
+        hideOnScroll: true,
         items: [
           {
             type: "doc",
-            docId: "intro",
+            docId: "blockly/allgemein-basics-inbetriebnahme",
             position: "left",
-            label: "Tutorial",
+            label: "Get started",
           },
-          // {to: '/blog', label: 'Blog', position: 'left'},
           {
-            type: "localeDropdown",
-            position: "right",
+            href: "https://www.sensebox.de",
+            position: "left",
+            label: "senseBox.de",
           },
           {
             href: "https://github.com/sensebox/knowledge-base",
@@ -81,48 +100,46 @@ const config = {
         ],
       },
       footer: {
-        style: "dark",
-        links: [
+        copyright: `© senseBox 2023. All rights reserved.`,
+        links:[
           {
-            title: "Docs",
+            title: "Materials", 
             items: [
               {
-                label: "Tutorial",
-                to: "/docs/intro",
+                label: "Impressum",
+                to: "https://sensebox.de/impressum",
               },
-            ],
+              {
+                label: "OpenSenseMap",
+                to: "https://opensensemap.org/impressum",
+              }
+        ]
+      }, 
+      {
+        title: "Community", 
+        items: [
+          {
+            label: "Forum",
+            to: "https://forum.sensebox.de",
           },
           {
-            title: "Community",
-            items: [
-              {
-                label: "Twitter",
-                href: "https://twitter.com/sensebox_de",
-              },
-            ],
+            label: "GitHub",
+            to: "https://github.com/sensebox"
           },
           {
-            title: "More",
-            items: [
-              {
-                label: "GitHub",
-                href: "https://github.com/sensebox/knowledge-base",
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-      },
+            label: "Support", 
+            to: "https://sensebox.de/support"
+          }
+        ]
+      }
+    ]
+      }, 
       algolia: {
         appId: process.env.ALGOLIA_APPID,
         apiKey: process.env.ALGOLIA_APIKEY,
-        indexName: process.env.ALGOLIA_INDEXNAME
+        indexName: process.env.ALGOLIA_INDEXNAME,
       },
-      prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
-        additionalLanguages: ["arduino"],
-      },
+
     }),
 };
 

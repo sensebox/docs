@@ -1,0 +1,49 @@
+---
+sidebar_position: 4
+title: Kompilieren und Übertragen
+hide_title: false
+---
+
+import Layout from "@site/src/Layout";
+import { useBoardStore } from "@site/src/lib/stores/store";
+import BoardDropdown from "@site/src/components/BoardDropdown/BoardDropdown";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@site/src/components/ui/tabs";
+import  AlertBox from "@site/src/components/AlertBox/AlertBox";
+
+
+## Kompilieren
+
+Damit dein Programm von der senseBox ausgeführt werden kann, muss es zuerst in Maschinensprache übersetzt werden. Diesen Vorgang nennt man _Kompilieren_. Im Fall der senseBox übernimmt das Kompilieren unser Server.
+
+Um deinen Sketch kompilieren zu lassen, klicke in Blockly oben rechts auf den orangenen Knopf mit dem Notizblocksymbol.
+
+![](/img/blockly-bilder/kompilieren/kompilieren.png)
+
+Wenn dein Sketch fertig kompiliert ist, wird er dir in Form einer .BIN-Datei zum Download angeboten. Speichere ihn an einem Ort, wo du ihn später wiederfindest.
+
+<div>
+  <h2> Übertragen </h2>
+  <p>
+    {" "}
+    Schließe nun deine senseBox MCU-S2 mit Hilfe des USB-Kabels an deinen Computer
+    an. Deine senseBox sollte nun als Wechseldatenträger von deinem Computer erkannt
+    werden.{" "}
+  </p>
+  <h3> Kopieren </h3>
+  <p>
+    Nun kannst du die zuvor heruntergeladene .BIN-Datei einfach per Drag & Drop
+    auf den Wechseldatenträger <b>SENSEBOX</b> kopieren. Die senseBox wird nun
+    deinen hochgeladenen Sketch abspielen.
+  </p>
+  <AlertBox type="warning" title="Lange Übertragungsdauer!">
+    <p>Momentan kann die Übertragung einer .bin Datei auf die senseBox noch etwas länger dauern. Der Übertragunsvorgang ist vollständig abgeschlossen, wenn die LED grün leuchtet!</p>
+  </AlertBox>
+
+  <img src="/img/blockly-bilder/kompilieren/copy_to_mcu.gif" />
+</div>
+

@@ -122,7 +122,7 @@ Hier benutzen wir auch eine Kabelverschraubung, um den Schlauch abzudichten. Dan
 
 Die außenliegenden Sensoren, also der Sensor für Temperatur und Luftfeuchtigkeit, sowie der Feinstaubsensor werden jetzt an die MCU angeschlossen.
 Dafür nehmen wir zuerst das Kabel aus dem Strahlenschutz und fädeln es durch die letzte Kabelverschraubung in das Gehäuse.
-{% include image.html image=page.image13 %}
+
 Dort wird das Kabel in einen der Steckplätze mit der Aufschrift I2C/Wire eingesteckt.
 
 ![](/img/sensebox-home-bilder/home-schritt-1/sensebox-home-19.jpg)

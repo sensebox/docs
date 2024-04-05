@@ -33,7 +33,7 @@ Informationen zur Programmierung des SD-Bees mit Blockly findest du [hier](/bloc
 # Programmierung (Arduino)
 Im folgenden Beispiel zeigen wir dir, wie du deine Daten auf einer SD-Karte speichern kannst. 
 
-```arduino
+```c++
 // Einladen der Bibliotheken
 #include <SPI.h>
 #include <SD.h>

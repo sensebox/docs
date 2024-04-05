@@ -50,7 +50,7 @@ Das Wifi-Bee ist das Verbindungsstück, um die senseBox mit dem Internet zu verb
 
 Um die Verbindung des Bees mit dem Internet zu testen, also sowohl die Funktion der Komponente, als auch des Netzwerks, nutze den folgenden Sketch:
 
-```arduino
+```c++
 #include <SPI.h>
 #include <WiFi101.h>
 #include <senseBoxIO.h>
