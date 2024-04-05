@@ -149,7 +149,7 @@ const eduS2Sidebar =   {
         type: 'generated-index',
         title: 'Besonderheiten',
       },
-      items: ["misc/circuitpython"]
+      items: ["circuitpython/circuitpython_esp32"]
     }
   ]
 }

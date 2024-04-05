@@ -53,3 +53,6 @@ Wenn du CircuitPython von deiner senseBox MCU-S2 deinstallieren möchtest um wie
 4. Die senseBox MCU-S2 startet nun neu und du kannst wie gewohnt Blockly oder Arduino verwenden.
 
 
+## Projekte
+
+### [CO2 Ampel](https://sensebox.de/projects/de/2024-04-02-circuitpython-co2-ampel)
