@@ -3,16 +3,18 @@ sidebar_position: 1
 title: WiFi
 hide_title: false
 ---
-import sdModul from "@site/static/img/mcus2/mcus2top.png"
+import wifiModul from "@site/static/img/mcus2/mcus2top.png"
 import  AlertBox from "@site/src/components/AlertBox/AlertBox";
 import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
 
 # WiFi-Modul
-<ImageWithText src={sdModul} alt="SD Modul" title="Das WiFi Modul ist auf dem Board direkt mittig verbaut."/> 
+<ImageWithText src={wifiModul} alt="SD Modul" title="Das WiFi Modul ist auf dem Board direkt mittig verbaut."/> 
 
 Mit dem WiFi-Modul kannst du deine senseBox mit dem Internet verbinden.  Zusätzlich hast du die Optionen mit dem WiFi Modul ein eigenes WLAN-Netzwerk zu erstellen oder dich mit einem bestehenden Netzwerk zu verbinden.
 
-<AlertBox type="success" title="Modul onBoard!" description="Das WiFi-Modul ist auf der MCU S2 verbaut! Du musst hier also nichts weiter anschließen." />
+<AlertBox type="success" title="Modul onBoard!">
+  <p>Das WiFi-Modul ist auf der MCU S2 verbaut! Du musst hier also nichts weiter anschließen.</p>
+</AlertBox>
 
 ## Allgemeines
 In Blockly hast du verschiedene Möglichkeiten, Projekte umzusetzen, die mit dem Internet arbeiten. Für alle musst du deine senseBox zuerst mit dem Internet verbinden.

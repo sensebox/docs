@@ -95,7 +95,8 @@ const eduS2Sidebar =   {
       items: [
         "blockly/allgemein-basics-inbetriebnahme",
         "blockly/your-first-sketch",
-        "blockly/kompilieren"
+        "blockly/kompilieren", 
+        "blockly/reset-esp32"
       ]
     }, 
     {
@@ -146,7 +147,7 @@ const eduS2Sidebar =   {
         type: 'generated-index',
         title: 'Besonderheiten',
       },
-      items: ["circuitpython/circuitpython_esp32", "misc/espnow"]
+      items: ["circuitpython/circuitpython_esp32"]
     }
   ]
 }

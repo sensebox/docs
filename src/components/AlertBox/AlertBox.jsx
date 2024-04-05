@@ -24,7 +24,7 @@ const icons = {
   )
 };
 
-const AlertBox = ({ type, title, description }) => (
+const AlertBox = ({ type, title, children }) => (
   <div className={clsx(`flex p-4 mb-4 text-sm text-${type}-700 bg-${type}-100 rounded-lg items-center`, 
     type === 'success' ? `bg-[#d1e7dd] text-[#0f5132]`: '',
     type === 'warning' ? `bg-[#fff3cd] text-[#664d03]`: '',
@@ -36,7 +36,7 @@ const AlertBox = ({ type, title, description }) => (
     </div>
     <div>
       <span className="font-medium font-extrabold">{title}</span>
-      <div>{description}</div>
+      {children}
     </div>
   </div>
 );
