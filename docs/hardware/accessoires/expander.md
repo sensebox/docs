@@ -6,7 +6,7 @@ description: senseBox Expander
 ---
 # Expander
 
-Der Sensor-Hub ist eine Erweiterung um mehr Sensoren an die senseBox anzuschließen. Dafür stehen vier weitere Ports zum Anschluss von JST Kabeln zur Verfügung.
+Der Sensor-Hub ist eine Erweiterung, um mehr Sensoren an die senseBox anzuschließen. Dafür stehen vier weitere Ports zum Anschluss von JST-Kabeln zur Verfügung.
 
 ![](/img/hardware-bilder/expander/hub_bottom.png)
 
