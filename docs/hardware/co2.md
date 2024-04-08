@@ -35,7 +35,7 @@ Der CO<sub>2</sub>-Sensor sollte nicht dauerhaft im Außenbereich verwendet werd
 
 Im Regelfall kommt der CO<sub>2</sub>-Sensor bereits kalibriert bei dir an. Grobe Handhabung, Versand oder Löten kann die Genauigkeit des Sensors reduzieren, was eine Kalibrierung notwendig macht. Für diesen Sketch benötigst du das Display. Hast du kein Display vorhanden, kannst du die Display relevanten Teile löschen, dies beeinflusst die Kalibrierung des Sensors nicht!
 
-Um den CO<sub>2</sub>-Sensor zu kalibieren, muss dieser über einen Zeitraum von **mindestens 7 Tage** jeweils **täglich** mindestens eine Stunde Frischluft mit einer CO<sub>2</sub>-Konzentration von `400ppm` ausgesetzt sein. Solange der Sensor nicht in unmittelbarer Nähe einer C<sub>2</sub>O-Quelle (z.B. eigene Atmung, Verbrennungsprozess o.Ä.) aufgebaut wird, können wir davon ausgehen dass die Atmosphäre eine Konzentration von ca. `400ppm` aufweist [Tendenz steigend](https://www.esrl.noaa.gov/gmd/ccgg/trends//).
+Um den CO<sub>2</sub>-Sensor zu kalibrieren, muss dieser über einen Zeitraum von **mindestens 7 Tage** jeweils **täglich** mindestens eine Stunde Frischluft mit einer CO<sub>2</sub>-Konzentration von `400ppm` ausgesetzt sein. Solange der Sensor nicht in unmittelbarer Nähe einer C<sub>2</sub>O-Quelle (z.B. eigene Atmung, Verbrennungsprozess o.Ä.) aufgebaut wird, können wir davon ausgehen, dass die Atmosphäre eine Konzentration von ca. `400ppm` aufweist, [Tendenz steigend](https://www.esrl.noaa.gov/gmd/ccgg/trends//).
 
 Installiere das [Board-Support-Package](https://docs.sensebox.de/arduino/board-support-package-installieren/) der senseBox und zusätzlich über den Bibliotheksverwalter in der Arduino IDE die `SparkFun_SCD30_Arduino_Library`. Daraufhin kannst du folgenden Sketch auf die MCU hochladen.
 
@@ -106,11 +106,11 @@ void loop() {
 }
 ```
 
-Nachdem der Sketch hochgeladen ist, bringe den CO<sub>2</sub>-Sensor über einen Zeitraum von 7 Tage täglich für mindestens 1 Stunde nach draußen an die frische Luft. Auf dem Display wird dir angezeigt, wieviel Zeit seit dem Upload vergangen ist. Für eine möglichst gute Kalibrierung des Sensors wiederhole dies für 7 Tage. Beachte dabei, dass die senseBox in dieser Zeitspanne nicht ausgeschaltet werden darf, sonst muss die Kalibrierung neu gestartet werden!
+Nachdem der Sketch hochgeladen ist, bringe den CO<sub>2</sub>-Sensor über einen Zeitraum von 7 Tage täglich für mindestens 1 Stunde nach draußen an die frische Luft. Auf dem Display wird dir angezeigt, wie viel Zeit seit dem Upload vergangen ist. Für eine möglichst gute Kalibrierung des Sensors wiederhole dies für 7 Tage. Beachte dabei, dass die senseBox in dieser Zeitspanne nicht ausgeschaltet werden darf, sonst muss die Kalibrierung neu gestartet werden!
 
 ## Kalibrieren des CO<sub>2</sub>-Sensors (Manuelle Kalibrierung)
 
-Im Gegensatz zur Auto Kalibrierung des CO2 Sensors, welche mindestens 7 Tage dauert, kannst du alternativ auch die manuelle Kalibrierung durchführen. [Dazu wurde im senseBox Forum eine hervorragende Anleitung geschrieben](https://forum.sensebox.de/t/co2-ampel-kalibrieren/1108).
+Im Gegensatz zur Auto-Kalibrierung des CO2-Sensors, welche mindestens 7 Tage dauert, kannst du alternativ auch die manuelle Kalibrierung durchführen. [Dazu wurde im senseBox Forum eine hervorragende Anleitung geschrieben](https://forum.sensebox.de/t/co2-ampel-kalibrieren/1108).
 
 Die kompilierte `.bin` Datei kann [hier](/docs/sensebox_co2_calibrate_manual.bin) heruntergeladen werden.
 
