@@ -20,6 +20,9 @@ import tempSensor from "@site/static/img/hardware-bilder/temperatur-luftfeuchte/
 import pressureSensor from "@site/static/img/hardware-bilder/luftdruck/bmp_top.png";
 import tofSensor from "@site/static/img/hardware-bilder/tof/tofsensor.png";
 import ledMatrix from "@site/static/img/hardware-bilder/led-matrix/led-matrix.png";
+import i2cdaiychain from "@site/static/img/hardware-bilder/i2c/i2c-daisy-chain.png";
+import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
+
 
 // Positions of the different elements
 const usbPort = {
@@ -128,8 +131,15 @@ const MCUS2Board = () => {
           </Popover>
         </div>
       </div>
-      <div className="flex w-full">
-        <h1 className="text-left">I2C Chaining</h1>
+      <div className="flex flex-col w-full">
+        <h1 className="text-left">I2C/Wire Daisy Chain</h1>
+        <p className="text-left">
+        Eine I2C-Daisy-Chain ermöglicht die einfache und effiziente Verbindung mehrerer Geräte in einer seriellen Kommunikationskette unter Verwendung des I2C-Protokolls. Durch die Daisy-Chain-Konfiguration kann jedes Gerät in der Kette Daten senden und empfangen. Diese Methode ist besonders nützlich in Anwendungen, bei denen Platz und Ressourcen begrenzt sind, da sie die Anzahl der benötigten physischen Verbindungen minimiert und gleichzeitig eine robuste und zuverlässige Datenkommunikation ermöglicht.
+        </p>
+        <div className="flex justify-center">
+          <ImageWithText src={i2cdaiychain} title="I2C/Wire Daisy Chain" />
+
+        </div>
       </div>
     </div>
   );
