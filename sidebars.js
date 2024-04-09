@@ -80,14 +80,14 @@ const eduSidebar =   {
 const eduS2Sidebar =   {
   type: 'category', 
   label: ':edu S2', 
-  // link : {
-  //   type: 'doc',
-  //   id: 'categories/edu-s2-overview',
-  // },
   link : {
-    type: 'generated-index',
-    title: 'senseBox:edu S2',
+    type: 'doc',
+    id: 'categories/edu-s2-overview',
   },
+  // link : {
+  //   type: 'generated-index',
+  //   title: 'senseBox:edu S2',
+  // },
   items: [
     {
       type: 'category', 
