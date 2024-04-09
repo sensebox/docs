@@ -23,8 +23,19 @@ const FeatureList2 = [
     description: (
       <>Dokumentation zur Bildungsversion der senseBox in der 2. Generation</>
     ),
-    to: "/docs/categories/edu-s2-overview",
-  }
+    to: "/docs/edus2/edu-s2-overview",
+  }, 
+  {
+    title: ":edu",
+    Image: homeCategoryIcon,
+    description: (
+      <>
+        Informationen zum Anschluss und Programmierung der Sensoren, Bees und
+        weiteren Bauteilen für Bildungszwecke
+      </>
+    ),
+    to: "/docs/category/edu",
+  },
 ];
 const FeatureList = [
   {
@@ -60,7 +71,7 @@ const FeatureList = [
     description: (
       <>Verschiedene Dokumentationen zur Bildungsversion der senseBox in der 2. Generation</>
     ),
-    to: "/docs/categories/edu-s2-overview"
+    to: "/docs/edus2/edu-s2-overview"
   },
   {
     title: ":home",

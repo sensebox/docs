@@ -1,3 +1,5 @@
+const eduS2Hardware = ["temperatur-luftfeuchte","helligkeit-uv","luftdruck-temperatur",  "photodiode", "mpu6050","tof",   "bee/bluetooth-bee","wifi",  "sd",
+"accessoires/display", "rgb-led-esp32", "accessoires/led-matrix", ]
 /**
  * Creating a sidebar enables you to:
  - create an ordered group of docs
@@ -8,6 +10,14 @@
 
  Create as many sidebars as you want.
  */
+
+
+const miniBoard = []
+const mcuBoard = []
+const mcuS2Board = []
+
+
+
 
 const bikeHardware = ["feinstaub", "temperatur-luftfeuchte", "distanz", "bmx055", "bee/bluetooth-bee", "bee/sd-bee"]
 const eduHardware = ["bee/wifi-bee", "bee/sd-bee", "temperatur-luftfeuchte", "helligkeit-uv", "distanz", "mikro", "luftdruck-temperatur", "accessoires/display"]
@@ -36,16 +46,13 @@ const bikeSidebar = {
       // generate items from bikeHardware variable
       // map over each item in bikeHardware and return an object lookin like this {type: 'ref', id: 'hardware/id'} with the item
       [
-        'hardware/feinstaub',
-        'hardware/temperatur-luftfeuchte',
-        'hardware/distanz',
-
+        ...bikeHardware.map(id => ({type: 'ref', id: `hardware/${id}`}))
       ]
       }, 
       {
         type:'category', 
         label: 'App', 
-        items: ["bike/app/ersteschritteapp"]
+        items: ["app/ersteschritteapp"]
       }
   ]
 }
@@ -77,8 +84,12 @@ const eduS2Sidebar =   {
   label: ':edu S2', 
   link : {
     type: 'doc',
-    id: 'edus2/edu-s2-overview',
+    id: 'categories/edu-s2-overview',
   },
+  // link : {
+  //   type: 'generated-index',
+  //   title: 'senseBox:edu S2',
+  // },
   items: [
     {
       type: 'category', 
@@ -97,20 +108,7 @@ const eduS2Sidebar =   {
         type : 'generated-index',
         title: 'Hardware',
       },
-      items: [
-        'hardware/sensors/temperatur-luftfeuchte',
-        'hardware/sensors/helligkeit-uv',
-        'hardware/sensors/luftdruck-temperatur',
-        'hardware/sensors/photodiode',
-        'hardware/sensors/mpu6050',
-        'hardware/sensors/tof',
-        'hardware/bee/bluetooth-bee',
-        'hardware/wifi',
-        'hardware/sd',
-        'hardware/accessoires/display',
-        'hardware/accessoires/rgb-led-esp32',
-        'hardware/accessoires/led-matrix'
-      ]
+      items: eduS2Hardware.map(id => `hardware/${id}`)
     }, 
     {
       type: 'category',
@@ -151,7 +149,7 @@ const eduS2Sidebar =   {
         type: 'generated-index',
         title: 'Besonderheiten',
       },
-      items: ["misc/circuitpython_esp32"]
+      items: ["circuitpython/circuitpython_esp32"]
     }
   ]
 }
@@ -218,7 +216,7 @@ const miniSidebar =   {
 export default {
   senseBoxSidebar: [
     // bikeSidebar,
-    // eduSidebar,
+    eduSidebar,
     eduS2Sidebar,
     // homeSidebar,
     // trafficLightSidebard, 
