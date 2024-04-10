@@ -79,7 +79,7 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "blockly/allgemein-basics-inbetriebnahme",
+            docId: "mcus2/allgemein-basics-inbetriebnahme",
             position: "left",
             label: "Get started",
           },

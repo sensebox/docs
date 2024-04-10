@@ -20,23 +20,62 @@ import { useBoardStore } from "@site/src/lib/stores/store";
 const FeatureList2 = [
   {
     title: ":edu S2",
-    Image: homeCategoryIcon,
     description: (
       <>Dokumentation zur Bildungsversion der senseBox in der 2. Generation</>
     ),
-    to: "/docs/edus2/edu-s2-overview",
+    to: "/docs/mcus2/mcu-s2-overview",
   }, 
   {
     title: ":edu",
-    Image: homeCategoryIcon,
     description: (
       <>
         Informationen zum Anschluss und Programmierung der Sensoren, Bees und
         weiteren Bauteilen für Bildungszwecke
       </>
     ),
-    to: "/docs/category/edu",
+    to: "/docs/mcu/mcu-overview",
   },
+ /*  {
+    title: ":bike",
+    description: (
+      <>
+        Informationen zum Anschluss und Programmierung der Sensoren, Bees und
+        weiteren Bauteilen für Bildungszwecke
+      </>
+    ),
+    to: "/docs/category/bike",
+  },
+  {
+    title: ":home",
+    description: (
+      <>
+        Informationen zum Anschluss und Programmierung der Sensoren, Bees und
+        weiteren Bauteilen für Bildungszwecke
+      </>
+    ),
+    to: "/docs/category/home",
+  },
+  {
+    title: ":mini",
+    description: (
+      <>
+        Informationen zum Anschluss und Programmierung der Sensoren, Bees und
+        weiteren Bauteilen für Bildungszwecke
+      </>
+    ),
+    to: "/docs/category/mini",
+  },
+  {
+    title: ":CO2-Ampel",
+    description: (
+      <>
+        Informationen zum Anschluss und Programmierung der Sensoren, Bees und
+        weiteren Bauteilen für Bildungszwecke
+      </>
+    ),
+    to: "/docs/category/trafficLight",
+  },
+   */
 ];
 
 const ThumbNailPreviewList = [
@@ -82,7 +121,7 @@ function ThumbailPreview({ Image, title, description, to }) {
   );
 }
 
-function Feature({ Image, title, description, to }) {
+function Feature({ title, description, to }) {
   const handleBoardChange = (selectedBoard) => {
     // Verwende die setBoard-Funktion direkt, um das Board im Store zu aktualisieren
     useBoardStore.setState({ board: selectedBoard });
@@ -124,8 +163,6 @@ export default function HomepageFeatures() {
               <Feature key={idx} {...props} />
             ))}
           </div>
-
-          {/* Glossar */}
         </div>
       </div>
       <div className="flex flex-col  lg:flex-row justify-center gap-4 lg:gap-0 p-4 lg:p-20">

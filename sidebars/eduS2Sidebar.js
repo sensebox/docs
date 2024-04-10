@@ -15,17 +15,16 @@ const eduS2Sidebar =   {
   label: ':edu S2', 
   link : {
     type: 'doc',
-    id: 'edus2/edu-s2-overview',
+    id: 'mcus2/mcu-s2-overview',
   },
   items: [
     {
       type: 'category', 
       label: 'Erste Schritte', 
       items: [
-        "blockly/allgemein-basics-inbetriebnahme",
-        "blockly/your-first-sketch",
-        "blockly/kompilieren", 
-        "blockly/reset-esp32"
+        "mcus2/allgemein-basics-inbetriebnahme",
+        "blockly/introduction/your-first-sketch",
+        "blockly/introduction/kompilieren", 
       ]
     }, 
     {
@@ -58,14 +57,14 @@ const eduS2Sidebar =   {
         title: 'Blockly',
       },
     items: [
-      "blockly/logik",
-      "blockly/mathematik",
-      "blockly/schleifen",
-      "blockly/sensoren",
-      "blockly/text",
-      "blockly/variablen",
-      "blockly/web/opensensemap",
-      "blockly/zeit"
+      "blockly/blocks/logik",
+      "blockly/blocks/mathematik",
+      "blockly/blocks/schleifen",
+      "blockly/blocks/sensoren",
+      "blockly/blocks/text",
+      "blockly/blocks/variablen",
+      "blockly/blocks/web/opensensemap",
+      "blockly/blocks/zeit"
     ]
     }, 
     {
@@ -78,7 +77,6 @@ const eduS2Sidebar =   {
       items: [
         "arduino/installation-arduino-ide",
         "arduino/installation-bsp",
-
       ]
     },
 
@@ -89,7 +87,7 @@ const eduS2Sidebar =   {
         type: 'generated-index',
         title: 'Besonderheiten',
       },
-      items: ["misc/circuitpython_esp32"]
+      items: ["mcus2/circuitpython_esp32"]
     }
   ]
 }

@@ -1,0 +1,33 @@
+---
+title: MCU Revisionen
+---
+import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
+import  mcuComparisons  from "@site/static/img/mcu/revisions/mcu_comparison.jpeg"
+import  mcuV13  from "@site/static/img/mcu/revisions/mcu_v13.jpeg"
+import  mcuV15 from "@site/static/img/mcu/revisions/mcu_v15.jpeg"
+import  mcuV15bmx from "@site/static/img/mcu/revisions/mcu_v15_bmx.jpeg"
+
+## Revisionen der senseBox MCU
+
+Während der Entwicklung der senseBox MCU wurden mehrere Revisionen entwickelt. Die aktuelle Version ist die V1.5. Die folgende Übersicht zeigt dir die Unterschiede zwischen den einzelnen Revisionen. Grundlegend sind alle Versionen kompatibel zu den anderen Versionen und unterscheiden sich nur geringfügig in der Hardware.
+
+<div className="flex flex-col items-center">
+    <img src= { mcuComparisons } />
+    <p className="text-gray-500"> Unterschiede der senseBox MCU Revisionen </p>
+</div>
+### V1.3
+
+Die Revision 1.3 ist die erste Version die ab 2018 ausgeliefert wurde. Sie ist mit einem Beschleunigungssensor (BMX055) ausgestattet und Mikro USB Anschluss ausgestattet. 
+
+<ImageWithText src= {mcuV13} title="MCU Revision 1.3"/>
+
+
+### V1.5 mit USB-C Anschluss
+
+Die Version 1.5 der senseBox MCU ist mit einem USB-C Anschluss ausgestattet. Dieser ermöglicht eine einfache und schnelle Verbindung zum Computer. Die Version 1.5 ist kompatibel zu allen bisherigen Versionen der senseBox MCU. 
+
+<ImageWithText src={ mcuV15 } title="MCU Revision 1.5"/>
+
+Aufgrund der Knappheit von Elekronikbauteilen wurde eine Charge der Revision 1.5 ohne Beschleunigungssensor (BMX055) ausgeliefert. Falls du dir unsicher bist ob deine senseBox MCU eine Beschleunigungssensor hat, hilft dir die untstehende Grafik weiter. Die obere Version der MCU V1.5 hat einen Beschleunigungssensor, die untere Version nicht.
+
+<ImageWithText src={ mcuV15bmx } title="MCU Revision 1.5 ohne Beschleunigungssensor"/>

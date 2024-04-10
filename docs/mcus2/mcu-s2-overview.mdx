@@ -1,3 +1,4 @@
+import Admonition from '@theme/Admonition';
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import image from "@site/static/img/mcus2/mcus2top.png";
@@ -22,33 +23,11 @@ import tofSensor from "@site/static/img/hardware-bilder/tof/tofsensor.png";
 import ledMatrix from "@site/static/img/hardware-bilder/led-matrix/led-matrix.png";
 import i2cdaiychain from "@site/static/img/hardware-bilder/i2c/i2c-daisy-chain.png";
 import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
+import mcus2top from '@site/static/img/mcus2/mcus2top.png';
 
-
-// Positions of the different elements
-const usbPort = {
-  x: 40,
-  y: 180,
-  width: 40,
-  height: 40,
-};
-
-const MCUS2Board = () => {
-  const [showArrow, setShowArrow] = useState(false);
-  const [targetPosition, setTargetPosition] = useState({ x: 0, y: 0 });
-  const [targetSize, setTargetSize] = useState({ width: 0, height: 0 });
-  const handleTextHover = (targetX, targetY, width, height) => {
-    // Update state to show the arrow and set its position
-    setTargetPosition({ x: targetX, y: targetY });
-    setTargetSize({ width, height });
-    setShowArrow(true);
-  };
-
-  const handleTextLeave = () => {
-    // Hide the arrow when leaving the text
-    setShowArrow(false);
-  };
-
-  return (
+<div className="flex flex-col justify-center items-center">
+    <h1>MCU S2 (ESP32)</h1>
+    <p>Der  Mikrocontroller auf ESP-32 Basis bietet eine Vielzahl von neuen Möglichkeiten in Hinsicht auf Datenübertragung, Datenaustausch und Bedienung.</p>
     <div className="flex w-full flex-col items-center text-center gap-4">
       <div >
         <img src={mcus2ports} alt="Your Image" className="" />{" "}
@@ -142,7 +121,8 @@ const MCUS2Board = () => {
         </div>
       </div>
     </div>
-  );
-};
 
-export default MCUS2Board;
+
+    
+
+</div>

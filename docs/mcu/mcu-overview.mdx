@@ -1,0 +1,30 @@
+import mcus2top from '@site/static/img/mcus2/mcus2top.png';
+import AlertBox from "@site/src/components/AlertBox/AlertBox";
+import mcuPorts from "@site/static/img/mcu/sensebox-mcu-ports.png";
+
+<div className = "flex flex-col justify-center items-center">
+    <h1>senseBoxMCU</h1>
+    <p>Der senseBox-Microcontroller ist speziell für die Bedürfnisse der senseBox entwickelt. Deshalb hat der Microcontroller insbesondere drei Eigenschaften: er ist schnell, energiesparend und hat einen großen Programmspeicher. </p>
+    <p>
+    Auch ohne Vorkenntnisse kann der Microcontroller ganz einfach mit der Übertragung eines vorgefertigten Sketches in 10 Minuten “programmiert” werden. Für fortgeschrittene Programmierer kann wie gewohnt die Arduino IDE eingesetzt werden, um neue und individuelle Projekte durchzuführen.
+    </p>  
+    <div>
+        <img src={mcuPorts} alt="senseBox MCU" />
+    </div>
+</div>
+
+## Technische Spezifikationen
+
+### Prozessor
+Der Prozessor basiert auf dem ARM Cortex-M0+ Prozessor aus der SAM D21 Familie von Microchip.
+
+### Schnittstellen
+Sensoren und Aktoren werden über die bewährten Schnittstellen wie I2C, UART und digitale I/Os mit einem robusten JST-Steckersystem angesprochen (5V tolerant). 
+
+### Datenübertragung
+Über die beiden XBee kompatiblen Sockel werden UART oder SPI Module angeboten. Wahlweise kann die Datenübertragung dadurch per WLAN, LAN oder LoRa in Echtzeit durchgeführt werden. Alternativ können die Daten auch auf einer Mikro-SD Karte gespeichert werden.  
+
+## Programmierung
+
+Die senseBox MCU kann über verschiedene Programmierumgebungen programmiert werden. Eine genaue Übersicht findest du [hier](/arduino/allgemein-sensebox-editoren/).
+

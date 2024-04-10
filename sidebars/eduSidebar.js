@@ -2,10 +2,17 @@ const eduSidebar =   {
   type: 'category', 
   label: ':edu', 
   link:{
-    type: 'generated-index', 
-    title: 'senseBox:edu',
+    type: 'doc', 
+    id: 'mcu/mcu-overview',
   }, 
   items: [
+    {
+      type: 'category',
+      label: 'Erste Schritte',
+      items: [
+        'mcu/mcu-revisions'
+      ]
+    }, 
     {
       type: 'category', 
       label: 'Hardware', 

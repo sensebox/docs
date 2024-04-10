@@ -1,45 +1,42 @@
-import React, { useEffect } from 'react';
-import clsx from 'clsx';
-import {useThemeConfig} from '@docusaurus/theme-common';
-import Logo from '@theme/Logo';
-import CollapseButton from '@theme/DocSidebar/Desktop/CollapseButton';
-import Content from '@theme/DocSidebar/Desktop/Content';
-import styles from './styles.module.css';
+import React, { useEffect } from "react";
+import clsx from "clsx";
+import { useThemeConfig } from "@docusaurus/theme-common";
+import Logo from "@theme/Logo";
+import CollapseButton from "@theme/DocSidebar/Desktop/CollapseButton";
+import Content from "@theme/DocSidebar/Desktop/Content";
+import styles from "./styles.module.css";
 import { useBoardStore } from "@site/src/lib/stores/store";
 
-function DocSidebarDesktop({path, sidebar, onCollapse, isHidden}) {
+function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
   const {
-    navbar: {hideOnScroll},
+    navbar: { hideOnScroll },
     docs: {
-      sidebar: {hideable},
+      sidebar: { hideable },
     },
   } = useThemeConfig();
 
-  const board = useBoardStore((state) => state.board);  
+  const board = useBoardStore((state) => state.board);
   const [sideBar, setSideBar] = React.useState(sidebar);
 
   useEffect(() => {
-    // filter sidebar through the board 
+    // filter sidebar through the board
     // if board is not empty, filter the sidebar
-    const toFilter = sideBar.filter((item)=> item.label === board); 
-    if(toFilter.length === 0){
+    const toFilter = sideBar.filter((item) => item.label === board);
+    if (toFilter.length === 0) {
       setSideBar(sidebar);
-    }
-    else{
+    } else {
       setSideBar(toFilter);
     }
-  }, [board]
-  );
-
-  
+  }, [board]);
 
   return (
     <div
       className={clsx(
         styles.sidebar,
         hideOnScroll && styles.sidebarWithHideableNavbar,
-        isHidden && styles.sidebarHidden,
-      )}>
+        isHidden && styles.sidebarHidden
+      )}
+    >
       {hideOnScroll && <Logo tabIndex={-1} className={styles.sidebarLogo} />}
       <Content path={path} sidebar={sideBar} />
       {hideable && <CollapseButton onClick={onCollapse} />}
