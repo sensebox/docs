@@ -5,7 +5,8 @@ const { themes } = require("prism-react-renderer");
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
 const collapse = require("remark-collapse");
-
+const eduSidebar = require("./sidebars/eduSidebar");
+const eduS2Sidebar = require("./sidebars/eduS2Sidebar");
 require("dotenv").config();
 
 /** @type {import('@docusaurus/types').Config} */
@@ -135,7 +136,7 @@ const config = {
         indexName: process.env.ALGOLIA_INDEXNAME,
       },
 
-    }),
+    })
 };
 
 module.exports = config;

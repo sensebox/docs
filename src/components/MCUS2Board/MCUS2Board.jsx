@@ -50,21 +50,21 @@ const MCUS2Board = () => {
 
   return (
     <div className="flex w-full flex-col items-center text-center gap-4">
-      <div className>
+      <div >
         <img src={mcus2ports} alt="Your Image" className="" />{" "}
       </div>
       <div className="flex w-full flex-col">
         <h1 className="text-left"> Anschlüsse </h1>
         <div className="flex flex-row justify-evenly">
           <Popover>
-            <PopoverTrigger className="cursor-pointer bg-white border-solid border-1 rounded-md w-[10rem] p-2 hover:bg-gray-100">
+            <PopoverTrigger className="flex  cursor-pointer bg-white border-solid border-1 rounded-md w-[10rem] p-2 hover:bg-gray-100">
               I2C/Wire Ports
             </PopoverTrigger>
             <PopoverContent>
               <div>
                 <h2>Sensoren und Accessoire an den I2C/Wire Ports</h2>
 
-                <div className="flex flex-row">
+                <div className="flex flex-col lg:flex-row">
                   <div className="flex flex-col items-center">
                     <img
                       src={lightSensor}

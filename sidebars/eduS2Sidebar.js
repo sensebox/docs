@@ -10,23 +10,13 @@
  */
 
 
-
-
-const eduS2Hardware = ["temperatur-luftfeuchte","helligkeit-uv","luftdruck-temperatur",  "photodiode", "mpu6050","tof",   "bee/bluetooth-bee","wifi",  "sd",
-"accessoires/display", "rgb-led-esp32", "accessoires/led-matrix", ]
-
-
 const eduS2Sidebar =   {
   type: 'category', 
   label: ':edu S2', 
   link : {
     type: 'doc',
-    id: 'categories/edu-s2-overview',
+    id: 'edus2/edu-s2-overview',
   },
-  // link : {
-  //   type: 'generated-index',
-  //   title: 'senseBox:edu S2',
-  // },
   items: [
     {
       type: 'category', 
@@ -45,7 +35,20 @@ const eduS2Sidebar =   {
         type : 'generated-index',
         title: 'Hardware',
       },
-      items: eduS2Hardware.map(id => `hardware/${id}`)
+      items: [
+        'hardware/sensors/temperatur-luftfeuchte',
+        'hardware/sensors/helligkeit-uv',
+        'hardware/sensors/luftdruck-temperatur',
+        'hardware/sensors/photodiode',
+        'hardware/sensors/mpu6050',
+        'hardware/sensors/tof',
+        'hardware/bee/bluetooth-bee',
+        'hardware/wifi',
+        'hardware/sd',
+        'hardware/accessoires/display',
+        'hardware/accessoires/rgb-led-esp32',
+        'hardware/accessoires/led-matrix'
+      ]
     }, 
     {
       type: 'category',
@@ -78,6 +81,7 @@ const eduS2Sidebar =   {
 
       ]
     },
+
     {
       type: 'category',
       label: 'Besonderheiten',
@@ -85,15 +89,9 @@ const eduS2Sidebar =   {
         type: 'generated-index',
         title: 'Besonderheiten',
       },
-      items: ["circuitpython/circuitpython_esp32"]
+      items: ["misc/circuitpython_esp32"]
     }
   ]
 }
 
-
-export default {
-  senseBoxSidebar: [
-    eduS2Sidebar
-  ]
-}
-
+export default eduS2Sidebar;

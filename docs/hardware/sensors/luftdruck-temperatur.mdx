@@ -3,9 +3,14 @@ sidebar_position: 7
 title: Luftdruck- und Temperatursensor
 hide_title: false
 description: Luftdruck- und Temperatursensor (BMP280)
+displayedSidebar: board
 ---
+
 import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
 import pressureSensor from "@site/static/img/hardware-bilder/luftdruck/bmp_top.png"
+import { useBoardStore } from "@site/src/lib/stores/store";
+
+const board = useBoardStore((state) => state.board);
 
 
 # Luftdruck- und Temperatursensor

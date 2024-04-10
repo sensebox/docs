@@ -15,6 +15,7 @@ import bikeCategory from "@site/static/img/category-icons/bikesilhouette.png";
 import osem from "@site/static/img/osem.png";
 import blockly from "@site/static/img/blockly.png";
 import hardware from "@site/static/img/hardware.jpg";
+import { useBoardStore } from "@site/src/lib/stores/store";
 
 const FeatureList2 = [
   {
@@ -37,60 +38,6 @@ const FeatureList2 = [
     to: "/docs/category/edu",
   },
 ];
-const FeatureList = [
-  {
-    title: ":bike",
-    Image: bikeCategory,
-    description: (
-      <>Alle relevanten Informationen zur senseBox:bike für Fahrradprojekte</>
-    ),
-    to: "/docs/category/bike",
-  },
-  {
-    title: ":CO2-Ampel",
-    Image: trafficLight,
-    description: (
-      <>Alle relevanten Informationen zur CO2-Ampel der senseBox für Luftqualitätsüberwachung</>
-    ),
-    to: "/docs/category/co2-ampel",
-  },
-  {
-    title: ":edu",
-    Image: homeCategoryIcon,
-    description: (
-      <>
-        Informationen zum Anschluss und Programmierung der Sensoren, Bees und
-        weiteren Bauteilen für Bildungszwecke
-      </>
-    ),
-    to: "/docs/category/edu",
-  },
-  {
-    title: ":edu S2",
-    Image: homeCategoryIcon,
-    description: (
-      <>Verschiedene Dokumentationen zur Bildungsversion der senseBox in der 2. Generation</>
-    ),
-    to: "/docs/edus2/edu-s2-overview"
-  },
-  {
-    title: ":home",
-    Image: homeCategoryIcon,
-    description: (
-      <>Informationen zum Aufbau & Erweiterungen für die senseBox:home</>
-    ),
-    to: "/docs/category/senseboxhome",
-  },
-  {
-    title: ":mini",
-    Image: openSenseMapCategoryIcon,
-    description: (
-      <>Alle relevanten Informationen zur senseBox:mini</>
-    ),
-    to: "/docs/category/mini",
-  },
-];
-
 
 const ThumbNailPreviewList = [
   {
@@ -136,6 +83,12 @@ function ThumbailPreview({ Image, title, description, to }) {
 }
 
 function Feature({ Image, title, description, to }) {
+  const handleBoardChange = (selectedBoard) => {
+    // Verwende die setBoard-Funktion direkt, um das Board im Store zu aktualisieren
+    useBoardStore.setState({ board: selectedBoard });
+    // Hier kannst du weitere Aktionen ausführen, wenn sich das Board ändert
+  };
+
   return (
     <Link
       className={clsx(
@@ -143,10 +96,8 @@ function Feature({ Image, title, description, to }) {
         "transition duration-300 ease-in-out hover:bg-yellow hover:no-underline hover:shadow-4xl "
       )}
       to={to}
-    >
-      {/* <div className="w-[100px] h-[100px] invert">
-        <img src={Image} alt={title} />
-      </div> */}
+      onClick={() => handleBoardChange(title)}
+    > 
       <div className="text-center">
         <h1 className="text-2xl font-bold">{title}</h1>
         <p>{description}</p>
