@@ -3,17 +3,17 @@ const eduSidebar =   {
   label: ':edu', 
   link:{
     type: 'doc', 
-    id: 'mcu/mcu-overview',
+    id: 'boards/mcu/mcu-overview',
   }, 
   items: [
     {
       type: 'category',
       label: 'Erste Schritte',
       items: [
-        'mcu/mcu-revisions', 
-        'mcu/mcu-in-betrieb-nehmen', 
-        'mcu/mcu-erster-sketch',
-        'mcu/mcu-kompilieren',
+        'boards/mcu/mcu-revisions', 
+        'boards/mcu/mcu-in-betrieb-nehmen', 
+        'boards/mcu/mcu-erster-sketch',
+        'boards/mcu/mcu-kompilieren',
       ]
     }, 
     {
@@ -24,16 +24,41 @@ const eduSidebar =   {
         title: 'Hardware',
       },
       items: [
-        'hardware/bee/wifi-bee',
-        'hardware/bee/sd-bee',
-        'hardware/bee/ethernet-bee',
-        'hardware/sensors/temperatur-luftfeuchte',
-        'hardware/sensors/helligkeit-uv',
-        'hardware/sensors/distanz',
-        'hardware/sensors/mikro',
-        'hardware/sensors/luftdruck-temperatur',
-        'hardware/accessoires/display', 
-        'hardware/accessoires/gps',
+        {
+          type: 'category', 
+          label: 'in der :edu enthaltene Hardware',
+          link: {
+            type: 'generated-index',
+            title: 'in der :edu enthaltene Hardware',
+          },
+          items:[
+            'hardware/bee/wifi-bee',
+            'hardware/bee/sd-bee',
+            'hardware/sensors/temperatur-luftfeuchte',
+            'hardware/sensors/helligkeit-uv',
+            'hardware/sensors/distanz',
+            'hardware/sensors/mikro',
+            'hardware/sensors/luftdruck-temperatur',
+            'hardware/accessoires/display', 
+          ]
+        },
+        {
+          type:'category',
+          label: 'zusätzlich erwerbare Hardware',
+          link: {
+            type: 'generated-index',
+            title: 'zusätzlich erwerbbare Hardware',
+          },
+          items: [
+            'hardware/sensors/feinstaub', 
+            'hardware/sensors/co2', 
+            'hardware/sensors/truebner', 
+            'hardware/sensors/umweltsensor', 
+            'hardware/bee/ethernet-bee',
+            'hardware/accessoires/gps',
+            ]
+        }
+
       ]
     }, 
     {
@@ -44,14 +69,14 @@ const eduSidebar =   {
         title: 'Blockly',
       },
       items: [
-        "blockly/blocks/logik",
-        "blockly/blocks/mathematik",
-        "blockly/blocks/schleifen",
-        "blockly/blocks/sensoren",
-        "blockly/blocks/text",
-        "blockly/blocks/variablen",
-        "blockly/blocks/web/opensensemap",
-        "blockly/blocks/zeit"
+        "editors/blockly/blocks/logik",
+        "editors/blockly/blocks/mathematik",
+        "editors/blockly/blocks/schleifen",
+        "editors/blockly/blocks/sensoren",
+        "editors/blockly/blocks/text",
+        "editors/blockly/blocks/variablen",
+        "editors/blockly/blocks/web/opensensemap",
+        "editors/blockly/blocks/zeit"
       ]
     }, 
     {
@@ -62,10 +87,10 @@ const eduSidebar =   {
         title: 'Arduino',
       },
       items:[
-        "arduino/installation-arduino-ide",
-        "arduino/installation-bsp",
-        "mcu/mcu-sensebox-io-library",
-        "arduino/first-steps"
+        "editors/arduino/installation-arduino-ide",
+        "editors/arduino/installation-bsp",
+        "boards/mcu/mcu-sensebox-io-library",
+        "editors/arduino/first-steps"
       ]
     }, 
     {

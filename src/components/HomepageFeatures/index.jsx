@@ -23,7 +23,7 @@ const FeatureList2 = [
     description: (
       <>Dokumentation zur Bildungsversion der senseBox in der 2. Generation</>
     ),
-    to: "/docs/mcus2/mcu-s2-overview",
+    to: "/docs/boards/mcus2/mcu-s2-overview",
   }, 
   {
     title: ":edu",
@@ -33,7 +33,7 @@ const FeatureList2 = [
         weiteren Bauteilen für Bildungszwecke
       </>
     ),
-    to: "/docs/mcu/mcu-overview",
+    to: "/docs/boards/mcu/mcu-overview",
   },
  /*  {
     title: ":bike",

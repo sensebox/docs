@@ -22,7 +22,7 @@ const bikeSidebar = {
         {
           type:'category', 
           label: 'App', 
-          items: ["bike/app/ersteschritteapp"]
+          items: ["products/bike/app/ersteschritteapp"]
         }
     ]
   }

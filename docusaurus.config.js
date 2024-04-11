@@ -79,7 +79,7 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "mcus2/mcus2-in-betrieb-nehmen",
+            docId: "boards/mcus2/mcus2-in-betrieb-nehmen",
             position: "left",
             label: "Get started",
           },

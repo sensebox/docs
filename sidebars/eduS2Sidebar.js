@@ -15,16 +15,16 @@ const eduS2Sidebar =   {
   label: ':edu S2', 
   link : {
     type: 'doc',
-    id: 'mcus2/mcu-s2-overview',
+    id: 'boards/mcus2/mcu-s2-overview',
   },
   items: [
     {
       type: 'category', 
       label: 'Erste Schritte', 
       items: [
-        "mcus2/mcus2-in-betrieb-nehmen",
-        "mcus2/mcus2-erster-sketch",
-        "mcus2/mcus2-kompilieren", 
+        "boards/mcus2/mcus2-in-betrieb-nehmen",
+        "boards/mcus2/mcus2-erster-sketch",
+        "boards/mcus2/mcus2-kompilieren", 
       ]
     }, 
     {
@@ -35,6 +35,14 @@ const eduS2Sidebar =   {
         title: 'Hardware',
       },
       items: [
+        {
+          type: 'category', 
+          label: 'in der :edu enthaltene Hardware',
+          link: {
+            type: 'generated-index',
+            title: 'in der :edu enthaltene Hardware',
+          },
+          items:[
         'hardware/sensors/temperatur-luftfeuchte',
         'hardware/sensors/helligkeit-uv',
         'hardware/sensors/luftdruck-temperatur',
@@ -47,6 +55,8 @@ const eduS2Sidebar =   {
         'hardware/accessoires/display',
         'hardware/accessoires/rgb-led-esp32',
         'hardware/accessoires/led-matrix'
+          ]
+        }
       ]
     }, 
     {
@@ -57,14 +67,14 @@ const eduS2Sidebar =   {
         title: 'Blockly',
       },
     items: [
-      "blockly/blocks/logik",
-      "blockly/blocks/mathematik",
-      "blockly/blocks/schleifen",
-      "blockly/blocks/sensoren",
-      "blockly/blocks/text",
-      "blockly/blocks/variablen",
-      "blockly/blocks/web/opensensemap",
-      "blockly/blocks/zeit"
+      "editors/blockly/blocks/logik",
+      "editors/blockly/blocks/mathematik",
+      "editors/blockly/blocks/schleifen",
+      "editors/blockly/blocks/sensoren",
+      "editors/blockly/blocks/text",
+      "editors/blockly/blocks/variablen",
+      "editors/blockly/blocks/web/opensensemap",
+      "editors/blockly/blocks/zeit"
     ]
     }, 
     {
@@ -75,9 +85,9 @@ const eduS2Sidebar =   {
         title: 'Arduino',
       },
       items: [
-        "arduino/installation-arduino-ide",
-        "arduino/installation-bsp",
-        "arduino/first-steps"
+        "editors/arduino/installation-arduino-ide",
+        "editors/arduino/installation-bsp",
+        "editors/arduino/first-steps"
 
       ]
     },
