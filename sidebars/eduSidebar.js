@@ -90,6 +90,7 @@ const eduSidebar =   {
         "editors/arduino/installation-arduino-ide",
         "editors/arduino/installation-bsp",
         "boards/mcu/mcu-sensebox-io-library",
+        "editors/arduino/libraries-hinzufuegen", 
         "editors/arduino/first-steps"
       ]
     }, 
