@@ -91,52 +91,5 @@ void loop()
 Wenn bei allen Ausgaben im seriellen Monitor Werte angezeigt werden, insbesondere wenn die IP-Adresse etwa in der Form _192.107.256.4_ ausgegeben wird, ist das WiFi-Bee richtig initialisiert und die senseBox kann mit dem Internet genutzt werden.
 
 
-## SSL Zertifikate der openSenseMap auf das WiFi-Modul laden
-
-Seit einiger Zeit benutzt die senseBox und die openSenseMap `https` zur Authentifizierung von Messwerten. Damit dies reibungslos funktioniert benötigt das WiFi-Modul der senseBox die dazugehörigen SSL-Zertifikate.
-In der Regel sind diese bei der senseBox schon vorhanden, dieses Tutorial ist nur für die senseBoxen, bei denen die Übertragung an die openSenseMap nicht funktionert!
-
-Bevor du mit diesem Tutorial weitermachst, stelle sicher, dass du diese beiden Schritte vorher absolviert hast:
-
-<ol>
-  <li>Arduino IDE installieren</li>
-  <li>Board Support Packages installieren</li>
-</ol>
-Hast du das erledigt, kannst du mit diesem Tutorial fortfahren.
-
-Lade den WINC1500-Updater aus den Beispielen - senseBox Beispiele auf die senseBox.
-<div className="flex justify-center">
-![](/img/hardware-bilder/bees/wifi-bee/ArduinoUpdaterSelect.png)
-</div>
-
-
-Wenn der Upload erfolgreich abgeschlossen wurde, kannst du nun den WiFi101 Firmware Updater aus den Werkzeugen starten:
-<div className="flex justify-center">
-![](/img/hardware-bilder/bees/wifi-bee/ArduinoToolsUpdater.png)
-</div>
-Im nun erscheinenden Menü, wählst du den Port, an dem deine senseBox angeschlossen ist, aus.
-<div className="flex justify-center">
-![](/img/hardware-bilder/bees/wifi-bee/WifiFirmwareTool.png)
-</div>
-
-Den 2. Punkt `Update Firmware` können wir überspringen und gehen direkt zum 3. Punkt `Update SSL root certificates`.
-
-Klicke nun `Add domain` und gebe dort jeweils `ingress.opensensemap.org`
-und `api.opensensemap.org` ein.
-<div className="flex justify-center">
-![](/img/hardware-bilder/bees/wifi-bee/ingressInput.png)
-![](/img/hardware-bilder/bees/wifi-bee/apiInput.png)
-</div>
-
-Die Übersicht der Zertifikate sollte nun wie folgt aussehen:
-<div className="flex justify-center">
-![](/img/hardware-bilder/bees/wifi-bee/CertificatesResults.png)
-</div>
-
-Klicke nun auf Upload `Certificates to WiFi module` und die Zertifikate werden auf die senseBox hochgeladen. Jetzt kannst du wieder deinen ursprünglichen senseBox Code übertragen. Das WiFi-Modul der senseBox ist aktualisiert.
-
-<b>Sollte es zu Problemen bei diesem Schritt kommen, entferne das arduino.cc über den Remove domain Knopf und versuche es erneut.</b>
-
-
 > - [Shop](https://sensebox.kaufen/product/wifi-bee)
 > - [Atmel ATWINC1500 Data Sheet](http://ww1.microchip.com/downloads/en/DeviceDoc/ATWINC15x0-MR210xB-IEEE-802.11-b-g-n-SmartConnect-IoT-Module-Data-Sheet-DS70005304C.pdf)
