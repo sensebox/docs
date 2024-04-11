@@ -1,6 +1,6 @@
 ---
 date: 2020-03-11
-title: senseBoxMCU Library
+title: Die senseBoxMCU Library
 categories: arduino
 description: Verwendung der senseBoxMCU Library
 type: Document
@@ -10,14 +10,6 @@ resources:
   - name: senseBoxMCU Library
     link: https://github.com/sensebox/SenseBoxMCU-Lib
 ---
-
-<div className="alert alert--warning">
-  <h2> Warnung </h2>
-  <div>
-    Die senseBoxIO Library ist nur für die senseBoxMCU und <b>nicht</b> für die
-    senseBoxMCU-S2 verfügbar.
-  </div>
-</div>
 
 # senseBox MCU Library
 
@@ -38,7 +30,7 @@ Die senseBoxMCU Library ist Bestandteil des Board-Support-Packages und wird auto
 
 Die senseBoxMCU Library lässt sich einzeln über folgenden Befehl einbinden:
 
-```c++
+```cpp
 include <senseBoxMCU.h>
 ```
 
@@ -46,7 +38,7 @@ include <senseBoxMCU.h>
 
 Die Library enthält die folgenden Klassen und Funktionen. Erstelle eine neue Instanz einer Klasse, um auf ihre Funktionen zugreifen zu können, z.B. bietet dir die Klasse
 
-```c++
+```cpp
 #include "senseBoxMCU.h"
 
 HDC1080 hdc;
@@ -54,14 +46,14 @@ HDC1080 hdc;
 
 Zugriff auf die folgenden Funktionen:
 
-```c++
+```cpp
 hdc.getTemperature();
 hdc.getHumidity();
 ```
 
 ### Bee
 
-```c++
+```cpp
 public:
 	Bee();
 		uint8_t connectToWifi(char* ssid, char* password);
@@ -73,7 +65,7 @@ public:
 
 ### OpenSenseMap
 
-```c++
+```cpp
 Classname: OpenSenseMap
 
 functions public:
@@ -85,7 +77,7 @@ functions public:
 
 ### SDS011
 
-```c++
+```cpp
 Classname: SDS011
 
 functions public:
@@ -96,7 +88,7 @@ functions public:
 
 ### HDC1080
 
-```c++
+```cpp
 Classname: HDC1080
 
 functions public:
@@ -107,7 +99,7 @@ functions public:
 
 ### VEML6070
 
-```c++
+```cpp
 Classname: TSL45315
 
 functions public:
@@ -117,7 +109,7 @@ functions public:
 
 ### TSL45315
 
-```c++
+```cpp
 Classname: TSL45315
 
 functions public:
@@ -127,7 +119,7 @@ functions public:
 
 ### Ultrasonic
 
-```c++
+```cpp
 Classname: Ultrasonic
 
 functions public:
@@ -137,7 +129,7 @@ functions public:
 
 ### BMP280
 
-```c++
+```cpp
 Classname: BMP280
 
 functions public:
@@ -149,7 +141,7 @@ functions public:
 
 ### GPS
 
-```c++
+```cpp
 Classname: GPS
 
 functions public:
@@ -165,7 +157,7 @@ functions public:
 
 ### Mic
 
-```c++
+```cpp
 
 Classname: Microphone
 
@@ -176,7 +168,7 @@ functions public:
 
 ### BMX
 
-```c++
+```cpp
 
 Classname BMX055
 
@@ -191,7 +183,7 @@ functions	public:
 
 ### Button
 
-```c++
+```cpp
 
 Classname Button
 
