@@ -25,15 +25,19 @@ image13: /images/2020-03-11-bee-wifi/CertificatesResults.png
 
 ---
 
+import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
+import wifiBee from '@site/static/img/hardware-bilder/bees/wifi-bee/wifi.png'
+
 # WiFi-Bee
 
 Das Wifi-Bee ist das Verbindungsstück, um die senseBox mit dem Internet zu verbinden. Die Daten der senseBox werden per WLAN (WiFi) in das bestehende Netzwerk übertragen. Das WiFi-Bee basiert auf dem ATWINC1500 Mikrochip von Atmel.
 
 
-> Bei einigen unserer WiFi-Bees vom Typ WINC1500 kann es vorkommen, dass eine veraltete Firmware (Version 19.4.4) installiert ist. Das kann zu Übertragungsproblemen führen. Sollten diese Probleme bei dir auftreten, schaue dir !!!! an, um die Firmware zu aktualisieren.
+<ImageWithText src={wifiBee} alt="SD Modul" title="WiFi Bee"/> 
 
-
-![](/img/hardware-bilder/bees/wifi-bee/wifi.png)
+:::info
+Bei einigen unserer WiFi-Bees vom Typ WINC1500 kann es vorkommen, dass eine veraltete Firmware (Version 19.4.4) installiert ist. Das kann zu Übertragungsproblemen führen. Sollten diese Probleme bei dir auftreten, schaue dir !!!! an, um die Firmware zu aktualisieren.
+:::
 
 ## Technische Informationen
 
@@ -50,7 +54,7 @@ Das Wifi-Bee ist das Verbindungsstück, um die senseBox mit dem Internet zu verb
 
 Um die Verbindung des Bees mit dem Internet zu testen, also sowohl die Funktion der Komponente, als auch des Netzwerks, nutze den folgenden Sketch:
 
-```c++
+```cpp
 #include <SPI.h>
 #include <WiFi101.h>
 #include <senseBoxIO.h>
@@ -88,8 +92,9 @@ Wenn bei allen Ausgaben im seriellen Monitor Werte angezeigt werden, insbesonder
 
 ## Firmware des WiFi-Bees updaten
 
->Leider haben einige unserer WiFi-Bees vom Typ WINC1500 eine veraltete Firmware (Version 19.4.4) installiert. Leider gibt es keine andere Möglichkeit dieses Firmware zu updaten als es manuell durchzuführen. Im folgenden Kapitel wird erklärt, wie man herausfindet, welche Firmware man benutzt und (falls man eine veraltete Version hat) wie man diese updatet.
-
+:::info
+Leider haben einige unserer WiFi-Bees vom Typ WINC1500 eine veraltete Firmware (Version 19.4.4) installiert. Leider gibt es keine andere Möglichkeit dieses Firmware zu updaten als es manuell durchzuführen. Im folgenden Kapitel wird erklärt, wie man herausfindet, welche Firmware man benutzt und (falls man eine veraltete Version hat) wie man diese updatet.
+:::
 ### Test der Version
 
 Zuerst musst du überprüfen, welche Version dein WiFi-Bee hat. Gehe dazu in der Arduino IDE auf `Datei` -> `Beispiele` und unter `"Beispiele für senseBox MCU"` auf `Test_WINC1500`.
@@ -100,9 +105,13 @@ Lade nun den Sketch auf dein Board (durch Klicken des Pfeil-Symbols). Beachte, d
 
 ![](/img/hardware-bilder/bees/wifi-bee/2-result.png)
 
->Wenn du eine Firmware <b>19.5.2, oder höher</b> hast, kannst du hier abbrechen. Dein WiFi-Bee funktioniert einwandfrei.
->Wenn du eine Firmware <b>geringer als 19.5.2</b> hast, musst du leider die Firmware updaten. Wie das funktioniert erfährst du im nächsten Schritt.
+:::info
+Wenn du eine Firmware <b>19.5.2, oder höher</b> hast, kannst du hier abbrechen. Dein WiFi-Bee funktioniert einwandfrei.
+:::
 
+:::info
+Wenn du eine Firmware <b>geringer als 19.5.2</b> hast, musst du leider die Firmware updaten. Wie das funktioniert erfährst du im nächsten Schritt.
+:::
 ### WiFi-Bee Firmware Update
 
 Um die Firmware zu aktualisieren, folge dem Pfad von oben: `Datei` -> `Beispiele` und unter `"Beispiele für senseBox MCU"` auf `WINC1500_Updater`.
