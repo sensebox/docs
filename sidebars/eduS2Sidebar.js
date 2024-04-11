@@ -87,7 +87,8 @@ const eduS2Sidebar =   {
       items: [
         "editors/arduino/installation-arduino-ide",
         "editors/arduino/installation-bsp",
-        "editors/arduino/first-steps"
+        "editors/arduino/first-steps",
+        "editors/arduino/libraries-hinzufuegen"
 
       ]
     },

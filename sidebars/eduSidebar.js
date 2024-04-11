@@ -50,7 +50,8 @@ const eduSidebar =   {
             title: 'zusätzlich erwerbbare Hardware',
           },
           items: [
-            'hardware/sensors/feinstaub', 
+            'hardware/sensors/feinstaub-sds011', 
+            'hardware/sensors/feinstaub-sps30', 
             'hardware/sensors/co2', 
             'hardware/sensors/truebner', 
             'hardware/sensors/umweltsensor', 

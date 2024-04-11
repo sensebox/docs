@@ -3,10 +3,15 @@ sidebar_position: 3
 title: Feinstaubsensor
 hide_title: false
 ---
+import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
+import feinstaubSds from "@site/static/img/hardware-bilder/feinstaub/sensoren_feinstaub.png"
+
+# Feinstaubsensor SDS011
 
 Mit diesem Sensor SDS011 ist es möglich, die Feinstaubkonzentration in der Luft zu bestimmen. Der Sensor gibt zwei Werte aus: Die Konzentration von PM2.5 (Partikel < 2.5 um) und PM10 (Partikel < 10 um). Dieser Sensor ist mit einem kleinen Ventilator ausgestattet, um Luft anzusaugen. In seinem Inneren befindet sich ein Laser, der zusammen mit einer Photodiode die Anzahl der Partikel misst. Die Ergebnisse der Messungen werden in µg/m³ (Mikrogramm pro Kubikmeter) angegeben.
 
-![](/img/hardware-bilder/feinstaub/sensoren_feinstaub.png)
+
+<ImageWithText src={feinstaubSds} title="Feinstaubsensor SDS011"/>
 
 ## Technische Details
 * "Plug-in-and-Go" senseBox kompatibel
@@ -16,12 +21,13 @@ Mit diesem Sensor SDS011 ist es möglich, die Feinstaubkonzentration in der Luft
 
 ## Programmierung (Arduino)
 
-Ist dies erledigt, können wir nun im Programmcode den Sensor initialisieren und uns die ersten Messwerte ausgeben lassen.
+### Software Bibliothek
+Um den Sensor in Arduino zu Programmieren musst du die Software Bibliothek [sds-dust-sensors-arduino-library](https://codeload.github.com/lewapek/sds-dust-sensors-arduino-library/zip/refs/heads/master) installieren.
 
-Als erstes muss eine Instanz des Sensors erstellt werden. Dazu erstellen wir noch zwei Variablen, in denen wir unsere beiden Messwerte für PM10 und PM2.5 speichern.
+### Code
+Im folgenden Code werden die Werte für `PM25` und `PM10` im Seriellen Monitor ausgegeben. 
 
-```c++
-#include "SenseBoxMCU.h"
+```cpp
 #include <SPI.h>
 #include <Wire.h>
 

@@ -30,10 +30,16 @@ Der HDC1080 ist ein digitaler Feuchtigkeits- und Temperatursensor. Der Sensor ha
 
 ## Programmierung (Arduino)
 
-```cpp
-#include <SPI.h>
+### Software Bibliothek
+Um den Sensor in Arduino zu Programmieren musst du die Software Bibliothek [Adafruit HDC1000 Library](https://www.arduino.cc/reference/en/libraries/adafruit-hdc1000-library/) installieren.
 
-HDC1080 hdc;
+### Code
+Dieser Code gibt die Temperatur und die relative Luftfeuchte im Seriellen Monitor aus. 
+
+```cpp
+#include <Adafruit_HDC1000.h> // http://librarymanager/All#Adafruit_HDC1000_Library
+
+Adafruit_HDC1000 hdc = Adafruit_HDC1000();
 
 void setup(){
     Serial.begin(9600);
@@ -42,9 +48,9 @@ void setup(){
 
 void loop(){
     Serial.print("Temperature: ");
-    Serial.println(hdc.getTemperature());
+    Serial.println(hdc.readTemperature());
     Serial.print("Humidity: ");
-    Serial.println(hdc.getHumidity());
+    Serial.println(hdc.readHumidity());
 }
 ```
 

@@ -41,6 +41,12 @@ Der zweite Sensor ist ein Vishay VEML6070 Ultravioletter (UV)-Lichtsensor. Diese
 
 ## Programmierung (Arduino)
 
+### Software Bibliothek
+Um den Sensor in Arduino zu Programmieren musst du die Software Bibliothek [Adafruit LTR329 and LTR303](https://www.arduino.cc/reference/en/libraries/adafruit-ltr329-and-ltr303/) **sowie**  [Adafruit VEML6070 Library](https://www.arduino.cc/reference/en/libraries/adafruit-veml6070-library/)  installieren.
+
+### Code
+
+Dieser Code gibt die Werte für Lux und der UV-Intensität im Seriellen Monitor aus
 ```cpp
 #include <SPI.h>
 #include <LTR329.h>
