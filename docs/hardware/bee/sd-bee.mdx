@@ -12,11 +12,16 @@ resources:
 image1: /images/2020-03-11-bee-sd/msd.png
 ---
 
+
+import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
+import sdBee from '@site/static/img/hardware-bilder/bees/sd-bee/msd.png'
+
 # SD-Bee
 
 Mit dem microSD-Bee können die Daten der senseBox auf einer SD-Karte gespeichert werden. 
 
-![](/img/hardware-bilder/bees/sd-bee/msd.png)
+<ImageWithText src={sdBee} alt="SD Modul" title="SD Bee"/> 
+
 
 # Technische Informationen
 * "Plug-in-and-Go" senseBox kompatibel
@@ -27,23 +32,18 @@ Mit dem microSD-Bee können die Daten der senseBox auf einer SD-Karte gespeicher
 
 Achte darauf, dass die mSD-Bee an den XBEE2-Stecker der senseBox-MCU angeschlossen werden muss, ansonsten kann es zu Problemen beim Speichern deiner Messwerte kommen.
 
-# Programmierung (Blockly)
-Informationen zur Programmierung des SD-Bees mit Blockly findest du [hier](/blockly/blockly-SD/)
+## Programmierung (Arduino)
+Im folgenden Beispiel zeigen wir dir, wie der String `Hallo Welt!` auf der SD Karte in einer Datei mit dem Namen `senseBox.txt` gespeichert wird. 
 
-# Programmierung (Arduino)
-Im folgenden Beispiel zeigen wir dir, wie du deine Daten auf einer SD-Karte speichern kannst. 
-
-```c++
+```cpp
 // Einladen der Bibliotheken
 #include <SPI.h>
 #include <SD.h>
-#include "SenseBoxMCU.h"
 
-HDC1080 hdc;
 File myFile;
 // Name der Datei auf der SD-Karte
 // Achte darauf, dass dieser Name (ohne Dateiendung) nicht länger als 8 Buchstaben lang sein darf! 
-String fileName = "SenseBox.txt";
+String fileName = "senseBox.txt";
 
 void setup()
 { 
@@ -60,11 +60,29 @@ void loop()
 {
     // Datei öffnen mit Schreibzugriff
     myFile = SD.open(fileName, FILE_WRITE);
-    myFile.println(hdc.getTemperature());
+    myFile.println("Hallo Welt!");
     // Nach Benutzung wird die Datei wieder geschlossen
     myFile.close();
 };
 ```
+
+## Programmierung (Blockly)
+
+Mit dem `Erstelle Datei auf SD-Karte`-Block kann im Setup() eine neue Datei auf der SD-Karte erstellt werden. Im Dropdown-Menü des Blocks kann der Name der Datei geändert werden.
+
+![](/img/blockly-bilder/sd-karte/blockly-sd-1.svg)
+
+Mit dem `Öffne Datei auf SD-Karte`-Block kann anschließend in der Endlosschleife die zuvor erstellte Datei geöffnet werden.
+
+![](/img/blockly-bilder/sd-karte/blockly-sd-2.svg)
+
+Im freien Blockabschnitt des `Öffne Datei auf SD-Karte`-Blocks kann dann der `Schreibe Daten auf SD-Karte`-Block platziert werden. In diesem kann im freien Blockabschnitt wiederum der zu schreibende Text oder die zu schreibende Zahl platziert werden. Zusätzlich kann durch setzen des Häkchens bei `Zeilenumbruch` festgelegt werden, ob nach jedem Messwert ein Zeilenumbruch eingefügt werden soll oder nicht.
+
+Zusätzlich holen wir aus der Kategorie `Zeit` den Block für ein Interval und aus der Kategorie `Sensoren` den gewünschten Sensor. Danach fügen wir alles zusammen und erhalten folgenden Sketch. 
+
+![](/img/blockly-bilder/sd-karte/blockly-sd-3.svg)
+
+
 
 
 > - [Shop](https://sensebox.kaufen/product/sd-bee)
