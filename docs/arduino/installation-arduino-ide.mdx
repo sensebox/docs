@@ -16,12 +16,9 @@ description: Installation der Arduino IDE
 categories: arduino
 ---
 
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@site/src/components/ui/tabs";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 
 # Installation der Arduino IDE
 
@@ -30,13 +27,8 @@ Bevor du die senseBox über die Arduino IDE programmieren kannst, musst du Treib
 Schau dir die Anleitung für dein Betriebssystem an und folge den angegebenen Schritten.
 
 <Tabs defaultValue="windows">
-  <TabsList>
-    <TabsTrigger value="windows">Windows</TabsTrigger>
-    <TabsTrigger value="mac">Mac</TabsTrigger>
-    <TabsTrigger value="linux">Linux</TabsTrigger>
-  </TabsList>
-  <TabsContent value="windows">
-    <h2>Arduino Software für Windows herunterladen</h2>
+  <TabItem value="windows" label="Windows">
+   <h2>Arduino Software für Windows herunterladen</h2>
     <p>
       Die senseBox ist ein Microcontroller mit verschiedenen Komponenten und
       Sensoren. Sie wird über die Entwicklungsumgebung _Arduino IDE_
@@ -57,9 +49,9 @@ Schau dir die Anleitung für dein Betriebssystem an und folge den angegebenen Sc
       Führe den Installer aus und folge den Anweisungen. Die Installation ist in
       wenigen Minuten abgeschlossen.
     </p>
-  </TabsContent>
-  <TabsContent value="mac">
-    <h2>Arduino Software für Mac(OSX) herunterladen</h2>
+  </TabItem>
+  <TabItem value="macos" label="MacOS">
+  <h2>Arduino Software für Mac(OSX) herunterladen</h2>
     <p>
       Die senseBox ist ein Microcontroller mit verschiedenen Komponenten und
       Sensoren. Sie wird über die Entwicklungsumgebung _Arduino IDE_
@@ -81,9 +73,9 @@ Schau dir die Anleitung für dein Betriebssystem an und folge den angegebenen Sc
       Verschiebe diese Datei in deinen "Programme"-Ordner. Durch Öffnen der
       Datei `Arduino.app` kann die IDE gestartet werden.
     </p>
-  </TabsContent>
-  <TabsContent value="linux">
-    <h2>Arduino Software für Linux herunterladen</h2>
+  </TabItem>
+  <TabItem value="linux" label="Linux">
+ <h2>Arduino Software für Linux herunterladen</h2>
     <p>
       Die senseBox ist ein Microcontroller mit verschiedenen Komponenten und
       Sensoren. Sie wird über die Entwicklungsumgebung _Arduino IDE_
@@ -114,7 +106,7 @@ Schau dir die Anleitung für dein Betriebssystem an und folge den angegebenen Sc
       <a href="https://docs.appimage.org/introduction/quickstart.html">hier </a>{" "}
       beschrieben.
     </p>
-  </TabsContent>
+  </TabItem>
 </Tabs>
 
 > - [Arduino](https://www.arduino.cc/)

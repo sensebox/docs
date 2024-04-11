@@ -8,23 +8,34 @@ type: Document
 set: erste-schritte-arduino
 set_order: 4
 ---
+import { useBoardStore } from "@site/src/lib/stores/store";
+
 # Installation des Board-Support-Packages
+
 <div>
   <div class="description">
     Damit die Arduino IDE deine senseBox MCU unterstützt und du Programme auf diese übertragen kannst, musst du vor Beginn noch zwei Board-Support-Packages installieren. Diese beinhalten die nötigen Treiber und die notwendige Software, um mit dem Prozessor der senseBox zu kommunizieren. Das Board-Support-Package der senseBox enthält außerdem bereits unsere senseBox-Libraries. Damit stehen euch alle grundlegenden Methoden zur Programmierung der beiliegenden Sensoren zur Verfügung.
   </div>
   <h2>Board-Support-Package hinuzfügen</h2>
   <p>
-    Füge die folgende URL in deiner Arduino IDE unter _Datei - Voreinstellungen_ in das Feld für _Zusätzliche Bordverwalter-URLs_ ein:
-    <code>
-      https://mariopesch.github.io/sensebox-esp32-dev/package_esp32_index.json
-    </code>
+    Füge die folgende URL in deiner Arduino IDE unter _Datei - Voreinstellungen_ in das Feld für _Zusätzliche Bordverwalter-URLs_ ein: 
+  { useBoardStore((state)=>state.board) === ':edu S2' ? 
+    <code> https://mariopesch.github.io/sensebox-esp32-dev/package_esp32_index.json </code> : 
+    <code> https://github.com/sensebox/senseBoxMCU-core/raw/master/package_sensebox_index.json </code> 
+    }
+    <div className="flex justify-center mt-4">
+      <img className src="/img/arduino-bilder/installation/arduino-board-support-url.png"/>
+      </div>
   </p>
+
   <p>
     Öffne den _Boardverwalter_ mit einem Klick auf das _Boardverwalter_ Symbol auf der linken Seite (siehe Bild)
   </p>
-  <img src="/img/arduino-bilder/installation/arduino-boards.png"></img>
+  <div className="flex justify-center">
+    <img src="/img/arduino-bilder/installation/arduino-boards.png"/>
+  </div>
   <p>
     Gib "ESP32" oben in die Suchleiste ein, um die Packages schneller zu finden und installiere das Board `esp32` von Espressif Systems. <b>Achtung! Stelle sicher , dass du mindestens die Version 2.0.15-alpha3 installierst! </b>.
   </p>
 </div>
+

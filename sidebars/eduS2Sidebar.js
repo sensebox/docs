@@ -22,9 +22,9 @@ const eduS2Sidebar =   {
       type: 'category', 
       label: 'Erste Schritte', 
       items: [
-        "mcus2/allgemein-basics-inbetriebnahme",
-        "blockly/introduction/your-first-sketch",
-        "blockly/introduction/kompilieren", 
+        "mcus2/mcus2-in-betrieb-nehmen",
+        "mcus2/mcus2-erster-sketch",
+        "mcus2/mcus2-kompilieren", 
       ]
     }, 
     {
@@ -87,7 +87,7 @@ const eduS2Sidebar =   {
         type: 'generated-index',
         title: 'Besonderheiten',
       },
-      items: ["mcus2/circuitpython_esp32"]
+      items: ["misc/circuitpython_esp32"]
     }
   ]
 }

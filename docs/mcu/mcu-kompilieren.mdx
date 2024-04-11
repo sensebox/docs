@@ -1,0 +1,87 @@
+---
+sidebar_position: 4
+title: Kompilieren und Übertragen
+hide_title: false
+---
+
+import Layout from "@site/src/Layout";
+import { useBoardStore } from "@site/src/lib/stores/store";
+import BoardDropdown from "@site/src/components/BoardDropdown/BoardDropdown";
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+import  AlertBox from "@site/src/components/AlertBox/AlertBox";
+import copyToMCUGif from "@site/static/img/mcu/copy-to-mcu.gif"
+import copyToMCUGifMac from "@site/static/img/mcu/copy-to-mcu-mac.gif"
+
+## Kompilieren
+
+Damit dein Programm von der senseBox ausgeführt werden kann, muss es zuerst in Maschinensprache übersetzt werden. Diesen Vorgang nennt man _Kompilieren_. Im Fall der senseBox übernimmt das Kompilieren unser Server.
+
+Um deinen Sketch kompilieren zu lassen, klicke in Blockly oben rechts auf den orangenen Knopf mit dem Notizblocksymbol.
+
+![](/img/blockly-bilder/kompilieren/kompilieren.png)
+
+Wenn dein Sketch fertig kompiliert ist, wird er dir in Form einer .BIN-Datei zum Download angeboten. Speichere ihn an einem Ort, wo du ihn später wiederfindest.
+
+## Übertragen 
+
+
+### Modus der senseBox MCU wechseln
+Die senseBox MCU verfügt über zwei Modi. Den Programm- und den Lern-Modus. 
+
+Im **Programm-Modus** wird ein übertragenes Programm ausgeführt. Du erkennst ihn daran, dass die grünen Status-LEDs der senseBox MCU leuchten.
+
+Im **Lern-Modus** wird die senseBox als Wechseldatenträger erkannt und es können neue Programme übertragen werden. Du erkennst ihn daran, dass die rote LED neben dem Reset-Knopf dauerhaft leuchtet/pulsiert.
+
+![](/img/mcu/mcu-modus.png)
+
+Um dein Programm übertragen zu können, musst du deine MCU nun in den Lern-Modus versetzen. 
+<div className="flex justify-center">
+<iframe width="853" height="480" src="https://www.youtube.com/embed/jzlOJ7Zuqqw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+### Übertragen 
+Schließt du deine senseBox MCU an deinen Computer an und führst einen Doppelklick auf dem roten Button aus, wird diese als Wechseldatendräger erkannt. Mit einem Klick auf “Code Kompilieren” in der Weboberfläche wird dein Programmcode auf dem Server kompiliert und eine .BIN-Datei wird dir zum Download angeboten. Je nachdem welches Betriebssystem du verwendest, unterscheidet sich nun der Kopiervorgang.
+
+<Tabs>
+    <TabItem value="windows" label="Windows">
+    Unter Windows kannst du die erstellte .BIN-Datei einfach per Drag & Drop auf den Wechseldatenträger SENSEBOX kopieren. Die rote LED am Button wird kurz flackern und anschließend startet das Board selbstständig neu und führt deinen Programmcode aus.
+    <div className="flex justify-center">
+        <img src={copyToMCUGif} />
+    </div>
+    </TabItem>
+    <TabItem value="macos" label="MacOS">
+    Unter MacOS funktioniert das Kopieren der .BIN-Datei per Drag & Drop leider zurzeit noch nicht. Eine Möglichkeit ist die Datei im Terminal per dd-Befehl zu kopieren (nur erfahrenen Nutzern zu empfehlen!) oder einen alternativen Dateimanager wie zum Beispiel [muCommander](https://www.mucommander.com/) zu verwenden.
+    <div className="flex justify-center">
+        <img src={copyToMCUGifMac} />
+    </div>
+    </TabItem>
+    <TabItem value="linux" label="Linux">
+    Unter Linux kannst du die erstellte .BIN-Datei einfach per Drag & Drop auf den Wechseldatenträger SENSEBOX kopieren. Die rote LED am Button wird kurz flackern und anschließend startet das Board selbstständig neu und führt deinen Programmcode aus.
+    <div className="flex justify-center">
+        <img src={copyToMCUGif} />
+    </div>
+    </TabItem>
+</Tabs>
+
+
+{/* <div>
+  <h2> Übertragen </h2>
+  <p>
+    {" "}
+    Schließe nun deine senseBox MCU-S2 mit Hilfe des USB-Kabels an deinen Computer
+    an. Deine senseBox sollte nun als Wechseldatenträger von deinem Computer erkannt
+    werden.{" "}
+  </p>
+  <h3> Kopieren </h3>
+  <p>
+    Nun kannst du die zuvor heruntergeladene .BIN-Datei einfach per Drag & Drop
+    auf den Wechseldatenträger <b>SENSEBOX</b> kopieren. Die senseBox wird nun
+    deinen hochgeladenen Sketch abspielen.
+  </p>
+
+
+  <img src="/img/blockly-bilder/kompilieren/copy_to_mcu.gif" />
+</div>
+ */}
