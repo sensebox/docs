@@ -20,7 +20,7 @@ import { useBoardStore } from "@site/src/lib/stores/store";
   <p>
     Füge die folgende URL in deiner Arduino IDE unter _Datei - Voreinstellungen_ in das Feld für _Zusätzliche Bordverwalter-URLs_ ein: 
   { useBoardStore((state)=>state.board) === ':edu S2' ? 
-    <code> https://mariopesch.github.io/sensebox-esp32-dev/package_esp32_index.json </code> : 
+    <code> https://espressif.github.io/arduino-esp32/package_esp32_index.json </code> : 
     <code> https://github.com/sensebox/senseBoxMCU-core/raw/master/package_sensebox_index.json </code> 
     }
     <div className="flex justify-center mt-4">
