@@ -77,6 +77,8 @@ const eduS2Sidebar =   {
       items: [
         "arduino/installation-arduino-ide",
         "arduino/installation-bsp",
+        "arduino/first-steps"
+
       ]
     },
 

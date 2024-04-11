@@ -64,8 +64,8 @@ const eduSidebar =   {
       items:[
         "arduino/installation-arduino-ide",
         "arduino/installation-bsp",
-        "mcu/mcu-library",
-        "mcu/mcu-sensebox-io-library"
+        "mcu/mcu-sensebox-io-library",
+        "arduino/first-steps"
       ]
     }, 
     {
