@@ -1,26 +1,26 @@
-import mcus2top from '@site/static/img/mcus2/mcus2top.png';
+import mcus2top from "@site/static/img/mcus2/mcus2top.png";
 import AlertBox from "@site/src/components/AlertBox/AlertBox";
 import mcuPorts from "@site/static/img/mcu/sensebox-mcu-ports.png";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@site/src/components/ui/popover"
+} from "@site/src/components/ui/popover";
 import lightSensor from "@site/static/img/hardware-bilder/helligkeit-uv/sensor_helligkeit_uv.png";
 import display from "@site/static/img/hardware-bilder/oled/display.png";
 import tempSensor from "@site/static/img/hardware-bilder/temperatur-luftfeuchte/sensor_temperatur_luftfeuchte.png";
 import pressureSensor from "@site/static/img/hardware-bilder/luftdruck/bmp_top.png";
 import tofSensor from "@site/static/img/hardware-bilder/tof/tofsensor.png";
-import umweltsensor from "@site/static/img/hardware-bilder/umweltsensor/bme.png"
-import CO2Sensor from "@site/static/img/hardware-bilder/co2/scd30.png"
-import feinstaubSps from "@site/static/img/hardware-bilder/sps30/sps30.png"
-import feinstaubSds from "@site/static/img/hardware-bilder/feinstaub/sensoren_feinstaub.png"
-import mikro from "@site/static/img/hardware-bilder/mikro/mic.png"
-import ultrasonic from "@site/static/img/hardware-bilder/distanz/US-Sensor.png"
-import truebner from "/img/hardware-bilder/bodenfeuchte-temperatursensor/sensoren_bodenfeuchte_temperatur.png"
-import wifiBee from '@site/static/img/hardware-bilder/bees/wifi-bee/wifi.png'
-import sdBee from '@site/static/img/hardware-bilder/bees/sd-bee/msd.png'
-import loraBee from "@site/static/img/hardware-bilder/bees/lora-bee/LoraBee_Bottom.png"
+import umweltsensor from "@site/static/img/hardware-bilder/umweltsensor/bme.png";
+import CO2Sensor from "@site/static/img/hardware-bilder/co2/scd30.png";
+import feinstaubSps from "@site/static/img/hardware-bilder/sps30/sps30.png";
+import feinstaubSds from "@site/static/img/hardware-bilder/feinstaub/sensoren_feinstaub.png";
+import mikro from "@site/static/img/hardware-bilder/mikro/mic.png";
+import ultrasonic from "@site/static/img/hardware-bilder/distanz/US-Sensor.png";
+import truebner from "/img/hardware-bilder/bodenfeuchte-temperatursensor/sensoren_bodenfeuchte_temperatur.png";
+import wifiBee from "@site/static/img/hardware-bilder/bees/wifi-bee/wifi.png";
+import sdBee from "@site/static/img/hardware-bilder/bees/sd-bee/msd.png";
+import loraBee from "@site/static/img/hardware-bilder/bees/lora-bee/LoraBee_Bottom.png";
 
 <div className = "flex flex-col justify-center items-center">
     <h1>senseBoxMCU</h1>
@@ -40,7 +40,7 @@ Klicke auf die unten stehenden Anschlüsse um zu sehen welcher Sensor dort anges
             I2C/Wire Ports
           </PopoverTrigger>
           <PopoverContent>
-                        <div>
+            <div>
               <h2>Sensoren und Accessoire an den I2C/Wire Ports</h2>
               <div className="flex flex-col lg:flex-row">
                 <div className="flex flex-col items-center">
@@ -99,7 +99,6 @@ Klicke auf die unten stehenden Anschlüsse um zu sehen welcher Sensor dort anges
                   />
                   <p className=" text-gray-500">Display</p>
                 </div>
-
               </div>
             </div>
             </PopoverContent>
@@ -195,21 +194,23 @@ Klicke auf die unten stehenden Anschlüsse um zu sehen welcher Sensor dort anges
             </div>
         </PopoverContent>
     </Popover>
-</div>
 
+</div>
 
 ## Technische Spezifikationen
 
 ### Prozessor
+
 Der Prozessor basiert auf dem ARM Cortex-M0+ Prozessor aus der SAM D21 Familie von Microchip.
 
 ### Schnittstellen
-Sensoren und Aktoren werden über die bewährten Schnittstellen wie I2C, UART und digitale I/Os mit einem robusten JST-Steckersystem angesprochen (5V tolerant). 
+
+Sensoren und Aktoren werden über die bewährten Schnittstellen wie I2C, UART und digitale I/Os mit einem robusten JST-Steckersystem angesprochen (5V tolerant).
 
 ### Datenübertragung
-Über die beiden XBee kompatiblen Sockel werden UART oder SPI Module angeboten. Wahlweise kann die Datenübertragung dadurch per WLAN, LAN oder LoRa in Echtzeit durchgeführt werden. Alternativ können die Daten auch auf einer Mikro-SD Karte gespeichert werden.  
+
+Über die beiden XBee kompatiblen Sockel werden UART oder SPI Module angeboten. Wahlweise kann die Datenübertragung dadurch per WLAN, LAN oder LoRa in Echtzeit durchgeführt werden. Alternativ können die Daten auch auf einer Mikro-SD Karte gespeichert werden.
 
 ## Programmierung
 
 Die senseBox MCU kann über verschiedene Programmierumgebungen programmiert werden. Eine genaue Übersicht findest du [hier](/arduino/allgemein-sensebox-editoren/).
-
