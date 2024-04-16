@@ -10,10 +10,7 @@ export default {
     [
       eduS2Sidebar,
       eduSidebar, 
-      bikeSidebar,
-      homeSidebar,
-      trafficLightSidebard,
-      miniSidebar,
+
     ]
 }
 
