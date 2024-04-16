@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: Feinstaubsensor
+title: Feinstaubsensor SDS011
 hide_title: false
 ---
 import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
@@ -34,7 +34,6 @@ Im folgenden Code werden die Werte für `PM25` und `PM10` im Seriellen Monitor a
 SDS011 my_sds(Serial1) // Serial1 gibt hier den Seriellen Port an, an dem du den Sensor angeschlossen hast
 float p10,p25
 
-```c++
 void setup(){
     // Normalen seriellen Port initialisieren
     Serial.begin(9600);
