@@ -4,11 +4,15 @@ title: GPS
 hide_title: false
 description: GPS u-blox CAM-M8Q Multi GNSS Modul
 ---
+import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
+import gps from "@site/static/img/hardware-bilder/gps/gps.png"
+
+
 # GPS
 
 Das GPS-Modul empfängt die Position (Längengrad/Breitengrad/Höhe) der senseBox. Diese kann für mobile Anwendungen, z.B. die mobile Datenübertragung auf die openSenseMap, genutzt werden. Dieser Sensor ist kompatibel mit den gängingen GNS Systemen (GPS, QZSS, GLONASS, BeiDou, Galileo) und basiert auf dem u-blox CAM-M8Q Multi GNSS Modul.
 
-![](/img/hardware-bilder/gps/gps.png)
+<ImageWithText src={gps} title="GPS Modul"/>
 
 Der GPS Sensor wird an einen I2C-Port angeschlossen.
 
@@ -21,46 +25,39 @@ Der GPS Sensor wird an einen I2C-Port angeschlossen.
 - Stromaufnahme: 30mA im Dauerbetrieb bzw. 10mA Power Save Mode 1Hz bei 3V
 
 
-## Programmierung
+## Programmierung (Arduino)
 
-```c++
-#include <SenseBoxMCU.h>
+### Software Bibliothek
+Um den Sensor in Arduino zu Programmieren musst du die Software Bibliothek [SparkFun u-blox GNSS Arduino Library](https://www.arduino.cc/reference/en/libraries/sparkfun-u-blox-gnss-arduino-library/) installieren.
 
-GPS gps;
-float lat; //Geografische Breite
-float lng; //Geografische Länge
-float alt; //Höhe über Meeresspiegel in Metern
-float speed;
-float date;
-float time;
+### Code
+Dieser Code speichert die Werte für Längen- und Breitengrad in den Variablen `latitude` und `longitude`.
 
-void setup()
-{
-  gps.begin();
+```cpp
+#include <senseBoxIO.h>
+#include <SparkFun_u-blox_GNSS_Arduino_Library.h> // http://librarymanager/All#SparkFun_u-blox_GNSS_Arduino_Library
+#include <Wire.h>
+
+SFE_UBLOX_GNSS myGNSS;
+float latitude;
+float longitude;
+void setup() {
+  Wire.begin();
+
+  if (myGNSS.begin() == false) //Connect to the Ublox module using Wire port
+  {
+    Serial.println(F("Ublox GPS not detected at default I2C address. Please check wiring. Freezing."));
+    while (1);
+  }
+
+  myGNSS.setI2COutput(COM_TYPE_UBX); //Set the I2C port to output UBX only (turn off NMEA noise)
+  myGNSS.saveConfiguration(); //Save the current settings to flash and BBR
 }
 
-void loop()
-{
-  gps.getGPS();
-  lat = gps.getLatitude();
-  lng = gps.getLongitude();
-  alt = gps.getAltitude();
-  speed = gps.getSpeed();
-  date = gps.getDate();
-  time = gps.getTime();
+void loop() {
+  latitude = myGNSS.getLatitude();
+  longitude = myGNSS.getLongitude();
 
-  Serial.print(lat, 6);
-  Serial.print(F(","));
-  Serial.print(lng, 6);
-  Serial.print(F(","));
-  Serial.println(alt, 1);
-  Serial.print(F(","));
-  Serial.println(speed, 4);
-  Serial.print(F(","));
-  Serial.println(date);
-  Serial.print(F(","));
-  Serial.println(time);
-  delay(100);
 }
 ```
 

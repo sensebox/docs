@@ -13,11 +13,18 @@ resources:
 image1: /images/2020-03-11-bee-lan/lan_bee.png
 ---
 
+import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
+import ethernetBee from "@site/static/img/hardware-bilder/bees/ethernet-bee/lan_bee.png"
+
+
+
 # Ethernet-Bee
 
 Das Ethernet-Bee ist ein Verbindungsstück, um die senseBox via Kabel mit dem Internet zu verbinden. Das LAN-Bee basiert auf dem W5500 Mikrochip von Wiznet, welcher eine hohe Datenübertragungsrate ermöglicht.
 
-![](/img/hardware-bilder/bees/ethernet-bee/lan_bee.png)
+<ImageWithText src={ethernetBee} title="Ethernet Bee"/>
+
+
 
 ## Technische Informationen
 
@@ -27,9 +34,9 @@ Das Ethernet-Bee ist ein Verbindungsstück, um die senseBox via Kabel mit dem In
 * Gewicht: 9,2 g
 
 
-## Programmierung
+## Programmierung (Arduino)
 
-```c++
+```cpp
 #include <SPI.h>
 #include <Ethernet.h>
 #include <senseBoxIO.h>

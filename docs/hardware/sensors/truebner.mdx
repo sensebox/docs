@@ -5,11 +5,15 @@ hide_title: false
 description: Bodenfeuchte- und Temperatursensor Truebner SMT50
 ---
 
+import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
+import truebnerSensor from "@site/static/img/hardware-bilder/bodenfeuchte-temperatursensor/sensoren_bodenfeuchte_temperatur.png"
+
+
 # Bodentemperatur- & Feuchtigkeitssensor 
 
 Der Truebner SMT50 ist ein kapazitiver Bodentemperatur- und Feuchtigkeitssensor und eignet sich daher gut für diverse Anwendungen im heimischen Garten. Kapazitive Bodenfeuchtesensoren erzeugen ein elektrisches Feld um ihre Messelektroden herum. Das Feld dringt in den umgebenden Boden ein. Die Messelektronik des Sensors ermittelt die resultierende elektrische Kapazität der Elektroden. Je höher der Wassergehalt im Boden ist, desto größer wird die Messkapazität des Sensors.
 
-![](/img/hardware-bilder/bodenfeuchte-temperatursensor/sensoren_bodenfeuchte_temperatur.png)
+<ImageWithText src={truebnerSensor} title="SMT50 Bodenfeuchtesensor"/>
 
 ## Technische Details
 - Versorgungsspannung: 3.3 - 30 VDC (Gleichspannung)
@@ -25,6 +29,27 @@ Der Truebner SMT50 ist ein kapazitiver Bodentemperatur- und Feuchtigkeitssensor 
 
 ## Programmierung (Arduino)
 
+### Code 
+
+```cpp
+#include <senseBoxIO.h>
+
+float getSMT50Temperature(int analogPin){
+    int sensorValue = analogRead(analogPin);
+    float voltage = sensorValue * (3.3 / 1024.0);
+    return (voltage - 0.5) * 100;
+}
+
+
+void setup() {
+    Serial.begin(9600);
+}
+
+
+void loop() {
+    Serial.println(getSMT50Temperature(1));
+}
+```
 
 
 ## Programmierung (Blockly)

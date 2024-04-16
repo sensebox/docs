@@ -4,7 +4,7 @@ title: CO2-Sensor
 hide_title: false
 ---
 import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
-import CO2Sensor from "@site/static/img/hardware-bilder/co2/DSCF9389.jpg"
+import CO2Sensor from "@site/static/img/hardware-bilder/co2/scd30.png"
 
 # CO2 Sensor 
 Präziser CO<sub>2</sub>-Sensor vom Schweizer Hersteller Sensirion (Modell SCD30). Die Sensorplatine hat einen JST PHR4 Anschluss, passend zum Betrieb mit der senseBox MCU. Weiterhin ist er mit dem Qwiic Connect System ausgestattet.
@@ -34,9 +34,44 @@ Der CO<sub>2</sub>-Sensor sollte nicht dauerhaft im Außenbereich verwendet werd
 
 
 ## Programmierung (Arduino)
+Dieser Sketch liest die CO<sub>2</sub>-Konzentration und gibt sie im Seriellen Monitor aus.
+
+
+### Software Bibliothek
+Um den Sensor in Arduino zu Programmieren musst du die Software Bibliothek [SparkFun SCD30 Arduino Library](https://www.arduino.cc/reference/en/libraries/sparkfun-scd30-arduino-library/) installieren.
+
+
+### Code 
+
+```cpp
+#include <senseBoxIO.h>
+#include <SparkFun_SCD30_Arduino_Library.h> // http://librarymanager/All#SparkFun_SCD30_Arduino_Library
+
+SCD30 airSensor;
+
+void setup() {
+  Serial.begin(9600);
+  Wire.begin();
+  if (airSensor.begin() == false)
+  {
+    while (1)
+      ;
+  }
+  airSensor.useStaleData(true);
+}
+void loop()
+{
+ Serial.println(airSensor.getCO2());
+ delay(500);
+}
+
+```
 
 
 ## Programmierung (Blockly)
+Den CO<sub>2</sub> Sensor kannst du mit folgendem Block auslesen. 
+
+![](/img/hardware-bilder/co2/scd30-block.svg)
 
 
 ## Kalibrieren des CO<sub>2</sub>-Sensors (Auto Kalibrierung)

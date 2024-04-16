@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 258.914 76.818" xmlns="http://www.w3.org/2000/svg">
+  <g xmlns="http://www.w3.org/2000/svg" class="blocklyBlockCanvas" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -104.97413635253906, -50.22637176513672)">
+    <g class="blocklyCursor">
+      <g width="100" height="5">
+        <rect width="100" height="5" style="display: none"/>
+        <rect class="blocklyVerticalMarker" rx="10" ry="10" style="display: none; fill: rgba(255, 255, 255, 0.5); pointer-events: none; stroke-width: 3px;"/>
+        <path transform="" style="display: none"/>
+        <path transform="" style="display: none" fill="none" stroke-width="4"/>
+      </g>
+    </g>
+    <g data-id="z=aJTP)H8x?;_icRCnNp" class="blocklyDraggable" style="display: block; cursor: grabbing;" transform="matrix(1, 0, 0, 1, 114.362915, 60.834648)">
+      <path class="blocklyPathDark" transform="translate(1,1)" fill="#498449" d=" m 8,0 h 229 v 5 H 237 V 5 H 237 V 22 H 237 V 32 H 237 V 49 H 237 V 49 V 53 h -229 H 8 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z " style="cursor: grabbing; display: flex;"/>
+      <path class="blocklyPath" stroke="none" fill="#5ba55b" d=" m 8,0 h 229 v 5 H 237 V 5 H 237 V 22 H 237 V 32 H 237 V 49 H 237 V 49 V 53 h -229 H 8 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z " style="cursor: grabbing;"/>
+      <path class="blocklyPathLight" stroke="#8cc08c" d=" m 8,0 m 0.5,0.5 H 236.5 H 236.5 M 8.5,52.5 M 8.5,52.5 V 20 v -1.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 " style="cursor: grabbing; display: flex; fill: none; stroke-linecap: round;"/>
+      <g transform="translate(18,5)">
+        <text class="blocklyText" x="0" y="14" style="white-space: pre; cursor: grabbing; fill: rgb(255, 255, 255); font-family: sans-serif; font-size: 14.6667px; font-weight: 400; line-height: normal; perspective-origin: 103.469px 8.5px;">CO2 Sensor (Sensirion SCD30)</text>
+      </g>
+      <g transform="translate(54.400001525878906,32)">
+        <text class="blocklyText" x="0" y="14" style="white-space: pre; cursor: grabbing; fill: rgb(255, 255, 255); font-family: sans-serif; font-size: 14.6667px; font-weight: 400; line-height: normal; perspective-origin: 33.3906px 8.5px;">Messwert:</text>
+      </g>
+      <g class="blocklyEditableText" style="cursor: default;" transform="translate(126.4000015258789,32)">
+        <rect rx="4" ry="4" x="0" y="0" height="17" width="105.5999984741211" class="blocklyFieldRect blocklyDropdownRect" stroke="#8cc08c" fill="transparent" style="fill: rgb(255, 255, 255); fill-opacity: 0.6; stroke: none;"/>
+        <text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="14" style="white-space: pre; font-family: sans-serif; font-size: 14.6667px; font-weight: 400; line-height: normal; perspective-origin: 49.7656px 8.5px;">CO2 in ppm<tspan style="fill: rgb(91, 165, 91);"> ▾</tspan></text>
+        <image style="display: none;"/>
+      </g>
+    </g>
+  </g>
+</svg>
