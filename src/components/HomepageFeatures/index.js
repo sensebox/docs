@@ -21,7 +21,7 @@ const FeatureList2 = [
     title: ":edu S2",
     Image: homeCategoryIcon,
     description: (
-      <>Dokumentation zur Bildungsversion der senseBox in der 2. Generation</>
+      <>Informationen zum Anschluss und zur Programmierung der senseBox:edu S2 für den Einsatz im Bildungsbereich</>
     ),
     to: "/docs/blockly/allgemein-basics-inbetriebnahme",
   }
@@ -39,7 +39,7 @@ const FeatureList = [
     title: ":CO2-Ampel",
     Image: trafficLight,
     description: (
-      <>Alle relevanten Informationen zur CO2-Ampel der senseBox für Luftqualitätsüberwachung</>
+      <>Alle relevanten Informationen zur CO2-Ampel der senseBox für die Luftqualitätsüberwachung</>
     ),
     to: "/docs/category/co2-ampel",
   },
@@ -48,8 +48,7 @@ const FeatureList = [
     Image: homeCategoryIcon,
     description: (
       <>
-        Informationen zum Anschluss und Programmierung der Sensoren, Bees und
-        weiteren Bauteilen für Bildungszwecke
+        Informationen zum Anschluss und zur Programmierung der senseBox:edu für den Einsatz im Bildungsbereich
       </>
     ),
     to: "/docs/category/edu",
@@ -58,7 +57,7 @@ const FeatureList = [
     title: ":edu S2",
     Image: homeCategoryIcon,
     description: (
-      <>Verschiedene Dokumentationen zur Bildungsversion der senseBox in der 2. Generation</>
+      <>Informationen zum Anschluss und zur Programmierung der senseBox:edu für den Einsatz im Bildungsbereich</>
     ),
     to: "/docs/categories/edu-s2-overview",
   },
@@ -74,7 +73,7 @@ const FeatureList = [
     title: ":mini",
     Image: openSenseMapCategoryIcon,
     description: (
-      <>Alle relevanten Informationen zur senseBox:mini</>
+      <>Alle relevanten Informationen zur senseBox:mini für den Einstieg in die Welt der Programmierung</>
     ),
     to: "/docs/category/mini",
   },
@@ -86,7 +85,7 @@ const ThumbNailPreviewList = [
     title: "openSenseMap",
     Image: osem,
     description: (
-      <>Die openSenseMap unsere Dattenplattform für offene Daten jeglicher Art</>
+      <>Die openSenseMap als Internetplattform für offene Umweltdaten</>
     ),
     to: "https://opensensemap.org/",
   },
@@ -101,7 +100,7 @@ const ThumbNailPreviewList = [
     Image: hardware,
     description: (
       <>
-        Informationen zum Anschluss und Programmierung der Sensoren, Bees und
+        Informationen zum Anschluss und zur Programmierung der Sensoren, Bees und
         weiteren Bauteilen
       </>
     ),
