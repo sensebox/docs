@@ -1,11 +1,16 @@
 const glossarSidebar = {
     type: 'category',
     label: 'Glossar',
+    link: {
+      type : 'generated-index',
+      title: 'Glossar',
+    },
     items:[
       'hardware/sensors/bmx055',
       'hardware/sensors/co2',
       'hardware/sensors/distanz',
-      'hardware/sensors/feinstaub',
+      'hardware/sensors/feinstaub-sps30',
+      'hardware/sensors/feinstaub-sds011',
       'hardware/sensors/helligkeit-uv',
       'hardware/sensors/lautstaerke',
       'hardware/sensors/luftdruck-temperatur',
@@ -31,14 +36,6 @@ const glossarSidebar = {
       'hardware/accessoires/rgb-led-esp32',
       'hardware/accessoires/rgb-led',
       'hardware/accessoires/rtc-modul',
-      "blockly/logik",
-      "blockly/mathematik",
-      "blockly/schleifen",
-      "blockly/sensoren",
-      "blockly/text",
-      "blockly/variablen",
-      "blockly/web/opensensemap",
-      "blockly/zeit"
     ]
   }
 

@@ -85,13 +85,14 @@ const ThumbNailPreviewList = [
     description: (
       <>Die openSenseMap unsere Dattenplattform für offene Daten jeglicher Art</>
     ),
-    to: "https://opensensemap.org/",
+    to: "https://docs.opensensemap.org/",
   },
   {
     title: "Blockly",
     Image: blockly,
     description: <>Die frei verfügbare grafische Oberfläche zum Programmieren der senseBox </>,
-    to: "https://blockly.sensebox.de/",
+    onClick: () => { useBoardStore.setState({ board: "Blockly" })} ,
+    to: "/docs/category/blockly-2",
   },
   {
     title: "Hardware Glossar",
@@ -102,13 +103,14 @@ const ThumbNailPreviewList = [
         weiteren Bauteilen
       </>
     ),
-    to : "/docs/category/hardware"
+    onClick: () => { useBoardStore.setState({ board: "Glossar" })} ,
+    to : "/docs/category/glossar"
   },
 ];
 
-function ThumbailPreview({ Image, title, description, to }) {
+function ThumbailPreview({ Image, title, description, onClick,  to }) {
   return (
-    <Link className="w-full lg:w-[25%] bg-gradient-to-r from-green-3 to-green mx-auto hover:text-white hover:no-underline  text-white rounded-lg overflow-hidden hover:shadow-[rgba(0,0,15,0.5)_-7px_7px_0px_0px] hover:shadow-yellow  hover:-translate-y-1 transition duration-300" to={to}>
+    <Link onClick={onClick} className="w-full lg:w-[25%] bg-gradient-to-r from-green-3 to-green mx-auto hover:text-white hover:no-underline  text-white rounded-lg overflow-hidden hover:shadow-[rgba(0,0,15,0.5)_-7px_7px_0px_0px] hover:shadow-yellow  hover:-translate-y-1 transition duration-300" to={to}>
     <div>
       <img className="w-full h-48 object-cover" src={Image} alt={title} />
       <div className="p-4">
