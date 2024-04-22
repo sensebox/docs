@@ -5,6 +5,7 @@ hide_title: false
 ---
 import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
 import feinstaubSds from "@site/static/img/hardware-bilder/feinstaub/sensoren_feinstaub.png"
+import { useBoardStore } from "@site/src/lib/stores/store";
 
 # Feinstaubsensor SDS011
 
@@ -26,6 +27,10 @@ Um den Sensor in Arduino zu Programmieren musst du die Software Bibliothek [sds-
 
 ### Code
 Im folgenden Code werden die Werte für `PM25` und `PM10` im Seriellen Monitor ausgegeben. 
+:::info
+Der Sensor benötigt eine Aufwärmzeit von 30 Sekunden, bevor er Messwerte ausgibt.
+:::
+
 
 ```cpp
 #include <SPI.h>
