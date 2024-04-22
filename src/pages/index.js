@@ -15,14 +15,10 @@ import {
   DialogTrigger,
 } from "@site/src/components/ui/dialog"
 import styles from "./index.module.css";
-import { useBoardStore } from "@site/src/lib/stores/store";
 
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
-  const board = useBoardStore((state) => state.board);
-
-  const [open, setOpen] = React.useState(board === '' ? true : false);
 
   return (
     <header
