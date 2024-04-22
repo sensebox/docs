@@ -21,7 +21,7 @@ const FeatureList2 = [
   {
     title: ":edu S2",
     description: (
-      <>Dokumentation zur Bildungsversion der senseBox in der 2. Generation</>
+      <>Informationen zum Anschluss und zur Programmierung der senseBox:edu S2 für den Einsatz im Bildungsbereich</>
     ),
     to: "/docs/boards/mcus2/mcu-s2-overview",
   }, 
@@ -29,8 +29,7 @@ const FeatureList2 = [
     title: ":edu",
     description: (
       <>
-        Informationen zum Anschluss und Programmierung der Sensoren, Bees und
-        weiteren Bauteilen für Bildungszwecke
+        Informationen zum Anschluss und zur Programmierung der senseBox:edu für den Einsatz im Bildungsbereich
       </>
     ),
     to: "/docs/boards/mcu/mcu-overview",
@@ -83,7 +82,7 @@ const ThumbNailPreviewList = [
     title: "openSenseMap",
     Image: osem,
     description: (
-      <>Die openSenseMap unsere Dattenplattform für offene Daten jeglicher Art</>
+      <>Die openSenseMap als Internetplattform für offene Umweltdaten</>
     ),
     to: "https://docs.opensensemap.org/",
   },
@@ -99,7 +98,7 @@ const ThumbNailPreviewList = [
     Image: hardware,
     description: (
       <>
-        Informationen zum Anschluss und Programmierung der Sensoren, Bees und
+        Informationen zum Anschluss und zur Programmierung der Sensoren, Bees und
         weiteren Bauteilen
       </>
     ),
