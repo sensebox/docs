@@ -1,0 +1,95 @@
+---
+date: 2020-03-11
+title: WiFi-Bee
+categories: hardware
+description: Mit dem WiFi-Bee können die Messdaten deiner senseBox per WLAN übertragen werden.
+type: Document
+resources:
+  - name: "Shop"
+    link: https://sensebox.kaufen/product/wifi-bee
+  - name: Atmel ATWINC1500 Data Sheet
+    link: http://ww1.microchip.com/downloads/en/DeviceDoc/ATWINC15x0-MR210xB-IEEE-802.11-b-g-n-SmartConnect-IoT-Module-Data-Sheet-DS70005304C.pdf
+image1: /images/2020-03-11-bee-wifi/wifi.png
+image2: /images/2020-03-11-bee-wifi/1-test.png 
+image3: /images/2020-03-11-bee-wifi/2-result.png 
+image4: /images/2020-03-11-bee-wifi/3-updater.png 
+image5: /images/2020-03-11-bee-wifi/4-firmware-updater.png 
+image6: /images/2020-03-11-bee-wifi/5-test-connection.png 
+image7: /images/2020-03-11-bee-wifi/6-update-firmware.png    
+image8: /images/2020-03-11-bee-wifi/ArduinoUpdaterSelect.png     
+image9: /images/2020-03-11-bee-wifi/ArduinoToolsUpdater.png     
+image10: /images/2020-03-11-bee-wifi/WifiFirmwareTool.PNG     
+image11: /images/2020-03-11-bee-wifi/ingressInput.png     
+image12: /images/2020-03-11-bee-wifi/apiInput.png     
+image13: /images/2020-03-11-bee-wifi/CertificatesResults.png     
+
+---
+
+import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
+import wifiBee from '@site/static/img/hardware-bilder/bees/wifi-bee/wifi.png'
+
+# WiFi-Bee
+
+Das Wifi-Bee ist das Verbindungsstück, um die senseBox mit dem Internet zu verbinden. Die Daten der senseBox werden per WLAN (WiFi) in das bestehende Netzwerk übertragen. Das WiFi-Bee basiert auf dem ATWINC1500 Mikrochip von Atmel.
+
+
+<ImageWithText src={wifiBee} alt="SD Modul" title="WiFi Bee"/> 
+
+:::info
+Bei einigen unserer WiFi-Bees vom Typ WINC1500 kann es vorkommen, dass eine veraltete Firmware (Version 19.4.4) installiert ist. Das kann zu Übertragungsproblemen führen. Sollten diese Probleme bei dir auftreten, schaue dir !!!! an, um die Firmware zu aktualisieren.
+:::
+
+## Technische Informationen
+
+* "Plug-in-and-Go" senseBox kompatibel
+* Single-band 2.4GHz b/g/n
+* Betriebsspannung: 3.0V to 4.2V
+* Verschlüsselungsprotokolle: WPA/WPA2 Personal, TLS, SSL
+* Netzwerkdienste: DHCP, DNS, TCP/IP (IPv4), UDP, HTTP, HTTPS
+* Bezeichnung: WINC1500
+* Maße: 24mm x 25mm x 9mm
+* Gewicht: 3,5 g
+
+## Verbindungstest
+
+Um die Verbindung des Bees mit dem Internet zu testen, also sowohl die Funktion der Komponente, als auch des Netzwerks, nutze den folgenden Sketch:
+
+```cpp
+#include <SPI.h>
+#include <WiFi101.h>
+#include <senseBoxIO.h>
+
+void setup()
+{
+    // Initialisiert den seriellen Monitor
+    Serial.begin(9600);
+
+    // Starte WINC1500 (WiFi-Bee) in XBEE1 Socket neu
+    senseBoxIO.powerXB1(false);
+    delay(250);
+    senseBoxIO.powerXB1(true);
+}
+
+void loop()
+{
+    delay(5000);
+    // Gibt installierte und aktuellste Firmware Version aus
+    String fv = WiFi.firmwareVersion();
+    Serial.print("Firmware installed: ");
+    Serial.println(fv);
+    Serial.print("Latest firmware: ");
+    Serial.println(WIFI_FIRMWARE_LATEST_MODEL_B);
+
+    // Gibt IP-Adresse der senseBox aus
+    IPAddress ip = WiFi.localIP();
+    Serial.print("IP: ");
+    Serial.println(ip);
+    delay(5000);
+}
+```
+
+Wenn bei allen Ausgaben im seriellen Monitor Werte angezeigt werden, insbesondere wenn die IP-Adresse etwa in der Form _192.107.256.4_ ausgegeben wird, ist das WiFi-Bee richtig initialisiert und die senseBox kann mit dem Internet genutzt werden.
+
+
+> - [Shop](https://sensebox.kaufen/product/wifi-bee)
+> - [Atmel ATWINC1500 Data Sheet](http://ww1.microchip.com/downloads/en/DeviceDoc/ATWINC15x0-MR210xB-IEEE-802.11-b-g-n-SmartConnect-IoT-Module-Data-Sheet-DS70005304C.pdf)

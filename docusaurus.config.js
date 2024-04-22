@@ -5,7 +5,8 @@ const { themes } = require("prism-react-renderer");
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
 const collapse = require("remark-collapse");
-
+const eduSidebar = require("./sidebars/eduSidebar");
+const eduS2Sidebar = require("./sidebars/eduS2Sidebar");
 require("dotenv").config();
 
 /** @type {import('@docusaurus/types').Config} */
@@ -83,7 +84,7 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "blockly/allgemein-basics-inbetriebnahme",
+            docId: "boards/mcus2/mcus2-in-betrieb-nehmen",
             position: "left",
             label: "Get started",
           },
@@ -140,7 +141,7 @@ const config = {
         indexName: process.env.ALGOLIA_INDEXNAME,
       },
 
-    }),
+    })
 };
 
 module.exports = config;

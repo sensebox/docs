@@ -35,7 +35,7 @@ const AlertBox = ({ type, title, children }) => (
       {icons[type]}
     </div>
     <div>
-      <span className="font-medium font-extrabold">{title}</span>
+      <span className="font-extrabold">{title}</span>
       {children}
     </div>
   </div>

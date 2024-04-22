@@ -25,13 +25,25 @@ const BoardDropdown = () => {
         <SelectValue placeholder={board ? board : "Board auswählen"} />
       </SelectTrigger>
       <SelectContent>
-        <SelectItem value="MCU">
+        <SelectItem value=":edu">
           <FontAwesomeIcon icon={faMicrochip} className="mr-2" />
-          MCU
+          :edu
         </SelectItem>
-        <SelectItem value="MCU-S2">
+        <SelectItem value=":edu S2">
           <FontAwesomeIcon icon={faMicrochip} className="mr-2" />
-          MCU-S2
+          :edu S2
+        </SelectItem>
+        <SelectItem value=":home">
+          <FontAwesomeIcon icon={faMicrochip} className="mr-2" />
+          :home
+        </SelectItem>
+        <SelectItem value=":bike">
+          <FontAwesomeIcon icon={faMicrochip} className="mr-2" />
+          :bike
+        </SelectItem>
+        <SelectItem value=":CO2Traffic">
+          <FontAwesomeIcon icon={faMicrochip} className="mr-2" />
+          CO2 Traffic Light
         </SelectItem>
       </SelectContent>
     </Select>
