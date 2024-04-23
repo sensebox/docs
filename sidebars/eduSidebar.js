@@ -58,7 +58,8 @@ const eduSidebar =   {
             'hardware/sensors/umweltsensor', 
             'hardware/bee/ethernet-bee',
             'hardware/accessoires/gps',
-            ]
+            'hardware/accessoires/multiplexer'
+          ]
         }
 
       ]
