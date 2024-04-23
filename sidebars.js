@@ -13,6 +13,7 @@ export default {
     [
       eduS2Sidebar,
       eduSidebar,
+      bikeSidebar,
       blocklySidebar, 
       glossarSidebar
     ]

@@ -3,21 +3,12 @@ import clsx from "clsx";
 import styles from "./styles.module.css";
 import Link from "@docusaurus/Link";
 import LogoSensebox from "@site/static/img/logo.svg";
-import ArduinoCategoryIcon from "@site/static/img/category-icons/arduino.png";
-import BlocklyCategoryIcon from "@site/static/img/category-icons/blockly.png";
-import HardwareCategoryIcon from "@site/static/img/category-icons/hardware.png";
-import openSenseMapCategoryIcon from "@site/static/img/category-icons/osem.png";
-import homeCategoryIcon from "@site/static/img/category-icons/home.png";
-import senseBoxCategoryIcon from "@site/static/img/category-icons/senseBox.png";
-import miscCategoryIcon from "@site/static/img/category-icons/allgemein.png";
-import trafficLight from "@site/static/img/category-icons/trafficLight.png";
-import bikeCategory from "@site/static/img/category-icons/bikesilhouette.png";
 import osem from "@site/static/img/osem.png";
 import blockly from "@site/static/img/blockly.png";
 import hardware from "@site/static/img/hardware.jpg";
 import { useBoardStore } from "@site/src/lib/stores/store";
 
-const FeatureList2 = [
+const FeatureList = [
   {
     title: ":edu S2",
     description: (
@@ -34,16 +25,16 @@ const FeatureList2 = [
     ),
     to: "/docs/boards/mcu/mcu-overview",
   },
- /*  {
+ {
     title: ":bike",
     description: (
       <>
-        Informationen zum Anschluss und Programmierung der Sensoren, Bees und
-        weiteren Bauteilen für Bildungszwecke
+        Informationen zur senseBox Bike und deren Anwendung im Bereich der Umweltbildung
       </>
     ),
     to: "/docs/category/bike",
   },
+  /*
   {
     title: ":home",
     description: (
@@ -160,7 +151,7 @@ export default function HomepageFeatures() {
             </div>
           </div>
           <div className="flex lg:flex-row  flex-wrap justify-center gap-4">
-            {FeatureList2.map((props, idx) => (
+            {FeatureList.map((props, idx) => (
               <Feature key={idx} {...props} />
             ))}
           </div>

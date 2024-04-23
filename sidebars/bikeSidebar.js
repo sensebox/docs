@@ -6,25 +6,40 @@ const bikeSidebar = {
     },
     items: [
       {
-        type: 'category', 
-        label: 'Hardware', 
-        link: {
-          type : 'generated-index',
-          title: 'Hardware',
-        },
-        items: 
-        // generate items from bikeHardware variable
-        // map over each item in bikeHardware and return an object lookin like this {type: 'ref', id: 'hardware/id'} with the item
-        [
-            'hardware/sensors/temperatur-luftfeuchte',
-        ]
-        }, 
+        type:'doc', 
+        label: 'Halterung', 
+        id: 'products/bike/halterung/installation'
+      },
         {
           type:'category', 
           label: 'App', 
-          items: ["products/bike/app/ersteschritteapp"]
+          items: [
+            "products/bike/app/download", 
+            "products/bike/app/benutzung",
+          ]
+        },
+        {
+          type:'category', 
+          label: 'Sensoren', 
+          items: [
+            "hardware/sensors/temperatur-luftfeuchte", 
+            "hardware/sensors/mpu6050", 
+            "hardware/sensors/feinstaub-sps30", 
+            "hardware/sensors/distanz"
+          ]
+        }, 
+        {
+          type: 'doc', 
+          label: "Pflegehinweise für die senseBox:bike", 
+          id: 'products/bike/misc/care'
+        }, 
+        {
+          type:'doc', 
+          label: 'Fehlerbehebung',
+          id: 'products/bike/misc/errors' 
         }
     ]
   }
+
 
   export default bikeSidebar;
