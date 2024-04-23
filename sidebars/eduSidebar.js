@@ -40,6 +40,7 @@ const eduSidebar =   {
             'hardware/sensors/mikro',
             'hardware/sensors/luftdruck-temperatur',
             'hardware/accessoires/display', 
+            'hardware/sensors/bmx055',
           ]
         },
         {
