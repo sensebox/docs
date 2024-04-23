@@ -101,7 +101,7 @@ const config = {
         ],
       },
       footer: {
-        copyright: `© senseBox 2023. All rights reserved.`,
+        copyright: `© senseBox 2024. All rights reserved.`,
         links:[
           {
             title: "Materials", 
