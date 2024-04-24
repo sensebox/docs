@@ -8,7 +8,17 @@ const homeSidebar = {
   items: [
     {
       type: "category",
-      label: "Aufstellen der senseBox:home",
+      label: "Erste Schritte",
+      items: [
+        "boards/mcu/mcu-revisions",
+        "boards/mcu/mcu-in-betrieb-nehmen",
+        "boards/mcu/mcu-erster-sketch",
+        "boards/mcu/mcu-kompilieren",
+      ],
+    },
+    {
+      type: "category",
+      label: "Aufbau und Installation",
       link: {
         type: "generated-index",
         title: "Hardware",
