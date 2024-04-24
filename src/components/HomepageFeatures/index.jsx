@@ -12,27 +12,42 @@ const FeatureList = [
   {
     title: ":edu S2",
     description: (
-      <>Informationen zum Anschluss und zur Programmierung der senseBox:edu S2 für den Einsatz im Bildungsbereich</>
+      <>
+        Informationen zum Anschluss und zur Programmierung der senseBox:edu S2
+        für den Einsatz im Bildungsbereich
+      </>
     ),
     to: "/docs/boards/mcus2/mcu-s2-overview",
-  }, 
+  },
   {
     title: ":edu",
     description: (
       <>
-        Informationen zum Anschluss und zur Programmierung der senseBox:edu für den Einsatz im Bildungsbereich
+        Informationen zum Anschluss und zur Programmierung der senseBox:edu für
+        den Einsatz im Bildungsbereich
       </>
     ),
     to: "/docs/boards/mcu/mcu-overview",
   },
- {
+  {
     title: ":bike",
     description: (
       <>
-        Informationen zur senseBox Bike und deren Anwendung im Bereich der Umweltbildung
+        Informationen zur senseBox Bike und deren Anwendung im Bereich der
+        Umweltbildung
       </>
     ),
     to: "/docs/category/bike",
+  },
+  {
+    title: ":CO2 Ampel",
+    description: (
+      <>
+        Informationen zum Anschluss und Programmierung der Sensoren, Bees und
+        weiteren Bauteilen für Bildungszwecke
+      </>
+    ),
+    to: "/docs/products/co2Ampel/co2Ampel-overview",
   },
   /*
   {
@@ -80,8 +95,14 @@ const ThumbNailPreviewList = [
   {
     title: "Blockly",
     Image: blockly,
-    description: <>Die frei verfügbare grafische Oberfläche zum Programmieren der senseBox </>,
-    onClick: () => { useBoardStore.setState({ board: "Blockly" })} ,
+    description: (
+      <>
+        Die frei verfügbare grafische Oberfläche zum Programmieren der senseBox{" "}
+      </>
+    ),
+    onClick: () => {
+      useBoardStore.setState({ board: "Blockly" });
+    },
     to: "/docs/category/blockly-2",
   },
   {
@@ -89,27 +110,32 @@ const ThumbNailPreviewList = [
     Image: hardware,
     description: (
       <>
-        Informationen zum Anschluss und zur Programmierung der Sensoren, Bees und
-        weiteren Bauteilen
+        Informationen zum Anschluss und zur Programmierung der Sensoren, Bees
+        und weiteren Bauteilen
       </>
     ),
-    onClick: () => { useBoardStore.setState({ board: "Glossar" })} ,
-    to : "/docs/category/glossar"
+    onClick: () => {
+      useBoardStore.setState({ board: "Glossar" });
+    },
+    to: "/docs/category/glossar",
   },
 ];
 
-function ThumbailPreview({ Image, title, description, onClick,  to }) {
+function ThumbailPreview({ Image, title, description, onClick, to }) {
   return (
-    <Link onClick={onClick} className="w-full lg:w-[25%] bg-gradient-to-r from-green-3 to-green mx-auto hover:text-white hover:no-underline  text-white rounded-lg overflow-hidden hover:shadow-[rgba(0,0,15,0.5)_-7px_7px_0px_0px] hover:shadow-yellow  hover:-translate-y-1 transition duration-300" to={to}>
-    <div>
-      <img className="w-full h-48 object-cover" src={Image} alt={title} />
-      <div className="p-4">
-        <h1 className="text-xl font-bold">{title}</h1>
-        <p className="mt-2">{description}</p>
+    <Link
+      onClick={onClick}
+      className="w-full lg:w-[25%] bg-gradient-to-r from-green-3 to-green mx-auto hover:text-white hover:no-underline  text-white rounded-lg overflow-hidden hover:shadow-[rgba(0,0,15,0.5)_-7px_7px_0px_0px] hover:shadow-yellow  hover:-translate-y-1 transition duration-300"
+      to={to}
+    >
+      <div>
+        <img className="w-full h-48 object-cover" src={Image} alt={title} />
+        <div className="p-4">
+          <h1 className="text-xl font-bold">{title}</h1>
+          <p className="mt-2">{description}</p>
+        </div>
       </div>
-    </div>
     </Link>
-
   );
 }
 
@@ -128,7 +154,7 @@ function Feature({ title, description, to }) {
       )}
       to={to}
       onClick={() => handleBoardChange(title)}
-    > 
+    >
       <div className="text-center">
         <h1 className="text-2xl font-bold">{title}</h1>
         <p>{description}</p>
@@ -160,7 +186,6 @@ export default function HomepageFeatures() {
       <div className="flex flex-col  lg:flex-row justify-center gap-4 lg:gap-0 p-4 lg:p-20">
         {ThumbNailPreviewList.map((props, idx) => (
           <ThumbailPreview key={idx} {...props} />
-
         ))}
       </div>
     </section>
