@@ -20,11 +20,9 @@ Mit einem senseBox I2C-Multiplexer lassen sich bis zu acht Geräte mit gleicher 
 
 ## Verwendung
 
-Der senseBox I2C-Multiplexer basiert auf dem [TCA9548A von Texas Instruments](http://www.ti.com/product/TCA9548A), welcher bereits Bestandteil vieler Tutorials aus der Community geworden ist. Mit dem folgenden Beispielcode von [Retians Blog](https://arduino-projekte.webnode.at/meine-libraries/i2c-multiplexer-tca9548a/) könnt ihr den Multiplex testen und überprüfen, an welche Kanälen etwas angeschlossen ist:
+Der senseBox I2C-Multiplexer basiert auf dem [TCA9548A von Texas Instruments](http://www.ti.com/product/TCA9548A), welcher bereits Bestandteil vieler Tutorials aus der Community geworden ist.
 
-[https://arduino-projekte.webnode.at/\_files/200002383-38c7539c19/TCA9548A_Scanner.ino.txt](https://arduino-projekte.webnode.at/_files/200002383-38c7539c19/TCA9548A_Scanner.ino.txt)
-
-Für die Implementierung des o.g. Beispiels binden wir zuerst die benötigten Bibliotheken ein. `Wire.h` für die I2C Funktionalität und `SenseBoxMCU.h` für die Funktionen des Sensors.
+Für die Implementierung des o.g. Beispiels binden wir zuerst die benötigten Bibliotheken ein. `Wire.h` für die I2C Funktionalität und `Adafruit_HDC1000.h` für die Funktionen des Sensors.
 
 ```cpp
 #include <Wire.h>
