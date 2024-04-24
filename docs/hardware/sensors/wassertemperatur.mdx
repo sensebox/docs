@@ -1,0 +1,29 @@
+---
+title: Wassertemperatursensor
+---
+
+import waterTempSensor from '@site/static/img/hardware-bilder/wassertemperatur/wassertemperatur.JPG'
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+
+# Wassertemperatursensor (DS18B20)
+
+Der DS18B20 ist ein digitaler Temperatursensor, der über einen 1-Wire-Bus angesprochen wird. Er kann Temperaturen von -55°C bis +125°C messen und ist wasserdicht. Er eignet sich somit ideal für die Messung der Wassertemperatur.
+
+:::warning
+Um den Sensor mit der senseBox zu benutzen benötigst du zusätzlich den 1-Wire-Adapter. Diesen kannst du [hier](https://sensebox.kaufen/product/sensebox-one-wire-adapter) erwerben.
+:::
+
+<ImageWithText
+  src={waterTempSensor}
+  alt="Wassertemperatursensor"
+  title="Wassertemperatursensor"
+/>
+<div>
+  <p>des</p>
+</div>
+
+## Programmierung (Arduino)
+
+### Software Bibliothek
+
+Um den Sensor in Arduino zu Programmieren musst du die Software Bibliothek [Adafruit LTR329 and LTR303](https://www.arduino.cc/reference/en/libraries/adafruit-ltr329-and-ltr303/) **sowie** [Adafruit VEML6070 Library](https://www.arduino.cc/reference/en/libraries/adafruit-veml6070-library/) installieren.

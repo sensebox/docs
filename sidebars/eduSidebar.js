@@ -30,7 +30,7 @@ const eduSidebar =   {
           link: {
             type: 'generated-index',
             title: 'in der :edu enthaltene Hardware',
-          },
+          }, 
           items:[
             'hardware/bee/wifi-bee',
             'hardware/bee/sd-bee',
@@ -57,6 +57,8 @@ const eduSidebar =   {
             'hardware/sensors/umweltsensor', 
             'hardware/bee/ethernet-bee',
             'hardware/accessoires/gps',
+            'hardware/sensors/wassertemperatur',
+
             ]
         }
 
