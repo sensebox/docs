@@ -18,12 +18,45 @@ Um den Sensor mit der senseBox zu benutzen benötigst du zusätzlich den 1-Wire-
   alt="Wassertemperatursensor"
   title="Wassertemperatursensor"
 />
-<div>
-  <p>des</p>
-</div>
 
 ## Programmierung (Arduino)
 
 ### Software Bibliothek
 
-Um den Sensor in Arduino zu Programmieren musst du die Software Bibliothek [Adafruit LTR329 and LTR303](https://www.arduino.cc/reference/en/libraries/adafruit-ltr329-and-ltr303/) **sowie** [Adafruit VEML6070 Library](https://www.arduino.cc/reference/en/libraries/adafruit-veml6070-library/) installieren.
+Um den Sensor in Arduino zu Programmieren musst du die Software Bibliothek [OneWire](https://www.arduino.cc/reference/en/libraries/onewire/) **sowie** [DallasTemperature](https://www.arduino.cc/reference/en/libraries/dallastemperature/) installieren.
+
+### Code
+
+Dieser Code liest die Temperatur des Sensors aus und gibt sie über die serielle Schnittstelle aus.
+
+```cpp
+#include <senseBoxIO.h>
+#include <OneWire.h> // http://librarymanager/All#OneWire
+#include <DallasTemperature.h> // http://librarymanager/All#DallasTemperature
+
+
+#define ONE_WIRE_BUS 1
+OneWire oneWire(ONE_WIRE_BUS);
+DallasTemperature sensors(&oneWire);
+
+float getWaterTemp(){
+  sensors.requestTemperatures();
+  sensors.getTempCByIndex(0);
+}
+
+void setup() {
+  Serial.begin(9600);
+  sensors.begin();
+}
+
+void loop() {
+  Serial.print("Wassertemperatur: ");
+  Serial.print(getWaterTemp());
+}
+```
+
+### Programmierung (Blockly)
+
+In Blockly kann der Sensor über folgenden Block ausgelesen werden:
+
+![](/img/hardware-bilder/wassertemperatur/wassertemperatur-block.png)
