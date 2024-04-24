@@ -8,6 +8,21 @@ const homeSidebar = {
   items: [
     {
       type: "category",
+      label: "Aufstellen der senseBox:home",
+      link: {
+        type: "generated-index",
+        title: "Hardware",
+      },
+      items: [
+        "products/home/aufbau/home-schritt-1",
+        "products/home/aufbau/home-schritt-2",
+        "products/home/aufbau/home-schritt-3",
+        "products/home/aufbau/home-aufstellen",
+        "products/home/aufbau/aufbau-video",
+      ],
+    },
+    {
+      type: "category",
       label: "Hardware",
       link: {
         type: "generated-index",
@@ -33,15 +48,15 @@ const homeSidebar = {
     },
     {
       type: "category",
-      label: "Aufstellen der senseBox:home",
+      label: "Erweiterungen",
       link: {
         type: "generated-index",
-        title: "Hardware",
+        title: "Erweiterungen",
       },
       items: [
-        "products/home/aufbau/home-schritt-1",
-        "products/home/aufbau/home-schritt-2",
-        "products/home/aufbau/home-schritt-3",
+        "products/home/erweiterungen/home-erweiterung-LoRa",
+        "products/home/erweiterungen/home-erweiterung-solar",
+        "products/home/erweiterungen/circuitpython",
       ],
     },
   ],
