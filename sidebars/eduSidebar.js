@@ -53,6 +53,7 @@ const eduSidebar = {
           items: [
             'hardware/sensors/feinstaub-sds011',
             'hardware/sensors/feinstaub-sps30',
+            'hardware/bee/lora-bee',
             'hardware/sensors/co2',
             'hardware/sensors/truebner',
             'hardware/sensors/umweltsensor',
@@ -104,7 +105,10 @@ const eduSidebar = {
         type: 'generated-index',
         title: 'Besonderheiten',
       },
-      items: ['misc/openRoberta'],
+      items: [
+        'misc/openRoberta',
+        'products/home/erweiterungen/home-erweiterung-LoRa',
+      ],
     },
   ],
 }
