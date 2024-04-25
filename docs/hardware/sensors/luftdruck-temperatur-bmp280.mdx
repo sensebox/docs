@@ -1,0 +1,71 @@
+---
+date: 2020-03-11
+title: Luftdruck- und Temperatursensor (BMP280) [DEPRECATED]
+categories: hardware
+description: Luftdruck- und Temperatursensor (BMP280)
+type: Document
+resources:
+  - name: 'Shop'
+    link: https://sensebox.kaufen/product/luftdruck-temperatur
+  - name: 'Bosch BMP280 Data sheet'
+    link: https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp280-ds001.pdf
+block: /images/2020-03-11-sensoren-luftdruck-temperatur/block_luftdruck_temperatur.svg
+---
+
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import pressureSensor from '@site/static/img/hardware-bilder/luftdruck/bmp_top.png'
+
+# Luftdruck- und Temperatursensor (BMP280)
+
+Dieser Sensor misst den Luftdruck und die Temperatur und basiert auf dem BMP280 Sensor von Bosch.
+
+<ImageWithText
+  src={pressureSensor}
+  alt="Pressure Sensor"
+  title="Luftdruck und Temperatursensor"
+/>
+
+## Technische Informationen
+
+- "Plug-in-and-Go" senseBox kompatibel
+- Betriebsdruck 300 bis 1100 hPa
+- Relative Präzision ±0.12 hPa
+- Absolute Präzision ±1 hPa
+- Betriebsversorgungsstrom 2.7μA bei 1 Hz Sampling Frequenz
+- Maße: 25mm x 25mm x 9mm
+- Gewicht: 2,4 g
+
+## Programmierung
+
+```cpp
+#include <Adafruit_BMP280.h> // http://librarymanager/All#Adafruit_BMP280_Library
+#include <SPI.h>
+
+Adafruit_BMP280 bmp;
+
+void setup() {
+  Serial.begin(9600);
+  bmp_sensor.begin();
+}
+
+void loop() {
+    Serial.print("Pressure: ");
+    Serial.println(bmp_sensor.readPressure());
+    Serial.print("Temperature: ");
+    Serial.println(bmp_sensor.readTemperature());
+    Serial.print("Altitude: ");
+    Serial.println(bmp_sensor.readAltitude(1013));
+}
+```
+
+## Programmierung (Blockly)
+
+In Blockly kann der Sensor über folgenden Block ausgelesen werden:
+
+![](/img/hardware-bilder/luftdruck/block-bmp280.png)
+
+Im Block kannst du zwischen den verschiedenen Parametern des Luftdruck-/Temperatursensor auswählen:
+
+- Luftdruck in Pascal (Pa)
+- Temperatur in Celsius (°C)
+- Höhe über NN in m (dazu wird ein Referenzluftdruck benötigt)
