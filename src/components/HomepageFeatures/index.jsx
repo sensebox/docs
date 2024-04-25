@@ -49,7 +49,7 @@ const FeatureList = [
     ),
     to: "/docs/products/co2Ampel/co2Ampel-overview",
   },
-  /*
+  
   {
     title: ":home",
     description: (
@@ -58,8 +58,9 @@ const FeatureList = [
         weiteren Bauteilen für Bildungszwecke
       </>
     ),
-    to: "/docs/category/home",
+    to: "/docs/boards/mcu/mcu-overview",
   },
+  /*
   {
     title: ":mini",
     description: (
@@ -69,17 +70,7 @@ const FeatureList = [
       </>
     ),
     to: "/docs/category/mini",
-  },
-  {
-    title: ":CO2-Ampel",
-    description: (
-      <>
-        Informationen zum Anschluss und Programmierung der Sensoren, Bees und
-        weiteren Bauteilen für Bildungszwecke
-      </>
-    ),
-    to: "/docs/category/trafficLight",
-  },
+  }
    */
 ];
 

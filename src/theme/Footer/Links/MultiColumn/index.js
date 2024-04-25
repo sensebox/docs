@@ -16,9 +16,9 @@ function ColumnLinkItem({item}) {
 }
 function Column({column}) {
   return (
-    <div className="col footer__col">
+    <div className="col footer__col flex flex-col items-center ">
       <div className="footer__title">{column.title}</div>
-      <ul className="footer__items clean-list">
+      <ul className="footer__items clean-list text-center">
         {column.items.map((item, i) => (
           <ColumnLinkItem key={i} item={item} />
         ))}

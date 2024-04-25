@@ -6,11 +6,11 @@ export default function FooterLayout({style, links, logo, copyright}) {
       className={clsx('footer', {
         'footer--dark': style === 'dark',
       })}>
-      <div className="container container-fluid">
-        {links}
+      <div className="flex flex-col">
+          {links}
         {(logo || copyright) && (
           <div className="footer__bottom text--center">
-            {logo && <div className="margin-bottom--sm">{logo}</div>}
+            {logo && <div>{logo}</div>}
             {copyright}
           </div>
         )}
