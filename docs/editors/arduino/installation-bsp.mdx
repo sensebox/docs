@@ -8,7 +8,8 @@ type: Document
 set: erste-schritte-arduino
 set_order: 4
 ---
-import { useBoardStore } from "@site/src/lib/stores/store";
+
+import { useBoardStore } from '@site/src/lib/stores/store'
 
 # Installation des Board-Support-Packages
 
@@ -19,13 +20,18 @@ import { useBoardStore } from "@site/src/lib/stores/store";
   <h2>Board-Support-Package hinuzfügen</h2>
   <p>
     Füge die folgende URL in deiner Arduino IDE unter _Datei - Voreinstellungen_ in das Feld für _Zusätzliche Bordverwalter-URLs_ ein: 
-  { useBoardStore((state)=>state.board) === ':edu S2' ? 
-    <code> https://espressif.github.io/arduino-esp32/package_esp32_index.json </code> : 
-    <code> https://github.com/sensebox/senseBoxMCU-core/raw/master/package_sensebox_index.json </code> 
-    }
-    <div className="flex justify-center mt-4">
+  { useBoardStore((state)=>state.board) === ':edu S2' ? <div>
+    <code> https://espressif.github.io/arduino-esp32/package_esp32_index.json </code>
+        <div className="flex justify-center mt-4">
+      <img className src="/img/arduino-bilder/installation/arduino-bsp-esp32s2.png"/>
+      </div></div> : <div>
+    <code> https://github.com/sensebox/senseBoxMCU-core/raw/master/package_sensebox_index.json </code>
+        <div className="flex justify-center mt-4">
       <img className src="/img/arduino-bilder/installation/arduino-board-support-url.png"/>
-      </div>
+      </div> </div>
+    }
+
+
   </p>
 
   <p>
@@ -38,4 +44,3 @@ import { useBoardStore } from "@site/src/lib/stores/store";
     Gib "ESP32" oben in die Suchleiste ein, um die Packages schneller zu finden und installiere das Board `esp32` von Espressif Systems. <b>Achtung! Stelle sicher , dass du mindestens die Version 2.0.15-alpha3 installierst! </b>.
   </p>
 </div>
-
