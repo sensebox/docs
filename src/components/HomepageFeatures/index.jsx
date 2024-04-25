@@ -13,8 +13,8 @@ const FeatureList = [
     title: ':edu S2',
     description: (
       <>
-        Informationen zum Anschluss und zur Programmierung der senseBox:edu S2
-        für den Einsatz im Bildungsbereich
+        Die zweite Generation der senseBox:edu für den Einsatz im
+        Bildungsbereich. Klicke hier für alle nötigen Informationen!
       </>
     ),
     to: '/docs/boards/mcus2/mcu-s2-overview',
@@ -33,8 +33,8 @@ const FeatureList = [
     title: ':bike',
     description: (
       <>
-        Informationen zur senseBox Bike und deren Anwendung im Bereich der
-        Umweltbildung
+        Anleitung und Informationen zur senseBox:bike, der dazugehörigen App und
+        der Installation der Fahrradhalterung
       </>
     ),
     to: '/docs/category/bike',
@@ -53,8 +53,8 @@ const FeatureList = [
     title: ':home',
     description: (
       <>
-        Informationen zum Anschluss und Programmierung der Sensoren, Bees und
-        weiteren Bauteilen für Bildungszwecke
+        Aufstellungsort, Installation und alle weiteren Informationen zu
+        Sensoren der senseBox:home findest du hier!
       </>
     ),
     to: '/docs/boards/mcu/mcu-overview',
@@ -63,8 +63,8 @@ const FeatureList = [
     title: ':mini',
     description: (
       <>
-        Informationen zum Anschluss und Programmierung der Sensoren, Bees und
-        weiteren Bauteilen für Bildungszwecke
+        Alle relevanten Informationen zur Miniaturversion der senseBox findest
+        du hier!
       </>
     ),
     to: '/docs/boards/mini/mini-overview',
