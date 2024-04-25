@@ -2,40 +2,46 @@
 sidebar_position: 7
 title: Luftdruck- und Temperatursensor
 hide_title: false
-description: Luftdruck- und Temperatursensor (BMP280)
+description: Luftdruck- und Temperatursensor (DPS310)
 displayedSidebar: board
 ---
 
-import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
-import pressureSensor from "@site/static/img/hardware-bilder/luftdruck/bmp_top.png"
-import { useBoardStore } from "@site/src/lib/stores/store";
-
-
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import pressureSensor from '@site/static/img/hardware-bilder/luftdruck/bmp_top.png'
+import { useBoardStore } from '@site/src/lib/stores/store'
 
 # Luftdruck- und Temperatursensor
 
-Dieser Sensor misst den Luftdruck und die Temperatur und basiert auf dem BMP280 Sensor von Bosch.
+Der Luftdrucksensor DPS310 ist einer der neuesten Druck- und Temperatursensoren von Infineon mit digitaler I2C- und SPI-Schnittstelle. Auf der Breakout-Platine befinden sich zudem ein Spannungsregler und ein Pegelumsetzer, sodass sich der Sensor über den JST-Anschluss in Systemen mit 3 bis 5,5 Volt verwenden lässt.
 
-<ImageWithText src={pressureSensor} alt="Pressure Sensor" title="Luftdruck und Temperatursensor"/>
+<ImageWithText
+  src={pressureSensor}
+  alt="Pressure Sensor"
+  title="Luftdruck und Temperatursensor"
+/>
 
+:::info
+Der DPS310 ersetzt den Luftdruck und Temperatursensor BMP280. Welchen von beiden Sensoren du hast kannst du an der Aufschrift auf dem Sensor erkennen, solltest du die Dokuemntation für den BMP280 benötigen findest du diese [hier](/docs/hardware/sensors/luftdruck-temperatur-bmp280).
+:::
 
 ## Technische Informationen
 
-* "Plug-in-and-Go" senseBox kompatibel
-* Betriebsdruck 300 bis 1100 hPa
-* Relative Präzision ±0.12 hPa
-* Absolute Präzision ±1 hPa
-* Betriebsversorgungsstrom 2.7μA bei 1 Hz Sampling Frequenz
-* Maße: 25mm x 25mm x 9mm
-* Gewicht: 2,4 g
+- Voll integriert in das senseBox System
+- Messbereich 300 bis 1200 hPa
+- Relative Präzision Luftdruck: ±0.06 hPa
+- Absolute Präzision Luftdruck: ±1 hPa
+- Genauigkeit Temperatur: ± 0.5°C
+- Durchschnittlicher Stromverbrauch: 1.7 μA zur Druckmessung, 1.5µA zur Temperaturmessung bei 1Hz Sampling Frequenz
+- Stromverbrauch Standby: 0.5 μA
 
 ## Programmierung (Arduino)
 
 ### Software Bibliothek
+
 Um den Sensor in Arduino zu Programmieren musst du die Software Bibliothek [Adafruit DPS310](https://www.arduino.cc/reference/en/libraries/adafruit-dps310/) installieren.
 
-
 ### Code
+
 Dieser Sketch liest den Luftdruck und die Temperatur aus und gibt die Werte über die serielle Schnittstelle aus.
 
 ```cpp
@@ -69,7 +75,6 @@ In Blockly kann der Sensor über folgenden Block ausgelesen werden:
 
 ![](/img/hardware-bilder/luftdruck/block_luftdruck_temperatur.svg)
 
-
 Im Block kannst du zwischen den verschiedenen Parametern des Luftdruck-/Temperatursensor auswählen:
 
 - Luftdruck in Pascal (Pa)
@@ -78,10 +83,9 @@ Im Block kannst du zwischen den verschiedenen Parametern des Luftdruck-/Temperat
 
 ## Projekte
 
-* #### [IoT Messtation](https://sensebox.de/projects/de/2024-01-10-iotmesstation_s2)
-
+- #### [IoT Messtation](https://sensebox.de/projects/de/2024-01-10-iotmesstation_s2)
 
 ## Extras
 
->- [Shop](https://sensebox.kaufen/product/luftdruck-temperatur)
->- [Bosch BMP280 Data sheet](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp280-ds001.pdf)
+> - [Shop](https://sensebox.kaufen/product/luftdruck-temperatur)
+> - [Bosch BMP280 Data sheet](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp280-ds001.pdf)
