@@ -13,15 +13,6 @@ const miniSidebar = {
         type: 'generated-index',
         title: 'Hardware',
       },
-      items: ['hardware/sensors/bmx055'],
-    },
-    {
-      type: 'category',
-      label: 'Hardware',
-      link: {
-        type: 'generated-index',
-        title: 'Hardware',
-      },
       items: [
         {
           type: 'category',
