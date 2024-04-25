@@ -40,6 +40,7 @@ const eduSidebar =   {
             'hardware/sensors/mikro',
             'hardware/sensors/luftdruck-temperatur',
             'hardware/accessoires/display', 
+            'hardware/sensors/bmx055',
           ]
         },
         {
@@ -57,7 +58,8 @@ const eduSidebar =   {
             'hardware/sensors/umweltsensor', 
             'hardware/bee/ethernet-bee',
             'hardware/accessoires/gps',
-            ]
+            'hardware/accessoires/multiplexer'
+          ]
         }
 
       ]
