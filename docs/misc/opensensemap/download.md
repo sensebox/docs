@@ -34,13 +34,10 @@ Wenn du auf der Seite der openSenseMap den Reiter "Datendownload" auswählst, ka
 
 ![](/img/open-sensemap-bilder/datendownload/1-download.png)
 
-
-
 ### Zeitraum auswählen
 
 Zunächst solltest du einen Zeitraum auswählen, von welchem du die Daten angezeigt haben möchtest.
 Dies geht entweder manuell, oder du wählst zwischen "letzte 24 Stunden", "Letzte Woche" oder "Letzter Monat".
-
 
 ### Gruppieren nach...
 
@@ -60,16 +57,12 @@ Hier kannst du nun einen Sensor auswählen, von dem du die gewünschten Werte mi
 
 Klicke auf den Button "Columns", um auswählen zu können, welche zusätzlichen Informationen du zu deinen Werten bekommen möchtest.
 
-
-
 > **Achtung**: Je nach Auswahl der Filterparameter kann der Download sehr groß werden (mehrere 100MB)!
-
 
 ### Formate
 
 Derzeit wird nur das Datenformat CSV unterstützt, welches problemlos mit Tabellenkalkulations-Tools wie
-[Microsoft Excel](excel.md), [Libre office](libre.md), [R-Studio](R.md) oder [ArcGis](Arc.md) verarbeitet werden kann.
-Informationen zu weiteren Datenformaten findet ihr [hier](formate.md).
+`Microsoft Excel`, `Libre office`, `R-Studio` oder `ArcGis` verarbeitet werden kann.
 
 Jede Zeile enthält eine Messung einer senseBox mit dem ausgewählten Phänomen.
 Der Messwert (`value`), Standort des Sensors (`lat`, `lng`, Referenzsystem WGS84) und ein Zeitstempel (`createdAt`) sind in je einer Spalte angegeben:
@@ -84,7 +77,7 @@ createdAt;value;lat;lng
 
 ## API-Download
 
-Falls die beiden genannten Möglichkeiten nicht flexibel genug sind, können über die [REST API unter `/boxes/data`](osem_api.md#get-latest-measurements-for-a-phenomenon-as-csv-) auch komplexe Anfragen gestellt werden.
+Falls die beiden genannten Möglichkeiten nicht flexibel genug sind, können über die [REST API unter `/boxes/data`](https://docs.opensensemap.org/#api-Measurements-getData-) auch komplexe Anfragen gestellt werden.
 
 Für solche Anfragen bietet sich das Kommandozeilenwerkzeug `curl` an.
 Unter Linux ein Terminal öffnen und beispielsweise folgenden Befehl eingeben, um sämtliche Temperatur-Messungen im geographischen Bereich 51°N - 52°N, 7°E - 8°E in die Datei `measurements.csv` herunterzuladen:
