@@ -16,6 +16,7 @@ export default {
     blocklySidebar,
     co2AmpelSidebar,
     homeSidebar,
+    miniSidebar,
     glossarSidebar,
   ],
 }
