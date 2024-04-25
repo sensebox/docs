@@ -1,17 +1,23 @@
 ---
 title: Beschleunigungssensor
 ---
-import  AlertBox from "@site/src/components/AlertBox/AlertBox";
+
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import mpu6050 from '@site/static/img/hardware-bilder/mpu6050/mcu-top-mpu.png'
 
 # Beschleunigungssensor (MPU6050)
 
 Mit einem Beschleunigungssensor kannst du die unsichtbare Kraft der Beschleunigung erfassen und messen, die auftritt, wenn sich ein Objekt schneller bewegt, langsamer wird oder seine Richtung ändert. Stell dir vor, du fährst Fahrrad und lehnst dich in eine Kurve – genau in diesem Moment wirken Beschleunigungskräfte. Diese Sensoren sind wie superempfindliche Werkzeuge, die nicht nur spüren können, wie schnell du beschleunigst oder abbremsst, sondern auch, in welche Richtung du dich bewegst.
 
-<AlertBox type="success" title="Sensor onBoard!">
-  <p>Der Beschleunigungssensor ist auf der MCU S2 verbaut! Du musst hier also nichts weiter anschließen.</p>
-</AlertBox>
+<ImageWithText src={mpu6050} title="MPU6050 auf der MCU verbaut" />
+
+:::success Hinweis
+Der Beschleunigungssensor ist auf der MCU S2 verbaut! Du musst hier also nichts weiter anschließen.
+:::
+
 ## Programmierung (Arduino)
-Dieser Sketch liest die Beschleunigungswerte des MPU6050 aus und gibt sie über die serielle Schnittstelle aus. Über den Seriellen Plotter kannst du dir die Werte in einem Diagramm anzeigen lassen. 
+
+Dieser Sketch liest die Beschleunigungswerte des MPU6050 aus und gibt sie über die serielle Schnittstelle aus. Über den Seriellen Plotter kannst du dir die Werte in einem Diagramm anzeigen lassen.
 
 ```cpp
 #include <Wire.h>
@@ -23,7 +29,7 @@ sensors_event_t a, g, temp;
 void setup() {
   // Serielle Kommunikation starten
   Serial.begin(115200);
-  
+
   Wire1.begin();
   mpu.begin(0x68, &Wire1);
   mpu.setAccelerometerRange(MPU6050_RANGE_8_G);
@@ -35,15 +41,15 @@ void setup() {
 void loop() {
   mpu.getEvent(&a, &g, &temp);
 
-  
+
   // Beschleunigungsdaten ausgeben
-  Serial.print("X:"); 
+  Serial.print("X:");
   Serial.print(a.acceleration.x);
-  Serial.print(",Y:"); 
-  Serial.print(a.acceleration.y); 
-  Serial.print(",Z:"); 
+  Serial.print(",Y:");
+  Serial.print(a.acceleration.y);
+  Serial.print(",Z:");
   Serial.println(a.acceleration.z);
-    
+
   // Kurze Pause, um die Ausgabe lesbar zu halten
   delay(100);
 }
@@ -53,9 +59,8 @@ Die Ergebnisse kannst du in Arduino anzeigen unter `Werkzeuge -> Serieller Plott
 
 ![](/img/hardware-bilder/mpu6050/mpu-6050-plotter.png)
 
-
 ## Programmierung (Blockly)
 
-In Blockly kannst du den Sensor über folgenden Block auslesen: 
+In Blockly kannst du den Sensor über folgenden Block auslesen:
 
 ![](/img/hardware-bilder/mpu6050/mpu-6050-block.svg)

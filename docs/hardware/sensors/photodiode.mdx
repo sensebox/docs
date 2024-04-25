@@ -1,15 +1,19 @@
 ---
 title: Photodiode
-
 ---
-import  AlertBox from "@site/src/components/AlertBox/AlertBox";
 
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import photodiode from '@site/static/img/hardware-bilder/photodiode/mcu-top-photodiode.png'
 
 # Photodiode
+
 Eine Photodiode ist ein lichtempfindlicher Halbleiter, der Licht in elektrische Energie umwandelt. Sie wird häufig in verschiedenen Anwendungen wie Fotodetektoren, Belichtungsmessern, Lichtschranken und optischen Kommunikationssystemen eingesetzt. Photodioden liefern Messwerte, die proportional zur Intensität des einfallenden Lichts sind, wodurch sie zur Erfassung von Helligkeitsänderungen oder zur Quantifizierung von Lichtintensitäten in verschiedenen Anwendungen verwendet werden können.
-<AlertBox type="success" title="Photodiode onBoard!">
-  <p>Die Photodiode ist auf der MCU S2 verbaut! Du musst hier also nichts weiter anschließen.</p>
-</AlertBox>
+
+<ImageWithText src={photodiode} title="Photodiode auf der MCU verbaut" />
+
+:::success Hinweis
+Die Photodiode ist auf der MCU S2 verbaut! Du musst hier also nichts weiter anschließen.
+:::
 
 ## Programmierung (Arduino)
 
@@ -43,6 +47,6 @@ In Blockly kann der Sensor über folgenden Block ausgelesen werden:
 
 ## Projekte
 
-* #### [Intelligente Straßenbeleuchtung](https://sensebox.de/projects/de/2024-01-10-stra%C3%9Fenbeleuchtung_s2)
+- #### [Intelligente Straßenbeleuchtung](https://sensebox.de/projects/de/2024-01-10-stra%C3%9Fenbeleuchtung_s2)
 
 ## Extras
