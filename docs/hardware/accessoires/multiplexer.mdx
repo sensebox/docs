@@ -1,43 +1,46 @@
 ---
 sidebar_position: 3
-title:  I2C-Multiplexer
+title: I2C-Multiplexer
 description: senseBox I2C-Multiplexer
 ---
+
+import ImageWithText from "@site/src/components/ImageWithText/ImageWithText";
+import multiplexer from "@site/static/img/hardware-bilder/multiplexer/hub_bottom.png";
 
 # I2C-Multiplexer
 
 Mit einem senseBox I2C-Multiplexer lassen sich bis zu acht Geräte mit gleicher Adressierung parallel über den I2C-Bus betreiben. Dadurch können zum Beispiel mehrere baugleiche Temperatursensoren angeschlossen werden.
 
-![](/img/hardware-bilder/multiplexer/hub_bottom.png)
+<ImageWithText src={multiplexer} alt="Multiplexer" title="I2C-Multiplexer" />
 
 ## Technische Informationen
 
-* "Plug-in-and-Go" senseBox kompatibel durch Breakout-Board mit JST-Anschluss
-* 8x JST Anschluss
+- "Plug-in-and-Go" senseBox kompatibel durch Breakout-Board mit JST-Anschluss
+- 8x JST Anschluss
 
 ## Verwendung
-Der senseBox I2C-Multiplexer basiert auf dem [TCA9548A von Texas Instruments](http://www.ti.com/product/TCA9548A), welcher bereits Bestandteil vieler Tutorials aus der Community geworden ist. Mit dem folgenden Beispielcode von [Retians Blog](https://arduino-projekte.webnode.at/meine-libraries/i2c-multiplexer-tca9548a/) könnt ihr den Multiplex testen und überprüfen, an welche Kanälen etwas angeschlossen ist:
 
-[https://arduino-projekte.webnode.at/_files/200002383-38c7539c19/TCA9548A_Scanner.ino.txt](https://arduino-projekte.webnode.at/_files/200002383-38c7539c19/TCA9548A_Scanner.ino.txt)
+Der senseBox I2C-Multiplexer basiert auf dem [TCA9548A von Texas Instruments](http://www.ti.com/product/TCA9548A), welcher bereits Bestandteil vieler Tutorials aus der Community geworden ist.
 
-Für die Implementierung des o.g. Beispiels binden wir zuerst die benötigten Bibliotheken ein. `Wire.h` für die I2C Funktionalität und `SenseBoxMCU.h` für die Funktionen des Sensors.
+Für die Implementierung des o.g. Beispiels binden wir zuerst die benötigten Bibliotheken ein. `Wire.h` für die I2C Funktionalität und `Adafruit_HDC1000.h` für die Funktionen des Sensors.
 
-```
+```cpp
 #include <Wire.h>
-#include <SenseBoxMCU.h>
+#include <Adafruit_HDC1000.h> // http://librarymanager/All#Adafruit_HDC1000_Library
+
 ```
 
 Nun definieren wir die Adresse des Multiplex und eine Liste von Kanälen, an denen die Sensoren angeschlossen sind.
 
-```
+```cpp
 byte multiplexAddress = 0x77;
 byte channels[] = {0,1,2};
 ```
 
 Für den Sensor erzeugen wir ein Objekt und starten dessen Instanz hinter der seriellen Verbindung in der Setup-Funktion.
 
-```
-HDC1080 hdc
+```cpp
+Adafruit_HDC1000 hdc = Adafruit_HDC1000();
 
 void setup() {
     Serial.begin(115200);
@@ -47,7 +50,7 @@ void setup() {
 
 In der Endlosschleife werden mithilfe einer for-Schleife die Kanäle fortlaufend gewechselt. Für jeden Kanal wird der Multiplex über seine Adresse angesprochen. Dann übergeben wir lediglich die Nummer des Kanals, an den alle Folgebefehle gesendet werden. Das geschieht so lange bis ein neuer Kanal kommuniziert wird.
 
-```
+```cpp
 for (int i = 0; i < (sizeof(channels)/sizeof(channels[0])); i++){
    Wire.beginTransmission(multiplexAddress);
    Wire.write(1 << channels[i]);
@@ -55,13 +58,13 @@ for (int i = 0; i < (sizeof(channels)/sizeof(channels[0])); i++){
 
    Serial.print(channels[i]);
    Serial.print(F(". channel temperature: "));
-   Serial.println(hdc.getTemperature());
+   Serial.println(hdc.readTemperature());
 }
 ```
 
 Nun lassen sich die Sensoren einzeln auslesen. Man erkennt dabei minimale Abweichungen unter den baugleichen Sensoren:
 
-```
+```cpp
 0. channel temperature: 21.96
 1. channel temperature: 22.09
 2. channel temperature: 22.14
