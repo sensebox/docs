@@ -22,7 +22,6 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
     // filter sidebar through the board
     // if board is not empty, filter the sidebar
     const toFilter = sideBar.filter(item => item.label === board)
-    console.log(board, toFilter, sidebar)
     if (toFilter.length === 0) {
       setSideBar(sidebar)
     } else {

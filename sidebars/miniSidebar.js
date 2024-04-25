@@ -2,8 +2,8 @@ const miniSidebar = {
   type: 'category',
   label: ':mini',
   link: {
-    type: 'generated-index',
-    title: 'senseBox:mini',
+    type: 'doc',
+    id: 'boards/mini/mini-overview',
   },
   items: [
     {

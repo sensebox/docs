@@ -129,9 +129,9 @@ function ThumbailPreview({ Image, title, description, onClick, to }) {
 
 function Feature({ title, description, to }) {
   const handleBoardChange = selectedBoard => {
-    console.log(title)
     // Verwende die setBoard-Funktion direkt, um das Board im Store zu aktualisieren
     useBoardStore.setState({ board: selectedBoard })
+
     // Hier kannst du weitere Aktionen ausführen, wenn sich das Board ändert
   }
 
