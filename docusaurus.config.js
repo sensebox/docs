@@ -111,7 +111,7 @@ const config = {
                 to: "https://sensebox.de/impressum",
               },
               {
-                label: "OpenSenseMap",
+                label: "openSenseMap",
                 to: "https://opensensemap.org/impressum",
               }
         ]
