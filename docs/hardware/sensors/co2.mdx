@@ -6,6 +6,7 @@ hide_title: false
 
 import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
 import CO2Sensor from '@site/static/img/hardware-bilder/co2/scd30.png'
+import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
 
 # CO2 Sensor
 
@@ -34,6 +35,10 @@ Der CO<sub>2</sub>-Sensor sollte nicht dauerhaft im Außenbereich verwendet werd
 - Genauigkeit (°C): ± (0.4 °C + 0.023 x (T [°C] - 25°C))
 - Wiederholpräzision (°C): 0.1 °C
 - Reaktionszeit: >10s
+
+## Anschluss
+
+<TutorialPorts port="i2c" />
 
 ## Programmierung (Arduino)
 

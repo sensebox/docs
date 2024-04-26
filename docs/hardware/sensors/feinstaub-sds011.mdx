@@ -6,6 +6,7 @@ hide_title: false
 import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
 import feinstaubSds from "@site/static/img/hardware-bilder/feinstaub/sensoren_feinstaub.png"
 import { useBoardStore } from "@site/src/lib/stores/store";
+import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
 
 # Feinstaubsensor SDS011
 
@@ -19,6 +20,12 @@ Mit diesem Sensor SDS011 ist es möglich, die Feinstaubkonzentration in der Luft
 * Schnelle Reaktionszeit von weniger als 10 Sekunden
 * Hohe Auflösung bis zu 0.3µg/m3
 * Mehrfach wissenschaftliche Prüfung der Datengenauigkeit
+
+## Anschluss
+
+<TutorialPorts port="uart" />
+
+
 
 ## Programmierung (Arduino)
 

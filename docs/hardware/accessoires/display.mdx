@@ -1,35 +1,41 @@
 ---
 sidebar_position: 1
-title:  OLED Display
+title: OLED Display
 hide_title: false
 description: senseBox OLED Display
 ---
 
-import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
-import display from "@site/static/img/hardware-bilder/oled/display.png"
-
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import display from '@site/static/img/hardware-bilder/oled/display.png'
+import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
 
 # OLED Display
 
 Mit dem senseBox OLED Display lassen sich auf 128x64 Pixeln Messwerte, Statusmeldungen und vieles mehr anzeigen.
 
-<ImageWithText src={display} alt="OLED Display" title="OLED Display"/>
+<ImageWithText src={display} alt="OLED Display" title="OLED Display" />
 ## Technische Informationen
 
-* "Plug-in-and-Go" senseBox kompatibel durch Breakout-Board mit JST-Anschluss
-* Maße: 24mm x 25mm x 19mm
-* Auflösung von 128x64 Pixeln
-* Panel Größe: 26,70x19,26x1,45 (mm)
+- "Plug-in-and-Go" senseBox kompatibel durch Breakout-Board mit JST-Anschluss
+- Maße: 24mm x 25mm x 19mm
+- Auflösung von 128x64 Pixeln
+- Panel Größe: 26,70x19,26x1,45 (mm)
+
+## Anschluss
+
+<TutorialPorts port="i2c" />
 
 ## Programmierung (Arduino)
 
 ### Software Bibliothek
-Um den Sensor in Arduino zu Programmieren musst du die Software Bibliothek [Adafruit GFX Library](https://www.arduino.cc/reference/en/libraries/adafruit-gfx-library/) **sowie**  [Adafruit SSD1306](https://www.arduino.cc/reference/en/libraries/adafruit-ssd1306/)  installieren.
+
+Um den Sensor in Arduino zu Programmieren musst du die Software Bibliothek [Adafruit GFX Library](https://www.arduino.cc/reference/en/libraries/adafruit-gfx-library/) **sowie** [Adafruit SSD1306](https://www.arduino.cc/reference/en/libraries/adafruit-ssd1306/) installieren.
 
 ### Code
-Dieser Sketch lässt auf dem Display "Hallo Welt!" anzeigen. 
 
-```cpp	
+Dieser Sketch lässt auf dem Display "Hallo Welt!" anzeigen.
+
+```cpp
 #include <SPI.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h> // http://librarymanager/All#Adafruit_GFX_Library
@@ -60,25 +66,27 @@ void loop() {
 ```
 
 ## Programmierung (Blockly)
+
 Um Informationen auf dem Display anzeigen zu lassen, muss dieses zuerst im `Setup()` initalisiert werden. Anschließend können in der `Endlosschleife()` die `Zeige auf dem Display`-Schleife und der `Display löschen`-Block platziert werden. Im freien Abschnitt des `Zeige auf Display`-Blocks kann dann anschließend festgelegt werden, was genau angezeigt werden soll. Der `Display löschen`-Block muss hinzugefügt werden, damit verschiedene Informationen nicht übereinander geschrieben werden.
 
 ![Text/Zahl anzeigen](/img/blockly-bilder/display/blockly-display-1.svg)
 
 ### Text/Zahl anzeigen
+
 Um Text oder eine Zahl anzeigen zu lassen, ziehe den `Schreibe Text/Zahl`-Block in den freien Abschnitt des `Zeige auf Display`-Blocks.
 
 ![Text/Zahl anzeigen](/img/blockly-bilder/display/blockly-display-2.svg)
 
 Der `Schreibe Text/Zahl`-Block verfügt über fünf Einstellungsmöglichkeiten:
-* **Schriftfarbe:** Hier kannst du wählen ob du mit weißer Schrift auf schwarzem Grund, oder mit schwarzer Schrift auf weißem Grund schreiben möchtest.
-* **Schriftgröße:** Hier kannst du einstellen, in welcher Größe dein Text, bzw. deine Zahl angezeigt werden soll. In Schriftgröße 1 ist ein Zeichen 8 Pixel hoch, in Schriftgröße 2 bereits 16 Pixel.
-* **x-Koordinate:** Hier legst du fest, an welcher x-Koordinate (siehe Abb. oben) du beginnen möchtest zu schreiben.
-* **y-Koordinate:** Hier legst du fest, an welcher y-Koordinate (siehe Abb. oben) du beginnen möchtest zu schreiben.
-* **Wert:** An diesen freien Blockabschnitt kann der jeweilige Text, die Zahl oder der Messwert angefügt werden.
- 
- ![Text/Zahl anzeigen](/img/blockly-bilder/display/blockly-display-3.svg)
 
+- **Schriftfarbe:** Hier kannst du wählen ob du mit weißer Schrift auf schwarzem Grund, oder mit schwarzer Schrift auf weißem Grund schreiben möchtest.
+- **Schriftgröße:** Hier kannst du einstellen, in welcher Größe dein Text, bzw. deine Zahl angezeigt werden soll. In Schriftgröße 1 ist ein Zeichen 8 Pixel hoch, in Schriftgröße 2 bereits 16 Pixel.
+- **x-Koordinate:** Hier legst du fest, an welcher x-Koordinate (siehe Abb. oben) du beginnen möchtest zu schreiben.
+- **y-Koordinate:** Hier legst du fest, an welcher y-Koordinate (siehe Abb. oben) du beginnen möchtest zu schreiben.
+- **Wert:** An diesen freien Blockabschnitt kann der jeweilige Text, die Zahl oder der Messwert angefügt werden.
+
+![Text/Zahl anzeigen](/img/blockly-bilder/display/blockly-display-3.svg)
 
 ## Projekte
 
-* #### [IoT Messtation](https://sensebox.de/projects/de/2024-01-10-iotmesstation_s2)
+- #### [IoT Messtation](https://sensebox.de/projects/de/2024-01-10-iotmesstation_s2)
