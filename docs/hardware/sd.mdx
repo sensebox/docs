@@ -3,27 +3,34 @@ sidebar_position: 10
 title: SD-Karte
 hide_title: false
 ---
-import  AlertBox from "@site/src/components/AlertBox/AlertBox";
-import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
-import sdModul from "@site/static/img/mcus2/mcus2top.png"
 
-
+import AlertBox from '@site/src/components/AlertBox/AlertBox'
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import sdModul from '@site/static/img/mcus2/sd-card-slot.png'
 
 # SD-Modul
 
-<ImageWithText src={sdModul} alt="SD Modul" title="Das SD Modul findest du hier auf der rechten Seite der MCU S2"/> 
+<ImageWithText
+  src={sdModul}
+  size="xl"
+  alt="SD Modul"
+  title="Das SD Modul findest du hier auf der rechten Seite der MCU S2"
+/>{' '}
 
 Mit der senseBox kannst du mithilfe des SD-Bees Daten auf einer microSD-Karte speichern, um sie später am Computer auszuwerten.
 
-
 <AlertBox type="success" title="Modul onBoard!">
-    <p>Das SD-Modul ist auf der MCU S2 verbaut! Du musst hier also nichts weiter anschließen.</p>
+  <p>
+    Das SD-Modul ist auf der MCU S2 verbaut! Du musst hier also nichts weiter
+    anschließen.
+  </p>
 </AlertBox>
 
 ## Programmierung (Arduino)
-In diesem Sketch werden die Werte von einem Sensor(in diesem Fall der HDC1080) ausgelesen und auf der SD-Karte gespeichert. Wir verwenden hier ein Interval welches alle 60 Sekunden feuert. 
 
-```cpp	
+In diesem Sketch werden die Werte von einem Sensor(in diesem Fall der HDC1080) ausgelesen und auf der SD-Karte gespeichert. Wir verwenden hier ein Interval welches alle 60 Sekunden feuert.
+
+```cpp
 #include <SD.h>
 #include <SPI.h>
 #include "FS.h"
@@ -62,7 +69,6 @@ void loop() {
 
 ```
 
-
 ## Programmierung (Blockly)
 
 Mit dem `Erstelle Datei auf SD-Karte`-Block kann im Setup() eine neue Datei auf der SD-Karte erstellt werden. Im Dropdown-Menü des Blocks kann der Name der Datei geändert werden.
@@ -75,11 +81,8 @@ Mit dem `Öffne Datei auf SD-Karte`-Block kann anschließend in der Endlosschlei
 
 Im freien Blockabschnitt des `Öffne Datei auf SD-Karte`-Blocks kann dann der `Schreibe Daten auf SD-Karte`-Block platziert werden. In diesem kann im freien Blockabschnitt wiederum der zu schreibende Text oder die zu schreibende Zahl platziert werden. Zusätzlich kann durch setzen des Häkchens bei `Zeilenumbruch` festgelegt werden, ob nach jedem Messwert ein Zeilenumbruch eingefügt werden soll oder nicht.
 
-Zusätzlich holen wir aus der Kategorie `Zeit` den Block für ein Interval und aus der Kategorie `Sensoren` den gewünschten Sensor. Danach fügen wir alles zusammen und erhalten folgenden Sketch. 
+Zusätzlich holen wir aus der Kategorie `Zeit` den Block für ein Interval und aus der Kategorie `Sensoren` den gewünschten Sensor. Danach fügen wir alles zusammen und erhalten folgenden Sketch.
 
 ![](/img/blockly-bilder/sd-karte/blockly-sd-3.svg)
-
-
-
 
 > - [Blockly.senseBox.de](https://blockly.sensebox.de/)
