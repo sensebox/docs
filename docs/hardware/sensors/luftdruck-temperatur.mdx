@@ -9,6 +9,7 @@ displayedSidebar: board
 import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
 import pressureSensor from '@site/static/img/hardware-bilder/luftdruck/bmp_top.png'
 import { useBoardStore } from '@site/src/lib/stores/store'
+import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
 
 # Luftdruck- und Temperatursensor
 
@@ -33,6 +34,10 @@ Der DPS310 ersetzt den Luftdruck und Temperatursensor BMP280. Welchen von beiden
 - Genauigkeit Temperatur: ± 0.5°C
 - Durchschnittlicher Stromverbrauch: 1.7 μA zur Druckmessung, 1.5µA zur Temperaturmessung bei 1Hz Sampling Frequenz
 - Stromverbrauch Standby: 0.5 μA
+
+## Anschluss
+
+<TutorialPorts port="i2c" />
 
 ## Programmierung (Arduino)
 
