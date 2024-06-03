@@ -1,2 +1,23 @@
-# Redirects from what the browser requests to what we serve
+# board overviews
 /hardware/allgemein-sensebox-mcu/ /docs/boards/mcu/mcu-overview
+/hardware/allgemein-sensebox-mcu-mini/ /docs/boards/mini/mini-overview
+
+# sets
+/hardware/sets-co2-ampel/ /docs/products/co2Ampel/co2Ampel-overview
+
+# categories
+/category/hardware/ /docs/category/glossar
+/category/blockly/ /docs/category/blockly-1
+/category/arduino/ /docs/category/arduino-1
+
+# hardware
+/hardware/rtc-modul/ /docs/hardware/accessoires/rtc-modul
+/hardware/zubehoer-display/ /docs/hardware/accessoires/display
+/hardware/sensoren-co2/ /docs/hardware/sensors/co2
+/hardware/sensoren-umweltsensor/ /docs/hardware/sensors/umweltsensor
+/hardware/bee-lora/ /docs/hardware/bee/lora-bee
+/hardware/sensoren-mikro/ /docs/hardware/sensors/mikro
+
+
+# misc
+/arduino/allgemein-basics-inbetriebnahme/ /docs/editors/arduino/first-steps
