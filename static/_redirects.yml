@@ -1,0 +1,2 @@
+# Redirects from what the browser requests to what we serve
+/hardware/allgemein-sensebox-mcu/ /docs/boards/mcu/mcu-overview
