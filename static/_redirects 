@@ -4,6 +4,7 @@
 
 # sets
 /hardware/sets-co2-ampel/ /docs/products/co2Ampel/co2Ampel-overview
+/category/sensebox-home/ /docs/products/home/aufbau/home-schritt-1
 
 # categories
 /category/hardware/ /docs/category/glossar
@@ -17,6 +18,23 @@
 /hardware/sensoren-umweltsensor/ /docs/hardware/sensors/umweltsensor
 /hardware/bee-lora/ /docs/hardware/bee/lora-bee
 /hardware/sensoren-mikro/ /docs/hardware/sensors/mikro
+/hardware/bee-sd/ /docs/hardware/bee/sd-bee
+/hardware/sensoren-luftdruck-temperatur/ /docs/hardware/sensors/luftdruck-temperatur
+/hardware/sensoren-temperatur-luftfeuchte/ /docs/hardware/sensors/temperatur-luftfeuchte
+/hardware/sensoren-distanz/ /docs/hardware/sensors/distanz
+/hardware/sensoren-helligkeit-uv/ /docs/hardware/sensors/helligkeit-uv
+/hardware/sensoren-gps/ /docs/hardware/accessoires/gps
+/hardware/sensoren-lautstaerke/ /docs/hardware/sensors/lautstaerke
+/hardware/sensoren-truebner/ /docs/hardware/sensors/truebner
+/hardware/sensoren-feinstaub/ /hardware/sensors/feinstaub-sds011
+/hardware/zubehoer-multiplexer/ /docs/hardware/accessoires/multiplexer
+/hardware/bluetooth-bee/ /docs/hardware/bee/bluetooth-bee
+/hardware/bee-lan/ /docs/hardware/bee/ethernet-bee
+/hardware/bee-wifi/ /docs/hardware/bee/wifi-bee
+
+/blockly/blockly-display/ /docs/hardware/accessoires/display
+/blockly/blockly-web-lora/ /docs/editors/blockly/blocks/lora
+
 
 
 # misc
