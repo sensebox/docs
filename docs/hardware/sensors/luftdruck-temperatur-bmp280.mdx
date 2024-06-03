@@ -14,6 +14,7 @@ block: /images/2020-03-11-sensoren-luftdruck-temperatur/block_luftdruck_temperat
 
 import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
 import pressureSensor from '@site/static/img/hardware-bilder/luftdruck/bmp_top.png'
+import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
 
 # Luftdruck- und Temperatursensor (BMP280)
 
@@ -34,6 +35,10 @@ Dieser Sensor misst den Luftdruck und die Temperatur und basiert auf dem BMP280 
 - Betriebsversorgungsstrom 2.7μA bei 1 Hz Sampling Frequenz
 - Maße: 25mm x 25mm x 9mm
 - Gewicht: 2,4 g
+
+## Anschluss
+
+<TutorialPorts port="i2c" />
 
 ## Programmierung
 

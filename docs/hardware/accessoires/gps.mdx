@@ -4,19 +4,21 @@ title: GPS
 hide_title: false
 description: GPS u-blox CAM-M8Q Multi GNSS Modul
 ---
-import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
-import gps from "@site/static/img/hardware-bilder/gps/gps.png"
 
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import gps from '@site/static/img/hardware-bilder/gps/gps.png'
+import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
 
 # GPS
 
 Das GPS-Modul empfängt die Position (Längengrad/Breitengrad/Höhe) der senseBox. Diese kann für mobile Anwendungen, z.B. die mobile Datenübertragung auf die openSenseMap, genutzt werden. Dieser Sensor ist kompatibel mit den gängingen GNS Systemen (GPS, QZSS, GLONASS, BeiDou, Galileo) und basiert auf dem u-blox CAM-M8Q Multi GNSS Modul.
 
-<ImageWithText src={gps} title="GPS Modul"/>
+<ImageWithText src={gps} title="GPS Modul" />
 
 Der GPS Sensor wird an einen I2C-Port angeschlossen.
 
 ## Technische Details
+
 - "Plug-in-and-Go" senseBox kompatibel durch Breakout-Board mit JST-Anschluss
 - Simultanempfang von GPS, QZSS, GLONASS, BeiDou
 - Navigationsempfindlichkeit von –167 dBm
@@ -24,13 +26,18 @@ Der GPS Sensor wird an einen I2C-Port angeschlossen.
 - Update-Rate: Single GNSS - bis zu 18Hz, Dual GNSS bis zu 10Hz
 - Stromaufnahme: 30mA im Dauerbetrieb bzw. 10mA Power Save Mode 1Hz bei 3V
 
+## Anschluss
+
+<TutorialPorts port="i2c" />
 
 ## Programmierung (Arduino)
 
 ### Software Bibliothek
+
 Um den Sensor in Arduino zu Programmieren musst du die Software Bibliothek [SparkFun u-blox GNSS Arduino Library](https://www.arduino.cc/reference/en/libraries/sparkfun-u-blox-gnss-arduino-library/) installieren.
 
 ### Code
+
 Dieser Code speichert die Werte für Längen- und Breitengrad in den Variablen `latitude` und `longitude`.
 
 ```cpp
@@ -61,7 +68,6 @@ void loop() {
 }
 ```
 
-
 ## Programmierung (Blockly)
 
 In Blockly kann der Sensor über folgenden Block ausgelesen werden:
@@ -69,6 +75,7 @@ In Blockly kann der Sensor über folgenden Block ausgelesen werden:
 ![](/img/hardware-bilder/gps/block_gps.svg)
 
 Im Block kannst du zwischen den verschiedenen Parametern des GPS Modules auswählen:
+
 - Längengrad
 - Breitengrad
 - Höhe
@@ -77,5 +84,5 @@ Im Block kannst du zwischen den verschiedenen Parametern des GPS Modules auswäh
 - Datum
 - Zeit
 
->- [Shop](https://sensebox.kaufen/product/gps)
->- [CAM M8Q](https://sensebox.kaufen/assets/datenblatt/senseBox-CAM-M8Q_v20.pdf)
+> - [Shop](https://sensebox.kaufen/product/gps)
+> - [CAM M8Q](https://sensebox.kaufen/assets/datenblatt/senseBox-CAM-M8Q_v20.pdf)

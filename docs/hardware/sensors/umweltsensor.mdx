@@ -5,28 +5,27 @@ hide_title: false
 description: Luftdruck- und Temperatursensor (BME680)
 ---
 
-import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
-import umweltsensor from "@site/static/img/hardware-bilder/umweltsensor/bme.png"
-
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import umweltsensor from '@site/static/img/hardware-bilder/umweltsensor/bme.png'
+import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
 
 # Umweltsensor
 
 Mit dem Sensor BME680 kannst du eine verschiedene Auswahl an Phänomenen messen. Lufttemperatur, relative Luftfeuchtigkeit, Luftdruck und Luftqualität können mit dem BME680 bestimmt werden. Er ist also ein echter Alleskönner.
 
-<ImageWithText src={umweltsensor} title="BME680 Umweltsensor"/>
-
-
+<ImageWithText src={umweltsensor} title="BME680 Umweltsensor" />
 
 ## Technische Details
-* Schnelle Reaktionszeit von weniger als 10 Sekunden
-* "Plug-in-and-Go" senseBox kompatibel
-* Abweichung bei Gasmessungen von +-15%
+
+- Schnelle Reaktionszeit von weniger als 10 Sekunden
+- "Plug-in-and-Go" senseBox kompatibel
+- Abweichung bei Gasmessungen von +-15%
 
 ## Anschluss und Programmierung
 
-Mit dem mitgelieferten Verbindungskabel kannst du deinen Gassensor mit dem "I2C"-Port der senseBoxMCU verbinden.
-Ist dies erledigt, können wir nun im Programmcode den Sensor initialisieren und uns die ersten Messwerte ausgeben lassen.
+## Anschluss
 
+<TutorialPorts port="i2c" />
 
 :::warning
 **Achtung** Der BME Gassensor ist nicht mit dem BMP280 Luftdrucksensor kompatibel. Das heißt du kannst nur einen der beiden gleichzeitig anschließen und auslesen!
@@ -35,9 +34,11 @@ Ist dies erledigt, können wir nun im Programmcode den Sensor initialisieren und
 ## Programmierung (Arduino)
 
 ### Software Bibliothek
+
 Um den Sensor in Arduino zu Programmieren musst du die Software Bibliothek [BSEC Software Library](https://www.arduino.cc/reference/en/libraries/bsec-software-library/) installieren.
 
-### Code 
+### Code
+
 Dieser Code liest die Temperatur des BME680 Sensors und gibt sie im Seriellen Monitor aus. Über die Variablen `bmeTemperatur`, `bmeHumidity`, `bmePressure`, `bmeIAQ`, `bmeIAQAccuracy`, `bmeCO2` und `bmeBreathVocEquivalent` kannst du auf die anderen Messwerte zugreifen.
 
 ```cpp
@@ -131,7 +132,6 @@ void loop() {
 }
 ```
 
-
 ## Programmierung (Blockly)
 
 In Blockly kann der Sensor über folgenden Block ausgelesen werden:
@@ -159,6 +159,5 @@ Den Status der Kalibrierung kann über den Wert IAQ Accuracy abgelesen werden. E
 
 Der IAQ Index ist also nur aussagekräftig bei IAQ Accuracy = 3. Neben dem Wert für IAQ stellt uns BSEC noch K und VOC äquivalente Werte bereit.
 
-
->- [Shop](https://sensebox.kaufen/product/sensebox-mini)
->- [Bosch BME680](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme680-ds001.pdf)
+> - [Shop](https://sensebox.kaufen/product/sensebox-mini)
+> - [Bosch BME680](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme680-ds001.pdf)

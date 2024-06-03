@@ -4,30 +4,31 @@ title: Ultraschall Distanzsensor
 hide_title: false
 description: HC-SR04
 ---
-import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
-import ultrasonic from "@site/static/img/hardware-bilder/distanz/US-Sensor.png"
-import ultrasonicBuild from "@site/static/img/hardware-bilder/distanz/Aufbau-Ultraschall.png"
+
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import ultrasonic from '@site/static/img/hardware-bilder/distanz/US-Sensor.png'
+import ultrasonicBuild from '@site/static/img/hardware-bilder/distanz/Aufbau-Ultraschall.png'
 
 # Ultraschall Distanzsensor
 
 Der HC-SR04 misst Distanzen mit Hilfe von Ultraschall und gibt diese in Zentimetern (cm) aus.
 
-<ImageWithText src={ultrasonic} title="Ultraschallsensor HC-SR04"/>
+<ImageWithText src={ultrasonic} title="Ultraschallsensor HC-SR04" />
 
 ## Technische Informationen
 
-* Maße: 45mm x 20mm x 17mm
-* Versorgungsspannung von 5V bei einer Stromaufnahme weniger als 2mA
-*  bis zu 50 Messungen pro Sekunde möglich
+- Maße: 45mm x 20mm x 17mm
+- Versorgungsspannung von 5V bei einer Stromaufnahme weniger als 2mA
+- bis zu 50 Messungen pro Sekunde möglich
 
-<ImageWithText src={ultrasonicBuild} title="Aufbau Ultraschallsensor"/>
-
-
+<ImageWithText src={ultrasonicBuild} title="Aufbau Ultraschallsensor" />
 
 ## Programmierung (Arduino)
 
 ### Code
-Dieser Code gibt die gemessene Distanz in **Zentimetern** im Seriellen Monitor aus. 
+
+Dieser Code gibt die gemessene Distanz in **Zentimetern** im Seriellen Monitor aus.
+
 ```cpp
 int trig = 1;  // Trig-Pin des Sensors ist an Pin 1 angeschlossen.
 int echo = 2;  // Echo-Pin des Sensors ist an Pin 2 angeschlossen.
@@ -50,12 +51,11 @@ void loop() {
     Serial.println(distance);
 }
 ```
+
 ## Programmierung (Blockly)
 
 In Blockly kann der Sensor über folgenden Block ausgelesen werden:
 
 ![](/img/hardware-bilder/distanz/ultraschall-block.svg)
 
-
 Wähle den Port, an dem du den Sensor angeschlossen hast über das Dropdown-Menü aus. Trigger und Echo Pin werden dann automatisch angepasst.
-
