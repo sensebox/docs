@@ -1,17 +1,21 @@
 # board overviews
+
 /hardware/allgemein-sensebox-mcu/ /docs/boards/mcu/mcu-overview
 /hardware/allgemein-sensebox-mcu-mini/ /docs/boards/mini/mini-overview
 
 # sets
+
 /hardware/sets-co2-ampel/ /docs/products/co2Ampel/co2Ampel-overview
 /category/sensebox-home/ /docs/products/home/aufbau/home-schritt-1
 
 # categories
+
 /category/hardware/ /docs/category/glossar
 /category/blockly/ /docs/category/blockly-1
 /category/arduino/ /docs/category/arduino-1
 
 # hardware
+
 /hardware/rtc-modul/ /docs/hardware/accessoires/rtc-modul
 /hardware/zubehoer-display/ /docs/hardware/accessoires/display
 /hardware/sensoren-co2/ /docs/hardware/sensors/co2
@@ -34,8 +38,10 @@
 
 /blockly/blockly-display/ /docs/hardware/accessoires/display
 /blockly/blockly-web-lora/ /docs/editors/blockly/blocks/lora
-
-
+/blockly/blockly-web-wifi/ /docs/editors/blockly/blocks/web/wifi
 
 # misc
+
 /arduino/allgemein-basics-inbetriebnahme/ /docs/editors/arduino/first-steps
+/faq /docs/misc/faq
+/opensensemap-faq/ /docs/misc/opensensemap/faq
