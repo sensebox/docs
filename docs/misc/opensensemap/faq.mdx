@@ -1,0 +1,114 @@
+---
+title: 'openSenseMap FAQ'
+hide_title: false
+---
+
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@site/src/components/ui/accordion'
+
+# Willkommen auf der openSenseMap - Deiner Plattform für freie Umweltdaten.
+
+<Accordion type="single" collapsible>
+  <AccordionItem value="q1">
+    <AccordionTrigger> Wer steckt hinter dem Projekt? </AccordionTrigger>
+    <AccordionContent>
+      Die [opensenseMap](https://opensensemap.org/) ist im Jahr 2014 vom
+      Institut für Geoinformatik der Universität Münster ins Leben gerufen
+      worden. Seit dem Start ist die openSenseMap eng mit dem Projekt der{' '}
+      <a href="https://sensebox.de" target="_blank" rel="noopener noreferrer">
+        senseBox
+      </a>{' '}
+      verbunden.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="q2">
+    <AccordionTrigger>
+      {' '}
+      Welche Art von Daten kann ich hochladen?{' '}
+    </AccordionTrigger>
+    <AccordionContent>
+      Die openSenseMap versteht nur numerische Messwerte. Texte, Bilder oder
+      binäre Dateien können nicht übertragen werden.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="q3">
+    <AccordionTrigger> Wie kann ich Daten hochladen? </AccordionTrigger>
+    <AccordionContent>
+      Die Messwerte können über eine Vielzahl verschiedener Geräte hochgeladen
+      werden.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="q4">
+    <AccordionTrigger>
+      {' '}
+      Wie viele Daten kann ich pro Minute hochladen?{' '}
+    </AccordionTrigger>
+    <AccordionContent>
+      Um die Datenbank nicht zu überlasten, können 6 Pakete mit Messwerten pro
+      Minute hochgeladen werden. Du solltet daher darauf achten.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="q5">
+    <AccordionTrigger> Wo werden die Daten gespeichert? </AccordionTrigger>
+    <AccordionContent>
+      Die Daten werden auf dem Rechenzentrum der Uni Münster gespeichert.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="q6">
+    <AccordionTrigger> Welche Geräte werden unterstützt? </AccordionTrigger>
+    <AccordionContent>
+      Die openSenseMap empfängt, als offene Plattform, Daten von allen Geräten,
+      die ihre Messdaten zur openSenseMap schicken.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="q7">
+    <AccordionTrigger>
+      {' '}
+      Ich habe keine senseBox kann ich trotzdem Daten hochladen?{' '}
+    </AccordionTrigger>
+    <AccordionContent>
+      Nicht nur von der senseBox können Daten auf die openSenseMap geladen
+      werden. Die openSenseMap unterstützt auch Messgeräte aus den Citizen
+      Science Projekten{' '}
+      <a
+        href="https://luftdaten.info/"
+        target="_blank"
+        rel="noopener noreferrer">
+        luftdaten.info
+      </a>{' '}
+      und{' '}
+      <a
+        href="https://www.hackair.eu/"
+        target="_blank"
+        rel="noopener noreferrer">
+        HackAIR
+      </a>
+      Dank der <a
+        href="https://docs.opensensemap.org/"
+        target="_blank"
+        rel="noopener noreferrer">
+        REST API
+      </a> können jedoch von fast jedem IoT-Messgeräte Messwerte an die openSenseMap
+      gesendet werden. Weitere Informationen und wie du dein Messgerät registrierst,
+      findest du unter <a
+        href="https://docs.sensebox.de/category/opensensemap/"
+        target="_blank"
+        rel="noopener noreferrer">
+        https://docs.sensebox.de/
+      </a>.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="q8">
+    <AccordionTrigger>
+      {' '}
+      Wo finde ich weitere Informationen über die openSenseMap und den Code?{' '}
+    </AccordionTrigger>
+    <AccordionContent>
+      Der gesamte Quellcode befindet sich unter einer freien Lizenz auf GitHub.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
