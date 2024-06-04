@@ -109,7 +109,7 @@ const config = {
               },
               {
                 label: 'FAQ',
-                to: '/docs/misc/opensensemap/faq',
+                to: '/docs/misc/faq',
               },
             ],
           },
