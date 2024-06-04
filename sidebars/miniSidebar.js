@@ -70,6 +70,7 @@ const miniSidebar = {
         'editors/blockly/blocks/text',
         'editors/blockly/blocks/variablen',
         'editors/blockly/blocks/web/opensensemap',
+        'editors/blockly/blocks/web/wifi',
         'editors/blockly/blocks/zeit',
       ],
     },
