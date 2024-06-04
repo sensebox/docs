@@ -107,6 +107,10 @@ const config = {
                 label: 'openSenseMap',
                 to: 'https://opensensemap.org/impressum',
               },
+              {
+                label: 'FAQ',
+                to: '/docs/misc/faq',
+              },
             ],
           },
           {
