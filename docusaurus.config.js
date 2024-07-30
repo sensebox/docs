@@ -126,7 +126,7 @@ const config = {
               },
               {
                 label: 'Support',
-                to: 'https://sensebox.de/support',
+                to: 'https://sensebox.de/de/contact',
               },
             ],
           },
