@@ -39,6 +39,7 @@
 /blockly/blockly-display/ /docs/hardware/accessoires/display
 /blockly/blockly-web-lora/ /docs/editors/blockly/blocks/lora
 /blockly/blockly-web-wifi/ /docs/editors/blockly/blocks/web/wifi
+/blockly/blockly-erster-sketch/ /docs/boards/mcu/mcu-erster-sketch
 
 # misc
 
