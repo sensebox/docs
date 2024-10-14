@@ -64,7 +64,3 @@ If you encounter any bugs or issues, feel free to open an issue in the [Issues t
 3. Commit your changes (`git commit -m 'Add my feature'`)
 4. Push to the branch (`git push origin feature/my-feature`)
 5. Open a Pull Request
-
-## 📄 License
-
-Feel free to use, modify, and distribute this project. See the [LICENSE](./LICENSE) file for more details.
