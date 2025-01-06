@@ -2,6 +2,7 @@ import React from 'react'
 import clsx from 'clsx'
 import styles from './styles.module.css'
 import Link from '@docusaurus/Link'
+import Translate, {translate} from '@docusaurus/Translate';
 import LogoSensebox from '@site/static/img/logo.svg'
 import osem from '@site/static/img/osem.png'
 import blockly from '@site/static/img/blockly.png'
@@ -12,60 +13,60 @@ const FeatureList = [
   {
     title: ':edu S2',
     description: (
-      <>
+      <Translate>
         Die zweite Generation der senseBox:edu für den Einsatz im
         Bildungsbereich. Klicke hier für alle nötigen Informationen!
-      </>
+      </Translate>
     ),
     to: '/docs/boards/mcus2/mcu-s2-overview',
   },
   {
     title: ':edu',
     description: (
-      <>
+      <Translate>
         Informationen zum Anschluss und zur Programmierung der senseBox:edu für
         den Einsatz im Bildungsbereich
-      </>
+      </Translate>
     ),
     to: '/docs/boards/mcu/mcu-overview',
   },
   {
     title: ':bike',
     description: (
-      <>
+      <Translate>
         Anleitung und Informationen zur senseBox:bike, der dazugehörigen App und
         der Installation der Fahrradhalterung
-      </>
+      </Translate>
     ),
     to: '/docs/category/bike',
   },
   {
     title: ':CO2 Ampel',
     description: (
-      <>
+      <Translate>
         Informationen zum Anschluss und Programmierung der Sensoren, Bees und
         weiteren Bauteilen für Bildungszwecke
-      </>
+      </Translate>
     ),
     to: '/docs/products/co2Ampel/co2Ampel-overview',
   },
   {
     title: ':home',
     description: (
-      <>
+      <Translate>
         Aufstellungsort, Installation und alle weiteren Informationen zu
         Sensoren der senseBox:home findest du hier!
-      </>
+      </Translate>
     ),
     to: '/docs/boards/mcu/mcu-overview',
   },
   {
     title: ':mini',
     description: (
-      <>
+      <Translate>
         Alle relevanten Informationen zur Miniaturversion der senseBox findest
         du hier!
-      </>
+      </Translate>
     ),
     to: '/docs/boards/mini/mini-overview',
   },
@@ -76,7 +77,9 @@ const ThumbNailPreviewList = [
     title: 'openSenseMap',
     Image: osem,
     description: (
-      <>Die openSenseMap als Internetplattform für offene Umweltdaten</>
+      <Translate>
+      Die openSenseMap als Internetplattform für offene Umweltdaten
+      </Translate>
     ),
     to: 'https://docs.opensensemap.org/',
   },
@@ -84,9 +87,9 @@ const ThumbNailPreviewList = [
     title: 'Blockly',
     Image: blockly,
     description: (
-      <>
-        Die frei verfügbare grafische Oberfläche zum Programmieren der senseBox{' '}
-      </>
+      <Translate>
+        Die frei verfügbare grafische Oberfläche zum Programmieren der senseBox
+      </Translate>
     ),
     onClick: () => {
       useBoardStore.setState({ board: 'Blockly' })
@@ -97,10 +100,10 @@ const ThumbNailPreviewList = [
     title: 'Hardware Glossar',
     Image: hardware,
     description: (
-      <>
+      <Translate>
         Informationen zum Anschluss und zur Programmierung der Sensoren, Bees
         und weiteren Bauteilen
-      </>
+      </Translate>
     ),
     onClick: () => {
       useBoardStore.setState({ board: 'Glossar' })
@@ -159,7 +162,7 @@ export default function HomepageFeatures() {
           <div className="flex flex-col items-center justify-evenly  lg:flex-row">
             <div className="text-center text-white">
               <h1 className="font-bold">senseBox Dokumentation</h1>
-              <p>Der Platz für die Beschreibung der senseBox-Dokumentation.</p>
+              <p><Translate>Der Platz für die senseBox-Dokumentation.</Translate></p>
             </div>
             <div>
               <LogoSensebox />
