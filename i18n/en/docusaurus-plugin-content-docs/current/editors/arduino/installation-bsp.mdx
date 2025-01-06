@@ -1,0 +1,49 @@
+---
+date: 2020-03-11
+title: Installation of the Board Support Package
+title_order: 4
+categories: arduino
+description: Installation of the Board Support Package for the senseBox MCU
+type: Document
+set: erste-schritte-arduino
+set_order: 4
+---
+
+import { useBoardStore } from '@site/src/lib/stores/store'
+
+# Installation of the Board Support Package
+
+<div>
+  <div class="description">
+    To ensure the Arduino IDE supports your senseBox MCU and you can upload programs to it, you need to install two Board Support Packages beforehand. 
+    These include the necessary drivers and software to communicate with the senseBox processor. 
+    The senseBox Board Support Package also includes our senseBox libraries, providing you with all the basic methods for programming the included sensors.
+  </div>
+  <h2>Add Board Support Package</h2>
+  <p>
+    Add the following URL in your Arduino IDE under _File - Preferences_ in the field for _Additional Board Manager URLs_: 
+  { useBoardStore((state)=>state.board) === ':edu S2' ? <div>
+    <code> https://espressif.github.io/arduino-esp32/package_esp32_index.json </code>
+        <div className="flex justify-center mt-4">
+      <img className src="/img/arduino-bilder/installation/arduino-bsp-esp32s2.png"/>
+      </div></div> : <div>
+    <code> https://github.com/sensebox/senseBoxMCU-core/raw/master/package_sensebox_index.json </code>
+        <div className="flex justify-center mt-4">
+      <img className src="/img/arduino-bilder/installation/arduino-board-support-url.png"/>
+      </div> </div>
+    }
+
+
+  </p>
+
+  <p>
+    Open the _Board Manager_ by clicking on the _Board Manager_ icon on the left side (see image)
+  </p>
+  <div className="flex justify-center">
+    <img src="/img/arduino-bilder/installation/arduino-boards.png"/>
+  </div>
+  <p>
+    Enter "ESP32" in the search bar above to find the packages faster and install the `esp32` board from Espressif Systems. 
+    <b>Attention! Make sure to install at least version 2.0.15-alpha3! </b>.
+  </p>
+</div>

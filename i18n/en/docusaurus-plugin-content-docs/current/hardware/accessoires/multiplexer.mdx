@@ -1,0 +1,83 @@
+---
+sidebar_position: 3
+title: I2C-Multiplexer
+description: senseBox I2C-Multiplexer
+---
+
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import multiplexer from '@site/static/img/hardware-bilder/multiplexer/hub_bottom.png'
+import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
+
+# I2C-Multiplexer
+With a senseBox I2C multiplexer, up to eight devices with the same addressing can be operated in parallel via the I2C bus. 
+This allows, for example, multiple identical temperature sensors to be connected.
+
+<ImageWithText src={multiplexer} alt="Multiplexer" title="I2C-Multiplexer" />
+
+## Technical Information
+
+- "Plug-in-and-Go" senseBox compatible via breakout board with JST connector
+- 8x JST connectors
+
+## Anschluss
+
+<TutorialPorts port="i2c" />
+
+## Utilisation
+The senseBox I2C multiplexer is based on the [TCA9548A from Texas Instruments](http://www.ti.com/product/TCA9548A), which has already become part of many community tutorials.
+
+For the implementation of the following example, we first include the required libraries. `Wire.h` for the I2C functionality and `Adafruit_HDC1000.h` for the sensor functions.
+
+```cpp
+#include <Wire.h>
+#include <Adafruit_HDC1000.h> // http://librarymanager/All#Adafruit_HDC1000_Library
+
+```
+
+Now we define the address of the multiplexer and a list of channels to which the sensors are connected.
+
+```cpp
+byte multiplexAddress = 0x77;
+byte channels[] = {0,1,2};
+```
+
+We create an object for the sensor and start its instance behind the serial connection in the setup function.
+
+```cpp
+Adafruit_HDC1000 hdc = Adafruit_HDC1000();
+
+void setup() {
+    Serial.begin(115200);
+    hdc.begin();
+}
+```
+
+In the infinite loop, the channels are continuously switched using a for loop. For each channel, the multiplexer is addressed via its address.
+Then we simply pass the number of the channel to which all subsequent commands are sent. 
+This continues until a new channel is communicated.
+
+```cpp
+for (int i = 0; i < (sizeof(channels)/sizeof(channels[0])); i++){
+   Wire.beginTransmission(multiplexAddress);
+   Wire.write(1 << channels[i]);
+   Wire.endTransmission();
+
+   Serial.print(channels[i]);
+   Serial.print(F(". channel temperature: "));
+   Serial.println(hdc.readTemperature());
+}
+```
+
+Now the sensors can be read individually. Minimal deviations can be detected among the identical sensors:
+
+```cpp
+0. channel temperature: 21.96
+1. channel temperature: 22.09
+2. channel temperature: 22.14
+```
+
+Equivalently, each I2C device can be used multiple times with the multiplexer. If more than eight devices with the same identifier are to be operated in parallel, the addressing of the multiplexer can be adjusted based on the three solder points on its back and the following table from its [datasheet](http://www.ti.com/lit/ds/symlink/tca9548a.pdf):
+
+![](/img/hardware-bilder/multiplexer/datasheet_table.png)
+
+Highlighted in the table is the default setting with the address 0x77.

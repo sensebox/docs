@@ -1,0 +1,99 @@
+---
+title: Time-of-Flight (ToF) Sensor
+description: Measure distances with high precision using the Time-of-Flight sensor.
+categories: hardware
+---
+
+import tofSensor from '@site/static/img/hardware-bilder/tof/tofsensor.png'
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
+
+# Time-of-Flight (ToF) Sensor
+
+<ImageWithText
+  src={tofSensor}
+  alt="Time of Flight (ToF Sensor)"
+  title="Time of Flight (ToF Sensor)"
+/>{' '}
+
+Time-of-Flight(ToF) sensors are capable of generating high-resolution depth images. 
+These sensors emit infrared light and measure the time it takes for the light to be reflected back. Our ToF sensor is a multi-zone sensor that measures distance not only at one point but in multiple zones (8x8 zones). 
+According to the manufacturer, measurements of up to 400 cm are possible. However, the maximum measurable distance varies depending on the current lighting conditions (less distance is measured in more sunlight). The frame rate can be up to 60 Hz.
+
+
+## Technical Information
+
+- VL53L8CX ToF Sensor
+
+## Connection
+
+<TutorialPorts port="i2c" />
+
+## Programming (Arduino)
+
+For programming the Time-of-Flight sensor, you also need to install [this](https://github.com/stm32duino/VL53L8CX/tree/main) library in Arduino.  
+This sketch outputs the minimum distance in cm measured by the sensor to the serial monitor.
+
+```cpp
+#include <SPI.h>
+#include <Wire.h>
+#include <vl53l8cx_class.h>
+
+VL53L8CX sensor_vl53l8cx_top(&Wire, -1, -1);
+float oldVl53l8cxMin = -1.0;
+
+// Function to get the minimum distance measured by the ToF sensor (VL53L8CX)
+float getVl53l8cxMin() {
+      VL53L8CX_ResultsData Results;
+      uint8_t NewDataReady = 0;
+      uint8_t status;
+
+      status = sensor_vl53l8cx_top.vl53l8cx_check_data_ready(&NewDataReady);
+
+      if ((!status) && (NewDataReady != 0)) {
+        sensor_vl53l8cx_top.vl53l8cx_get_ranging_data(&Results);
+        float min = 10000.0;
+        for(int i = 0; i < VL53L8CX_RESOLUTION_8X8*VL53L8CX_NB_TARGET_PER_ZONE; i++) {
+          if((&Results)->target_status[i]!=255){
+            float distance = (&Results)->distance_mm[i];
+            if(min > distance) {
+              min = distance;
+            }
+          }
+        }
+        oldVl53l8cxMin = (min==10000.0) ? 0.0 : min;
+      }
+      return oldVl53l8cxMin;
+      }
+
+
+
+void setup(){
+    Serial.begin(9600);
+    Wire.begin();
+    Wire.setClock(1000000); //Sensor has max I2C freq of 1MHz
+    sensor_vl53l8cx_top.begin();
+    sensor_vl53l8cx_top.init_sensor();
+    sensor_vl53l8cx_top.vl53l8cx_set_ranging_frequency_hz(30);
+    sensor_vl53l8cx_top.vl53l8cx_set_resolution(VL53L8CX_RESOLUTION_8X8);
+    sensor_vl53l8cx_top.vl53l8cx_start_ranging();
+
+}
+
+void loop(){
+  Serial.println(getVl53l8cxMin());
+}
+
+
+```
+
+## Programming (Blockly)
+In Blockly this sensor can be read out via the following block:
+
+![](/img/hardware-bilder/tof/tof_block.svg)
+
+## Projects
+
+- #### [Display depth images on the LED matrix](https://sensebox.de/projects/de/2024-04-02-tof-led)
+- #### [Surveillance camera](https://sensebox.de/projects/de/2024-04-02-%C3%BCberwachungskamera)
+

@@ -1,0 +1,92 @@
+---
+date: 2020-03-11
+title: SD-Bee
+categories: hardware
+description: With the SD-Bee, the measurement data of your senseBox is stored on an SD card.
+type: Document
+resources:
+  - name: "Shop"
+    link: https://sensebox.kaufen/product/sd-bee
+  - name: WIZnet W5500 Data Sheet
+    link: http://wizwiki.net/wiki/lib/exe/fetch.php/products:w5500:w5500_ds_v109e.pdf
+image1: /images/2020-03-11-bee-sd/msd.png
+---
+
+
+import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
+import sdBee from '@site/static/img/hardware-bilder/bees/sd-bee/msd.png'
+
+# SD-Bee
+
+With the microSD-Bee, the data of the senseBox can be stored on an SD card.
+
+<ImageWithText src={sdBee} alt="SD Modul" title="SD Bee"/> 
+
+
+# Technical Information
+* "Plug-in-and-Go" senseBox compatible
+* Port for miniSD card
+* Designation: mSD-Bee
+* Dimensions: 24mm x 21mm x 9mm
+* Weight: 2.4 g
+
+Make sure that the mSD-Bee is connected to the XBEE2 connector of the senseBox-MCU, otherwise there may be problems saving your measurement data.
+
+## Programming (Arduino)
+In the following example, we show you how the string `Hello World!` is saved on the SD card in a file named `senseBox.txt`. 
+
+```cpp
+// Include the libraries
+#include <SPI.h>
+#include <SD.h>
+
+File myFile;
+// Name of the file on the SD card
+// Make sure that this name (without file extension) is not longer than 8 characters!
+String fileName = "senseBox.txt";
+
+void setup()
+{ 
+    // Starting the SD-Bee
+    SD.begin(28);
+    // Open the file on the SD card
+    myFile = SD.open(fileName, FILE_WRITE);
+    myFile.close();
+
+    hdc.begin();
+};
+
+void loop()
+{
+    // Open file with write access
+    myFile = SD.open(fileName, FILE_WRITE);
+    myFile.println("Hallo Welt!");
+    // After use, the file is closed again
+    myFile.close();
+};
+```
+
+## Programming (Blockly)
+
+The `Create file on SD card` block can be used in the setup() to create a new file on the SD card. 
+The name of the file can be changed in the dropdown menu of the block.
+
+![](/img/blockly-bilder/sd-karte/blockly-sd-1.svg)
+
+With the `Open file on SD card` block, the previously created file can be opened in the endless loop.
+
+![](/img/blockly-bilder/sd-karte/blockly-sd-2.svg)
+
+In the free block section of the `Open file on SD card` block, the `Write data to SD card` block can then be placed. 
+In this, the text or number to be written can be placed in the free block section. 
+In addition, by checking the box at `Line break`, it can be determined whether a line break should be inserted after each measured value or not.
+
+Additionally, we get the block for an interval from the `Time` category and the desired sensor from the `Sensors` category.
+
+![](/img/blockly-bilder/sd-karte/blockly-sd-3.svg)
+
+
+
+
+> - [Shop](https://sensebox.kaufen/product/sd-bee)
+> - [WIZnet W5500 Data Sheet](http://wizwiki.net/wiki/lib/exe/fetch.php/products:w5500:w5500_ds_v109e.pdf)

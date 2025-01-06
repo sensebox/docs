@@ -1,0 +1,187 @@
+---
+sidebar_position: 5
+title: Brightness and UV Sensor
+hide_title: false
+description: Brightness and UV Sensor
+---
+
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import lightSensor from '@site/static/img/hardware-bilder/helligkeit-uv/sensor_helligkeit_uv.png'
+import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
+
+# Brightness and UV Sensor
+On this senseBox component, two sensors are combined.
+
+The light intensity is measured with the TSL45315 sensor from AMS-TAOS or the LiteOn LTR329ALS-01 sensor (since 02/21). 
+This sensor detects the light conditions similar to the human eye and outputs the brightness values directly in Lux, with a large dynamic range (3 Lux to 220k Lux).
+
+The second sensor is a Vishay VEML6070 Ultraviolet (UV) light sensor. 
+This sensor converts the intensity of the sun's UV light into digital data. 
+The sensor has excellent UV sensitivity and linearity over Filtron™ technology. 
+It has good UV radiation measurement even with long sun UV exposure and can excellently compensate for temperature fluctuations.
+
+<ImageWithText
+  src={lightSensor}
+  alt="Licht Sensor"
+  title="Brightness and UV Sensor"
+/>
+
+## Technical Information
+
+### Light Meter
+
+- 3.3V - 5V tolerant I2C/TWI interface  
+- Input voltage range: 3.3V - 5V  
+- On-board 2.5V voltage regulator  
+- On-board level shifter
+
+### UV Sensor
+
+- Operating voltage: 2.7V - 5.5V I2C interface  
+- Supports acknowledgment function (Active Acknowledge function)  
+- Temperature compensation: -40°C to +85°C  
+- Software shutdown control for immunity to flickering fluorescent lights  
+
+### Dimensions
+
+- 25mm x 25mm x 9mm  
+- Weight: 2.5 g  
+
+## Connection
+
+<TutorialPorts port="i2c" />
+
+## Programmierung (Arduino)
+
+### Software Library
+
+To program the sensor in Arduino, you need to install the software libraries [Adafruit LTR329 and LTR303](https://www.arduino.cc/reference/en/libraries/adafruit-ltr329-and-ltr303/) **and** [Adafruit VEML6070 Library](https://www.arduino.cc/reference/en/libraries/adafruit-veml6070-library/).
+
+### Code
+
+This code outputs the values for Lux and UV intensity in the Serial Monitor
+
+```cpp
+#include <SPI.h>
+#include <LTR329.h>
+#include <Wire.h>
+#include <VEML6070.h>
+
+bool lightsensortype = 0; //0 for tsl - 1 for ltr
+//settings for LTR sensor
+LTR329 LTR;
+unsigned char gain = 1;
+unsigned char integrationTime = 0;
+unsigned char measurementRate = 3;
+VEML6070 veml;
+
+
+int read_reg(byte address, uint8_t reg)
+  {
+    int i = 0;
+    Wire.beginTransmission(address);
+    Wire.write(reg);
+    Wire.endTransmission();
+    Wire.requestFrom((uint8_t)address, (uint8_t)1);
+    delay(1);
+    if(Wire.available())
+      i = Wire.read();
+    return i;
+  }
+
+
+void write_reg(byte address, uint8_t reg, uint8_t val)
+  {
+    Wire.beginTransmission(address);
+    Wire.write(reg);
+    Wire.write(val);
+    Wire.endTransmission();
+  }
+
+void Lightsensor_begin()
+  {
+    Wire.begin();
+    unsigned int u = 0;
+    u = read_reg(0x29, 0x80 | 0x0A); //id register
+    if ((u & 0xF0) == 0xA0)            // TSL45315
+      {
+        write_reg(0x29, 0x80 | 0x00, 0x03); //control: power on
+        write_reg(0x29, 0x80 | 0x01, 0x02); //config: M=4 T=100ms
+        delay(120);
+        lightsensortype = 0; //TSL45315
+      }
+    else
+      {
+        LTR.begin();
+        LTR.setControl(gain, false, false);
+        LTR.setMeasurementRate(integrationTime, measurementRate);
+        LTR.setPowerUp(); //power on with default settings
+        delay(10); //Wait 10 ms (max) - wakeup time from standby
+        lightsensortype = 1;                     //
+      }
+  }
+
+
+unsigned int Lightsensor_getIlluminance()
+  {
+    unsigned int lux = 0;
+    if (lightsensortype == 0) // TSL45315
+    {
+      unsigned int u = (read_reg(0x29, 0x80 | 0x04) << 0);  //data low
+      u |= (read_reg(0x29, 0x80 | 0x05) << 8); //data high
+      lux = u * 4; // calc lux with M=4 and T=100ms
+    }
+    else if (lightsensortype == 1) //LTR-329ALS-01
+    {
+      delay(100);
+      unsigned int data0, data1;
+      for (int i = 0; i < 5; i++) {
+        if (LTR.getData(data0, data1)) {
+          if(LTR.getLux(gain, integrationTime, data0, data1, lux));
+          if(lux > 0) break;
+          else delay(10);
+        }
+        else {
+        byte error = LTR.getError();
+      }
+    }
+  }
+  return lux;
+  }
+
+
+void setup() {
+    Serial.begin(9600);
+    Lightsensor_begin();
+    veml.begin();
+
+}
+
+void loop() {
+    Serial.print("Illuminance: ");
+    Serial.println(ightsensor_getIlluminance());
+    Serial.print("UV-Intensity: ");
+    Serial.println(veml.getUV());
+}
+```
+
+## Programming (Blockly)
+
+In Blockly, the sensor can be read using the following block:
+
+![](/img/hardware-bilder/helligkeit-uv/block_helligkeit_uv.svg)
+
+In the block, you can select between the different parameters of the brightness/UV sensor:
+
+- Brightness in LUX
+- UV exposure in µW/cm^2
+
+## Projects
+
+- #### [IoT Messstation](https://sensebox.de/projects/de/2024-01-10-iotmesstation_s2)
+
+## Extras
+
+> - [Data sheet](https://sensebox.kaufen/assets/datenblatt/senseBox-VEML-TSL_v20.pdf)
+> - [Data sheet Vishay VEML6070](https://www.vishay.com/docs/84277/veml6070.pdf)
+> - [Data sheet LTR329](https://optoelectronics.liteon.com/upload/download/DS86-2014-0006/LTR-329ALS-01_DS_V1.pdf)

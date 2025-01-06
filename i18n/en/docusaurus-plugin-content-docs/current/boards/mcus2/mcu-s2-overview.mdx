@@ -1,0 +1,132 @@
+---
+title: senseBox:mcu S2
+hide_title: true
+---
+
+import Admonition from "@theme/Admonition";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import image from "@site/static/img/mcus2/mcus2top.png";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@site/src/components/ui/tooltip";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@site/src/components/ui/popover";
+import { Button } from "@site/src/components/ui/button";
+import mcus2ports from "@site/static/img/mcus2/mcus2-ports.png";
+import lightSensor from "@site/static/img/hardware-bilder/helligkeit-uv/sensor_helligkeit_uv.png";
+import display from "@site/static/img/hardware-bilder/oled/display.png";
+import tempSensor from "@site/static/img/hardware-bilder/temperatur-luftfeuchte/sensor_temperatur_luftfeuchte.png";
+import pressureSensor from "@site/static/img/hardware-bilder/luftdruck/bmp_top.png";
+import tofSensor from "@site/static/img/hardware-bilder/tof/tofsensor.png";
+import ledMatrix from "@site/static/img/hardware-bilder/led-matrix/led-matrix.png";
+import i2cdaiychain from "@site/static/img/hardware-bilder/i2c/i2c-daisy-chain.png";
+import ImageWithText from "@site/src/components/ImageWithText/ImageWithText";
+import mcus2top from "@site/static/img/mcus2/mcus2top.png";
+
+<div className="flex flex-col justify-center items-center">
+  <h1>MCU S2 (ESP32)</h1>
+  <p>
+    The microcontroller based on ESP-32 offers a multitude of new possibilities in terms of data transfer, data exchange and operation.
+  </p>
+  <div className="flex w-full flex-col items-center text-center gap-4">
+    <div>
+      <img src={mcus2ports} alt="Your Image" className="" />{" "}
+    </div>
+    <div className="flex w-full flex-col">
+      <h1 className="text-left"> Ports </h1>
+      <div className="flex flex-row justify-evenly">
+        <Popover>
+          <PopoverTrigger className="flex  cursor-pointer bg-white border-solid border-1 rounded-md w-[10rem] p-2 hover:bg-gray-100">
+            I2C/Wire ports
+          </PopoverTrigger>
+          <PopoverContent>
+            <div>
+              <h2>Sensors and accessories on the I2C/Wire ports</h2>
+              <div className="flex flex-col lg:flex-row">
+                <div className="flex flex-col items-center">
+                  <img
+                    src={lightSensor}
+                    alt="Your Image"
+                    className="w-[5rem] lg:w-[10rem]"
+                  />
+                  <p className=" text-gray-500">Light sensor</p>
+                </div>
+                <div className="flex flex-col items-center">
+                  <img
+                    src={tempSensor}
+                    alt="Your Image"
+                    className="w-[5rem] lg:w-[10rem]"
+                  />
+                  <p className=" text-gray-500">Temperature and humidity</p>
+                </div>
+                <div className="flex flex-col items-center">
+                  <img
+                    src={pressureSensor}
+                    alt="Your Image"
+                    className="w-[5rem] lg:w-[10rem]"
+                  />
+                  <p className=" text-gray-500">Air pressure</p>
+                </div>
+                <div className="flex flex-col items-center">
+                  <img
+                    src={tofSensor}
+                    alt="Your Image"
+                    className="w-[5rem] lg:w-[10rem]"
+                  />
+                  <p className=" text-gray-500">Time of Flight(Tof)</p>
+                </div>
+                <div className="flex flex-col items-center">
+                  <img
+                    src={display}
+                    alt="Your Image"
+                    className="w-[5rem] lg:w-[10rem]"
+                  />
+                  <p className=" text-gray-500">Display</p>
+                </div>
+              </div>
+            </div>
+          </PopoverContent>
+        </Popover>
+        <Popover>
+          <PopoverTrigger className="cursor-pointer bg-white border-solid border-1 rounded-md w-[10rem] p-2 hover:bg-gray-100">
+            Digital/Analogue ports
+          </PopoverTrigger>
+          <PopoverContent>
+            <div>
+              <h2>Sensors and accessories on the digital/analogue ports</h2>
+              <div className="flex flex-row justify-center">
+                <div className="flex flex-col items-center">
+                  <img
+                    src={ledMatrix}
+                    alt="Your Image"
+                    className="w-[5rem] lg:w-[10rem]"
+                  />
+                  <p className="text-gray-500">LED-Matrix</p>
+                </div>
+              </div>
+            </div>
+          </PopoverContent>
+        </Popover>
+      </div>
+    </div>
+    <div className="flex flex-col w-full">
+      <h1 className="text-left">I2C/Wire daisy chain</h1>
+      <p className="text-left">
+        An I2C daisy chain enables the simple and efficient connection of several devices in a serial communication chain using the I2C protocol.
+        The daisy chain configuration allows each device in the chain to send and receive data. This method is particularly useful in applications
+        where space and resources are limited, as it minimises the number of physical connections required and at the same time enables robust
+        and reliable data communication.
+      </p>
+      <div className="flex justify-center">
+        <ImageWithText src={i2cdaiychain} title="I2C/Wire daisy chain" />
+      </div>
+    </div>
+  </div>
+</div>

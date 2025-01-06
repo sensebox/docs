@@ -1,0 +1,59 @@
+---
+date: 2020-03-11
+title: LoRa-Bee
+categories: hardware
+description: With the LoRa-Bee, data from the senseBox can be transmitted to the Internet with low power consumption
+type: Document
+resources:
+  - name: 'Shop'
+    link: https://sensebox.kaufen/product/lora-bee
+  - name: HopeRF RFM9xW Datenblatt
+    link: https://www.hoperf.com/modules/lora/RFM95.html
+
+image1: /images/2020-03-11-bee-lora/LoraBee_Bottom.png
+---
+
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import LoRaBee from '@site/static/img/hardware-bilder/bees/lora-bee/LoraBee_Bottom.png'
+
+# LoRa-Bee
+
+It is possible to upload sensor data to the openSenseMap via [LoRaWAN™](https://de.wikipedia.org/wiki/Long_Range_Wide_Area_Network)
+through [TheThingsNetwork](https://thethingsnetwork.org)(TTN).
+
+LoRa is an increasingly widespread wireless standard which, like WiFi, allows digital data transmission in an IP network, but offers significantly different features. TheThingsNetwork offers very good coverage in Germany compared to other countries, with ~2000 gateways.
+
+<ImageWithText src={LoRaBee} alt="LoRa Bee" title="LoRa Bee ohne Antenne" />
+
+:::warning
+Please check the LoRa availability in your region before you purchase a LoRa-Bee for your senseBox.
+This is possible on the [map](https://www.thethingsnetwork.org/community#list-communities-map) of the TTN.
+:::
+
+## Technical Information
+
+- HopeRF RFM95W/RFM96W LoRa Transceiver
+- LoRa-Bee 868/915 MHz uses RFM95W (SX1276 compatible)
+- LoRa-Bee 433/470 MHz uses RFM96W (SX1276 compatible)
+- SPI interface
+- Designation: RFN9xW
+- Dimensions: 46mm x 25mm x 12mm
+- Weight: 1.1 g
+
+## Usage
+
+A detailed tutorial on how to use the LoRa Bee in conjunction with the senseBoxMCU and [TheThingsNetwork](https://thethingsnetwork.org) can be found [here](/products/home/erweiterungen/home-erweiterung-LoRa).
+
+The Blockly tutorial for using LoRa can be found [here](/docs/editors/blockly/blocks/lora).
+
+## Projects
+
+- #### [TTN v3 with the senseBox](https://sensebox.de/projects/de/2021-02-19-ttnv3)
+- #### [LoRaWAN and the Cayenne Payload](https://sensebox.de/projects/de/2020-08-15-lorawan-cayenne)
+- #### [TTN Mapper in under 10 minutes](https://sensebox.de/projects/de/2020-03-06-ttn-mapper)
+- #### [TTN Decoding for Beginners](https://sensebox.de/projects/de/2020-01-21-ttn-decoding-de)
+- #### [Mobile Data Logger for Particulate Matter (LoRa)](https://sensebox.de/projects/de/2019-05-06-mobilerfeinstaubloggerlora)
+- #### [LoRaWAN IoT Weather Station](https://sensebox.de/projects/de/2019-05-10-lora-osem-tago)
+
+> - [Shop](https://sensebox.kaufen/product/lora-bee)
+> - [HopeRF RFM9xW Datasheet](https://www.hoperf.com/modules/lora/RFM95.html)

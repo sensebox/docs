@@ -1,0 +1,95 @@
+---
+sidebar_position: 7
+title: Air Pressure and Temperature Sensor
+hide_title: false
+description: Air Pressure and Temperature Sensor (DPS310)
+displayedSidebar: board
+---
+
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import pressureSensor from '@site/static/img/hardware-bilder/luftdruck/bmp_top.png'
+import { useBoardStore } from '@site/src/lib/stores/store'
+import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
+
+# Air Pressure and Temperature Sensor
+
+The DPS310 air pressure sensor is one of the latest pressure and temperature sensors from Infineon with a digital I2C and SPI interface. 
+The breakout board also includes a voltage regulator and a level converter so that the sensor can be used in systems with 3 to 5.5 volts via the JST connection.
+
+<ImageWithText
+  src={pressureSensor}
+  alt="Pressure Sensor"
+  title="Air Pressure and Temperature Sensor"
+/>
+
+:::info
+The DPS310 replaces the BMP280 air pressure and temperature sensor. You can recognise which of the two sensors you have by the label on the sensor. 
+If you need the documentation for the BMP280, you can find it [here](/docs/hardware/sensors/luftdruck-temperatur-bmp280).
+:::
+
+## Technical Information
+
+- Fully integrated into the senseBox system  
+- Measurement range: 300 to 1200 hPa  
+- Relative air pressure precision: ±0.06 hPa  
+- Absolute air pressure precision: ±1 hPa  
+- Temperature accuracy: ±0.5°C  
+- Average power consumption: 1.7 μA for pressure measurement, 1.5 μA for temperature measurement at 1 Hz sampling frequency  
+- Standby power consumption: 0.5 μA  
+
+## Connection
+
+<TutorialPorts port="i2c" />
+
+## Programming (Arduino)
+
+### Software Library
+To program the sensor in Arduino, you need to install the software library [Adafruit DPS310](https://www.arduino.cc/reference/en/libraries/adafruit-dps310/).
+
+### Code
+This sketch reads the air pressure and temperature and outputs the values via the serial interface.
+
+```cpp
+#include <Adafruit_DPS310.h> // http://librarymanager/All#Adafruit_DPS310
+
+Adafruit_DPS310 dps;
+
+void setup() {
+  Serial.begin(9600);
+
+  dps.begin_I2C(0x76);
+  dps.configurePressure(DPS310_64HZ, DPS310_64SAMPLES);
+  dps.configureTemperature(DPS310_64HZ, DPS310_64SAMPLES);
+
+}
+
+void loop() {
+    sensors_event_t temp_event, pressure_event;
+    dps.getEvents(&temp_event, &pressure_event);
+
+    Serial.print("Pressure: ");
+    Serial.println(pressure_event.pressure);
+    Serial.print("Temperature: ");
+    Serial.println(temp_event.temperature);
+}
+```
+
+## Programming (Blockly)
+In Blockly, the sensor can be read using the following block:
+
+![](/img/hardware-bilder/luftdruck/block_luftdruck_temperatur.svg)
+
+In the block, you can select between the different parameters of the air pressure/temperature sensor:
+
+- Air pressure in Pascal (Pa)
+- Temperature in Celsius (°C)
+- Altitude above sea level in meters (requires a reference air pressure)
+
+## Projects
+
+- #### [IoT Measurement Station](https://sensebox.de/projects/de/2024-01-10-iotmesstation_s2)
+
+## Extras
+
+> - [Shop](https://sensebox.kaufen/product/luftdruck-temperatur)
+> - [Bosch BMP280 Data sheet](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp280-ds001.pdf)

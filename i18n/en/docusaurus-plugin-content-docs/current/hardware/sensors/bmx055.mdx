@@ -1,0 +1,75 @@
+---
+sidebar_position: 1
+title: Absolute Orientation Sensor
+hide_title: false
+description: Bosch BMX055
+---
+# Absolute Orientation Sensor
+
+:::warning
+The BMX055 is not present on some batches of the senseBox MCU. To check if your MCU has the orientation sensor, look [here](/docs/boards/mcu/mcu-revisions).
+:::
+The Bosch BMX055 is already soldered onto the senseBox MCU and can be used without any additional setup. 
+The sensor combines an accelerometer, a gyroscope, and a precise magnetometer.
+
+## Technical Information
+
+____________________________________________________________________
+| Parameter | Technical Specifications |
+| --- | --- | 
+| Digital Resolution | Accelerometer (A): 0.98 mg <br/> Gyroscope (G): 0.004 °/s <br/> Magnetometer: (M): 0.3 μT |
+| Measurement Ranges (programmable) | (A): ±2g, ±4g, ±8g, ±16 g <br/> (G):±125°/s, ±250°/s, ±500°/s, ±1000°/s, ±2000°/s <br/> (M): ±1300μT (x,y), ±2500μT (z) |
+| Sensitivity (calibrated) | (A): ±2g: 1024LSB/g, ±4g: 512LSB/g, ±8g: 256LSB/g, ±16g: 128LSB/g <br/> (G): ±125°/s: 262.4 LSB/°/s, ±250°/s: 131.2 LSB/°/s, ±500°/s: 65.6 LSB/°/s, ±1000°/s: 32.8 LSB/°/s, ±2000°/s: 16.4 LSB/°/s <br/> (M): 3.3 LSB/μT |
+
+
+## Programming (Arduino)
+
+### Software Library
+To program the sensor in Arduino, you need to install the software library [BMX 055 Arduino](https://github.com/sensebox/BMX055-Arduino-Library/).
+
+### Code
+With this code, the values of the acceleration sensor are output in the Serial Monitor. 
+Alternatively, you can also display the values in the Serial Plotter.
+
+```cpp
+#include <senseBoxIO.h>
+#include <BMX055.h>
+
+BMX055 bmx;
+
+void setup() {
+  // Initialize serial communication with 9600 baud
+  Serial.begin(9600);
+
+  // Start the accelerometer with configuration mode 0x3
+  bmx.beginAcc(0x3);
+}
+
+void loop() {
+  // Read the acceleration on the X-axis
+  int xAcc = bmx.getAccelerationX();
+  int yAcc = bmx.getAccelerationY(); 
+  int zAcc = bmx.getAccelerationZ();
+  // Output the acceleration values to the serial monitor
+  Serial.print("X:"); 
+  Serial.print(xAcc);
+  Serial.print(",Y:"); 
+  Serial.print(yAcc); 
+  Serial.print(",Z:"); 
+  Serial.println(zAcc);
+  // Delay to limit the read rate
+  delay(100);
+}
+```
+
+You can display the results in Arduino under `Tools -> Serial Plotter` or via the terminal program of your choice.
+
+![](/img/hardware-bilder/mpu6050/mpu-6050-plotter.png)
+
+
+## Programming (Blockly)
+
+In Blockly, the accelerometer can be read using the following block:
+
+
+![](/img/hardware-bilder/absolut-gps/bmx-block.svg)

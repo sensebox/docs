@@ -1,0 +1,164 @@
+---
+title: 'FAQ'
+hide_title: false
+---
+
+# FAQ
+
+<details>
+  <summary>Where can I find summarised information about the senseBox?</summary>
+  
+All important information about the different senseBoxes can be found [here](https://sensebox.de/en/products)
+
+</details>
+
+<details>
+  <summary>Which senseBox is right for me?</summary>
+
+The [senseBox:edu](https://sensebox.kaufen/product/sensebox-edu)is the version of the senseBox specially developed for use in the educational sector. In addition to the senseBox MCU, it contains sensors for temperature, humidity, air pressure, brightness, UV intensity, distances and noise, a display, a WiFi and an SD card module as well as other electronic components. 
+All components are located in a tidy plastic box and are always well protected and easy to check even with regular use. 
+The [senseBox:mini](https://sensebox.kaufen/product/sensebox-mini) is the entry-level set into the world of the senseBox. 
+It contains the senseBox MCU, the WiFi module, the display and the senseBox environmental sensor (possibility to measure temperature, humidity, air pressure and indoor air quality). 
+The senseBox:mini offers everything you need to start with IoT projects, such as a home server or a chatbot. The senseBox:mini is also available as a class kit. 
+More information about the senseBox:mini class kit can be found in the attached information sheet. 
+The [senseBox:home](https://sensebox.kaufen/product/sensebox-home) is a DIY environmental monitoring station kit that can share its measurement values online on the openSenseMap. 
+We have already put together the microcontroller and some basic components as a set. All other sensors and components can be selected independently to create an individual environmental monitoring station. 
+The matching program code is provided by us, so there is no need to program it.
+
+</details>
+
+<details>
+  <summary>Who is the senseBox suitable for?</summary>
+
+In a school context, we recommend a minimum age of 12 years. 
+This recommendation is, of course, highly dependent on the supervision ratio. 
+We also conduct workshops in primary schools.
+
+</details>
+
+<details>
+  <summary>What do I need for the senseBox?</summary>
+
+A senseBox contains everything you need. 
+Except for a computer and an internet connection, of course.
+
+</details>
+
+<details>
+  <summary>Where can I buy the senseBox?</summary>
+
+The senseBox is available in our own online shop at [sensebox.kaufen](https://sensebox.kaufen).
+
+</details>
+
+<details>
+  <summary>Where can I find the instructions for my first steps?</summary>
+
+Here in the Docs you will find instructions for the first steps with [Blockly for senseBox](/docs/boards/mcus2/mcus2-in-betrieb-nehmen) and and the [Arduino IDE](docs/category/arduino).
+
+</details>
+
+<details>
+  <summary>Are there teaching/learning materials?</summary>
+
+Yes! Working with the senseBox depends on the provided material.
+For the senseBox:edu and <b>senseBox:mini</b> you will find [teaching material](https://sensebox.de/en/material) and [projects](https://sensebox.de/en/projects/) on our website. 
+Instructions for the <b>senseBox:home</b> can be found [here](docs/category/aufbau-und-installation-1) in the Docs.
+All materials are open educational resources (OER) and are therefore available free of cost.
+
+</details>
+
+<details>
+  <summary>Do you support schools in setting up the senseBox?</summary>
+
+Yes! Just contact us and we will see how we can set up the senseBox at your school.
+
+</details>
+
+<details>
+  <summary>How to programm the senseBox?</summary>
+
+The senseBox can be programmed graphically using [Blockly for senseBox](https://blockly.sensebox.de/ardublockly/?board=sensebox-mcu) and [openroberta](https://lab.open-roberta.org/), or text-based using the [Arduino IDE](https://www.arduino.cc/). 
+For more information on how to use the programming environments, refer to the [Docs](https://docs.sensebox.de/).
+
+</details>
+
+<details>
+  <summary>Why not use a standard Arduino or Raspberry?</summary>
+
+The Raspberry is too complicated for use with beginner programmers and too powerful for our purposes.
+The senseBox MCU was specially developed on an Arduino basis and offers everything that a standard Arduino offers.
+In addition, it allows browser-based programming without software installation and easy connection of sensors via JST cable.
+
+</details>
+
+<details>
+  <summary>Who's behind the senseBox?</summary>
+
+The senseBox was developed at the student lab [GI@School](https://www.uni-muenster.de/Geoinformatics/gi-at-school/) of the University of Münster.  
+After funding by the German Federal Ministry of Education and Research, the [reedu GmbH & Co. KG](https://reedu.de/) was founded in 2018. Today, reedu and the University of Münster jointly manage everything related to the senseBox.
+
+</details>
+
+<details>
+  <summary>Where can I find the new senseBox Connect App?</summary>
+
+You can download the app in the Apple [Appstore](https://apps.apple.com/ca/app/sensebox-connect/id1586961095?ign-mpt=uo%3D2). 
+Further information about the app and how to use it can be found at [sensebox.de/app](https://sensebox.de/app)
+
+  </details>
+
+<details>
+  <summary>What happens if you press the reset button just once?</summary>
+
+The MCU restarts the sketch that is currently uploaded to the MCU.
+
+</details>
+
+<details>
+  <summary>What functions are hidden behind the switch button?</summary>
+
+The switch button can be controlled programmatically with the initialization `Button switchButton(0);`. 
+You can check if the button was pressed in the program with the line `switchButton.isPressed()`. 
+In an [example project](https://sensebox.de/projects/de/2021-01-05-display) with the display you can see a short instruction on how it works.
+
+</details>
+
+<details>
+  <summary>What happens if you disconnect the MCU from the power? Can you continue without any issues after reconnecting the power?</summary>
+
+Yes, you can continue without any issues. Just remember that the program starts "from the beginning" and executes the `setup()` function first.
+
+</details>
+
+<details>
+  <summary>How many sensors can be connected? When does the internal memory run out of space?</summary>
+
+As many as the senseBox has connections.
+In addition, you can use additional I2C sensors with the help of the [Multiplexer](https://sensebox.kaufen/product/multiplexer).
+However, you cannot connect two identical I2C sensors to the same MCU without the Expander.
+That means you can't connect the HDC1080 twice to the same MCU. For that you would need the Expander.
+The percentage of internal memory used is displayed at the end of the upload (via the Arduino IDE).
+So far we have not reached the point where an MCU was "full".
+This was rather always limited by the hardware (i.e. number of connections) or coupled to the transmission type (LoRa has a limit of ~14 measured values).
+
+</details>
+
+<details>
+  <summary>How do you set up a power-saving mode?</summary>
+
+In the senseBox MCU there is no power-saving mode. 
+However, you can program the MCU to save power. 
+This can mean, among other things, that measurement values are only uploaded every 10 minutes and within these 10 minutes the MCU is "put to sleep". 
+This can be done either via this [Library](https://www.arduino.cc/reference/en/libraries/arduino-low-power/lowpower.deepsleep/) or via other power-saving measures (Wifi off in the meantime, sensors off, ...)
+
+</details>
+
+<details>
+  <summary>How can I test whether the components are all working?</summary>
+
+If you have installed the [Arduino IDE and the senseBox Board Support Package](/docs/category/arduino), you can load a sketch in the Arduino IDE under File->Examples->senseBox-Tests->mcu_component_test`` that tests all connected sensors and displays initial values. 
+If you specify your WiFi data in line 25 and 26, you can also test the connection to the openSenseMap using a WiFi Bee. 
+After you have uploaded the sketch, all instructions will be displayed in the Serial Monitor.
+
+</details>
