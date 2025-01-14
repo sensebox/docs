@@ -40,7 +40,21 @@ import { useBoardStore } from '@site/src/lib/stores/store'
   <div className="flex justify-center">
     <img src="/img/arduino-bilder/installation/arduino-boards.png"/>
   </div>
+  <div className='mt-5'>
+
+    { useBoardStore((state)=>state.board) === ':edu S2' ?
+      <p>
+        Gib "ESP32" oben in die Suchleiste ein, um die Packages schneller zu finden und installiere das Board `esp32` von Espressif Systems. <b>Achtung! Stelle sicher , dass du mindestens die Version 2.0.15-alpha3 installierst! </b>.
+      </p>
+    : 
   <p>
-    Gib "ESP32" oben in die Suchleiste ein, um die Packages schneller zu finden und installiere das Board `esp32` von Espressif Systems. <b>Achtung! Stelle sicher , dass du mindestens die Version 2.0.15-alpha3 installierst! </b>.
+    Gib "SAMD" oben in die Suchleiste ein und installiere die folgenden 2 Pakete:
+      <ul>
+        <li> senseBox SAMD Boards </li>
+        <li> Arduino SAMD Boards(32-bits ARM Cortex-M0+) </li>
+      </ul>
   </p>
+    }
+    </div>
+
 </div>
