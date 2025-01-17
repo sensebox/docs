@@ -9,7 +9,7 @@ displayedSidebar: board
 import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
 import pressureSensor from '@site/static/img/hardware-bilder/luftdruck/bmp_top.png'
 import { useBoardStore } from '@site/src/lib/stores/store'
-import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
+import TutorialPorts_en from '@site/src/components/TutorialPorts/TutorialPorts_en'
 
 # Air Pressure and Temperature Sensor
 
@@ -39,7 +39,7 @@ If you need the documentation for the BMP280, you can find it [here](/docs/hardw
 
 ## Connection
 
-<TutorialPorts port="i2c" />
+<TutorialPorts_en port="i2c" />
 
 ## Programming (Arduino)
 
@@ -77,7 +77,7 @@ void loop() {
 ## Programming (Blockly)
 In Blockly, the sensor can be read using the following block:
 
-![](/img/hardware-bilder/luftdruck/block_luftdruck_temperatur.svg)
+![](/img/en/hardware-bilder/luftdruck/block_luftdruck_temperatur.svg)
 
 In the block, you can select between the different parameters of the air pressure/temperature sensor:
 

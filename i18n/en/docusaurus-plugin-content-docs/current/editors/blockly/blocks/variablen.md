@@ -11,21 +11,21 @@ Variables are placeholders for numbers, letters, and strings. This means that a 
 
 Variables can be defined using the `Set Element` block.
 
-![](/img/blockly-bilder/variablen/blockly-variablen-1.svg)
+![](/img/en/blockly-bilder/variablen/blockly-variablen-1.svg)
 
 In the block's dropdown menu, you can rename the variable or create a new one.
 
 ## Example
 After a soccer game, the number of goals scored should be stored in a variable. This variable will then be displayed on the screen.
 
-![](/img/blockly-bilder/variablen/blockly-variablen-2.svg)
+![](/img/en/blockly-bilder/variablen/blockly-variablen-2.svg)
 
 To expand on the simple example, we now want to be able to add points live. For each goal scored, the built-in button on the MCU must be pressed once.
 
-![](/img/blockly-bilder/variablen/blockly-variablen-3.svg)
+![](/img/en/blockly-bilder/variablen/blockly-variablen-3.svg)
 
 ## Data Types
-Depending on what is stored in a variable, you should set the correct data type. You set the data type using the `as Character` block. This block is attached to a `Write Element` block. Then, the value to be stored is inserted in the free block section, and the data type is selected from the dropdown menu.
+Depending on what is stored in a variable, you should set the correct data type. You set the data type using the `as Character` block. This block is attached to a `Set Element` block. Then, the value to be stored is inserted in the free block section, and the data type is selected from the dropdown menu.
 
 ![](/img/blockly-bilder/variablen/blockly-variablen-4.svg)
 

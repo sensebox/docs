@@ -1,18 +1,19 @@
 ---
 date: 2020-03-11
-title: Die senseBoxIO Library
+title: The senseBoxIO Library
 categories: arduino
-description: Verwendung der senseboxIO Library
+description: Using the senseBoxIO Library
 type: Document
 resources:
   - name: "senseBoxIO Library"
     link: https://github.com/sensebox/senseBoxMCU-core/tree/master/arduino/samd/libraries/senseBoxIO
 ---
+
 # senseBoxIO Library
 
-Die senseBoxIO Library ist Bestandteil des Board-Support-Package und wird automatisch installiert.
+The senseBoxIO library is part of the board support package and is installed automatically.
 
-Die senseBoxIO Library lässt sich einzeln über folgenden Befehl einbinden:
+The senseBoxIO library can be included individually with the following command:
 
 ```cpp
 include <senseBoxIO.h>
@@ -20,26 +21,25 @@ include <senseBoxIO.h>
 
 :::info
 
-Beachte: Verwendest du bereits die senseBoxMCU Library ist die senseBoxIO Library bereits integriert und muss nicht zusätzlich inkludiert werden.
-
+If you are already using the senseBoxMCU library, the senseBoxIO library is already integrated and does not need to be included separately.
 :::
-## Ein-/Ausschalten der Ports
+## Turning Ports On/Off
 
-Über die senseBoxIO Library können nicht verwendete Ports ein-/ausgeschaltet werden:
+With the senseBoxIO library, unused ports can be turned on/off:
 
-#### Deaktivieren aller Ports
+#### Deactivating all Ports
 
 ```cpp
  void powerNone(void)
 ```
 
-#### Aktivieren aller Ports
+#### Activating all Ports
 
 ```cpp
   void powerAll(void)
 ```
 
-#### Selektives Ein-/Ausschalten von Ports und Anschlüssen
+#### Selective Turning On/Off of Ports and Connections
 
 ```cpp
 
@@ -59,16 +59,16 @@ Beachte: Verwendest du bereits die senseBoxMCU Library ist die senseBoxIO Librar
 
 ```
 
-## Ein-/Ausschalten der Status LED
+## Turning Status LEDs On/Off
 
-Erlaubt das Ein-/Ausschalten der Status LED's
+Allows turning the status LEDs on/off
 
 ```cpp
-  void statusNone(void) // deaktiviere alle Status LED's
+  void statusNone(void) // deactivate all status LEDs
 
-  void statusRed(void) //aktiviere die rote Status LED
+  void statusRed(void) //activate the red status LED
 
-  void statusGreen(void) //aktivere die grüne Status LED
+  void statusGreen(void) //activate the green status LED
 ```
 
 > - [senseBoxIO Library](https://github.com/sensebox/senseBoxMCU-core/tree/master/arduino/samd/libraries/senseBoxIO)

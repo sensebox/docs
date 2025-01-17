@@ -1,0 +1,1204 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   width="67.069839"
+   height="65.816193"
+   viewBox="161 146 67.069839 65.816193"
+   id="svg15"
+   sodipodi:docname="spotty-fox.svg"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:xhtml="http://www.w3.org/1999/xhtml"><sodipodi:namedview
+   id="namedview15"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   inkscape:zoom="6.0623377"
+   inkscape:cx="77.032991"
+   inkscape:cy="96.25"
+   inkscape:window-width="2560"
+   inkscape:window-height="1369"
+   inkscape:window-x="2392"
+   inkscape:window-y="1432"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="g15" />
+<defs
+   id="defs1">
+  <xhtml:style
+     type="text/css"><![CDATA[.blocklyText, 
+.blocklyFlyoutLabelText {
+font: normal 11pt sans-serif;
+}
+.blocklyText {
+fill: #fff;
+}
+.blocklyNonEditableText>rect,
+.blocklyEditableText>rect {
+fill: #fff;
+fill-opacity: .6;
+stroke: none;
+}
+.blocklyNonEditableText>text,
+.blocklyEditableText>text {
+fill: #000;
+}
+.blocklyFlyoutLabelText {
+fill: #000;
+}
+.blocklyText.blocklyBubbleText {
+fill: #000;
+}
+.blocklyEditableText:not(.editing):hover>rect {
+stroke: #fff;
+stroke-width: 2;
+}
+.blocklyHtmlInput {
+font-family: sans-serif;
+font-weight: normal;
+}
+.blocklySelected>.blocklyPath {
+stroke: #fc3;
+stroke-width: 3px;
+}
+.blocklyHighlightedConnectionPath {
+stroke: #fc3;
+}
+.blocklyPath {
+fill-opacity: .5;
+}
+.blocklyPathLight,
+.blocklyPathDark {
+display: none;
+}
+.blocklyInsertionMarker>.blocklyPath {
+fill-opacity: 0.2;
+stroke: none;
+}
+.blocklyInsertionMarker>.blocklyPathLight,
+.blocklyInsertionMarker>.blocklyPathDark {
+fill-opacity: 0.2;
+stroke: none;
+}
+.blocklySvg {
+  background-color: #fff;
+  outline: none;
+  overflow: hidden;  /* IE overflows by default. */
+  position: absolute;
+  display: block;
+}
+
+.blocklyWidgetDiv {
+  display: none;
+  position: absolute;
+  z-index: 99999;  /* big value for bootstrap3 compatibility */
+}
+
+.injectionDiv {
+  height: 100%;
+  position: relative;
+  overflow: hidden;  /* So blocks in drag surface disappear at edges */
+  touch-action: none;
+}
+
+.blocklyNonSelectable {
+  user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}
+
+.blocklyWsDragSurface {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Added as a separate rule with multiple classes to make it more specific
+   than a bootstrap rule that selects svg:root. See issue #1275 for context.
+*/
+.blocklyWsDragSurface.blocklyOverflowVisible {
+  overflow: visible;
+}
+
+.blocklyBlockDragSurface {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: visible !important;
+  z-index: 50;  /* Display below toolbox, but above everything else. */
+}
+
+.blocklyBlockCanvas.blocklyCanvasTransitioning,
+.blocklyBubbleCanvas.blocklyCanvasTransitioning {
+  transition: transform .5s;
+}
+
+.blocklyTooltipDiv {
+  background-color: #ffffc7;
+  border: 1px solid #ddc;
+  box-shadow: 4px 4px 20px 1px rgba(0,0,0,.15);
+  color: #000;
+  display: none;
+  font: 9pt sans-serif;
+  opacity: .9;
+  padding: 2px;
+  position: absolute;
+  z-index: 100000;  /* big value for bootstrap3 compatibility */
+}
+
+.blocklyDropDownDiv {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  display: none;
+  border: 1px solid;
+  border-color: #dadce0;
+  background-color: #fff;
+  border-radius: 2px;
+  padding: 4px;
+  box-shadow: 0 0 3px 1px rgba(0,0,0,.3);
+}
+
+.blocklyDropDownDiv.blocklyFocused {
+  box-shadow: 0 0 6px 1px rgba(0,0,0,.3);
+}
+
+.blocklyDropDownContent {
+  max-height: 300px;  /* @todo: spec for maximum height. */
+  overflow: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.blocklyDropDownArrow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  z-index: -1;
+  background-color: inherit;
+  border-color: inherit;
+}
+
+.blocklyDropDownButton {
+  display: inline-block;
+  float: left;
+  padding: 0;
+  margin: 4px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid;
+  transition: box-shadow .1s;
+  cursor: pointer;
+}
+
+.blocklyArrowTop {
+  border-top: 1px solid;
+  border-left: 1px solid;
+  border-top-left-radius: 4px;
+  border-color: inherit;
+}
+
+.blocklyArrowBottom {
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  border-bottom-right-radius: 4px;
+  border-color: inherit;
+}
+
+.blocklyResizeSE {
+  cursor: se-resize;
+  fill: #aaa;
+}
+
+.blocklyResizeSW {
+  cursor: sw-resize;
+  fill: #aaa;
+}
+
+.blocklyResizeLine {
+  stroke: #515A5A;
+  stroke-width: 1;
+}
+
+.blocklyHighlightedConnectionPath {
+  fill: none;
+  stroke: #fc3;
+  stroke-width: 4px;
+}
+
+.blocklyPathLight {
+  fill: none;
+  stroke-linecap: round;
+  stroke-width: 1;
+}
+
+.blocklySelected>.blocklyPathLight {
+  display: none;
+}
+
+.blocklyDraggable {
+  cursor: grab;
+  cursor: -webkit-grab;
+}
+
+.blocklyDragging {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+
+  /* Changes cursor on mouse down. Not effective in Firefox because of
+     https://bugzilla.mozilla.org/show_bug.cgi?id=771241 */
+.blocklyDraggable:active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+
+/* Change the cursor on the whole drag surface in case the mouse gets
+   ahead of block during a drag. This way the cursor is still a closed hand.
+  */
+.blocklyDraggable {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+
+.blocklyDragging.blocklyDraggingDelete {
+  cursor: url("/media/blockly/handdelete.cur"), auto;
+}
+
+.blocklyDragging>.blocklyPath,
+.blocklyDragging>.blocklyPathLight {
+  fill-opacity: .8;
+  stroke-opacity: .8;
+}
+
+.blocklyDragging>.blocklyPathDark {
+  display: none;
+}
+
+.blocklyDisabled>.blocklyPath {
+  fill-opacity: .5;
+  stroke-opacity: .5;
+}
+
+.blocklyDisabled>.blocklyPathLight,
+.blocklyDisabled>.blocklyPathDark {
+  display: none;
+}
+
+.blocklyInsertionMarker>.blocklyPath,
+.blocklyInsertionMarker>.blocklyPathLight,
+.blocklyInsertionMarker>.blocklyPathDark {
+  fill-opacity: .2;
+  stroke: none;
+}
+
+.blocklyMultilineText {
+  font-family: monospace;
+}
+
+.blocklyNonEditableText>text {
+  pointer-events: none;
+}
+
+.blocklyFlyout {
+  position: absolute;
+  z-index: 20;
+}
+
+.blocklyText text {
+  cursor: default;
+}
+
+/*
+  Don't allow users to select text.  It gets annoying when trying to
+  drag a block and selected text moves instead.
+*/
+.blocklySvg text,
+.blocklyBlockDragSurface text {
+  user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  cursor: inherit;
+}
+
+.blocklyHidden {
+  display: none;
+}
+
+.blocklyFieldDropdown:not(.blocklyHidden) {
+  display: block;
+}
+
+.blocklyIconGroup {
+  cursor: default;
+}
+
+.blocklyIconGroup:not(:hover),
+.blocklyIconGroupReadonly {
+  opacity: .6;
+}
+
+.blocklyIconShape {
+  fill: #00f;
+  stroke: #fff;
+  stroke-width: 1px;
+}
+
+.blocklyIconSymbol {
+  fill: #fff;
+}
+
+.blocklyMinimalBody {
+  margin: 0;
+  padding: 0;
+}
+
+.blocklyHtmlInput {
+  border: none;
+  border-radius: 4px;
+  height: 100%;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  display: block;
+  box-sizing: border-box;
+}
+
+/* Remove the increase and decrease arrows on the field number editor */
+input.blocklyHtmlInput[type=number]::-webkit-inner-spin-button,
+input.blocklyHtmlInput[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.blocklyMainBackground {
+  stroke-width: 1;
+  stroke: #c6c6c6;  /* Equates to #ddd due to border being off-pixel. */
+}
+
+.blocklyMutatorBackground {
+  fill: #fff;
+  stroke: #ddd;
+  stroke-width: 1;
+}
+
+.blocklyFlyoutBackground {
+  fill: #ddd;
+  fill-opacity: .8;
+}
+
+.blocklyMainWorkspaceScrollbar {
+  z-index: 20;
+}
+
+.blocklyFlyoutScrollbar {
+  z-index: 30;
+}
+
+.blocklyScrollbarHorizontal,
+.blocklyScrollbarVertical {
+  position: absolute;
+  outline: none;
+}
+
+.blocklyScrollbarBackground {
+  opacity: 0;
+}
+
+.blocklyScrollbarHandle {
+  fill: #ccc;
+}
+
+.blocklyScrollbarBackground:hover+.blocklyScrollbarHandle,
+.blocklyScrollbarHandle:hover {
+  fill: #bbb;
+}
+
+/* Darken flyout scrollbars due to being on a grey background. */
+/* By contrast, workspace scrollbars are on a white background. */
+.blocklyScrollbarHandle {
+  fill: #bbb;
+}
+
+.blocklyScrollbarBackground:hover+.blocklyScrollbarHandle,
+.blocklyScrollbarHandle:hover {
+  fill: #aaa;
+}
+
+.blocklyInvalidInput {
+  background: #faa;
+}
+
+.blocklyVerticalMarker {
+  stroke-width: 3px;
+  fill: rgba(255,255,255,.5);
+  pointer-events: none;
+}
+
+.blocklyComputeCanvas {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.blocklyNoPointerEvents {
+  pointer-events: none;
+}
+
+.blocklyContextMenu {
+  border-radius: 4px;
+  max-height: 100%;
+}
+
+.blocklyDropdownMenu {
+  border-radius: 2px;
+  padding: 0 !important;
+}
+
+.blocklyMenuItem {
+  /* 28px on the left for icon or checkbox. */
+  padding-left: 28px;
+}
+
+/* BiDi override for the resting state. */
+.blocklyMenuItemRtl {
+  /* Flip left/right padding for BiDi. */
+  padding-left: 5px;
+  padding-right: 28px;
+}
+
+.blocklyMenu {
+  background: #fff;
+  border: 1px solid transparent;
+  box-shadow: 0 0 3px 1px rgba(0,0,0,.3);
+  font: normal 13px Arial, sans-serif;
+  margin: 0;
+  outline: none;
+  padding: 4px 0;
+  position: absolute;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 100%;
+  z-index: 20000;  /* Arbitrary, but some apps depend on it... */
+}
+
+.blocklyMenu.blocklyFocused {
+  box-shadow: 0 0 6px 1px rgba(0,0,0,.3);
+}
+
+.blocklyMenu {
+  background: inherit;  /* Compatibility with gapi, reset from goog-menu */
+  border: inherit;  /* Compatibility with gapi, reset from goog-menu */
+  font: normal 13px "Helvetica Neue", Helvetica, sans-serif;
+  outline: none;
+  position: relative;  /* Compatibility with gapi, reset from goog-menu */
+  z-index: 20000;  /* Arbitrary, but some apps depend on it... */
+}
+
+/* State: resting. */
+.blocklyMenuItem {
+  border: none;
+  color: #000;
+  cursor: pointer;
+  list-style: none;
+  margin: 0;
+  /* 7em on the right for shortcut. */
+  min-width: 7em;
+  padding: 6px 15px;
+  white-space: nowrap;
+}
+
+/* State: disabled. */
+.blocklyMenuItemDisabled {
+  color: #ccc;
+  cursor: inherit;
+}
+
+/* State: hover. */
+.blocklyMenuItemHighlight {
+  background-color: rgba(0,0,0,.1);
+}
+
+/* State: selected/checked. */
+.blocklyMenuItemCheckbox {
+  height: 16px;
+  position: absolute;
+  width: 16px;
+}
+
+.blocklyMenuItemCheckbox {
+  background: url(/media/blockly/sprites.png) no-repeat -48px -16px;
+  float: left;
+  margin-left: -24px;
+  position: static;  /* Scroll with the menu. */
+}
+
+.blocklyMenuItemCheckbox {
+  float: right;
+  margin-right: -24px;
+}
+
+
+.blocklyCommentForeignObject {
+  position: relative;
+  z-index: 0;
+}
+
+.blocklyCommentRect {
+  fill: #E7DE8E;
+  stroke: #bcA903;
+  stroke-width: 1px;
+}
+
+.blocklyCommentTarget {
+  fill: transparent;
+  stroke: #bcA903;
+}
+
+.blocklyCommentTargetFocused {
+  fill: none;
+}
+
+.blocklyCommentHandleTarget {
+  fill: none;
+}
+
+.blocklyCommentHandleTargetFocused {
+  fill: transparent;
+}
+
+.blocklyFocused>.blocklyCommentRect {
+  fill: #B9B272;
+  stroke: #B9B272;
+}
+
+.blocklySelected>.blocklyCommentTarget {
+  stroke: #fc3;
+  stroke-width: 3px;
+}
+
+.blocklyCommentDeleteIcon {
+  cursor: pointer;
+  fill: #000;
+  display: none;
+}
+
+.blocklyCommentDeleteIcon {
+  display: block;
+}
+
+.blocklyDeleteIconShape {
+  fill: #000;
+  stroke: #000;
+  stroke-width: 1px;
+}
+
+.blocklyDeleteIconShape.blocklyDeleteIconHighlighted {
+  stroke: #fc3;
+}
+
+
+.blocklyCommentTextarea {
+  background-color: #fef49c;
+  border: 0;
+  display: block;
+  margin: 0;
+  outline: 0;
+  padding: 3px;
+  resize: none;
+  text-overflow: hidden;
+}
+
+
+.blocklyAngleCircle {
+  stroke: #444;
+  stroke-width: 1;
+  fill: #ddd;
+  fill-opacity: 0.8;
+}
+
+.blocklyAngleMarks {
+  stroke: #444;
+  stroke-width: 1;
+}
+
+.blocklyAngleGauge {
+  fill: #f88;
+  fill-opacity: 0.8;
+  pointer-events: none;
+}
+
+.blocklyAngleLine {
+  stroke: #f00;
+  stroke-width: 2;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+
+.blocklyColourTable {
+  border-collapse: collapse;
+  display: block;
+  outline: none;
+  padding: 1px;
+}
+
+.blocklyColourTable>tr>td {
+  border: 0.5px solid #888;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  height: 20px;
+  padding: 0;
+  width: 20px;
+}
+
+.blocklyColourTable>tr>td.blocklyColourHighlighted {
+  border-color: #eee;
+  box-shadow: 2px 2px 7px 2px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.blocklyColourSelected:hover {
+  border-color: #eee !important;
+  outline: 1px solid #333;
+  position: relative;
+}
+
+
+.blocklyHtmlTextAreaInput {
+  font-family: monospace;
+  resize: none;
+  overflow: hidden;
+  height: 100%;
+  text-align: left;
+}
+
+.blocklyHtmlTextAreaInputOverflowedY {
+  overflow-y: scroll;
+}
+
+
+.blocklyFlyoutButton {
+  fill: #888;
+  cursor: default;
+}
+
+.blocklyFlyoutButtonShadow {
+  fill: #666;
+}
+
+.blocklyFlyoutButton:hover {
+  fill: #aaa;
+}
+
+.blocklyFlyoutLabel {
+  cursor: default;
+}
+
+.blocklyFlyoutLabelBackground {
+  opacity: 0;
+}
+
+
+.blocklyZoom>svg>image {
+  opacity: .4;
+}
+
+.blocklyZoom>svg>image:hover {
+  opacity: .6;
+}
+
+.blocklyZoom>svg>image:active {
+  opacity: .8;
+}
+
+
+.blocklyTreeRow:not(.blocklyTreeSelected):hover {
+  background-color: rgba(255, 255, 255, .2);
+}
+
+.blocklyToolboxCategory {
+  margin: 1px 5px 1px 0;
+}
+
+.blocklyToolboxCategory {
+  margin: 1px 0 1px 5px;
+}
+
+.blocklyTreeRow {
+  height: 22px;
+  line-height: 22px;
+  margin-bottom: 3px;
+  padding-right: 8px;
+  white-space: nowrap;
+}
+
+.blocklyTreeRow {
+  margin-left: 8px;
+  padding-right: 0;
+}
+
+.blocklyTreeIcon {
+  background-image: url(/media/blockly/sprites.png);
+  height: 16px;
+  vertical-align: middle;
+  visibility: hidden;
+  width: 16px;
+}
+
+.blocklyTreeIconClosed {
+  background-position: -32px -1px;
+}
+
+.blocklyTreeIconClosed {
+  background-position: 0 -1px;
+}
+
+.blocklyTreeSelected>.blocklyTreeIconClosed {
+  background-position: -32px -17px;
+}
+
+.blocklyTreeSelected>.blocklyTreeIconClosed {
+  background-position: 0 -17px;
+}
+
+.blocklyTreeIconOpen {
+  background-position: -16px -1px;
+}
+
+.blocklyTreeSelected>.blocklyTreeIconOpen {
+  background-position: -16px -17px;
+}
+
+.blocklyTreeLabel {
+  cursor: default;
+  font: 16px sans-serif;
+  padding: 0 3px;
+  vertical-align: middle;
+}
+
+.blocklyTreeLabel {
+  cursor: url("/media/blockly/handdelete.cur"), auto;
+}
+
+.blocklyTreeLabel {
+  color: #fff;
+}
+
+
+.blocklyTreeSeparator {
+  border-bottom: solid #e5e5e5 1px;
+  height: 0;
+  margin: 5px 0;
+}
+
+.blocklyTreeSeparator {
+  border-right: solid #e5e5e5 1px;
+  border-bottom: none;
+  height: auto;
+  margin: 0 5px 0 5px;
+  padding: 5px 0;
+  width: 0;
+}
+
+
+.blocklyToolboxDelete {
+  cursor: url("/media/blockly/handdelete.cur"), auto;
+}
+
+.blocklyToolboxGrab {
+  cursor: url("/media/blockly/handclosed.cur"), auto;
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+
+/* Category tree in Toolbox. */
+.blocklyToolboxDiv {
+  background-color: #ddd;
+  overflow-x: visible;
+  overflow-y: auto;
+  padding: 4px 0 4px 0;
+  position: absolute;
+  z-index: 70;  /* so blocks go under toolbox when dragging */
+  -webkit-tap-highlight-color: transparent;  /* issue #1345 */
+}
+
+.blocklyToolboxContents {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.blocklyToolboxContents:focus {
+  outline: none;
+}
+
+
+.blocklyModalOverlay {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: fixed;
+}
+.blocklyModalContainer {
+  background-color: #fff;
+  border: 1px solid gray;
+  font-family: Helvetica;
+  font-weight: 300;
+  padding: 1em;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0px 10px 20px grey;
+  z-index: 100;
+  margin: 15% auto;
+}
+.blocklyModalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.blocklyModalHeaderTitle {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.2em;
+  line-height: 1.25;
+}
+.blocklyModalBtn {
+  margin-left: auto;
+  height: fit-content;
+}
+.blocklyModalBtnClose:before {
+  content: "\2715";
+}
+.blocklyModalBtn {
+  margin-right: 0.5em;
+  border: 1px solid gray;
+  font-weight: 500;
+  color: gray;
+  border-radius: 25px;
+}
+.blocklyModalBtnPrimary {
+  background-color: gray;
+  color: #fff;
+}
+
+
+.typedModalTitle {
+  font-weight: bold;
+  font-size: 1em;
+}
+.typedModalVariableInputContainer {
+  margin: 1em 0 1em 0;
+}
+.typedModalVariableLabel{
+  margin-right: 0.5em;
+}
+.typedModalTypes ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+}
+.typedModalTypes li {
+  margin-right: 1em;
+  display: flex;
+}
+
+
+ /** Setup grid layout of DropDown */
+ .fieldGridDropDownContainer.blocklyMenu {
+   display: grid;
+   grid-gap: 7px;
+   }
+ /* Change look of cells (add border, sizing, padding, and text color) */
+ .blocklyMenuItem {
+   border: 1px solid rgba(1, 1, 1, 0.5);
+   border-radius: 4px;
+   color: white;
+   min-width: auto;
+   padding-left: 15px; /* override padding-left now that checkmark is hidden */
+ }
+ /* Change look of selected cell */
+ .blocklyMenuItemCheckbox {
+   display: none; /* Hide checkmark */
+ }
+ .blocklyMenuItem.blocklyMenuItemSelected {
+   background-color: rgba(1, 1, 1, 0.25);
+ }
+ /* Change look of focus/highlighted cell */
+ .blocklyMenuItem.blocklyMenuItemHighlight {
+   box-shadow: 0 0 0 4px hsla(0, 0%, 100%, .2);
+ }
+ .blocklyMenuItemHighlight {
+   /* Uses less selectors so as to not affect blocklyMenuItemSelected */
+   background-color: inherit;
+ }
+ .fieldGridDropDownContainer {
+   margin: 7px; /* needed for highlight */
+ }
+ 
+
+.fieldSliderContainer {
+  align-items: center;
+  display: flex;
+  height: 32px;
+  justify-content: center;
+  width: 150px;
+}
+.fieldSlider {
+  -webkit-appearance: none;
+  background: transparent; /* override white in chrome */
+  margin: 4px;
+  padding: 0;
+  width: 100%;
+}
+.fieldSlider:focus {
+  outline: none;
+}
+/* Webkit */
+.fieldSlider::-webkit-slider-runnable-track {
+  background: #ddd;
+  border-radius: 5px;
+  height: 10px;
+}
+.fieldSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255,255,255,.15);
+  cursor: pointer;
+  height: 24px;
+  margin-top: -7px;
+  width: 24px;
+}
+/* Firefox */
+.fieldSlider::-moz-range-track {
+  background: #ddd;
+  border-radius: 5px;
+  height: 10px;
+}
+.fieldSlider::-moz-range-thumb {
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255,255,255,.15);
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+}
+.fieldSlider::-moz-focus-outer {
+  /* override the focus border style */
+  border: 0;
+}
+/* IE */
+.fieldSlider::-ms-track {
+  /* IE wont let the thumb overflow the track, so fake it */
+  background: transparent;
+  border-color: transparent;
+  border-width: 15px 0;
+  /* remove default tick marks */
+  color: transparent;
+  height: 10px;
+  width: 100%;
+  margin: -4px 0;
+}
+.fieldSlider::-ms-fill-lower  {
+  background: #ddd;
+  border-radius: 5px;
+}
+.fieldSlider::-ms-fill-upper  {
+  background: #ddd;
+  border-radius: 5px;
+}
+.fieldSlider::-ms-thumb {
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255,255,255,.15);
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+}
+
+
+.zoomToFit {
+  opacity: 0.4;
+}
+.zoomToFit:hover {
+  opacity: 0.6;
+}
+.zoomToFit:active {
+  opacity: 0.8;
+}
+
+
+.blocklyBackpack {
+  opacity: 0.4;
+}
+.blocklyBackpackDarken {
+  opacity: 0.6;
+}
+.blocklyBackpack:active {
+  opacity: 0.8;
+}
+.blocklyPath {
+        fill-opacity: 1;
+      }
+      .blocklyPathDark {
+        display: flex;
+      }
+      .blocklyPathLight {
+        display: flex;
+      }  ]]></xhtml:style>
+</defs>
+&quot;&gt;<g
+   class="blocklyBlockCanvas"
+   id="g15">
+  <g
+     class="blocklyCursor"
+     id="g4">
+    <g
+       width="100"
+       height="5"
+       id="g3">
+      <rect
+         width="100"
+         height="5"
+         style="display:none"
+         id="rect1"
+         x="0"
+         y="0">
+        <animate
+           attributeType="XML"
+           attributeName="fill"
+           dur="1s"
+           values="#cc0a0a;transparent;transparent;"
+           repeatCount="indefinite" />
+      </rect>
+      <rect
+         class="blocklyVerticalMarker"
+         rx="10"
+         ry="10"
+         style="display:none"
+         id="rect2"
+         width="0"
+         height="0"
+         x="0"
+         y="0" />
+      <path
+         style="display:none"
+         id="path2"
+         d="">
+        <animate
+           attributeType="XML"
+           attributeName="fill"
+           dur="1s"
+           values="#cc0a0a;transparent;transparent;"
+           repeatCount="indefinite" />
+      </path>
+      <path
+         style="display:none"
+         fill="none"
+         stroke-width="4"
+         id="path3"
+         d="">
+        <animate
+           attributeType="XML"
+           attributeName="stroke"
+           dur="1s"
+           values="#cc0a0a;transparent;transparent;"
+           repeatCount="indefinite" />
+      </path>
+    </g>
+  </g>
+  <g
+     data-id="k|j6V+$|HWXK/4_4hV?)"
+     class="blocklyDraggable"
+     transform="translate(161.11311,146.32134)"
+     id="g14">
+    <path
+       class="blocklyPathDark"
+       transform="translate(1,1)"
+       fill="#496684"
+       d="M 0,0 M 0,8 A 8,8 0 0 1 8,0 h 7 l 6,4 h 3 l 6,-4 h 36 v 5 0 0 0 c 0,10 -8,-8 -8,7.5 0,15.5 8,-2.5 8,7.5 v 2 0 4 0 l -6,4 h -3 l -6,-4 h -7 a 8,8 0 0 0 -8,8 v 8 a 8,8 0 0 0 8,8 h 22 v 0 0 10 H 29.5 l -6,4 h -3 l -6,-4 H 8 A 8,8 0 0 1 0,52 Z"
+       id="path8" />
+    <path
+       class="blocklyPath"
+       stroke="none"
+       fill="#5b80a5"
+       d="M 0,0 M 0,8 A 8,8 0 0 1 8,0 h 7 l 6,4 h 3 l 6,-4 h 36 v 5 0 0 0 c 0,10 -8,-8 -8,7.5 0,15.5 8,-2.5 8,7.5 v 2 0 4 0 l -6,4 h -3 l -6,-4 h -7 a 8,8 0 0 0 -8,8 v 8 a 8,8 0 0 0 8,8 h 22 v 0 0 10 H 29.5 l -6,4 h -3 l -6,-4 H 8 A 8,8 0 0 1 0,52 Z"
+       id="path9" />
+    <path
+       class="blocklyPathLight"
+       stroke="#8ca6c0"
+       d="m 0,0 m 0.5,8 a 7.5,7.5 0 0 1 8,-7.5 h 6 0.5 l 6,4 h 3 l 6,-4 h 35.5 v 0 M 66,5 m -5,14.3 3.68,-2.1 M 36,50 m 1.989592,-1.989592 A 8.5,8.5 0 0 0 44,50.5 h 21.5 v 0 M 0,60 M 2.6966991,57.303301 A 7.5,7.5 0 0 1 0.5,52 V 8"
+       id="path10" />
+    <g
+       class="blocklyIconGroup"
+       display="block"
+       transform="translate(10,5)"
+       id="g11">
+      <rect
+         class="blocklyIconShape"
+         rx="4"
+         ry="4"
+         height="16"
+         width="16"
+         id="rect10"
+         x="0"
+         y="0" />
+      <path
+         class="blocklyIconSymbol"
+         d="m 4.203,7.296 v 1.368 l -0.92,0.677 -0.11,0.41 0.9,1.559 0.41,0.11 1.043,-0.457 1.187,0.683 0.127,1.134 0.3,0.3 h 1.8 l 0.3,-0.299 0.127,-1.138 1.185,-0.682 1.046,0.458 0.409,-0.11 0.9,-1.559 -0.11,-0.41 -0.92,-0.677 V 7.297 L 12.797,6.62 12.907,6.21 12.007,4.651 11.598,4.542 10.552,5 9.367,4.318 9.24,3.18 8.94,2.881 H 7.14 L 6.84,3.181 6.714,4.316 5.527,4.998 4.484,4.541 4.074,4.651 3.175,6.21 3.283,6.619 Z"
+         id="path11" />
+      <circle
+         class="blocklyIconShape"
+         r="2.7"
+         cx="8"
+         cy="8"
+         id="circle11" />
+    </g>
+    <g
+       transform="translate(37,5)"
+       id="g12">
+      <text
+         class="blocklyText"
+         x="0"
+         y="14"
+         id="text11">if</text>
+    </g>
+    <g
+       transform="translate(10,31)"
+       id="g13">
+      <text
+         class="blocklyText"
+         x="0"
+         y="14"
+         id="text12">do</text>
+    </g>
+  </g>
+</g>
+</svg>

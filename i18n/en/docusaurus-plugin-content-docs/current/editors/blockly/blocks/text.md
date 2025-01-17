@@ -14,7 +14,7 @@ With the text field block `" "`, you can create text. Write the desired text ins
 ## Create Text with
 With the `Create Text with` block, you can both convert measurements into text and create combined texts (from multiple text fields, numbers, measurements, or variables).
 
-![](/img/blockly-bilder/text/blockly-text-2.svg)
+![](/img/en/blockly-bilder/text/blockly-text-2.svg)
 
 The regular Create-Text-From block can be expanded by clicking the gear icon. You can add more elements by clicking and dragging to create text from multiple components. After editing, you can close the window by clicking the gear icon again.
 
@@ -24,13 +24,13 @@ The regular Create-Text-From block can be expanded by clicking the gear icon. Yo
 
 With the `Append Text` block, you can append text to an existing variable.
 
-![](/img/blockly-bilder/text/blockly-text-3.svg)
+![](/img/en/blockly-bilder/text/blockly-text-3.svg)
 
 ## Length
 
 With the `Length` block, you can get the length of a text block.
 
-![](/img/blockly-bilder/text/blockly-text-4.svg)
+![](/img/en/blockly-bilder/text/blockly-text-4.svg)
 
 > For example, the text block "senseBox" would be 8 units long.
 
@@ -38,6 +38,6 @@ With the `Length` block, you can get the length of a text block.
 
 With the `is empty` block, you can check if a given text block is empty (has a length of 0). The result is either true (if the given text block is indeed empty) or false (if there are characters in the text block).
 
-![](/img/blockly-bilder/text/blockly-text-5.svg)
+![](/img/en/blockly-bilder/text/blockly-text-5.svg)
 
 > - [Blockly.senseBox.de](https://blockly.sensebox.de/)

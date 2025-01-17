@@ -49,7 +49,7 @@ Blocks that are inside the `Arduino loop forever` function are executed continuo
 The microcontroller always executes all blocks from top to bottom.
 In the `Arduino loop forever` function, for example, the sensors are read or the measured values are saved on an SD card or transmitted to the Internet.
 
-![](/img/blockly-bilder/erster-sketch/blockly-es-1.svg)
+![](/img/en/blockly-bilder/erster-sketch/blockly-es-1.svg)
 
 ### Step 2: Turn on the built-in LED
 
@@ -58,17 +58,17 @@ The PIN is already selected as `onBoard`. You can leave the values for brightnes
 To turn on the built-in LED, you must drag the `LED on digital` block into the `Arduino loop forever` function. 
 Then select `BUILTIN_1` under PIN and `On` under Status.
 
-![](/img/blockly-bilder/erster-sketch/rgb-led-block-1.svg)
+![](/img/en/blockly-bilder/erster-sketch/rgb-led-block-1.svg)
 
 After that, you can use the `Set RGB LED` block in the `Arduino loop forever` function to make the LED light up in a color of your choice.
 
-![](/img/blockly-bilder/erster-sketch/rgb-led-block-2.svg)
+![](/img/en/blockly-bilder/erster-sketch/rgb-led-block-2.svg)
 
 ### Step 3: Let the built-in LED blink
 To make the built-in LED blink in a random color, you can use the `Interval` block in the `Time` category. 
 Drag this block into the `Arduino loop forever` and set the time to `500ms`.
 
-![](/img/blockly-bilder/erster-sketch/rgb-led-block-3.svg)
+![](/img/en/blockly-bilder/erster-sketch/rgb-led-block-3.svg)
 
 ## Compile and download
 After your program is finished, click the orange "Compile" button and a .BIN file will be offered for download.

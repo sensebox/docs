@@ -7,7 +7,7 @@ description: senseBox OLED Display
 
 import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
 import display from '@site/static/img/hardware-bilder/oled/display.png'
-import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
+import TutorialPorts_en from '@site/src/components/TutorialPorts/TutorialPorts_en'
 
 # OLED Display
 
@@ -24,7 +24,7 @@ With the senseBox OLED display, you can display measurements, status messages, a
 
 ## Connection
 
-<TutorialPorts port="i2c" />
+<TutorialPorts_en port="i2c" />
 
 ## Programming (Arduino)
 
@@ -73,13 +73,13 @@ Then, in the `Arduino loop forever`, the `Print on Display` loop and the `Clear 
 In the free section of the `Print on Display` block, it can then be specified what exactly should be displayed. 
 The `Clear Display` block must be added so that different information is not written on top of each other.
 
-![Text/Zahl anzeigen](/img/blockly-bilder/display/blockly-display-1.svg)
+![Text/Zahl anzeigen](/img/en/blockly-bilder/display/blockly-display-1.svg)
 
 ### Display Text/Number
 
 To display text or a number, drag the `Display Text/Number` block into the free section of the `Print on Display` block.
 
-![Text/Zahl anzeigen](/img/blockly-bilder/display/blockly-display-2.svg)
+![Text/Zahl anzeigen](/img/en/blockly-bilder/display/blockly-display-2.svg)
 
 The `Write Text/Number` block has five settings:
 
@@ -89,7 +89,7 @@ The `Write Text/Number` block has five settings:
 - **y-coordinate:** Here you set the y-coordinate (see figure above) where you want to start writing.
 - **Value:** The respective text, number, or measured value can be attached to this free block section.
 
-![Text/Zahl anzeigen](/img/blockly-bilder/display/blockly-display-3.svg)
+![Text/Zahl anzeigen](/img/en/blockly-bilder/display/blockly-display-3.svg)
 
 ## Projects
 

@@ -13,7 +13,7 @@ import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
 With this sensor SDS011, it is possible to determine the particulate matter concentration in the air.  The sensor outputs two values: the concentration of PM2.5 (particles < 2.5 µm) and PM10 (particles < 10 µm).  This sensor is equipped with a small fan to draw in air.  Inside, there is a laser that, together with a photodiode, measures the number of particles.  The results of the measurements are given in µg/m³ (micrograms per cubic meter).
 
 
-<ImageWithText src={feinstaubSds} title="Feinstaubsensor SDS011"/>
+<ImageWithText src={feinstaubSds} title="Particulate Matter Sensor SDS011"/>
 
 ## Technical Information
 * Plug-in-and-go senseBox compatible
@@ -70,7 +70,7 @@ void loop(){
 
 In Blockly, the sensor can be read using the following block:
 
-![](/img/hardware-bilder/feinstaub/block_feinstaubsensor.svg)
+![](/img/en/hardware-bilder/feinstaub/block_feinstaubsensor.svg)
 
 Select the port to which you have connected the sensor and the measurement value from the dropdown menu.
 

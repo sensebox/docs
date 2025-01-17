@@ -7,7 +7,7 @@ description: Temperature and Humidity Sensor (HDC1080)
 
 import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
 import tempSensor from '@site/static/img/hardware-bilder/temperatur-luftfeuchte/sensor_temperatur_luftfeuchte.png'
-import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
+import TutorialPorts_en from '@site/src/components/TutorialPorts/TutorialPorts_en'
 import { useBoardStore } from '@site/src/lib/stores/store'
 
 # Temperature and Humidity Sensor
@@ -32,7 +32,7 @@ The HDC1080 is a digital humidity and temperature sensor. The sensor has high ac
 
 ## Connection
 
-<TutorialPorts port="i2c" />
+<TutorialPorts_en port="i2c" />
 
 ## Programming (Arduino)
 
@@ -65,7 +65,7 @@ void loop(){
 
 In Blockly, the sensor can be read using the following block:
 
-![](/img/hardware-bilder/temperatur-luftfeuchte/block_temperatur_luftfeuchte.svg)
+![](/img/en/hardware-bilder/temperatur-luftfeuchte/block_temperatur_luftfeuchte.svg)
 
 In the block, you can select between the different parameters of the temperature and humidity sensor:
 - Temperature in degrees Celsius (°C)
