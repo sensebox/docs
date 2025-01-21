@@ -1,0 +1,59 @@
+---
+sidebar_position: 4
+title: Solar Extension
+description: Extend your senseBox:home with a solar panel
+---
+
+import ImageWithText from "@site/src/components/ImageWithText/ImageWithText";
+import solarZelle from "@site/static/img/sensebox-home-bilder/home-erweiterung-solar/solar_top.png";
+import powerBoost from "@site/static/img/sensebox-home-bilder/home-erweiterung-solar/powerboost-top.png";
+
+# Solar Extension
+
+## Solar Panel
+
+<ImageWithText src={solarZelle} alt="Solar Panel" title="Solar Panel" />
+
+### Technical Details
+
+- Model Number: VB-010P
+- Maximum Power (Pm): 10W
+- Clamp Voltage (V): 7.2V
+- Voltage at Max Power (Vm): 6.0V
+- Short Circuit Current (Isc): 1.83A
+- Dimensions: 340x235x17mm
+- Weight: 1kg
+
+## Powerboost
+
+The [Adafruit Powerboost 1000C](https://www.adafruit.com/product/2465) features an integrated charging circuit, allowing the solar panel to charge the battery, which then powers the senseBox.
+
+<ImageWithText
+  src={powerBoost}
+  alt="Adafruit Powerboost 1000C"
+  title="Adafruit Powerboost 1000C"
+/>
+
+### Technical Details
+
+- Maximum Input Power: 3.7V
+- Maximum Output Power: 5.2V
+- Chipset: [TI TPS61090](http://www.ti.com/product/TPS61090/description)
+- 2A Internal Switch
+- LEDs indicate battery charge level
+- Weight: 6g
+
+## Connection
+
+To use the senseBox with a solar panel, you only need a Powerboost and a [LiPo battery](https://eckstein-shop.de/LiPo-Akku-Lithium-Ion-Polymer-Batterie-37V-2000mAh-JST-PH-Connector), something around 1000 mAh should suffice.  
+The diagram below shows how the components are connected.  
+We recommend a [fireproof bag](https://www.amazon.de/Jamara-141360-LiPo-Guard-Lipobrandschutztasche/dp/B003OFCUIS/ref=sr_1_18?keywords=LIPO+TRESOR&qid=1556284975&s=gateway&sr=8-18) for the battery, as damage could pose a serious injury risk.
+
+![](/img/sensebox-home-bilder/home-erweiterung-solar/solar_powerboost.jpg)
+
+> Important:  
+> The LiPo battery and Powerboost should be protected from moisture when the station is operated outdoors.  
+> The appropriate housing is included in the set but is the same as for components like the particulate matter sensor.  
+> Note that low temperatures can significantly affect the battery's performance.
+
+> - [Shop](https://sensebox.kaufen/product/solar-set)

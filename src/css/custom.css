@@ -6,9 +6,9 @@ html {
   font-family: 'Roboto', "Helvetica", "Arial", sans-serif;
 
 }
-header {
+/*header {
   display: none;
-}
+} */
 
 @layer base {
   :root {

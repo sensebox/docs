@@ -1,0 +1,65 @@
+---
+title: Accelerometer 
+---
+
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import mpu6050 from '@site/static/img/en/hardware-bilder/mpu6050/mcu-top-mpu.png'
+
+# Accelerometer (MPU6050)
+
+With an Accelerometer sensor, you can detect and measure the invisible force of acceleration that occurs when an object moves faster, slows down or changes direction.
+Imagine riding a bike and leaning into a bend - acceleration forces are at work at that very moment. 
+These sensors are like super-sensitive tools that can sense not only how fast you are accelerating or decelerating, but also in which direction you are moving.
+
+<ImageWithText size="xl" src={mpu6050} title="MPU6050 installed on the MCU" />
+
+:::success Note
+The Accelerometer is built into the MCU S2! You don't need to connect anything else here.
+:::
+
+## Programming (Arduino)
+
+This sketch reads the acceleration values of the MPU6050 and outputs them via the serial interface. 
+You can display the values in a graph using the Serial Plotter.
+
+```cpp
+#include <Wire.h>
+#include <Adafruit_MPU6050.h>
+
+Adafruit_MPU6050 mpu;
+sensors_event_t a, g, temp;
+
+void setup() {
+	// Start serial communication
+	Serial.begin(115200);
+
+	Wire1.begin();
+	mpu.begin(0x68, &Wire1);
+	mpu.setAccelerometerRange(MPU6050_RANGE_8_G);
+
+	Serial.println("MPU6050 ready!");
+}
+
+void loop() {
+	mpu.getEvent(&a, &g, &temp);
+
+	// Output acceleration data
+	Serial.print("X:");
+	Serial.print(a.acceleration.x);
+	Serial.print(",Y:");
+	Serial.print(a.acceleration.y);
+	Serial.print(",Z:");
+	Serial.println(a.acceleration.z);
+
+	// Short pause to keep the output readable
+	delay(100);
+}
+```
+You can display the results in Arduino under `Tools -> Serial Plotter` or via the terminal program of your choice.
+
+![](/img/hardware-bilder/mpu6050/mpu-6050-plotter.png)
+
+## Programming (Blockly)
+In Blockly, you can read the sensor using the following block:
+
+![](/img/en/hardware-bilder/mpu6050/mpu-6050-block.svg)

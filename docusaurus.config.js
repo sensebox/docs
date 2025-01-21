@@ -30,6 +30,14 @@ const config = {
   i18n: {
     defaultLocale: 'de',
     locales: ['de', 'en'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+      },
+      de: {
+        label: 'Deutsch',
+      },
+    },
   },
   plugins: [
     async function myPlugin(context, options) {
@@ -67,77 +75,81 @@ const config = {
   ],
 
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      colorMode: {
-        defaultMode: 'light',
-        disableSwitch: true,
+  /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+  ({
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: true,
+    },
+    navbar: {
+      title: 'senseBox Docs',
+      logo: {
+        alt: 'senseBox Logo',
+        src: 'img/logo.svg',
       },
-      navbar: {
-        title: 'senseBox Docs',
-        logo: {
-          alt: 'senseBox Logo',
-          src: 'img/logo.svg',
+      hideOnScroll: true,
+      items: [
+        {
+          href: 'https://www.sensebox.de',
+          position: 'left',
+          label: 'senseBox.de',
         },
-        hideOnScroll: true,
-        items: [
-          {
-            href: 'https://www.sensebox.de',
-            position: 'left',
-            label: 'senseBox.de',
-          },
-          {
-            href: 'https://github.com/sensebox/knowledge-base',
-            label: 'GitHub',
-            position: 'right',
-          },
-        ],
-      },
-      footer: {
-        copyright: `© senseBox 2024. All rights reserved.`,
-        links: [
-          {
-            title: 'Materials',
-            items: [
-              {
-                label: 'Impressum',
-                to: 'https://sensebox.de/impressum',
-              },
-              {
-                label: 'openSenseMap',
-                to: 'https://opensensemap.org/impressum',
-              },
-              {
-                label: 'FAQ',
-                to: '/docs/misc/faq',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Forum',
-                to: 'https://forum.sensebox.de',
-              },
-              {
-                label: 'GitHub',
-                to: 'https://github.com/sensebox',
-              },
-              {
-                label: 'Support',
-                to: 'https://sensebox.de/de/contact',
-              },
-            ],
-          },
-        ],
-      },
-      algolia: {
-        appId: process.env.ALGOLIA_APPID,
-        apiKey: process.env.ALGOLIA_APIKEY,
-        indexName: process.env.ALGOLIA_INDEXNAME,
-      },
-    }),
+        {
+          type: 'localeDropdown',
+          position: 'right',
+        },
+        {
+          href: 'https://github.com/sensebox/knowledge-base',
+          label: 'GitHub',
+          position: 'right',
+        },
+      ],
+    },
+    footer: {
+      copyright: `© senseBox 2024. All rights reserved.`,
+      links: [
+        {
+          title: 'Materials',
+          items: [
+            {
+              label: 'Impressum',
+              to: 'https://sensebox.de/impressum',
+            },
+            {
+              label: 'openSenseMap',
+              to: 'https://opensensemap.org/impressum',
+            },
+            {
+              label: 'FAQ',
+              to: '/docs/misc/faq',
+            },
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
+            {
+              label: 'Forum',
+              to: 'https://forum.sensebox.de',
+            },
+            {
+              label: 'GitHub',
+              to: 'https://github.com/sensebox',
+            },
+            {
+              label: 'Support',
+              to: 'https://sensebox.de/de/contact',
+            },
+          ],
+        },
+      ],
+    },
+    algolia: {
+      appId: process.env.ALGOLIA_APPID,
+      apiKey: process.env.ALGOLIA_APIKEY,
+      indexName: process.env.ALGOLIA_INDEXNAME,
+    },
+  }),
 }
 
 module.exports = config

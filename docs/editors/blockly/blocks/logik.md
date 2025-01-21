@@ -62,7 +62,7 @@ ______________________________________________________________________________
 ______________________________________________________________________________ 
 
 ### Logische Verknüpfungen
-Mit dem Block für `logische Verknüpfungen` lassen sich komplexere logische Asudrücke formulieren. Zum Beispiel eine Lampe, die nur dann leuchtet, wenn zwei Bedingungen zutreffen.
+Mit dem Block für `logische Verknüpfungen` lassen sich komplexere logische Ausdrücke formulieren. Zum Beispiel eine Lampe, die nur dann leuchtet, wenn zwei Bedingungen zutreffen.
 
 ![](/img/blockly-bilder/logik/blockly-entscheidungen-6.svg)
 
@@ -85,5 +85,5 @@ Mit dem `teste`-Block lässt sich eine Bedingung überprüfen und Aktionen festl
 ![](/img/blockly-bilder/logik/blockly-entscheidungen-8.svg)
 
 
-&#60 - [Blockly.senseBox.de](https://blockly.sensebox.de/)
+- [Blockly.senseBox.de](https://blockly.sensebox.de/)
 

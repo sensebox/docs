@@ -1,0 +1,81 @@
+---
+sidebar_position: 9
+title: Temperature and Humidity Sensor
+hide_title: false
+description: Temperature and Humidity Sensor (HDC1080)
+---
+
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import tempSensor from '@site/static/img/hardware-bilder/temperatur-luftfeuchte/sensor_temperatur_luftfeuchte.png'
+import TutorialPorts_en from '@site/src/components/TutorialPorts/TutorialPorts_en'
+import { useBoardStore } from '@site/src/lib/stores/store'
+
+# Temperature and Humidity Sensor
+The HDC1080 is a digital humidity and temperature sensor. The sensor has high accuracy and very low power consumption, making it ideal for the senseBox. The sensors are calibrated at the factory and can be used instantly.
+
+<ImageWithText
+  src={tempSensor}
+  alt="Temperature and Humidity Sensor"
+  title="Temperature and Humidity Sensor"
+/>
+
+## Technical Information
+
+- "Plug-in-and-Go" senseBox compatible  
+- Relative humidity (RH) operating range: 0% to 100%  
+- 14-bit measurement resolution  
+- Relative humidity accuracy: ±4%  
+- Temperature accuracy: ±0.2°C  
+- 2100 nA power supply  
+- Operating voltage: 2.7 V to 5.5 V  
+- I2C interface  
+
+## Connection
+
+<TutorialPorts_en port="i2c" />
+
+## Programming (Arduino)
+
+### Software Library
+
+To program the sensor in Arduino, you need to install the software library [Adafruit HDC1000 Library](https://www.arduino.cc/reference/en/libraries/adafruit-hdc1000-library/).
+
+### Code
+This code outputs the temperature and relative humidity in the Serial Monitor.
+
+```cpp
+#include <Adafruit_HDC1000.h> // http://librarymanager/All#Adafruit_HDC1000_Library
+
+Adafruit_HDC1000 hdc = Adafruit_HDC1000();
+
+void setup(){
+    Serial.begin(9600);
+    hdc.begin();
+}
+
+void loop(){
+    Serial.print("Temperature: ");
+    Serial.println(hdc.readTemperature());
+    Serial.print("Humidity: ");
+    Serial.println(hdc.readHumidity());
+}
+```
+
+## Programming (Blockly)
+
+In Blockly, the sensor can be read using the following block:
+
+![](/img/en/hardware-bilder/temperatur-luftfeuchte/block_temperatur_luftfeuchte.svg)
+
+In the block, you can select between the different parameters of the temperature and humidity sensor:
+- Temperature in degrees Celsius (°C)
+- Humidity in percent (%)
+
+## Projects
+
+- #### [IoT Measurement Station](https://sensebox.de/projects/de/2024-01-10-iotmesstation_s2)
+
+## Extras
+
+> - [Shop](https://sensebox.kaufen/product/temperatur-luftfeuchte)
+> - [TI HDC1080 Datenblatt](https://www.ti.com/lit/ds/symlink/hdc1080.pdf)
