@@ -72,43 +72,25 @@ const BoardDropdown = () => {
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
     const currentBoard = searchParams.get('board');
-    const validBoards = ['home', 'edu', 'edu S2', 'bike', 'CO2 Ampel'];
-    if (currentBoard && validBoards.includes(currentBoard)) {
-      // Wenn der aktuelle `board`-Parameter gültig ist, setze ihn als ausgewählten Wert
-      useBoardStore.setState({ board: ":"+currentBoard });
+    // Map der Suchbegriffe zu den entsprechenden Board-Werten
+    const boardMap = {
+      home: ":home",
+      edus2: ":edu S2",
+      edu: ":edu",
+      bike: ":bike",
+      co2: ":CO2 Ampel",
+      mini: ":mini",
+    };
+
+    // Überprüfen, ob der Suchbegriff gültig ist, und Board setzen
+    if (currentBoard && boardMap[currentBoard.toLowerCase()]) {
+      useBoardStore.setState({ board: boardMap[currentBoard.toLowerCase()] });
     } else {
-      console.log('Ungültiger Board-Parameter:', currentBoard);
+      console.warn("Ungültiger Board-Parameter:", currentBoard);
     }
   }, [location.search]); // Überwache Änderungen an den Query-Parametern
 
-  return (
-    <Select onValueChange={(value) => handleBoardChange(value)} default>
-      <SelectTrigger className="w-[180px]">
-        <SelectValue placeholder={board ? board : "Board auswählen"} />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectItem value=":edu">
-          <FontAwesomeIcon icon={faMicrochip} className="mr-2" />
-          :edu
-        </SelectItem>
-        <SelectItem value=":edu S2">
-          <FontAwesomeIcon icon={faMicrochip} className="mr-2" />
-          :edu S2
-        </SelectItem>
-        <SelectItem value=":home">
-          <FontAwesomeIcon icon={faMicrochip} className="mr-2" />
-          :home
-        </SelectItem>
-        <SelectItem value=":bike">
-          <FontAwesomeIcon icon={faMicrochip} className="mr-2" />
-          :bike
-        </SelectItem>
-        <SelectItem value=":CO2 Ampel">
-          <FontAwesomeIcon icon={faMicrochip} className="mr-2" />
-          CO2 Traffic Light
-        </SelectItem>
-      </SelectContent>
-    </Select>
+  return (<></>
   );
 };
 
