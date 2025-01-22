@@ -36,7 +36,7 @@ export default function Home() {
   return (
     <Layout
       title={`senseBox Dokumentation`}
-      description="Description will go into a meta tag in <head />"
+      description="Der Platz für die senseBox-Dokumentation."
     >
       <HomepageHeader />
       <main className="">
