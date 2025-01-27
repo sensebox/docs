@@ -2,8 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "BrixSlab-Bold";
+  src: url("webfonts/2EF157_0_0.eot");
+  src: url("webfonts/2EF157_0_0.eot?#iefix") format("embedded-opentype"),
+    url("webfonts/2EF157_0_0.woff2") format("woff2"),
+    url("webfonts/2EF157_0_0.woff") format("woff"),
+    url("webfonts/2EF157_0_0.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "BrixSlab-Regular";
+  src: url("webfonts/2EF157_1_0.eot");
+  src: url("webfonts/2EF157_1_0.eot?#iefix") format("embedded-opentype"),
+    url("webfonts/2EF157_1_0.woff2") format("woff2"),
+    url("webfonts/2EF157_1_0.woff") format("woff"),
+    url("webfonts/2EF157_1_0.ttf") format("truetype");
+}
+
+
 html {
-  font-family: 'Roboto', "Helvetica", "Arial", sans-serif;
+  font-family: 'BrixSlab-Regular', "Helvetica", "Arial", sans-serif;
 
 }
 /*header {

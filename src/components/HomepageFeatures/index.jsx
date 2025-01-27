@@ -18,7 +18,7 @@ const FeatureList = [
         Bildungsbereich. Klicke hier für alle nötigen Informationen!
       </Translate>
     ),
-    to: '/docs/boards/mcus2/mcu-s2-overview',
+    to: '/docs/boards/mcus2/mcu-s2-overview?board=edus2',
   },
   {
     title: ':edu',
@@ -28,7 +28,7 @@ const FeatureList = [
         den Einsatz im Bildungsbereich
       </Translate>
     ),
-    to: '/docs/boards/mcu/mcu-overview',
+    to: '/docs/boards/mcu/mcu-overview?board=edu',
   },
   {
     title: ':bike',
@@ -38,7 +38,7 @@ const FeatureList = [
         der Installation der Fahrradhalterung
       </Translate>
     ),
-    to: '/docs/category/bike',
+    to: '/docs/category/bike?board=bike',
   },
   {
     title: ':CO2 Ampel',
@@ -48,7 +48,7 @@ const FeatureList = [
         weiteren Bauteilen für Bildungszwecke
       </Translate>
     ),
-    to: '/docs/products/co2Ampel/co2Ampel-overview',
+    to: '/docs/products/co2Ampel/co2Ampel-overview?board=co2',
   },
   {
     title: ':home',
@@ -58,7 +58,7 @@ const FeatureList = [
         Sensoren der senseBox:home findest du hier!
       </Translate>
     ),
-    to: '/docs/boards/mcu/mcu-overview',
+    to: '/docs/boards/mcu/mcu-overview?board=home',
   },
   {
     title: ':mini',
@@ -68,7 +68,7 @@ const FeatureList = [
         du hier!
       </Translate>
     ),
-    to: '/docs/boards/mini/mini-overview',
+    to: '/docs/boards/mini/mini-overview?board=mini',
   },
 ]
 
@@ -115,7 +115,6 @@ const ThumbNailPreviewList = [
 function ThumbailPreview({ Image, title, description, onClick, to }) {
   return (
     <Link
-      onClick={onClick}
       className="mx-auto w-full overflow-hidden rounded-lg bg-gradient-to-r from-green-3 to-green text-white  transition duration-300 hover:-translate-y-1 hover:text-white hover:no-underline  hover:shadow-[rgba(0,0,15,0.5)_-7px_7px_0px_0px] hover:shadow-yellow lg:w-[25%]"
       to={to}
     >

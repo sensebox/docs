@@ -16,7 +16,6 @@ const BoardDropdown = () => {
   const handleBoardChange = (selectedBoard) => {
     // Verwende die setBoard-Funktion direkt, um das Board im Store zu aktualisieren
     useBoardStore.setState({ board: selectedBoard });
-    console.log(selectedBoard, useBoardStore((state) => state.board))
     // Hier kannst du weitere Aktionen ausführen, wenn sich das Board ändert
   };
 
