@@ -1,8 +1,8 @@
 import React from 'react'
 // MCU Ports
-import i2cPort from '@site/static/img/mcu/ports/i2c-wire-port.png'
-import uartPort from '@site/static/img/mcu/ports/uart-serial-port.png'
-import ioPort from '@site/static/img/mcu/ports/io-port.png'
+import i2cPort from '@site/static/img/en/mcu/ports/i2c-wire-port.png'
+import uartPort from '@site/static/img/en/mcu/ports/uart-serial-port.png'
+import ioPort from '@site/static/img/en/mcu/ports/io-port.png'
 // MCU S2 Ports
 import i2cPortS2 from '@site/static/img/en/mcus2/ports/i2c-wire-port.png'
 import uartPortS2 from '@site/static/img/en/mcus2/ports/uart-serial-port.png'
