@@ -113,7 +113,7 @@ const config = {
           items: [
             {
               label: 'Impressum',
-              to: 'https://sensebox.de/impressum',
+              to: 'https://sensebox.de/de/imprint',
             },
             {
               label: 'openSenseMap',
