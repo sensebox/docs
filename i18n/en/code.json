@@ -482,5 +482,35 @@
   "theme.contentVisibility.draftBanner.message": {
     "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
     "description": "The draft content banner message"
+  },
+  ":edu S2": {
+    "message": ":edu S2"
+  },
+  ":edu": {
+    "message": ":edu"
+  },
+  ":bike": {
+    "message": ":bike"
+  },
+  ":CO2 Ampel": {
+    "message": ":CO2 Traffic Light"
+  },
+  ":home": {
+    "message": ":home"
+  },
+  ":mini": {
+    "message": ":mini"
+  },
+  "openSenseMap": {
+    "message": "openSenseMap"
+  },
+  "Blockly": {
+    "message": "Blockly"
+  },
+  "Hardware Glossar": {
+    "message": "Hardware Glossary"
+  },
+  "senseBox Dokumentation": {
+    "message": "senseBox Documentation"
   }
 }
