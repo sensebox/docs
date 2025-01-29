@@ -1,0 +1,83 @@
+---
+sidebar_position: 3
+title: Particulate Matter Sensor SPS30
+hide_title: false
+---
+
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import feinstaubSps from '@site/static/img/hardware-bilder/sps30/sps30.png'
+import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
+
+# Particulate Matter Sensor SPS30
+
+Der Particulate Matter Sensor SPS30 ist ein hochpräzises Gerät zur Messung der Luftqualität, das speziell für die Erfassung von Feinstaubpartikeln entwickelt wurde. Er misst die Konzentrationen von PM1.0, PM2.5, PM4.0 und PM10 in der Luft. Das Gerät verwendet eine fortschrittliche Laserscattering-Technologie, um die Partikel zu zählen und deren Größe zu bestimmen. Die Messergebnisse werden in µg/m³ angezeigt.
+
+<ImageWithText src={feinstaubSps} title="Particulate Matter Sensor SPS30" />
+
+# Technical Information
+
+- Measures PM1.0, PM2.5, PM4.0, PM10
+- Long-term stable measurements thanks to automatic self-cleaning function
+- High measurement accuracy and reliability
+
+## Connection
+
+<TutorialPorts port="uart" />
+
+## Programming (Arduino)
+
+### Software Library
+
+To program the sensor in Arduino, you need to install the software library [sensirion-sps](https://www.arduino.cc/reference/en/libraries/sensirion-sps/).
+
+### Code
+
+The following code demonstrates how to output the PM values on the Serial Monitor:
+
+```cpp
+#include <sps30.h> // http://librarymanager/All#
+
+struct sps30_measurement m;
+uint32_t auto_clean_days = 4;
+const long intervalsps = 1000;
+unsigned long time_startsps = 0;
+unsigned long time_actualsps = 0;
+
+void getSPS30Data(){
+
+    uint16_t data_ready;
+    int16_t ret;
+
+    do {
+        ret = sps30_read_data_ready(&data_ready);
+        if (ret < 0) {
+        } else if (!data_ready)  {}
+        else
+            break;
+            delay(100); /* retry in 100ms */
+        } while (1);
+        ret = sps30_read_measurement(&m);
+}
+
+void setup() {
+    sensirion_i2c_init();
+    sps30_set_fan_auto_cleaning_interval_days(auto_clean_days);
+    sps30_start_measurement();
+}
+
+void loop() {
+    time_startsps = millis();
+    if (time_startsps > time_actualsps + intervalsps) {
+        time_actualsps = millis();
+        getSPS30Data();
+    }
+    Serial.println(m.mc_1p0);
+}
+
+```
+
+### Programming (Blockly)
+
+You can read the sensor with the following block.
+
+![](/img/en/hardware-bilder/sps30/sps30-block.svg)

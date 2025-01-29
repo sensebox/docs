@@ -21,7 +21,7 @@ image3: /images/2020-03-11-allgemein-einfuehrung-openroberta/openroberta-buttons
 openRoberta ist eine vom Fraunhofer-Institut entwickelte graphische Programmieroberfläche. Neben der senseBox kannst du viele weitere Systeme über openRoberta programmieren.  
 
 ## Erste Schritte
-Öffne das openroberta lab unter [lab.open-roberta.org](https://lab.open-roberta.org/). Dort musst du zuerst dein System, also die senseBox, auswählen.
+Öffne das Open Roberta Lab unter [lab.open-roberta.org](https://lab.open-roberta.org/). Dort musst du zuerst dein System, also die senseBox, auswählen.
 
 ![](/img/open-roberta-bilder/openroberta-carousel.png)
 
@@ -52,7 +52,7 @@ Um dein Programm auf die senseBox übertragen zu können, musst du die senseBox 
 
 
 ## openroberta Wiki
-Diese und alle weiteren Informationen zum openroberta-lab findest du online in der [Dokumentation zum openroberta-lab vom Fraunhofer Institut](https://jira.iais.fraunhofer.de/wiki/display/ORInfo ).
+Diese und alle weiteren Informationen zum openroberta-lab findest du online in der [Dokumentation zum Open Roberta Lab vom Fraunhofer Institut](https://jira.iais.fraunhofer.de/wiki/display/ORInfo ).
 
 > - [openroberta lab](https://lab.openroberta.org/)
 > - [openroberta Wiki](https://jira.iais.fraunhofer.de/wiki/display/ORInfo)

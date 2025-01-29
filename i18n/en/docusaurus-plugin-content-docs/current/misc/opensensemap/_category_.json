@@ -1,0 +1,8 @@
+{
+  "label": "openSenseMap",
+  "position": 10,
+  "link": {
+    "type": "generated-index",
+    "description": "Information about the visual programming environment Blockly for senseBox."
+  }
+}

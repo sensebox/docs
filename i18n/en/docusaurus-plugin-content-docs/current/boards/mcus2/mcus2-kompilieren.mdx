@@ -1,0 +1,51 @@
+---
+sidebar_position: 4
+title: Compile and transfer
+hide_title: false
+---
+
+import Layout from "@site/src/Layout";
+import { useBoardStore } from "@site/src/lib/stores/store";
+import BoardDropdown from "@site/src/components/BoardDropdown/BoardDropdown";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@site/src/components/ui/tabs";
+import  AlertBox from "@site/src/components/AlertBox/AlertBox";
+
+
+## Compile 
+In order for your program to be executed by the senseBox, it must first be translated into machine language.
+This process is called _compiling_. In the case of the senseBox, our server takes care of compiling.
+
+To have your sketch compiled, click on the orange button with the notepad symbol in Blockly.
+
+![](/img/blockly-bilder/kompilieren/kompilieren.png)
+
+Once your sketch has been successfully compiled, you will be prompted to download a .BIN file.
+Save it in a location where you can easily find it later.
+
+<div>
+  <h2> Transfer </h2>
+  <p>
+    {" "}
+    Now connect your senseBox MCU-S2 to your computer using the USB cable. 
+    Your senseBox should now be recognized as a removable storage by your computer.{" "}
+  </p>
+  <h3> Copy </h3>
+  <p>
+    Now you can simply copy the previously downloaded .BIN file to the removable storage <b>SENSEBOX</b> using drag & drop. 
+    The senseBox will now play your uploaded sketch.
+  </p>
+  <AlertBox type="warning" title="Long transfer time!">
+    <p>
+    Currently, the transfer of a .bin file to the senseBox may take a little longer.
+    The transfer process is complete when the LED lights up green!
+    </p>
+  </AlertBox>
+
+  <img src="/img/blockly-bilder/kompilieren/copy_to_mcu.gif" />
+</div>
+

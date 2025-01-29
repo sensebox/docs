@@ -1,0 +1,100 @@
+---
+set: erste-schritte-arduino
+resources:
+  - name: Arduino
+    link: https://www.arduino.cc
+  - name: Arduino Old Releases
+    link: https://www.arduino.cc/en/Main/OldSoftwareReleases#previous
+title_order: 2
+date: 2020-03-11
+set_order: 3
+image1: /images/2020-03-11-allgemein-arduino-ide-installieren/arduino-download.png
+image2: /images/2020-03-11-allgemein-arduino-ide-installieren/arduino-donate.png
+type: Document
+title: Arduino IDE Installation
+description: Installation of the Arduino IDE
+categories: arduino
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+# Installation of the Arduino IDE
+
+Before you can program the senseBox using the Arduino IDE, you need to install drivers and software on your computer.
+
+Check out the instructions for your operating system and follow the given steps.
+
+<Tabs defaultValue="windows">
+  <TabItem value="windows" label="Windows">
+  <h2>Download Arduino Software for Windows</h2>
+   <p>
+    The senseBox is a microcontroller with various components and sensors. It is programmed using the development environment _Arduino IDE_. Download the latest version from the{" "}
+    <a href="https://www.arduino.cc/en/software">Arduino Homepage:</a>{""}
+   </p>
+   <img
+    src="/img/arduino-bilder/instalation/arduino-download.png"
+    alt="arduino install"
+   />
+   <p>
+    Arduino is an open-source project and is funded by donations.
+    Therefore, you will be asked for a donation before the download; if you do not want to donate, you can click on `JUST DOWNLOAD`.
+   </p>
+   <p>
+    Run the installer and follow the instructions. The installation is completed in a few minutes.
+   </p>
+  </TabItem>
+  <TabItem value="macos" label="MacOS">
+  <h2>Download Arduino Software for Mac(OSX)</h2>
+    <p>
+      The senseBox is a microcontroller with various components and sensors. It is programmed using the development environment _Arduino IDE_. 
+      Download the latest version from the{" "}
+      <a href="https://www.arduino.cc/en/software">Arduino Homepage:</a>{" "}
+    </p>
+    <img
+      src="/img/arduino-bilder/instalation/arduino-download.png"
+      alt="arduino install"
+    />
+    <p>
+      Arduino is an open-source project and is funded by donations.
+      Therefore, you will be asked for a donation before the download; if you do not want to donate, you can click on `JUST DOWNLOAD`.
+    </p>
+    <p>
+      An Arduino.app file should appear in your Downloads folder.
+      Move this file to your "Applications" folder. By opening the
+      `Arduino.app` file, the IDE can be started.
+    </p>
+  </TabItem>
+  <TabItem value="linux" label="Linux">
+ <h2>Download Arduino Software for Linux</h2>
+  <p>
+    The senseBox is a microcontroller with various components and
+    sensors. It is programmed using the development environment _Arduino IDE_.
+    Download the latest version from the{" "}
+    <a href="https://www.arduino.cc/en/software">Arduino Homepage:</a>{" "}
+  </p>
+  <img
+    src="/img/arduino-bilder/instalation/arduino-download.png"
+    alt="arduino install"
+  />
+  <p>
+    Arduino is an open-source project and is funded by donations.
+    Therefore, you will be asked for a donation before the download; if you do not want to donate, you can click on `JUST DOWNLOAD`.
+  </p>
+  <p>
+    Linux users can use the `AppImage` provided by Arduino to install Arduino. After downloading, the AppImage needs to be given execution permissions,
+  </p>
+  <code>cd Downloads</code> <br />
+  <code>chmod +x arduino-ide_2.2.1_Linux_64bit.AppImage</code> <br />
+  <code>./arduino-ide_2.2.1_Linux_64bit.AppImage</code>
+  <p>
+    Alternatively, the AppImage can also be made executable via the Graphic User Interface.
+    Instructions on how to do this can be found {" "}
+    <a href="https://docs.appimage.org/introduction/quickstart.html">here</a>{" "}.
+  </p>
+  </TabItem>
+</Tabs>
+
+> - [Arduino](https://www.arduino.cc/)
+> - [Arduino Old Releases](https://www.arduino.cc/en/software/OldSoftwareReleases#previous)

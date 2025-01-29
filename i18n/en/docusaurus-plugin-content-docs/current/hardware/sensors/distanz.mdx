@@ -1,0 +1,61 @@
+---
+sidebar_position: 2
+title: Ultrasonic Distance Sensor
+hide_title: false
+description: HC-SR04
+---
+
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import ultrasonic from '@site/static/img/hardware-bilder/distanz/US-Sensor.png'
+import ultrasonicBuild from '@site/static/img/hardware-bilder/distanz/Aufbau-Ultraschall.png'
+
+# Ultrasonic Distance Sensor
+
+The HC-SR04 measures distances using ultrasound and outputs them in centimeters (cm).
+
+<ImageWithText src={ultrasonic} title="Ultrasonic distance HC-SR04" />
+
+## Technical Information
+
+- Dimensions: 45mm x 20mm x 17mm
+- Supply voltage of 5V with a current consumption of less than 2mA
+- Up to 50 measurements per second possible
+
+<ImageWithText src={ultrasonicBuild} title="Ultrasonic sensor setup" />
+
+## Programming (Arduino)
+
+### Code
+
+This code outputs the measured distance in **centimeters** to the Serial Monitor.
+
+```cpp
+int trig = 1;  // Trig pin of the sensor is connected to pin 1.
+int echo = 2;  // Echo pin of the sensor is connected to pin 2.
+
+// Define variables
+unsigned int time = 0;
+unsigned int distance = 0;
+
+void setup() {
+    Serial.begin(9600); // Starts the Serial Monitor
+    pinMode(trig, OUTPUT);
+    pinMode(echo, INPUT);
+}
+
+void loop() {
+    digitalWrite(trig, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(trig, LOW);
+    distance = time / 58;
+    Serial.println(distance);
+}
+```
+
+## Programming (Blockly)
+
+In Blockly, the sensor can be read using the following block:
+
+![](/img/en/hardware-bilder/distanz/ultraschall-block.svg)
+
+Select the port to which you have connected the sensor from the dropdown menu. The trigger and echo pins will then be automatically adjusted.

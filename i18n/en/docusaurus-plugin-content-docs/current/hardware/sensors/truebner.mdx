@@ -1,0 +1,71 @@
+---
+sidebar_position: 9
+title: Soil Moisture and Temperature Sensor
+hide_title: false
+description: Soil Moisture and Temperature Sensor Truebner SMT50
+---
+
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import truebnerSensor from '@site/static/img/hardware-bilder/bodenfeuchte-temperatursensor/sensoren_bodenfeuchte_temperatur.png'
+import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
+
+# Soil Moisture and Temperature Sensor
+The Truebner SMT50 is a capacitive soil temperature and moisture sensor and is therefore well suited for various applications in the home garden.
+Capacitive soil moisture sensors generate an electric field around their measuring electrodes. The field penetrates the surrounding soil. The measuring electronics of the sensor determine the resulting electrical capacitance of the electrodes.
+The higher the water content in the soil, the greater the measurement capacitance of the sensor.
+
+<ImageWithText src={truebnerSensor} title="SMT50 Soil Moisture Sensor" />
+
+## Technical Details
+
+- Supply voltage: 3.3 - 30 VDC (direct current)  
+- Power consumption: approx. 2.7 mA (measured at 12VDC)  
+- Measurement range for volumetric water content: 0 – 50% (with +/- 3% accuracy)  
+- Measurement range for temperature: -20 to +85 °C (with +/- 1.0°C accuracy)  
+- Measurement method: FDR (Frequency Domain Response)  
+- Measurement signal: symmetric, bipolar differential 
+
+## Connection
+
+<TutorialPorts port="io" />
+
+### Dimensions
+
+- Size: approx. 13.5 cm x 2.15 cm  
+- Weight including 10m cable: approx. 235 g 
+
+## Programming (Arduino)
+
+### Code
+
+```cpp
+#include <senseBoxIO.h>
+
+float getSMT50Temperature(int analogPin){
+    int sensorValue = analogRead(analogPin);
+    float voltage = sensorValue * (3.3 / 1024.0);
+    return (voltage - 0.5) * 100;
+}
+
+
+void setup() {
+    Serial.begin(9600);
+}
+
+
+void loop() {
+    Serial.println(getSMT50Temperature(1));
+}
+```
+
+## Programming (Blockly)
+In Blockly, the sensor can be read using the following block:
+
+![](/img/en/hardware-bilder/bodenfeuchte-temperatursensor/block_bodenfeuchte_temperatur.svg)
+
+In the block, you can select between the different parameters of the soil moisture and temperature sensor:
+- Soil temperature in degrees Celsius (°C)
+- Soil moisture
+
+> - [Shop](https://sensebox.kaufen/product/bodenfeuchte-temperatursensor-smt50)
+> - [Truebner SMT50](https://www.truebner.de/assets/download/SMT50_Flyer_DE.pdf)

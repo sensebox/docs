@@ -1,0 +1,74 @@
+---
+date: 2020-03-11
+title: The senseBoxIO Library
+categories: arduino
+description: Using the senseBoxIO Library
+type: Document
+resources:
+  - name: "senseBoxIO Library"
+    link: https://github.com/sensebox/senseBoxMCU-core/tree/master/arduino/samd/libraries/senseBoxIO
+---
+
+# senseBoxIO Library
+
+The senseBoxIO library is part of the board support package and is installed automatically.
+
+The senseBoxIO library can be included individually with the following command:
+
+```cpp
+include <senseBoxIO.h>
+```
+
+:::info
+
+If you are already using the senseBoxMCU library, the senseBoxIO library is already integrated and does not need to be included separately.
+:::
+## Turning Ports On/Off
+
+With the senseBoxIO library, unused ports can be turned on/off:
+
+#### Deactivating all Ports
+
+```cpp
+ void powerNone(void)
+```
+
+#### Activating all Ports
+
+```cpp
+  void powerAll(void)
+```
+
+#### Selective Turning On/Off of Ports and Connections
+
+```cpp
+
+  void powerI2C(bool on) //power the I2C Ports
+
+  void powerUART(bool on) //power the UART Ports
+
+  void powerXB1(bool on) //power XBEE Port 1
+
+  void powerXB2(bool on) //power XBEE Port 2
+
+  void SPIselectNone(void) //
+
+  void SPIselectXB1(void) //
+
+  void SPIselectXB2(void) //
+
+```
+
+## Turning Status LEDs On/Off
+
+Allows turning the status LEDs on/off
+
+```cpp
+  void statusNone(void) // deactivate all status LEDs
+
+  void statusRed(void) //activate the red status LED
+
+  void statusGreen(void) //activate the green status LED
+```
+
+> - [senseBoxIO Library](https://github.com/sensebox/senseBoxMCU-core/tree/master/arduino/samd/libraries/senseBoxIO)

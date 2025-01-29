@@ -1,0 +1,64 @@
+---
+title: Water Temperature Sensor
+---
+
+import waterTempSensor from '@site/static/img/hardware-bilder/wassertemperatur/wassertemperatur.JPG'
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
+
+# Water Temperature Sensor (DS18B20)
+The DS18B20 is a digital temperature sensor that is addressed via a 1-Wire bus. It can measure temperatures from -55°C to +125°C and is waterproof. It is therefore ideal for measuring water temperature.
+
+:::warning
+To use the sensor with the senseBox you need the 1-Wire adapter. You can purchase it [here](https://sensebox.kaufen/product/sensebox-one-wire-adapter).
+:::
+
+<ImageWithText
+  src={waterTempSensor}
+  alt="Water Temperature Sensor"
+  title="Water Temperature Sensor"
+/>
+
+## Connection
+
+<TutorialPorts port="i2c" />
+
+## Programming (Arduino)
+
+### Software Library
+
+To program the sensor in Arduino you need to install the software libraries [OneWire](https://www.arduino.cc/reference/en/libraries/onewire/) **and** [DallasTemperature](https://www.arduino.cc/reference/en/libraries/dallastemperature/).
+
+### Code
+This code reads the temperature from the sensor and outputs it to the serial interface.
+
+```cpp
+#include <senseBoxIO.h>
+#include <OneWire.h> // http://librarymanager/All#OneWire
+#include <DallasTemperature.h> // http://librarymanager/All#DallasTemperature
+
+
+#define ONE_WIRE_BUS 1
+OneWire oneWire(ONE_WIRE_BUS);
+DallasTemperature sensors(&oneWire);
+
+float getWaterTemp(){
+  sensors.requestTemperatures();
+  sensors.getTempCByIndex(0);
+}
+
+void setup() {
+  Serial.begin(9600);
+  sensors.begin();
+}
+
+void loop() {
+  Serial.print("Wassertemperatur: ");
+  Serial.print(getWaterTemp());
+}
+```
+
+### Programming (Blockly)
+In Blockly you can read the sensor with the following block:
+
+![](/img/en/hardware-bilder/wassertemperatur/wassertemperatur-block.svg)

@@ -1,0 +1,71 @@
+---
+sidebar_position: 1
+title: WiFi
+description: Connect your senseBox to the internet with the built-in WiFi module.
+categories: hardware
+hide_title: false
+---
+
+import wifiModul from '@site/static/img/en/mcus2/wifi-modul-s2.png'
+import AlertBox from '@site/src/components/AlertBox/AlertBox'
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+
+# WiFi-Modul
+
+<ImageWithText
+  size="xl"
+  src={wifiModul}
+  alt="WiFi Module"
+  title="The WiFi module is mounted directly in the center of the board."
+/>{' '}
+
+With the WiFi module, you can connect your senseBox to the internet. 
+Additionally, you have the options to create your own WiFi network with the WiFi module or connect to an existing network.
+
+:::success Module onBoard
+The WiFi module is built into the MCU S2! 
+So you don't need to connect anything else here.
+:::
+
+## General
+
+In Blockly, you have various options to implement projects that work with the internet. For all of them, you must first connect your senseBox to the internet.
+
+## Programming (Arduino)
+
+This sketch connects to your home WiFi and gives you the IP address of your senseBox. Remember to enter your network name and password in the `ssid` and `pass` variables.
+
+```cpp
+#include <WiFi.h>
+
+char ssid[] = "SSID";
+char pass[] = "Password";
+
+void setup() {
+    Serial.begin(9600);
+    WiFi.begin(ssid, pass);
+    if(WiFi.status() != WL_NO_SHIELD){
+      while(true);
+    }
+}
+
+void loop(){
+    Serial.println(WiFi.localIP());
+    delay(1000);
+}
+```
+
+## Programming (Blockly)
+
+With the `Connect to WiFi` block, you can connect your senseBox to a WiFi network in the Setup(). Enter the network name under SSID and the WiFi password under Password.
+
+![](/img/en/blockly-bilder/web-wifi/blockly-Web-Wifi-1.svg)
+
+With the `Initialize WiFi Access Point` block, your senseBox can create a WiFi network that you can join with other devices. In the SSID text field, you can set the name of your network.
+
+![](/img/en/blockly-bilder/web-wifi/blockly-Web-Wifi-2.svg)
+
+## Projects
+
+- #### [Communication between senseBoxes with ESP-NOW](https://sensebox.de/projects/de/2024-03-24-esp-now)
+- #### [IoT Measurement Station](https://sensebox.de/projects/de/2024-01-10-iotmesstation_s2)

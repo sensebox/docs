@@ -38,8 +38,6 @@ In Blockly gibt es folgende Datentypen:
 
 **Boolean:**     Für Werte die entweder wahr oder falsch sind (bzw. 1 oder 0)
 
-**kurze Zahl:**  Für einstellige Zahlen
-
 **Zahl:**        Für ganze Zahlen von -32.768 bis 32.767
 
 **große Zahl:**  Für große Zahlen von -2.147.483.648 bis 2.147.483.647

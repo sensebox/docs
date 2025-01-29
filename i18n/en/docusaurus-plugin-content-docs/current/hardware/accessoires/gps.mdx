@@ -1,0 +1,91 @@
+---
+sidebar_position: 4
+title: GPS
+hide_title: false
+description: GPS u-blox CAM-M8Q Multi GNSS Modul
+---
+
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import gps from '@site/static/img/hardware-bilder/gps/gps.png'
+import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
+
+# GPS
+
+The GPS module receives the position (longitude/latitude/altitude) of the senseBox. 
+This can be used for mobile applications, e.g., mobile data transmission to the openSenseMap. 
+This sensor is compatible with common GNSS systems (GPS, QZSS, GLONASS, BeiDou, Galileo) and is based on the u-blox CAM-M8Q Multi GNSS module.
+
+
+<ImageWithText src={gps} title="GPS Modul" />
+
+The GPS sensor is connected to an I2C port.
+
+## Technical Details
+
+- "Plug-in-and-Go" senseBox compatible through breakout board with JST connector
+- Simultaneous reception of GPS, QZSS, GLONASS, BeiDou
+- Navigation sensitivity of –167 dBm
+- Receiver: 72-channel u-blox M8
+- Update rate: Single GNSS - up to 18Hz, Dual GNSS up to 10Hz
+- Power consumption: 30mA in continuous operation or 10mA power save mode 1Hz at 3V
+
+## Connection
+
+<TutorialPorts port="i2c" />
+
+## Programming (Arduino)
+
+### Software Library
+
+To program the sensor in Arduino, you need to install the software library [SparkFun u-blox GNSS Arduino Library](https://www.arduino.cc/reference/en/libraries/sparkfun-u-blox-gnss-arduino-library/).
+
+### Code
+
+This code stores the values for latitude and longitude in the variables `latitude` and `longitude`.
+
+```cpp
+#include <senseBoxIO.h>
+#include <SparkFun_u-blox_GNSS_Arduino_Library.h> // http://librarymanager/All#SparkFun_u-blox_GNSS_Arduino_Library
+#include <Wire.h>
+
+SFE_UBLOX_GNSS myGNSS;
+float latitude;
+float longitude;
+void setup() {
+  Wire.begin();
+
+  if (myGNSS.begin() == false) //Connect to the Ublox module using Wire port
+  {
+    Serial.println(F("Ublox GPS not detected at default I2C address. Please check wiring. Freezing."));
+    while (1);
+  }
+
+  myGNSS.setI2COutput(COM_TYPE_UBX); //Set the I2C port to output UBX only (turn off NMEA noise)
+  myGNSS.saveConfiguration(); //Save the current settings to flash and BBR
+}
+
+void loop() {
+  latitude = myGNSS.getLatitude();
+  longitude = myGNSS.getLongitude();
+
+}
+```
+
+## Programming (Blockly)
+
+In Blockly, the sensor can be read using the following block:
+
+![](/img/en/hardware-bilder/gps/block_gps.svg)
+
+In the block, you can select between the different parameters of the GPS module:
+
+- Longitude
+- Latitude
+- Altitude
+- Timestamp (RFC3339)
+- Speed
+- Date
+- Time
+
+> - [Shop](https://sensebox.kaufen/product/gps)
+> - [CAM M8Q](https://sensebox.kaufen/assets/datenblatt/senseBox-CAM-M8Q_v20.pdf)

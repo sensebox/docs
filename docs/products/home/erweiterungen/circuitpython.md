@@ -14,6 +14,7 @@ resources:
 image1: /images/2021-01-28-rtc-modul/rtc.png
 ---
 
+# Programmieren mit Circuit Python
 CircuitPython ist eine Programmiersprache, die das Experimentieren und Programmieren auf einfachen Mikrocontroller-Boards vereinfacht. Sobald das Board eingerichtet ist, kann mit einem beliebigen Texteditor programmiert werden. Die senseBox MCU ist CircuitPython kompatibel.
 
 ## Installation von Circuit Python

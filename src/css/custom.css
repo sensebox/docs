@@ -25,9 +25,9 @@ html {
   font-family: 'BrixSlab-Regular', "Helvetica", "Arial", sans-serif;
 
 }
-header {
+/*header {
   display: none;
-}
+} */
 
 @layer base {
   :root {

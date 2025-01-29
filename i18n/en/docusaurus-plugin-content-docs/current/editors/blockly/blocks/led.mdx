@@ -1,0 +1,68 @@
+---
+sidebar_position: 8
+title: LED
+hide_title: false
+---
+
+import Layout from "@site/src/Layout";
+import { useBoardStore } from "@site/src/lib/stores/store";
+
+<Layout title="LED">
+
+Mit dem `LED an digitalen Pin`-Block kannst du eine an einem der sechs digitalen Pins angeschlossene LED ansteuern. Im Dropdown-Menü **Pin** wählst du den jeweiligen Pin aus und unter **Status**, ob die LED ein- oder ausgeschaltet werden soll.
+
+![](/img/blockly-bilder/led/blockly-led-1.svg)
+
+{useBoardStore((state)=>state.board === 'MCU' && (
+
+<div>
+  <p>
+    {" "}
+    Mit dem <code>RGB-LED</code>Block kannst du eine an einem der sechs digitalen
+    Pins angeschlossene RGB-LED ansteuern. Im Dropdown-Menü <b>Pin</b> wählst du
+    den jeweiligen Pin aus. An die Blockabschnitte <b>rot</b>, <b>grün</b> und <b>
+      blau
+    </b> können Zahlen von 0 bis 255 angeknüpft werden, um die Intesität der verschiedenen
+    Farbanteile festzulegen. Bei einem Wert von 0 ist kein Farbanteil vorhanden,
+    bei einem Wert von 255 ist der maximale Farbanteil vorhanden.{" "}
+  </p>
+  <img src="/img/blockly-bilder/led/blockly-led-2.svg" />
+  <p> Der Farbcode für senseBox Grün lautet zum Beispiel: </p>
+  <img src="/img/blockly-bilder/led/blockly-led-3.svg" />
+</div>
+))}
+
+{useBoardStore((state)=>state.board === 'MCU-S2' && (
+
+<div>
+  <h3> RGB-LED (onBoard MCU-S2) </h3>
+  Auf der senseBoxMCU-S2 ist eine RGB-LED fest verbaut. Diese wird über den Pin on
+  Board angesprochen. Diese kann mit dem Block <code>
+    {" "}
+    RGB-LED initialisieren{" "}
+  </code> auf dem Port <code> on Board </code> initialisiert werden.
+  <img src="/img/blockly-bilder/led/rgbleds2.png" />
+
+    <p> Über den Block <code> Setze RGB-LED </code> kann die Farbe der LED festgelegt werden. </p>
+    <p>
+    An den Abschnitt <code> Farbe </code> kannst du dir aus der Kategorie <code> LED </code> den Block für Farbe aussuchen und eine Farbe auswählen.
+    </p>
+        <img src="/img/blockly-bilder/led/rgbleds2set.png" />
+
+</div>
+))}
+
+## RGB-LED
+
+Die verkettbare RGB-Led, welche über ein JST-Kabel direkt mit der senseBox MCU verbunden wird kann über folgenden Block programmiert werden:
+
+![](/img/blockly-bilder/led/blockly-led-4.svg)
+
+Folgende Parameter können eingestellt werden:
+
+- Helligkeit: Gib einen Wert zwischen 0 (dunkel/aus) und 255 (sehr hell) an. Beachte, dass die Helligkeit im Verlaufe des Programmes nicht verändert werden sollte
+- Position: Sobald du mehrere RGB-LED mit einander verbunden hast kannst du hier über die Position die jeweilige LED auswähle. Beachte, dass die Position 0 der ersten LED entspricht.
+- Rot/Grün/Blau: Gib einen Wert zwischen 0 und 255 an.
+
+</Layout>
+> - [Blockly.senseBox.de](https://blockly.sensebox.de/)

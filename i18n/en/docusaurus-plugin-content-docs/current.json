@@ -1,0 +1,134 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.senseBoxSidebar.category.:edu S2": {
+    "message": ":edu S2",
+    "description": "The label for category :edu S2 in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.Erste Schritte": {
+    "message": "Getting Started",
+    "description": "The label for category Erste Schritte in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.Hardware": {
+    "message": "Hardware",
+    "description": "The label for category Hardware in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.Hardware.link.generated-index.title": {
+    "message": "Hardware",
+    "description": "The generated-index page title for category Hardware in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.in der :edu enthaltene Hardware": {
+    "message": "Hardware included in :edu",
+    "description": "The label for category in der :edu enthaltene Hardware in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.in der :edu enthaltene Hardware.link.generated-index.title": {
+    "message": "Hardware included in :edu",
+    "description": "The generated-index page title for category in der :edu enthaltene Hardware in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.Blockly": {
+    "message": "Blockly",
+    "description": "The label for category Blockly in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.Blockly.link.generated-index.title": {
+    "message": "Blockly",
+    "description": "The generated-index page title for category Blockly in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.Arduino": {
+    "message": "Arduino",
+    "description": "The label for category Arduino in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.Arduino.link.generated-index.title": {
+    "message": "Arduino",
+    "description": "The generated-index page title for category Arduino in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.Besonderheiten": {
+    "message": "Special Features",
+    "description": "The label for category Besonderheiten in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.Besonderheiten.link.generated-index.title": {
+    "message": "Special Features",
+    "description": "The generated-index page title for category Besonderheiten in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.:edu": {
+    "message": ":edu",
+    "description": "The label for category :edu in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.zusätzlich erwerbare Hardware": {
+    "message": "Additional Hardware",
+    "description": "The label for category zusätzlich erwerbare Hardware in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.zusätzlich erwerbare Hardware.link.generated-index.title": {
+    "message": "Additional Hardware",
+    "description": "The generated-index page title for category zusätzlich erwerbare Hardware in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.:bike": {
+    "message": ":bike",
+    "description": "The label for category :bike in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.App": {
+    "message": "App",
+    "description": "The label for category App in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.Sensoren": {
+    "message": "Sensors",
+    "description": "The label for category Sensoren in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.:CO2 Ampel": {
+    "message": ":CO2 Traffic Light",
+    "description": "The label for category :CO2 Ampel in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.Aufbau und Installation": {
+    "message": "Setup and Installation",
+    "description": "The label for category Aufbau und Installation in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.Aufbau und Installation.link.generated-index.title": {
+    "message": "Setup and Installation",
+    "description": "The generated-index page title for category Aufbau und Installation in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.:home": {
+    "message": ":home",
+    "description": "The label for category :home in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.Erweiterungen": {
+    "message": "Extensions",
+    "description": "The label for category Erweiterungen in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.Erweiterungen.link.generated-index.title": {
+    "message": "Extensions",
+    "description": "The generated-index page title for category Erweiterungen in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.:mini": {
+    "message": ":mini",
+    "description": "The label for category :mini in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.in der :mini enthaltene Hardware": {
+    "message": "Hardware included in :mini",
+    "description": "The label for category in der :mini enthaltene Hardware in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.in der :mini enthaltene Hardware.link.generated-index.title": {
+    "message": "Hardware included in :mini",
+    "description": "The generated-index page title for category in der :mini enthaltene Hardware in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.Glossar": {
+    "message": "Glossary",
+    "description": "The label for category Glossar in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.Glossar.link.generated-index.title": {
+    "message": "Glossary",
+    "description": "The generated-index page title for category Glossar in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.doc.Halterung": {
+    "message": "Mount",
+    "description": "The label for the doc item Halterung in sidebar senseBoxSidebar, linking to the doc products/bike/halterung/installation"
+  },
+  "sidebar.senseBoxSidebar.doc.Pflegehinweise für die senseBox:bike": {
+    "message": "Care Instructions for the senseBox:bike",
+    "description": "The label for the doc item Pflegehinweise für die senseBox:bike in sidebar senseBoxSidebar, linking to the doc products/bike/misc/care"
+  },
+  "sidebar.senseBoxSidebar.doc.Fehlerbehebung": {
+    "message": "Troubleshooting",
+    "description": "The label for the doc item Fehlerbehebung in sidebar senseBoxSidebar, linking to the doc products/bike/misc/errors"
+  }
+}

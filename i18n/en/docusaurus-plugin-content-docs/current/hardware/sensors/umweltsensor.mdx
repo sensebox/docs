@@ -1,0 +1,162 @@
+---
+sidebar_position: 10
+title: Environmental Sensor
+hide_title: false
+description: Air Pressure and Temperature Sensor (BME680)
+---
+
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import umweltsensor from '@site/static/img/hardware-bilder/umweltsensor/bme.png'
+import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
+
+# Environmental Sensor
+
+With the BME680 sensor you can measure a variety of phenomena. Air temperature, relative humidity, air pressure and air quality can be determined with the BME680. It is a real all-rounder.
+
+<ImageWithText src={umweltsensor} title="BME680 Environmental Sensor" />
+
+## Technical Details
+
+- Fast response time of less than 10 seconds  
+- "Plug-in-and-Go" senseBox compatible  
+- Deviation in gas measurements of ±15%  
+
+
+## Connection
+
+<TutorialPorts port="i2c" />
+
+:::warning
+**Caution:** The BME gas sensor is not compatible with the BMP280 air pressure sensor. This means you can only connect and read one of the two at a time!
+:::
+
+## Programming (Arduino)
+
+### Software Library
+To program the sensor in Arduino you need to install the software library [BSEC Software Library](https://www.arduino.cc/reference/en/libraries/bsec-software-library/).
+
+### Code
+
+This code reads the temperature from the BME680 sensor and outputs it to the Serial Monitor. 
+You can access the other measured values through the variables `bmeTemperatur`, `bmeHumidity`, `bmePressure`, `bmeIAQ`, `bmeIAQAccuracy`, `bmeCO2`, and `bmeBreathVocEquivalent`.
+
+```cpp
+#include <senseBoxIO.h>
+#include <bsec.h> // http://librarymanager/All#BSEC_Software_Library
+
+float bmeTemperatur;
+float bmeHumidity;
+double bmePressure;
+float bmeIAQ;
+float bmeIAQAccuracy;
+int bmeCO2;
+float bmeBreathVocEquivalent;
+
+Bsec iaqSensor;
+
+void checkIaqSensorStatus(void)
+    {
+    if (iaqSensor.bsecStatus != BSEC_OK) {
+        if (iaqSensor.bsecStatus < BSEC_OK) {
+        for (;;)
+            errLeds(); /* Halt in case of failure */
+        }
+    }
+
+    if (iaqSensor.bme68xStatus != BME68X_OK) {
+        if (iaqSensor.bme68xStatus < BME68X_OK) {
+        for (;;)
+            errLeds(); /* Halt in case of failure */
+        }
+    }
+}
+
+
+void errLeds(void)
+{
+    pinMode(LED_BUILTIN, OUTPUT);
+    digitalWrite(LED_BUILTIN, HIGH);
+    delay(100);
+    digitalWrite(LED_BUILTIN, LOW);
+    delay(100);
+}
+
+
+void setup() {
+    Wire.begin();
+    iaqSensor.begin(BME68X_I2C_ADDR_LOW, Wire);
+    checkIaqSensorStatus();
+
+    bsec_virtual_sensor_t sensorList[13] = {
+        BSEC_OUTPUT_IAQ,
+        BSEC_OUTPUT_STATIC_IAQ,
+        BSEC_OUTPUT_CO2_EQUIVALENT,
+        BSEC_OUTPUT_BREATH_VOC_EQUIVALENT,
+        BSEC_OUTPUT_RAW_TEMPERATURE,
+        BSEC_OUTPUT_RAW_PRESSURE,
+        BSEC_OUTPUT_RAW_HUMIDITY,
+        BSEC_OUTPUT_RAW_GAS,
+        BSEC_OUTPUT_STABILIZATION_STATUS,
+        BSEC_OUTPUT_RUN_IN_STATUS,
+        BSEC_OUTPUT_SENSOR_HEAT_COMPENSATED_TEMPERATURE,
+        BSEC_OUTPUT_SENSOR_HEAT_COMPENSATED_HUMIDITY,
+        BSEC_OUTPUT_GAS_PERCENTAGE
+    };
+
+
+    iaqSensor.updateSubscription(sensorList, 13, BSEC_SAMPLE_RATE_LP);
+    checkIaqSensorStatus();
+
+
+
+}
+
+
+void loop() {
+
+    if (iaqSensor.run()) {
+      bmeTemperatur = iaqSensor.temperature;
+      bmeHumidity = iaqSensor.humidity;
+      bmePressure = iaqSensor.pressure;
+      bmeIAQ = iaqSensor.iaq;
+      bmeIAQAccuracy = iaqSensor.iaqAccuracy;
+      bmeCO2 = iaqSensor.co2Equivalent;
+      bmeBreathVocEquivalent = iaqSensor.breathVocEquivalent;
+    } else {
+      checkIaqSensorStatus();
+    }
+
+    Serial.println(bmeTemperatur);
+
+}
+```
+
+## Programming (Blockly)
+
+In Blockly, the sensor can be read using the following block:
+
+![](/img/en/hardware-bilder/umweltsensor/block_umweltsensor.svg)
+
+In the block, you can select between the different parameters of the environmental sensor:
+
+- Temperature in degrees Celsius (°C)
+- Humidity in %
+- Air pressure in Pa
+- Indoor air quality (IAQ)
+- Calibration value
+- CO<sub>2</sub> equivalent
+- Breath VOC equivalent
+
+## Calibration Value
+
+The calibration status can be read from the IAQ Accuracy value. It is either 0, 1, 2, or 3 and indicates the following:
+
+- IAQ Accuracy = 0 means the sensor is stabilizing (takes about 25 minutes) or there was a timeout (which should be indicated by a warning/error flag by BSEC ← Needs to be handled in Blockly),
+- IAQ Accuracy = 1 means the value is inaccurate,
+- IAQ Accuracy = 2 means the sensor is calibrating,
+- IAQ Accuracy = 3 means the sensor is successfully calibrated.
+
+The IAQ index is only meaningful when IAQ Accuracy = 3. Besides the IAQ value, BSEC also provides CO<sub>2</sub> and VOC equivalent values.
+
+> - [Shop](https://sensebox.kaufen/product/sensebox-mini)
+> - [Bosch BME680](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme680-ds001.pdf)
