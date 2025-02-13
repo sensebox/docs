@@ -69,8 +69,8 @@
 /hardware/sensoren-truebner/ /docs/hardware/sensors/truebner
 /en/hardware/sensoren-truebner/ /en/docs/hardware/sensors/truebner
 
-/hardware/sensoren-feinstaub/ /hardware/sensors/feinstaub-sds011
-/en/hardware/sensoren-feinstaub/ /en/hardware/sensors/feinstaub-sds011
+/hardware/sensoren-feinstaub/ /docs/hardware/sensors/feinstaub-sds011
+/en/hardware/sensoren-feinstaub/ /en/docs/hardware/sensors/feinstaub-sds011
 
 /hardware/zubehoer-multiplexer/ /docs/hardware/accessoires/multiplexer
 /en/hardware/zubehoer-multiplexer/ /en/docs/hardware/accessoires/multiplexer
