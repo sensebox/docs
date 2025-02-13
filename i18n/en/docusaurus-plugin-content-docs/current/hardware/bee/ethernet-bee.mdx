@@ -1,0 +1,74 @@
+---
+date: 2020-03-11
+title: Ethernet-Bee
+categories: hardware
+description: With the Ethernet-Bee, you can connect the senseBox to the internet and transmit measurement data.
+type: Document
+resources:
+  - name: "Shop"
+    link: https://sensebox.kaufen/product/lan-bee
+  - name: WIZnet W5500 Data Sheet
+    link: http://wizwiki.net/wiki/lib/exe/fetch.php/products:w5500:w5500_ds_v109e.pdf
+
+image1: /images/2020-03-11-bee-lan/lan_bee.png
+---
+
+import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
+import ethernetBee from "@site/static/img/hardware-bilder/bees/ethernet-bee/lan_bee.png"
+
+
+
+# Ethernet-Bee
+
+The Ethernet-Bee is a connector to connect the senseBox to the internet via cable.
+The LAN-Bee is based on the W5500 microchip from Wiznet, which enables a high data transfer rate.
+
+
+<ImageWithText src={ethernetBee} title="Ethernet Bee"/>
+
+
+
+## Technical Information
+
+* "Plug-in-and-Go" senseBox compatible
+* 3.3V operating voltage with 5V I/O signal tolerance
+* Dimensions: 46mm x 25mm x 12mm
+* Weight: 9.2 g
+
+
+## Programming (Arduino)
+
+```cpp
+#include <SPI.h>
+#include <Ethernet.h>
+#include <senseBoxIO.h>
+
+void setup()
+{
+    // Initializes the serial monitor
+    Serial.begin(9600);
+    // Restarts W5500 (LAN-Bee) in XBEE1 socket
+    senseBoxIO.powerXB1(false);
+    delay(250);
+    senseBoxIO.powerXB1(true);
+    Ethernet.init(PIN_XB1_CS);
+}
+
+void loop()
+{
+    // Outputs the IP address of the senseBox
+    ip = Ethernet.localIP();
+    Serial.print("IP: ");
+    Serial.println(ip);
+    delay(5000);
+}
+```
+
+## Notes and Tips
+
+The LAN-Bee is delivered without a LAN cable. For permanent outdoor installation, flat LAN cables are particularly suitable, as they can be easily laid through windows and doors to the outside. Especially in combination with Power over Ethernet (PoE), the senseBox can then be easily operated.
+
+
+
+> - [Shop](https://sensebox.kaufen/product/lan-bee)
+> - [WIZnet W5500 Data Sheet](http://wizwiki.net/wiki/lib/exe/fetch.php/products:w5500:w5500_ds_v109e.pdf)

@@ -1,0 +1,34 @@
+---
+sidebar_position: 3
+title: openSenseMap
+hide_title: false
+---
+
+# Web - openSenseMap
+
+## openSenseMap
+
+The [openSenseMap](https://www.opensensemap.org) is an open data portal for environmental data. To send measurements to it, you first need to create a new senseBox. Then, you will be shown a Box ID and Sensor IDs for each specified sensor. More information can be found in the openSenseMap section.
+
+To send measurements to openSenseMap, you must first connect your box to it. Use the `Connect to openSenseMap` block.
+
+![](/img/en/blockly-bilder/web-opensensemap/blockly-Web-oSeM-1.svg)
+
+In the first dropdown menu of the block, you can select whether your senseBox should send data to the traditional openSenseMap or to workshop.openSenseMap.
+
+> **opensensemap.org:** senseBoxes created for long-term measurements.
+>
+> **workshop.opensensemap.org:** senseBoxes created for short-term experiments or testing.
+
+In the second dropdown menu of the block, you select whether your senseBox is a stationary or a mobile station, and in the text field "senseBox ID," you enter the senseBox ID displayed after registration.
+In the free block section `Sensors`, the connected sensors must then be linked using the `Send measurement to openSenseMap` block.
+
+![](/img/en/blockly-bilder/web-opensensemap/blockly-Web-oSeM-2.svg)
+
+In this block, the "Sensor ID" displayed after registration is added and linked to the corresponding sensor in the free block section.
+:::warning Caution
+Sensor IDs are specific to each sensor. It is important to ensure that the correct ID is assigned to the correct sensor/measurement.
+:::
+
+> - [Blockly.senseBox.de](https://blockly.sensebox.de/)
+

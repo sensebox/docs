@@ -1,0 +1,56 @@
+---
+title: Photodiode
+---
+
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import photodiode from '@site/static/img/en/hardware-bilder/photodiode/mcu-top-photodiode.png'
+
+# Photodiode
+A photodiode is a light-sensitive semiconductor that converts light into electrical energy.
+It is commonly used in various applications such as photodetectors, exposure meters, light barriers, and optical communication systems. 
+Photodiodes provide readings that are proportional to the intensity of the incident light, making them useful for detecting changes in brightness or quantifying light intensities in various applications.
+
+<ImageWithText
+  size="xl"
+  src={photodiode}
+  title="Photodiode installed on the MCU"
+/>
+
+:::success Note
+The photodiode is installed on the MCU S2! You don't need to connect anything else here.
+:::
+
+## Programming (Arduino)
+To test the photodiode, upload this sketch to your senseBox!
+
+```cpp
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(PD_ENABLE, OUTPUT);
+  analogReadResolution(12);
+  digitalWrite(PD_ENABLE, HIGH);
+
+  Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+  Serial.println(analogRead(PD_SENSE));
+  delay(100);
+}
+```
+
+The values for the photodiode will now be displayed in the Serial Monitor. You can also view the trend of the values in a graph in the Serial Plotter (Tools -> Serial Plotter).
+
+## Programming (Blockly)
+
+In Blockly, the sensor can be read using the following block:
+
+![](/img/en/hardware-bilder/photodiode/photodiode_block.svg)
+
+## Projects
+
+- #### [Smart Street Lighting](https://sensebox.de/projects/de/2024-01-10-stra%C3%9Fenbeleuchtung_s2)
+
+## Extras

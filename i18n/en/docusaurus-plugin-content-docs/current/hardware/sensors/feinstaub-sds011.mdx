@@ -1,0 +1,81 @@
+---
+sidebar_position: 3
+title: Particulate Matter Sensor SDS011
+hide_title: false
+---
+import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
+import feinstaubSds from "@site/static/img/hardware-bilder/feinstaub/sensoren_feinstaub.png"
+import { useBoardStore } from "@site/src/lib/stores/store";
+import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
+
+# Particulate Matter Sensor SDS011
+
+With this sensor SDS011, it is possible to determine the particulate matter concentration in the air.  The sensor outputs two values: the concentration of PM2.5 (particles < 2.5 µm) and PM10 (particles < 10 µm).  This sensor is equipped with a small fan to draw in air.  Inside, there is a laser that, together with a photodiode, measures the number of particles.  The results of the measurements are given in µg/m³ (micrograms per cubic meter).
+
+
+<ImageWithText src={feinstaubSds} title="Particulate Matter Sensor SDS011"/>
+
+## Technical Information
+* Plug-in-and-go senseBox compatible
+* Fast response time of less than 10 seconds
+* High resolution up to 0.3µg/m3
+* Multiple scientific testing of data accuracy
+
+## Connection
+
+<TutorialPorts port="uart" />
+
+
+
+## Programmierung (Arduino)
+
+### Software Library
+To program the sensor in Arduino, you need to install the software library [sds-dust-sensors-arduino-library](https://codeload.github.com/lewapek/sds-dust-sensors-arduino-library/zip/refs/heads/master).
+
+### Code
+In the following code, the values for `PM25` and `PM10` are output to the serial monitor.
+:::info
+The sensor requires a warm-up time of 30 seconds before it outputs measurements.
+:::
+
+
+```cpp
+#include <SPI.h>
+#include <Wire.h>
+
+SDS011 my_sds(Serial1) // Serial1 specifies the serial port to which the sensor is connected
+float p10, p25;
+
+void setup(){
+    // Initialize the standard serial port
+    Serial.begin(9600);
+    while(!Serial);
+    // Initialize the serial port to which our sensor is connected
+    Serial1.begin(9600);
+    delay(5000);
+}
+
+void loop(){
+    // Assign the measured particulate matter values to variables
+    p10 = my_sds.getPm10();
+    p25 = my_sds.getPm25();
+    // Print values to the console
+    Serial.println("P2.5: " + String(p25));
+    Serial.println("P10:  " + String(p10));
+    delay(1000);
+}
+```
+
+## Programming (Blockly)
+
+In Blockly, the sensor can be read using the following block:
+
+![](/img/en/hardware-bilder/feinstaub/block_feinstaubsensor.svg)
+
+Select the port to which you have connected the sensor and the measurement value from the dropdown menu.
+
+- PM2.5: Particulate matter fraction below 2.5 µg/m^3
+- PM10: Particulate matter fraction below 10 µg/m^3
+
+>- [Shop](https://sensebox.kaufen/product/feinstaub-sds011)
+>- [Datenblatt NOVA SDS011](https://cdn-reichelt.de/documents/datenblatt/X200/SDS011-DATASHEET.pdf)

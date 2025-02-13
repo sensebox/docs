@@ -1,0 +1,73 @@
+---
+sidebar_position: 4
+title: Compile and transfer
+hide_title: false
+---
+
+import Layout from "@site/src/Layout";
+import { useBoardStore } from "@site/src/lib/stores/store";
+import BoardDropdown from "@site/src/components/BoardDropdown/BoardDropdown";
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+import  AlertBox from "@site/src/components/AlertBox/AlertBox";
+import copyToMCUGif from "@site/static/img/mcu/copy-to-mcu.gif"
+import copyToMCUGifMac from "@site/static/img/mcu/copy-to-mcu-mac.gif"
+
+## Compile
+In order for your program to be executed by the senseBox, it must first be translated into machine language.
+This process is called _compiling_. In the case of the senseBox, our server takes care of compiling.
+
+To have your sketch compiled, click on the orange button with the notepad symbol in Blockly.
+
+![](/img/blockly-bilder/kompilieren/kompilieren.png)
+
+Once your sketch has been successfully compiled, you will be prompted to download a .BIN file.
+Save it in a location where you can easily find it later.
+
+## Transfer 
+
+
+### Changing the mode of the senseBox MCU
+The senseBox MCU has two modes. The programming and the learning mode.
+
+In the **programming mode** a transmitted program is executed. You can recognize it by the green status LEDs of the senseBox MCU.
+
+In the **learning mode** the senseBox is recognized as a removable storage and new programs can be transferred. 
+You can recognize it by the red LED next to the reset button lighting up permanently/pulsating.
+
+![](/img/en/mcu/mcu-modus.png)
+
+Um dein Programm übertragen zu können, musst du deine MCU nun in den Lern-Modus versetzen. 
+<div className="flex justify-center">
+<iframe width="853" height="480" src="https://www.youtube.com/embed/jzlOJ7Zuqqw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+### Transfer 
+If you connect your senseBox MCU to your computer and double-click on the red button, it will be recognized as a removable storage.
+By clicking on "Compile Code" in the web interface, your program code is compiled on the server and a .BIN file is offered for download. 
+Depending on which operating system you are using, the copying process differs.
+
+<Tabs>
+    <TabItem value="windows" label="Windows">
+    In Windows, you can simply copy the created .BIN file to the removable storage SENSEBOX by drag & drop. 
+    The red LED on the button will flash briefly and then the board will restart automatically and execute your program code.
+    <div className="flex justify-center">
+        <img src={copyToMCUGif} />
+    </div>
+    </TabItem>
+    <TabItem value="macos" label="MacOS">
+    In MacOS you can't copy the .BIN file via drag & drop at the moment. 
+    One possibility is to copy the file in the terminal using the dd command (only recommended for experienced users!) or to use an alternative file manager like [muCommander](https://www.mucommander.com/).
+    <div className="flex justify-center">
+        <img src={copyToMCUGifMac} />
+    </div>
+    </TabItem>
+    <TabItem value="linux" label="Linux">
+    In Linux, you can simply copy the created .BIN file to the removable storage SENSEBOX by drag & drop.
+    The red LED on the button will flash briefly and then the board will restart automatically and execute your program code.
+    <div className="flex justify-center">
+        <img src={copyToMCUGif} />
+    </div>
+    </TabItem>
+</Tabs>

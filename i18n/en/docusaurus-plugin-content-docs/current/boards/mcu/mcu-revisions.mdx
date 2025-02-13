@@ -1,0 +1,34 @@
+---
+title: The different MCU revisions
+---
+import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
+import  mcuComparisons  from "@site/static/img/mcu/revisions/mcu_comparison.jpeg"
+import  mcuV13  from "@site/static/img/mcu/revisions/mcu_v13.jpeg"
+import  mcuV15 from "@site/static/img/mcu/revisions/mcu_v15.jpeg"
+import  mcuV15bmx from "@site/static/img/mcu/revisions/mcu_v15_bmx.jpeg"
+
+## Revisions of the senseBox MCU
+During the development of the senseBox MCU, several revisions were developed. The current version is the V1.5. 
+The following overview shows you the differences between the individual revisions. 
+Basically, all versions are compatible with each other and differ only slightly in hardware.
+
+<div className="flex flex-col items-center">
+    <img src= { mcuComparisons } />
+    <p className="text-gray-500"> Differences between the senseBox MCU revisions </p>
+</div>
+### V1.3
+
+Revision 1.3 is the first version to be delivered from 2018. It is equipped with an acceleration sensor (BMX055) and a micro USB port.
+
+<ImageWithText src= {mcuV13} title="MCU Revision 1.3"/>
+
+
+### V1.5 with USB-C port
+Version 1.5 of the senseBox MCU is equipped with a USB-C port. This allows for easy and fast connection to the computer. Version 1.5 is compatible with all previous versions of the senseBox MCU.
+
+<ImageWithText src={ mcuV15 } title="MCU Revision 1.5"/>
+Because of the scarcity of electronic components, a batch of revision 1.5 was delivered without an acceleration sensor (BMX055). 
+If you are unsure whether your senseBox MCU has an acceleration sensor, the graphic below will help you. 
+The upper version of the MCU V1.5 has an acceleration sensor, the lower version does not.
+
+<ImageWithText src={ mcuV15bmx } title="MCU Revision 1.5 without acceleration sensor"/>

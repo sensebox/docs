@@ -1,0 +1,82 @@
+---
+sidebar_position: 8
+title:  Microphone
+hide_title: false
+description: Condenser Microphone
+---
+
+import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
+import mikro from "@site/static/img/hardware-bilder/mikro/mic.png"
+import mikroBuild from "@site/static/img/hardware-bilder/mikro/mikro-aufbau.png"
+
+# Microphone
+This condenser microphone from Watterott Electronics is equipped with an amplifier and can detect noises between 58 and 110 dB.
+It outputs the measured noises in a range of 0-5V.
+
+<ImageWithText src={mikro} title="Condenser Microphone in the senseBox:edu"/>
+
+## Technical Information
+
+* Dimensions: 30mm x 11mm x 7.5mm  
+* Operating voltage: 2.7 - 5.5V DC  
+* Detection of sounds between 58 and 110 dB  
+
+<ImageWithText src={mikroBuild} title="Aufbau für das Kondesatormikrofon"/>
+
+
+## Programming (Arduino)
+
+### Code 
+This code outputs the measured voltage value to the Serial Monitor.
+
+```cpp
+ /*
+ * This code has been adapted from the
+ * Example Sound Level Sketch for the Adafruit Microphone Amplifier
+ */
+
+unsigned int micValue; // Variable to store the current measurement value
+int micPort = 1;
+const int recordingTimeWindow = 100; // Duration of the measurement interval in ms (100 ms = 10Hz)
+
+void setup() {
+	Serial.begin(9600); // Starts the Serial Monitor
+}
+
+void loop()
+{
+	unsigned long start = millis();  // Start of the measurement interval
+	unsigned int peakToPeak = 0;   // Distance from maximum to minimum amplitude swing
+	unsigned int signalMax = 0;
+	unsigned int signalMin = 1024;
+
+	// Collect data for 100 milliseconds
+	while (millis() - start < recordingTimeWindow)
+	{
+		micValue = analogRead(micPort); // Measure the current value
+		if (micValue < 1024)  // filter out erroneous measurements with values above the max value of 1024
+		{
+			if (micValue > signalMax)
+			{
+				signalMax = micValue;  // store the maximum measured value
+			}
+		else if (micValue < signalMin)
+			{
+				signalMin = micValue;  // store the minimum measured value
+			}
+		}
+	}
+	peakToPeak = signalMax - signalMin;  // max - min = distance from maximum to minimum amplitude swing
+	double volts = (peakToPeak * 5.0) / 1024;  // convert to volts
+
+
+	Serial.print(volts);
+	Serial.println(" Volts");
+}
+```
+## Programming (Blockly)
+In Blockly the sensor can be read using the following block:
+
+![](/img/en/hardware-bilder/mikro/mikro-block.svg)
+
+Choose the port to which you have connected the sensor via the dropdown menu.

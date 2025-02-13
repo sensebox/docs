@@ -1,0 +1,227 @@
+---
+title: senseBox:MCU
+hide_title: true
+---
+
+import mcus2top from "@site/static/img/mcus2/mcus2top.png";
+import AlertBox from "@site/src/components/AlertBox/AlertBox";
+import mcuPorts from "@site/static/img/en/mcu/sensebox-mcu-ports.jpg";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@site/src/components/ui/popover";
+import lightSensor from "@site/static/img/hardware-bilder/helligkeit-uv/sensor_helligkeit_uv.png";
+import display from "@site/static/img/hardware-bilder/oled/display.png";
+import tempSensor from "@site/static/img/hardware-bilder/temperatur-luftfeuchte/sensor_temperatur_luftfeuchte.png";
+import pressureSensor from "@site/static/img/hardware-bilder/luftdruck/bmp_top.png";
+import tofSensor from "@site/static/img/hardware-bilder/tof/tofsensor.png";
+import umweltsensor from "@site/static/img/hardware-bilder/umweltsensor/bme.png";
+import CO2Sensor from "@site/static/img/hardware-bilder/co2/scd30.png";
+import feinstaubSps from "@site/static/img/hardware-bilder/sps30/sps30.png";
+import feinstaubSds from "@site/static/img/hardware-bilder/feinstaub/sensoren_feinstaub.png";
+import mikro from "@site/static/img/hardware-bilder/mikro/mic.png";
+import ultrasonic from "@site/static/img/hardware-bilder/distanz/US-Sensor.png";
+import truebner from "/img/hardware-bilder/bodenfeuchte-temperatursensor/sensoren_bodenfeuchte_temperatur.png";
+import wifiBee from "@site/static/img/hardware-bilder/bees/wifi-bee/wifi.png";
+import sdBee from "@site/static/img/hardware-bilder/bees/sd-bee/msd.png";
+import loraBee from "@site/static/img/hardware-bilder/bees/lora-bee/LoraBee_Bottom.png";
+
+<div className = "flex flex-col justify-center items-center">
+    <h1>senseBoxMCU</h1>
+    <p>
+      The senseBox MCU is a microcontroller specially developed for the needs of the senseBox.
+      Therefore, the microcontroller has three main features: it is fast, energy-efficient and has a large program memory.
+    </p>
+
+    <p>
+      The microcontroller can easily be "programmed" in 10 minutes, even without prior knowledge, by transferring a pre-made sketch to the microcontroller.
+      For advanced users, the Arduino IDE can be used as usual to create new and individual projects.
+    </p>  
+    
+    <div>
+        <img src={mcuPorts} alt="senseBox MCU" />
+    </div>
+</div>
+## Ports
+Click on the ports below to see which sensor is connected there.
+<div className="flex flex-row justify-evenly">
+    <Popover>
+          <PopoverTrigger className="flex justify-center cursor-pointer bg-white border-solid border-1 rounded-md w-[10rem] p-2 hover:bg-gray-100">
+            I2C/Wire ports
+          </PopoverTrigger>
+          <PopoverContent>
+            <div>
+              <h2>Sensoren und Accessoire an den I2C/Wire Ports</h2>
+              <div className="flex flex-col lg:flex-row">
+                <div className="flex flex-col items-center">
+                  <img
+                    src={lightSensor}
+                    alt="Your Image"
+                    className="w-[5rem] lg:w-[10rem]"
+                  />
+                  <p className=" text-gray-500">Light sensor</p>
+                </div>
+                <div className="flex flex-col items-center">
+                  <img
+                    src={tempSensor}
+                    alt="Your Image"
+                    className="w-[5rem] lg:w-[10rem]"
+                  />
+                  <p className=" text-gray-500">Temperature and humidity</p>
+                </div>
+                <div className="flex flex-col items-center">
+                  <img
+                    src={pressureSensor}
+                    alt="Your Image"
+                    className="w-[5rem] lg:w-[10rem]"
+                  />
+                  <p className=" text-gray-500">Air pressure</p>
+                </div>
+                <div className="flex flex-col items-center">
+                  <img
+                    src={tofSensor}
+                    alt="Your Image"
+                    className="w-[5rem] lg:w-[10rem]"
+                  />
+                  <p className=" text-gray-500">Time of Flight(Tof)</p>
+                </div>
+                <div className="flex flex-col items-center">
+                  <img
+                    src={umweltsensor}
+                    alt="Your Image"
+                    className="w-[5rem] lg:w-[10rem]"
+                  />
+                  <p className=" text-gray-500">Environmental sensor</p>
+                </div>
+                <div className="flex flex-col items-center">
+                  <img
+                    src={CO2Sensor}
+                    alt="Your Image"
+                    className="w-[5rem] lg:w-[10rem]"
+                  />
+                  <p className=" text-gray-500">CO2 sensor</p>
+                </div>
+                <div className="flex flex-col items-center">
+                  <img
+                    src={display}
+                    alt="Your Image"
+                    className="w-[5rem] lg:w-[10rem]"
+                  />
+                  <p className=" text-gray-500">Display</p>
+                </div>
+              </div>
+            </div>
+            </PopoverContent>
+    </Popover>
+    <Popover>
+        <PopoverTrigger className="flex justify-center cursor-pointer bg-white border-solid border-1 rounded-md w-[10rem] p-2 hover:bg-gray-100">
+        UART/Serial port
+        </PopoverTrigger>
+        <PopoverContent>
+        <div className="flex flex-col lg:flex-row">
+            <div className="flex flex-col items-center">
+                <img
+                src={feinstaubSds}
+                alt="Your Image"
+                className="w-[5rem] lg:w-[10rem]"
+                />
+                <p className=" text-gray-500">Fine dust (SDS011)</p>
+            </div>
+            <div className="flex flex-col items-center">
+                <img
+                src={feinstaubSps}
+                alt="Your Image"
+                className="w-[5rem] lg:w-[10rem]"
+                />
+                <p className=" text-gray-500">Fine dust (SPS30)</p>
+            </div>
+        </div>
+        </PopoverContent>
+    </Popover>
+    <Popover>
+          <PopoverTrigger className="flex justify-center cursor-pointer bg-white border-solid border-1 rounded-md w-[10rem] p-2 hover:bg-gray-100">
+            Digital/Analogue ports
+          </PopoverTrigger>
+          <PopoverContent>
+            <div className="flex flex-col lg:flex-row">
+                <div className="flex flex-col items-center">
+                    <img
+                    src={mikro}
+                    alt="Your Image"
+                    className="w-[5rem] lg:w-[10rem]"
+                    />
+                    <p className=" text-gray-500">Condenser mic</p>
+                </div>
+                <div className="flex flex-col items-center">
+                    <img
+                    src={ultrasonic}
+                    alt="Your Image"
+                    className="w-[5rem] lg:w-[10rem]"
+                    />
+                    <p className=" text-gray-500">Ultrasonic distance sensor</p>
+                </div>
+                <div className="flex flex-col items-center">
+                    <img
+                    src={truebner}
+                    alt="Your Image"
+                    className="w-[5rem] lg:w-[10rem]"
+                    />
+                    <p className=" text-gray-500">Soil moisture sensor</p>
+                </div>
+            </div>
+            </PopoverContent>
+    </Popover>
+        <Popover>
+          <PopoverTrigger className="flex justify-center cursor-pointer bg-white border-solid border-1 rounded-md w-[10rem] p-2 hover:bg-gray-100">
+            XBEE
+          </PopoverTrigger>
+          <PopoverContent>
+          <div className="flex flex-col lg:flex-row">
+            <div className="flex flex-col items-center">
+                <img
+                src={wifiBee}
+                alt="Your Image"
+                className="w-[5rem] lg:w-[10rem]"
+                />
+                <p className=" text-gray-500">WiFi Bee</p>
+             </div>
+            <div className="flex flex-col items-center">
+                <img
+                src={sdBee}
+                alt="Your Image"
+                className="w-[5rem] lg:w-[10rem]"
+                />
+                <p className=" text-gray-500">SD Bee</p>
+            </div>
+            <div className="flex flex-col items-center">
+                <img
+                src={loraBee}
+                alt="Your Image"
+                className="w-[5rem] lg:w-[10rem]"
+                />
+                <p className=" text-gray-500">LoRa Bee</p>
+            </div>
+            </div>
+        </PopoverContent>
+    </Popover>
+
+</div>
+
+## Technical specifications
+
+### Processor
+
+The processor is based on the ARM Cortex-M0+ processor from the SAM D21 family by Microchip.
+
+### Interfaces
+
+Sensors and actuators are addressed via the proven interfaces such as I2C, UART, and digital I/Os with a robust JST connector system (5V tolerant).
+
+### Data Transmission
+
+Through the two XBee compatible sockets, UART or SPI modules are offered. Optionally, data transmission can be carried out in real-time via WLAN, LAN, or LoRa. Alternatively, the data can also be stored on a micro-SD card.
+
+## Programming
+
+The senseBox MCU can be programmed using various programming environments. A detailed overview can be found [here](/arduino/allgemein-sensebox-editoren/).
