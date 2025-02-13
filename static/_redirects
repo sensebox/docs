@@ -1,48 +1,108 @@
 # board overviews
 
 /hardware/allgemein-sensebox-mcu/ /docs/boards/mcu/mcu-overview
+/en/hardware/allgemein-sensebox-mcu/ /en/docs/boards/mcu/mcu-overview
+
 /hardware/allgemein-sensebox-mcu-mini/ /docs/boards/mini/mini-overview
+/en/hardware/allgemein-sensebox-mcu-mini/ /en/docs/boards/mini/mini-overview
 
 # sets
 
 /hardware/sets-co2-ampel/ /docs/products/co2Ampel/co2Ampel-overview
+/en/hardware/sets-co2-ampel/ /en/docs/products/co2Ampel/co2Ampel-overview
+
 /category/sensebox-home/ /docs/products/home/aufbau/home-schritt-1
+/en/category/sensebox-home/ /en/docs/products/home/aufbau/home-schritt-1
 
 # categories
 
 /category/hardware/ /docs/category/glossar
+/en/category/hardware/ /en/docs/category/glossar
+
 /category/blockly/ /docs/category/blockly-1
+/en/category/blockly/ /en/docs/category/blockly-1
+
 /category/arduino/ /docs/category/arduino-1
+/en/category/arduino/ /en/docs/category/arduino-1
 
 # hardware
 
 /hardware/rtc-modul/ /docs/hardware/accessoires/rtc-modul
+/en/hardware/rtc-modul/ /en/docs/hardware/accessoires/rtc-modul
+
 /hardware/zubehoer-display/ /docs/hardware/accessoires/display
+/en/hardware/zubehoer-display/ /en/docs/hardware/accessoires/display
+
 /hardware/sensoren-co2/ /docs/hardware/sensors/co2
+/en/hardware/sensoren-co2/ /en/docs/hardware/sensors/co2
+
 /hardware/sensoren-umweltsensor/ /docs/hardware/sensors/umweltsensor
+/en/hardware/sensoren-umweltsensor/ /en/docs/hardware/sensors/umweltsensor
+
 /hardware/bee-lora/ /docs/hardware/bee/lora-bee
+/en/hardware/bee-lora/ /en/docs/hardware/bee/lora-bee
+
 /hardware/sensoren-mikro/ /docs/hardware/sensors/mikro
+/en/hardware/sensoren-mikro/ /en/docs/hardware/sensors/mikro
+
 /hardware/bee-sd/ /docs/hardware/bee/sd-bee
+/en/hardware/bee-sd/ /en/docs/hardware/bee/sd-bee
+
 /hardware/sensoren-luftdruck-temperatur/ /docs/hardware/sensors/luftdruck-temperatur
+/en/hardware/sensoren-luftdruck-temperatur/ /en/docs/hardware/sensors/luftdruck-temperatur
+
 /hardware/sensoren-temperatur-luftfeuchte/ /docs/hardware/sensors/temperatur-luftfeuchte
+/en/hardware/sensoren-temperatur-luftfeuchte/ /en/docs/hardware/sensors/temperatur-luftfeuchte
+
 /hardware/sensoren-distanz/ /docs/hardware/sensors/distanz
+/en/hardware/sensoren-distanz/ /en/docs/hardware/sensors/distanz
+
 /hardware/sensoren-helligkeit-uv/ /docs/hardware/sensors/helligkeit-uv
+/en/hardware/sensoren-helligkeit-uv/ /en/docs/hardware/sensors/helligkeit-uv
+
 /hardware/sensoren-gps/ /docs/hardware/accessoires/gps
+/en/hardware/sensoren-gps/ /en/docs/hardware/accessoires/gps
+
 /hardware/sensoren-lautstaerke/ /docs/hardware/sensors/lautstaerke
+/en/hardware/sensoren-lautstaerke/ /en/docs/hardware/sensors/lautstaerke
+
 /hardware/sensoren-truebner/ /docs/hardware/sensors/truebner
+/en/hardware/sensoren-truebner/ /en/docs/hardware/sensors/truebner
+
 /hardware/sensoren-feinstaub/ /hardware/sensors/feinstaub-sds011
+/en/hardware/sensoren-feinstaub/ /en/hardware/sensors/feinstaub-sds011
+
 /hardware/zubehoer-multiplexer/ /docs/hardware/accessoires/multiplexer
+/en/hardware/zubehoer-multiplexer/ /en/docs/hardware/accessoires/multiplexer
+
 /hardware/bluetooth-bee/ /docs/hardware/bee/bluetooth-bee
+/en/hardware/bluetooth-bee/ /en/docs/hardware/bee/bluetooth-bee
+
 /hardware/bee-lan/ /docs/hardware/bee/ethernet-bee
+/en/hardware/bee-lan/ /en/docs/hardware/bee/ethernet-bee
+
 /hardware/bee-wifi/ /docs/hardware/bee/wifi-bee
+/en/hardware/bee-wifi/ /en/docs/hardware/bee/wifi-bee
 
 /blockly/blockly-display/ /docs/hardware/accessoires/display
+/en/blockly/blockly-display/ /en/docs/hardware/accessoires/display
+
 /blockly/blockly-web-lora/ /docs/editors/blockly/blocks/lora
+/en/blockly/blockly-web-lora/ /en/docs/editors/blockly/blocks/lora
+
 /blockly/blockly-web-wifi/ /docs/editors/blockly/blocks/web/wifi
+/en/blockly/blockly-web-wifi/ /en/docs/editors/blockly/blocks/web/wifi
+
 /blockly/blockly-erster-sketch/ /docs/boards/mcu/mcu-erster-sketch
+/en/blockly/blockly-erster-sketch/ /en/docs/boards/mcu/mcu-erster-sketch
 
 # misc
 
 /arduino/allgemein-basics-inbetriebnahme/ /docs/editors/arduino/first-steps
+/en/arduino/allgemein-basics-inbetriebnahme/ /en/docs/editors/arduino/first-steps
+
 /faq /docs/misc/faq
+/en/faq /en/docs/misc/faq
+
 /opensensemap-faq/ /docs/misc/opensensemap/faq
+/en/opensensemap-faq/ /en/docs/misc/opensensemap/faq
