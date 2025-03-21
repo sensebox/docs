@@ -26,6 +26,7 @@ import truebner from "/img/hardware-bilder/bodenfeuchte-temperatursensor/sensore
 import wifiBee from "@site/static/img/hardware-bilder/bees/wifi-bee/wifi.png";
 import sdBee from "@site/static/img/hardware-bilder/bees/sd-bee/msd.png";
 import loraBee from "@site/static/img/hardware-bilder/bees/lora-bee/LoraBee_Bottom.png";
+import Admonition from '@theme/Admonition';
 
 <div className = "flex flex-col justify-center items-center">
     <h1>senseBoxMCU</h1>
@@ -206,6 +207,15 @@ Click on the ports below to see which sensor is connected there.
         </PopoverContent>
     </Popover>
 
+</div>
+
+<div className="mt-8">
+	<Admonition type="warning" title="Note on using the XBees">
+		<p>
+			In rare cases, there may still be a protective film on the XBee slots. 
+			The film can be carefully removed with tweezers in order to use the slots.
+		</p>
+	</Admonition>
 </div>
 
 ## Technical specifications

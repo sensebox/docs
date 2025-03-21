@@ -3,15 +3,15 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import image from "@site/static/img/mcus2/mcus2top.png";
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
+	Tooltip,
+	TooltipContent,
+	TooltipProvider,
+	TooltipTrigger,
 } from "@site/src/components/ui/tooltip";
 import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
+	Popover,
+	PopoverContent,
+	PopoverTrigger,
 } from "@site/src/components/ui/popover";
 import { Button } from "@site/src/components/ui/button";
 import mcus2ports from "@site/static/img/mcus2/mcus2-ports.png";
@@ -26,108 +26,117 @@ import ImageWithText from "@site/src/components/ImageWithText/ImageWithText";
 import mcus2top from "@site/static/img/mcus2/mcus2top.png";
 
 <div className="flex flex-col justify-center items-center">
-  <h1>MCU S2 (ESP32)</h1>
-  <p>
-    Der Mikrocontroller auf ESP-32 Basis bietet eine Vielzahl von neuen
-    Möglichkeiten in Hinsicht auf Datenübertragung, Datenaustausch und
-    Bedienung.
-  </p>
-  <div className="flex w-full flex-col items-center text-center gap-4">
-    <div>
-      <img src={mcus2ports} alt="Your Image" className="" />{" "}
-    </div>
-    <div className="flex w-full flex-col">
-      <h1 className="text-left"> Anschlüsse </h1>
-      <div className="flex flex-row justify-evenly">
-        <Popover>
-          <PopoverTrigger className="flex  cursor-pointer bg-white border-solid border-1 rounded-md w-[10rem] p-2 hover:bg-gray-100">
-            I2C/Wire Ports
-          </PopoverTrigger>
-          <PopoverContent>
-            <div>
-              <h2>Sensoren und Accessoire an den I2C/Wire Ports</h2>
-              <div className="flex flex-col lg:flex-row">
-                <div className="flex flex-col items-center">
-                  <img
-                    src={lightSensor}
-                    alt="Your Image"
-                    className="w-[5rem] lg:w-[10rem]"
-                  />
-                  <p className=" text-gray-500">Lichtsensor</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <img
-                    src={tempSensor}
-                    alt="Your Image"
-                    className="w-[5rem] lg:w-[10rem]"
-                  />
-                  <p className=" text-gray-500">Temperatur und Luftfeuchte</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <img
-                    src={pressureSensor}
-                    alt="Your Image"
-                    className="w-[5rem] lg:w-[10rem]"
-                  />
-                  <p className=" text-gray-500">Luftdruck</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <img
-                    src={tofSensor}
-                    alt="Your Image"
-                    className="w-[5rem] lg:w-[10rem]"
-                  />
-                  <p className=" text-gray-500">Time of Flight(Tof)</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <img
-                    src={display}
-                    alt="Your Image"
-                    className="w-[5rem] lg:w-[10rem]"
-                  />
-                  <p className=" text-gray-500">Display</p>
-                </div>
-              </div>
-            </div>
-          </PopoverContent>
-        </Popover>
-        <Popover>
-          <PopoverTrigger className="cursor-pointer bg-white border-solid border-1 rounded-md w-[10rem] p-2 hover:bg-gray-100">
-            Digital/Analog Ports
-          </PopoverTrigger>
-          <PopoverContent>
-            <div>
-              <h2>Sensoren und Accessoire an den Digital/Analog Ports</h2>
-              <div className="flex flex-row justify-center">
-                <div className="flex flex-col items-center">
-                  <img
-                    src={ledMatrix}
-                    alt="Your Image"
-                    className="w-[5rem] lg:w-[10rem]"
-                  />
-                  <p className="text-gray-500">LED-Matrix</p>
-                </div>
-              </div>
-            </div>
-          </PopoverContent>
-        </Popover>
-      </div>
-    </div>
-    <div className="flex flex-col w-full">
-      <h1 className="text-left">I2C/Wire Daisy Chain</h1>
-      <p className="text-left">
-        Eine I2C-Daisy-Chain ermöglicht die einfache und effiziente Verbindung
-        mehrerer Geräte in einer seriellen Kommunikationskette unter Verwendung
-        des I2C-Protokolls. Durch die Daisy-Chain-Konfiguration kann jedes Gerät
-        in der Kette Daten senden und empfangen. Diese Methode ist besonders
-        nützlich in Anwendungen, bei denen Platz und Ressourcen begrenzt sind,
-        da sie die Anzahl der benötigten physischen Verbindungen minimiert und
-        gleichzeitig eine robuste und zuverlässige Datenkommunikation
-        ermöglicht.
-      </p>
-      <div className="flex justify-center">
-        <ImageWithText src={i2cdaiychain} title="I2C/Wire Daisy Chain" />
-      </div>
-    </div>
-  </div>
+	<h1>MCU S2 (ESP32)</h1>
+	<p>
+		Der Mikrocontroller auf ESP-32 Basis bietet eine Vielzahl von neuen
+		Möglichkeiten in Hinsicht auf Datenübertragung, Datenaustausch und
+		Bedienung.
+	</p>
+	<div className="flex w-full flex-col items-center text-center gap-4">
+		<div>
+			<img src={mcus2ports} alt="Your Image" className="" />
+		</div>
+		<div className="flex w-full flex-col">
+			<h1 className="text-left"> Anschlüsse </h1>
+			<div className="flex flex-row justify-evenly">
+				<Popover>
+					<PopoverTrigger className="flex cursor-pointer bg-white border-solid border-1 rounded-md w-[10rem] p-2 hover:bg-gray-100">
+						I2C/Wire Ports
+					</PopoverTrigger>
+					<PopoverContent>
+						<div>
+							<h2>Sensoren und Accessoire an den I2C/Wire Ports</h2>
+							<div className="flex flex-col lg:flex-row">
+								<div className="flex flex-col items-center">
+									<img
+										src={lightSensor}
+										alt="Your Image"
+										className="w-[5rem] lg:w-[10rem]"
+									/>
+									<p className=" text-gray-500">Lichtsensor</p>
+								</div>
+								<div className="flex flex-col items-center">
+									<img
+										src={tempSensor}
+										alt="Your Image"
+										className="w-[5rem] lg:w-[10rem]"
+									/>
+									<p className=" text-gray-500">Temperatur und Luftfeuchte</p>
+								</div>
+								<div className="flex flex-col items-center">
+									<img
+										src={pressureSensor}
+										alt="Your Image"
+										className="w-[5rem] lg:w-[10rem]"
+									/>
+									<p className=" text-gray-500">Luftdruck</p>
+								</div>
+								<div className="flex flex-col items-center">
+									<img
+										src={tofSensor}
+										alt="Your Image"
+										className="w-[5rem] lg:w-[10rem]"
+									/>
+									<p className=" text-gray-500">Time of Flight(Tof)</p>
+								</div>
+								<div className="flex flex-col items-center">
+									<img
+										src={display}
+										alt="Your Image"
+										className="w-[5rem] lg:w-[10rem]"
+									/>
+									<p className=" text-gray-500">Display</p>
+								</div>
+							</div>
+						</div>
+					</PopoverContent>
+				</Popover>
+				<Popover>
+					<PopoverTrigger className="cursor-pointer bg-white border-solid border-1 rounded-md w-[10rem] p-2 hover:bg-gray-100">
+						Digital/Analog Ports
+					</PopoverTrigger>
+					<PopoverContent>
+						<div>
+							<h2>Sensoren und Accessoire an den Digital/Analog Ports</h2>
+							<div className="flex flex-row justify-center">
+								<div className="flex flex-col items-center">
+									<img
+										src={ledMatrix}
+										alt="Your Image"
+										className="w-[5rem] lg:w-[10rem]"
+									/>
+									<p className="text-gray-500">LED-Matrix</p>
+								</div>
+							</div>
+						</div>
+					</PopoverContent>
+				</Popover>
+			</div>
+		</div>
+		<div className="mt-8">
+			<Admonition type="warning" title="Hinweis zur Verwendung der XBees" className="text-left">
+				<p>
+					In seltenen Fällen kann es vorkommen, dass sich noch eine Schutzfolie
+					auf den Steckplätzen der XBees befindet. Diese lässt sich vorsichtig
+					mit einer Pinzette entfernen, um die Steckplätze nutzen zu können.
+				</p>
+			</Admonition>
+		</div>
+		<div className="flex flex-col w-full">
+			<h1 className="text-left">I2C/Wire Daisy Chain</h1>
+			<p className="text-left">
+				Eine I2C-Daisy-Chain ermöglicht die einfache und effiziente Verbindung
+				mehrerer Geräte in einer seriellen Kommunikationskette unter Verwendung
+				des I2C-Protokolls. Durch die Daisy-Chain-Konfiguration kann jedes Gerät
+				in der Kette Daten senden und empfangen. Diese Methode ist besonders
+				nützlich in Anwendungen, bei denen Platz und Ressourcen begrenzt sind,
+				da sie die Anzahl der benötigten physischen Verbindungen minimiert und
+				gleichzeitig eine robuste und zuverlässige Datenkommunikation
+				ermöglicht.
+			</p>
+			<div className="flex justify-center">
+				<ImageWithText src={i2cdaiychain} title="I2C/Wire Daisy Chain" />
+			</div>
+		</div>
+	</div>
 </div>
