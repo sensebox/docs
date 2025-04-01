@@ -20,78 +20,116 @@
     url("webfonts/2EF157_1_0.ttf") format("truetype");
 }
 
-
 html {
   font-family: 'BrixSlab-Regular', "Helvetica", "Arial", sans-serif;
-
 }
-/*header {
-  display: none;
-} */
 
-@layer base {
-  :root {
-    
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+:root {
+  --ifm-color-primary: #43c272;
+  --ifm-color-primary-dark: #3bae66;
+  --ifm-color-primary-darker: #379a5e;
+  --ifm-color-primary-darkest: #2e874e;
+  --ifm-color-primary-light: #58c982;
+  --ifm-color-primary-lighter: #6ecf92;
+  --ifm-color-primary-lightest: #84d6a3;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #f2f2f2;
+  --ifm-footer-background-color: #f7f7f7;
+  --ifm-code-font-size: 95%;
+}
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+[data-theme='dark'] {
+  --ifm-color-primary: #3bae66; /* Dunkleres Grün */
+  --ifm-color-primary-dark: #379a5e;
+  --ifm-color-primary-darker: #2e874e;
+  --ifm-color-primary-darkest: #256e3d;
+  --ifm-color-primary-light: #4fd680;
+  --ifm-color-primary-lighter: #78df9c;
+  --ifm-color-primary-lightest: #8de4ab;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+  --ifm-background-color: #1a1e2b; /* Dunkles Blau */
+  --ifm-background-surface-color: #1a1e2b;
+  --ifm-footer-background-color: #15192a;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+  --background: 222.2 24% 15%; 
+  --foreground: 210 20% 98%;
+  --card: 222.2 24% 15%;
+  --card-foreground: 210 20% 98%;
+  --popover: 222.2 24% 15%;
+  --popover-foreground: 210 20% 98%;
+  --primary: 210 20% 98%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 20% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 20% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 20% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 212.7 26.8% 83.9%;
+}
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+html, body, .main, .docMainContainer, .docItemContainer, .markdown, .container {
+  background-color: var(--ifm-background-color) !important;
+}
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+[data-theme='dark'] img {
+	filter: brightness(0.8) contrast(0.95);
+	transition: filter 0.3s ease;
+  }
+  
+  [data-theme='dark'] img:hover {
+	filter: brightness(1) contrast(1);
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+[data-theme='dark'] .navbar {
+  background-color: #15192a !important;
+}
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+[data-theme='dark'] .navbar__link {
+  color: rgba(255, 255, 255, 0.85);
+}
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+[data-theme='dark'] .menu {
+  background-color: #1a1e2b;
+}
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+[data-theme='dark'] .hero__title,
+[data-theme='dark'] .hero__subtitle,
+[data-theme='dark'] .button--primary {
+  color: #4fd680 !important;
+  background-color: #1a1e2b !important;
+  border-color: #3bae66 !important;
+}
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+[data-theme='dark'] table {
+  background-color: #1a1e2b;
+  border-color: #3a3f52;
+}
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+[data-theme='dark'] table tr {
+  background-color: #1a1e2b;
+  border-top: 1px solid #3a3f52;
+}
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+[data-theme='dark'] table tr:nth-child(2n) {
+  background-color: #222736;
+}
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+[data-theme='dark'] .markdown {
+  color: rgba(255, 255, 255, 0.9);
+}
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-  }
+.dotted-background {
+  background-color: var(--ifm-background-color);
+  background-image:
+    linear-gradient(90deg, rgba(128, 128, 128, 0.2) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(128, 128, 128, 0.2) 1px, transparent 1px);
+  background-size: 10px 10px;
 }
 
 @layer base {
@@ -101,18 +139,4 @@ html {
   body {
     @apply bg-background text-foreground;
   }
-}
-
-
-.dotted-background {
-  /* Grundfarbe des Hintergrunds */
-  background-color: #fff;
-
-  /* Erzeugung eines gepunkteten Effekts */
-  background-image: 
-    linear-gradient(90deg, #000 1px, transparent 1px),
-    linear-gradient(180deg, #000 1px, transparent 1px);
-
-  /* Größe der Punkte und des Abstands */
-  background-size: 10px 10px;
 }
