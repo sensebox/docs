@@ -17,9 +17,13 @@ import TutorialPorts_en from '@site/src/components/TutorialPorts/TutorialPorts_e
 - 12x8 Matrix
 - 96 LEDs
 
+---
+
 ## Connection
 
 <TutorialPorts_en port="io" />
+
+---
 
 ## Programming (Blockly)
 In Blockly the LED matrix must first be initialized. 
@@ -27,6 +31,56 @@ There you have to specify the port to which you have connected the LED matrix.
 After that you can display text for example.
 
 ![Blockly](/img/en/hardware-bilder/led-matrix/led-matrix-block.svg)
+
+---
+
+## Bitmaps on the LED Matrix
+
+The LED matrix can display letters and numbers, but also custom-made **pixel graphics**, called **bitmaps**.
+
+A bitmap consists of a grid of **12x8 LEDs** – each LED can be controlled in different ways.
+
+### What is a bitmap?
+
+A bitmap is essentially a table where each cell (LED) is assigned a color. In Blockly, you can create a **colorful graphic**, where each LED has its own RGB color value.  
+Black cells represent turned-off LEDs. This way, you can design and display various **pixel graphics** on the LED matrix.
+
+![Happy Bitmap](/img/hardware-bilder/led-matrix/happy_bitmap.svg)
+
+### Displaying Text
+
+Letters and numbers can also be displayed on the LED matrix. These do not need to be created using a bitmap – instead, you can use the corresponding **text block** in Blockly.
+
+![Text Block](/img/en/hardware-bilder/led-matrix/text_block.svg)
+
+### Displaying Emojis
+
+Blockly also includes a selection of built-in emojis that can be displayed on the LED matrix, such as a smiley face, a hat, or a knight.  
+To display an emoji, simply drag the appropriate block into your Blockly program.
+
+![Emoji Block](/img/en/hardware-bilder/led-matrix/emoji_block.svg)
+
+### More options
+
+- In addition to creating bitmaps using the visual block, advanced users can define the color of **each individual LED** using **RGB565 color values**.  
+  This requires entering 96 RGB565 values into the appropriate block – one for each pixel on the matrix.  
+  The LEDs are filled from top-left to bottom-right, line by line.
+
+> 💡 **Tip**: You can use this [website](https://rgbcolorpicker.com/565) to select a color and get its RGB565 value.
+
+![RGB565 Block](/img/hardware-bilder/led-matrix/rgb565_block.svg)
+
+- With the **“Set Pixel”** block, you can also create your own bitmaps by manually addressing individual pixels on the LED matrix.  
+  You must provide the X and Y coordinates for each pixel you want to color.  
+  The X-axis ranges from 0 to 11, and the Y-axis from 0 to 7. This allows you to create pixel-based graphics or even small animations.
+
+> 💡 **Tip**: If you color multiple pixels in quick succession, the matrix may flicker.  
+Deactivate “Draw immediately” in all but the last block to update all pixels at once.
+
+![Set Pixel Block](/img/en/hardware-bilder/led-matrix/set_pixel_block.svg)
+
+
+---
 
 ## Projects
 

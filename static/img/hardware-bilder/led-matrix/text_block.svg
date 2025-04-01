@@ -1,0 +1,118 @@
+<svg viewBox="0 0 345 118" xmlns="http://www.w3.org/2000/svg" style="max-height: 500px" width="345" height="118">
+  <g transform="matrix(1, 0, 0, 1, -328.410004, 261.509003)" class="blocklyBlockCanvas" xmlns="http://www.w3.org/2000/svg">
+    <g class="blocklyCursor">
+      <g height="5" width="100">
+        <rect style="display: none;" height="5" width="100">
+          
+        </rect>
+        <rect style="display: none; fill: rgba(255, 255, 255, 0.5); pointer-events: none; stroke-width: 3px;" ry="10" rx="10" class="blocklyVerticalMarker"/>
+        <path style="display: none;" transform="">
+          
+        </path>
+        <path style="display: none;" stroke-width="4" fill="none" transform="">
+          
+        </path>
+      </g>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 127.621002, -16.685301)" class="blocklyBlockCanvas" xmlns="http://www.w3.org/2000/svg">
+      <g class="blocklyCursor">
+        <g height="5" width="100">
+          <rect style="display: none;" height="5" width="100">
+            
+          </rect>
+          <rect style="display: none; fill: rgba(255, 255, 255, 0.5); pointer-events: none; stroke-width: 3px;" ry="10" rx="10" class="blocklyVerticalMarker"/>
+          <path style="display: none;" transform="">
+            
+          </path>
+          <path style="display: none;" stroke-width="4" fill="none" transform="">
+            
+          </path>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 9.68773, 101.989998)" class="blocklyBlockCanvas" xmlns="http://www.w3.org/2000/svg">
+    <g class="blocklyCursor">
+      <g height="5" width="100">
+        <rect style="display: none;" height="5" width="100">
+          
+        </rect>
+        <rect style="display: none; fill: rgba(255, 255, 255, 0.5); pointer-events: none; stroke-width: 3px;" ry="10" rx="10" class="blocklyVerticalMarker"/>
+        <path style="display: none;" transform="">
+          
+        </path>
+        <path style="display: none;" stroke-width="4" fill="none" transform="">
+          
+        </path>
+      </g>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -16.1166, 15.2728)" class="blocklyBlockCanvas" xmlns="http://www.w3.org/2000/svg">
+      <g class="blocklyCursor">
+        <g height="5" width="100">
+          <rect style="display: none;" height="5" width="100">
+            
+          </rect>
+          <rect style="display: none; fill: rgba(255, 255, 255, 0.5); pointer-events: none; stroke-width: 3px;" ry="10" rx="10" class="blocklyVerticalMarker"/>
+          <path style="display: none;" transform="">
+            
+          </path>
+          <path style="display: none;" stroke-width="4" fill="none" transform="">
+            
+          </path>
+        </g>
+      </g>
+      <g style="cursor: grab;" class="blocklyDraggable" transform="matrix(1, 0, 0, 1, 6.11976, -117.567001)" data-id="dE15_-w5f7*814}o$R?$">
+        <path style="width: 205.333px; block-size: 115px; cursor: grab; display: flex; height: 115px; inline-size: 205.333px;" d="m 0,0 m 0,8 a 8 8 0 0,1 8,-8 h 7 l 6,4 3,0 6,-4 h 175.2999973297119 v 5 H 205.2999973297119 V 5 H 205.2999973297119 V 23 H 205.2999973297119 V 33 H 205.2999973297119 V 51 H 205.2999973297119 V 61 H 205.2999973297119 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 3 H 205.2999973297119 V 89 H 205.2999973297119 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 3 H 205.2999973297119 V 107 V 111 h -175.7999973297119 l -6,4 -3,0 -6,-4 h -6.5 a 8 8 0 0,1 -8,-8 z" fill="#498449" transform="translate(1,1)" class="blocklyPathDark"/>
+        <path style="cursor: grab;" d="m 0,0 m 0,8 a 8 8 0 0,1 8,-8 h 7 l 6,4 3,0 6,-4 h 175.2999973297119 v 5 H 205.2999973297119 V 5 H 205.2999973297119 V 23 H 205.2999973297119 V 33 H 205.2999973297119 V 51 H 205.2999973297119 V 61 H 205.2999973297119 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 3 H 205.2999973297119 V 89 H 205.2999973297119 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 3 H 205.2999973297119 V 107 V 111 h -175.7999973297119 l -6,4 -3,0 -6,-4 h -6.5 a 8 8 0 0,1 -8,-8 z" fill="#5ba55b" stroke="none" class="blocklyPath"/>
+        <path style="width: 209.317px; block-size: 115px; cursor: grab; display: flex; fill: none; height: 115px; inline-size: 209.317px; stroke-linecap: round;" d="m 0,0 m 0.5,8 a 7.5 7.5 0 0,1 8,-7.5 H 14.5 h 0.5 l 6,4 3,0 6,-4 H 204.7999973297119 H 204.7999973297119 M 205.2999973297119,61 m -5,14.3 l 3.68,-2.1 M 205.2999973297119,89 m -5,14.3 l 3.68,-2.1 M 0,111 m 2.6966991411008934,-2.6966991411008934 a 7.5 7.5 0 0,1 -2.1966991411008934,-5.303300858899107 V 8" stroke="#8cc08c" class="blocklyPathLight"/>
+        <g transform="translate(10,5)">
+          <text style="white-space: pre; cursor: grab; fill: rgb(255, 255, 255); font-family: sans-serif; font-size: 14.6667px; line-height: normal;" y="14" x="0" class="blocklyText">Zeige Text/Zahl</text>
+        </g>
+        <g transform="translate(119.9749984741211,5)">
+          <text style="white-space: pre; cursor: grab; fill: rgb(255, 255, 255); font-family: sans-serif; font-size: 14.6667px; line-height: normal;" y="14" x="0" class="blocklyText">Port:</text>
+        </g>
+        <g transform="translate(155.87499809265137,5)" style="cursor: default;" class="blocklyEditableText">
+          <rect style="fill: rgb(255, 255, 255); fill-opacity: 0.6; stroke: none;" fill="transparent" stroke="#8cc08c" class="blocklyFieldRect blocklyDropdownRect" width="36.42499923706055" height="18" y="0" x="0" ry="4" rx="4"/>
+          <text style="white-space: pre; font-family: sans-serif; font-size: 14.6667px; line-height: normal;" y="14" x="5" text-anchor="start" class="blocklyText blocklyDropdownText">A<tspan style="fill: rgb(91, 165, 91);"> ▾</tspan></text>
+          <image style="display: none;"/>
+        </g>
+        <g transform="translate(10,33)">
+          <text style="white-space: pre; cursor: grab; fill: rgb(255, 255, 255); font-family: sans-serif; font-size: 14.6667px; line-height: normal;" y="14" x="0" class="blocklyText">Auto-Scroll</text>
+        </g>
+        <g transform="translate(86.5250015258789,33)" style="cursor: default;" class="blocklyEditableText">
+          <rect style="fill: rgb(255, 255, 255); fill-opacity: 0.6;" class="blocklyFieldRect" width="14.949999809265137" height="18" y="0" x="0" ry="4" rx="4"/>
+          <text y="14" x="2" style="display: block; white-space: pre; width: 12.3667px; block-size: 21.3833px; font-family: sans-serif; font-size: 14.6667px; height: 21.3833px; inline-size: 12.3667px; line-height: normal;" class="blocklyText blocklyCheckbox">✓</text>
+        </g>
+        <g transform="translate(10,61)">
+          <text style="white-space: pre; cursor: grab; fill: rgb(255, 255, 255); font-family: sans-serif; font-size: 14.6667px; line-height: normal;" y="14" x="0" class="blocklyText">Farbe</text>
+        </g>
+        <g transform="translate(10,89)">
+          <text style="white-space: pre; cursor: grab; fill: rgb(255, 255, 255); font-family: sans-serif; font-size: 14.6667px; line-height: normal;" y="14" x="0" class="blocklyText">Input</text>
+        </g>
+        <g style="display: block;" class="blocklyDraggable" transform="translate(198.2999973297119, 56)" data-id="PHokKXLlHeX,Syqkxn+-">
+          <path style="width: 44px; block-size: 25px; cursor: grab; display: flex; height: 25px; inline-size: 44px;" d="m 8,0 h 36 v 5 H 44 V 5 H 44 V 21 H 44 V 21 V 25 h -36 H 8 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z" fill="#498449" transform="translate(1,1)" class="blocklyPathDark"/>
+          <path style="cursor: grab;" d="m 8,0 h 36 v 5 H 44 V 5 H 44 V 21 H 44 V 21 V 25 h -36 H 8 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z" fill="#5ba55b" stroke="none" class="blocklyPath"/>
+          <path style="width: 47.1333px; block-size: 28.5px; cursor: grab; display: flex; fill: none; height: 28.5px; inline-size: 47.1333px; stroke-linecap: round;" d="m 8,0 m 0.5,0.5 H 43.5 H 43.5 M 8.5,24.5 M 8.5,24.5 V 20 v -1.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5" stroke="#8cc08c" class="blocklyPathLight"/>
+          <g transform="translate(13,5)" style="cursor: default;" class="blocklyEditableText">
+            <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(255, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+          </g>
+        </g>
+        <g style="display: block;" class="blocklyDraggable" transform="translate(198.2999973297119, 84)" data-id="(C|^%?Y/HN(g^ezOSI`s">
+          <path style="width: 142.45px; block-size: 27px; cursor: grab; display: flex; height: 27px; inline-size: 142.45px;" d="m 8,0 h 134.4499969482422 v 5 H 142.4499969482422 V 5 H 142.4499969482422 V 23 H 142.4499969482422 V 23 V 27 h -134.4499969482422 H 8 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z" fill="#498470" transform="translate(1,1)" class="blocklyPathDark"/>
+          <path style="cursor: grab;" d="m 8,0 h 134.4499969482422 v 5 H 142.4499969482422 V 5 H 142.4499969482422 V 23 H 142.4499969482422 V 23 V 27 h -134.4499969482422 H 8 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z" fill="#5ba58c" stroke="none" class="blocklyPath"/>
+          <path style="width: 145.583px; block-size: 30.5px; cursor: grab; display: flex; fill: none; height: 30.5px; inline-size: 145.583px; stroke-linecap: round;" d="m 8,0 m 0.5,0.5 H 141.9499969482422 H 141.9499969482422 M 8.5,26.5 M 8.5,26.5 V 20 v -1.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5" stroke="#8cc0af" class="blocklyPathLight"/>
+          <g transform="translate(18,5)">
+            <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAAn0lEQVQI1z3OMa5BURSF4f/cQhAKjUQhuQmFNwGJEUi0RKN5rU7FHKhpjEH3TEMtkdBSCY1EIv8r7nFX9e29V7EBAOvu7RPjwmWGH/VuF8CyN9/OAdvqIXYLvtRaNjx9mMTDyo+NjAN1HNcl9ZQ5oQMM3dgDUqDo1l8DzvwmtZN7mnD+PkmLa+4mhrxVA9fRowBWmVBhFy5gYEjKMfz9AylsaRRgGzvZAAAAAElFTkSuQmCC" alt="“" width="12px" height="12px"/>
+          </g>
+          <g transform="translate(35,5)" style="cursor: text;" class="blocklyEditableText">
+            <rect style="fill: rgb(255, 255, 255); fill-opacity: 0.6;" class="blocklyFieldRect" width="80.44999694824219" height="18" y="0" x="0" ry="4" rx="4"/>
+            <text style="white-space: pre; font-family: sans-serif; font-size: 14.6667px; line-height: normal;" y="14" x="5" class="blocklyText">Hallo Welt!</text>
+          </g>
+          <g transform="translate(120.44999694824219,5)">
+            <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAAqUlEQVQI1z3KvUpCcRiA8ef9E4JNHhI0aFEacm1o0BsI0Slx8wa8gLauoDnoBhq7DcfWhggONDmJJgqCPA7neJ7p934EOOKOnM8Q7PDElo/4x4lFb2DmuUjcUzS3URnGib9qaPNbuXvBO3sGPHJDRG6fGVdMSeWDP2q99FQdFrz26Gu5Tq7dFMzUvbXy8KXeAj57cOklgA+u1B5AoslLtGIHQMaCVnwDnADZIFIrXsoXrgAAAABJRU5ErkJggg==" alt="”" width="12px" height="12px"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
