@@ -29,7 +29,10 @@ In der senseBox:mini sind folgende Komponenten enthalten:
 
 <div className="flex items-center justify-evenly gap-4 align">
   <ImageWithText src={umweltsensor} title="Umweltsensor" />
-  <ImageWithText src={miniRgbLed} title="Neopixel RGB LED " />
+  <div className="flex flex-col items-center">
+    <img className="w-[16rem]" src={miniRgbLed} alt="Neopixel RGB LED" />
+    <p className="mt-2 text-sm text-gray-500">Neopixel RGB LED</p>
+  </div>
   <ImageWithText src={wifiBee} title="WiFi-Bee" />
   <ImageWithText src={display} title="OLED Display" />
 </div>

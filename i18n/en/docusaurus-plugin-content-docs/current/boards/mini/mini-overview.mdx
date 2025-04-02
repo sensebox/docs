@@ -26,8 +26,11 @@ import Admonition from '@theme/Admonition';
 The following components are included in the senseBox:mini:
 
 <div className="flex items-center justify-evenly gap-4 align">
-  <ImageWithText src={umweltsensor} title="Environmental sensor" />
-  <ImageWithText src={miniRgbLed} title="Neopixel RGB LED " />
+  <ImageWithText src={umweltsensor} title="Umweltsensor" />
+  <div className="flex flex-col items-center">
+    <img className="w-[16rem]" src={miniRgbLed} alt="Neopixel RGB LED" />
+    <p className="mt-2 text-sm text-gray-500">Neopixel RGB LED</p>
+  </div>
   <ImageWithText src={wifiBee} title="WiFi-Bee" />
   <ImageWithText src={display} title="OLED Display" />
 </div>
