@@ -41,6 +41,7 @@ const eduSidebar = {
             'hardware/sensors/luftdruck-temperatur',
             'hardware/accessoires/display',
             'hardware/sensors/bmx055',
+			'hardware/accessoires/cable_overview',
           ],
         },
         {

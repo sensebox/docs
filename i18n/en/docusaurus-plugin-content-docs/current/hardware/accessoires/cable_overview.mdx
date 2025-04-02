@@ -1,0 +1,237 @@
+---
+sidebar_position: 1
+title: Cable Overview
+hide_title: false
+description: Overview of all available connection cables
+---
+
+import TutorialPorts_en from '@site/src/components/TutorialPorts/TutorialPorts_en'
+
+# Cable Overview
+
+Different types of cables are required to connect sensors or expansion modules to the senseBox MCUs. The specific cables needed depend on the version of the MCU and the sensors used.
+
+Please check in advance which connections your setup requires. If you're unsure, feel free to reach out to us at [support@sensebox.de](mailto:support@sensebox.de).
+
+<TutorialPorts_en
+  port="overview"
+  textOverride="Port overview."
+/>
+
+---
+
+## USB A to USB C Cable
+
+The **USB A to USB C cable** is a **data cable** used to connect the senseBox MCU to a computer, for **transferring data** or **supplying power**.
+
+All newer senseBox MCU models are equipped with a **USB-C port**. Some older versions of the senseBox still use **Micro-USB**.  
+For the current models, this cable is the standard connection.
+
+> **Note**: Other USB-C cables can generally be used as well. However, make sure that the cable is **suitable for data transfer** – some USB-C cables are power-only and do not support communication or only support it to a limited extent.
+
+- Available in the following lengths:
+  - **2 meters**
+  - **3 meters**
+
+<figure style={{ maxWidth: '400px', marginBottom: '1.5rem' }}>
+  <img
+    src="/img/hardware-bilder/cable/usb-a-to-c.png"
+    alt="USB A to USB C Cable"
+    style={{ width: '100%' }}
+  />
+  <figcaption style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.5rem' }}>
+    USB A to USB C Cable
+  </figcaption>
+</figure>
+
+---
+
+## JST PHR-4 to JST PHR-4 Cable
+
+The **JST PHR-4 cable** is a **4-pin connection cable** for senseBox sensors – with a **JST PHR-4 connector** on **both ends**.
+
+"PHR-4" is part of the JST PH series with a **2.0 mm pitch**, designed for compact connections with minimal space requirements. In the context of senseBox, this cable is commonly referred to simply as "JST".
+
+- The senseBox offers this cable in the following lengths:
+  - **200 mm**
+  - **350 mm**
+  - **500 mm**
+
+Choose the appropriate length depending on your application and sensor placement.
+
+<figure style={{ maxWidth: '400px', marginBottom: '1.5rem' }}>
+  <img
+    src="/img/hardware-bilder/cable/jst-phr4_cable.png"
+    alt="JST PHR-4 Cable"
+    style={{ width: '100%' }}
+  />
+  <figcaption style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.5rem' }}>
+    JST PHR-4 Cable
+  </figcaption>
+</figure>
+
+---
+
+## QWIIC Cable (JST SH-4)
+
+The **QWIIC cable**, also known as **JST SH-4**, is the **new standard connector** for many sensors and expansion modules connected to the senseBox MCU. The compact 4-pin connector has a **1.0 mm pitch** and requires significantly less space than the older JST PHR-4 connector.
+
+Almost all **newer senseBox sensors** feature both a **QWIIC** and a **JST PHR-4 connector**, to remain compatible with both the **MCU S1** and **MCU S2**. However, QWIIC is expected to become the main standard in the long term.
+
+> ⚠️ **Important Note on Supply Voltage**:  
+> The **senseBox MCU** and **senseBox MCU Mini** supply **5 V** over the QWIIC connector, not 3.3 V as defined by the original QWIIC standard.  
+> Please check the **permissible supply voltage** of your components before use.  
+> If in doubt, feel free to contact us at [support@sensebox.de](mailto:support@sensebox.de).
+
+- Available in the following lengths:
+  - **100 mm**
+  - **200 mm**
+  - **500 mm**
+
+<figure style={{ maxWidth: '400px', marginBottom: '1.5rem' }}>
+  <img
+    src="/img/hardware-bilder/cable/qwiic_cable.png"
+    alt="QWIIC Cable (JST SH-4)"
+    style={{ width: '100%' }}
+  />
+  <figcaption style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.5rem' }}>
+    QWIIC Cable (JST SH-4)
+  </figcaption>
+</figure>
+
+---
+
+## QWIIC to JST PHR-4 Adapter Cable
+
+The **QWIIC to JST PHR-4 adapter cable** allows you to connect components with **different connector standards** – ideal for connecting **QWIIC sensors** to a **senseBox MCU S1**, or conversely, connecting an **MCU S2** to sensors **without a QWIIC port**.
+
+Both ends are 4-pin, in **QWIIC (JST SH-4)** and **JST PHR-4** formats respectively.
+
+> In general, it **doesn't matter which end** of the cable is connected to the MCU or the sensor – both sides are electrically compatible.
+
+- Available in the following length:
+  - **80 mm**
+
+<figure style={{ maxWidth: '400px', marginBottom: '1.5rem' }}>
+  <img
+    src="/img/hardware-bilder/cable/qwiic-to-jstphr4.png"
+    alt="QWIIC to JST PHR-4 Adapter Cable"
+    style={{ width: '100%' }}
+  />
+  <figcaption style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.5rem' }}>
+    QWIIC to JST PHR-4 Adapter Cable
+  </figcaption>
+</figure>
+
+---
+
+## JST PHR-4 to Jumper Wire (Male)
+
+The **JST PHR-4 to Jumper Wire (Male)** cable is ideal for connecting senseBox sensors to other microcontroller platforms such as **Arduino**, or to a **breadboard**.
+
+A **breadboard** allows you to build electronic circuits without soldering. Individual components – like sensors, resistors, or wires – can be inserted and flexibly connected.  
+This cable has a **JST PHR-4 connector** on one side and **four male jumper wires** on the other, which fit directly into breadboards or Arduino pins.
+
+<figure style={{ maxWidth: '400px', marginBottom: '1.5rem' }}>
+  <img
+    src="/img/hardware-bilder/cable/breadboard.png"
+    alt="Breadboard"
+    style={{ width: '70%' }}
+  />
+  <figcaption style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.5rem' }}>
+    Breadboard top view without cable
+  </figcaption>
+</figure>
+
+- Available in two lengths:
+  - **150 mm**
+  - **300 mm**
+
+Choose the appropriate length depending on the setup and the distance between sensor and microcontroller.
+
+<figure style={{ maxWidth: '400px', marginBottom: '1.5rem' }}>
+  <img
+    src="/img/hardware-bilder/cable/jst-phr4-jumper-male.png"
+    alt="JST PHR-4 to Jumper Wire (Male)"
+    style={{ width: '100%' }}
+  />
+  <figcaption style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.5rem' }}>
+    JST PHR-4 to Jumper Wire (Male)
+  </figcaption>
+</figure>
+
+---
+
+## JST PHR-4 to Jumper Wire (Female)
+
+The **JST PHR-4 to Jumper Wire (Female)** cable – also known as a **cable whip** – has a **JST PHR-4 connector** on one side and **four individual female jumper sockets** on the other.
+
+It’s ideal for connecting **senseBox sensors** to **other microcontroller platforms**, **breakout boards**, or **modular test setups** – e.g., on a breadboard with pins or to an Arduino.
+
+- Available in the following lengths:
+  - **150 mm**
+  - **300 mm**
+
+<figure style={{ maxWidth: '400px', marginBottom: '1.5rem' }}>
+  <img
+    src="/img/hardware-bilder/cable/jst-phr4-jumper-female.png"
+    alt="JST PHR-4 to Jumper Wire (Female)"
+    style={{ width: '100%' }}
+  />
+  <figcaption style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.5rem' }}>
+    JST PHR-4 to Jumper Wire (Female)
+  </figcaption>
+</figure>
+
+---
+
+## Jumper Wire Cable (Male-to-Male)
+
+The **Jumper Wire Cable (M/M)** has **male connectors on both ends** and is primarily used to connect electronic components on a **breadboard** or to a microcontroller like the Arduino.
+
+It is especially useful for quick test setups and prototypical circuits without soldering.
+
+- Available in the following length:
+  - **100 mm**
+
+<figure style={{ maxWidth: '400px', marginBottom: '1.5rem' }}>
+  <img
+    src="/img/hardware-bilder/cable/jumper_wire_mm.png"
+    alt="Jumper Wire Cable (M/M)"
+    style={{ width: '100%' }}
+  />
+  <figcaption style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.5rem' }}>
+    Jumper Wire Cable (M/M)
+  </figcaption>
+</figure>
+
+---
+
+## JST PHR-4 to SDS011 Adapter Cable
+
+The **JST PHR-4 to SDS011 adapter cable** allows the **SDS011 fine dust sensor** to be connected to the senseBox MCU.
+
+The **SDS011** has a dedicated connector that differs from other senseBox sensors. This adapter cable ensures the correct connection and power supply.
+
+One side has a **JST PHR-4 connector**, and the other side has the specific **SDS011 connector** matching the sensor’s socket.
+
+- Available in the following length:
+  - **350 mm**
+
+<figure style={{ maxWidth: '400px', marginBottom: '1.5rem' }}>
+  <img
+    src="/img/hardware-bilder/cable/jst-to-sds011.png"
+    alt="JST PHR-4 to SDS011 Adapter Cable"
+    style={{ width: '100%' }}
+  />
+  <figcaption style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.5rem' }}>
+    JST PHR-4 to SDS011 Adapter Cable
+  </figcaption>
+</figure>
+
+---
+
+## Links
+
+- #### [Shop](https://sensebox.kaufen/parts/zubehor)
+- #### [Support](mailto:support@sensebox.de)

@@ -27,6 +27,7 @@ const miniSidebar = {
             'hardware/sensors/umweltsensor',
             'hardware/accessoires/display',
             'hardware/accessoires/rgb-led',
+			'hardware/accessoires/cable_overview',
           ],
         },
         {

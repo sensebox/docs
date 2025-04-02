@@ -54,6 +54,7 @@ const eduS2Sidebar = {
             'hardware/accessoires/display',
             'hardware/accessoires/rgb-led-esp32',
             'hardware/accessoires/led-matrix',
+			'hardware/accessoires/cable_overview',
           ],
         },
       ],
