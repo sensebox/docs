@@ -5,7 +5,9 @@ function ImageWithTitle({ src, alt, title, size }) {
   return (
     <div className="flex flex-col items-center">
       <img
-        className={cx(size === 'xl' ? 'w-[45rem] ' : 'w-[25rem]')}
+        className={cx(
+          size === 'xl' ? 'w-[45rem]' : size === 'full' ? 'w-full' : 'w-[25rem]'
+        )}
         src={src}
         alt={alt}
       />
