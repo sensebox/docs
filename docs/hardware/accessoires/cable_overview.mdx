@@ -5,6 +5,7 @@ hide_title: false
 description: Übersicht über alle verfügbaren Anschlusskabel
 ---
 
+import Admonition from "@theme/Admonition";
 import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
 
 # Kabelübersicht
@@ -78,10 +79,13 @@ Das **QWIIC Kabel**, auch bekannt als **JST SH-4**, ist der **neue Standardansch
 
 Nahezu alle **neueren Sensoren** der senseBox verfügen sowohl über einen **QWIIC**- als auch über einen **JST PHR-4 Anschluss**, um sowohl mit der **MCU S1** als auch mit der **MCU S2** kompatibel zu bleiben. Langfristig wird QWIIC jedoch als Hauptstandard verwendet.
 
-> ⚠️ **Wichtiger Hinweis zur Versorgungsspannung**:  
-> Die **senseBox MCU** und die **senseBox MCU Mini** übertragen über den QWIIC-Anschluss **5 V**, nicht 3,3 V wie im ursprünglichen QWIIC-Standard vorgesehen.  
-> Bitte informiere dich vor der Nutzung über die **zulässige Versorgungsspannung deiner Komponenten**.  
-> Bei Unsicherheiten stehen wir unter [support@sensebox.de](mailto:support@sensebox.de) gern zur Verfügung.
+<Admonition type="warning" title="Wichtiger Hinweis zur Versorgungsspannung" className="text-left">
+<p>
+- Die **senseBox MCU** und die **senseBox MCU Mini** übertragen über den QWIIC-Anschluss **5 V**, nicht 3,3 V wie im ursprünglichen QWIIC-Standard vorgesehen.  
+- Bitte informiere dich vor der Nutzung über die **zulässige Versorgungsspannung deiner Komponenten**.  
+- Bei Unsicherheiten stehen wir unter [support@sensebox.de](mailto:support@sensebox.de) gern zur Verfügung.
+</p>
+</Admonition>
 
 - Erhältlich in folgenden Längen:
   - **100 mm**
