@@ -45,46 +45,165 @@ import Admonition from '@theme/Admonition';
 Klicke auf die unten stehenden Anschlüsse um zu sehen welcher Sensor dort angeschlossen wird. 
 
 <div className="flex flex-row justify-evenly">
-  <Popover>
-    <PopoverTrigger lassName="flex cursor-pointer bg-white dark:bg-gray-800 text-black dark:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-md w-[10rem] p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
-      I2C/Wire Ports
-    </PopoverTrigger>
-    <PopoverContent>
-      <div>
-        <h2>Sensoren und Accessoire an den I2C/Wire Ports</h2>
-        <div className="flex flex-col lg:flex-row">
-          <div className="flex flex-col items-center">
-            <img src={lightSensor} alt="Your Image" className="w-[5rem] lg:w-[10rem]" />
-            <p className="text-gray-500">Lichtsensor</p>
-          </div>
-          <div className="flex flex-col items-center">
-            <img src={tempSensor} alt="Your Image" className="w-[5rem] lg:w-[10rem]" />
-            <p className="text-gray-500">Temperatur und Luftfeuchte</p>
-          </div>
-          <div className="flex flex-col items-center">
-            <img src={pressureSensor} alt="Your Image" className="w-[5rem] lg:w-[10rem]" />
-            <p className="text-gray-500">Luftdruck</p>
-          </div>
-          <div className="flex flex-col items-center">
-            <img src={tofSensor} alt="Your Image" className="w-[5rem] lg:w-[10rem]" />
-            <p className="text-gray-500">Time of Flight(Tof)</p>
-          </div>
-          <div className="flex flex-col items-center">
-            <img src={umweltsensor} alt="Your Image" className="w-[5rem] lg:w-[10rem]" />
-            <p className="text-gray-500">Umweltsensor</p>
-          </div>
-          <div className="flex flex-col items-center">
-            <img src={CO2Sensor} alt="Your Image" className="w-[5rem] lg:w-[10rem]" />
-            <p className="text-gray-500">CO2-Sensor</p>
-          </div>
-          <div className="flex flex-col items-center">
-            <img src={display} alt="Your Image" className="w-[5rem] lg:w-[10rem]" />
-            <p className="text-gray-500">Display</p>
-          </div>
-        </div>
-      </div>
-    </PopoverContent>
-  </Popover>
+	<Popover>
+		<PopoverTrigger className="flex cursor-pointer bg-white dark:bg-gray-800 text-black dark:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-md w-[10rem] p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+			I2C/Wire Anschlüsse
+		</PopoverTrigger>
+		<PopoverContent>
+			<div>
+				<h2>Sensoren und Zubehör an den I2C/Wire Anschlüssen</h2>
+				<div className="flex flex-col lg:flex-row">
+					<div className="flex flex-col items-center">
+						<img
+							src={lightSensor}
+							alt="Dein Bild"
+							className="w-[5rem] lg:w-[10rem]"
+						/>
+						<p className="text-gray-500">Lichtsensor</p>
+					</div>
+					<div className="flex flex-col items-center">
+						<img
+							src={tempSensor}
+							alt="Dein Bild"
+							className="w-[5rem] lg:w-[10rem]"
+						/>
+						<p className="text-gray-500">Temperatur- und Feuchtigkeitssensor</p>
+					</div>
+					<div className="flex flex-col items-center">
+						<img
+							src={pressureSensor}
+							alt="Dein Bild"
+							className="w-[5rem] lg:w-[10rem]"
+						/>
+						<p className="text-gray-500">Luftdrucksensor</p>
+					</div>
+					<div className="flex flex-col items-center">
+						<img
+							src={tofSensor}
+							alt="Dein Bild"
+							className="w-[5rem] lg:w-[10rem]"
+						/>
+						<p className="text-gray-500">Time of Flight (ToF)</p>
+					</div>
+					<div className="flex flex-col items-center">
+						<img
+							src={umweltsensor}
+							alt="Dein Bild"
+							className="w-[5rem] lg:w-[10rem]"
+						/>
+						<p className="text-gray-500">Umweltsensor</p>
+					</div>
+					<div className="flex flex-col items-center">
+						<img
+							src={CO2Sensor}
+							alt="Dein Bild"
+							className="w-[5rem] lg:w-[10rem]"
+						/>
+						<p className="text-gray-500">CO2-Sensor</p>
+					</div>
+					<div className="flex flex-col items-center">
+						<img
+							src={display}
+							alt="Dein Bild"
+							className="w-[5rem] lg:w-[10rem]"
+						/>
+						<p className="text-gray-500">Display</p>
+					</div>
+				</div>
+			</div>
+		</PopoverContent>
+	</Popover>
+	<Popover>
+		<PopoverTrigger className="flex cursor-pointer bg-white dark:bg-gray-800 text-black dark:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-md w-[10rem] p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+			UART/Serielle Anschlüsse
+		</PopoverTrigger>
+		<PopoverContent>
+			<div className="flex flex-col lg:flex-row">
+				<div className="flex flex-col items-center">
+					<img
+						src={feinstaubSds}
+						alt="Dein Bild"
+						className="w-[5rem] lg:w-[10rem]"
+					/>
+					<p className="text-gray-500">Feinstaub (SDS011)</p>
+				</div>
+				<div className="flex flex-col items-center">
+					<img
+						src={feinstaubSps}
+						alt="Dein Bild"
+						className="w-[5rem] lg:w-[10rem]"
+					/>
+					<p className="text-gray-500">Feinstaub (SPS30)</p>
+				</div>
+			</div>
+		</PopoverContent>
+	</Popover>
+	<Popover>
+		<PopoverTrigger className="flex cursor-pointer bg-white dark:bg-gray-800 text-black dark:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-md w-[10rem] p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+			Digitale/Analoge Anschlüsse
+		</PopoverTrigger>
+		<PopoverContent>
+			<div className="flex flex-col lg:flex-row">
+				<div className="flex flex-col items-center">
+					<img
+						src={mikro}
+						alt="Dein Bild"
+						className="w-[5rem] lg:w-[10rem]"
+					/>
+					<p className="text-gray-500">Kondensatormikrofon</p>
+				</div>
+				<div className="flex flex-col items-center">
+					<img
+						src={ultrasonic}
+						alt="Dein Bild"
+						className="w-[5rem] lg:w-[10rem]"
+					/>
+					<p className="text-gray-500">Ultraschall-Distanzsensor</p>
+				</div>
+				<div className="flex flex-col items-center">
+					<img
+						src={truebner}
+						alt="Dein Bild"
+						className="w-[5rem] lg:w-[10rem]"
+					/>
+					<p className="text-gray-500">Bodenfeuchtesensor</p>
+				</div>
+			</div>
+		</PopoverContent>
+	</Popover>
+	<Popover>
+		<PopoverTrigger className="flex cursor-pointer bg-white dark:bg-gray-800 text-black dark:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-md w-[10rem] p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+			XBEE
+		</PopoverTrigger>
+		<PopoverContent>
+			<div className="flex flex-col lg:flex-row">
+				<div className="flex flex-col items-center">
+					<img
+						src={wifiBee}
+						alt="Dein Bild"
+						className="w-[5rem] lg:w-[10rem]"
+					/>
+					<p className="text-gray-500">WiFi Bee</p>
+				</div>
+				<div className="flex flex-col items-center">
+					<img
+						src={sdBee}
+						alt="Dein Bild"
+						className="w-[5rem] lg:w-[10rem]"
+					/>
+					<p className="text-gray-500">SD Bee</p>
+				</div>
+				<div className="flex flex-col items-center">
+					<img
+						src={loraBee}
+						alt="Dein Bild"
+						className="w-[5rem] lg:w-[10rem]"
+					/>
+					<p className="text-gray-500">LoRa Bee</p>
+				</div>
+			</div>
+		</PopoverContent>
+	</Popover>
 </div>
 
 <div className="mt-8">

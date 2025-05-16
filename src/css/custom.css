@@ -37,6 +37,9 @@ html {
   --ifm-background-surface-color: #f2f2f2;
   --ifm-footer-background-color: #f7f7f7;
   --ifm-code-font-size: 95%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
 }
 
 [data-theme='dark'] {
