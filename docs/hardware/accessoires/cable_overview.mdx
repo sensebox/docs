@@ -7,6 +7,15 @@ description: Übersicht über alle verfügbaren Anschlusskabel
 
 import Admonition from "@theme/Admonition";
 import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import usbACable from '@site/static/img/hardware-bilder/cable/usb-a-to-c.png'
+import jstPhr4Cable from '@site/static/img/hardware-bilder/cable/jst-phr4_cable.png'
+import qwiicCable from '@site/static/img/hardware-bilder/cable/qwiic_cable.png'
+import qwiicToJstPhr4 from '@site/static/img/hardware-bilder/cable/qwiic-to-jstphr4.png'
+import jstPhr4ToJumperMale from '@site/static/img/hardware-bilder/cable/jst-phr4-jumper-male.png'
+import jstPhr4ToJumperFemale from '@site/static/img/hardware-bilder/cable/jst-phr4-jumper-female.png'
+import jumperWireMM from '@site/static/img/hardware-bilder/cable/jumper_wire_mm.png'
+import jstToSds011 from '@site/static/img/hardware-bilder/cable/jst-to-sds011.png'
 
 # Kabelübersicht
 
@@ -25,25 +34,16 @@ Bitte informiere dich vorab, welche Anschlüsse dein Setup benötigt. Falls du d
 
 Das **USB A zu USB C Kabel** ist ein **Datenkabel**, das verwendet wird, um die senseBox MCU mit einem Computer zu verbinden, zum **Übertragen von Daten** oder **Versorgen mit Strom**.
 
-Alle neueren senseBox MCU-Modelle sind mit einem **USB-C-Anschluss** ausgestattet. Einige ältere Versionen der senseBox nutzen noch **Micro-USB**.  
+Alle neueren senseBox MCU-Modelle sind mit einem **USB-C-Anschluss** ausgestattet. Einige ältere Versionen der senseBox nutzen noch **Micro-USB**.
 Für die aktuellen Varianten ist dieses Kabel jedoch die Standardverbindung.
 
 > **Hinweis**: Grundsätzlich können auch andere USB-C Kabel verwendet werden. Achte jedoch darauf, dass das Kabel **für die Datenübertragung geeignet** ist – manche USB-C Kabel dienen ausschließlich der Stromversorgung und unterstützen keine oder nur eingeschränkte Kommunikation.
 
 - Erhältlich in folgender Länge:
   - **2 Meter**
-  - **3 Meter**
+  - **3 Meter**
 
-<figure style={{ maxWidth: '400px', marginBottom: '1.5rem' }}>
-  <img
-    src="/img/hardware-bilder/cable/usb-a-to-c.png"
-    alt="USB A zu USB C Kabel"
-    style={{ width: '100%' }}
-  />
-  <figcaption style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.5rem' }}>
-    USB A zu USB C Kabel
-  </figcaption>
-</figure>
+<ImageWithText src={usbACable} alt="USB A zu USB C Kabel" title="USB A zu USB C Kabel" />
 
 ---
 
@@ -51,81 +51,54 @@ Für die aktuellen Varianten ist dieses Kabel jedoch die Standardverbindung.
 
 Das **JST PHR-4 Kabel** ist ein **4-poliges Anschlusskabel** für senseBox Sensoren – auf **beiden Seiten** befindet sich ein **JST PHR-4 Steckverbinder**.
 
-"PHR-4" ist ein Teil der JST PH-Serie mit einem **Rastermaß von 2,0 mm**, der für kompakte Verbindungen mit geringem Platzbedarf entwickelt wurde. Im Kontext der senseBox wird dieses Kabel meist nur "JST" genannt.
+"PHR-4" ist ein Teil der JST PH-Serie mit einem **Rastermaß von 2,0 mm**, der für kompakte Verbindungen mit geringem Platzbedarf entwickelt wurde. Im Kontext der senseBox wird dieses Kabel meist nur "JST" genannt.
 
 - Die senseBox bietet das Kabel in folgenden Längen an:
-  - **200 mm**
-  - **350 mm**
-  - **500 mm**
+  - **200 mm**
+  - **350 mm**
+  - **500 mm**
 
 Je nach Anwendung und Sensorposition kannst du die passende Länge wählen.
 
-<figure style={{ maxWidth: '400px', marginBottom: '1.5rem' }}>
-  <img
-    src="/img/hardware-bilder/cable/jst-phr4_cable.png"
-    alt="JST PHR-4 Kabel"
-    style={{ width: '100%' }}
-  />
-  <figcaption style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.5rem' }}>
-    JST PHR-4 Kabel
-  </figcaption>
-</figure>
+<ImageWithText src={jstPhr4Cable} alt="JST PHR-4 Kabel" title="JST PHR-4 Kabel" />
 
 ---
 
 ## QWIIC Kabel (JST SH-4)
 
-Das **QWIIC Kabel**, auch bekannt als **JST SH-4**, ist der **neue Standardanschluss** für viele Sensoren und Erweiterungsmodule, die mit der senseBox MCU verbunden werden. Der kompakte 4-polige Stecker hat ein Rastermaß von **1,0 mm** und benötigt deutlich weniger Platz als der ältere JST PHR-4 Anschluss.
+Das **QWIIC Kabel**, auch bekannt als **JST SH-4**, ist der **neue Standardanschluss** für viele Sensoren und Erweiterungsmodule, die mit der senseBox MCU verbunden werden. Der kompakte 4-polige Stecker hat ein Rastermaß von **1,0 mm** und benötigt deutlich weniger Platz als der ältere JST PHR-4 Anschluss.
 
 Nahezu alle **neueren Sensoren** der senseBox verfügen sowohl über einen **QWIIC**- als auch über einen **JST PHR-4 Anschluss**, um sowohl mit der **MCU S1** als auch mit der **MCU S2** kompatibel zu bleiben. Langfristig wird QWIIC jedoch als Hauptstandard verwendet.
 
 <Admonition type="warning" title="Wichtiger Hinweis zur Versorgungsspannung" className="text-left">
 <p>
-- Die **senseBox MCU** und die **senseBox MCU Mini** übertragen über den QWIIC-Anschluss **5 V**, nicht 3,3 V wie im ursprünglichen QWIIC-Standard vorgesehen.  
-- Bitte informiere dich vor der Nutzung über die **zulässige Versorgungsspannung deiner Komponenten**.  
+- Die **senseBox MCU** und die **senseBox MCU Mini** übertragen über den QWIIC-Anschluss **5 V**, nicht 3,3 V wie im ursprünglichen QWIIC-Standard vorgesehen.
+- Bitte informiere dich vor der Nutzung über die **zulässige Versorgungsspannung deiner Komponenten**.
 - Bei Unsicherheiten stehen wir unter [support@sensebox.de](mailto:support@sensebox.de) gern zur Verfügung.
 </p>
 </Admonition>
 
 - Erhältlich in folgenden Längen:
-  - **100 mm**
-  - **200 mm**
-  - **500 mm**
+  - **100 mm**
+  - **200 mm**
+  - **500 mm**
 
-<figure style={{ maxWidth: '400px', marginBottom: '1.5rem' }}>
-  <img
-    src="/img/hardware-bilder/cable/qwiic_cable.png"
-    alt="QWIIC Kabel (JST SH-4)"
-    style={{ width: '100%' }}
-  />
-  <figcaption style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.5rem' }}>
-    QWIIC Kabel (JST SH-4)
-  </figcaption>
-</figure>
+<ImageWithText src={qwiicCable} alt="QWIIC Kabel (JST SH-4)" title="QWIIC Kabel (JST SH-4)" />
 
 ---
 
 ## QWIIC zu JST PHR-4 Adapterkabel
 
-Das **QWIIC zu JST PHR-4 Adapterkabel** dient zur Verbindung von Komponenten mit **unterschiedlichen Anschlussstandards** – ideal, um z. B. **Sensoren mit QWIIC-Anschluss** an eine **senseBox MCU S1** anzuschließen oder umgekehrt eine **MCU S2** mit Sensoren **ohne QWIIC-Port** zu verbinden.
+Das **QWIIC zu JST PHR-4 Adapterkabel** dient zur Verbindung von Komponenten mit **unterschiedlichen Anschlussstandards** – ideal, um z. B. **Sensoren mit QWIIC-Anschluss** an eine **senseBox MCU S1** anzuschließen oder umgekehrt eine **MCU S2** mit Sensoren **ohne QWIIC-Port** zu verbinden.
 
 Beide Enden sind 4-polig, jeweils im **QWIIC (JST SH-4)** und **JST PHR-4** Format.
 
 > In der Regel ist es **egal, welches Ende** des Kabels mit der MCU bzw. dem Sensor verbunden wird – beide Seiten sind elektrisch kompatibel.
 
 - Erhältlich in folgender Länge:
-  - **80 mm**
+  - **80 mm**
 
-<figure style={{ maxWidth: '400px', marginBottom: '1.5rem' }}>
-  <img
-    src="/img/hardware-bilder/cable/qwiic-to-jstphr4.png"
-    alt="QWIIC zu JST PHR-4 Adapterkabel"
-    style={{ width: '40%' }}
-  />
-  <figcaption style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.5rem' }}>
-    QWIIC zu JST PHR-4 Adapterkabel
-  </figcaption>
-</figure>
+<ImageWithText src={qwiicToJstPhr4} alt="QWIIC zu JST PHR-4 Adapterkabel" title="QWIIC zu JST PHR-4 Adapterkabel" />
 
 ---
 
@@ -133,36 +106,16 @@ Beide Enden sind 4-polig, jeweils im **QWIIC (JST SH-4)** und **JST PHR-4** Form
 
 Das **JST PHR-4 zu Jumper Wire (Male)** Kabel eignet sich ideal, um senseBox Sensoren mit anderen Mikrocontroller-Plattformen wie z.B. einem **Arduino**, oder mit einem **Breadboard**, zu verbinden.
 
-Ein **Breadboard** (auch Steckbrett genannt) ist eine einfache Möglichkeit, elektronische Schaltungen ohne Löten aufzubauen. Einzelne Komponenten – wie Sensoren, Widerstände oder Kabel – können darin eingesteckt und flexibel verbunden werden.  
+Ein **Breadboard** (auch Steckbrett genannt) ist eine einfache Möglichkeit, elektronische Schaltungen ohne Löten aufzubauen. Einzelne Komponenten – wie Sensoren, Widerstände oder Kabel – können darin eingesteckt und flexibel verbunden werden.
 Dieses Kabel hat auf der einen Seite einen **JST PHR-4 Steckverbinder**  und auf der anderen Seite **vier männliche Jumper-Stecker**, die direkt in Breadboards oder Arduino-Pins passen.
 
-<figure style={{ maxWidth: '400px', marginBottom: '1.5rem' }}>
-  <img
-    src="/img/hardware-bilder/cable/breadboard.png"
-    alt="Breadboard"
-    style={{ width: '70%' }}
-  />
-  <figcaption style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.5rem' }}>
-    Breadboard von oben ohne Kabel
-  </figcaption>
-</figure>
-
 - Erhältlich in zwei Längen:
-  - **150 mm**
-  - **300 mm**
+  - **150 mm**
+  - **300 mm**
 
 Je nach Aufbau und Entfernung zwischen Sensor und Mikrocontroller kann die passende Länge gewählt werden.
 
-<figure style={{ maxWidth: '400px', marginBottom: '1.5rem' }}>
-  <img
-    src="/img/hardware-bilder/cable/jst-phr4-jumper-male.png"
-    alt="JST PHR-4 zu Jumper Wire (Male)"
-    style={{ width: '100%' }}
-  />
-  <figcaption style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.5rem' }}>
-    JST PHR-4 zu Jumper Wire (Male)
-  </figcaption>
-</figure>
+<ImageWithText src={jstPhr4ToJumperMale} alt="JST PHR-4 zu Jumper Wire (Male)" title="JST PHR-4 zu Jumper Wire (Male)" />
 
 ---
 
@@ -170,22 +123,13 @@ Je nach Aufbau und Entfernung zwischen Sensor und Mikrocontroller kann die passe
 
 Das **JST PHR-4 zu Jumper Wire (Female)** Kabel – auch als **Kabelpeitsche** bekannt – hat auf der einen Seite einen **JST PHR-4 Stecker** und auf der anderen Seite **vier einzelne Buchsen (Female Jumper)**.
 
-Es eignet sich ideal, um **Sensoren der senseBox** mit **anderen Mikrocontroller-Plattformen**, **Breakout-Boards** oder **modularen Testaufbauten** zu verbinden – z. B. auf einem Breadboard mit Pins oder auf einem Arduino.
+Es eignet sich ideal, um **Sensoren der senseBox** mit **anderen Mikrocontroller-Plattformen**, **Breakout-Boards** oder **modularen Testaufbauten** zu verbinden – z. B. auf einem Breadboard mit Pins oder auf einem Arduino.
 
 - Erhältlich in folgenden Längen:
-  - **150 mm**
-  - **300 mm**
+  - **150 mm**
+  - **300 mm**
 
-<figure style={{ maxWidth: '400px', marginBottom: '1.5rem' }}>
-  <img
-    src="/img/hardware-bilder/cable/jst-phr4-jumper-female.png"
-    alt="JST PHR-4 zu Jumper Wire (Female)"
-    style={{ width: '100%' }}
-  />
-  <figcaption style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.5rem' }}>
-    JST PHR-4 zu Jumper Wire (Female)
-  </figcaption>
-</figure>
+<ImageWithText src={jstPhr4ToJumperFemale} alt="JST PHR-4 zu Jumper Wire (Female)" title="JST PHR-4 zu Jumper Wire (Female)" />
 
 ---
 
@@ -196,18 +140,9 @@ Das **Jumper Wire Kabel (M/M)** hat auf **beiden Seiten männliche Steckverbinde
 Es eignet sich besonders gut für schnelle Testaufbauten und prototypische Schaltungen ohne Löten.
 
 - Erhältlich in folgender Länge:
-  - **100 mm**
+  - **100 mm**
 
-<figure style={{ maxWidth: '400px', marginBottom: '1.5rem' }}>
-  <img
-    src="/img/hardware-bilder/cable/jumper_wire_mm.png"
-    alt="Jumper Wire Kabel (M/M)"
-    style={{ width: '100%' }}
-  />
-  <figcaption style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.5rem' }}>
-    Jumper Wire Kabel (M/M)
-  </figcaption>
-</figure>
+<ImageWithText src={jumperWireMM} alt="Jumper Wire Kabel (M/M)" title="Jumper Wire Kabel (M/M)" />
 
 ---
 
@@ -220,18 +155,9 @@ Der **SDS011** hat im Vergleich zu anderen Sensoren der senseBox einen einen sep
 Das Kabel besitzt auf der einen Seite einen **JST PHR-4 Steckverbinder** und auf der anderen Seite den spezifischen **SDS011-Anschluss**, passend zur Buchse des Sensors.
 
 - Erhältlich in folgender Länge:
-  - **350 mm**
+  - **350 mm**
 
-<figure style={{ maxWidth: '400px', marginBottom: '1.5rem' }}>
-  <img
-    src="/img/hardware-bilder/cable/jst-to-sds011.png"
-    alt="JST PHR-4 zu SDS011 Adapterkabel"
-    style={{ width: '100%' }}
-  />
-  <figcaption style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.5rem' }}>
-    JST PHR-4 zu SDS011 Adapterkabel
-  </figcaption>
-</figure>
+<ImageWithText src={jstToSds011} alt="JST PHR-4 zu SDS011 Adapterkabel" title="JST PHR-4 zu SDS011 Adapterkabel" />
 
 ---
 
