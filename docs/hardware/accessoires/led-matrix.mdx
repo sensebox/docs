@@ -10,6 +10,8 @@ import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
 
 # LED-Matrix
 
+Die 12x8 LED-Matrix ermöglicht es, bunte Displays mit Neopixeln zu programmieren. So können LEDs individuell leuchten und Schriftzüge oder Motive in verschiedenen Farben dargestellt werden. Zudem lassen sich Informatik-Konzepte wie Arrays visualisieren.
+
 <ImageWithText src={ledMatrix} alt="LED-Matrix" title="LED-Matrix" />{' '}
 
 ## Technische Informationen
@@ -17,17 +19,76 @@ import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
 - 12x8 Matrix
 - 96 LEDs
 
+---
+
 ## Anschluss
 
 <TutorialPorts port="io" />
 
+
+
+---
+
 ## Programmierung (Blockly)
 
-In Blockly muss die LED Matrix zuerst initialisiert werden. Dort musst du noch den Port angeben an dem du die LED Matrix angeschlossen hast. Danach kannst du zum Beispiel einen Text anzeigen lassen.
+In Blockly muss die LED-Matrix zuerst initialisiert werden. Dort musst du noch den Port angeben, an dem du die LED-Matrix angeschlossen hast. Danach kannst du z.B. einen Text anzeigen lassen.
 
 ![Blockly](/img/hardware-bilder/led-matrix/led-matrix-block.svg)
 
-## Projekte
+---
+
+
+## Bitmaps auf der LED-Matrix
+
+Die LED-Matrix kann unter anderem Buchstaben und Zahlen anzeigen, aber auch selbst gestaltete **Pixelgrafiken**, sogenannte **Bitmaps**.
+
+Eine Bitmap besteht aus einem Raster von **12x8 LEDs** – jede LED kann einzeln auf verschiedene Arten angesteuert werden.
+
+### Was ist eine Bitmap?
+
+Eine Bitmap ist im Grunde eine Tabelle, bei der jede Zelle (LED) eine Farbe bekommt. In Blockly kannst du diese als **bunte Grafik** darstellen, bei der jede LED eine eigene Farbe bekommt (RGB-Wert). 
+Schwarze Zellen stellen ausgeschaltete LEDs dar. So kannst du viele verschiedene **Pixelgrafiken** erstellen und auf der LED-Matrix anzeigen lassen.
+
+
+![Happy Bitmap](/img/hardware-bilder/led-matrix/happy_bitmap.svg)
+
+
+### Text anzeigen
+Buchstaben und Zahlen können auf der LED-Matrix angezeigt werden. Diese müssen nicht zwingend in der Bitmap-Form erstellt werden, sondern können in Blockly direkt mit dem entsprechenden Block definiert werden.
+
+
+![Text Block](/img/hardware-bilder/led-matrix/text_block.svg)
+
+
+### Emojis anzeigen
+
+In Blockly gibt es einige voreingestellte Emojis, die auf der LED-Matrix angezeigt werden können. Dazu gehören z.B. ein Smiley, ein Hut oder ein Ritter.
+Um die Emojis anzuzeigen, musst du nur den entsprechenden Block in Blockly verwenden.
+
+
+![Emoji Block](/img/hardware-bilder/led-matrix/emoji_block.svg)
+
+### Weiteres
+- Zusätzlich zur Erstellung von Bitmaps mit Hilfe des visuellen Blocks, können erfahrene Nutzer auch jede einzelne LED ansteuern, indem die **RGB565 Farbwerte** für jede einzelne LED definiert werden.
+Dafür müssen in dem entsprechenden Block 96 RGB565 Farbwerte angegeben werden, die die Farben der LEDs festlegen. Die LEDs werden von oben links nach unten rechts angesteuert.
+
+> 💡 **Tipp**: Auf der folgenden [Website](https://rgbcolorpicker.com/565) ist es möglich eine Farbe auszuwählen und sich den RGB565 Farbwert ausgeben zu lassen.
+
+
+![RGB565 Block](/img/hardware-bilder/led-matrix/rgb565_block.svg)
+
+
+- Mit dem "Pixel setzen" Block kannst du auch eigene Bitmaps erstellen, indem du die einzelnen Pixel der LED-Matrix ansteuerst. Dazu musst du die Koordinaten der Pixel angeben, die du ansteuern möchtest. 
+Die Koordinaten beginnen bei 0 und enden bei 11 für die x-Achse und bei 7 für die y-Achse. So können einzelne Pixel der LED-Matrix mit wechselnden Farben bespielt werden.
+Auf diese Art ist es möglich kleinere Animationen zu erstellen.
+
+> 💡 **Tipp**: Wenn du mehrere Pixel färbst, kann es zum Flackern der LEDs kommen. Deaktiviere „Zeige sofort“ bei allen Blöcken und aktiviere es nur beim letzten Block in der Reihe. So wird alles auf einmal angezeigt.
+
+![Setze Pixel Block](/img/hardware-bilder/led-matrix/set_pixel_block.svg)
+
+---
+
+## Beispielprojekte mit der LED-Matrix
 
 - #### [Anzeige von Emojis und Motiven](https://sensebox.de/projects/de/2024-04-02-smiley)
 - #### [Tiefenbilder auf der LED-Matrix anzeigen](https://sensebox.de/projects/de/2024-04-02-tof-led)

@@ -8,7 +8,10 @@ description: DFRobot SEN0232 Gravity
 
 The DFRobot SEN0232 measures the volume and outputs the measured values in decibels.
 
-![](/img/hardware-bilder/lautstaerke/sound.png)
+<figure>
+  <img src="/img/hardware-bilder/lautstaerke/sound.png" alt="Lautstärkesensor" width="400" />
+  <figcaption>Volume sensor DFRobot SEN0232</figcaption>
+</figure>
 
 ## Techincal Information
 
@@ -19,8 +22,10 @@ The DFRobot SEN0232 measures the volume and outputs the measured values in decib
 * Measurement range: accurate between 30 dBA and 130 dBA  
 * Measurement interval: 125 ms  
 
-![](/img/hardware-bilder/lautstaerke/sound-anschluss.png)
-
+<figure>
+  <img src="/img/hardware-bilder/lautstaerke/sound-anschluss.png" alt="Lautstärkesensor Anschluss" width="400" />
+  <figcaption>Connection diagram of the volume sensor</figcaption>
+</figure>
 
 ## Programmierung (Arduino)
 
