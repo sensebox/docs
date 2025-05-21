@@ -14,7 +14,11 @@ Um Messwerte an die openSenseMap senden zu können, musst du deine Box zuerst mi
 
 ![](/img/blockly-bilder/web-opensensemap/blockly-Web-oSeM-1.svg)
 
+
 Im Dropdown-Menü des Blocks wählst du aus, ob es sich bei deiner senseBox um eine stationäre oder eine mobile Station handelt und im Textfeld "senseBox ID" die nach der Registrierung angezeigte senseBox-ID eintragen.
+
+Zuerst kannst du auswählen, ob die senseBox mit "SSL" eine sichere Verbindung herstellen soll. Durch einen Authentifizierungsschlüssel stellst du sicher, dass niemand ungewollt Daten an deine senseBox senden kann. Wenn du diese Option auswählst, gehe auf openSenseMap in die Sicherheitseinstellungen deiner registrierten senseBox. Wähle hier die Option "Box Authentifizierung aktivieren" aus und füge den Schlüssel in Blockly in das Textfeld "API-Schlüssel" bzw. "access token" ein.  
+
 Im freien Blockabschnitt `Sensoren` müssen dann die angeschlossenen Sensoren mithilfe des `Sende Messwert an die openSenseMap`-Blocks angeknüpft werden.
 
 ![](/img/blockly-bilder/web-opensensemap/blockly-Web-oSeM-2.svg)
