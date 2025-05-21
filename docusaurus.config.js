@@ -118,7 +118,7 @@ const config = {
             },
             {
               label: 'openSenseMap',
-              to: 'https://opensensemap.org/impressum',
+              to: 'https://opensensemap.org/',
             },
             {
               label: 'FAQ',
