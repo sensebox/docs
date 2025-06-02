@@ -21,6 +21,7 @@ const glossarSidebar = {
       'hardware/sensors/tof',
       'hardware/sensors/truebner',
       'hardware/sensors/umweltsensor',
+	  'hardware/sensors/niederschlag-rg15',
       'hardware/bee/bluetooth-bee',
       'hardware/bee/ethernet-bee',
       'hardware/bee/lora-bee',

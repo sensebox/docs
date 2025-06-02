@@ -42,6 +42,7 @@ const miniSidebar = {
             'hardware/sensors/feinstaub-sps30',
             'hardware/sensors/co2',
             'hardware/sensors/truebner',
+			'hardware/sensors/niederschlag-rg15',
             'hardware/bee/ethernet-bee',
             'hardware/accessoires/gps',
             'hardware/sensors/wassertemperatur',

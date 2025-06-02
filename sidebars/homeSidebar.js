@@ -52,6 +52,7 @@ const homeSidebar = {
         'hardware/sensors/co2',
         'hardware/sensors/truebner',
         'hardware/sensors/umweltsensor',
+		'hardware/sensors/niederschlag-rg15',
         'hardware/bee/ethernet-bee',
         'hardware/accessoires/gps',
         'hardware/accessoires/multiplexer',
