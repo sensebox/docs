@@ -4,6 +4,9 @@ title: RTC-Modul
 hide_title: false
 description: Mit dem RTC-Modul kann die Uhrzeit auch ohne Stromversorgung gespeichert werden.
 ---
+
+import TutorialPorts_en from '@site/src/components/TutorialPorts/TutorialPorts_en'
+
 # RTC-Modul
 
 The RTC module allows you to save the time even without a power supply. This can be particularly useful if no internet connection is available and measured values are to be saved offline, e.g. on the SD card. A button cell battery is also required so that the time can also be saved without a power supply.
@@ -13,6 +16,8 @@ The RTC module allows you to save the time even without a power supply. This can
 
 ## Connection
 After inserting the button cell battery has been inserted into the holder, the RTC module is connected to an I2C port on the senseBox
+
+<TutorialPorts_en port="i2c" />
 
 ## Setting the time
 
