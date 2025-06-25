@@ -3,6 +3,8 @@ title: Fehlerbehebung
 ---
 
 # Allgemeine Empfehlungen
+
+Wenn beim Sammeln von Daten mit der senseBox Probleme auftreten, können Sie die folgenden allgemeinen Schritte zur Fehlerbehebung befolgen:
  - Aktivieren Sie die automatische App-Aktualisierung, um stets die neueste Version der senseBox:bike-App zu verwenden.
  - Starten Sie die senseBox:bike neu: Drücken Sie kurz den Ein-/Ausschalter, um das Gerät auszuschalten. Warten Sie einige Sekunden und drücken Sie dann erneut, um es wieder einzuschalten. Bei Arduino-basierten Geräten kann auch eine Reset-Taste vorhanden sein.
  - Starten Sie die „senseBox:bike“-App auf Ihrem Smartphone neu.
@@ -15,32 +17,36 @@ Sollte keine dieser Maßnahmen helfen, kontaktieren Sie uns bitte unter kontakt@
 
 # Mögliche Probleme und Lösungen
 
-## App kann keine Verbindung zur senseBox:bike herstellen:
- - Stellen Sie sicher, dass die senseBox:bike eingeschaltet und vollständig geladen ist.
- - Prüfen Sie, ob Bluetooth auf Ihrem Smartphone aktiviert ist und die App die erforderlichen Berechtigungen hat.
- - Starten Sie die App neu.
- - Melden Sie sich in der App von Ihrem openSenseMap-Konto ab und wieder an.
-
-## App startet keine Track-Aufzeichnung (keine Sensordaten und kein Track auf der Karte):
- - Starten Sie die senseBox:bike neu.
- - Starten Sie Ihr Smartphone neu.
- - Öffnen Sie die App und verbinden Sie sich mit der senseBox:bike.
- - Starten Sie die Aufzeichnung und stellen Sie sicher, dass Sie sich währenddessen bewegen.
-
-## Die App zeichnet den Track lokal auf, lädt ihn aber nicht auf openSenseMap hoch.
- - Starten Sie die App neu und prüfen Sie, ob die Sensordaten gelesen werden.
- - Stellen Sie außerdem sicher, dass Ihre Internetverbindung stabil ist und sich die senseBox:bike in Reichweite Ihres Smartphones befindet.
- - Deaktivieren Sie den Energiesparmodus Ihres Smartphones.
- - Prüfen Sie, ob Sie in der App mit Ihrem openSenseMap-Konto angemeldet sind.
- - Starten Sie die Aufzeichnung und fahren Sie einige Meter.
- - Melden Sie sich bei openSenseMap an und prüfen Sie, ob neue Daten erscheinen.
-
-Workaround: Sie können die aufgezeichnete Strecke als CSV-Datei im openSenseMap-kompatiblen Format exportieren und manuell auf der openSenseMap-Website hochladen.
-
-## Nicht alle Sensordaten werden aufgezeichnet.
- - Starten Sie die App neu und prüfen Sie, ob alle Sensordaten gelesen werden.
- - Stellen Sie sicher, dass Ihre Internetverbindung stabil ist und sich die senseBox:bike in Reichweite Ihres Smartphones befindet.
- - Deaktivieren Sie den Energiesparmodus Ihres Smartphones.
- - Stellen Sie sicher, dass nur die senseBox:bike via Bluetooth mit Ihrem Smartphone verbunden ist.
- - Starten Sie die Aufzeichnung, fahren Sie eine kurze Strecke und stoppen Sie dann.
- - Überprüfen Sie, ob Sie für alle Sensoren (z. B. Geschwindigkeit und Temperatur) die gleiche Anzahl an Datenpunkten gespeichert haben.
+<details>
+    <summary>App kann keine Verbindung zur senseBox:bike herstellen</summary>
+    - Stellen Sie sicher, dass die senseBox:bike eingeschaltet und vollständig geladen ist.
+    - Prüfen Sie, ob Bluetooth auf Ihrem Smartphone aktiviert ist und die App die erforderlichen Berechtigungen hat.
+    - Starten Sie die App neu.
+    - Melden Sie sich in der App von Ihrem openSenseMap-Konto ab und wieder an.
+</details>
+<details>
+    <summary>App startet keine Track-Aufzeichnung (keine Sensordaten und kein Track auf der Karte)</summary>
+    - Starten Sie die senseBox:bike neu.
+    - Starten Sie Ihr Smartphone neu.
+    - Öffnen Sie die App und verbinden Sie sich mit der senseBox:bike.
+    - Starten Sie die Aufzeichnung und stellen Sie sicher, dass Sie sich währenddessen bewegen.
+</details>
+<details>
+    <summary>Die App zeichnet den Track lokal auf, lädt ihn aber nicht auf openSenseMap hoch</summary>
+    Workaround: Sie können die aufgezeichnete Strecke als CSV-Datei im openSenseMap-kompatiblen Format exportieren und manuell auf der openSenseMap-Website hochladen.
+    - Starten Sie die App neu und prüfen Sie, ob die Sensordaten gelesen werden.
+    - Stellen Sie außerdem sicher, dass Ihre Internetverbindung stabil ist und sich die senseBox:bike in Reichweite Ihres Smartphones befindet.
+    - Deaktivieren Sie den Energiesparmodus Ihres Smartphones.
+    - Prüfen Sie, ob Sie in der App mit Ihrem openSenseMap-Konto angemeldet sind.
+    - Starten Sie die Aufzeichnung und fahren Sie einige Meter.
+    - Melden Sie sich bei openSenseMap an und prüfen Sie, ob neue Daten erscheinen.
+</details>
+<details>
+    <summary>Nicht alle Sensordaten werden aufgezeichnet</summary>
+    - Starten Sie die App neu und prüfen Sie, ob alle Sensordaten gelesen werden.
+    - Stellen Sie sicher, dass Ihre Internetverbindung stabil ist und sich die senseBox:bike in Reichweite Ihres Smartphones befindet.
+    - Deaktivieren Sie den Energiesparmodus Ihres Smartphones.
+    - Stellen Sie sicher, dass nur die senseBox:bike via Bluetooth mit Ihrem Smartphone verbunden ist.
+    - Starten Sie die Aufzeichnung, fahren Sie eine kurze Strecke und stoppen Sie dann.
+    - Überprüfen Sie, ob Sie für alle Sensoren (z. B. Geschwindigkeit und Temperatur) die gleiche Anzahl an Datenpunkten gespeichert haben.
+ </details>
