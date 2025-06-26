@@ -6,7 +6,8 @@ title: Troubleshooting Guide
 
 If you encounter any issues when collecting data from the senseBox device, you can follow these general troubleshooting steps:
  - Enable automatic updates for the senseBox:bike app to ensure you are always using the latest version.
- - Restart the senseBox:bike. To do this, briefly press the power button to turn the device off. Wait a few seconds, then press the button again to turn it on. For Arduino-based devices, a reset button may also be available.
+ - Gran app necessary permissions (location, Bluetooth, notifications).
+ - Restart the senseBox:bike. To do this, briefly press the power button to turn the device off. Wait a few seconds, then press the button again to turn it on.
  - Restart the senseBox:bike app on your phone.
  - Restart your phone.
 
@@ -18,11 +19,16 @@ If none of these steps help, please email us at [kontakt@reedu.de](email:kontakt
 # Known issues and their solutions
 
 <details>
-    <summary>App cannot connect to senseBox:bike</summary>
+    <summary>App cannot connect to senseBox</summary>
     - Ensure the senseBox:bike is powered on and fully charged.
     - Make sure that Bluetooth is enabled on your phone and that the app has permission to use it.
     - Restart the app.
-    - Log out and log in again to your openSenseMap account.
+
+    If you have an iPhone and you cannot see the senseBox in the senseBox:bike app even though you have taken the above steps, please take the following steps:
+    - Install [nRF Connect](https://apps.apple.com/de/app/nrf-connect-for-mobile/id1054362403).
+    - Open nRF Connect, find the senseBox, connect to it, then disconnect.
+
+    You should then be able to see the box in the senseBox:bike app again.
 </details>
 
 <details>
