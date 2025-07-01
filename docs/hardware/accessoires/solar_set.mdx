@@ -63,44 +63,39 @@ Sobald die Akkus wieder aufgeladen sind, wird die senseBox automatisch wieder ak
 
 ```cpp
 #include <SolarChargerSB041.h>
+#include <senseBoxIO.h> // only needer fo senseBox MCU
 
-// Initialize the solar charger object
 SolarChargerSB041 charger;
 
 void setup() {
-  // Start serial communication for output
-  Serial.begin(9600);
-  while (!Serial) {
-    ; // Wait for serial port to connect
-  }
-
-  // Initialize the solar charger
   charger.begin();
-
-  Serial.println("Initialization complete.");
+  Serial.begin(9600);
 }
 
 void loop() {
-  // Update solar charger data
   charger.update();
 
-  // Read and print battery voltage
-  Serial.print("Battery Voltage: ");
-  Serial.print(charger.getBatteryVoltage());
-  Serial.println(" V");
-
-  // Read and print solar panel voltage
+  Serial.print("Charger Connected: ");
+  Serial.println(charger.isChargerConnected() ? "true" : "false");
   Serial.print("Solar Panel Voltage: ");
-  Serial.print(charger.getSolarPanelVoltage());
-  Serial.println(" V");
-
-  // Read and print battery level
+  Serial.println(charger.getSolarPanelVoltage());
+  Serial.print("Battery Voltage: ");
+  Serial.println(charger.getBatteryVoltage());
+  Serial.print("Charging: ");
+  Serial.println(charger.isCharging() ? "true" : "false");
+  Serial.print("Fast Charging: ");
+  Serial.println(charger.isFastCharging() ? "true" : "false");
   Serial.print("Battery Level: ");
-  Serial.print(charger.getBatteryLevel());
-  Serial.println(" %");
+  Serial.println(charger.getBatteryLevel());
+  Serial.print("Good Input Voltage: ");
+  Serial.println(charger.isGoodInputVoltage() ? "true" : "false");
+  Serial.print("Battery Present: ");
+  Serial.println(charger.isBatteryPresent() ? "true" : "false");
+  Serial.print("Battery Temperature: ");
+  Serial.println(charger.getBatteryTemperature());
+  Serial.println();
 
-  // Delay before the next reading
-  delay(2000);
+  delay(1000);
 }
 ```
 
