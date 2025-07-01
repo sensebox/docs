@@ -67,7 +67,7 @@ const homeSidebar = {
       },
       items: [
         'products/home/erweiterungen/home-erweiterung-LoRa',
-        'products/home/erweiterungen/home-erweiterung-solar',
+        'hardware/accessoires/solar_set',
         'products/home/erweiterungen/circuitpython',
       ],
     },

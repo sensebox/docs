@@ -1,0 +1,118 @@
+---
+sidebar_position: 25
+title: Solar Set
+hide_title: false
+description: senseBox Solar Module Extension
+---
+
+import Admonition from "@theme/Admonition";
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import solar from '@site/static/img/hardware-bilder/solar/solar.png'
+import adapter from '@site/static/img/hardware-bilder/solar/solarcharger.png'
+import TutorialPorts_en from '@site/src/components/TutorialPorts/TutorialPorts_en'
+
+# Solar Set
+
+The Solar Set enables autonomous power supply for the senseBox. 
+The set consists of a solar panel, a charge controller (power booster), and two LiPo batteries. The set is ideal for outdoor use where mains power supply is not available.
+
+<ImageWithText src={solar} alt="Solar Set" title="Solar Set" />
+
+## Technical Information
+- "Plug-in-and-Go" senseBox compatible
+- Solar panel dimensions: 340mm x 235mm x 17mm
+- Power booster dimensions: 23mm x 45mm x 10mm
+- Weight: approx. 1kg
+- Maximum power (Pm): 10W
+- Terminal voltage: 7.2V
+- Voltage at max. power (Vm): 6V
+- Short circuit current (Isc): 1.86A
+- Two LiPo batteries with 3.7V and 3500mAh each
+
+## Connection
+The power booster is connected to the I2C connector of the senseBox using a JST cable.
+The solar module is connected to the power booster with a cable. The batteries are plugged directly into the power booster.
+
+<TutorialPorts_en port="i2c" />
+
+<Admonition type="warning" title="Note on Battery Usage" className="text-left">
+	<p>
+	LiPo batteries can explode or release toxic gases if handled incorrectly. Before connecting the batteries to the power booster, ensure that there is no short circuit and that the batteries are in good condition. 
+	The batteries should never be punctured with sharp objects or thrown into fire.
+	</p>
+</Admonition>
+
+## Charge Controller (Power Booster)
+The SolarCharger V1.0 ensures through its integrated charging circuit that the solar cell charges the battery and the battery in turn powers the senseBox.
+
+<ImageWithText src={adapter} alt="Power Booster" title="Power Booster" />
+
+<Admonition type="warning" title="Note on Power Booster Usage" className="text-left">
+	<p>
+	The power booster should ideally be installed protected from moisture. Therefore, the Solar Set includes a waterproof housing in which the power booster can and should be installed.
+	Using this housing is recommended to protect the electronics from weather influences.
+	</p>
+</Admonition>
+
+## Programming (Arduino)
+
+The Solar Set can be programmed in the senseBox Arduino IDE to obtain information about the battery charge status and solar cell performance.
+However, it is not strictly necessary to program the Solar Set to use it. The senseBox is preconfigured to automatically draw power from the power booster as soon as it is connected.
+If the batteries are empty, the senseBox will automatically enter energy-saving mode and consume as little power as possible. During this time, no measurement data will be collected.
+Once the batteries are recharged, the senseBox will automatically be reactivated.
+
+```cpp
+#include <SolarChargerSB041.h>
+
+// Initialize the solar charger object
+SolarChargerSB041 charger;
+
+void setup() {
+  // Start serial communication for output
+  Serial.begin(9600);
+  while (!Serial) {
+    ; // Wait for serial port to connect
+  }
+
+  // Initialize the solar charger
+  charger.begin();
+
+  Serial.println("Initialization complete.");
+}
+
+void loop() {
+  // Update solar charger data
+  charger.update();
+
+  // Read and print battery voltage
+  Serial.print("Battery Voltage: ");
+  Serial.print(charger.getBatteryVoltage());
+  Serial.println(" V");
+
+  // Read and print solar panel voltage
+  Serial.print("Solar Panel Voltage: ");
+  Serial.print(charger.getSolarPanelVoltage());
+  Serial.println(" V");
+
+  // Read and print battery level
+  Serial.print("Battery Level: ");
+  Serial.print(charger.getBatteryLevel());
+  Serial.println(" %");
+
+  // Delay before the next reading
+  delay(2000);
+}
+```
+
+## Programming (Blockly)
+In Blockly, information about the solar cell and batteries can be read using the `Solar Charger` block. This block can be found in the "Advanced" section.
+
+![](/img/en/blockly-bilder/solar/solarladeregler.svg)
+
+Additionally, the `Power-saving Deep Sleep and Restart` block allows you to control and manage the power-saving deep sleep mode of the senseBox.
+
+![](/img/en/blockly-bilder/solar/tiefschlaf.svg)
+
+## Further Information
+> - [Shop](https://sensebox.kaufen/product/solar-set)
+> - [SolarCharger V1.0 Datasheet](https://github.com/sensebox/solar-power-test/blob/master/senseBox_SolarCharger_V10.pdf)

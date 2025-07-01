@@ -37,6 +37,7 @@ const glossarSidebar = {
       'hardware/accessoires/rgb-led-esp32',
       'hardware/accessoires/rgb-led',
       'hardware/accessoires/rtc-modul',
+	  'hardware/accessoires/solar_set',
     ]
   }
 
