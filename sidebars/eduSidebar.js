@@ -46,7 +46,7 @@ const eduSidebar = {
         },
         {
           type: 'category',
-          label: 'zusätzlich erwerbare Hardware',
+          label: 'zusätzlich erwerbbare Hardware',
           link: {
             type: 'generated-index',
             title: 'zusätzlich erwerbbare Hardware',
@@ -62,6 +62,7 @@ const eduSidebar = {
             'hardware/bee/ethernet-bee',
             'hardware/accessoires/gps',
             'hardware/sensors/wassertemperatur',
+			'hardware/sensors/niederschlag-rg15',
             'hardware/accessoires/multiplexer',
           ],
         },

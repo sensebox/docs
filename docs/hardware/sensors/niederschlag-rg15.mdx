@@ -13,7 +13,7 @@ import { useBoardStore } from '@site/src/lib/stores/store'
 
 # Niederschlagssensor
 
-Der Hydreon RG-15 misst Niederschlagsmenge und -intensität präzise und wartungsfrei mit Infrarottechnik und einer runden Kunststofflinse.
+Der Hydreon RG-15 ist ein präziser, wartungsfreier Niederschlagssensor, der mithilfe von Infrarottechnologie und einer speziellen Kunststofflinse die Niederschlagsmenge und -intensität erfasst.
 
 <ImageWithText
   src={precipationSensor}
@@ -39,8 +39,8 @@ Der RG-15 Sensor kann auf Grund unterschiedlicher Betriebsspannungen nicht direk
 Daher ist eine Adapterplatine notwendig, die den Sensor mit der senseBox verbindet. 
 Diese Adapterplatine ist im Lieferumfang des Sensors enthalten und wird je nach senseBox Modell mit einem unterschiedlichen Kabel verbunden:
 
-- senseBox MCU S2, bzw. senseBox:edu S2: Die Adapterplatine wird mit einem [QWIIC Kabel SB-074](https://sensebox.kaufen/product/qwiic-kabel-500mm) verbunden.
-- senseBox MCU, bzw. senseBox:edu: Die Adapterplatine wird mit einem [senseBox Kabel SB-057](https://sensebox.kaufen/product/sensebox-kabel-jst-jst-500mm) verbunden.
+- senseBox MCU S2, bzw. senseBox:edu S2: Die Adapterplatine wird mit einem [QWIIC-Kabel SB-074](https://sensebox.kaufen/product/qwiic-kabel-500mm) verbunden.
+- senseBox MCU, bzw. senseBox:edu: Die Adapterplatine wird mit einem [senseBox-Kabel SB-057](https://sensebox.kaufen/product/sensebox-kabel-jst-jst-500mm) verbunden.
 
 <ImageWithText
   src={adapter}
@@ -57,7 +57,7 @@ Um den Sensor in Arduino zu Programmieren musst du die Software Bibliothek [RG15
 ### Code
 
 Dieser Code gibt die Niederschlagsintensität im Seriellen Monitor aus. Über die Variablen `getEventAccumulation` und `getTotalAccumulation` kannst du auf die anderen Messwerte zugreifen. Die Variable `getAccumulation` gibt die Niederschlagsmenge seit der letzten Messung an.
-Der Sensor wird im Beispiel über `Serial0` initialisiert, was der Standardport auf der senseBox MCU S2, bzw. senseBox:edu S2, ist. Auf der senseBox MCU, bzw. seseBox:edu, kann alternativ `Serial1` oder `Serial2` verwendet werden.
+Der Sensor wird im Beispiel über `Serial0` initialisiert, was der Standardport auf der senseBox MCU S2, bzw. senseBox:edu S2, ist. Auf der senseBox MCU, bzw. senseBox:edu, kann alternativ `Serial1` oder `Serial2` verwendet werden.
 
 ```cpp
 #include <RG15.h> // https://github.com/sensebox/rg15-arduino-lib
