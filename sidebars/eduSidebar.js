@@ -64,6 +64,7 @@ const eduSidebar = {
             'hardware/sensors/wassertemperatur',
 			'hardware/sensors/niederschlag-rg15',
             'hardware/accessoires/multiplexer',
+			'hardware/accessoires/solar_set'
           ],
         },
       ],

@@ -37,52 +37,75 @@ The Hydreon RG-15 measures precipitation amount and intensity precisely and main
 
 The RG-15 sensor cannot be directly connected to the senseBox due to different operating voltages. 
 Therefore, an adapter board is required to connect the sensor to the senseBox. 
-This adapter board is included in the sensor's package and is connected with a different cable depending on the senseBox model:
-
-- senseBox MCU S2 or senseBox:edu S2: The adapter board is connected using a [QWIIC cable SB-074](https://sensebox.kaufen/product/qwiic-kabel-500mm).
-- senseBox MCU or senseBox:edu: The adapter board is connected using a [senseBox cable SB-057](https://sensebox.kaufen/product/sensebox-kabel-jst-jst-500mm).
+This adapter board is included in the sensor package and is connected to the senseBox using the {useBoardStore((state) => (state.board === 'MCU-S2' || state.board === ':edu S2') ? <a href="https://sensebox.kaufen/product/qwiic-kabel-500mm">QWIIC cable SB-074</a> : <a href="https://sensebox.kaufen/product/sensebox-kabel-jst-jst-500mm">senseBox cable SB-057</a>)}.
 
 <ImageWithText
-  src={adapter}
-  alt="Adapter Board"
-  title="Adapter Board"
+	src={adapter}
+	alt="Adapter Board"
+	title="Adapter Board"
 />
 
 ## Programming (Arduino)
 
 ### Software Library
 
-To program the sensor in Arduino, you need to install the software library [RG15-Arduino](https://github.com/sensebox/rg15-arduino-lib).
+To program the sensor in Arduino, you need to install the software library [RG15-Arduino](https://github.com/sensebox/rg15-arduino-lib). A detailed guide on how to add libraries can be found in our [documentation](https://docs.sensebox.de/en/docs/editors/arduino/libraries-hinzufuegen/).
+
 
 ### Code
 
 This code outputs the rainfall intensity to the Serial Monitor. You can access other measurements using the variables `getEventAccumulation` and `getTotalAccumulation`. The variable `getAccumulation` provides the rainfall amount since the last measurement.
-In the example, the sensor is initialized via `Serial0`, which is the default port on the senseBox MCU S2 or senseBox:edu S2. On the senseBox MCU or senseBox:edu, you can alternatively use `Serial1` or `Serial2`.
 
-
-```cpp
-#include <RG15.h> // https://github.com/sensebox/rg15-arduino-lib
+{useBoardStore((state) => (state.board === 'MCU-S2' || state.board === ':edu S2') ? (
+	<>
+		<p>In this example, the sensor is initialized via Serial0, which is the default port on the senseBox MCU S2 or senseBox:edu S2.</p>
+		<pre><code className="language-cpp">{`#include <RG15.h> // https://github.com/sensebox/rg15-arduino-lib
 
 // Initialise the RG15 through the serial port
 RG15 rg15_Serial0(Serial0); 
 
 void setup(){
-	Serial.begin(9600);
-	delay(2000);
-	rg15_Serial0.begin();
-	rg15_Serial0.resetAccumulation();
+		Serial.begin(9600);
+		delay(2000);
+		rg15_Serial0.begin();
+		rg15_Serial0.resetAccumulation();
 }
 
 void loop(){
-	rg15_Serial0.poll();
-	float intensity = rg15_Serial0.getRainfallIntensity();
-	Serial.print("Niederschlagsintensität: ");
-	Serial.print(intensity);
-	Serial.println(" mm/h");
+		rg15_Serial0.poll();
+		float intensity = rg15_Serial0.getRainfallIntensity();
+		Serial.print("Rainfall Intensity: ");
+		Serial.print(intensity);
+		Serial.println(" mm/h");
+		delay(1000);
+}`}</code></pre>
+	</>
+) : (
+	<>
+		<p>In this example, the sensor is initialized via Serial1. On the senseBox MCU or senseBox:edu, Serial2 can also be used as an alternative.</p>
+		<pre><code className="language-cpp">{`#include <RG15.h> // https://github.com/sensebox/rg15-arduino-lib
+#include <SenseBoxIO.h>
 
-	delay(1000);
+// Initialise the RG15 through the serial port
+RG15 rg15_Serial1(Serial1); 
+
+void setup(){
+		Serial.begin(9600);
+		delay(2000);
+		rg15_Serial1.begin();
+		rg15_Serial1.resetAccumulation();
 }
-```
+
+void loop(){
+		rg15_Serial1.poll();
+		float intensity = rg15_Serial1.getRainfallIntensity();
+		Serial.print("Rainfall Intensity: ");
+		Serial.print(intensity);
+		Serial.println(" mm/h");
+		delay(1000);
+}`}</code></pre>
+	</>
+))}
 
 ## Programming (Blockly)
 
