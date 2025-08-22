@@ -74,7 +74,6 @@ const eduS2Sidebar = {
 			  'hardware/sensors/niederschlag-rg15',
 			  'hardware/bee/ethernet-bee',
 			  'hardware/accessoires/gps',
-			  'hardware/sensors/niederschlag-rg15',
 			  'hardware/sensors/wassertemperatur',
 			],
 		  },
