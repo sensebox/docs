@@ -52,6 +52,7 @@ const homeSidebar = {
         'hardware/sensors/co2',
         'hardware/sensors/truebner',
         'hardware/sensors/umweltsensor',
+		'hardware/sensors/niederschlag-rg15',
         'hardware/bee/ethernet-bee',
         'hardware/accessoires/gps',
         'hardware/accessoires/multiplexer',
@@ -66,7 +67,7 @@ const homeSidebar = {
       },
       items: [
         'products/home/erweiterungen/home-erweiterung-LoRa',
-        'products/home/erweiterungen/home-erweiterung-solar',
+        'hardware/accessoires/solar_set',
         'products/home/erweiterungen/circuitpython',
       ],
     },

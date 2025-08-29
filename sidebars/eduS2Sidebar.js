@@ -57,6 +57,26 @@ const eduS2Sidebar = {
 			'hardware/accessoires/cable_overview',
           ],
         },
+		{
+			type: 'category',
+			label: 'zusätzlich erwerbbare Hardware',
+			link: {
+			  type: 'generated-index',
+			  title: 'zusätzlich erwerbbare Hardware',
+			},
+			items: [
+			  'hardware/sensors/feinstaub-sds011',
+			  'hardware/sensors/feinstaub-sps30',
+			  'hardware/bee/lora-bee',
+			  'hardware/sensors/co2',
+			  'hardware/sensors/truebner',
+			  'hardware/sensors/umweltsensor',
+			  'hardware/sensors/niederschlag-rg15',
+			  'hardware/bee/ethernet-bee',
+			  'hardware/accessoires/gps',
+			  'hardware/sensors/wassertemperatur',
+			],
+		  },
       ],
     },
     {

@@ -55,13 +55,13 @@
     "message": ":edu",
     "description": "The label for category :edu in sidebar senseBoxSidebar"
   },
-  "sidebar.senseBoxSidebar.category.zusätzlich erwerbare Hardware": {
+  "sidebar.senseBoxSidebar.category.zusätzlich erwerbbare Hardware": {
     "message": "Additional Hardware",
-    "description": "The label for category zusätzlich erwerbare Hardware in sidebar senseBoxSidebar"
+    "description": "The label for category zusätzlich erwerbbare Hardware in sidebar senseBoxSidebar"
   },
-  "sidebar.senseBoxSidebar.category.zusätzlich erwerbare Hardware.link.generated-index.title": {
+  "sidebar.senseBoxSidebar.category.zusätzlich erwerbbare Hardware.link.generated-index.title": {
     "message": "Additional Hardware",
-    "description": "The generated-index page title for category zusätzlich erwerbare Hardware in sidebar senseBoxSidebar"
+    "description": "The generated-index page title for category zusätzlich erwerbbare Hardware in sidebar senseBoxSidebar"
   },
   "sidebar.senseBoxSidebar.category.:bike": {
     "message": ":bike",

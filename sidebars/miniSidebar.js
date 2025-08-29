@@ -27,12 +27,13 @@ const miniSidebar = {
             'hardware/sensors/umweltsensor',
             'hardware/accessoires/display',
             'hardware/accessoires/rgb-led',
+			'hardware/sensors/niederschlag-rg15',
 			'hardware/accessoires/cable_overview',
           ],
         },
         {
           type: 'category',
-          label: 'zusätzlich erwerbare Hardware',
+          label: 'zusätzlich erwerbbare Hardware',
           link: {
             type: 'generated-index',
             title: 'zusätzlich erwerbbare Hardware',
@@ -42,6 +43,7 @@ const miniSidebar = {
             'hardware/sensors/feinstaub-sps30',
             'hardware/sensors/co2',
             'hardware/sensors/truebner',
+			'hardware/sensors/niederschlag-rg15',
             'hardware/bee/ethernet-bee',
             'hardware/accessoires/gps',
             'hardware/sensors/wassertemperatur',

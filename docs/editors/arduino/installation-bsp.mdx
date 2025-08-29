@@ -1,5 +1,5 @@
 ---
-date: 2020-03-11
+date: 2025-08-13
 title: Installation des Board-Support-Packages
 title_order: 4
 categories: arduino
@@ -10,6 +10,7 @@ set_order: 4
 ---
 
 import { useBoardStore } from '@site/src/lib/stores/store'
+import Admonition from '@theme/Admonition';
 
 # Installation des Board-Support-Packages
 
@@ -17,30 +18,69 @@ import { useBoardStore } from '@site/src/lib/stores/store'
   <div class="description">
     Damit die Arduino IDE deine senseBox MCU unterstützt und du Programme auf diese übertragen kannst, musst du vor Beginn noch zwei Board-Support-Packages installieren. Diese beinhalten die nötigen Treiber und die notwendige Software, um mit dem Prozessor der senseBox zu kommunizieren. Das Board-Support-Package der senseBox enthält außerdem bereits unsere senseBox-Libraries. Damit stehen euch alle grundlegenden Methoden zur Programmierung der beiliegenden Sensoren zur Verfügung.
   </div>
-  <h2>Board-Support-Package hinuzfügen</h2>
-  <p>
-    Füge die folgende URL in deiner Arduino IDE unter _Datei - Voreinstellungen_ in das Feld für _Zusätzliche Bordverwalter-URLs_ ein: 
-  { useBoardStore((state)=>state.board) === ':edu S2' ? <div>
-    <code> https://espressif.github.io/arduino-esp32/package_esp32_index.json </code>
-        <div className="flex justify-center mt-4">
-      <img className src="/img/arduino-bilder/installation/arduino-bsp-esp32s2.png"/>
-      </div></div> : <div>
-    <code> https://github.com/sensebox/senseBoxMCU-core/raw/master/package_sensebox_index.json </code>
-        <div className="flex justify-center mt-4">
-      <img className src="/img/arduino-bilder/installation/arduino-board-support-url.png"/>
-      </div> </div>
-    }
 
-
-  </p>
+  <h2>Board-Support-Package hinzufügen</h2>
 
   <p>
-    Öffne den _Boardverwalter_ mit einem Klick auf das _Boardverwalter_ Symbol auf der linken Seite (siehe Bild)
+    Füge die folgende URL in deiner Arduino IDE unter <em>Datei - Voreinstellungen</em> in das Feld für <em>Zusätzliche Bordverwalter-URLs</em> ein:
   </p>
-  <div className="flex justify-center">
-    <img src="/img/arduino-bilder/installation/arduino-boards.png"/>
+
+  {useBoardStore((state) => state.board) === ':edu S2' ? (
+    <div>
+      <code>https://espressif.github.io/arduino-esp32/package_esp32_index.json</code>
+      <div className="flex justify-center mt-4">
+        <img src="/img/arduino-bilder/installation/arduino-bsp-esp32s2.png" />
+      </div>
+    </div>
+  ) : (
+    <div>
+      <code>https://github.com/sensebox/senseBoxMCU-core/raw/master/package_sensebox_index.json</code>
+      <div className="flex justify-center mt-4">
+        <img src="/img/arduino-bilder/installation/arduino-board-support-url.png" />
+      </div>
+    </div>
+  )}
+
+  <p>
+    Öffne den <em>Boardverwalter</em> mit einem Klick auf das <em>Boardverwalter</em>-Symbol auf der linken Seite (siehe Bild)
+  </p>
+  <div className="flex justify-center mb-6">
+    <img src="/img/arduino-bilder/installation/arduino-boards.png" />
   </div>
-  <p>
-    Gib "senseBox" oben in die Suchleiste ein, um die Packages schneller zu finden und installiere das Board `esp32` von Espressif Systems. <b>Achtung! Stelle sicher , dass du mindestens die Version 2.0.15-alpha3 installierst! </b>.
-  </p>
+
+  {useBoardStore((state) => state.board) === ':edu S2' ? (
+    <>
+      <p>
+        Gib "ESP32" oben in die Suchleiste ein, um die Packages schneller zu finden und installiere das Board
+         <code>esp32</code> von Espressif Systems!
+      </p>
+      <div className="flex justify-center">
+        <img src="/img/arduino-bilder/installation/esp-32-boards.png" />
+      </div>
+    </>
+  ) : (
+    <>
+      <p>
+        Gib "SAMD" oben in die Suchleiste ein, um die Packages schneller zu finden und installiere das Board 
+        <code>senseBox SAMD Boards</code> von senseBox und <code>Arduino SAMD Boards</code> von Arduino!
+      </p>
+      <div className="flex justify-center">
+        <img src="/img/arduino-bilder/installation/samd_boards.png" />
+      </div>
+    </>
+  )}
+
+  <div className="mt-8">
+    <Admonition type="warning" title="Hinweis zur Auswahl des Boards und Ports">
+      <p>
+        Manchmal musst du Board und Port in der Arduino IDE manuell auswählen.
+        Öffne dazu das Drop-down-Menü in der oberen Leiste und wähle "Anderes Board und Port auswählen".
+        Gib im neuen Fenster in der Suchleiste "senseBox" ein, wähle dein Board und den Port, an dem deine senseBox MCU angeschlossen ist.
+      </p>
+    </Admonition>
+  </div>
+
+  <div className="flex justify-center">
+    <img src="/img/arduino-bilder/installation/arduino_port.png" />
+  </div>
 </div>
