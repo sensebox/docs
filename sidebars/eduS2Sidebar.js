@@ -36,10 +36,10 @@ const eduS2Sidebar = {
       items: [
         {
           type: 'category',
-          label: 'in der :edu enthaltene Hardware',
+          label: 'in der :edu S2 enthaltene Hardware',
           link: {
             type: 'generated-index',
-            title: 'in der :edu enthaltene Hardware',
+            title: 'in der :edu S2 enthaltene Hardware',
           },
           items: [
             'hardware/sensors/temperatur-luftfeuchte',
