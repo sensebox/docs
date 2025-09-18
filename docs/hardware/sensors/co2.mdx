@@ -7,6 +7,7 @@ hide_title: false
 import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
 import CO2Sensor from '@site/static/img/hardware-bilder/co2/scd30.png'
 import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
+import { useBoardStore } from '@site/src/lib/stores/store'
 
 # CO2 Sensor
 
@@ -79,6 +80,49 @@ void loop()
 Den CO<sub>2</sub> Sensor kannst du mit folgendem Block auslesen.
 
 ![](/img/hardware-bilder/co2/scd30-block.svg)
+
+{useBoardStore((state) => (state.board === 'MCU-S2' || state.board === ':edu S2') && (
+<>
+<h2>Programmierung (CircuitPython)</h2>
+
+<p>Um den Sensor mit CircuitPython zu programmieren, muss die senseBox MCU-S2 zunächst mit CircuitPython geflasht werden. Eine Anleitung dazu findest du <a href="https://docs.sensebox.de/docs/misc/circuitpython_esp32">hier</a>.</p>
+
+<h3>Software Bibliothek</h3>
+
+<p>Lade dir die <a href="https://github.com/adafruit/Adafruit_CircuitPython_SCD30/releases/download/2.2.16/adafruit-circuitpython-scd30-10.x-mpy-2.2.16.zip">SCD30 CircuitPython Bibliothek</a> herunter. Entpacke die .zip Datei und kopiere die <code>adafruit_scd30.mpy</code> Datei aus dem <code>lib</code> Ordner in den <code>lib</code> Ordner deiner senseBox (<code>CIRCUITPY</code> Laufwerk).</p>
+
+<h3>Code</h3>
+
+<p>Mit dem CircuitPython Editor deiner Wahl kannst du nun den Sensor programmieren und seine Werte auslesen. Dieser Code gibt die CO<sub>2</sub>-Konzentration, Temperatur und Luftfeuchtigkeit in der Konsole aus:</p>
+
+<pre><code className="language-python">{`import time
+import board
+import busio
+import digitalio
+import adafruit_scd30
+
+io_enable_pin = digitalio.DigitalInOut(board.IO_POWER)
+io_enable_pin.direction = digitalio.Direction.OUTPUT
+io_enable_pin.value = True
+
+time.sleep(0.5)
+
+i2c = busio.I2C(board.SCL, board.SDA, frequency=50000)
+scd = adafruit_scd30.SCD30(i2c)
+
+while True:
+    if scd.data_available:
+        print("Data Available!")
+        print("CO2:", scd.CO2, "PPM")
+        print("Temperature:", scd.temperature, "degrees C")
+        print("Humidity:", scd.relative_humidity, "%%rH")
+        print("")
+        print("Waiting for new data...")
+        print("")
+
+    time.sleep(0.5)`}</code></pre>
+</>
+))}
 
 ## Kalibrieren des CO<sub>2</sub>-Sensors (Auto Kalibrierung)
 
