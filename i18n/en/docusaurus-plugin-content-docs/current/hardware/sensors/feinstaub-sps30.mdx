@@ -7,6 +7,7 @@ hide_title: false
 import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
 import feinstaubSps from '@site/static/img/hardware-bilder/sps30/sps30.png'
 import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
+import { useBoardStore } from '@site/src/lib/stores/store'
 
 # Particulate Matter Sensor SPS30
 
@@ -81,3 +82,32 @@ void loop() {
 You can read the sensor with the following block.
 
 ![](/img/en/hardware-bilder/sps30/sps30-block.svg)
+
+{useBoardStore((state) => (state.board === 'MCU-S2' || state.board === ':edu S2') && (
+<>
+<h2>Programming (CircuitPython)</h2>
+
+<p>To program the sensor with CircuitPython, the senseBox MCU-S2 must first be flashed with CircuitPython. You can find instructions <a href="https://docs.sensebox.de/docs/misc/circuitpython_esp32">here</a>.</p>
+
+<h3>Software Library</h3>
+
+<p>Download the <a href="https://github.com/kgalb01/Adafruit_CircuitPython_SPS30/releases/download/0.0.2/adafruit-circuitpython-sps30-10.x-mpy-0.0.2.zip">SPS30 CircuitPython library</a>. Unzip the .zip file and copy the <code>adafruit_sps30</code> folder from the <code>lib</code> folder into the <code>lib</code> folder of your senseBox (<code>CIRCUITPY</code> drive).</p>
+
+<h3>Code</h3>
+
+<p>With the CircuitPython editor of your choice, you can now program the sensor and read its values. This code prints the PM2.5 values to the console:</p>
+
+<pre><code className="language-python">{`import time
+import board
+from adafruit_sps30.i2c import SPS30_I2C
+
+# For i2c mode the SPS30 interface select pin needs to be connected to ground
+i2c = board.I2C()   # uses board.SCL and board.SDA
+sps = SPS30_I2C(i2c)
+
+while True:
+    aqdata = sps.read()
+    print("PM2.5: {:.1f}".format(aqdata["pm25 standard"]))
+    time.sleep(1)`}</code></pre>
+</>
+))}
