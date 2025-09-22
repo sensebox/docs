@@ -8,6 +8,7 @@ description: Brightness and UV Sensor
 import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
 import lightSensor from '@site/static/img/hardware-bilder/helligkeit-uv/sensor_helligkeit_uv.png'
 import TutorialPorts_en from '@site/src/components/TutorialPorts/TutorialPorts_en'
+import { useBoardStore } from '@site/src/lib/stores/store'
 
 # Brightness and UV Sensor
 On this senseBox component, two sensors are combined.
@@ -175,6 +176,40 @@ In the block, you can select between the different parameters of the brightness/
 
 - Brightness in LUX
 - UV exposure in µW/cm^2
+
+{useBoardStore((state) => (state.board === 'MCU-S2' || state.board === ':edu S2') && (
+<>
+<h2>Programming (CircuitPython)</h2>
+
+<p>To program the sensor with CircuitPython, the senseBox MCU-S2 must first be flashed with CircuitPython. You can find instructions for this <a href="https://docs.sensebox.de/en/docs/misc/circuitpython_esp32">here</a>.</p>
+
+<h3>Software Library</h3>
+
+<p>Download the <a href="https://github.com/adafruit/Adafruit_CircuitPython_VEML6070/releases/download/3.1.24/adafruit-circuitpython-veml6070-10.x-mpy-3.1.24.zip">VEML6070 CircuitPython Library</a>. Extract the .zip file and copy the <code>adafruit_veml6070.mpy</code> file from the <code>lib</code> folder into the <code>lib</code> folder of your senseBox (<code>CIRCUITPY</code> drive).</p>
+
+<h3>Code</h3>
+
+<p>Using the CircuitPython editor of your choice, you can now program the UV sensor and read its values. This code outputs the UV intensity and the risk level in the console:</p>
+
+<pre><code className="language-python">{`import time
+import board
+from adafruit_veml6070 import VEML6070
+
+with board.I2C() as i2c:
+    uv = VEML6070(i2c)
+    # Alternative constructors with parameters
+    #uv = VEML6070(i2c, 'VEML6070_1_T')
+    #uv = VEML6070(i2c, 'VEML6070_HALF_T', True)
+
+    # take 10 readings
+    for j in range(10):
+        uv_raw = uv.uv_raw
+        risk_level = uv.get_index(uv_raw)
+        print('Reading: {0} | Risk Level: {1}'.format(uv_raw, risk_level))
+        time.sleep(1)`}</code></pre>
+</>
+))}
+
 
 ## Projects
 
