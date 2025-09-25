@@ -115,12 +115,12 @@ const eduS2Sidebar = {
 
     {
       type: 'category',
-      label: 'Besonderheiten',
+      label: 'CircuitPython',
       link: {
         type: 'generated-index',
-        title: 'Besonderheiten',
+        title: 'CircuitPython',
       },
-      items: ['misc/circuitpython_esp32'],
+      items: ['editors/circuitpython/circuitpython_esp32'],
     },
   ],
 }
