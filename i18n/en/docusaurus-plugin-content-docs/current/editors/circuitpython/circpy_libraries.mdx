@@ -1,0 +1,38 @@
+---
+sidebar_position: 4
+title: "CircuitPython Libraries"
+description: CircuitPython libraries for the senseBox MCU-S2
+---
+import  AlertBox from "@site/src/components/AlertBox/AlertBox";
+
+# CircuitPython Libraries
+
+Libraries are collections of ready-to-use code that you can use in your own programs. Instead of writing all functions from scratch, you can rely on these “toolboxes.” This saves time and allows you to focus on what’s important.  
+
+For example: Instead of programming a sorting function yourself, you use a library that already does it reliably. Python has many such libraries, e.g., for mathematics, data processing, or hardware control.  
+
+## Why libraries in CircuitPython?
+For your senseBox MCU-S2 to communicate with different sensors and components, the right libraries need to be installed on the board. Each hardware component (e.g., a sensor for temperature, brightness, or air quality) requires its own library so that CircuitPython can correctly read and process the measurement values.  
+
+## senseBox Library Package
+We have put together a custom package for the senseBox that includes the most important libraries you will typically need. This way, you can get started right away without having to search for individual files.  
+
+[Download senseBox Library Package](https://sensebox.de/images/projets/circuitpython_co2_ampel/lib.zip)  
+
+Unzip the file and copy the entire contents into the `lib` folder of your senseBox MCU-S2.  
+
+![](/img/circuitpython/circpy_lib-folder.png)
+
+
+## Official CircuitPython Library Package
+Alternatively, you can also download the official CircuitPython library package:  
+
+[Official CircuitPython Library Package](https://circuitpython.org/libraries)  
+
+<AlertBox type="info" title="Note">
+    <p>
+	The senseBox libraries also include special extensions that are only available for the senseBox. These are not part of the official CircuitPython package.  
+	<br/><br/>
+	In addition, the full package can be quite large, and the storage space on the senseBox may become limited.
+	</p>
+</AlertBox>
