@@ -30,31 +30,6 @@ Um CircuitPython auf deiner senseBox MCU-S2 zu installieren musst du die folgend
 10. CircuitPython wurde erfolgreich installiert. Im Web-Installer wird leider nicht angezeigt, dass der Prozess abgeschlossen ist. Du kannst den Web-Installer also einfach schließen.
 11. Nun kannst du CircuitPython auf deiner senseBox MCU-S2 verwenden.
 
-
-## Hello World Programm
-Um zu überprüfen, ob CircuitPython erfolgreich installiert wurde, zeigen wir dir ein einfaches Hello World Programm. 
-1. Besuche den [CircuitPython Editor](https://code.circuitpython.org/).
-2. Schließe deine senseBox MCU-S2 über ein USB-Kabel an deinen Computer an.
-3. Verbinde dich mit deiner senseBox MCU-S2 über `USB`.
-4. Klicke auf `Connect to Device` und wähle die `senseBox MCU-S2 ESP32S2` als Device aus. Ggf. musst du erlauben, dass der Editor auf deine senseBox MCU-S2 zugreifen darf.
-5. Klicke nun auf `Select New Folder` und wähle den Ordner `CIRCUITPY` aus.
-6. Ggf. musst du das Bearbeiten von Dateien erlauben.
-7. Klicke nun auf `Use CIRCUITPY`.
-8. Klicke auf `Open` und öffne die `code.py` Datei.
-9. In der Datei sollte bereits ein Beispielcode vorhanden sein. Falls nicht, füge den folgenden Code ein:
-```python
-print("Hello World!")
-```
-10. Klicke auf `Save + Run`. Du solltest nun `Hello World!` in der Konsole sehen.
-
-## CircuitPython deinstallieren
-Wenn du CircuitPython von deiner senseBox MCU-S2 deinstallieren möchtest um wieder Arduino verwenden zu können, musst du die folgenden Schritte durchführen:
-1. Gehe in den Bootloader Modus, indem du kurz den Reset-Button drückst und direkt danach kurz den Boot-Button drückst. Die RGB-LED sollte nun grün leuchten.
-2. Lade dir die [flash-arduino.uf2](https://github.com/sensebox/MCU-S2-circuitpython-examples/raw/main/assets/flash-arduino.uf2) Datei herunter.
-3. Kopiere die `flash-arduino.uf2` Datei in das Laufwerk `senseBox`.
-4. Die senseBox MCU-S2 startet nun neu und du kannst wie gewohnt Blockly oder Arduino verwenden.
-
-
 ## Projekte
 
 * #### [CO2 Ampel](https://sensebox.de/projects/de/2024-04-02-circuitpython-co2-ampel)

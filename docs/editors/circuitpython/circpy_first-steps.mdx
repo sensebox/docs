@@ -1,0 +1,118 @@
+---
+sidebar_position: 3
+title: "Erste Schritte mit CircuitPython"
+description: Lerne CircuitPython auf der senseBox MCU-S2 kennen
+---
+import  AlertBox from "@site/src/components/AlertBox/AlertBox";
+
+# Erste Schritte mit CircuitPython
+CircuitPython ist eine großartige Möglichkeit, um schnell und einfach mit der Programmierung von Mikrocontrollern zu beginnen und Python zu lernen. In diesem Tutorial zeigen wir dir, wie du CircuitPython auf deiner senseBox MCU-S2 verwenden kannst.
+![CircuitPython Logo](https://s3.amazonaws.com/adafruit-circuit-python/CircuitPython_Repo_header_logo.png)
+
+# Editor für CircuitPython
+CircuitPython kann mit verschiedenen Editoren verwendet werden. In diesem Beispiel nutzen wir den [CircuitPython Editor](https://code.circuitpython.org/). Der CircuitPython Editor ist ein Online-Editor, der speziell für die Programmierung von CircuitPython entwickelt wurde. Du kannst den Editor direkt in deinem Web-Browser verwenden, ohne dass du eine Software installieren musst.
+
+## Hello World Programm
+Um die Funktionalität von CircuitPython zu überprüfen, zeigen wir dir ein einfaches Hello World Programm. 
+1. Besuche den [CircuitPython Editor](https://code.circuitpython.org/).
+2. Schließe deine senseBox MCU-S2 über ein USB-Kabel an deinen Computer an.
+3. Verbinde dich mit deiner senseBox MCU-S2 über `USB`.
+4. Klicke auf `Connect to Device` und wähle die `senseBox MCU-S2 ESP32S2` als Device aus. Ggf. musst du erlauben, dass der Editor auf deine senseBox MCU-S2 zugreifen darf.
+5. Klicke nun auf `Select New Folder` und wähle den Ordner `CIRCUITPY` aus.
+6. Ggf. musst du das Bearbeiten von Dateien erlauben.
+7. Klicke nun auf `Use CIRCUITPY`.
+8. Klicke auf `Open` und öffne die `code.py` Datei.
+9. In der Datei sollte bereits ein Beispielcode vorhanden sein. Falls nicht, füge den folgenden Code ein:
+```python
+print("Hello World!")
+```
+10. Klicke auf `Save + Run`. Du solltest nun `Hello World!` in der Konsole sehen.
+
+## Ausgabe auf dem OLED Display
+Nun wollen wir etwas auf dem OLED Display der senseBox MCU-S2 anzeigen. Dafür nutzen wir die <a href="https://github.com/adafruit/Adafruit_CircuitPython_DisplayIO_SSD1306/releases/download/3.0.3/adafruit-circuitpython-displayio-ssd1306-10.x-mpy-3.0.3.zip">SSD1306 CircuitPython Bibliothek</a> <b>und</b> die <a href="https://github.com/adafruit/Adafruit_CircuitPython_Display_Text/releases/download/3.3.3/adafruit-circuitpython-display-text-10.x-mpy-3.3.3.zip ">adafruit_display_text Bibliothek</a>.
+Entpacke die .zip Dateien und kopiere die <code>.mpy</code> Dateien aus den <code>lib</code> Ordnern in den <code>lib</code> Ordner deiner senseBox (<code>CIRCUITPY</code> Laufwerk).
+
+Hier ist ein Beispielcode, der "Hi senseBox! :)" auf dem Display anzeigt:
+```python
+import board
+import displayio
+import digitalio
+import terminalio
+from adafruit_display_text import label
+import adafruit_displayio_ssd1306
+
+# IO Enable
+io_enable_pin = digitalio.DigitalInOut(board.IO_POWER)
+io_enable_pin.direction = digitalio.Direction.OUTPUT
+io_enable_pin.value = False
+
+displayio.release_displays()
+
+# Use for I2C
+i2c = board.I2C()
+display_bus = displayio.I2CDisplay(i2c, device_address=0x3D)
+
+WIDTH = 128
+HEIGHT = 64
+BORDER = 5
+
+display = adafruit_displayio_ssd1306.SSD1306(display_bus, width=WIDTH, height=HEIGHT)
+
+# Make the display context
+splash = displayio.Group()
+display.root_group = splash
+
+color_bitmap = displayio.Bitmap(WIDTH, HEIGHT, 1)
+color_palette = displayio.Palette(1)
+color_palette[0] = 0xFFFFFF  # White
+
+bg_sprite = displayio.TileGrid(color_bitmap, pixel_shader=color_palette, x=0, y=0)
+splash.append(bg_sprite)
+
+# Draw a smaller inner rectangle
+inner_bitmap = displayio.Bitmap(WIDTH - BORDER * 2, HEIGHT - BORDER * 2, 1)
+inner_palette = displayio.Palette(1)
+inner_palette[0] = 0x000000  # Black
+inner_sprite = displayio.TileGrid(
+    inner_bitmap, pixel_shader=inner_palette, x=BORDER, y=BORDER
+)
+splash.append(inner_sprite)
+
+# Draw a label with shorter text
+text = "Hi senseBox!"
+text_area = label.Label(
+    terminalio.FONT, text=text, color=0xFFFFFF, x=12, y=HEIGHT // 2 - 1
+)
+splash.append(text_area)
+
+# Draw smiley face on the right side
+smiley_palette = displayio.Palette(1)
+smiley_palette[0] = 0xFFFFFF  # White
+
+# Left eye
+left_eye = displayio.Bitmap(4, 4, 1)
+left_eye_sprite = displayio.TileGrid(left_eye, pixel_shader=smiley_palette, x=95, y=20)
+splash.append(left_eye_sprite)
+
+# Right eye
+right_eye = displayio.Bitmap(4, 4, 1)
+right_eye_sprite = displayio.TileGrid(right_eye, pixel_shader=smiley_palette, x=110, y=20)
+splash.append(right_eye_sprite)
+
+# Mouth (smile)
+mouth = displayio.Bitmap(25, 3, 1)
+mouth_sprite = displayio.TileGrid(mouth, pixel_shader=smiley_palette, x=92, y=40)
+splash.append(mouth_sprite)
+
+# Mouth corners (to create smile effect)
+left_corner = displayio.Bitmap(3, 3, 1)
+left_corner_sprite = displayio.TileGrid(left_corner, pixel_shader=smiley_palette, x=90, y=38)
+splash.append(left_corner_sprite)
+
+right_corner = displayio.Bitmap(3, 3, 1)
+right_corner_sprite = displayio.TileGrid(right_corner, pixel_shader=smiley_palette, x=114, y=38)
+splash.append(right_corner_sprite)
+
+while True:
+    pass
+```
