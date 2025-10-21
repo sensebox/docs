@@ -126,6 +126,7 @@ const eduS2Sidebar = {
 		'editors/circuitpython/circpy_libraries',
 		'editors/circuitpython/circpy_supported-hardware',
 		'editors/circuitpython/circpy_editors',
+		'editors/circuitpython/circpy_osem',
 		'editors/circuitpython/circpy_example'],
     },
   ],

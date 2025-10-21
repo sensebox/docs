@@ -102,12 +102,12 @@ right_eye = displayio.Bitmap(4, 4, 1)
 right_eye_sprite = displayio.TileGrid(right_eye, pixel_shader=smiley_palette, x=110, y=20)
 splash.append(right_eye_sprite)
 
-# Mouth (smile)
+# Mouth
 mouth = displayio.Bitmap(25, 3, 1)
 mouth_sprite = displayio.TileGrid(mouth, pixel_shader=smiley_palette, x=92, y=40)
 splash.append(mouth_sprite)
 
-# Mouth corners (to create smile effect)
+# Mouth corners
 left_corner = displayio.Bitmap(3, 3, 1)
 left_corner_sprite = displayio.TileGrid(left_corner, pixel_shader=smiley_palette, x=90, y=38)
 splash.append(left_corner_sprite)
