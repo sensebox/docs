@@ -12,6 +12,7 @@
 const eduS2Sidebar = {
   type: 'category',
   label: ':edu S2',
+  key: 'eduS2',
   link: {
     type: 'doc',
     id: 'boards/mcus2/mcu-s2-overview',
@@ -20,6 +21,7 @@ const eduS2Sidebar = {
     {
       type: 'category',
       label: 'Erste Schritte',
+	  key: 'eduS2-gettingStarted',
       items: [
         'boards/mcus2/mcus2-in-betrieb-nehmen',
         'boards/mcus2/mcus2-erster-sketch',
@@ -29,6 +31,7 @@ const eduS2Sidebar = {
     {
       type: 'category',
       label: 'Hardware',
+	  key: 'eduS2-hardware',
       link: {
         type: 'generated-index',
         title: 'Hardware',
@@ -37,6 +40,7 @@ const eduS2Sidebar = {
         {
           type: 'category',
           label: 'in der :edu S2 enthaltene Hardware',
+		  key: 'eduS2-included-hardware',
           link: {
             type: 'generated-index',
             title: 'in der :edu S2 enthaltene Hardware',
@@ -60,6 +64,7 @@ const eduS2Sidebar = {
 		{
 			type: 'category',
 			label: 'zusätzlich erwerbbare Hardware',
+			key: 'eduS2-additional-hardware',
 			link: {
 			  type: 'generated-index',
 			  title: 'zusätzlich erwerbbare Hardware',
@@ -82,6 +87,7 @@ const eduS2Sidebar = {
     {
       type: 'category',
       label: 'Blockly',
+	  key: 'eduS2-blockly',
       link: {
         type: 'generated-index',
         title: 'Blockly',
@@ -101,6 +107,7 @@ const eduS2Sidebar = {
     {
       type: 'category',
       label: 'Arduino',
+	  key: 'eduS2-arduino',
       link: {
         type: 'generated-index',
         title: 'Arduino',
@@ -116,6 +123,7 @@ const eduS2Sidebar = {
     {
       type: 'category',
       label: 'CircuitPython',
+	  key: 'eduS2-circuitpython',
       link: {
         type: 'generated-index',
         title: 'CircuitPython',

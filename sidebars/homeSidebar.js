@@ -1,6 +1,7 @@
 const homeSidebar = {
   type: 'category',
   label: ':home',
+  key: 'home',
   link: {
     type: 'doc',
     id: 'boards/mcu/mcu-overview',
@@ -9,6 +10,7 @@ const homeSidebar = {
     {
       type: 'category',
       label: 'Erste Schritte',
+	  key: 'home-gettingStarted',
       items: [
         'boards/mcu/mcu-revisions',
         'boards/mcu/mcu-in-betrieb-nehmen',
@@ -19,6 +21,7 @@ const homeSidebar = {
     {
       type: 'category',
       label: 'Aufbau und Installation',
+	  key: 'home-setup',
       link: {
         type: 'generated-index',
         title: 'Hardware',
@@ -34,6 +37,7 @@ const homeSidebar = {
     {
       type: 'category',
       label: 'Hardware',
+	  key: 'home-hardware',
       link: {
         type: 'generated-index',
         title: 'Hardware',
@@ -61,6 +65,7 @@ const homeSidebar = {
     {
       type: 'category',
       label: 'Erweiterungen',
+	  key: 'home-extensions',
       link: {
         type: 'generated-index',
         title: 'Erweiterungen',
