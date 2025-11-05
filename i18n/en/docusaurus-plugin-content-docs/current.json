@@ -130,5 +130,13 @@
   "sidebar.senseBoxSidebar.doc.Fehlerbehebung": {
     "message": "Troubleshooting",
     "description": "The label for the doc item Fehlerbehebung in sidebar senseBoxSidebar, linking to the doc products/bike/misc/errors"
+  },
+  "sidebar.senseBoxSidebar.category.in der :edu S2 enthaltene Hardware": {
+    "message": "Hardware included in :edu S2",
+    "description": "The label for category in der :edu S2 enthaltene Hardware in sidebar senseBoxSidebar"
+  },
+  "sidebar.senseBoxSidebar.category.in der :edu S2 enthaltene Hardware.link.generated-index.title": {
+    "message": "Hardware included in :edu S2",
+    "description": "The generated-index page title for category in der :edu S2 enthaltene Hardware in sidebar senseBoxSidebar"
   }
 }

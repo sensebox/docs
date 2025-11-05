@@ -4,6 +4,7 @@ title: Beschleunigungssensor
 
 import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
 import mpu6050 from '@site/static/img/hardware-bilder/mpu6050/mcu-top-mpu.png'
+import { useBoardStore } from '@site/src/lib/stores/store'
 
 # Beschleunigungssensor (MPU6050)
 
@@ -64,3 +65,37 @@ Die Ergebnisse kannst du in Arduino anzeigen unter `Werkzeuge -> Serieller Plott
 In Blockly kannst du den Sensor über folgenden Block auslesen:
 
 ![](/img/hardware-bilder/mpu6050/mpu-6050-block.svg)
+
+{useBoardStore((state) => (state.board === 'MCU-S2' || state.board === ':edu S2') && (
+<>
+<h2>Programmierung (CircuitPython)</h2>
+
+<p>Um den Sensor mit CircuitPython zu programmieren, muss die senseBox MCU-S2.1 zunächst mit CircuitPython geflasht werden. Eine Anleitung dazu findest du <a href="https://docs.sensebox.de/docs/editors/circuitpython/circuitpython_esp32">hier</a>.</p>
+
+<h3>Software Bibliothek</h3>
+
+<p>Lade dir die <a href="https://github.com/adafruit/Adafruit_CircuitPython_MPU6050/releases/download/1.3.4/adafruit-circuitpython-mpu6050-10.x-mpy-1.3.4.zip">MPU6050 CircuitPython Bibliothek</a> herunter. Entpacke die .zip Datei und kopiere die <code>adafruit_mpu6050.mpy</code> Datei aus dem <code>lib</code> Ordner in den <code>lib</code> Ordner deiner senseBox (<code>CIRCUITPY</code> Laufwerk).</p>
+
+<h3>Code</h3>
+
+<p>Mit dem CircuitPython Editor deiner Wahl kannst du nun den integrierten Beschleunigungssensor programmieren und seine Werte auslesen. Dieser Code gibt die Beschleunigungswerte, Gyroskop-Daten und Temperatur in der Konsole aus:</p>
+
+<pre><code className="language-python">{`import time
+import busio
+import microcontroller
+import adafruit_mpu6050
+
+scl = microcontroller.pin.GPIO42
+sda = microcontroller.pin.GPIO45
+
+i2c = busio.I2C(scl, sda)
+mpu = adafruit_mpu6050.MPU6050(i2c)
+
+while True:
+    print("Acceleration: X:%.2f, Y: %.2f, Z: %.2f m/s^2"%(mpu.acceleration))
+    print("Gyro X:%.2f, Y: %.2f, Z: %.2f degrees/s"%(mpu.gyro))
+    print("Temperature: %.2f C"%mpu.temperature)
+    print("")
+    time.sleep(1)`}</code></pre>
+</>
+))}
