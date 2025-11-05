@@ -13,7 +13,7 @@
   },
   "link.item.label.openSenseMap": {
     "message": "openSenseMap",
-    "description": "The label of footer link with label=openSenseMap linking to https://opensensemap.org/impressum"
+    "description": "The label of footer link with label=openSenseMap linking to https://opensensemap.org/"
   },
   "link.item.label.FAQ": {
     "message": "FAQ",

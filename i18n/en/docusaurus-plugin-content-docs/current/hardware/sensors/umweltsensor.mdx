@@ -8,6 +8,7 @@ description: Air Pressure and Temperature Sensor (BME680)
 import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
 import umweltsensor from '@site/static/img/hardware-bilder/umweltsensor/bme.png'
 import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
+import { useBoardStore } from '@site/src/lib/stores/store'
 
 # Environmental Sensor
 
@@ -146,6 +147,42 @@ In the block, you can select between the different parameters of the environment
 - Calibration value
 - CO<sub>2</sub> equivalent
 - Breath VOC equivalent
+
+{useBoardStore((state) => (state.board === 'MCU-S2' || state.board === ':edu S2') && (
+<>
+<h2>Programming (CircuitPython)</h2>
+
+<p>To program the sensor with CircuitPython, the senseBox MCU-S2 must first be flashed with CircuitPython. You can find instructions for this <a href="https://sensebox.de/docs/category/circuitpython">here</a>.</p>
+
+<h3>Software Library</h3>
+
+<p>Download the <a href="https://github.com/adafruit/Adafruit_CircuitPython_BME680/releases/download/3.7.13/adafruit-circuitpython-bme680-10.x-mpy-3.7.13.zip">BME680 CircuitPython library</a>. Extract the .zip file and copy the <code>adafruit_bme680.mpy</code> file from the <code>lib</code> folder into the <code>lib</code> folder of your senseBox (<code>CIRCUITPY</code> drive).</p>
+
+<h3>Code</h3>
+
+<p>Using the CircuitPython editor of your choice, you can now program the sensor and read its values. This code outputs the temperature, gas resistance, relative humidity, air pressure, and altitude in the console:</p>
+
+<pre><code className="language-python">{`import adafruit_bme680
+import time
+import board
+
+# Create sensor object, communicating over the board's default I2C bus
+i2c = board.I2C()   # uses board.SCL and board.SDA
+bme680 = adafruit_bme680.Adafruit_BME680_I2C(i2c, address = 0x76)
+
+# change this to match the location's pressure (hPa) at sea level
+bme680.sea_level_pressure = 1013.25
+
+while True:
+	print("\\nTemperature: %0.1f C" % bme680.temperature)
+	print("Gas: %d ohm" % bme680.gas)
+	print("Humidity: %0.1f %%" % bme680.relative_humidity)
+	print("Pressure: %0.3f hPa" % bme680.pressure)
+	print("Altitude = %0.2f meters" % bme680.altitude)
+	
+	time.sleep(2)`}</code></pre>
+</>
+))}
 
 ## Calibration Value
 

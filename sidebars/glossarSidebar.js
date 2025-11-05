@@ -1,6 +1,7 @@
 const glossarSidebar = {
     type: 'category',
     label: 'Glossar',
+	key: 'glossary',
     link: {
       type : 'generated-index',
       title: 'Glossar',

@@ -1,0 +1,297 @@
+---
+sidebar_position: 8
+title: "CircuitPython Beispiel"
+description: Brick Breaker als Spiel mit CircuitPython auf der senseBox MCU-S2
+---
+import  AlertBox from "@site/src/components/AlertBox/AlertBox";
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+
+# CircuitPython Beispiel: Brick Breaker
+In diesem Beispiel zeigen wir dir, wie du ein einfaches Brick Breaker Spiel mit CircuitPython auf der senseBox MCU-S2 erstellen kannst.
+Das Spiel nutzt den integrierten Gyroskop-Sensor zur Steuerung und das OLED Display zur Anzeige.
+
+<ImageWithText
+  src="/img/circuitpython/brick-breaker_start.jpg"
+  alt="Brick Breaker Spiel auf dem OLED Display"
+  title="Brick Breaker auf der senseBox MCU-S2"
+/>
+
+<AlertBox type="info">
+Eine ausführliche Anleitung mit Schritt-für-Schritt Erklärungen findest du auf der <a href="https://sensebox.de/projects/de/2025-10-09-brick-breaker">Projekt-Seite</a>.
+</AlertBox>
+
+## Benötigte Bibliotheken
+- [SSD1306 Display](https://github.com/adafruit/Adafruit_CircuitPython_DisplayIO_SSD1306/releases/download/3.0.3/adafruit-circuitpython-displayio-ssd1306-10.x-mpy-3.0.3.zip)
+- [Display Text](https://github.com/adafruit/Adafruit_CircuitPython_Display_Text/releases/download/3.3.3/adafruit-circuitpython-display-text-10.x-mpy-3.3.3.zip)
+- [MPU6050](https://github.com/adafruit/Adafruit_CircuitPython_MPU6050/releases/download/1.3.4/adafruit-circuitpython-mpu6050-10.x-mpy-1.3.4.zip)
+
+<ImageWithText
+  src="/img/circuitpython/brick-breaker_setup.jpg"
+  alt="Setup für das Brick Breaker Spiel"
+  title="Setup für das Brick Breaker Spiel"
+/>
+
+## Spielsteuerung
+Das Spiel wird mit dem Gyroskop-Sensor der senseBox MCU-S2 gesteuert. Schüttel die senseBox, um das Spiel zu starten.
+Kippe die senseBox nach links oder rechts, um den Schläger zu bewegen und die Blöcke zu treffen.
+Du hast das Spiel verloren, wenn der Ball den unteren Rand des Displays berührt. Schüttel die senseBox erneut, um das Spiel zurückzusetzen.
+Das Spiel ist gewonnen, wenn alle Blöcke zerstört wurden.
+
+<ImageWithText
+  src="/img/circuitpython/brick-breaker_gif.gif"
+  alt="Steuerung des Brick Breaker Spiels mit Hilfe des eingebauten Gyroskops"
+  title="Gyroskop Steuerung"
+/>
+
+## Code
+```python
+import time
+import board
+import displayio
+import digitalio
+import busio
+import microcontroller
+from i2cdisplaybus import I2CDisplayBus
+import adafruit_displayio_ssd1306
+import adafruit_mpu6050
+import math
+
+# Enable IO power
+io_enable_pin = digitalio.DigitalInOut(board.IO_POWER)
+io_enable_pin.direction = digitalio.Direction.OUTPUT
+io_enable_pin.value = False
+
+time.sleep(0.5)
+
+# Initialize display
+displayio.release_displays()
+i2c_display = board.I2C()
+display_bus = I2CDisplayBus(i2c_display, device_address=0x3D)
+display = adafruit_displayio_ssd1306.SSD1306(display_bus, width=128, height=64)
+
+# Initialize MPU6050
+scl = microcontroller.pin.GPIO42
+sda = microcontroller.pin.GPIO45
+i2c_mpu = busio.I2C(scl, sda)
+mpu = adafruit_mpu6050.MPU6050(i2c_mpu)
+
+# Game constants
+PADDLE_WIDTH = 20
+PADDLE_HEIGHT = 3
+PADDLE_Y = 58
+PADDLE_SPEED = 2.0
+
+BALL_SIZE = 2
+BALL_SPEED = 1.5
+
+BRICK_WIDTH = 12
+BRICK_HEIGHT = 4
+BRICK_ROWS = 3
+BRICK_COLS = 10
+BRICK_SPACING = 1
+
+# Game state
+paddle_x = 54  # Center position
+ball_x = 64.0
+ball_y = 50.0
+ball_dx = 0.0
+ball_dy = 0.0
+game_started = False
+game_over = False
+game_won = False
+
+# Bricks array (True = exists, False = destroyed)
+bricks = [[True for _ in range(BRICK_COLS)] for _ in range(BRICK_ROWS)]
+
+def create_display():
+    """Create initial display with bricks and paddle"""
+    group = displayio.Group()
+
+    # Background
+    bg_bitmap = displayio.Bitmap(128, 64, 1)
+    bg_palette = displayio.Palette(1)
+    bg_palette[0] = 0x000000
+    bg_sprite = displayio.TileGrid(bg_bitmap, pixel_shader=bg_palette)
+    group.append(bg_sprite)
+
+    # Draw bricks
+    brick_palette = displayio.Palette(1)
+    brick_palette[0] = 0xFFFFFF
+
+    for row in range(BRICK_ROWS):
+        for col in range(BRICK_COLS):
+            if bricks[row][col]:
+                x = col * (BRICK_WIDTH + BRICK_SPACING) + 4
+                y = row * (BRICK_HEIGHT + BRICK_SPACING) + 4
+                brick_bitmap = displayio.Bitmap(BRICK_WIDTH, BRICK_HEIGHT, 1)
+                brick_sprite = displayio.TileGrid(
+                    brick_bitmap, 
+                    pixel_shader=brick_palette, 
+                    x=x, 
+                    y=y
+                )
+                group.append(brick_sprite)
+
+    return group
+
+def draw_paddle(group, x):
+    """Draw paddle at position"""
+    paddle_palette = displayio.Palette(1)
+    paddle_palette[0] = 0xFFFFFF
+    paddle_bitmap = displayio.Bitmap(PADDLE_WIDTH, PADDLE_HEIGHT, 1)
+    paddle_sprite = displayio.TileGrid(
+        paddle_bitmap,
+        pixel_shader=paddle_palette,
+        x=int(x),
+        y=PADDLE_Y
+    )
+    group.append(paddle_sprite)
+    return paddle_sprite
+
+def draw_ball(group, x, y):
+    """Draw ball at position"""
+    ball_palette = displayio.Palette(1)
+    ball_palette[0] = 0xFFFFFF
+    ball_bitmap = displayio.Bitmap(BALL_SIZE, BALL_SIZE, 1)
+    ball_sprite = displayio.TileGrid(
+        ball_bitmap,
+        pixel_shader=ball_palette,
+        x=int(x),
+        y=int(y)
+    )
+    group.append(ball_sprite)
+    return ball_sprite
+
+def check_brick_collision(x, y):
+    """Check if ball hits a brick and remove it"""
+    global bricks
+
+    for row in range(BRICK_ROWS):
+        for col in range(BRICK_COLS):
+            if bricks[row][col]:
+                brick_x = col * (BRICK_WIDTH + BRICK_SPACING) + 4
+                brick_y = row * (BRICK_HEIGHT + BRICK_SPACING) + 4
+
+                if (x < brick_x + BRICK_WIDTH and 
+                    x + BALL_SIZE > brick_x and
+                    y < brick_y + BRICK_HEIGHT and 
+                    y + BALL_SIZE > brick_y):
+                    bricks[row][col] = False
+                    return True
+    return False
+
+def check_paddle_collision(ball_x, ball_y, paddle_x):
+    """Check if ball hits paddle"""
+    if (ball_y + BALL_SIZE >= PADDLE_Y and
+        ball_y <= PADDLE_Y + PADDLE_HEIGHT and
+        ball_x + BALL_SIZE >= paddle_x and
+        ball_x <= paddle_x + PADDLE_WIDTH):
+        return True
+    return False
+
+def check_win():
+    """Check if all bricks are destroyed"""
+    for row in bricks:
+        if any(row):
+            return False
+    return True
+
+# Initialize display
+display_group = create_display()
+paddle_sprite = draw_paddle(display_group, paddle_x)
+ball_sprite = draw_ball(display_group, ball_x, ball_y)
+display.root_group = display_group
+
+print("Brick Breaker Started!")
+print("Tilt to move paddle")
+print("Shake to start the game")
+
+while True:
+    # Read accelerometer
+    accel_x, accel_y, accel_z = mpu.acceleration
+
+    # Check for shake (start/reset)
+    if abs(accel_x) > 15 or abs(accel_y) > 15 or abs(accel_z) > 15:
+        if game_over or game_won:
+            # Reset game
+            ball_x = 64.0
+            ball_y = 50.0
+            ball_dx = 0.0
+            ball_dy = 0.0
+            paddle_x = 54
+            game_started = False
+            game_over = False
+            game_won = False
+            bricks = [[True for _ in range(BRICK_COLS)] for _ in range(BRICK_ROWS)]
+
+            # Redraw everything
+            display_group = create_display()
+            paddle_sprite = draw_paddle(display_group, paddle_x)
+            ball_sprite = draw_ball(display_group, ball_x, ball_y)
+            display.root_group = display_group
+            print("Game reset!")
+        elif not game_started:
+            game_started = True
+            ball_dx = BALL_SPEED
+            ball_dy = -BALL_SPEED
+            print("Game started!")
+        time.sleep(1)
+        continue
+
+    # Move paddle based on tilt
+    if not game_over and not game_won:
+        paddle_x += accel_y * PADDLE_SPEED
+        paddle_x = max(0, min(128 - PADDLE_WIDTH, paddle_x))
+        paddle_sprite.x = int(paddle_x)
+
+    # Update ball if game is running
+    if game_started and not game_over and not game_won:
+        # Move ball
+        ball_x += ball_dx
+        ball_y += ball_dy
+
+        # Ball collision with walls
+        if ball_x <= 0 or ball_x >= 128 - BALL_SIZE:
+            ball_dx = -ball_dx
+            ball_x = max(0, min(128 - BALL_SIZE, ball_x)
+
+        if ball_y <= 0:
+            ball_dy = -ball_dy
+            ball_y = 0
+
+        # Ball collision with paddle
+        if check_paddle_collision(ball_x, ball_y, paddle_x):
+            ball_dy = -abs(ball_dy)
+            # Add spin based on where ball hits paddle
+            hit_pos = (ball_x + BALL_SIZE/2 - paddle_x) / PADDLE_WIDTH
+            ball_dx = (hit_pos - 0.5) * 3
+
+        # Ball collision with bricks
+        if check_brick_collision(ball_x, ball_y):
+            ball_dy = -ball_dy
+            # Redraw display
+            display_group = create_display()
+            paddle_sprite = draw_paddle(display_group, paddle_x)
+            ball_sprite = draw_ball(display_group, ball_x, ball_y)
+            display.root_group = display_group
+
+            # Check win
+            if check_win():
+                game_won = True
+                print("YOU WIN!")
+
+        # Check game over
+        if ball_y > 64:
+            game_over = True
+            print("GAME OVER!")
+
+        # Update ball position
+        ball_sprite.x = int(ball_x)
+        ball_sprite.y = int(ball_y)
+
+    time.sleep(0.03)
+```
+
+## Weitere Informationen
+Dieses Spiel demonstriert, was mit CircuitPython auf der senseBox MCU-S2 möglich ist. Du kannst den Code erweitern, um weitere Funktionen hinzuzufügen, wie z.B. Punktestände, Levels oder Soundeffekte.
+Falls du das Spiel lediglich ausprobieren möchtest, kannst du den fertigen Code auch direkt von der <a href="https://github.com/sensebox/MCU-S2-circuitpython-examples/tree/main/examples/brick%20breaker">GitHub-Seite</a> herunterladen und auf deine senseBox kopieren.

@@ -1,6 +1,7 @@
 const bikeSidebar = {
     type: 'category', 
-    label: ':bike', 
+    label: ':bike',
+	key: 'bike', 
     link: {
       type : 'generated-index',
     },
@@ -8,11 +9,13 @@ const bikeSidebar = {
       {
         type:'doc', 
         label: 'Halterung', 
+		key: 'bike-holder',
         id: 'products/bike/halterung/installation'
       },
         {
           type:'category', 
-          label: 'App', 
+          label: 'App',
+		  key: 'bike-app', 
           items: [
             "products/bike/app/download", 
             "products/bike/app/benutzung",
@@ -20,7 +23,8 @@ const bikeSidebar = {
         },
         {
           type:'category', 
-          label: 'Sensoren', 
+          label: 'Sensoren',
+		  key: 'bike-sensors', 
           items: [
             "hardware/sensors/temperatur-luftfeuchte", 
             "hardware/sensors/mpu6050", 
@@ -30,12 +34,14 @@ const bikeSidebar = {
         }, 
         {
           type: 'doc', 
-          label: "Pflegehinweise für die senseBox:bike", 
+          label: "Pflegehinweise für die senseBox:bike",
+		  key: 'bike-care',
           id: 'products/bike/misc/care'
         }, 
         {
           type:'doc', 
           label: 'Fehlerbehebung',
+		  key: 'bike-errors',
           id: 'products/bike/misc/errors' 
         }
     ]
