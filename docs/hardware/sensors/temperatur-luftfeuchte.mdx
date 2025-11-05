@@ -74,6 +74,47 @@ Im Block kannst du zwischen den verschiedenen Parametern des Temperatur und Luft
 - Temperatur in Grad Celsius (°C)
 - Luftfeuchtigkeit in Prozent (%)
 
+{useBoardStore((state) => (state.board === 'MCU-S2' || state.board === ':edu S2') && (
+<>
+<h2>Programmierung (CircuitPython)</h2>
+
+<p>Um den Sensor mit CircuitPython zu programmieren, muss die senseBox MCU-S2 zunächst mit CircuitPython geflasht werden. Eine Anleitung dazu findest du <a href="https://docs.sensebox.de/docs/editors/circuitpython/circuitpython_esp32">hier</a>.</p>
+
+<h3>Software Bibliothek</h3>
+
+<p>Lade dir die <a href="https://github.com/sensebox/CircuitPython_HDC1080/releases/download/1.0.0/circuitpython-hdc1080-9.x-mpy-1.0.0.zip">HDC1080 CircuitPython Bibliothek</a> herunter. Entpacke die .zip Datei und kopiere die <code>hdc1080.mpy</code> Datei aus dem <code>lib</code> Ordner in den <code>lib</code> Ordner deiner senseBox (<code>CIRCUITPY</code> Laufwerk).</p>
+
+<h3>Code</h3>
+
+<p>Mit dem CircuitPython Editor deiner Wahl kannst du nun den Sensor programmieren und seine Werte auslesen. Dieser Code gibt die Temperatur und die relative Luftfeuchte in der Konsole aus:</p>
+
+<pre><code className="language-python">{`import time
+import board
+import digitalio
+from hdc1080 import HDC1080
+
+# IO Enable Pin (only needed for senseBox MCU-S2)
+io_enable_pin = digitalio.DigitalInOut(board.IO_POWER)
+io_enable_pin.direction = digitalio.Direction.OUTPUT
+io_enable_pin.value = False
+
+# Initialize I2C bus
+i2c = board.I2C()
+
+# Initialize HDC1080 sensor
+sensor = HDC1080(i2c)
+
+while True:
+    temperature = sensor.temperature
+    humidity = sensor.humidity
+
+    print("Temperature: {:.2f} °C".format(temperature))
+    print("Humidity: {:.2f} %".format(humidity))
+
+    time.sleep(2)  # Wait for 2 seconds before next reading`}</code></pre>
+</>
+))}
+
 ## Projekte
 
 - #### [IoT Messstation](https://sensebox.de/projects/de/2024-01-10-iotmesstation_s2)

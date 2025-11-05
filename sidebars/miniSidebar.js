@@ -1,6 +1,7 @@
 const miniSidebar = {
   type: 'category',
   label: ':mini',
+  key: 'mini',
   link: {
     type: 'doc',
     id: 'boards/mini/mini-overview',
@@ -9,6 +10,7 @@ const miniSidebar = {
     {
       type: 'category',
       label: 'Hardware',
+	  key: 'mini-hardware',
       link: {
         type: 'generated-index',
         title: 'Hardware',
@@ -17,6 +19,7 @@ const miniSidebar = {
         {
           type: 'category',
           label: 'in der :mini enthaltene Hardware',
+		  key: 'mini-included-hardware',
           link: {
             type: 'generated-index',
             title: 'in der :edu enthaltene Hardware',
@@ -27,12 +30,14 @@ const miniSidebar = {
             'hardware/sensors/umweltsensor',
             'hardware/accessoires/display',
             'hardware/accessoires/rgb-led',
+			'hardware/sensors/niederschlag-rg15',
 			'hardware/accessoires/cable_overview',
           ],
         },
         {
           type: 'category',
-          label: 'zusätzlich erwerbare Hardware',
+          label: 'zusätzlich erwerbbare Hardware',
+		  key: 'mini-additional-hardware',
           link: {
             type: 'generated-index',
             title: 'zusätzlich erwerbbare Hardware',
@@ -42,6 +47,7 @@ const miniSidebar = {
             'hardware/sensors/feinstaub-sps30',
             'hardware/sensors/co2',
             'hardware/sensors/truebner',
+			'hardware/sensors/niederschlag-rg15',
             'hardware/bee/ethernet-bee',
             'hardware/accessoires/gps',
             'hardware/sensors/wassertemperatur',
@@ -59,6 +65,7 @@ const miniSidebar = {
     {
       type: 'category',
       label: 'Blockly',
+	  key: 'mini-blockly',
       link: {
         type: 'generated-index',
         title: 'Blockly',
@@ -78,6 +85,7 @@ const miniSidebar = {
     {
       type: 'category',
       label: 'Arduino',
+	  key: 'mini-arduino',
       link: {
         type: 'generated-index',
         title: 'Arduino',

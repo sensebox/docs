@@ -1,0 +1,56 @@
+---
+sidebar_position: 6
+title: "CircuitPython Editors"
+description: Overview of CircuitPython editors
+---
+import  AlertBox from "@site/src/components/AlertBox/AlertBox";
+
+# CircuitPython Editors
+CircuitPython can be programmed with different editors. Here we introduce you to the most common editors and provide a brief overview of their features and advantages.
+
+![CircuitPython Logo](https://s3.amazonaws.com/adafruit-circuit-python/CircuitPython_Repo_header_logo.png)
+
+<AlertBox type="info" title="Web Browser!" >
+	<p>All editors only work with Google Chrome or Microsoft Edge.</p>
+</AlertBox>
+
+## Mu Editor
+The Mu Editor is a simple and user-friendly code editor specifically designed for beginners.  
+Unlike the other editors presented here, the Mu Editor is installed and run locally on your computer.  
+
+Download the Mu Editor [here](https://codewith.mu/) and install it on your computer to get started.  
+
+Make sure to select the `CircuitPython` mode in the `Mode` tab. Connect your senseBox MCU-S2 to your computer and open `code.py` in the `CIRCUITPY` drive. Additionally, open the serial monitor in Mu Editor to view your code’s output.  
+Now you can start writing your code.  
+
+![MU Editor](/img/circuitpython/mu_editor.png)
+
+## CircuitPython Web Editor
+The CircuitPython Web Editor is an online editor that runs directly in your web browser. It provides a simple way to write CircuitPython code and upload it to your senseBox MCU-S2.  
+The Web Editor can be accessed [here](https://code.circuitpython.com).  
+
+When you visit the website, you’ll be asked to specify how your senseBox MCU-S2 is connected. Select `USB` and click `Connect device`. Connect your senseBox MCU-S2 to your computer and select it in the pop-up window.  
+Next, click `Open` to access your senseBox files. Open `code.py` in the `CIRCUITPY` drive to edit your code.  
+Now you can start writing and running your code.  
+
+![CircuitPython Web Editor](/img/circuitpython/circpy_editor.png)
+
+## senseBox CircuitPython Editor
+The senseBox CircuitPython Editor is another online editor, specifically developed for programming CircuitPython on the senseBox MCU-S2. It offers a user-friendly interface and some additional features that make programming easier.  
+You can find the senseBox CircuitPython Editor [here](https://python.sensebox.de/). There you can start right away, either by writing your own code or by using the example blocks.  
+
+First, click `Connect` in the upper right corner to connect your senseBox MCU-S2. Next, click `Send to micro:bit` to upload and run your code on the senseBox.  
+You’ll need to select the `CIRCUITPY` drive when prompted. In the right-hand panel, you can see your code’s output.  
+
+<AlertBox type="info" title="Attention!" >
+	<p>The senseBox CircuitPython Editor is still in beta and only works with the senseBox MCU-S2, not with other CircuitPython-compatible boards.</p>
+</AlertBox>
+
+![senseBox CircuitPython Editor](/img/circuitpython/sensebox_editor.png)
+
+## Switching Between Editors
+You can switch between the different editors at any time. However, it is recommended to close the unused editor and restart your MCU-S2 before switching. Always make sure to edit the `code.py` file in the `CIRCUITPY` drive of your senseBox MCU-S2.  
+
+<AlertBox type="info" title="Attention!" >
+	<p>In rare cases, it may be necessary to re-flash your board when switching editors. Be sure to save and back up your progress in a safe location beforehand and then follow [this tutorial](https://docs.sensebox.de/en/docs/editors/circuitpython/circuitpython_esp32).</p>
+</AlertBox>

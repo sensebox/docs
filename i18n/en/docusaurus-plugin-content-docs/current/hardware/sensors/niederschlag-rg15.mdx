@@ -1,0 +1,126 @@
+---
+sidebar_position: 0
+title: Precipation Sensor
+hide_title: false
+description: Precipation Sensor (RG15)
+---
+
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import precipationSensor from '@site/static/img/hardware-bilder/niederschlag/sensor_niederschlag_rg15.png'
+import adapter from '@site/static/img/hardware-bilder/niederschlag/adapterplatine_rg15.png'
+import TutorialPorts_en from '@site/src/components/TutorialPorts/TutorialPorts_en'
+import { useBoardStore } from '@site/src/lib/stores/store'
+
+# Precipation Sensor
+
+The Hydreon RG-15 measures precipitation amount and intensity precisely and maintenance-free using infrared technology and a round plastic lens.
+
+<ImageWithText
+  src={precipationSensor}
+  alt="Precipation Sensor"
+  title="Precipation Sensor"
+/>
+
+## Technical Information
+- "Plug-in-and-Go" compatible with senseBox
+- Dimensions: 121mm x 71mm x 56mm
+- Measurement deviation of ±10%
+- Operating temperature range from -40°C to +60°C (-40°F to +140°F)
+- Nominal current supply of 110 μA and 2-4 mA during precipitation
+- Operating voltage 5V or 3.3V
+- Serial interface (UART)
+
+## Connection
+<TutorialPorts_en port="uart" />
+
+## Adapter Board
+
+The RG-15 sensor cannot be directly connected to the senseBox due to different operating voltages. 
+Therefore, an adapter board is required to connect the sensor to the senseBox. 
+This adapter board is included in the sensor package and is connected to the senseBox using the {useBoardStore((state) => (state.board === 'MCU-S2' || state.board === ':edu S2') ? <a href="https://sensebox.kaufen/product/qwiic-kabel-500mm">QWIIC cable SB-074</a> : <a href="https://sensebox.kaufen/product/sensebox-kabel-jst-jst-500mm">senseBox cable SB-057</a>)}.
+
+<ImageWithText
+	src={adapter}
+	alt="Adapter Board"
+	title="Adapter Board"
+/>
+
+## Programming (Arduino)
+
+### Software Library
+
+To program the sensor in Arduino, you need to install the software library [RG15-Arduino](https://github.com/sensebox/rg15-arduino-lib). A detailed guide on how to add libraries can be found in our [documentation](https://docs.sensebox.de/en/docs/editors/arduino/libraries-hinzufuegen/).
+
+
+### Code
+
+This code outputs the rainfall intensity to the Serial Monitor. You can access other measurements using the variables `getEventAccumulation` and `getTotalAccumulation`. The variable `getAccumulation` provides the rainfall amount since the last measurement.
+
+{useBoardStore((state) => (state.board === 'MCU-S2' || state.board === ':edu S2') ? (
+	<>
+		<p>In this example, the sensor is initialized via Serial0, which is the default port on the senseBox MCU S2 or senseBox:edu S2.</p>
+		<pre><code className="language-cpp">{`#include <RG15.h> // https://github.com/sensebox/rg15-arduino-lib
+
+// Initialise the RG15 through the serial port
+RG15 rg15_Serial0(Serial0); 
+
+void setup(){
+		Serial.begin(9600);
+		delay(2000);
+		rg15_Serial0.begin();
+		rg15_Serial0.resetAccumulation();
+}
+
+void loop(){
+		rg15_Serial0.poll();
+		float intensity = rg15_Serial0.getRainfallIntensity();
+		Serial.print("Rainfall Intensity: ");
+		Serial.print(intensity);
+		Serial.println(" mm/h");
+		delay(1000);
+}`}</code></pre>
+	</>
+) : (
+	<>
+		<p>In this example, the sensor is initialized via Serial1. On the senseBox MCU or senseBox:edu, Serial2 can also be used as an alternative.</p>
+		<pre><code className="language-cpp">{`#include <RG15.h> // https://github.com/sensebox/rg15-arduino-lib
+#include <SenseBoxIO.h>
+
+// Initialise the RG15 through the serial port
+RG15 rg15_Serial1(Serial1); 
+
+void setup(){
+		Serial.begin(9600);
+		delay(2000);
+		rg15_Serial1.begin();
+		rg15_Serial1.resetAccumulation();
+}
+
+void loop(){
+		rg15_Serial1.poll();
+		float intensity = rg15_Serial1.getRainfallIntensity();
+		Serial.print("Rainfall Intensity: ");
+		Serial.print(intensity);
+		Serial.println(" mm/h");
+		delay(1000);
+}`}</code></pre>
+	</>
+))}
+
+## Programming (Blockly)
+
+In Blockly, the sensor can be read using the following block:
+
+![](/img/hardware-bilder/niederschlag/niederschlag-blockly.svg)
+
+In the block, you can select between the different parameters of the environmental sensor:
+- Rainfall intensity in mm/h
+- Rainfall amount since the last measurement in mm
+- Total rainfall amount in mm
+- Rainfall per event in mm
+
+Additionally, you can select the serial port to which the sensor is connected.
+
+## Extras
+> - [Shop](https://sensebox.kaufen/product/hydreon-rg-15-regensensor)
+> - [Hydreon RG-15 Datasheet](https://rainsensors.com/wp-content/uploads/sites/3/2022/07/2022.07.18-rev-1.000-rg-15_instructions.pdf)
