@@ -7,6 +7,7 @@ categories: hardware
 import tofSensor from '@site/static/img/hardware-bilder/tof/tofsensor.png'
 import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
 import TutorialPorts_en from '@site/src/components/TutorialPorts/TutorialPorts_en'
+import { useBoardStore } from '@site/src/lib/stores/store'
 
 # Time-of-Flight (ToF) Sensor
 
@@ -91,6 +92,62 @@ void loop(){
 In Blockly this sensor can be read out via the following block:
 
 ![](/img/en/hardware-bilder/tof/tof_block.svg)
+
+{useBoardStore((state) => (state.board === 'MCU-S2' || state.board === ':edu S2') && (
+<>
+<h2>Programming (CircuitPython)</h2>
+
+<p>To program the sensor with CircuitPython, the senseBox MCU-S2 must first be flashed with CircuitPython. You can find instructions for this <a href="https://docs.sensebox.de/en/docs/editors/circuitpython/circuitpython_esp32">here</a>.</p>
+
+<h3>Software Library</h3>
+
+<p>Download the <a href="https://github.com/sensebox/CircuitPython_VL53LxCX/releases/download/0.0.5/circuitpython-vl53lxcx-10.x-mpy-0.0.5.zip">VL53LxCX CircuitPython Library</a>. Extract the .zip file and copy the <code>vl53lxcx</code> folder from the <code>lib</code> folder into the <code>lib</code> folder of your senseBox (<code>CIRCUITPY</code> drive).</p>
+
+<h3>Code</h3>
+
+<p>Using the CircuitPython editor of your choice, you can now program the ToF sensor and measure distances. This code initializes the sensor and continuously reads distance data:</p>
+
+<pre><code className="language-python">{`from vl53lxcx import (
+    DATA_DISTANCE_MM,
+    DATA_TARGET_STATUS,
+    RESOLUTION_8X8,
+    STATUS_VALID,
+    VL53L8CX,
+)
+import busio
+import board
+from digitalio import DigitalInOut, Direction
+
+i2c = busio.I2C(board.SCL, board.SDA, frequency=1_000_000)
+lpn = DigitalInOut(board.D3)
+lpn.direction = Direction.OUTPUT
+lpn.value = True
+
+tof = VL53L8CX(i2c, lpn=lpn)
+
+def main():
+    tof.reset()
+    if not tof.is_alive():
+        raise ValueError("VL53L8CX not detected")
+    
+    tof.init()
+    tof.resolution = RESOLUTION_8X8
+    grid = 7
+    tof.ranging_freq = 2
+    
+    tof.start_ranging({DATA_DISTANCE_MM, DATA_TARGET_STATUS})
+    
+    while True:
+        if tof.check_data_ready():
+            results = tof.get_ranging_data()
+            distance = results.distance_mm
+            status = results.target_status
+            # enumerate(distance) ...
+
+main()`}</code></pre>
+</>
+))}
+
 
 ## Projects
 
