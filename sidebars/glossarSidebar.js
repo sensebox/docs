@@ -22,7 +22,8 @@ const glossarSidebar = {
       'hardware/sensors/tof',
       'hardware/sensors/truebner',
       'hardware/sensors/umweltsensor',
-	  'hardware/sensors/niederschlag-rg15',
+      'hardware/sensors/niederschlag-rg15',
+      'hardware/sensors/dnms-lautstaerke',
       'hardware/bee/bluetooth-bee',
       'hardware/bee/ethernet-bee',
       'hardware/bee/lora-bee',
@@ -38,7 +39,7 @@ const glossarSidebar = {
       'hardware/accessoires/rgb-led-esp32',
       'hardware/accessoires/rgb-led',
       'hardware/accessoires/rtc-modul',
-	  'hardware/accessoires/solar_set',
+	    'hardware/accessoires/solar_set',
     ]
   }
 
