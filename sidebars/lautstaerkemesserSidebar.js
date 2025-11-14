@@ -15,6 +15,8 @@ const lautstaerkemesserSidebar = {
           },
           items: [
             'products/lautstaerkemesser/aufbau/ls-messer-schritt-1',
+            'products/lautstaerkemesser/aufbau/ls-messer-schritt-2',
+            'products/lautstaerkemesser/aufbau/ls-messer-aufstellen',
           ],
         },
         {
