@@ -1,0 +1,108 @@
+---
+sidebar_position: 5
+title: "Step 1: Setting up senseBox-Config-AP"
+description: Step 1 for setting up the senseBox-Config-AP.
+---
+
+import ImageWithText from "@site/src/components/ImageWithText/ImageWithText";
+import image1 from "@site/static/img/lautstaerkemesser-bilder/ls-messer-schritt-1/OSM-1.png";
+import image2 from "@site/static/img/lautstaerkemesser-bilder/ls-messer-schritt-1/osm-2.png";
+import image3 from "@site/static/img/lautstaerkemesser-bilder/ls-messer-schritt-1/osm-3.png";
+import image4 from "@site/static/img/lautstaerkemesser-bilder/ls-messer-schritt-1/wifi.png";
+import image5 from "@site/static/img/lautstaerkemesser-bilder/ls-messer-schritt-1/sensebox-ap-qr.png";
+import image6 from "@site/static/img/lautstaerkemesser-bilder/ls-messer-schritt-1/sensebox-konfiguration.png";
+
+# Step 1: Setting up senseBox-Config-AP
+
+## 1. Create an openSenseMap account
+<div className="flex flex-col md:flex-row md:items-start md:gap-8">
+  <div className="md:basis-1/2 md:min-w-0">
+  <ul>
+    <li>Open https://opensensemap.org.</li>
+    <li>Click "Login / Register" in the top right corner.</li>
+    <li>Select "Register" and create your own account.</li>
+    <li>Confirm your email.</li>
+  </ul>
+  </div>
+  <div>
+    <ImageWithText src={image1} alt="OpenSenseMap registration" />
+  </div>
+</div>
+
+## 2. Create a senseBox
+<div className="flex flex-col md:flex-row md:items-start md:gap-8">
+  <div className="md:basis-1/2 md:min-w-0">
+  <ul>
+    <li>Log in with your account and click "Create new senseBox".</li>
+    <li>Enter a name and a deployment location.</li>
+    <ul>
+        <li>Set the group tag to "Cindy-S".</li>
+    </ul>
+    <li>Select "Manual configuration" and add 3 phenomena listed on the left side.</li>
+  </ul>
+  </div>
+  <div>
+    <ImageWithText src={image2} alt="OpenSenseMap manual configuration" />
+  </div>
+</div>
+
+## 3. Finalize and save the IDs
+<div className="flex flex-col md:flex-row md:items-start md:gap-8">
+  <div className="md:basis-1/2 md:min-w-0">
+  <ul>
+    <li>Click "Create senseBox".</li>
+    <li>The overview screen will now show all important information about your senseBox.</li>
+  </ul>
+  </div>
+  <div>
+    <ImageWithText src={image3} alt="OpenSenseMap manual configuration" />
+  </div>
+</div>
+
+## 4. Power on the senseBox
+<div className="flex flex-col md:flex-row md:items-start md:gap-8">
+  <div className="md:basis-1/2 md:min-w-0">
+  <ul>
+    <li>Connect the senseBox to power via a USB cable.</li>
+    <li>Wait a few seconds until the senseBox has fully started.</li>
+    <li>The senseBox has now created an access point (WiFi hotspot).</li>
+    <li>Connect to this access point.</li>
+    <li>The password is 12345678.</li>
+  </ul>
+  </div>
+  <div>
+    <ImageWithText src={image4} alt="senseBox-Access-Point" />
+  </div>
+</div>
+
+## 5. Open the configuration page
+<div className="flex flex-col md:flex-row md:items-start md:gap-8">
+  <div className="md:basis-1/2 md:min-w-0">
+  <ul>
+    <li>Scan the QR code or open http://192.168.4.1 in your browser.</li>
+  </ul>
+  </div>
+  <div>
+    <ImageWithText src={image5} alt="Open configuration page" />
+  </div>
+</div>
+
+## 6. Enter WiFi information and IDs
+
+<div className="flex flex-col md:flex-row md:items-start md:gap-8">
+  <div className="md:basis-1/2 md:min-w-0">
+  <ul>
+    <li>Enter the network name (SSID) and password of your home WiFi.</li>
+    <li>In the openSenseMap settings, enter the IDs from openSenseMap.</li>
+    <ul>
+        <li>MAKE SURE TO USE THE CORRECT ORDER OF THE IDS!!!</li>
+    </ul>
+    <li>Click Save & Restart.</li>
+  </ul>
+    After restarting, the senseBox will automatically connect to the WiFi.
+    For status or changes, connect again to the access point.
+  </div>
+  <div>
+    <ImageWithText src={image6} alt="Enter WiFi info and IDs" />
+  </div>
+</div>
