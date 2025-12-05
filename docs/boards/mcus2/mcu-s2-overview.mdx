@@ -127,8 +127,22 @@ import mcus2top from "@site/static/img/mcus2/mcus2top.png";
 				</p>
 			</Admonition>
 		</div>
+	</div>
+</div>
+
+## Technische Spezifikationen
+
+### Prozessor
+
+Der Prozessor basiert auf dem ESP-32-S2-MINI-I von Espressif mit integrierter WiFi-Funktion.
+
+### Schnittstellen
+
+Sensoren und Aktoren werden über die bewährten Schnittstellen wie 2xI2C, 1xUART und 3xGPIO mit einem QWIIC-kompatiblen Steckersystem (JST SH4) angesprochen.
+<div>
+	<div>
 		<div className="flex flex-col w-full">
-			<h1 className="text-left">I2C/Wire Daisy Chain</h1>
+			<h3 className="text-left">I2C/Wire Daisy Chain</h3>
 			<p className="text-left">
 				Eine I2C-Daisy-Chain ermöglicht die einfache und effiziente Verbindung
 				mehrerer Geräte in einer seriellen Kommunikationskette unter Verwendung
@@ -145,3 +159,15 @@ import mcus2top from "@site/static/img/mcus2/mcus2top.png";
 		</div>
 	</div>
 </div>
+
+### Datenübertragung
+
+Über den XBee kompatiblen Sockel werden UART oder SPI Module angeboten. Wahlweise kann die Datenübertragung dadurch per WLAN, LAN, oder LoRa in Echtzeit durchgeführt werden. Alternativ können die Daten auf einer Mikro-SD Karte abgespeichert werden.
+
+### Onboard Features
+* **6-achsiger Lagesensor**: Ermöglicht präzise Bewegungs- und Lageerkennung für fortschrittliche Steuerungs- und Monitoring-Anwendungen.
+* **Lichtsensor**: Ideal für Umweltmonitoring-Projekte, passt sich automatisch an unterschiedliche Lichtverhältnisse an.
+* **RGB LED**: Bietet vielfältige Anzeigemöglichkeiten und kann für Statusanzeigen oder in Bildungsprojekten verwendet werden.
+* **Micro-SD Slot**: Ermöglicht eine einfache Datenspeicherung und -übertragung, ideal für datenintensive Anwendungen.
+* **Anschluss und Laderegler für externe Akkus**: Erweitert die Mobilität und Flexibilität des Boards, ideal für portable Projekte.
+* **QWIIC System-Anschlüsse**: Vereinfachen den Anschluss von zusätzlichen Sensoren und Aktoren, ohne Lötarbeiten, perfekt für schnelle Prototypentwicklung
