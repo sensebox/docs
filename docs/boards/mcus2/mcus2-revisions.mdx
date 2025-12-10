@@ -2,25 +2,54 @@
 title: Die verschiedenen MCU S2 Revisionen
 ---
 import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
-import  mcuComparisons  from "@site/static/img/mcu/revisions/mcu_comparison.jpeg"
-import  mcuV13  from "@site/static/img/mcu/revisions/mcu_v13.jpeg"
-import  mcuV15 from "@site/static/img/mcu/revisions/mcu_v15.jpeg"
-import  mcuV15bmx from "@site/static/img/mcu/revisions/mcu_v15_bmx.jpeg"
+import ImageComparison from "@site/src/components/ImageComparison/ImageComparison"
+import mcuComparisonsS2  from "@site/static/img/mcus2/revisions/mcus2_comparison.jpg"
+import mcus2_ICM from "@site/static/img/mcus2/revisions/mcus2_icm.jpg"
+import mcus2_MPU from "@site/static/img/mcus2/revisions/mcus2_mpu.jpg"
 
-## Revisionen der senseBox MCU
+Einen schnellen Überblick über die Unterschiede der verfügbaren und geplanten Revisionen der MCU S2 findest du in folgender Tabelle:
+
+<div style={{ width: 'fit-content', maxWidth: '100%' }}>
+
+| Revision | Status | Lage- und Beschleunigungssensor | Besonderheit |
+| :--- | :--- | :--- | :--- |
+| **Rev. 2.1** | Verfügbar | MPU-6050 *oder* ICM-42670P | 6-Achsen (Gyroskop + Beschleunigung) |
+| **Rev. 2.2** | In Entwicklung | ICM-20948 | 9-Achsen (zusätzl. Magnetometer/Kompass) |
+
+</div>
 
 Während der Entwicklung der senseBox MCU S2 wurden mehrere Revisionen entwickelt. Die folgende Übersicht zeigt dir die Unterschiede zwischen den einzelnen Revisionen.
 
+<div className="flex flex-col items-center">
+    <img src= { mcuComparisonsS2 } />
+    <p className="text-gray-500"> Unterschiede der senseBox MCU S2 Revisionen </p>
+</div>
+
 ### Rev. 2.1
 
-Die Revision 2.1 ist die erste käuflich erwerbbare Version der senseBox MCU S2. Von dieser Revision wurden zwei Versionen, in limitierter Auflage, veröffentlicht. Zum Zeitpunkt der Entwicklung war noch nicht klar wie sich der Markt für Halbleiter nach der Corona-Krise weiterentwickelt. Daher wurden zwei Version mit unterschiedlichen IMUs veröffentlicht.
+Die Revision 2.1 ist die erste käuflich erwerbbare Version der senseBox MCU S2. Von dieser Revision wurden zwei Versionen in limitierter Auflage veröffentlicht. Zum Zeitpunkt der Entwicklung war noch nicht klar wie sich der Markt für Halbleiter nach der Corona-Krise weiterentwickelt. Daher wurden zwei Version mit unterschiedlichen Lage- und Beschleunigungssensoren veröffentlicht. Der folgende Slider zeigt die beiden Versionen der Revision 2.1.
 
-#### Version senseBox MCU-S2 MPU
-MPU6050 als Lage- und Beschleunigungssensor.
+<div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', alignItems: 'flex-start' }}>
 
-#### Version senseBox MCU-S2 ICM
-ICM-42670P als Lage- und Beschleunigungssensor.
+  <div style={{ flex: '1 1 300px', minWidth: '300px' }}>
+    <ImageComparison 
+      leftImage={mcus2_ICM} 
+      rightImage={mcus2_MPU} 
+      leftLabel="MCU S2 mit verbautem ICM-42670P" 
+      rightLabel="MCU S2 mit verbautem MPU6050" 
+    />
+  </div>
+
+  <div style={{ flex: '1 1 300px' }}>
+    Die Versionen unterscheiden sich nur in dem jeweils verbauten Lage- und Beschleunigungssensor. Bei der MCU S2 MPU (rechtes Bild) ist der MPU-6050 verbaut. Er kombiniert ein 3-Achsen-Gyroskop mit einem 3-Achsen Beschleunigungssensor sowie einem Bewegungsprozessor und Temperatursensor. Mithilfe dieser Technologien lassen sich Drehbewegungen, Beschleunigungen in X-, Y- und Z-Achse sowie Winkelgeschwindigkeiten messen. In der MCU S2 ICM (linkes Bild) ist der ICM-42670P verbaut. Dieser stellt eine technisch neuere Version des MPU-6050 dar, allerdings mit ähnlichen Funktionalitäten. Er verbraucht weniger Strom und liefert genauere Messwerte.
+
+    Um herauszufinden, welche Revision du besitzt, musst du die Art des verbauten Sensors auf der MCU S2 anschauen (siehe rotes Rechteck neben dem XBEE-Port). Ist die obere Fläche mit einem Chip besetzt handelt es sich um den MPU-6050. Dieser ist etwas größer als sein Nachfolger. Ist die untere Fläche belegt handelt es sich um den ICM-42670P.
+  </div>
+
+</div>
+
+Bei der Programmierung der senseBox ist das korrekte Einstellen des verbauten Beschleunigungssensors relevant: Blockly erkennt den verbauten Sensor automatisch. Bei der Programmierung mit Arduino muss darauf geachtet werden, dass der entsprechende Sensor ausgewählt wird. 
 
 ### Rev. 2.2 - Aktuelle Version (in Entwicklung)
-Ab der Revision 2.2 wird nur noch eine Version mit einem ICM-20948 als Lage- und Beschleunigungssensor entwickelt.
+Ab der Revision 2.2 wird nur noch eine Version mit einem ICM-20948 als Lage- und Beschleunigungssensor entwickelt. Dieser misst zusätzlich zu Beschleunigung und Drehbewegungen auch das Magnetfeld. Damit kann er zusätzlich sagen, in welche Himmelsrichtung das Gerät zeigt. Diese Revision befindet sich momentan noch in Entwicklung.
 

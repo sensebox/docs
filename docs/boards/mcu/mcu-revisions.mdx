@@ -7,7 +7,18 @@ import  mcuV13  from "@site/static/img/mcu/revisions/mcu_v13.jpeg"
 import  mcuV15 from "@site/static/img/mcu/revisions/mcu_v15.jpeg"
 import  mcuV15bmx from "@site/static/img/mcu/revisions/mcu_v15_bmx.jpeg"
 
-## Revisionen der senseBox MCU
+Einen schnellen Überblick über die Unterschiede der Revisionen der MCU findest du in dieser Tabelle:
+
+<div style={{ width: 'fit-content', maxWidth: '100%' }}>
+
+| Revision | USB-Anschluss | Lage-/ Beschleunigungssensor | Besonderheit |
+| :--- | :--- | :--- | :--- |
+| **Rev. 1.3** | Mikro-USB | BMX055 | Erste Version |
+| **Rev. 1.5** | USB-C | BMX055 *oder* keiner | Achtung: Chargen ohne Sensor |
+| **Rev. 1.6** | USB-C | ICM-20948 | Neuer Beschleunigungssensor eingebaut |
+| **Rev. 1.7** | USB-C | ICM-20948 | **Aktuelle Revision** / QWIIC Schnittstelle eingebaut |
+
+</div>
 
 Während der Entwicklung der senseBox MCU wurden mehrere Revisionen entwickelt. Die aktuelle Version ist die V1.7. Die folgende Übersicht zeigt dir die Unterschiede zwischen den einzelnen Revisionen. Grundlegend sind alle Versionen kompatibel zu den anderen Versionen und unterscheiden sich nur geringfügig in der Hardware.
 
@@ -35,7 +46,7 @@ Achtung: Aufgrund der Knappheit von Elekronikbauteilen während der Coronazeit w
 Der Beschleunigungssensor BMX055 wurde von Mitte 2021 bis Anfang 2022 eingebaut.
 
 ### Rev. 1.6
-Der BMX055-Beschleunigungssensor wurde durch 3-Achsen-Gyroskop und 3-Achsen-Beschleunigungssensor ICM-20948 ersetzt.
+Der BMX055-Beschleunigungssensor wurde durch den ICM-20948 mit 3-Achsen-Gyroskop und 3-Achsen-Beschleunigungssensor ersetzt.
 
 ### Rev. 1.7 - Aktuelle Version
-Die senseBox wurde mit zusätzlichem Footprint für zwei QWIIC-Anschlüsse ausgestattet.
+Die MCU wurde mit zusätzlicher Schnittstelle für zwei QWIIC-Anschlüsse ausgestattet.
