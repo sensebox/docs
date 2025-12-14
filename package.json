@@ -46,6 +46,7 @@
     "prettier-plugin-tailwindcss": "^0.5.14",
     "prism-react-renderer": "^2.1.0",
     "react": "^18.2.0",
+    "react-compare-slider": "^3.1.0",
     "react-dom": "^18.2.0",
     "react-youtube": "^9.0.2",
     "remark-collapse": "^0.1.2",
