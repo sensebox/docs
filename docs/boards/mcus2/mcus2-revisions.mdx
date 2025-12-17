@@ -21,38 +21,156 @@ Einen schnellen Überblick über die Unterschiede der verfügbaren und geplanten
 
 Während der Entwicklung der senseBox MCU S2 wurden mehrere Revisionen entwickelt. Die folgende Übersicht zeigt dir die Unterschiede zwischen den einzelnen Revisionen.
 
-<div className="flex flex-col items-center">
-  <img src={mcuComparisonsS2} />
-  <p className="text-gray-500"> Unterschiede der senseBox MCU S2 Revisionen </p>
-</div>
-
 ### Rev. 2.1
 
-Die Revision 2.1 ist die erste käuflich erwerbbare Version der senseBox MCU S2. Von dieser Revision wurden zwei Versionen in limitierter Auflage veröffentlicht. Zum Zeitpunkt der Entwicklung war noch nicht klar wie sich der Markt für Halbleiter nach der Corona-Krise weiterentwickelt. Daher wurden zwei Version mit unterschiedlichen Lage- und Beschleunigungssensoren veröffentlicht. Der folgende Slider zeigt die beiden Versionen der Revision 2.1.
+Die Revision 2.1 ist die erste regulär verfügbare Version der senseBox MCU S2.  
+Sie wurde in **zwei technisch nahezu identischen Varianten** veröffentlicht, die sich ausschließlich durch den verbauten Lage- und Beschleunigungssensor unterscheiden.
 
-<div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', alignItems: 'flex-start' }}>
+Hintergrund dafür waren Unsicherheiten in der Halbleiterverfügbarkeit nach der Corona-Krise. Um die Produktionsfähigkeit sicherzustellen, kamen zwei Sensoren zum Einsatz.
 
-{' '}
+Der folgende Vergleich zeigt beide Varianten:
 
-<div style={{ flex: '1 1 300px', minWidth: '300px' }}>
-  <ImageComparison
-    leftImage={mcus2_ICM}
-    rightImage={mcus2_MPU}
-    leftLabel="MCU S2 mit verbautem ICM-42670P"
-    rightLabel="MCU S2 mit verbautem MPU6050"
-  />
-</div>
-
-  <div style={{ flex: '1 1 300px' }}>
-    Die Versionen unterscheiden sich nur in dem jeweils verbauten Lage- und Beschleunigungssensor. Bei der MCU S2 MPU (rechtes Bild) ist der MPU-6050 verbaut. Er kombiniert ein 3-Achsen-Gyroskop mit einem 3-Achsen Beschleunigungssensor sowie einem Bewegungsprozessor und Temperatursensor. Mithilfe dieser Technologien lassen sich Drehbewegungen, Beschleunigungen in X-, Y- und Z-Achse sowie Winkelgeschwindigkeiten messen. In der MCU S2 ICM (linkes Bild) ist der ICM-42670P verbaut. Dieser stellt eine technisch neuere Version des MPU-6050 dar, allerdings mit ähnlichen Funktionalitäten. Er verbraucht weniger Strom und liefert genauere Messwerte.
-
-    Um herauszufinden, welche Revision du besitzt, musst du die Art des verbauten Sensors auf der MCU S2 anschauen (siehe rotes Rechteck neben dem XBEE-Port). Ist die obere Fläche mit einem Chip besetzt handelt es sich um den MPU-6050. Dieser ist etwas größer als sein Nachfolger. Ist die untere Fläche belegt handelt es sich um den ICM-42670P.
-
+<div
+  style={{
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: '32px',
+    flexWrap: 'nowrap',
+  }}
+>
+  {/* ImageComparison */}
+  <div style={{ width: '420px', flexShrink: 0 }}>
+    <ImageComparison
+      leftImage={mcus2_ICM}
+      rightImage={mcus2_MPU}
+      leftLabel="MCU S2 mit verbautem ICM-42670P"
+      rightLabel="MCU S2 mit verbautem MPU6050"
+    />
   </div>
 
+{/* Tabelle */}
+
+  <div style={{ flexShrink: 0 }}>
+    <h4>Unterschiede der Sensorvarianten</h4>
+
+    <table
+      style={{
+        borderCollapse: 'collapse',
+        whiteSpace: 'nowrap',
+      }}
+    >
+      <thead>
+        <tr>
+          <th
+            style={{
+              border: '1px solid #ddd',
+              padding: '6px 10px',
+              textAlign: 'left',
+            }}
+          >
+            Merkmal
+          </th>
+          <th
+            style={{
+              border: '1px solid #ddd',
+              padding: '6px 10px',
+              textAlign: 'left',
+            }}
+          >
+            MCU S2 – MPU-6050
+          </th>
+          <th
+            style={{
+              border: '1px solid #ddd',
+              padding: '6px 10px',
+              textAlign: 'left',
+            }}
+          >
+            MCU S2 – ICM-42670P
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            Sensorachsen
+          </td>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            6 (3× Gyro, 3× Acc)
+          </td>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            6 (3× Gyro, 3× Acc)
+          </td>
+        </tr>
+
+        <tr>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            Temperatursensor
+          </td>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            ✔ integriert
+          </td>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            ✔ integriert
+          </td>
+        </tr>
+
+        <tr>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            Stromverbrauch
+          </td>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            höher
+          </td>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            geringer
+          </td>
+        </tr>
+
+        <tr>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            Messgenauigkeit
+          </td>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            gut
+          </td>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            höher
+          </td>
+        </tr>
+
+        <tr>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            Sensorgeneration
+          </td>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            älter / etabliert
+          </td>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            neuer
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
 </div>
 
-Bei der Programmierung der senseBox ist das korrekte Einstellen des verbauten Beschleunigungssensors relevant: Blockly erkennt den verbauten Sensor automatisch. Bei der Programmierung mit Arduino muss darauf geachtet werden, dass der entsprechende Sensor ausgewählt wird.
+#### Identifikation der verbauten Version
+
+Welche Variante du besitzt, erkennst du direkt auf der Platine:
+
+- **Chip auf der oberen Sensorfläche** → **MPU-6050** (größerer Chip)
+- **Chip auf der unteren Sensorfläche** → **ICM-42670P**
+
+Die Position befindet sich neben dem **XBEE-Port** (siehe Markierung im Bild).
+
+#### Hinweise zur Programmierung
+
+- **Blockly** erkennt den verbauten Sensor automatisch
+- **Arduino**: Der korrekte Sensor muss manuell in der Software ausgewählt werden
 
 ### Rev. 2.2 - Aktuelle Version (in Entwicklung)
 
