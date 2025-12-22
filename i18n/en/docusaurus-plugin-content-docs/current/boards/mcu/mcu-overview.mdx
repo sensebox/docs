@@ -5,6 +5,7 @@ hide_title: true
 
 import mcus2top from "@site/static/img/mcus2/mcus2top.png";
 import AlertBox from "@site/src/components/AlertBox/AlertBox";
+import ButtonWithText from "./ButtonWithText";
 import mcuPorts from "@site/static/img/en/mcu/sensebox-mcu-ports.jpg";
 import {
   Popover,
@@ -49,9 +50,9 @@ Click on the ports below to see which sensor is connected there.
 <div className="flex flex-row justify-evenly">
 	<Popover>
 		<PopoverTrigger className="flex cursor-pointer bg-white dark:bg-gray-800 text-black dark:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-md w-[10rem] p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
-			I2C/Wire Ports
+	  <ButtonWithText title="I2C/Wire Ports" />
 		</PopoverTrigger>
-		<PopoverContent>
+		<PopoverContent> 
 			<div>
 				<h2>Sensoren und Accessoire an den I2C/Wire Ports</h2>
 				<div className="flex flex-col lg:flex-row">
@@ -117,7 +118,7 @@ Click on the ports below to see which sensor is connected there.
 	</Popover>
 	<Popover>
 		<PopoverTrigger className="flex cursor-pointer bg-white dark:bg-gray-800 text-black dark:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-md w-[10rem] p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
-			UART/Serial port
+		 <ButtonWithText title="UART/Serielle Anschlüsse" />	
 		</PopoverTrigger>
 		<PopoverContent>
 			<div className="flex flex-col lg:flex-row">
@@ -142,7 +143,7 @@ Click on the ports below to see which sensor is connected there.
 	</Popover>
 	<Popover>
 		<PopoverTrigger className="flex cursor-pointer bg-white dark:bg-gray-800 text-black dark:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-md w-[10rem] p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
-			Digital/Analogue ports
+		 <ButtonWithText title="Digitale/Analoge Anschlüsse" />	
 		</PopoverTrigger>
 		<PopoverContent>
 			<div className="flex flex-col lg:flex-row">
@@ -175,7 +176,7 @@ Click on the ports below to see which sensor is connected there.
 	</Popover>
 	<Popover>
 		<PopoverTrigger className="flex cursor-pointer bg-white dark:bg-gray-800 text-black dark:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-md w-[10rem] p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
-			XBEE
+		<ButtonWithText title="XBEE" />	
 		</PopoverTrigger>
 		<PopoverContent>
 			<div className="flex flex-col lg:flex-row">
