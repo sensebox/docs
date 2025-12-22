@@ -16,7 +16,6 @@ import {
 import {
 	Popover,
 	PopoverContent,
-	PopoverTrigger,
 } from "@site/src/components/ui/popover";
 import { Button } from "@site/src/components/ui/button";
 import mcus2ports from "@site/static/img/en/mcus2/mcus2-ports.png";
@@ -43,9 +42,7 @@ import mcus2top from "@site/static/img/mcus2/mcus2top.png";
 			<h1 className="text-left"> Ports </h1>
 			<div className="flex flex-row justify-evenly">
 				<Popover>
-					<PopoverTrigger className="flex cursor-pointer bg-white border-solid border-1 rounded-md w-[10rem] p-2 hover:bg-gray-100">
-						I2C/Wire ports
-					</PopoverTrigger>
+					 <ButtonWithText title="I2C/Wire ports" />
 					<PopoverContent>
 						<div>
 							<h2>Sensors and accessories on the I2C/Wire ports</h2>
@@ -95,9 +92,7 @@ import mcus2top from "@site/static/img/mcus2/mcus2top.png";
 					</PopoverContent>
 				</Popover>
 				<Popover>
-					<PopoverTrigger className="cursor-pointer bg-white border-solid border-1 rounded-md w-[10rem] p-2 hover:bg-gray-100">
-						Digital/Analogue ports
-					</PopoverTrigger>
+					 <ButtonWithText title="Digital/Analogue ports" />	
 					<PopoverContent>
 						<div>
 							<h2>Sensors and accessories on the digital/analogue ports</h2>

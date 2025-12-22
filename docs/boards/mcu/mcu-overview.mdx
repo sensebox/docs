@@ -10,7 +10,6 @@ import ButtonWithText from "@site/src/components/ButtonWithText/ButtonWithText";
 import {
   Popover,
   PopoverContent,
-  PopoverTrigger,
 } from "@site/src/components/ui/popover";
 import lightSensor from "@site/static/img/hardware-bilder/helligkeit-uv/sensor_helligkeit_uv.png";
 import display from "@site/static/img/hardware-bilder/oled/display.png";
@@ -47,9 +46,7 @@ Klicke auf die unten stehenden Anschlüsse um zu sehen welcher Sensor dort anges
 
 <div className="flex flex-row justify-evenly">
 	<Popover>
-		<PopoverTrigger className="flex cursor-pointer bg-white dark:bg-gray-800 text-black dark:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-md w-[10rem] p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
 		 <ButtonWithText title="I2C/Wire Ports" />
-		</PopoverTrigger>
 		<PopoverContent>
 			<div>
 				<h2>Sensoren und Zubehör an den I2C/Wire Anschlüssen</h2>
@@ -115,9 +112,7 @@ Klicke auf die unten stehenden Anschlüsse um zu sehen welcher Sensor dort anges
 		</PopoverContent>
 	</Popover>
 	<Popover>
-		<PopoverTrigger className="flex cursor-pointer bg-white dark:bg-gray-800 text-black dark:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-md w-[10rem] p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
-			 <ButtonWithText title="UART/Serielle Anschlüsse" />	
-		</PopoverTrigger>
+	 <ButtonWithText title="UART/Serielle Anschlüsse" />	
 		<PopoverContent>
 			<div className="flex flex-col lg:flex-row">
 				<div className="flex flex-col items-center">
@@ -140,9 +135,7 @@ Klicke auf die unten stehenden Anschlüsse um zu sehen welcher Sensor dort anges
 		</PopoverContent>
 	</Popover>
 	<Popover>
-		<PopoverTrigger className="flex cursor-pointer bg-white dark:bg-gray-800 text-black dark:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-md w-[10rem] p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
 			 <ButtonWithText title="Digitale/Analoge Anschlüsse" />	
-		</PopoverTrigger>
 		<PopoverContent>
 			<div className="flex flex-col lg:flex-row">
 				<div className="flex flex-col items-center">
@@ -173,9 +166,7 @@ Klicke auf die unten stehenden Anschlüsse um zu sehen welcher Sensor dort anges
 		</PopoverContent>
 	</Popover>
 	<Popover>
-		<PopoverTrigger className="flex cursor-pointer bg-white dark:bg-gray-800 text-black dark:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-md w-[10rem] p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
 			<ButtonWithText title="XBEE" />	
-		</PopoverTrigger>
 		<PopoverContent>
 			<div className="flex flex-col lg:flex-row">
 				<div className="flex flex-col items-center">

@@ -10,7 +10,6 @@ import mcuPorts from "@site/static/img/en/mcu/sensebox-mcu-ports.jpg";
 import {
   Popover,
   PopoverContent,
-  PopoverTrigger,
 } from "@site/src/components/ui/popover";
 import lightSensor from "@site/static/img/hardware-bilder/helligkeit-uv/sensor_helligkeit_uv.png";
 import display from "@site/static/img/hardware-bilder/oled/display.png";
@@ -49,9 +48,7 @@ import Admonition from '@theme/Admonition';
 Click on the ports below to see which sensor is connected there.
 <div className="flex flex-row justify-evenly">
 	<Popover>
-		<PopoverTrigger className="flex cursor-pointer bg-white dark:bg-gray-800 text-black dark:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-md w-[10rem] p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
 	  <ButtonWithText title="I2C/Wire Ports" />
-		</PopoverTrigger>
 		<PopoverContent> 
 			<div>
 				<h2>Sensoren und Accessoire an den I2C/Wire Ports</h2>
@@ -117,9 +114,7 @@ Click on the ports below to see which sensor is connected there.
 		</PopoverContent>
 	</Popover>
 	<Popover>
-		<PopoverTrigger className="flex cursor-pointer bg-white dark:bg-gray-800 text-black dark:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-md w-[10rem] p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
 		 <ButtonWithText title="UART/Serielle Anschlüsse" />	
-		</PopoverTrigger>
 		<PopoverContent>
 			<div className="flex flex-col lg:flex-row">
 				<div className="flex flex-col items-center">
@@ -142,9 +137,7 @@ Click on the ports below to see which sensor is connected there.
 		</PopoverContent>
 	</Popover>
 	<Popover>
-		<PopoverTrigger className="flex cursor-pointer bg-white dark:bg-gray-800 text-black dark:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-md w-[10rem] p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
 		 <ButtonWithText title="Digitale/Analoge Anschlüsse" />	
-		</PopoverTrigger>
 		<PopoverContent>
 			<div className="flex flex-col lg:flex-row">
 				<div className="flex flex-col items-center">
@@ -175,9 +168,7 @@ Click on the ports below to see which sensor is connected there.
 		</PopoverContent>
 	</Popover>
 	<Popover>
-		<PopoverTrigger className="flex cursor-pointer bg-white dark:bg-gray-800 text-black dark:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-md w-[10rem] p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
-		<ButtonWithText title="XBEE" />	
-		</PopoverTrigger>
+			<ButtonWithText title="XBEE" />	
 		<PopoverContent>
 			<div className="flex flex-col lg:flex-row">
 				<div className="flex flex-col items-center">
