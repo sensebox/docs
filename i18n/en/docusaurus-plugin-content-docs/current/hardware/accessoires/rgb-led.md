@@ -18,4 +18,4 @@ The chainable RGB LED can be programmed with [Blockly](/blockly/blockly-led/).
 - WS2812 RGB-LED
 - JST input and output for creating RGB chains
 
-- [Shop](https://sensebox.kaufen/product/verkettbare-rgb-led)
+- [Shop](https://sensebox.kaufen/products/verkettbare-neopixel-rgb-led)
