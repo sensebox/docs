@@ -3,9 +3,11 @@ title: Die verschiedenen MCU Revisionen
 ---
 import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
 import  mcuComparisons  from "@site/static/img/mcu/revisions/mcu_comparison.jpeg"
-import  mcuV13  from "@site/static/img/mcu/revisions/mcu_v13.jpeg"
-import  mcuV15 from "@site/static/img/mcu/revisions/mcu_v15.jpeg"
+import  mcuV13  from "@site/static/img/mcu/revisions/mcu_v13_new.jpg"
+import  mcuV15 from "@site/static/img/mcu/revisions/mcu_v15_new.jpg"
 import  mcuV15bmx from "@site/static/img/mcu/revisions/mcu_v15_bmx.jpeg"
+import mcuV16 from "@site/static/img/mcu/revisions/mcu_v16.jpg"
+import mcuV17 from "@site/static/img/mcu/revisions/mcu_v17.jpg"
 
 Einen schnellen Überblick über die Unterschiede der Revisionen der MCU findest du in dieser Tabelle:
 
@@ -22,10 +24,6 @@ Einen schnellen Überblick über die Unterschiede der Revisionen der MCU findest
 
 Während der Entwicklung der senseBox MCU wurden mehrere Revisionen entwickelt. Die aktuelle Version ist die V1.7. Die folgende Übersicht zeigt dir die Unterschiede zwischen den einzelnen Revisionen. Grundlegend sind alle Versionen kompatibel zu den anderen Versionen und unterscheiden sich nur geringfügig in der Hardware.
 
-<div className="flex flex-col items-center">
-    <img src= { mcuComparisons } />
-    <p className="text-gray-500"> Unterschiede der senseBox MCU Revisionen </p>
-</div>
 ### Rev. 1.3
 
 Die Revision 1.3 ist die erste Version die ab 2018 ausgeliefert wurde. Sie ist mit dem Beschleunigungssensor BMX055 und Mikro-USB Anschluss ausgestattet. 
@@ -48,5 +46,11 @@ Der Beschleunigungssensor BMX055 wurde von Mitte 2021 bis Anfang 2022 eingebaut.
 ### Rev. 1.6
 Der BMX055-Beschleunigungssensor wurde durch den ICM-20948 mit 3-Achsen-Gyroskop und 3-Achsen-Beschleunigungssensor ersetzt.
 
+<ImageWithText src={ mcuV16 } title="MCU Revision 1.6"/>
+
+
 ### Rev. 1.7 - Aktuelle Version
 Die MCU wurde mit zusätzlicher Schnittstelle für zwei QWIIC-Anschlüsse ausgestattet.
+
+<ImageWithText src={ mcuV17 } title="MCU Revision 1.7"/>
+
