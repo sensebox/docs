@@ -8,7 +8,7 @@ description: Schritt 2 zum Aufbau der senseBox:home
 
 Nachdem deine Messstation zusammengebaut wurde, wird diese auf der [openSenseMap](https://opensensemap.org) registriert.
 
-Die openSenseMap ist eine Plattform, um Sensordaten zu speichern, zu vergleichen und zu visualisieren. Schau sie dir doch einfach mal an. Gehe auf [www.opensensemap.org](https://www.opensensemap.org) und entdecke einen riesigen Pool an Sensordaten aus der ganzen Welt. Nicht nur senseBoxen senden Daten an die openSenseMap, sondern auch andere Microcontroller mit Sensoren. Wie die einzelnen Funktionen der openSenseMap und ihre Schnittstellen funktionieren, findest du [hier](https://docs.sensebox.de/opensensemap/).
+Die openSenseMap ist eine Plattform, um Sensordaten zu speichern, zu vergleichen und zu visualisieren. Schau sie dir doch einfach mal an. Gehe auf [www.opensensemap.org](https://www.opensensemap.org) und entdecke einen riesigen Pool an Sensordaten aus der ganzen Welt. Nicht nur senseBoxen senden Daten an die openSenseMap, sondern auch andere Microcontroller mit Sensoren.
 
 ![](/img/sensebox-home-bilder/home-schritt-2/osem-1.png)
 
