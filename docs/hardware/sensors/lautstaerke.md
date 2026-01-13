@@ -50,5 +50,5 @@ void loop()
 }
 ```
 
->- [Shop](https://sensebox.kaufen/product/lautstarkesensor)
+>- [Shop](https://sensebox.kaufen/products/schallpegelmesser-prototyp)
 >- [DFRobot SEN0232 Gravity](https://www.mouser.de/pdfdocs/SEN0232_Web.pdf)
