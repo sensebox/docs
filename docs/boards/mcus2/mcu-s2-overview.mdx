@@ -3,145 +3,63 @@ title: MCU S2 (ESP32)
 hide_title: true
 ---
 
-import Admonition from "@theme/Admonition";
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import image from "@site/static/img/mcus2/mcus2top.png";
+import Admonition from '@theme/Admonition'
+import React, { useState } from 'react'
+import { motion } from 'framer-motion'
+import image from '@site/static/img/mcus2/mcus2top.png'
 import {
-	Tooltip,
-	TooltipContent,
-	TooltipProvider,
-	TooltipTrigger,
-} from "@site/src/components/ui/tooltip";
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@site/src/components/ui/tooltip'
 import {
-	Popover,
-	PopoverContent,
-	PopoverTrigger,
-} from "@site/src/components/ui/popover";
-import { Button } from "@site/src/components/ui/button";
-import mcus2ports from "@site/static/img/mcus2/mcus2-ports.png";
-import lightSensor from "@site/static/img/hardware-bilder/helligkeit-uv/sensor_helligkeit_uv.png";
-import display from "@site/static/img/hardware-bilder/oled/display.png";
-import tempSensor from "@site/static/img/hardware-bilder/temperatur-luftfeuchte/sensor_temperatur_luftfeuchte.png";
-import pressureSensor from "@site/static/img/hardware-bilder/luftdruck/bmp_top.png";
-import tofSensor from "@site/static/img/hardware-bilder/tof/tofsensor.png";
-import ledMatrix from "@site/static/img/hardware-bilder/led-matrix/led-matrix.png";
-import i2cdaiychain from "@site/static/img/hardware-bilder/i2c/i2c-daisy-chain.png";
-import ImageWithText from "@site/src/components/ImageWithText/ImageWithText";
-import mcus2top from "@site/static/img/mcus2/mcus2top.png";
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@site/src/components/ui/popover'
+import { Button } from '@site/src/components/ui/button'
+import mcus2ports from '@site/static/img/mcus2/mcus2-ports.png'
+import lightSensor from '@site/static/img/hardware-bilder/helligkeit-uv/sensor_helligkeit_uv.png'
+import display from '@site/static/img/hardware-bilder/oled/display.png'
+import tempSensor from '@site/static/img/hardware-bilder/temperatur-luftfeuchte/sensor_temperatur_luftfeuchte.png'
+import pressureSensor from '@site/static/img/hardware-bilder/luftdruck/bmp_top.png'
+import tofSensor from '@site/static/img/hardware-bilder/tof/tofsensor.png'
+import ledMatrix from '@site/static/img/hardware-bilder/led-matrix/led-matrix.png'
+import i2cdaiychain from '@site/static/img/hardware-bilder/i2c/i2c-daisy-chain.png'
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import mcus2top from '@site/static/img/mcus2/mcus2top.png'
+import ButtonWithText from '@site/src/components/ButtonWithText/ButtonWithText'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@site/src/components/ui/tabs"
+import { NavGreen, NavWhite, MCUNavigationContainer } from '@site/src/components/Nav/Nav'
 
-<div className="flex flex-col justify-center items-center">
-	<h1>MCU S2 (ESP32)</h1>
-	<p>
-		Der Mikrocontroller auf ESP-32 Basis bietet eine Vielzahl von neuen
-		Möglichkeiten in Hinsicht auf Datenübertragung, Datenaustausch und
-		Bedienung.
-	</p>
-	<div className="flex w-full flex-col items-center text-center gap-4">
-		<div>
-			<img src={mcus2ports} alt="Your Image" className="" />
-		</div>
-		<div className="flex w-full flex-col">
-			<h1 className="text-left"> Anschlüsse </h1>
-			<div className="flex flex-row justify-evenly">
-				<Popover>
-					<PopoverTrigger className="flex cursor-pointer bg-white dark:bg-gray-800 text-black dark:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-md w-[10rem] p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
-						I2C/Wire Ports
-					</PopoverTrigger>
-					<PopoverContent>
-						<div>
-							<h2>Sensoren und Accessoire an den I2C/Wire Ports</h2>
-							<div className="flex flex-col lg:flex-row">
-								<div className="flex flex-col items-center">
-									<img
-										src={lightSensor}
-										alt="Your Image"
-										className="w-[5rem] lg:w-[10rem]"
-									/>
-									<p className=" text-gray-500">Lichtsensor</p>
-								</div>
-								<div className="flex flex-col items-center">
-									<img
-										src={tempSensor}
-										alt="Your Image"
-										className="w-[5rem] lg:w-[10rem]"
-									/>
-									<p className=" text-gray-500">Temperatur und Luftfeuchte</p>
-								</div>
-								<div className="flex flex-col items-center">
-									<img
-										src={pressureSensor}
-										alt="Your Image"
-										className="w-[5rem] lg:w-[10rem]"
-									/>
-									<p className=" text-gray-500">Luftdruck</p>
-								</div>
-								<div className="flex flex-col items-center">
-									<img
-										src={tofSensor}
-										alt="Your Image"
-										className="w-[5rem] lg:w-[10rem]"
-									/>
-									<p className=" text-gray-500">Time of Flight(Tof)</p>
-								</div>
-								<div className="flex flex-col items-center">
-									<img
-										src={display}
-										alt="Your Image"
-										className="w-[5rem] lg:w-[10rem]"
-									/>
-									<p className=" text-gray-500">Display</p>
-								</div>
-							</div>
-						</div>
-					</PopoverContent>
-				</Popover>
-				<Popover>
-					<PopoverTrigger className="flex cursor-pointer bg-white dark:bg-gray-800 text-black dark:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-md w-[10rem] p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
-						Digital/Analog Ports
-					</PopoverTrigger>
-					<PopoverContent>
-						<div>
-							<h2>Sensoren und Accessoire an den Digital/Analog Ports</h2>
-							<div className="flex flex-row justify-center">
-								<div className="flex flex-col items-center">
-									<img
-										src={ledMatrix}
-										alt="Your Image"
-										className="w-[5rem] lg:w-[10rem]"
-									/>
-									<p className="text-gray-500">LED-Matrix</p>
-								</div>
-							</div>
-						</div>
-					</PopoverContent>
-				</Popover>
-			</div>
-		</div>
-		<div className="mt-8">
-			<Admonition type="warning" title="Hinweis zur Verwendung der XBees" className="text-left">
-				<p>
-					In seltenen Fällen kann es vorkommen, dass sich noch eine Schutzfolie
-					auf den Steckplätzen der XBees befindet. Diese lässt sich vorsichtig
-					mit einer Pinzette entfernen, um die Steckplätze nutzen zu können.
-				</p>
-			</Admonition>
-		</div>
-		<div className="flex flex-col w-full">
-			<h1 className="text-left">I2C/Wire Daisy Chain</h1>
-			<p className="text-left">
-				Eine I2C-Daisy-Chain ermöglicht die einfache und effiziente Verbindung
-				mehrerer Geräte in einer seriellen Kommunikationskette unter Verwendung
-				des I2C-Protokolls. Durch die Daisy-Chain-Konfiguration kann jedes Gerät
-				in der Kette Daten senden und empfangen. Diese Methode ist besonders
-				nützlich in Anwendungen, bei denen Platz und Ressourcen begrenzt sind,
-				da sie die Anzahl der benötigten physischen Verbindungen minimiert und
-				gleichzeitig eine robuste und zuverlässige Datenkommunikation
-				ermöglicht.
-			</p>
-			<div className="flex justify-center">
-				<ImageWithText src={i2cdaiychain} title="I2C/Wire Daisy Chain" />
-			</div>
-		</div>
-	</div>
-</div>
+      <div className="flex items-start justify-between mb-8">
+        <div className="flex-1">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            MCU S2 (ESP32)
+          </h1>
+          <p className="text-lg text-gray-700 mb-8">
+            Der Mikrocontroller auf ESP-32 Basis bietet eine Vielzahl von neuen
+            Möglichkeiten in Hinsicht auf Datenübertragung, Datenaustausch und
+            Bedienung.
+          </p>
+    	  
+        <Popover>
+          <ButtonWithText href="/boards/mcus2/mcus2-in-betrieb-nehmen"
+    	   title=" Get Started"/>
+    	  </Popover>
+
+<MCUNavigationContainer />
+
+
+        </div>
+        <div className="ml-8">
+          <img
+            src="/api/placeholder/300/300"
+            alt="MCU S2 Board"
+            className="w-64 h-auto"
+          />
+        </div>
+    </div>
+
+

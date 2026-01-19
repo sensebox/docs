@@ -7,7 +7,6 @@ module.exports = {
 	content: [
 	  './docs/**/*.{md,mdx}',
 	  './pages/**/*.{js,jsx}',
-	  './components/**/*.{js,jsx}',
 	  './app/**/*.{js,jsx}',
 	  './src/**/*.{js,jsx}',
 	  './docusaurus.config.js',
