@@ -8,7 +8,7 @@ import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
 
 # CircuitPython Beispiel: Brick Breaker
 In diesem Beispiel zeigen wir dir, wie du ein einfaches Brick Breaker Spiel mit CircuitPython auf der senseBox MCU-S2 erstellen kannst.
-Das Spiel nutzt den integrierten Gyroskop-Sensor zur Steuerung und das OLED Display zur Anzeige.
+Das Spiel nutzt den integrierten Beschleunigungs-Sensor zur Steuerung und das OLED Display zur Anzeige.
 
 <ImageWithText
   src="/img/circuitpython/brick-breaker_start.jpg"
@@ -32,15 +32,15 @@ Eine ausführliche Anleitung mit Schritt-für-Schritt Erklärungen findest du au
 />
 
 ## Spielsteuerung
-Das Spiel wird mit dem Gyroskop-Sensor der senseBox MCU-S2 gesteuert. Schüttel die senseBox, um das Spiel zu starten.
+Das Spiel wird mit dem Beschleunigungs-Sensor der senseBox MCU-S2 gesteuert. Schüttel die senseBox, um das Spiel zu starten.
 Kippe die senseBox nach links oder rechts, um den Schläger zu bewegen und die Blöcke zu treffen.
 Du hast das Spiel verloren, wenn der Ball den unteren Rand des Displays berührt. Schüttel die senseBox erneut, um das Spiel zurückzusetzen.
 Das Spiel ist gewonnen, wenn alle Blöcke zerstört wurden.
 
 <ImageWithText
   src="/img/circuitpython/brick-breaker_gif.gif"
-  alt="Steuerung des Brick Breaker Spiels mit Hilfe des eingebauten Gyroskops"
-  title="Gyroskop Steuerung"
+  alt="Steuerung des Brick Breaker Spiels mit Hilfe des eingebauten Accelerometers"
+  title="Accelerometer Steuerung"
 />
 
 ## Code
@@ -294,4 +294,5 @@ while True:
 
 ## Weitere Informationen
 Dieses Spiel demonstriert, was mit CircuitPython auf der senseBox MCU-S2 möglich ist. Du kannst den Code erweitern, um weitere Funktionen hinzuzufügen, wie z.B. Punktestände, Levels oder Soundeffekte.
+
 Falls du das Spiel lediglich ausprobieren möchtest, kannst du den fertigen Code auch direkt von der <a href="https://github.com/sensebox/MCU-S2-circuitpython-examples/tree/main/examples/brick%20breaker">GitHub-Seite</a> herunterladen und auf deine senseBox kopieren.
