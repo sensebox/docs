@@ -55,7 +55,7 @@ const FeatureList = [
         der Installation der Fahrradhalterung
       </Translate>
     ),
-    to: '/docs/category/bike?board=bike',
+    to: '/docs/products/bike/bike-overview?board=bike',
   },
   {
     title: translateTitle(':CO2 Ampel'),
@@ -75,7 +75,7 @@ const FeatureList = [
         Sensoren der senseBox:home findest du hier!
       </Translate>
     ),
-    to: '/docs/boards/mcu/mcu-overview?board=home',
+    to: '/docs/products/home/home-overview?board=home',
   },
   {
     title: translateTitle(':mini'),

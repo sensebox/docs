@@ -1,43 +1,152 @@
 ---
 title: CO2-Ampel
+hide_title: true
 ---
 
 import ImageWithText from "@site/src/components/ImageWithText/ImageWithText";
-import image1 from "@site/static/img/co2ampel/image1.jpg";
-import image2 from "@site/static/img/co2ampel/image2.jpg";
+import Ampel from "@site/static/img/co2ampel/image1.jpg";
+import AmpelBauteile from "@site/static/img/co2ampel/image2.jpg";
+import C02Sensor from "@site/static/img/hardware-bilder/co2/DSCF9389.jpg";
+import ButtonWithText from '@site/src/components/ButtonWithText/ButtonWithText'
 
-# CO2 Ampel
+import React from 'react'
+import { NavGreen, NavWhite, NavBlocks } from '@site/src/components/Nav/Nav'
+import { PortsOverview, PortItem } from '@site/src/components/PortsOverview/PortsOverview'
 
-<ImageWithText src={image1} alt="CO2-Ampel" title="CO2-Ampel im Gehäuse" />
+export const MCUManager = () => {
+  const [activeTopTab, setActiveTopTab] = React.useState(null);
+  const [activeBottomTab, setActiveBottomTab] = React.useState('Pflegehinweise');
+  
+const topTabs = ['CO2 Sensor', 'Pinout', 'Datasheet'];
+const bottomTabs = ['Bauteile', 'Hardware', 'Aufbau'];
 
-# Benötigte Bauteile
+const toggleTopTab = (tab) => {
+ if(tab === 'Pinout' || tab === 'DataSheet') {
+    window.open(tab === 'DataSheet' ? 'https://learn.watterott.com/breakouts/co2-ampel/' : 'https://github.com/watterott/CO2-Ampel/blob/master/hardware/CO2-Ampel_v10.pdf', '_blank');
+    return;
+  } else {   
+    if (activeTopTab === tab) {
+      setActiveTopTab(null);
+    } else {
+      setActiveTopTab(tab);
+    }
+  } 
+};
 
-<div className="flex justify-evenly items-center">
-  <div>
-    <ImageWithText src={image2} alt="CO2-Ampel" title="CO2-Ampel im Gehäuse" />
+return (
+   <div className="my-8 flex flex-col space-y-8 w-full max-w-none"> 
+      
+      <NavGreen 
+        topTabs={topTabs}
+        activeTab={activeTopTab}
+        onTabChange={toggleTopTab}
+      />
+        
+          {activeTopTab === 'CO2 Sensor' && (
+             <div>
+            <h2 className="text-2xl font-bold mb-4 text-black dark:text-gray-100"> Der CO2 Sensor</h2>
+              <div className="ml-0 md:ml-9 mt-4 md:mt-0">
+       <ImageWithText src={C02Sensor} title="C02 Sensor" />
+      </div>
+       <p className="text-gray-700 mb-4 dark:text-gray-200">
+			Das Sensormodul nutzt den präzisen Sensirion SCD30 CO₂-Sensor mit optischer NDIR-Messung. Er misst den tatsächlichen CO₂-Gehalt der Raumluft zuverlässig und ist unempfindlich gegenüber Störstoffen, im Gegensatz zu einfachen eCO₂-Sensoren.
+			</p>
+          </div>  
+          )}    
 
+      <NavWhite
+        bottomTabs={bottomTabs}
+        activeTab={activeBottomTab}
+        onTabChange={setActiveBottomTab}
+      />
+      
+
+{activeBottomTab === 'Bauteile' && (
+  <>
+    <ImageWithText src={AmpelBauteile} title="CO2-Ampel Bauteile" />
+    <h3 className="mb-4 text-gray-700 dark:text-gray-300 font-medium">
+      Benötigte Bauteile
+    </h3>
+    
+    <div className="text-gray-700 dark:text-gray-300 space-y-6">
+
+      <div>
+        <h4 className="font-semibold mb-2">Hauptkomponenten</h4>
+        <ul className="list-disc list-inside space-y-2">
+          <li>senseBox Mikrocontroller (MCU)</li>
+          <li>CO₂-Sensor</li>
+          <li>RGB-LED</li>
+          <li>Display</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 className="font-semibold mb-2">Kabel und Stromversorgung</h4>
+        <ul className="list-disc list-inside space-y-2">
+          <li>3x JST-Verbindungskabel</li>
+          <li>USB-Kabel</li>
+          <li>USB-Netzteil</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 className="font-semibold mb-2">Gehäuseteile</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
+          <ul className="list-disc list-inside space-y-2">
+            <li>11x Abstandshalter kurz</li>
+            <li>4x Abstandshalter mittel</li>
+            <li>4x Abstandshalter lang</li>
+            <li>2x schwarze Plastikclips</li>
+          </ul>
+          <ul className="list-disc list-inside space-y-2">
+            <li>PCB Sensorhalterung</li>
+            <li>6x Platten aus Plexiglas</li>
+            <li>1x Stück Milchplexiglas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </>
+)}
+
+    {activeBottomTab === 'Hardware' && (
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
+             <NavBlocks href="/docs/hardware/accessoires/display" title="OLED Display" />
+             <NavBlocks href="/docs/hardware/sensors/co2" title="CO2 Sensor" />
+             <NavBlocks href="/docs/hardware/accessoires/rgb-led" title="RGB-LED" />
+          </div>     
+        )}
+
+          {activeBottomTab === 'Aufbau' && (
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
+             <NavBlocks href="/docs/products/co2Ampel/aufbau/aufbau-co2Ampel-schritt-1" title="Sensorhalterungen vorbereiten" />
+             <NavBlocks href="/docs/products/co2Ampel/aufbau/aufbau-co2Ampel-schritt-2" title="Mit der MCU verbinden" />
+             <NavBlocks href="/docs/products/co2Ampel/aufbau/aufbau-co2Ampel-schritt-3" title="Software aufspielen und testen" />
+             <NavBlocks href="/docs/products/co2Ampel/aufbau/aufbau-co2Ampel-schritt-4" title="senseBox ins Gehäuse einbauen" />
+          </div>     
+        )}
+
+   </div>
+  );
+}; 
+    
+
+<div className="flex flex-col md:flex-row items-start justify-between mb-8 mt-12">
+  <div className="flex-1">
+    <h1 className="text-4xl font-bold text-black dark:text-gray-100">
+     CO2 Ampel
+    </h1>
+   
+   <p className="text-lg text-gray-700 dark:text-gray-300 mb-7">
+     Die senseBox CO₂-Ampel ist ein Bausatz zur Raumluftüberwachung. Sie zeigt CO₂-Werte auf einem OLED-Display an und visualisiert sie über eine RGB-LED. Ein lasergeschnittenes Gehäuse schützt die Elektronik und ermöglicht gleichzeitig den nötigen Luftaustausch.
+    </p>
+
+<ButtonWithText href="/docs.sensebox.de/docs/products/co2Ampel/aufbau/aufbau-co2Ampel-schritt-1" title="Get Started"/>
+
+</div>
+  <div className="ml-0 md:ml-9 mt-4 md:mt-0">
+   <ImageWithText src={Ampel} title="CO2-Ampel im Gehäuse" />
   </div>
-  <div class="flex justify-between gap-4">
-  <ul>
-    <li>senseBox Mikrocontroller (MCU)</li>
-    <li>CO<sub>2</sub>-Sensor</li>
-    <li>RGB-LED</li>
-    <li>Display</li>
-    <li>3x JST-Verbindungskabel</li>
-    <li>USB-Kabel</li>
-    <li>USB-Netzteil</li>
-  </ul>
-  <ul>
-    <li>Gehäuseteile</li>
-      <ul>
-        <li>11x Abstandshalter kurz</li>
-        <li>4x Abstandshalter mittel</li>
-        <li>4x Abstandshalter lang</li>
-        <li>2x schwarze Plastikclips</li>
-        <li>PCB Sensorhalterung</li>
-        <li>6x Platten aus Plexiglas</li>
-        <li>1x Stück Milchplexiglas</li>
-      </ul>
-  </ul>
 </div>
-</div>
+
+<MCUManager />

@@ -1,0 +1,137 @@
+---
+title: senseBox:home
+hide_title: true
+---
+
+import ImageWithText from "@site/src/components/ImageWithText/ImageWithText";
+import home from "@site/static/img/home/home-big.png";
+import homeBox from "@site/static/img/home/sensebox-home1j.jpg";
+import homeBauteile from "@site/static/img/home/sensebox-home-Bauteile.jpg";
+import mcuPorts from "@site/static/img/mcu/sensebox-mcu-ports.png";
+import ButtonWithText from '@site/src/components/ButtonWithText/ButtonWithText'
+
+import React from 'react'
+import { NavGreen, NavWhite, NavBlocks } from '@site/src/components/Nav/Nav'
+import { PortsOverview, PortItem } from '@site/src/components/PortsOverview/PortsOverview'
+
+export const MCUManager = () => {
+  const [activeTopTab, setActiveTopTab] = React.useState(null);
+  const [activeBottomTab, setActiveBottomTab] = React.useState('Pflegehinweise');
+  
+const topTabs = ['Messbare Phänomene', 'Datenübertragung'];
+const bottomTabs = ['Bauteile', 'Hardware', 'Aufbau'];
+
+  const toggleTopTab = (tab) => {
+    setActiveTopTab(prev => (prev === tab ? null : tab));
+  };
+
+return (
+   <div className="my-8 flex flex-col space-y-8 w-full max-w-none"> 
+      
+      <NavGreen 
+        topTabs={topTabs}
+        activeTab={activeTopTab}
+        onTabChange={toggleTopTab}
+      />
+        
+     {activeTopTab === 'Messbare Phänomene' && (
+<PortsOverview >
+  <PortItem icon="sb-icon-temperature" name="Temperatur" />
+  <PortItem icon="sb-icon-humidity" name="rel. Luftfeuchtigkeit" />
+  <PortItem icon="sb-icon-pressure" name="Luftdruck" />
+  <PortItem icon="sb-icon-light" name="Beleuchtungsstärke & UV-Intensität" />
+  <PortItem icon="sb-icon-pm" name="Feinstaub (PM10 & 2.5)" />
+  <PortItem icon="sb-icon-iaq" name="IAQ (Luftqualität)" />
+  <PortItem icon="sb-icon-sound" name="Lautstärke" />
+  <PortItem icon="sb-icon-windspeed" name="Windgeschwindigkeit" />
+
+</PortsOverview>
+ )}    
+
+     {activeTopTab === 'Datenübertragung' && (
+   <PortsOverview>
+  <PortItem icon="sb-icon-wifi" name="Wifi" />
+  <PortItem icon="sb-icon-ethernet" name="Ethernet" />
+  <PortItem icon="sb-icon-lora" name="LoRa" />
+  <PortItem icon="sb-icon-sd" name="mSD-Karte" />
+</PortsOverview>
+ )}   
+
+      <NavWhite
+        bottomTabs={bottomTabs}
+        activeTab={activeBottomTab}
+        onTabChange={setActiveBottomTab}
+      />
+      
+
+{activeBottomTab === 'Bauteile' && (
+  <>
+    <ImageWithText src={homeBauteile} title="senseBox:home Bauteile" />
+    <h3 className="mb-4 text-gray-700 dark:text-gray-300 font-medium">
+      Benötigte Bauteile
+    </h3>
+    <div className="text-gray-700 dark:text-gray-300 space-y-6">
+      <div>
+        <ul className="list-disc list-inside space-y-2">
+          <li>senseBox MCU</li>
+          <li>Temperatur- & Luftfeuchtesensor (HDC1080)</li>
+          <li>Strahlenschutz</li>
+          <li>Outdoor-Gehäuse (inkl. Verschraubungen)</li>
+          <li>Netzteil und USB Kabel (3 m)</li>
+        </ul>
+      </div>
+
+    </div>
+  </>
+)}
+
+     {activeBottomTab === 'Hardware' && (
+          <>
+            <div className='!scale-300'>
+           <ImageWithText src={mcuPorts} title="senseBox MCU with Ports" />
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
+              <NavBlocks href="/docs/hardware/bee/wifi-bee" title="Wifi-Bee" />
+              <NavBlocks href="/docs/hardware/bee/sd-bee" title="SD-Bee" />
+              <NavBlocks href="/docs/hardware/sensors/temperatur-luftfeuchte" title="Temperatur- und Luftfeuchtesensor" />
+              <NavBlocks href="/docs/hardware/sensors/helligkeit-uv" title="Helligkeits- und UV-Sensor" />
+              <NavBlocks href="/docs/hardware/sensors/distanz" title="Ultraschall Distanzsensor" />
+              <NavBlocks href="/docs/hardware/sensors/mikro" title="Mikrofon" />
+              <NavBlocks href="/docs/hardware/sensors/luftdruck-temperatur" title="Luftdruck- und Temperatursensor" />
+              <NavBlocks href="/docs/hardware/accessoires/display" title="OLED Display" />
+              <NavBlocks href="/docs/hardware/sensors/bmx055" title="Orientierungssensor" />
+              <NavBlocks href="/docs/hardware/accessoires/cable_overview" title="Kabelübersicht" />
+            </div>
+          </>
+        )}
+
+          {activeBottomTab === 'Aufbau' && (
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
+            <p> Comming Soon</p>
+          </div>     
+        )}
+
+   </div>
+  );
+}; 
+    
+
+<div className="flex flex-col md:flex-row items-start justify-between mb-8 mt-12">
+  <div className="flex-1">
+    <h1 className="text-4xl font-bold text-black dark:text-gray-100">
+     senseBox:home
+    </h1>
+   
+   <p className="text-lg text-gray-700 dark:text-gray-300 mb-7">
+     Die IoT-Umweltmessstation für Messungen im Outdoor Bereich. Citizen Scientists, Interessierte und Kommunen messen damit Umweltdaten an ihren Wohnorten, oder wo es eben interessant ist.
+    </p>
+
+<ButtonWithText href="/docs/boards/mcu/mcu-overview?board=edu" title="Zur SenseBoxMCU"/>
+
+</div>
+  <div className="ml-0 md:ml-9 mt-4 md:mt-0">
+   <ImageWithText src={homeBox} title="senseBox:home im Gehäuse" />
+  </div>
+</div>
+
+<MCUManager />
