@@ -12,8 +12,6 @@ import display from "@site/static/img/hardware-bilder/oled/display.png";
 import tempSensor from "@site/static/img/hardware-bilder/temperatur-luftfeuchte/sensor_temperatur_luftfeuchte.png";
 import pressureSensor from "@site/static/img/hardware-bilder/luftdruck/bmp_top.png";
 import tofSensor from "@site/static/img/hardware-bilder/tof/tofsensor.png";
-import ledMatrix from "@site/static/img/hardware-bilder/led-matrix/led-matrix.png";
-import CO2Sensor from "@site/static/img/hardware-bilder/co2/scd30.png";
 import feinstaubSps from "@site/static/img/hardware-bilder/sps30/sps30.png";
 import feinstaubSds from "@site/static/img/hardware-bilder/feinstaub/sensoren_feinstaub.png";
 import mikro from "@site/static/img/hardware-bilder/mikro/mic.png";
@@ -24,8 +22,6 @@ import sdBee from "@site/static/img/hardware-bilder/bees/sd-bee/msd.png";
 import loraBee from "@site/static/img/hardware-bilder/bees/lora-bee/LoraBee_Bottom.png";
 import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
 import mcutop from '@site/static/img/mcu/ports/mcutop.png'
-import mcus2ports from '@site/static/img/en/mcus2/mcus2-ports.png'
-import i2cdaiychain from '@site/static/img/hardware-bilder/i2c/i2c-daisy-chain.png'
 import ButtonWithText from '@site/src/components/ButtonWithText/ButtonWithText'
 import { NavGreen, NavWhite, NavBlocks } from '@site/src/components/Nav/Nav'
 import { TechSpecs } from '@site/src/components/TechSpecs/TechSpecs'
@@ -39,7 +35,7 @@ export const MCUManager = () => {
 
 const toggleTopTab = (tab) => {
   if(tab === 'Pinout' || tab === 'DataSheet') {
-    window.open(tab === 'DataSheet' ? 'https://learn.watterott.com/de/sensebox/mcu/' : 'https://github.com/watterott/senseBox-MCU/blob/master/hardware/senseBox-MCU_v15.pdf', '_blank');
+    window.open(tab === 'DataSheet' ? 'https://sensebox.de/non_img_assets/datenblaetter/pdf_output/Datenblatt-senseBox_MCU.pdf' : 'https://github.com/watterott/senseBox-MCU/blob/master/hardware/senseBox-MCU_v15.pdf', '_blank');
     return;
   } else {  
     if (activeTopTab === tab) {

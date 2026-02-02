@@ -47,7 +47,7 @@ export const MCUManager = () => {
 
 const toggleTopTab = (tab) => {
   if(tab === 'Pinout' || tab === 'DataSheet') {
-    window.open(tab === 'DataSheet' ? 'https://documentation.espressif.com/esp32-s2-mini-2_esp32-s2-mini-2u_datasheet_en.pdf' : 'https://github.com/sensebox/senseBox-MCU-S2-ESP32S2/blob/main/hardware/2.2/SenseBox-MCU-2-2.pdf', '_blank');
+    window.open(tab === 'DataSheet' ? 'https://sensebox.de/non_img_assets/datenblaetter/pdf_output/Datenblatt-senseBox_MCU_S2.pdf' : 'https://github.com/sensebox/senseBox-MCU-S2-ESP32S2/blob/main/hardware/2.2/SenseBox-MCU-2-2.pdf', '_blank');
     return;
   } else {  
     if (activeTopTab === tab) {

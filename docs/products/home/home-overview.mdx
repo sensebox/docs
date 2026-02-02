@@ -3,6 +3,7 @@ title: senseBox:home
 hide_title: true
 ---
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ImageWithText from "@site/src/components/ImageWithText/ImageWithText";
 import home from "@site/static/img/home/home-big.png";
 import homeBox from "@site/static/img/home/sensebox-home1j.jpg";
@@ -13,6 +14,7 @@ import ButtonWithText from '@site/src/components/ButtonWithText/ButtonWithText'
 import React from 'react'
 import { NavGreen, NavWhite, NavBlocks } from '@site/src/components/Nav/Nav'
 import { PortsOverview, PortItem } from '@site/src/components/PortsOverview/PortsOverview'
+import { IconItem } from '@site/src/components/icons/IconItem'
 
 export const MCUManager = () => {
   const [activeTopTab, setActiveTopTab] = React.useState(null);
@@ -35,26 +37,29 @@ return (
       />
         
      {activeTopTab === 'Messbare Phänomene' && (
-<PortsOverview >
-  <PortItem icon="sb-icon-temperature" name="Temperatur" />
-  <PortItem icon="sb-icon-humidity" name="rel. Luftfeuchtigkeit" />
-  <PortItem icon="sb-icon-pressure" name="Luftdruck" />
-  <PortItem icon="sb-icon-light" name="Beleuchtungsstärke & UV-Intensität" />
-  <PortItem icon="sb-icon-pm" name="Feinstaub (PM10 & 2.5)" />
-  <PortItem icon="sb-icon-iaq" name="IAQ (Luftqualität)" />
-  <PortItem icon="sb-icon-sound" name="Lautstärke" />
-  <PortItem icon="sb-icon-windspeed" name="Windgeschwindigkeit" />
-
-</PortsOverview>
+   <PortsOverview>
+    <IconItem> 
+      <FontAwesomeIcon icon={faTemperatureHigh} />
+      <FontAwesomeIcon icon={faGaugeHigh} />
+      <FontAwesomeIcon icon={faPercent} />
+      <FontAwesomeIcon icon={faSun} />
+      <FontAwesomeIcon icon={faSmog} />
+      <FontAwesomeIcon icon={faCloud} />
+      <FontAwesomeIcon icon={faMicrophone} />
+      <FontAwesomeIcon icon={faWind} />
+    </IconItem>
+  </PortsOverview>
  )}    
 
-     {activeTopTab === 'Datenübertragung' && (
-   <PortsOverview>
-  <PortItem icon="sb-icon-wifi" name="Wifi" />
-  <PortItem icon="sb-icon-ethernet" name="Ethernet" />
-  <PortItem icon="sb-icon-lora" name="LoRa" />
-  <PortItem icon="sb-icon-sd" name="mSD-Karte" />
-</PortsOverview>
+  {activeTopTab === 'Datenübertragung' && (
+       <PortsOverview>
+    <IconItem> 
+    <FontAwesomeIcon icon={faWifi} />
+    <FontAwesomeIcon icon={faEthernet} />
+    <FontAwesomeIcon icon={faTowerBroadcast} />
+    <FontAwesomeIcon icon={faSdCard} />
+    </IconItem>
+  </PortsOverview>
  )}   
 
       <NavWhite

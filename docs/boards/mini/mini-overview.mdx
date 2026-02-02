@@ -25,7 +25,7 @@ export const MCUManager = () => {
 
 const toggleTopTab = (tab) => {
   if(tab === 'Pinout' || tab === 'DataSheet') {
-    window.open(tab === 'DataSheet' ? '' : '', '_blank');
+    window.open(tab === 'DataSheet' ? 'https://sensebox.de/non_img_assets/datenblaetter/pdf_output/Datenblatt-senseBox_MCU_mini.pdf' : 'https://github.com/watterott/senseBox-MCU/blob/master/hardware/senseBox-MCU_mini_v11.pdf', '_blank');
     return;
   } else {  
     if (activeTopTab === tab) {
@@ -56,22 +56,23 @@ return (
 )}
 
 {activeTopTab === 'Sensoren' && (
+  <>
   <PortsOverview title="Sensoren und Zubehör an den UART/Serielle Anschlüssen">
       <PortItem src={wifiBee} name="WiFi Bee" />
           <PortItem src={display} name="OLED Display" />
           <PortItem src={umweltsensor} name="Umweltsensor" />
           <PortItem src={miniRgbLed} name="Neopixel RGB LED" />
-
-            <div className="mt-8">
-  <Admonition type="warning" title="Hinweis zur Verwendung der XBees">
+  </PortsOverview>
+    <div className="mt-8">
+    <Admonition type="warning" title="Hinweis zur Verwendung der XBees">
     <p>
       In seltenen Fällen kann es vorkommen, dass sich noch eine Schutzfolie
       auf den Steckplätzen der XBees befindet. Diese lässt sich vorsichtig
       mit einer Pinzette entfernen, um die Steckplätze nutzen zu können.
-    </p>
-  </Admonition>
-</div>
-  </PortsOverview>
+      </p>
+     </Admonition>
+    </div>
+</>
 )}
 
       <NavWhite
