@@ -1,6 +1,7 @@
 const eduSidebar = {
   type: 'category',
   label: ':edu',
+  key: 'edu',
   link: {
     type: 'doc',
     id: 'boards/mcu/mcu-overview',
@@ -9,6 +10,7 @@ const eduSidebar = {
     {
       type: 'category',
       label: 'Erste Schritte',
+	  key: 'edu-gettingStarted',
       items: [
         'boards/mcu/mcu-revisions',
         'boards/mcu/mcu-in-betrieb-nehmen',
@@ -19,6 +21,7 @@ const eduSidebar = {
     {
       type: 'category',
       label: 'Hardware',
+	  key: 'edu-hardware',
       link: {
         type: 'generated-index',
         title: 'Hardware',
@@ -27,6 +30,7 @@ const eduSidebar = {
         {
           type: 'category',
           label: 'in der :edu enthaltene Hardware',
+		  key: 'edu-included-hardware',
           link: {
             type: 'generated-index',
             title: 'in der :edu enthaltene Hardware',
@@ -41,11 +45,13 @@ const eduSidebar = {
             'hardware/sensors/luftdruck-temperatur',
             'hardware/accessoires/display',
             'hardware/sensors/bmx055',
+			'hardware/accessoires/cable_overview',
           ],
         },
         {
           type: 'category',
-          label: 'zusätzlich erwerbare Hardware',
+          label: 'zusätzlich erwerbbare Hardware',
+		  key: 'edu-additional-hardware',
           link: {
             type: 'generated-index',
             title: 'zusätzlich erwerbbare Hardware',
@@ -57,10 +63,13 @@ const eduSidebar = {
             'hardware/sensors/co2',
             'hardware/sensors/truebner',
             'hardware/sensors/umweltsensor',
+			'hardware/sensors/niederschlag-rg15',
             'hardware/bee/ethernet-bee',
             'hardware/accessoires/gps',
             'hardware/sensors/wassertemperatur',
+			'hardware/sensors/niederschlag-rg15',
             'hardware/accessoires/multiplexer',
+			'hardware/accessoires/solar_set'
           ],
         },
       ],
@@ -68,6 +77,7 @@ const eduSidebar = {
     {
       type: 'category',
       label: 'Blockly',
+	  key: 'edu-blockly',
       link: {
         type: 'generated-index',
         title: 'Blockly',
@@ -87,6 +97,7 @@ const eduSidebar = {
     {
       type: 'category',
       label: 'Arduino',
+	  key: 'edu-arduino',
       link: {
         type: 'generated-index',
         title: 'Arduino',
@@ -102,6 +113,7 @@ const eduSidebar = {
     {
       type: 'category',
       label: 'Besonderheiten',
+	  key: 'edu-special-features',
       link: {
         type: 'generated-index',
         title: 'Besonderheiten',

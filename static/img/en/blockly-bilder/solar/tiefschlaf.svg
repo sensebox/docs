@@ -1,0 +1,84 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="24.5 13.5 390.93 112">
+<defs>
+<style type="text/css">
+<![CDATA[
+.blocklyText {
+fill: #fff;
+font: normal 11pt sans-serif;
+}
+.blocklyDropdownText {
+fill: #000;
+}
+.blocklyPath {
+fill-opacity: 1;
+}
+.blocklyPathDark {
+display: flex;
+}
+.blocklyPathLight {
+display: flex;
+}
+.blocklyFieldRect {
+fill: #f9f9f9;
+fill-opacity: 0.6;
+stroke: #c08c8c;
+}
+]]>
+</style>
+</defs>
+<g class="blocklyBlockCanvas">
+<g data-id="_p`*y^v5Bz8s#?/QS)zN" transform="translate(27, 16)" class="blocklyDraggable">
+<path class="blocklyPathDark" transform="translate(1,1)" fill="#844949" d="m 0,0 m 0,8 a 8 8 0 0,1 8,-8 h 7 l 6,4 3,0 6,-4 h 356.42499828338623 v 5 H 386.42499828338623 V 5 H 386.42499828338623 V 22 H 386.42499828338623 V 32 H 386.42499828338623 V 49 H 386.42499828338623 V 59 H 386.42499828338623 V 76 H 386.42499828338623 V 86 H 386.42499828338623 V 103 H 386.42499828338623 V 103 V 107 h -378.42499828338623 a 8 8 0 0,1 -8,-8 z"/>
+<path class="blocklyPath" stroke="none" fill="#a55b5b" d="m 0,0 m 0,8 a 8 8 0 0,1 8,-8 h 7 l 6,4 3,0 6,-4 h 356.42499828338623 v 5 H 386.42499828338623 V 5 H 386.42499828338623 V 22 H 386.42499828338623 V 32 H 386.42499828338623 V 49 H 386.42499828338623 V 59 H 386.42499828338623 V 76 H 386.42499828338623 V 86 H 386.42499828338623 V 103 H 386.42499828338623 V 103 V 107 h -378.42499828338623 a 8 8 0 0,1 -8,-8 z"/>
+<path class="blocklyPathLight" stroke="#a55b5b" fill="none" stroke-width="1" d="m 0,0 m 0.5,8 a 7.5 7.5 0 0,1 8,-7.5 H 14.5 h 0.5 l 6,4 3,0 6,-4 H 385.92499828338623 H 385.92499828338623 M 0,107 m 2.6966991411008934,-2.6966991411008934 a 7.5 7.5 0 0,1 -2.1966991411008934,-5.303300858899107 V 8"/>
+<g transform="translate(10,5)">
+<text class="blocklyText" x="0" y="14">Power-saving deep sleep and restart after</text>
+</g>
+<g transform="translate(10,32)">
+<text class="blocklyText" x="0" y="14">Sleeping time:</text>
+</g>
+<g class="blocklyEditableText" style="cursor: text;" transform="translate(106.07499694824219,32)">
+<rect rx="4" ry="4" x="0" y="0" height="17" width="26.25" class="blocklyFieldRect"/>
+<text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="14">30<tspan style="fill: rgb(165, 91, 91);"> ▾</tspan></text>
+</g>
+<g class="blocklyEditableText" style="cursor: default;" transform="translate(142.3249969482422,32)">
+<rect rx="4" ry="4" x="0" y="0" height="17" width="78.67500305175781" class="blocklyFieldRect blocklyDropdownRect"/>
+<text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="14">minutes<tspan style="fill: rgb(165, 91, 91);"> ▾</tspan></text>
+</g>
+<g transform="translate(10,59)">
+<text class="blocklyText" x="0" y="14">Wake time:</text>
+</g>
+<g class="blocklyEditableText" style="cursor: default;" transform="translate(97.92500305175781,59)">
+<rect rx="4" ry="4" x="0" y="0" height="17" width="42.92499923706055" class="blocklyFieldRect blocklyDropdownRect"/>
+<text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="14">30<tspan style="fill: rgb(165, 91, 91);"> ▾</tspan></text>
+</g>
+<g transform="translate(145.85000228881836,59)">
+<text class="blocklyText" x="0" y="14">seconds</text>
+</g>
+<g transform="translate(10,86)">
+<text class="blocklyText" x="0" y="14">Connections to deactivate:</text>
+</g>
+<g transform="translate(213.5,86)">
+<text class="blocklyText" x="0" y="14">I2C</text>
+</g>
+<g class="blocklyEditableText" style="cursor: default;" transform="translate(241.25,86)">
+<rect rx="4" ry="4" x="0" y="0" height="17" width="14.949999809265137" class="blocklyFieldRect" fill="#f9f9f9"/>
+<text class="blocklyText blocklyCheckbox" style="display: block;" fill="#000" x="2" y="14">✓</text>
+</g>
+<g transform="translate(261.19999980926514,86)">
+<text class="blocklyText" x="0" y="14">, UART</text>
+</g>
+<g class="blocklyEditableText" style="cursor: default;" transform="translate(313.8749990463257,86)">
+<rect rx="4" ry="4" x="0" y="0" height="17" width="14.949999809265137" class="blocklyFieldRect" fill="#f9f9f9"/>
+<text class="blocklyText blocklyCheckbox" style="display: block;" fill="#000" x="2" y="14">✓</text>
+</g>
+<g transform="translate(333.8249988555908,86)">
+<text class="blocklyText" x="0" y="14">, XB</text>
+</g>
+<g class="blocklyEditableText" style="cursor: default;" transform="translate(366.4749984741211,86)">
+<rect rx="4" ry="4" x="0" y="0" height="17" width="14.949999809265137" class="blocklyFieldRect" fill="#f9f9f9"/>
+<text class="blocklyText blocklyCheckbox" style="display: block;" fill="#000" x="2" y="14">✓</text>
+</g>
+</g>
+</g>
+</svg>

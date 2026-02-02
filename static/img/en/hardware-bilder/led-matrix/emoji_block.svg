@@ -1,0 +1,66 @@
+<svg viewBox="0 0 321 58" xmlns="http://www.w3.org/2000/svg" style="max-height: 500px" width="321" height="58">
+  <g transform="matrix(1, 0, 0, 1, -328.410004, 261.509003)" class="blocklyBlockCanvas" xmlns="http://www.w3.org/2000/svg">
+    <g class="blocklyCursor">
+      <g height="5" width="100">
+        <rect style="display: none;" height="5" width="100">
+          
+        </rect>
+        <rect style="display: none; fill: rgba(255, 255, 255, 0.5); pointer-events: none; stroke-width: 3px;" ry="10" rx="10" class="blocklyVerticalMarker"/>
+        <path style="display: none;" transform="">
+          
+        </path>
+        <path style="display: none;" stroke-width="4" fill="none" transform="">
+          
+        </path>
+      </g>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 127.621002, -16.685301)" class="blocklyBlockCanvas" xmlns="http://www.w3.org/2000/svg">
+      <g class="blocklyCursor">
+        <g height="5" width="100">
+          <rect style="display: none;" height="5" width="100">
+            
+          </rect>
+          <rect style="display: none; fill: rgba(255, 255, 255, 0.5); pointer-events: none; stroke-width: 3px;" ry="10" rx="10" class="blocklyVerticalMarker"/>
+          <path style="display: none;" transform="">
+            
+          </path>
+          <path style="display: none;" stroke-width="4" fill="none" transform="">
+            
+          </path>
+        </g>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 201.307007, -244.899994)" class="blocklyDraggable" style="display: block; cursor: grab;" data-id="i5(-veGM`Xp2:5y8Oyeh">
+        <path style="width: 187.4px; block-size: 59px; cursor: grab; display: flex; height: 59px; inline-size: 187.4px;" d="m 0,0 m 0,8 a 8 8 0 0,1 8,-8 h 7 l 6,4 3,0 6,-4 h 157.37500190734863 v 5 H 187.37500190734863 V 5 H 187.37500190734863 V 23 H 187.37500190734863 V 33 H 187.37500190734863 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 3 H 187.37500190734863 V 51 V 55 h -157.87500190734863 l -6,4 -3,0 -6,-4 h -6.5 a 8 8 0 0,1 -8,-8 z" fill="#498449" transform="translate(1,1)" class="blocklyPathDark"/>
+        <path style="cursor: grab;" d="m 0,0 m 0,8 a 8 8 0 0,1 8,-8 h 7 l 6,4 3,0 6,-4 h 157.37500190734863 v 5 H 187.37500190734863 V 5 H 187.37500190734863 V 23 H 187.37500190734863 V 33 H 187.37500190734863 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 3 H 187.37500190734863 V 51 V 55 h -157.87500190734863 l -6,4 -3,0 -6,-4 h -6.5 a 8 8 0 0,1 -8,-8 z" fill="#5ba55b" stroke="none" class="blocklyPath"/>
+        <path style="width: 191.383px; block-size: 59px; cursor: grab; display: flex; fill: none; height: 59px; inline-size: 191.383px; stroke-linecap: round;" d="m 0,0 m 0.5,8 a 7.5 7.5 0 0,1 8,-7.5 H 14.5 h 0.5 l 6,4 3,0 6,-4 H 186.87500190734863 H 186.87500190734863 M 187.37500190734863,33 m -5,14.3 l 3.68,-2.1 M 0,55 m 2.6966991411008934,-2.6966991411008934 a 7.5 7.5 0 0,1 -2.1966991411008934,-5.303300858899107 V 8" stroke="#8cc08c" class="blocklyPathLight"/>
+        <g transform="translate(10,5)">
+          <text style="white-space: pre; cursor: grab; fill: rgb(255, 255, 255); font-family: sans-serif; font-size: 14.6667px; line-height: normal;" y="14" x="0" class="blocklyText">Draw bitmap</text>
+        </g>
+        <g transform="translate(102.05000305175781,5)">
+          <text style="white-space: pre; cursor: grab; fill: rgb(255, 255, 255); font-family: sans-serif; font-size: 14.6667px; line-height: normal;" y="14" x="0" class="blocklyText">Port:</text>
+        </g>
+        <g transform="translate(137.9500026702881,5)" style="cursor: default;" class="blocklyEditableText">
+          <rect style="fill: rgb(255, 255, 255); fill-opacity: 0.6; stroke: none;" fill="transparent" stroke="#8cc08c" class="blocklyFieldRect blocklyDropdownRect" width="36.42499923706055" height="18" y="0" x="0" ry="4" rx="4"/>
+          <text style="white-space: pre; font-family: sans-serif; font-size: 14.6667px; line-height: normal;" y="14" x="5" text-anchor="start" class="blocklyText blocklyDropdownText">A<tspan style="fill: rgb(91, 165, 91);"> ▾</tspan></text>
+          <image style="display: none;"/>
+        </g>
+        <g transform="translate(10,33)">
+          <text style="white-space: pre; cursor: grab; fill: rgb(255, 255, 255); font-family: sans-serif; font-size: 14.6667px; line-height: normal;" y="14" x="0" class="blocklyText">Motive</text>
+        </g>
+        <g transform="translate(180.37500190734863, 28)" class="blocklyDraggable" style="display: block;" data-id="yyDJbB_vk]Tu-^L$1XTv">
+          <path style="width: 137.583px; block-size: 27px; cursor: grab; display: flex; height: 27px; inline-size: 137.583px;" d="m 8,0 h 129.57500076293945 v 5 H 137.57500076293945 V 5 H 137.57500076293945 V 23 H 137.57500076293945 V 23 V 27 h -129.57500076293945 H 8 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z" fill="#498449" transform="translate(1,1)" class="blocklyPathDark"/>
+          <path style="cursor: grab;" d="m 8,0 h 129.57500076293945 v 5 H 137.57500076293945 V 5 H 137.57500076293945 V 23 H 137.57500076293945 V 23 V 27 h -129.57500076293945 H 8 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z" fill="#5ba55b" stroke="none" class="blocklyPath"/>
+          <path style="width: 140.717px; block-size: 30.5px; cursor: grab; display: flex; fill: none; height: 30.5px; inline-size: 140.717px; stroke-linecap: round;" d="m 8,0 m 0.5,0.5 H 137.07500076293945 H 137.07500076293945 M 8.5,26.5 M 8.5,26.5 V 20 v -1.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5" stroke="#8cc08c" class="blocklyPathLight"/>
+          <g transform="translate(18,5)">
+            <text style="white-space: pre; cursor: grab; fill: rgb(255, 255, 255); font-family: sans-serif; font-size: 14.6667px; line-height: normal;" y="14" x="0" class="blocklyText">Motive</text>
+          </g>
+          <g transform="translate(66.07500076293945,5)" style="cursor: default;" class="blocklyEditableText">
+            <rect style="fill: rgb(255, 255, 255); fill-opacity: 0.6; stroke: none;" fill="transparent" stroke="#8cc08c" class="blocklyFieldRect blocklyDropdownRect" width="66.5" height="18" y="0" x="0" ry="4" rx="4"/>
+            <text style="white-space: pre; font-family: sans-serif; font-size: 14.6667px; line-height: normal;" y="14" x="5" text-anchor="start" class="blocklyText blocklyDropdownText">happy<tspan style="fill: rgb(91, 165, 91);"> ▾</tspan></text>
+            <image style="display: none;"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

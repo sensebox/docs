@@ -1,0 +1,321 @@
+<svg viewBox="0 0 448 238" xmlns="http://www.w3.org/2000/svg" style="max-height: 500px" width="448" height="238">
+  <g transform="matrix(1, 0, 0, 1, -328.410004, 261.509003)" class="blocklyBlockCanvas" xmlns="http://www.w3.org/2000/svg">
+    <g class="blocklyCursor">
+      <g height="5" width="100">
+        <rect style="display: none;" height="5" width="100">
+          
+        </rect>
+        <rect style="display: none; fill: rgba(255, 255, 255, 0.5); pointer-events: none; stroke-width: 3px;" ry="10" rx="10" class="blocklyVerticalMarker"/>
+        <path style="display: none;" transform="">
+          
+        </path>
+        <path style="display: none;" stroke-width="4" fill="none" transform="">
+          
+        </path>
+      </g>
+    </g>
+    <g style="cursor: grab;" class="blocklyDraggable" transform="matrix(1, 0, 0, 1, 332.981995, -261.562988)" data-id="$4l|Dj^Ke%AGfN}QXrA;">
+      <path style="width: 440px; block-size: 235px; cursor: grab; display: flex; height: 235px; inline-size: 440px;" d="m 8,0 h 432 v 5 H 440 V 5 H 440 V 23 H 440 V 33 H 440 V 49 H 440 V 59 H 440 V 75 H 440 V 85 H 440 V 101 H 440 V 111 H 440 V 127 H 440 V 137 H 440 V 153 H 440 V 163 H 440 V 179 H 440 V 189 H 440 V 205 H 440 V 215 H 440 V 231 H 440 V 231 V 235 h -432 H 8 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z" fill="#498449" transform="translate(1,1)" class="blocklyPathDark"/>
+      <path style="cursor: grab;" d="m 8,0 h 432 v 5 H 440 V 5 H 440 V 23 H 440 V 33 H 440 V 49 H 440 V 59 H 440 V 75 H 440 V 85 H 440 V 101 H 440 V 111 H 440 V 127 H 440 V 137 H 440 V 153 H 440 V 163 H 440 V 179 H 440 V 189 H 440 V 205 H 440 V 215 H 440 V 231 H 440 V 231 V 235 h -432 H 8 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z" fill="#5ba55b" stroke="none" class="blocklyPath"/>
+      <path style="width: 443.133px; block-size: 238.5px; cursor: grab; display: flex; fill: none; height: 238.5px; inline-size: 443.133px; stroke-linecap: round;" d="m 8,0 m 0.5,0.5 H 439.5 H 439.5 M 8.5,234.5 M 8.5,234.5 V 20 v -1.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5" stroke="#8cc08c" class="blocklyPathLight"/>
+      <g transform="translate(18,5)">
+        <text style="white-space: pre; cursor: grab; fill: rgb(255, 255, 255); font-family: sans-serif; font-size: 14.6667px; line-height: normal;" y="14" x="0" class="blocklyText">Name:</text>
+      </g>
+      <g transform="translate(66.25,5)" style="cursor: text;" class="blocklyEditableText">
+        <rect style="fill: rgb(255, 255, 255); fill-opacity: 0.6;" class="blocklyFieldRect" width="52.45833206176758" height="18" y="0" x="0" ry="4" rx="4"/>
+        <text style="white-space: pre; font-family: sans-serif; font-size: 14.6667px; line-height: normal;" y="14" x="5" class="blocklyText">Happy</text>
+      </g>
+      <g transform="translate(123.70833206176758,5)">
+        <text style="white-space: pre; cursor: grab; fill: rgb(255, 255, 255); font-family: sans-serif; font-size: 14.6667px; line-height: normal;" y="14" x="0" class="blocklyText">Paint a custom Bitmap</text>
+      </g>
+      <g transform="translate(13,33)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(49,33)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(85,33)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(121,33)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(255, 255, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(157,33)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(255, 255, 51); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(193,33)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(229,33)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(265,33)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(255, 255, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(301,33)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(255, 255, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(337,33)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(373,33)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(409,33)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(13,59)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(49,59)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(85,59)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(121,59)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(255, 255, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(157,59)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(255, 255, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(193,59)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(229,59)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(265,59)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(255, 255, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(301,59)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(255, 255, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(337,59)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(373,59)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(409,59)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(13,85)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(49,85)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(85,85)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(121,85)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(255, 255, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(157,85)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(255, 255, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(193,85)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(229,85)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(265,85)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(255, 255, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(301,85)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(255, 255, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(337,85)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(373,85)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(409,85)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(13,111)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(255, 255, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(49,111)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(85,111)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(121,111)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(157,111)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(193,111)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(229,111)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(265,111)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(301,111)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(337,111)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(373,111)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(409,111)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(255, 255, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(13,137)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(49,137)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(255, 255, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(85,137)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(121,137)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(157,137)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(193,137)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(229,137)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(265,137)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(301,137)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(337,137)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(373,137)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(255, 255, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(409,137)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(13,163)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(49,163)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(85,163)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(255, 255, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(121,163)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(157,163)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(193,163)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(229,163)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(265,163)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(301,163)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(337,163)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(255, 255, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(373,163)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(409,163)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(13,189)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(49,189)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(85,189)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(121,189)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(255, 255, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(157,189)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(255, 255, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(193,189)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(255, 255, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(229,189)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(255, 255, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(265,189)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(255, 255, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(301,189)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(255, 255, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(337,189)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(373,189)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(409,189)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(13,215)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(49,215)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(85,215)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(121,215)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(157,215)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(193,215)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(229,215)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(265,215)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(301,215)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(337,215)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(373,215)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+      <g transform="translate(409,215)" style="cursor: default;" class="blocklyEditableText">
+        <rect stroke="#fff" style="fill-opacity: 1; display: block; fill: rgb(0, 0, 0); width: 26px; block-size: 16px; height: 16px; inline-size: 26px; stroke: none;" class="blocklyFieldRect" width="26" height="16" y="0" x="0" ry="4" rx="4"/>
+      </g>
+    </g>
+  </g>
+</svg>

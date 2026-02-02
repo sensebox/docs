@@ -1,5 +1,6 @@
 ---
 title: senseBox:mini
+hide_title: true
 ---
 
 import mini from '@site/static/img/mini/sensebox-mini.png'
@@ -8,6 +9,7 @@ import umweltsensor from '@site/static/img/hardware-bilder/umweltsensor/bme.png'
 import miniRgbLed from '@site/static/img/mini/mini-rgb-led.png'
 import wifiBee from '@site/static/img/hardware-bilder/bees/wifi-bee/wifi.png'
 import display from '@site/static/img/hardware-bilder/oled/display.png'
+import Admonition from '@theme/Admonition';
 
 <div className="flex flex-col items-center justify-center">
   <h1> senseBox:mini </h1>
@@ -27,7 +29,10 @@ In der senseBox:mini sind folgende Komponenten enthalten:
 
 <div className="flex items-center justify-evenly gap-4 align">
   <ImageWithText src={umweltsensor} title="Umweltsensor" />
-  <ImageWithText src={miniRgbLed} title="Neopixel RGB LED " />
+  <div className="flex flex-col items-center">
+    <img className="w-[16rem]" src={miniRgbLed} alt="Neopixel RGB LED" />
+    <p className="mt-2 text-sm text-gray-500">Neopixel RGB LED</p>
+  </div>
   <ImageWithText src={wifiBee} title="WiFi-Bee" />
   <ImageWithText src={display} title="OLED Display" />
 </div>
@@ -37,6 +42,16 @@ Darüber hinaus ist auf dem Board ein SD-Kartenmodul verbaut und gibt folgende S
 - 2x I2C
 - 1x UART
 - 1x Digital Analog Port
+
+<div className="mt-8">
+  <Admonition type="warning" title="Hinweis zur Verwendung der XBees">
+    <p>
+      In seltenen Fällen kann es vorkommen, dass sich noch eine Schutzfolie
+      auf den Steckplätzen der XBees befindet. Diese lässt sich vorsichtig
+      mit einer Pinzette entfernen, um die Steckplätze nutzen zu können.
+    </p>
+  </Admonition>
+</div>
 
 ## Kleiner Computer mit großem Spaß
 

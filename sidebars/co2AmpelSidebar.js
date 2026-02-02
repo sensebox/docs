@@ -1,6 +1,7 @@
 const co2Ampel = {
   type: "category",
   label: ":CO2 Ampel",
+  key: "co2Ampel",
   link: {
     type: "doc",
     id: "products/co2Ampel/co2Ampel-overview",
@@ -9,6 +10,7 @@ const co2Ampel = {
     {
       type: "category",
       label: "Aufbau und Installation",
+	  key: "co2Ampel-setup",
       link: {
         type: "generated-index",
         title: "Hardware",
@@ -23,6 +25,7 @@ const co2Ampel = {
     {
       type: "category",
       label: "Hardware",
+	  key: "co2Ampel-hardware",
       link: {
         type: "generated-index",
         title: "Hardware",

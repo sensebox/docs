@@ -64,19 +64,20 @@ Da für einige Bauteile keine Bibliotheken verfügbar oder die Bibliotheken zu g
 Die Tabelle ist evtl. unvollständig und wird laufend erweitert. Solltet ihr Komponenten getestet haben, die bisher in der Liste noch nicht vorhanden sind, freuen wir uns auf eine kurze Rückmeldung.
 :::
 
-| Komponente          | Bibliothek vorhanden | Test erfolgreich                         |
-| ------------------- | -------------------- | ---------------------------------------- |
-| BME680 Umweltsensor | Ja                   | Ja                                       |
-| CO2 Sensor          | Ja                   | Ja                                       |
-| BMP280              | Ja                   | Ja (anpassung der I2C Adresse notwendig) |
-| HDC1080             | Nein                 | Nein                                     |
-| BMX055              | Nein                 | Nein                                     |
-| HC-SR04 Ultraschall | Ja                   |                                          |
-| WS2818 RGB LED      | Ja                   | Ja                                       |
-| Display             | Ja                   | Ja                                       |
-| SD-Bee              | Ja                   | Ja                                       |
-| LoRa-Bee            |                      |                                          |
-| WiFi-Bee            | nein                 | WiFi wird von CP nicht unterstütz        |
+| Komponente          | Bibliothek vorhanden | Link			                            																  | Anmerkungen
+| ------------------- | -------------------- | ---------------------------------------- 																  |----------------------------------------
+| BME680 Umweltsensor | Ja                   | https://github.com/adafruit/Adafruit_CircuitPython_BME680                                       			  | Anpassung der I2C Adresse notwendig
+| SCD30 CO2 Sensor    | Ja                   | https://github.com/adafruit/Adafruit_CircuitPython_SCD30                                      			  | Anpassung am Beispielcode notwendig (siehe [GitHub Beispiele](https://github.com/sensebox/MCU-S2-circuitpython-examples))
+| BMP280              | Ja                   | https://github.com/adafruit/Adafruit_CircuitPython_BMP280									    		  |
+| HDC1080             | Ja                   | https://github.com/sensebox/CircuitPython_HDC1080/                                      					  |
+| SPS30			  	  | Ja                   | https://github.com/kgalb01/Adafruit_CircuitPython_SPS30                                       			  |
+| VEML6075 UV Sensor  | Ja                   | https://github.com/adafruit/Adafruit_CircuitPython_VEML6070/                                       		  |
+| ToF Sensor          | Ja                   | https://github.com/sensebox/CircuitPython_VL53LxCX                                      					  |
+| DPS310			  | Ja                   | https://github.com/adafruit/Adafruit_CircuitPython_DPS310/                                       		  | Anpassungen der I2C Adresse notwendig
+| OLED Display        | Ja                   |                               	         																  |
+| SD-Bee              | Ja                   |                                        	 																  |
+| LoRa-Bee            | /                    | /                                        																  |
+| Bluetooth-Bee       | /                    | /								        																  |
 
 ## Serieller Monitor
 

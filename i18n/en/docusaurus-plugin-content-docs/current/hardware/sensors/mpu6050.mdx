@@ -4,6 +4,7 @@ title: Accelerometer
 
 import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
 import mpu6050 from '@site/static/img/en/hardware-bilder/mpu6050/mcu-top-mpu.png'
+import { useBoardStore } from '@site/src/lib/stores/store'
 
 # Accelerometer (MPU6050)
 
@@ -63,3 +64,37 @@ You can display the results in Arduino under `Tools -> Serial Plotter` or via th
 In Blockly, you can read the sensor using the following block:
 
 ![](/img/en/hardware-bilder/mpu6050/mpu-6050-block.svg)
+
+{useBoardStore((state) => (state.board === 'MCU-S2' || state.board === ':edu S2') && (
+<>
+<h2>Programming (CircuitPython)</h2>
+
+<p>To program the sensor with CircuitPython, the senseBox MCU-S2.1 must first be flashed with CircuitPython. You can find instructions for this <a href="https://docs.sensebox.de/en/docs/editors/circuitpython/circuitpython_esp32">here</a>.</p>
+
+<h3>Software Library</h3>
+
+<p>Download the <a href="https://github.com/adafruit/Adafruit_CircuitPython_MPU6050/releases/download/1.3.4/adafruit-circuitpython-mpu6050-10.x-mpy-1.3.4.zip">MPU6050 CircuitPython Library</a>. Extract the .zip file and copy the <code>adafruit_mpu6050.mpy</code> file from the <code>lib</code> folder into the <code>lib</code> folder of your senseBox (<code>CIRCUITPY</code> drive).</p>
+
+<h3>Code</h3>
+
+<p>Using the CircuitPython editor of your choice, you can now program the integrated accelerometer and read its values. This code outputs the acceleration values, gyroscope data, and temperature in the console:</p>
+
+<pre><code className="language-python">{`import time
+import busio
+import microcontroller
+import adafruit_mpu6050
+
+scl = microcontroller.pin.GPIO42
+sda = microcontroller.pin.GPIO45
+
+i2c = busio.I2C(scl, sda)
+mpu = adafruit_mpu6050.MPU6050(i2c)
+
+while True:
+    print("Acceleration: X:%.2f, Y: %.2f, Z: %.2f m/s^2"%(mpu.acceleration))
+    print("Gyro X:%.2f, Y: %.2f, Z: %.2f degrees/s"%(mpu.gyro))
+    print("Temperature: %.2f C"%mpu.temperature)
+    print("")
+    time.sleep(1)`}</code></pre>
+</>
+))}

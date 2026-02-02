@@ -1,6 +1,7 @@
 const blocklySidebar = {
   type: 'category',
   label: 'Blockly',
+  key: 'blockly',
   link: {
     type: 'generated-index',
     title: 'Blockly',

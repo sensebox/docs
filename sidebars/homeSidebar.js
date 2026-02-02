@@ -1,6 +1,7 @@
 const homeSidebar = {
   type: 'category',
   label: ':home',
+  key: 'home',
   link: {
     type: 'doc',
     id: 'boards/mcu/mcu-overview',
@@ -9,6 +10,7 @@ const homeSidebar = {
     {
       type: 'category',
       label: 'Erste Schritte',
+	  key: 'home-gettingStarted',
       items: [
         'boards/mcu/mcu-revisions',
         'boards/mcu/mcu-in-betrieb-nehmen',
@@ -19,6 +21,7 @@ const homeSidebar = {
     {
       type: 'category',
       label: 'Aufbau und Installation',
+	  key: 'home-setup',
       link: {
         type: 'generated-index',
         title: 'Hardware',
@@ -34,6 +37,7 @@ const homeSidebar = {
     {
       type: 'category',
       label: 'Hardware',
+	  key: 'home-hardware',
       link: {
         type: 'generated-index',
         title: 'Hardware',
@@ -52,6 +56,7 @@ const homeSidebar = {
         'hardware/sensors/co2',
         'hardware/sensors/truebner',
         'hardware/sensors/umweltsensor',
+		'hardware/sensors/niederschlag-rg15',
         'hardware/bee/ethernet-bee',
         'hardware/accessoires/gps',
         'hardware/accessoires/multiplexer',
@@ -60,13 +65,14 @@ const homeSidebar = {
     {
       type: 'category',
       label: 'Erweiterungen',
+	  key: 'home-extensions',
       link: {
         type: 'generated-index',
         title: 'Erweiterungen',
       },
       items: [
         'products/home/erweiterungen/home-erweiterung-LoRa',
-        'products/home/erweiterungen/home-erweiterung-solar',
+        'hardware/accessoires/solar_set',
         'products/home/erweiterungen/circuitpython',
       ],
     },

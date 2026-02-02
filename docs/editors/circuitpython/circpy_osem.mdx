@@ -1,0 +1,140 @@
+---
+sidebar_position: 7
+title: "openSenseMap mit CircuitPython"
+description: Verbindung von CircuitPython zur openSenseMap herstellen, um Sensordaten auf der OSEM Plattform hochzuladen
+---
+
+import AlertBox from "@site/src/components/AlertBox/AlertBox";
+
+# openSenseMap mit CircuitPython
+
+Die [openSenseMap](https://www.opensensemap.org) ist ein freies Datenportal für Umweltdaten. Um Messwerte an diese senden zu können, musst du zunächst eine neue senseBox anlegen. Anschließend werden dir eine Box-ID und Sensor-IDs für jeden angegebenen Sensor angezeigt. Eine detaillierte Anleitung zur Registrierung findest du [hier](https://docs.sensebox.de/docs/products/home/aufbau/home-schritt-2).
+
+![](/img/sensebox-home-bilder/home-schritt-2/osem-1.png)
+
+## Voraussetzungen
+
+### Software Bibliotheken
+
+Für die Verbindung zur openSenseMap sind alle benötigten Module bereits in CircuitPython integriert:
+- `wifi` - WLAN-Verbindung
+- `adafruit_requests` - HTTP-Anfragen
+- `adafruit_connection_manager` - Verbindungsverwaltung
+
+Zusätzlich benötigst du nur die Library für deinen Sensor (z.B. [HDC1080](https://github.com/sensebox/CircuitPython_HDC1080/releases/download/1.0.0/circuitpython-hdc1080-9.x-mpy-1.0.0.zip)).
+
+### senseBox auf openSenseMap registrieren
+
+1. Erstelle einen Account auf der [openSenseMap](https://www.opensensemap.org)
+2. Lege eine neue senseBox an und füge deine Sensoren hinzu
+3. Notiere dir folgende Daten:
+   - **senseBox ID**: Die eindeutige ID deiner Box
+   - **Sensor IDs**: Die IDs für jeden registrierten Sensor  
+   - **Access Token**: Zu finden unter "Sicherheit" in den Box-Einstellungen
+
+![](/img/circuitpython/osem_cp.png)
+
+<AlertBox type="warning">
+Diese Zugangsdaten sind vertraulich und sollten nicht öffentlich geteilt werden!
+</AlertBox>
+
+## Konfiguration
+
+### settings.toml erstellen
+
+Erstelle eine `settings.toml` Datei im Hauptverzeichnis deiner senseBox (CIRCUITPY) mit folgendem Inhalt:
+```toml
+# WLAN Zugangsdaten
+CIRCUITPY_WIFI_SSID = "Dein_WLAN_Name"
+CIRCUITPY_WIFI_PASSWORD = "Dein_WLAN_Passwort"
+
+# openSenseMap Zugangsdaten
+SENSEBOX_ID = "Deine_senseBox_ID"
+TEMP_SENSOR_ID = "Sensor_ID_für_Temperatur"
+HUMIDITY_SENSOR_ID = "Sensor_ID_für_Luftfeuchtigkeit"
+AUTH_TOKEN = "Dein_Access_Token"
+```
+
+## Code
+
+Dieser Code sendet Temperatur- und Luftfeuchtigkeitsdaten vom HDC1080 Sensor an die openSenseMap:
+
+```python
+import time
+import os
+import board
+import digitalio
+from hdc1080 import HDC1080
+import wifi
+import adafruit_requests
+import adafruit_connection_manager
+
+# IO Enable Pin für senseBox MCU-S2
+io_enable_pin = digitalio.DigitalInOut(board.IO_POWER)
+io_enable_pin.direction = digitalio.Direction.OUTPUT
+io_enable_pin.value = False
+
+# Initialize I2C and sensor
+i2c = board.I2C()
+sensor = HDC1080(i2c)
+
+# Connect to WiFi
+print(f"Connecting to {os.getenv('CIRCUITPY_WIFI_SSID')}")
+wifi.radio.connect(
+    os.getenv("CIRCUITPY_WIFI_SSID"), 
+    os.getenv("CIRCUITPY_WIFI_PASSWORD")
+)
+print(f"Connected!")
+
+# openSenseMap configuration
+SENSEBOX_ID = os.getenv("SENSEBOX_ID")
+TEMP_SENSOR_ID = os.getenv("TEMP_SENSOR_ID")
+HUMIDITY_SENSOR_ID = os.getenv("HUMIDITY_SENSOR_ID")
+AUTH_TOKEN = os.getenv("AUTH_TOKEN")
+
+# API endpoint
+OSENSEMAP_HOST = "ingress.opensensemap.org"
+OSENSEMAP_PATH = f"/boxes/{SENSEBOX_ID}/data"
+
+# Initialize requests session
+pool = adafruit_connection_manager.get_radio_socketpool(wifi.radio)
+requests = adafruit_requests.Session(pool)
+
+while True:
+    try:
+        # Read sensor values
+        temperature = sensor.temperature
+        humidity = sensor.humidity
+        
+        print(f"Temperature: {temperature:.2f} °C")
+        print(f"Humidity: {humidity:.2f} %")
+        
+        # Prepare data
+        data = {
+            TEMP_SENSOR_ID: f"{temperature:.2f}",
+            HUMIDITY_SENSOR_ID: f"{humidity:.2f}"
+        }
+        
+        # Send to openSenseMap
+        url = f"http://{OSENSEMAP_HOST}{OSENSEMAP_PATH}"
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": AUTH_TOKEN
+        }
+        
+        print("Sending data to openSenseMap...")
+        response = requests.post(url, json=data, headers=headers)
+        print(f"Response: {response.text}")
+        response.close()
+        
+    except Exception as e:
+        print(f"Error: {e}")
+    
+    # Wait 60 seconds before next measurement
+    time.sleep(60)
+```
+
+
+## Projekte
+
+- [IoT Messstation](https://sensebox.de/projects/de/2024-01-10-iotmesstation_s2)

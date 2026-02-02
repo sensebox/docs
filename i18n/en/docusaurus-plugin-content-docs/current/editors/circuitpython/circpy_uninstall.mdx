@@ -1,0 +1,43 @@
+---
+sidebar_position: 2
+title: "Uninstall CircuitPython"
+description: Uninstall CircuitPython from senseBox MCU-S2
+---
+import  AlertBox from "@site/src/components/AlertBox/AlertBox";
+
+# Uninstall CircuitPython
+If you no longer want to use CircuitPython, you can reset your senseBox MCU-S2 back to Arduino. In this tutorial, we will show you how to remove CircuitPython from your senseBox MCU-S2.
+
+![CircuitPython Logo](https://s3.amazonaws.com/adafruit-circuit-python/CircuitPython_Repo_header_logo.png)
+
+
+## Uninstall CircuitPython with a button press
+If you want to uninstall CircuitPython from your senseBox MCU-S2 with a button press to use Blockly or Arduino again, follow these steps:
+1. Connect your senseBox MCU-S2 to your computer via a USB cable.
+2. Enter bootloader mode by briefly pressing the reset button and then immediately pressing the boot button. The RGB LED should now light up green.
+3. Download the [flash-arduino.uf2](https://github.com/sensebox/MCU-S2-circuitpython-examples/raw/main/assets/flash-arduino.uf2) file.
+4. Copy the `flash-arduino.uf2` file to the `senseBox` drive.
+5. The senseBox MCU-S2 will now restart and you can use Blockly or Arduino as usual.
+
+<div align="center">
+<img src="/img/circuitpython/flash-arduino-uf2.gif" width="500" height="295" />
+</div>
+
+## Uninstall CircuitPython via Web Tool
+<AlertBox type="info" title="Web Browser!" >
+    <p>You can only use the flashing tool with Google Chrome or Microsoft Edge.</p>
+</AlertBox>
+
+If you want to uninstall CircuitPython from your senseBox MCU-S2 using the web tool to use Blockly or Arduino again, follow these steps:
+1. Visit the [Flash senseBox website](https://flashsensebox.netlify.app/).
+2. In the `Upload` tab, click `Select Sketch` and choose `UF2-Bootloader`.
+3. Connect your senseBox MCU-S2 to your computer via a USB cable.
+4. Enable dev mode by holding down the BootSwitch button on the senseBox MCU-S2 and then pressing the reset button once. Then release the BootSwitch button.
+5. Click the `Search board` button. A window will open showing the connected devices. Your device should have `ESP32-S2` in the name. Select it and click `Connect`.
+6. Click `Upload Sketch!` to flash the bootloader. The process may take a few minutes.
+7. Press the reset button on the senseBox MCU-S2 to start the bootloader.
+8. The senseBox MCU-S2 will now restart and you can use Blockly or Arduino as usual.
+
+<div align="center">
+<img src="/img/circuitpython/flash_sensebox.gif" width="400" height="523" />
+</div>

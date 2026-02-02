@@ -1,0 +1,56 @@
+---
+sidebar_position: 6
+title: "CircuitPython Editoren"
+description: CircuitPython Editoren im Überblick
+---
+import  AlertBox from "@site/src/components/AlertBox/AlertBox";
+
+# CircuitPython Editoren
+CircuitPython kann mit verschiedenen Editoren programmiert werden. Hier stellen wir dir die gängigsten Editoren vor und geben dir eine kurze Übersicht über deren Funktionen und Vorteile.
+
+![CircuitPython Logo](https://s3.amazonaws.com/adafruit-circuit-python/CircuitPython_Repo_header_logo.png)
+
+<AlertBox type="info" title="Web-Browser!" >
+	<p>Alle Editoren funktionieren nur mit Google Chrome oder Microsoft Edge.</p>
+</AlertBox>
+
+## Mu Editor
+Der Mu Editor ist ein einfacher und benutzerfreundlicher Code-Editor, der speziell für Anfänger entwickelt wurde.
+Im Gegensatz zu den anderen vorgestellten Editoren, wird der Mu Editor lokal auf deinem Computer installiert und ausgeführt.
+
+Lade den MU Editor [hier](https://codewith.mu/) runter und installiere ihn auf deinem Computer um loszulegen.
+
+Stelle sicher, dass du im Reiter `Modus` den `CircuitPython` Modus ausgewählt hast. Verbinde deine senseBox MCU-S2 mit dem Computer und öffne `code.py` im `CIRCUITPY` Laufwerk. Öffne zusätzlich im Mu Editor den seriellen Monitor um die Ausgabe deines Codes zu sehen. 
+Nun kannst du loslegen und deinen Code schreiben.
+
+![MU Editor](/img/circuitpython/mu_editor.png)
+
+## CircuitPython Web Editor
+Der CircuitPython Web Editor ist ein Online-Editor, der direkt im Web-Browser ausgeführt wird. Er bietet eine einfache Möglichkeit, CircuitPython-Code zu schreiben und auf deine senseBox MCU-S2 zu laden.
+Der Web Editor ist unter [hier](https://code.circuitpython.com) erreichbar.
+
+Wenn du die Website besuchst, wirst du aufgefordert, festzulegen wie deine senseBox MCU-S2 verbunden ist. Wähle hier `USB` aus und klicke auf `Connect device`. Verbinde deine senseBox MCU-S2 mit dem Computer und wähle sie im Pop-Up Fenster aus. 
+Klicke als nächstes auf `Open` um auf die Dateien deiner senseBox zuzugreifen. Öffne `code.py` im `CIRCUITPY` Laufwerk um deinen Code zu bearbeiten.
+Nun kannst du loslegen und deinen Code schreiben und ausführen.
+
+![CircuitPython Web Editor](/img/circuitpython/circpy_editor.png)
+
+## senseBox CircuitPython Editor
+Der senseBox CircuitPython Editor ist ein weiterer Online-Editor, der speziell für die Programmierung von CircuitPython auf der senseBox MCU-S2 entwickelt wurde. Er bietet eine benutzerfreundliche Oberfläche und einige zusätzliche Funktionen, die das Programmieren erleichtern.
+Du findest den senseBox CircuitPython Editor [hier](https://python.sensebox.de/). Dort kannst du direkt loslegen und entweder deinen eigenen Code schreiben oder Code aus den Beispielblöcken verwenden.
+
+Klicke dafür zunächst auf `Connect` in der oberen rechten Ecke, um deine senseBox MCU-S2 zu verbinden. Als nächstes klickst du auf `Send to micro:bit`, um deinen Code auf die senseBox zu laden und auszuführen.
+Du musst dazu das `CIRCUITPY` Laufwerk auswählen, wenn du dazu aufgefordert wirst. Im Fenster rechts kannst du die Ausgabe deines Codes sehen.
+
+<AlertBox type="info" title="Achtung!" >
+	<p>Der senseBox CircuitPython Editor ist noch in der Beta-Phase und funktioniert nur mit der senseBox MCU-S2 und nicht mit anderen CircuitPython kompatiblen Boards.</p>
+</AlertBox>
+
+![senseBox CircuitPython Editor](/img/circuitpython/sensebox_editor.png)
+
+## Zwischen den Editoren wechseln
+Du kannst jederzeit zwischen den verschiedenen Editoren wechseln. Es wird allerdings empfohlen, vor dem Wechsel des Editors den nicht benutzten Editor zu schließen und deine MCU-S2 neuzustarten. Achte darauf, dass du immer die `code.py` Datei im `CIRCUITPY` Laufwerk deiner senseBox MCU-S2 bearbeitest.
+
+<AlertBox type="info" title="Achtung!" >
+	<p>In seltenen Fällen ist es nötig beim Wechsel der Editoren dein Board neu zu flashen. Speichere und sichere vorher deinen Fortschritt an einem geeigneten Ort und folge dann [diesem Tutorial](https://docs.sensebox.de/docs/editors/circuitpython/circuitpython_esp32)</p>
+</AlertBox>

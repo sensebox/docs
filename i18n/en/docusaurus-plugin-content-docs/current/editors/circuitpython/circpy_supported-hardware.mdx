@@ -1,0 +1,38 @@
+---
+sidebar_position: 5
+title: "Supported Hardware"
+description: Overview of supported hardware and sensors for CircuitPython.
+---
+import  AlertBox from "@site/src/components/AlertBox/AlertBox";
+
+# Limited Support
+Not all sensors and modules of the senseBox can currently be used with CircuitPython.  
+For many, libraries already exist, while for others support is still missing. New libraries are gradually being developed by the community or directly for the senseBox.  
+You can find an overview of the supported hardware and sensors in the table below.
+
+# Supported Components
+<AlertBox type="info" title="Note" >
+	<p>The table may be incomplete and is continuously updated. If you have tested components that are not yet listed, we would appreciate a short feedback.</p>
+</AlertBox>
+
+| Component           		  | Library available | Link                                                                                          | Notes
+| ----------------------------| ----------------- | --------------------------------------------------------------------------------------------- | ----------------------------------------
+| BME680 Environmental Sensor | Yes       		  | https://github.com/adafruit/Adafruit_CircuitPython_BME680     	                              | Adjustment of I2C address required
+| SCD30 CO2 Sensor    		  | Yes               | https://github.com/adafruit/Adafruit_CircuitPython_SCD30                                      | Adjustments to example code required (see [GitHub examples](https://github.com/sensebox/MCU-S2-circuitpython-examples))
+| BMP280              		  | Yes               | https://github.com/adafruit/Adafruit_CircuitPython_BMP280                                     |
+| HDC1080             		  | Yes               | https://github.com/sensebox/CircuitPython_HDC1080/                                            |
+| SPS30               		  | Yes               | https://github.com/sensebox/Adafruit_CircuitPython_SPS30                                      |
+| VEML6075 UV Sensor  		  | Yes               | https://github.com/adafruit/Adafruit_CircuitPython_VEML6070/                                  |
+| ToF Sensor          		  | Yes               | https://github.com/sensebox/CircuitPython_VL53LxCX                                            |
+| DPS310              		  | Yes               | https://github.com/adafruit/Adafruit_CircuitPython_DPS310/                                    | Adjustment of I2C address required
+| MPU6050 Gyroscope   		  | Yes               | https://github.com/adafruit/Adafruit_CircuitPython_MPU6050                                    | Sensor only available for **MCU-S2.1** and adjustments to example code required (see [GitHub examples](https://github.com/sensebox/MCU-S2-circuitpython-examples))
+| ICM-20948 Gyroscope 		  | Yes               | https://github.com/adafruit/Adafruit_CircuitPython_ICM20X/			                          | Sensor only available for **MCU-S2.2** and adjustments to example code required (see [GitHub examples](https://github.com/sensebox/MCU-S2-circuitpython-examples))
+| OLED Display        		  | Yes               | https://github.com/adafruit/Adafruit_CircuitPython_SSD1306                                    |
+| SD-Bee              		  | Yes               |                                                                                               |
+| LoRa-Bee            		  | /                 | /                                                                                             |
+| Bluetooth-Bee       		  | /                 | /                                                                                             |
+
+To use the libraries, you can download the release from the right-hand side of the GitHub repositories.  
+Make sure to download the file named **"10.x-mpy_.zip"**.  
+Then unzip the file and copy the included _.mpy_ files into the `lib` folder on the CIRCUITPY drive.  
+For more information, see [here](https://docs.sensebox.de/en/docs/editors/circuitpython/circpy_libraries).

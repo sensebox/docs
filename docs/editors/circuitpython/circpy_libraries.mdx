@@ -1,0 +1,38 @@
+---
+sidebar_position: 4
+title: "CircuitPython Bibliotheken"
+description: CircuitPython Bibliotheken für die senseBox MCU-S2
+---
+import  AlertBox from "@site/src/components/AlertBox/AlertBox";
+
+# CircuitPython Bibliotheken
+
+Bibliotheken sind Sammlungen von fertigem Code, den du in deinen eigenen Programmen verwenden kannst. Statt alle Funktionen immer wieder selbst zu schreiben, kannst du auf diese "Werkzeugkästen" zurückgreifen. So sparst du Zeit und kannst dich auf das Wesentliche konzentrieren.  
+
+Ein Beispiel: Anstatt selbst eine Sortierfunktion zu programmieren, greifst du auf eine Bibliothek zurück, die das bereits zuverlässig erledigt. In Python gibt es viele solcher Bibliotheken, z. B. für Mathematik, Datenverarbeitung oder Hardware-Ansteuerung.  
+
+## Warum Bibliotheken bei CircuitPython?
+Damit deine senseBox MCU-S2 verschiedene Sensoren und Bauteile ansprechen kann, müssen die passenden Bibliotheken auf dem Board vorhanden sein. Jede Hardware-Komponente (z. B. ein Sensor für Temperatur, Helligkeit oder Luftqualität) benötigt ihre eigene Bibliothek, damit CircuitPython die Messwerte richtig auslesen und verarbeiten kann.  
+
+## senseBox Bibliotheken-Paket
+Für die senseBox haben wir ein eigenes Paket zusammengestellt, das die wichtigsten Bibliotheken enthält, die du in der Regel benötigst. Damit kannst du direkt loslegen, ohne lange nach einzelnen Dateien suchen zu müssen.  
+
+[senseBox Bibliotheken-Paket herunterladen](https://sensebox.de/images/projets/circuitpython_co2_ampel/lib.zip)  
+
+Entpacke die ZIP-Datei und kopiere den gesamten Inhalt in den `lib`-Ordner deiner senseBox MCU-S2.  
+
+![](/img/circuitpython/circpy_lib-folder.png)
+
+
+## Offizielle CircuitPython Bibliotheken-Paket
+Alternativ kannst du auch das offiziellen CircuitPython Bibliotheken-Paket herunterladen:  
+
+[Offizielles CircuitPython Bibliotheken-Paket](https://circuitpython.org/libraries)  
+
+<AlertBox type="info" title="Hinweis">
+    <p>
+	Die senseBox-Bibliotheken enthalten auch spezielle Erweiterungen, die es nur für die senseBox gibt. Diese sind nicht Teil des offiziellen CircuitPython-Pakets.
+	
+	Außerdem kann das vollständige Paket sehr groß sein und der Speicherplatz auf der senseBox könnte knapp werden.
+	</p>
+</AlertBox>

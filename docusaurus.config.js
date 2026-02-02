@@ -79,7 +79,8 @@ const config = {
   ({
     colorMode: {
       defaultMode: 'light',
-      disableSwitch: true,
+      disableSwitch: false,
+	  respectPrefersColorScheme: true,
     },
     navbar: {
       title: 'senseBox Docs',
@@ -117,7 +118,7 @@ const config = {
             },
             {
               label: 'openSenseMap',
-              to: 'https://opensensemap.org/impressum',
+              to: 'https://opensensemap.org/',
             },
             {
               label: 'FAQ',

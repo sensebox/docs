@@ -1,0 +1,40 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-2.15 -2.5 334.38 57.5">
+  <defs>
+    <style type="text/css">
+      <![CDATA[
+        .blocklyText {
+          fill: #fff;
+          font: normal 11pt sans-serif;
+        }
+        .blocklyDropdownText {
+          fill: #000;
+        }
+        .blocklyPath {
+          fill-opacity: 1;
+        }
+        .blocklyPathDark {
+          display: flex;
+        }
+        .blocklyPathLight {
+          display: flex;
+        }
+      ]]>
+    </style>
+  </defs>
+  <g transform="translate(0, 0)">
+    <path class="blocklyPathDark" transform="translate(1,1)" fill="#844949" d="m 8,0 h 322.2 v 5 H 330.2 V 5 H 330.2 V 22 H 330.2 V 32 H 330.2 V 49 H 330.2 V 49 V 53 h -322.2 H 8 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z"/>
+    <path class="blocklyPath" stroke="none" fill="#a55b5b" d="m 8,0 h 322.2 v 5 H 330.2 V 5 H 330.2 V 22 H 330.2 V 32 H 330.2 V 49 H 330.2 V 49 V 53 h -322.2 H 8 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z"/>
+    <path class="blocklyPathLight" stroke="#c08c8c" d="m 8,0 m 0.5,0.5 H 329.7 H 329.7 M 8.5,52.5 M 8.5,52.5 V 20 v -1.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5"/>
+    <g transform="translate(18,5)">
+      <text class="blocklyText" x="0" y="14">Solar Charger (SB-041)</text>
+    </g>
+    <g transform="translate(18,32)">
+      <text class="blocklyText" x="0" y="14">Value:</text>
+    </g>
+    <g class="blocklyEditableText" style="cursor: default;" transform="translate(89.65,32)">
+      <rect rx="4" ry="4" x="0" y="0" height="17" width="235.55" class="blocklyFieldRect blocklyDropdownRect" stroke="#c08c8c" fill="#f9f9f9" fill-opacity="0.6"/>
+      <text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="14">Solar panel voltage in V<tspan style="fill: rgb(165, 91, 91);"> ▾</tspan></text>
+      <image style="display: none;"/>
+    </g>
+  </g>
+</svg>
