@@ -19,4 +19,4 @@ Die verkettbare RGB LED lässt sich mit [Blockly](/blockly/blockly-led/) program
 - WS2812 RGB-LED
 - JST-Ein- und Ausgänge zum erstellen von RGB-Ketten
 
-- [Shop](https://sensebox.kaufen/product/verkettbare-rgb-led)
+- [Shop](https://sensebox.kaufen/products/verkettbare-neopixel-rgb-led)
