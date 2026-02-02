@@ -5,7 +5,7 @@ export function NavGreen({ topTabs, activeTab, onTabChange }) {
       <nav>
         <ul className="flex flex-row flex-wrap list-none p-0 m-0">
           {topTabs.map((tab) => (
-            <li key={tab}>
+            <li key={tab} className="!m-0 flex-shrink-0">
               <button
                 onClick={() => onTabChange(tab)}
                 className={`px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
@@ -31,7 +31,7 @@ export function NavWhite({ bottomTabs, activeTab, onTabChange }) {
       <nav>
         <ul className="flex flex-row flex-wrap list-none p-0 m-0">
           {bottomTabs.map((tab) => (
-            <li key={tab} className="flex-shrink-0">
+            <li key={tab} className="!m-0 flex-shrink-0">
               <button
                 onClick={() => onTabChange(tab)}
                 className={`px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
