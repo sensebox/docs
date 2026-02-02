@@ -4,13 +4,13 @@ const homeSidebar = {
   key: 'home',
   link: {
     type: 'doc',
-    id: '/products/home/home-overview.mdx',
+    id: 'products/home/home-overview',
   },
   items: [
     {
       type: 'category',
       label: 'Erste Schritte',
-	  key: 'edu-gettingStarted',
+      key: 'home-edu-gettingStarted',
       items: [
         'boards/mcu/mcu-revisions',
         'boards/mcu/mcu-in-betrieb-nehmen',
@@ -21,7 +21,7 @@ const homeSidebar = {
     {
       type: 'category',
       label: 'Hardware',
-	  key: 'edu-hardware',
+      key: 'home-edu-hardware',
       link: {
         type: 'generated-index',
         title: 'Hardware',
@@ -30,7 +30,7 @@ const homeSidebar = {
         {
           type: 'category',
           label: 'in der :edu enthaltene Hardware',
-		  key: 'edu-included-hardware',
+          key: 'home-edu-included-hardware',
           link: {
             type: 'generated-index',
             title: 'in der :edu enthaltene Hardware',
@@ -45,13 +45,13 @@ const homeSidebar = {
             'hardware/sensors/luftdruck-temperatur',
             'hardware/accessoires/display',
             'hardware/sensors/bmx055',
-			'hardware/accessoires/cable_overview',
+            'hardware/accessoires/cable_overview',
           ],
         },
         {
           type: 'category',
           label: 'zusätzlich erwerbbare Hardware',
-		  key: 'edu-additional-hardware',
+          key: 'home-edu-additional-hardware',
           link: {
             type: 'generated-index',
             title: 'zusätzlich erwerbbare Hardware',
@@ -63,13 +63,13 @@ const homeSidebar = {
             'hardware/sensors/co2',
             'hardware/sensors/truebner',
             'hardware/sensors/umweltsensor',
-			'hardware/sensors/niederschlag-rg15',
+            'hardware/sensors/niederschlag-rg15',
             'hardware/bee/ethernet-bee',
             'hardware/accessoires/gps',
             'hardware/sensors/wassertemperatur',
-			'hardware/sensors/niederschlag-rg15',
+            'hardware/sensors/niederschlag-rg15',
             'hardware/accessoires/multiplexer',
-			'hardware/accessoires/solar_set'
+            'hardware/accessoires/solar_set',
           ],
         },
       ],
@@ -77,7 +77,7 @@ const homeSidebar = {
     {
       type: 'category',
       label: 'Blockly',
-	  key: 'edu-blockly',
+      key: 'home-edu-blockly',
       link: {
         type: 'generated-index',
         title: 'Blockly',
@@ -97,7 +97,7 @@ const homeSidebar = {
     {
       type: 'category',
       label: 'Arduino',
-	  key: 'edu-arduino',
+      key: 'home-edu-arduino',
       link: {
         type: 'generated-index',
         title: 'Arduino',
@@ -113,7 +113,7 @@ const homeSidebar = {
     {
       type: 'category',
       label: 'Besonderheiten',
-	  key: 'edu-special-features',
+      key: 'home-edu-special-features',
       link: {
         type: 'generated-index',
         title: 'Besonderheiten',
