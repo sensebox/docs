@@ -1,0 +1,177 @@
+---
+title: Die verschiedenen MCU S2 Revisionen
+---
+
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import ImageComparison from '@site/src/components/ImageComparison/ImageComparison'
+import mcuComparisonsS2 from '@site/static/img/mcus2/revisions/mcus2_comparison.jpg'
+import mcus2_ICM from '@site/static/img/mcus2/revisions/mcus2_icm.jpg'
+import mcus2_MPU from '@site/static/img/mcus2/revisions/mcus2_mpu.jpg'
+
+Einen schnellen Überblick über die Unterschiede der verfügbaren und geplanten Revisionen der MCU S2 findest du in folgender Tabelle:
+
+<div style={{ width: 'fit-content', maxWidth: '100%', margin: '0 auto' }}>
+
+| Revision     | Status         | Lage- und Beschleunigungssensor | Besonderheit                             |
+| :----------- | :------------- | :------------------------------ | :--------------------------------------- |
+| **Rev. 2.1** | Verfügbar      | MPU-6050 _oder_ ICM-42670P      | 6-Achsen (Gyroskop + Beschleunigung)     |
+| **Rev. 2.2** | In Entwicklung | ICM-20948                       | 9-Achsen (zusätzl. Magnetometer/Kompass) |
+
+</div>
+
+Während der Entwicklung der senseBox MCU S2 wurden mehrere Revisionen entwickelt. Die folgende Übersicht zeigt dir die Unterschiede zwischen den einzelnen Revisionen.
+
+### Rev. 2.1
+
+Die Revision 2.1 ist die erste regulär verfügbare Version der senseBox MCU S2.  
+Sie wurde in **zwei technisch nahezu identischen Varianten** veröffentlicht, die sich ausschließlich durch den verbauten Lage- und Beschleunigungssensor unterscheiden.
+
+Hintergrund dafür waren Unsicherheiten in der Halbleiterverfügbarkeit nach der Corona-Krise. Um die Produktionsfähigkeit sicherzustellen, kamen zwei Sensoren zum Einsatz.
+
+Der folgende Vergleich zeigt beide Varianten:
+
+<div
+  style={{
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: '32px',
+    flexWrap: 'nowrap',
+  }}
+>
+  {/* ImageComparison */}
+  <div style={{ width: '420px', flexShrink: 0 }}>
+    <ImageComparison
+      leftImage={mcus2_ICM}
+      rightImage={mcus2_MPU}
+      leftLabel="MCU S2 mit verbautem ICM-42670P"
+      rightLabel="MCU S2 mit verbautem MPU6050"
+    />
+  </div>
+
+{/* Tabelle */}
+
+  <div style={{ flexShrink: 0 }}>
+    <h4>Unterschiede der Sensorvarianten</h4>
+
+    <table
+      style={{
+        borderCollapse: 'collapse',
+        whiteSpace: 'nowrap',
+      }}
+    >
+      <thead>
+        <tr>
+          <th
+            style={{
+              border: '1px solid #ddd',
+              padding: '6px 10px',
+              textAlign: 'left',
+            }}
+          >
+            Merkmal
+          </th>
+          <th
+            style={{
+              border: '1px solid #ddd',
+              padding: '6px 10px',
+              textAlign: 'left',
+            }}
+          >
+            MCU S2 – MPU-6050
+          </th>
+          <th
+            style={{
+              border: '1px solid #ddd',
+              padding: '6px 10px',
+              textAlign: 'left',
+            }}
+          >
+            MCU S2 – ICM-42670P
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            Sensorachsen
+          </td>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            6 (3× Gyro, 3× Acc)
+          </td>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            6 (3× Gyro, 3× Acc)
+          </td>
+        </tr>
+
+        <tr>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            Temperatursensor
+          </td>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            ✔ integriert
+          </td>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            ✔ integriert
+          </td>
+        </tr>
+
+        <tr>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            Stromverbrauch
+          </td>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            höher
+          </td>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            geringer
+          </td>
+        </tr>
+
+        <tr>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            Messgenauigkeit
+          </td>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            gut
+          </td>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            höher
+          </td>
+        </tr>
+
+        <tr>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            Sensorgeneration
+          </td>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            älter / etabliert
+          </td>
+          <td style={{ border: '1px solid #ddd', padding: '6px 10px' }}>
+            neuer
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+#### Identifikation der verbauten Version
+
+Welche Variante du besitzt, erkennst du direkt auf der Platine:
+
+- **Chip auf der oberen Sensorfläche** → **MPU-6050** (größerer Chip)
+- **Chip auf der unteren Sensorfläche** → **ICM-42670P**
+
+Die Position befindet sich neben dem **XBEE-Port** (siehe Markierung im Bild).
+
+#### Hinweise zur Programmierung
+
+- **Blockly** erkennt den verbauten Sensor automatisch
+- **Arduino**: Der korrekte Sensor muss manuell in der Software ausgewählt werden
+
+### Rev. 2.2 - Aktuelle Version (in Entwicklung)
+
+Ab der Revision 2.2 wird nur noch eine Version mit einem ICM-20948 als Lage- und Beschleunigungssensor entwickelt. Dieser misst zusätzlich zu Beschleunigung und Drehbewegungen auch das Magnetfeld. Damit kann er zusätzlich sagen, in welche Himmelsrichtung das Gerät zeigt. Diese Revision befindet sich momentan noch in Entwicklung.

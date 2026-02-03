@@ -23,6 +23,7 @@ const eduS2Sidebar = {
       label: 'Erste Schritte',
 	  key: 'eduS2-gettingStarted',
       items: [
+        'boards/mcus2/mcus2-revisions',
         'boards/mcus2/mcus2-in-betrieb-nehmen',
         'boards/mcus2/mcus2-erster-sketch',
         'boards/mcus2/mcus2-kompilieren',
