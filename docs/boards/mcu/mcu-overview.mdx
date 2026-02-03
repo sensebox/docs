@@ -30,7 +30,7 @@ import { PortsOverview, PortItem } from '@site/src/components/PortsOverview/Port
 export const MCUManager = () => {
   const [activeTopTab, setActiveTopTab] = React.useState(null);
   const [activeBottomTab, setActiveBottomTab] = React.useState('Features');
-  const topTabs = ['Pinout', 'DataSheet', 'I2C/Wire Ports', 'UART/Serielle Anschlüsse', 'Digitale/Analoge Ports', 'XBEE'];
+  const topTabs = ['Pinout ↗ ', 'DataSheet ↗', 'I2C/Wire Ports', 'UART/Serielle Anschlüsse', 'Digitale/Analoge Ports', 'XBEE'];
   const bottomTabs = ['Features', 'Hardware', 'Tech Specs', 'Blockly', 'Arduino', 'Besonderheiten'];
 
 const toggleTopTab = (tab) => {
@@ -136,7 +136,7 @@ return (
       {activeBottomTab === 'Hardware' && (
           <>
             <div className='!scale-300'>
-           <ImageWithText src={mcuPorts} title="senseBox MCU with Ports" />
+           <ImageWithText src={mcuPorts} title="senseBox MCU mit Ports" />
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
               <NavBlocks href="/docs/hardware/bee/wifi-bee" title="Wifi-Bee" />
@@ -199,7 +199,7 @@ return (
 
             {activeBottomTab === 'Arduino' && (
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
-              <NavBlocks href="/docs/editors/arduino/installation-arduino-ide" title="Installationn der Arduino IDE" />
+              <NavBlocks href="/docs/editors/arduino/installation-arduino-ide" title="Installation der Arduino IDE" />
               <NavBlocks href="/docs/editors/arduino/installation-bsp" title="Installation des Board-Support-Packages" />
 			  <NavBlocks href="/docs/boards/mcu/mcu-sensebox-io-library" title="senseBoxIO Library" />
 			  <NavBlocks href="/docs/editors/arduino/libraries-hinzufuegen" title="Arduino Software Bibliotheken hinzufügen" />
@@ -234,7 +234,7 @@ return (
     </p>
     
 
-<ButtonWithText href="/docs/boards/mcu/mcu-revisions" title="Get Started"/>
+<ButtonWithText href="/docs/boards/mcu/mcu-revisions" title="Los geht's"/>
 
   </div>
   <div className="ml-0 md:ml-9 mt-4 md:mt-0 ">
