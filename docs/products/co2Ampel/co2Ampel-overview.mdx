@@ -16,12 +16,12 @@ export const MCUManager = () => {
   const [activeTopTab, setActiveTopTab] = React.useState(null);
   const [activeBottomTab, setActiveBottomTab] = React.useState('Pflegehinweise');
   
-const topTabs = ['CO2 Sensor', ' ↗ ', 'Datasheet ↗'];
+const topTabs = ['CO2 Sensor', 'Pinout ↗', 'Datasheet ↗'];
 const bottomTabs = ['Bauteile', 'Hardware', 'Aufbau'];
 
 const toggleTopTab = (tab) => {
- if(tab === 'Pinout' || tab === 'DataSheet') {
-    window.open(tab === 'DataSheet' ? 'https://learn.watterott.com/breakouts/co2-ampel/' : 'https://github.com/watterott/CO2-Ampel/blob/master/hardware/CO2-Ampel_v10.pdf', '_blank');
+ if(tab === 'Pinout ↗' || tab === 'Datasheet ↗') {
+    window.open(tab === 'Datasheet ↗' ? 'https://learn.watterott.com/breakouts/co2-ampel/' : 'https://github.com/watterott/CO2-Ampel/blob/master/hardware/CO2-Ampel_v10.pdf', '_blank');
     return;
   } else {   
     if (activeTopTab === tab) {

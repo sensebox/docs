@@ -24,8 +24,8 @@ export const MCUManager = () => {
   const bottomTabs = ['Features', 'Hardware', 'Tech Specs', 'Blockly', 'Arduino'];
 
 const toggleTopTab = (tab) => {
-  if(tab === 'Pinout' || tab === 'DataSheet') {
-    window.open(tab === 'DataSheet' ? 'https://sensebox.de/non_img_assets/datenblaetter/pdf_output/Datenblatt-senseBox_MCU_mini.pdf' : 'https://github.com/watterott/senseBox-MCU/blob/master/hardware/senseBox-MCU_mini_v11.pdf', '_blank');
+  if(tab === 'Pinout ↗' || tab === 'DataSheet ↗') {
+    window.open(tab === 'DataSheet ↗' ? 'https://sensebox.de/non_img_assets/datenblaetter/pdf_output/Datenblatt-senseBox_MCU_mini.pdf' : 'https://github.com/watterott/senseBox-MCU/blob/master/hardware/senseBox-MCU_mini_v11.pdf', '_blank');
     return;
   } else {  
     if (activeTopTab === tab) {
@@ -116,35 +116,32 @@ return (
           </>
         )}
 
-          {activeBottomTab === 'Tech Specs' && (
-            <TechSpecs
-             name="MCU S2 (ESP32-S2)"
-              sku="SENSE-MCUS2-01"
-              mcu="ESP32-S2 (Single-Core 32-bit LX7)"
-              usb="USB-C® (Native USB support)"
-              ledPin="13 (Built-in)"
-              ioPins="20+ Digital I/O"
-              analogPins="ADC1 (10 channels), ADC2 (10 channels)"
-              pwmPins="Alle digitalen Pins (LED PWM)"
-              interrupts="Alle digitalen Pins"
-              wifi="802.11 b/g/n (2.4 GHz)"
-              bluetooth="Nicht verfügbar (ESP32-S2 hat nur Wi-Fi)"
-              uart="2x (Hardware UART)"
-              i2c="2x (Standard & Daisy Chain Port)"
-              spi="3x (SPI, HSPI, VSPI)"
-              ioVoltage="3.3 V"
-              inputVoltage="5 V (via USB) / 3.7 V (LiPo)"
-              sourceCurrent="40 mA"
-              sinkCurrent="28 mA"
-              processor="bis zu 240 MHz"
-              rom="128 kB"
-              sram="320 kB"
-              psram="2 MB (optional/je nach Build)"
-              flash="4 MB (Quad SPI)"
-              width="25 mm" 
-              length="55 mm"
-            />
-           )}
+   {activeBottomTab === 'Tech Specs' && (
+  <TechSpecs
+    name="MCU-Mini"
+    sku="SENSE-MCUMINI-01"
+    
+    processor="ATSAMD21G18"
+    processorDetails="ARM Cortex-M0+ der SAM D21 Familie"
+    
+    i2cPorts="2"
+    uartPorts="1"
+    spiPorts="Über XBee Sockel verfügbar"
+    digitalIOs="2 (I/O Anschluss)"
+    analogIOs="2 (I/O Anschluss)"
+    connectorSystem="QWIIC-System (JST SH4)"
+    voltage="5 V"
+    
+    xbeeSlots="1 (XBee kompatibel)"
+    dataTransferOptions="UART oder SPI Module (WLAN, LAN, LoRa, Bluetooth)"
+    sdCard="Micro-SD Karte"
+    
+    onboardFeatures="1x Lüfteranschluss (5V)"
+    
+    ioVoltage="3.3 V / 5 V"
+    inputVoltage="5 V (via USB)"
+  />
+)}
 
                  {activeBottomTab === 'Blockly' && (
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
