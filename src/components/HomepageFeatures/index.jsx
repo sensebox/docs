@@ -1,30 +1,30 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from './styles.module.css';
-import Link from '@docusaurus/Link';
-import Translate, {translate} from '@docusaurus/Translate';
-import LogoSensebox from '@site/static/img/logo.svg';
-import osem from '@site/static/img/osem.png';
-import blockly from '@site/static/img/blockly.png';
-import hardware from '@site/static/img/hardware.jpg';
-import { useBoardStore } from '@site/src/lib/stores/store';
+import React from 'react'
+import clsx from 'clsx'
+import styles from './styles.module.css'
+import Link from '@docusaurus/Link'
+import Translate, { translate } from '@docusaurus/Translate'
+import LogoSensebox from '@site/static/img/logo.svg'
+import osem from '@site/static/img/osem.png'
+import blockly from '@site/static/img/blockly.png'
+import hardware from '@site/static/img/hardware.jpg'
+import { useBoardStore } from '@site/src/lib/stores/store'
 
 // Localisation function for the title
-const translateTitle = (title) => {
-	const translations = {
-	  ':edu S2': translate({ message: ':edu S2' }),
-	  ':edu': translate({ message: ':edu' }),
-	  ':bike': translate({ message: ':bike' }),
-	  ':CO2 Ampel': translate({ message: ':CO2 Ampel' }),
-	  ':home': translate({ message: ':home' }),
-	  ':mini': translate({ message: ':mini' }),
-	  'openSenseMap': translate({ message: 'openSenseMap' }),
-	  'Blockly': translate({ message: 'Blockly' }),
-	  'Hardware Glossar': translate({ message: 'Hardware Glossar' }),
-	  'senseBox Dokumentation': translate({ message: 'senseBox Dokumentation' }), // Neue Zeile
-	};
-	return translations[title] || title;
-  };
+const translateTitle = title => {
+  const translations = {
+    ':edu S2': translate({ message: ':edu S2' }),
+    ':edu': translate({ message: ':edu' }),
+    ':bike': translate({ message: ':bike' }),
+    ':CO2 Ampel': translate({ message: ':CO2 Ampel' }),
+    ':home': translate({ message: ':home' }),
+    ':mini': translate({ message: ':mini' }),
+    openSenseMap: translate({ message: 'openSenseMap' }),
+    Blockly: translate({ message: 'Blockly' }),
+    'Hardware Glossar': translate({ message: 'Hardware Glossar' }),
+    'senseBox Dokumentation': translate({ message: 'senseBox Dokumentation' }), // Neue Zeile
+  }
+  return translations[title] || title
+}
 
 const FeatureList = [
   {
@@ -55,7 +55,7 @@ const FeatureList = [
         der Installation der Fahrradhalterung
       </Translate>
     ),
-    to: '/docs/category/bike?board=bike',
+    to: '/docs/products/bike/bike-overview?board=bike',
   },
   {
     title: translateTitle(':CO2 Ampel'),
@@ -75,7 +75,7 @@ const FeatureList = [
         Sensoren der senseBox:home findest du hier!
       </Translate>
     ),
-    to: '/docs/boards/mcu/mcu-overview?board=home',
+    to: '/docs/products/home/home-overview?board=home',
   },
   {
     title: translateTitle(':mini'),
@@ -87,7 +87,7 @@ const FeatureList = [
     ),
     to: '/docs/boards/mini/mini-overview?board=mini',
   },
-];
+]
 
 const ThumbNailPreviewList = [
   {
@@ -95,7 +95,7 @@ const ThumbNailPreviewList = [
     Image: osem,
     description: (
       <Translate>
-      Die openSenseMap als Internetplattform für offene Umweltdaten
+        Die openSenseMap als Internetplattform für offene Umweltdaten
       </Translate>
     ),
     to: 'https://docs.opensensemap.org/',
@@ -127,7 +127,7 @@ const ThumbNailPreviewList = [
     },
     to: '/docs/category/glossar',
   },
-];
+]
 
 function ThumbailPreview({ Image, title, description, onClick, to }) {
   return (
@@ -153,8 +153,11 @@ function Feature({ title, description, to }) {
 
   return (
     <Link
+      style={{
+        border: '3px dotted #fff200',
+      }}
       className={clsx(
-        'border-3 flex w-full flex-col items-center rounded-lg border-dotted border-yellow p-4 text-white shadow-2xl hover:text-white lg:w-[15%]',
+        'flex w-full flex-col items-center rounded-lg  border-yellow p-4 text-white shadow-2xl hover:text-white lg:w-[15%]',
         'hover:shadow-4xl transition duration-300 ease-in-out hover:bg-yellow hover:no-underline ',
       )}
       to={to}
@@ -169,31 +172,35 @@ function Feature({ title, description, to }) {
 }
 
 export default function HomepageFeatures() {
-	return (
-	  <section className="flex flex-col">
-		<div>
-		  <div className="flex flex-col gap-20 bg-gradient-to-r from-green to-green-3 p-8">
-			<div className="flex flex-col items-center justify-evenly  lg:flex-row">
-			  <div className="text-center text-white">
-				<h1 className="font-bold">{translateTitle('senseBox Dokumentation')}</h1>
-				<p><Translate>Der Platz für die senseBox-Dokumentation.</Translate></p>
-			  </div>
-			  <div>
-				<LogoSensebox />
-			  </div>
-			</div>
-			<div className="flex flex-wrap  justify-center gap-4 lg:flex-row">
-			  {FeatureList.map((props, idx) => (
-				<Feature key={idx} {...props} />
-			  ))}
-			</div>
-		  </div>
-		</div>
-		<div className="flex flex-col  justify-center gap-4 p-4 lg:flex-row lg:gap-0 lg:p-20">
-		  {ThumbNailPreviewList.map((props, idx) => (
-			<ThumbailPreview key={idx} {...props} />
-		  ))}
-		</div>
-	  </section>
-	)
-  }
+  return (
+    <section className="flex flex-col">
+      <div>
+        <div className="flex flex-col gap-20 bg-gradient-to-r from-green to-green-3 p-8">
+          <div className="flex flex-col items-center justify-evenly  lg:flex-row">
+            <div className="text-center text-white">
+              <h1 className="font-bold">
+                {translateTitle('senseBox Dokumentation')}
+              </h1>
+              <p>
+                <Translate>Der Platz für die senseBox-Dokumentation.</Translate>
+              </p>
+            </div>
+            <div>
+              <LogoSensebox />
+            </div>
+          </div>
+          <div className="flex flex-wrap  justify-center gap-4 lg:flex-row">
+            {FeatureList.map((props, idx) => (
+              <Feature key={idx} {...props} />
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col  justify-center gap-4 p-4 lg:flex-row lg:gap-0 lg:p-20">
+        {ThumbNailPreviewList.map((props, idx) => (
+          <ThumbailPreview key={idx} {...props} />
+        ))}
+      </div>
+    </section>
+  )
+}

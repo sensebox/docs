@@ -3,7 +3,8 @@ const bikeSidebar = {
     label: ':bike',
 	key: 'bike', 
     link: {
-      type : 'generated-index',
+    type: "doc",
+    id: "products/bike/bike-overview",
     },
     items: [
       {

@@ -3,25 +3,27 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "BrixSlab-Bold";
-  src: url("webfonts/2EF157_0_0.eot");
-  src: url("webfonts/2EF157_0_0.eot?#iefix") format("embedded-opentype"),
-    url("webfonts/2EF157_0_0.woff2") format("woff2"),
-    url("webfonts/2EF157_0_0.woff") format("woff"),
-    url("webfonts/2EF157_0_0.ttf") format("truetype");
+  font-family: 'BrixSlab-Bold';
+  src: url('webfonts/2EF157_0_0.eot');
+  src:
+    url('webfonts/2EF157_0_0.eot?#iefix') format('embedded-opentype'),
+    url('webfonts/2EF157_0_0.woff2') format('woff2'),
+    url('webfonts/2EF157_0_0.woff') format('woff'),
+    url('webfonts/2EF157_0_0.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "BrixSlab-Regular";
-  src: url("webfonts/2EF157_1_0.eot");
-  src: url("webfonts/2EF157_1_0.eot?#iefix") format("embedded-opentype"),
-    url("webfonts/2EF157_1_0.woff2") format("woff2"),
-    url("webfonts/2EF157_1_0.woff") format("woff"),
-    url("webfonts/2EF157_1_0.ttf") format("truetype");
+  font-family: 'BrixSlab-Regular';
+  src: url('webfonts/2EF157_1_0.eot');
+  src:
+    url('webfonts/2EF157_1_0.eot?#iefix') format('embedded-opentype'),
+    url('webfonts/2EF157_1_0.woff2') format('woff2'),
+    url('webfonts/2EF157_1_0.woff') format('woff'),
+    url('webfonts/2EF157_1_0.ttf') format('truetype');
 }
 
 html {
-  font-family: 'BrixSlab-Regular', "Helvetica", "Arial", sans-serif;
+  font-family: 'BrixSlab-Regular', 'Helvetica', 'Arial', sans-serif;
 }
 
 :root {
@@ -55,7 +57,7 @@ html {
   --ifm-background-surface-color: #1a1e2b;
   --ifm-footer-background-color: #15192a;
 
-  --background: 222.2 24% 15%; 
+  --background: 222.2 24% 15%;
   --foreground: 210 20% 98%;
   --card: 222.2 24% 15%;
   --card-foreground: 210 20% 98%;
@@ -76,18 +78,24 @@ html {
   --ring: 212.7 26.8% 83.9%;
 }
 
-html, body, .main, .docMainContainer, .docItemContainer, .markdown, .container {
+html,
+body,
+.main,
+.docMainContainer,
+.docItemContainer,
+.markdown,
+.container {
   background-color: var(--ifm-background-color) !important;
 }
 
 [data-theme='dark'] img {
-	filter: brightness(0.8) contrast(0.95);
-	transition: filter 0.3s ease;
-  }
-  
-  [data-theme='dark'] img:hover {
-	filter: brightness(1) contrast(1);
-  }
+  filter: brightness(0.8) contrast(0.95);
+  transition: filter 0.3s ease;
+}
+
+[data-theme='dark'] img:hover {
+  filter: brightness(1) contrast(1);
+}
 
 [data-theme='dark'] .navbar {
   background-color: #15192a !important;
@@ -129,8 +137,11 @@ html, body, .main, .docMainContainer, .docItemContainer, .markdown, .container {
 
 .dotted-background {
   background-color: var(--ifm-background-color);
-  background-image:
-    linear-gradient(90deg, rgba(128, 128, 128, 0.2) 1px, transparent 1px),
+  background-image: linear-gradient(
+      90deg,
+      rgba(128, 128, 128, 0.2) 1px,
+      transparent 1px
+    ),
     linear-gradient(180deg, rgba(128, 128, 128, 0.2) 1px, transparent 1px);
   background-size: 10px 10px;
 }
@@ -142,4 +153,30 @@ html, body, .main, .docMainContainer, .docItemContainer, .markdown, .container {
   body {
     @apply bg-background text-foreground;
   }
+}
+/* Nur Docs-MDX, nichts anderes */
+:where(.theme-doc-markdown.markdown) h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 1.5rem 0 1rem;
+}
+
+:where(.theme-doc-markdown.markdown) h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.75rem;
+}
+
+:where(.theme-doc-markdown.markdown) p {
+  margin: 0.75rem 0;
+}
+
+:where(.theme-doc-markdown.markdown) ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+:where(.theme-doc-markdown.markdown) ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
 }

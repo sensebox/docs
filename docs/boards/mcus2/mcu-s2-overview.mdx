@@ -3,141 +3,219 @@ title: MCU S2 (ESP32)
 hide_title: true
 ---
 
-import Admonition from "@theme/Admonition";
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import image from "@site/static/img/mcus2/mcus2top.png";
-import ButtonWithText from "@site/src/components/ButtonWithText/ButtonWithText";
+import Admonition from '@theme/Admonition'
+import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 import {
-	Tooltip,
-	TooltipContent,
-	TooltipProvider,
-	TooltipTrigger,
-} from "@site/src/components/ui/tooltip";
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@site/src/components/ui/tooltip'
 import {
-	Popover,
-	PopoverContent,
-} from "@site/src/components/ui/popover";
-import { Button } from "@site/src/components/ui/button";
-import mcus2ports from "@site/static/img/mcus2/mcus2-ports.png";
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@site/src/components/ui/popover'
+import { Button } from '@site/src/components/ui/button'
 import lightSensor from "@site/static/img/hardware-bilder/helligkeit-uv/sensor_helligkeit_uv.png";
 import display from "@site/static/img/hardware-bilder/oled/display.png";
 import tempSensor from "@site/static/img/hardware-bilder/temperatur-luftfeuchte/sensor_temperatur_luftfeuchte.png";
 import pressureSensor from "@site/static/img/hardware-bilder/luftdruck/bmp_top.png";
 import tofSensor from "@site/static/img/hardware-bilder/tof/tofsensor.png";
 import ledMatrix from "@site/static/img/hardware-bilder/led-matrix/led-matrix.png";
-import i2cdaiychain from "@site/static/img/hardware-bilder/i2c/i2c-daisy-chain.png";
-import ImageWithText from "@site/src/components/ImageWithText/ImageWithText";
-import mcus2top from "@site/static/img/mcus2/mcus2top.png";
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import mcus2top from '@site/static/img/mcus2/mcus2top.png'
+import mcus2ports from '@site/static/img/en/mcus2/mcus2-ports.png'
+import i2cdaiychain from '@site/static/img/hardware-bilder/i2c/i2c-daisy-chain.png'
+import ButtonWithText from '@site/src/components/ButtonWithText/ButtonWithText'
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from '@site/src/components/ui/tabs'
+import { NavGreen, NavWhite, NavBlocks } from '@site/src/components/Nav/Nav'
+import { TechSpecs } from '@site/src/components/TechSpecs/TechSpecs'
+import { PortsOverview, PortItem } from '@site/src/components/PortsOverview/PortsOverview'
 
-<div className="flex flex-col justify-center items-center">
-	<h1>MCU S2 (ESP32)</h1>
-	<p>
-		Der Mikrocontroller auf ESP-32 Basis bietet eine Vielzahl von neuen
-		Möglichkeiten in Hinsicht auf Datenübertragung, Datenaustausch und
-		Bedienung.
-	</p>
-	<div className="flex w-full flex-col items-center text-center gap-4">
-		<div>
-			<img src={mcus2ports} alt="Your Image" className="" />
-		</div>
-		<div className="flex w-full flex-col">
-			<h1 className="text-left"> Anschlüsse </h1>
-			<div className="flex flex-row justify-evenly">
-				<Popover>
-					 <ButtonWithText title="I2C/Wire Ports" />
-					<PopoverContent>
-						<div>
-							<h2>Sensoren und Accessoire an den I2C/Wire Ports</h2>
-							<div className="flex flex-col lg:flex-row">
-								<div className="flex flex-col items-center">
-									<img
-										src={lightSensor}
-										alt="Your Image"
-										className="w-[5rem] lg:w-[10rem]"
-									/>
-									<p className=" text-gray-500">Lichtsensor</p>
-								</div>
-								<div className="flex flex-col items-center">
-									<img
-										src={tempSensor}
-										alt="Your Image"
-										className="w-[5rem] lg:w-[10rem]"
-									/>
-									<p className=" text-gray-500">Temperatur und Luftfeuchte</p>
-								</div>
-								<div className="flex flex-col items-center">
-									<img
-										src={pressureSensor}
-										alt="Your Image"
-										className="w-[5rem] lg:w-[10rem]"
-									/>
-									<p className=" text-gray-500">Luftdruck</p>
-								</div>
-								<div className="flex flex-col items-center">
-									<img
-										src={tofSensor}
-										alt="Your Image"
-										className="w-[5rem] lg:w-[10rem]"
-									/>
-									<p className=" text-gray-500">Time of Flight(Tof)</p>
-								</div>
-								<div className="flex flex-col items-center">
-									<img
-										src={display}
-										alt="Your Image"
-										className="w-[5rem] lg:w-[10rem]"
-									/>
-									<p className=" text-gray-500">Display</p>
-								</div>
-							</div>
-						</div>
-					</PopoverContent>
-				</Popover>
-				<Popover>
-				 <ButtonWithText title="Digital/Analog Ports" />	
-					<PopoverContent>
-						<div>
-							<h2>Sensoren und Accessoire an den Digital/Analog Ports</h2>
-							<div className="flex flex-row justify-center">
-								<div className="flex flex-col items-center">
-									<img
-										src={ledMatrix}
-										alt="Your Image"
-										className="w-[5rem] lg:w-[10rem]"
-									/>
-									<p className="text-gray-500">LED-Matrix</p>
-								</div>
-							</div>
-						</div>
-					</PopoverContent>
-				</Popover>
-			</div>
-		</div>
-		<div className="mt-8">
-			<Admonition type="warning" title="Hinweis zur Verwendung der XBees" className="text-left">
-				<p>
-					In seltenen Fällen kann es vorkommen, dass sich noch eine Schutzfolie
-					auf den Steckplätzen der XBees befindet. Diese lässt sich vorsichtig
-					mit einer Pinzette entfernen, um die Steckplätze nutzen zu können.
-				</p>
-			</Admonition>
-		</div>
-		<div className="flex flex-col w-full">
-			<h1 className="text-left">I2C/Wire Daisy Chain</h1>
-			<p className="text-left">
-				Eine I2C-Daisy-Chain ermöglicht die einfache und effiziente Verbindung
-				mehrerer Geräte in einer seriellen Kommunikationskette unter Verwendung
-				des I2C-Protokolls. Durch die Daisy-Chain-Konfiguration kann jedes Gerät
-				in der Kette Daten senden und empfangen. Diese Methode ist besonders
-				nützlich in Anwendungen, bei denen Platz und Ressourcen begrenzt sind,
-				da sie die Anzahl der benötigten physischen Verbindungen minimiert und
-				gleichzeitig eine robuste und zuverlässige Datenkommunikation
-				ermöglicht.
-			</p>
-			<div className="flex justify-center">
-				<ImageWithText src={i2cdaiychain} title="I2C/Wire Daisy Chain" />
-			</div>
-		</div>
-	</div>
+export const MCUManager = () => {
+  const [activeTopTab, setActiveTopTab] = React.useState(null);
+  const [activeBottomTab, setActiveBottomTab] = React.useState('Features');
+  const topTabs = ['Pinout ↗', 'DataSheet ↗', 'I2C/Wire Ports', 'Digitale/Analoge Ports'];
+  const bottomTabs = ['Features', 'Hardware', 'Tech Specs', 'Blockly', 'Arduino', 'CircuitPython'];
+
+const toggleTopTab = (tab) => {
+  if(tab === 'Pinout ↗' || tab === 'DataSheet ↗') {
+      const url = tab === 'DataSheet ↗' 
+        ? 'https://sensebox.de/non_img_assets/datenblaetter/pdf_output/Datenblatt-senseBox_MCU_S2.pdf'
+        : 'https://github.com/sensebox/senseBox-MCU-S2-ESP32S2/blob/main/hardware/2.2/SenseBox-MCU-2-2.pdf';
+      window.open(url, '_blank');
+      return;
+  } else {  
+    if (activeTopTab === tab) {
+      setActiveTopTab(null);
+    } else {
+      setActiveTopTab(tab);
+    }
+  } 
+};
+
+return (
+<div className="my-8 flex-grow-3 flex-col space-y-8 "> 
+
+    <NavGreen 
+      topTabs={topTabs}
+      activeTab={activeTopTab}
+      onTabChange={toggleTopTab}
+    />
+
+{activeTopTab === 'I2C/Wire Ports' && (
+  <PortsOverview title="Sensoren und Zubehör an den I2C/Wire Anschlüssen">
+    <PortItem src={lightSensor} name="Lichtsensor" />
+    <PortItem src={tempSensor} name="Temperatur" />
+    <PortItem src={pressureSensor} name="Luftdruck" />
+    <PortItem src={tofSensor} name="ToF Sensor" />
+    <PortItem src={display} name="Display" />
+  </PortsOverview>
+)}
+
+{activeTopTab === 'Digitale/Analoge Ports' && (
+  <PortsOverview title="Sensoren und Accessoire an den Digital/Analog Ports">
+    <PortItem src={ledMatrix} name="LED-Matrix" />
+  </PortsOverview>
+)}
+
+      <NavWhite
+        bottomTabs={bottomTabs}
+        activeTab={activeBottomTab}
+        onTabChange={setActiveBottomTab}
+      />
+
+      <div className="bg-white border border-gray-200 rounded-xl p-6 dark:bg-gray-900 dark:border-gray-800 dark:text-gray-200">
+        {activeBottomTab === 'Features' && (
+          <div>
+            <h3 className="text-xl font-bold mb-4 text-black dark:text-gray-100">I2C/Wire Daisy Chain</h3>
+            <p className="text-gray-700 mb-4 dark:text-gray-200">
+              Eine I2C-Daisy-Chain ermöglicht die einfache und effiziente Verbindung mehrerer Geräte in einer seriellen Kommunikationskette unter Verwendung des I2C-Protokolls. Durch die Daisy-Chain-Konfiguration kann jedes Gerät in der Kette Daten senden und empfangen. Diese Methode ist besonders nützlich in Anwendungen, bei denen Platz und Ressourcen begrenzt sind, da sie die Anzahl der benötigten physischen Verbindungen minimiert und gleichzeitig eine robuste und zuverlässige Datenkommunikation ermöglicht.
+            </p>
+      <ImageWithText src={i2cdaiychain} title="I2C/Wire daisy chain" />
+          </div>
+        )}
+
+      {activeBottomTab === 'Hardware' && (
+          <>
+            <div className='!scale-300'>
+           <ImageWithText src={mcus2ports} title="MCU S2 Board with Ports" />
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
+              <NavBlocks href="/docs/hardware/sensors/temperatur-luftfeuchte" title="Temperatur- und Luftfeuchtesensor" />
+              <NavBlocks href="/docs/hardware/sensors/helligkeit-uv" title="Helligkeits- und UV-Sensor" />
+              <NavBlocks href="/docs/hardware/sensors/luftdruck-temperatur" title="Luftdruck- und Temperatursensor" />
+              <NavBlocks href="/docs/hardware/sensors/photodiode" title="Photodiode" />
+              <NavBlocks href="/docs/hardware/sensors/mpu6050" title="Beschleunigungssensor" />
+              <NavBlocks href="/docs/hardware/sensors/tof" title="Time-of-Flight (ToF) Sensor" />
+              <NavBlocks href="/docs/hardware/connectivity/bluetooth-bee" title="Bluetooth-Bee" />
+              <NavBlocks href="/docs/hardware/connectivity/wifi" title="Wifi" />
+              <NavBlocks href="/docs/hardware/connectivity/sd" title="SD-Modul" />
+              <NavBlocks href="/docs/hardware/sensors/display" title="OLED Display" />
+              <NavBlocks href="/docs/hardware/storage/rgb-led-esp32" title="ESP32 RGB-LED" />
+              <NavBlocks href="/docs/hardware/display/led-matrix" title="LED-Matrix" />
+              <NavBlocks href="/docs/hardware/output/cable_overview" title="Kabelübersicht" />
+            </div>
+          </>
+        )}
+
+      {activeBottomTab === 'Tech Specs' && (
+  <TechSpecs
+    name="MCU2"
+    sku="SENSE-MCU2-01"
+    
+    processor="ESP32-S2-MINI"
+    processorDetails="Single-Core 32-bit mit integrierter WiFi-Funktion"
+    
+    i2cPorts="Mehrere (QWIIC-kompatibel)"
+    uartPorts="Mehrere (inkl. XBee Sockel)"
+    spiPorts="Über XBee Sockel verfügbar"
+    digitalIOs="Mehrere digitale I/Os"
+    analogIOs="Mehrere analoge I/Os"
+    connectorSystem="QWIIC-kompatibel (JST SH)"
+    voltage="5V tolerant"
+    
+    xbeeSlots="1 (XBee kompatibel)"
+    dataTransferOptions="UART oder SPI Module (WLAN, LAN, LoRa)"
+    sdCard="Micro-SD Slot (onboard)"
+    
+    wifi="802.11 b/g/n (integriert)"
+    
+    onboardFeatures="6-achsiger Lagesensor, Lichtsensor, RGB LED, Micro SD Slot, Batterieanschluss, QWIIC System-Anschlüsse"
+    
+    ioVoltage="3.3 V / 5 V tolerant"
+    inputVoltage="5 V (via USB) / 3.7 V (externe Batterie)"
+    batterySupport="Ja (externer Batterieanschluss)"
+  />
+)}
+
+                 {activeBottomTab === 'Blockly' && (
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
+              <NavBlocks href="/docs/editors/blockly/blocks/logik" title="Entscheidung" />
+              <NavBlocks href="/docs/editors/blockly/blocks/mathematik" title="Mathematik" />
+              <NavBlocks href="/docs/editors/blockly/blocks/schleifen" title="Schleifen" />
+               <NavBlocks href="/docs/editors/blockly/blocks/sensoren" title="Sensoren" />
+              <NavBlocks href="/docs/editors/blockly/blocks/text" title="Text" />
+              <NavBlocks href="/docs/editors/blockly/blocks/variablen" title="Variablen" />
+               <NavBlocks href="/docs/editors/blockly/blocks/web/opensensemap" title="openSenseMap" />
+              <NavBlocks href="/docs/editors/blockly/blocks/web/wifi" title="Wifi" />
+              <NavBlocks href="/docs/editors/blockly/blocks/zeit" title="Zeit" />
+             </div>
+                 )}
+
+            {activeBottomTab === 'Arduino' && (
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
+              <NavBlocks href="/docs/editors/arduino/installation-arduino-ide" title="Installation der Arduino IDE" />
+              <NavBlocks href="/docs/editors/arduino/installation-bsp" title="Installation des Board-Support-Packages" />
+              <NavBlocks href="/docs/editors/arduino/first-steps" title="Erste Schritte mit Arduino IDE" />
+               <NavBlocks href="/docs/editors/arduino/libraries-hinzufuegen" title="Arduino Software Bibliotheken hinzufügen" />
+                </div>
+                 )}
+
+             {activeBottomTab === 'CircuitPython' && (
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
+              <NavBlocks href="/docs/editors/circuitpython/circuitpython_esp32" title="CircuitPython installieren" />
+              <NavBlocks href="/docs/editors/circuitpython/circpy_uninstall" title="CircuitPython deinstallieren" />
+              <NavBlocks href="/docs/editors/circuitpython/circpy_first-steps" title="Erste Schritte mit CircuitPython" />
+              <NavBlocks href="/docs/editors/circuitpython/circpy_libraries" title="CircuitPython Bibliotheken" />
+              <NavBlocks href="/docs/editors/circuitpython/circpy_supported-hardware" title="Eingeschränkte Unterstützung" />
+              <NavBlocks href="/docs/editors/circuitpython/circpy_editors" title="CircuitPython Editoren" />
+               <NavBlocks href="/docs/editors/circuitpython/circpy_osem" title="openSenseMap mit CircuitPython" />
+              <NavBlocks href="/docs/editors/circuitpython/circpy_example" title="CircuitPython Beispiel: Brick Breaker" />
+             </div>
+                 )}
+        
+      </div>
+    </div>
+  );
+};
+
+
+<div className="flex flex-col md:flex-row items-start justify-between mb-8">
+  <div className="flex-1">
+    <h1 className="text-4xl font-bold text-black dark:text-gray-100">
+      MCU S2 (ESP32)
+    </h1>
+    <p className="text-lg text-gray-700 mb-8 text-black dark:text-gray-100">
+      Der Mikrocontroller auf ESP-32 Basis bietet eine Vielzahl von neuen
+      Möglichkeiten in Hinsicht auf Datenübertragung, Datenaustausch und
+      Bedienung.
+    </p>
+    
+
+<ButtonWithText href="/docs/boards/mcus2/mcus2-in-betrieb-nehmen" title="Los geht's"/>
+
+  </div>
+  <div className="ml-0 md:ml-9 mt-4 md:mt-0 ">
+   <ImageWithText src={mcus2top} title="MCU S2 Board"  />
+  </div>
 </div>
+
+<MCUManager />

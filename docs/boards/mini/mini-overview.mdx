@@ -10,57 +10,188 @@ import miniRgbLed from '@site/static/img/mini/mini-rgb-led.png'
 import wifiBee from '@site/static/img/hardware-bilder/bees/wifi-bee/wifi.png'
 import display from '@site/static/img/hardware-bilder/oled/display.png'
 import Admonition from '@theme/Admonition';
+import React, { useState } from 'react'
+import { Button } from '@site/src/components/ui/button'
+import ButtonWithText from '@site/src/components/ButtonWithText/ButtonWithText'
+import { NavGreen, NavWhite, NavBlocks } from '@site/src/components/Nav/Nav'
+import { TechSpecs } from '@site/src/components/TechSpecs/TechSpecs'
+import { PortsOverview, PortItem } from '@site/src/components/PortsOverview/PortsOverview'
 
-<div className="flex flex-col items-center justify-center">
-  <h1> senseBox:mini </h1>
-  <p>
-    Die senseBox:mini ist dein Einstieg in die Welt der Mikrocontroller und der
-    Programmierung. Baue kleine Umweltmessstationen, erfasse deine Umwelt mit
-    Sensoren und teile alles online.
-  </p>
-  <div>
-    <ImageWithText src={mini} title="senseBox:mini" alt="senseBox:mini" />
-  </div>
-</div>
+export const MCUManager = () => {
+  const [activeTopTab, setActiveTopTab] = React.useState(null);
+  const [activeBottomTab, setActiveBottomTab] = React.useState('Features');
+  const topTabs = ['Pinout ↗', 'DataSheet ↗', 'Schnittstellen', 'Sensoren'];
+  const bottomTabs = ['Features', 'Hardware', 'Tech Specs', 'Blockly', 'Arduino'];
 
-## Technische Details
+const toggleTopTab = (tab) => {
+  if(tab === 'Pinout ↗' || tab === 'DataSheet ↗') {
+    window.open(tab === 'DataSheet ↗' ? 'https://sensebox.de/non_img_assets/datenblaetter/pdf_output/Datenblatt-senseBox_MCU_mini.pdf' : 'https://github.com/watterott/senseBox-MCU/blob/master/hardware/senseBox-MCU_mini_v11.pdf', '_blank');
+    return;
+  } else {  
+    if (activeTopTab === tab) {
+      setActiveTopTab(null);
+    } else {
+      setActiveTopTab(tab);
+    }
+  } 
+};
 
-In der senseBox:mini sind folgende Komponenten enthalten:
+return (
+<div className="my-8 flex-grow-3 flex-col space-y-8 "> 
 
-<div className="flex items-center justify-evenly gap-4 align">
-  <ImageWithText src={umweltsensor} title="Umweltsensor" />
-  <div className="flex flex-col items-center">
-    <img className="w-[16rem]" src={miniRgbLed} alt="Neopixel RGB LED" />
-    <p className="mt-2 text-sm text-gray-500">Neopixel RGB LED</p>
-  </div>
-  <ImageWithText src={wifiBee} title="WiFi-Bee" />
-  <ImageWithText src={display} title="OLED Display" />
-</div>
+    <NavGreen 
+      topTabs={topTabs}
+      activeTab={activeTopTab}
+      onTabChange={toggleTopTab}
+    />
 
-Darüber hinaus ist auf dem Board ein SD-Kartenmodul verbaut und gibt folgende Schnittstellen:
+{activeTopTab === 'Schnittstellen' && (
+  <PortsOverview title="Schnittstellen von dem SD-Kartenmodul">
+    <ul className="list-disc list-inside space-y-2">
+          <li>2x I2C)</li>
+          <li>1x UART</li>
+          <li>1x Digital Analog Port</li>
+        </ul>
+  </PortsOverview>
+)}
 
-- 2x I2C
-- 1x UART
-- 1x Digital Analog Port
-
-<div className="mt-8">
-  <Admonition type="warning" title="Hinweis zur Verwendung der XBees">
+{activeTopTab === 'Sensoren' && (
+  <>
+  <PortsOverview title="Sensoren und Zubehör an den UART/Serielle Anschlüssen">
+      <PortItem src={wifiBee} name="WiFi Bee" />
+          <PortItem src={display} name="OLED Display" />
+          <PortItem src={umweltsensor} name="Umweltsensor" />
+          <PortItem src={miniRgbLed} name="Neopixel RGB LED" />
+  </PortsOverview>
+    <div className="mt-8">
+    <Admonition type="warning" title="Hinweis zur Verwendung der XBees">
     <p>
       In seltenen Fällen kann es vorkommen, dass sich noch eine Schutzfolie
       auf den Steckplätzen der XBees befindet. Diese lässt sich vorsichtig
       mit einer Pinzette entfernen, um die Steckplätze nutzen zu können.
-    </p>
-  </Admonition>
+      </p>
+     </Admonition>
+    </div>
+</>
+)}
+
+      <NavWhite
+        bottomTabs={bottomTabs}
+        activeTab={activeBottomTab}
+        onTabChange={setActiveBottomTab}
+      />
+
+      <div className="bg-white border border-gray-200 rounded-xl p-6 dark:bg-gray-900 dark:border-gray-800 dark:text-gray-200">
+        {activeBottomTab === 'Features' && (
+          <div>
+            <h3 className="text-xl font-bold mb-4 text-black dark:text-gray-100"> Kleiner Computer mit großem Spaß</h3>
+            <p className="text-gray-700 mb-4 dark:text-gray-200">
+          Mit der senseBox:mini wird das Coden zum Kinderspiel. Der Einstieg in die Programmierung der senseBox ist einfach, Kinder und Erwachsene können ohne Vorkenntnisse sofort starten und in kürzester Zeit Erfolgserlebnisse feiern. Vom Blinken der eingebauten RGB LED, Datenspeicherung auf SD-Karte, bis hin zur IoT-Umweltmessstation ist alles möglich.
+			 </p>
+
+			<h3 className="text-xl font-bold mb-4 text-black dark:text-gray-100">Das Internet of Things</h3>
+            <p className="text-gray-700 mb-4 dark:text-gray-200">
+			Im Internet of Things (IoT) sind physische und virtuelle Gegenstände miteinander vernetzt. Mit der senseBox:mini kannst du deine eigenen IoT-Devices bauen und programmieren und so Einblicke in Technologien (Stichwort Smart Cities, Smart Home) erhalten, die unseren Alltag revolutionieren werden.
+             </p>
+			 		 
+			<h3 className="text-xl font-bold mb-4 text-black dark:text-gray-100"> Frei erweiterbar</h3>
+            <p className="text-gray-700 mb-4 dark:text-gray-200">
+			Die senseBox:mini ist nicht auf die enthaltene Hardware begrenzt. Du kannst jeden senseBox-Sensor anschließen und mithilfe unserer grafischen Programmieroberfläche programmieren. Die senseBox MCU ist außerdem vollständig Arduino kompatibel
+     </p>
+          </div>
+        )}
+
+      {activeBottomTab === 'Hardware' && (
+          <>
+       
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
+              <NavBlocks href="/docs/hardware/bee/wifi-bee" title="Wifi-Bee" />
+              <NavBlocks href="/docs/hardware/bee/sd-bee" title="SD-Bee" />
+              <NavBlocks href="/docs/hardware/sensors/display" title="OLED Display" />
+              <NavBlocks href="/docs/hardware/sensors/umweltsensor" title="Umweltsensor" />
+              <NavBlocks href="/docs/hardware/accessoires/rgb-led" title="RGB-LED" />
+              <NavBlocks href="/docs/hardware/sensors/niederschlag-rg15" title="Niederschlagsensor" />
+              <NavBlocks href="/docs/hardware/accessoires/cable_overview" title="Kabelübersicht" />
+            </div>
+          </>
+        )}
+
+   {activeBottomTab === 'Tech Specs' && (
+  <TechSpecs
+    name="MCU-Mini"
+    sku="SENSE-MCUMINI-01"
+    
+    processor="ATSAMD21G18"
+    processorDetails="ARM Cortex-M0+ der SAM D21 Familie"
+    
+    i2cPorts="2"
+    uartPorts="1"
+    spiPorts="Über XBee Sockel verfügbar"
+    digitalIOs="2 (I/O Anschluss)"
+    analogIOs="2 (I/O Anschluss)"
+    connectorSystem="QWIIC-System (JST SH4)"
+    voltage="5 V"
+    
+    xbeeSlots="1 (XBee kompatibel)"
+    dataTransferOptions="UART oder SPI Module (WLAN, LAN, LoRa, Bluetooth)"
+    sdCard="Micro-SD Karte"
+    
+    onboardFeatures="1x Lüfteranschluss (5V)"
+    
+    ioVoltage="3.3 V / 5 V"
+    inputVoltage="5 V (via USB)"
+  />
+)}
+
+                 {activeBottomTab === 'Blockly' && (
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
+              <NavBlocks href="/docs/editors/blockly/blocks/logik" title="Entscheidung" />
+              <NavBlocks href="/docs/editors/blockly/blocks/mathematik" title="Mathematik" />
+              <NavBlocks href="/docs/editors/blockly/blocks/schleifen" title="Schleifen" />
+               <NavBlocks href="/docs/editors/blockly/blocks/sensoren" title="Sensoren" />
+              <NavBlocks href="/docs/editors/blockly/blocks/text" title="Text" />
+              <NavBlocks href="/docs/editors/blockly/blocks/variablen" title="Variablen" />
+               <NavBlocks href="/docs/editors/blockly/blocks/web/opensensemap" title="openSenseMap" />
+              <NavBlocks href="/docs/editors/blockly/blocks/web/wifi" title="Wifi" />
+              <NavBlocks href="/docs/editors/blockly/blocks/zeit" title="Zeit" />
+             </div>
+                 )}
+
+            {activeBottomTab === 'Arduino' && (
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
+              <NavBlocks href="/docs/editors/arduino/installation-arduino-ide" title="Installation der Arduino IDE" />
+              <NavBlocks href="/docs/editors/arduino/installation-bsp" title="Installation des Board-Support-Packages" />
+			        <NavBlocks href="/docs/boards/mcu/mcu-sensebox-io-library" title="senseBoxIO Library" />
+			        <NavBlocks href="/docs/editors/arduino/libraries-hinzufuegen" title="Arduino Software Bibliotheken hinzufügen" />
+			        <NavBlocks href="/docs/editors/arduino/first-steps" title="Erste Schritte mit Arduino IDE" />
+                </div>
+                 )}
+
+        
+      </div>
+    </div>
+  );
+};
+
+
+<div className="flex flex-col md:flex-row items-start justify-between mb-8">
+  <div className="flex-1">
+    <h1 className="text-4xl font-bold text-black dark:text-gray-100">
+      senseBox:mini 
+    </h1>
+    <p className="text-lg text-gray-700 mb-7 text-black dark:text-gray-100">
+      Die senseBox:mini ist dein Einstieg in die Welt der Mikrocontroller und der
+    Programmierung. Baue kleine Umweltmessstationen, erfasse deine Umwelt mit
+    Sensoren und teile alles online.
+	</p>
+    
+
+<ButtonWithText href="/docs/boards/mcu/mcu-revisions" title="Los geht's"/>
+
+  </div>
+  <div className="ml-0 md:ml-9 mt-4 md:mt-0 ">
+     <ImageWithText src={mini} title="senseBox:mini" alt="senseBox:mini" />
+  </div>
 </div>
 
-## Kleiner Computer mit großem Spaß
-
-Mit der senseBox:mini wird das Coden zum Kinderspiel. Der Einstieg in die Programmierung der senseBox ist einfach, Kinder und Erwachsene können ohne Vorkenntnisse sofort starten und in kürzester Zeit Erfolgserlebnisse feiern. Vom Blinken der eingebauten RGB LED, Datenspeicherung auf SD-Karte, bis hin zur IoT-Umweltmessstation ist alles möglich.
-
-## Das Internet of Things
-
-Im Internet of Things (IoT) sind physische und virtuelle Gegenstände miteinander vernetzt. Mit der senseBox:mini kannst du deine eigenen IoT-Devices bauen und programmieren und so Einblicke in Technologien (Stichwort Smart Cities, Smart Home) erhalten, die unseren Alltag revolutionieren werden.
-
-## Frei erweiterbar
-
-Die senseBox:mini ist nicht auf die enthaltene Hardware begrenzt. Du kannst jeden senseBox-Sensor anschließen und mithilfe unserer grafischen Programmieroberfläche programmieren. Die senseBox MCU ist außerdem vollständig Arduino kompatibel
+<MCUManager />
