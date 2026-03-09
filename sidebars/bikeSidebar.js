@@ -19,7 +19,9 @@ const bikeSidebar = {
 		  key: 'bike-app', 
           items: [
             "products/bike/app/download", 
+            "products/bike/app/setup",
             "products/bike/app/benutzung",
+            "products/bike/app/troubleshooting"
           ]
         },
         {
@@ -38,12 +40,6 @@ const bikeSidebar = {
           label: "Pflegehinweise für die senseBox:bike",
 		  key: 'bike-care',
           id: 'products/bike/misc/care'
-        }, 
-        {
-          type:'doc', 
-          label: 'Fehlerbehebung',
-		  key: 'bike-errors',
-          id: 'products/bike/misc/errors' 
         }
     ]
   }
