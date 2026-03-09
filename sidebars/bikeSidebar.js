@@ -38,12 +38,6 @@ const bikeSidebar = {
           label: "Pflegehinweise für die senseBox:bike",
 		  key: 'bike-care',
           id: 'products/bike/misc/care'
-        }, 
-        {
-          type:'doc', 
-          label: 'Fehlerbehebung',
-		  key: 'bike-errors',
-          id: 'products/bike/misc/errors' 
         }
     ]
   }
