@@ -19,7 +19,9 @@ const bikeSidebar = {
 		  key: 'bike-app', 
           items: [
             "products/bike/app/download", 
+            "products/bike/app/setup",
             "products/bike/app/benutzung",
+            "products/bike/app/troubleshooting"
           ]
         },
         {

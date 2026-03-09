@@ -123,6 +123,14 @@
     "message": "Mount",
     "description": "The label for the doc item Halterung in sidebar senseBoxSidebar, linking to the doc products/bike/halterung/installation"
   },
+  "sidebar.senseBoxSidebar.doc.Ersteinrichtung der senseBox:bike": {
+    "message": "Initial Setup",
+    "description": "The label for the doc item Ersteinrichtung der senseBox:bike in sidebar senseBoxSidebar, linking to the doc products/bike/app/setup"
+  },
+  "sidebar.senseBoxSidebar.doc.Fehlerbehebung": {
+    "message": "Troubleshooting",
+    "description": "The label for the doc item Fehlerbehebung in sidebar senseBoxSidebar, linking to the doc products/bike/app/troubleshooting"
+  },
   "sidebar.senseBoxSidebar.doc.Pflegehinweise für die senseBox:bike": {
     "message": "Care Instructions for the senseBox:bike",
     "description": "The label for the doc item Pflegehinweise für die senseBox:bike in sidebar senseBoxSidebar, linking to the doc products/bike/misc/care"
