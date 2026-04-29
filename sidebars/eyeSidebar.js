@@ -33,7 +33,6 @@ const eyeSidebar = {
       label: 'Hardware',
 	  key: 'eye-hardware',
       items: [
-        'boards/eye/eye-ports-and-pins',
         'hardware/eye/camera',
         'hardware/eye/icm20948',
         'hardware/eye/rgb-led-esp32',
@@ -41,7 +40,8 @@ const eyeSidebar = {
         'hardware/eye/ble',
         'hardware/eye/lora',
         'hardware/eye/sd',
-        'hardware/eye/button'
+        'hardware/eye/button',
+        'boards/eye/eye-ports-and-pins'
       ],
     },
     {
