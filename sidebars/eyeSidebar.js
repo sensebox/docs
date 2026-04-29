@@ -40,7 +40,8 @@ const eyeSidebar = {
         'hardware/eye/wifi',
         'hardware/eye/ble',
         'hardware/eye/lora',
-        'hardware/eye/sd'
+        'hardware/eye/sd',
+        'hardware/eye/button'
       ],
     },
     {
