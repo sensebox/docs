@@ -107,16 +107,17 @@ return (
       {activeBottomTab === 'Hardware' && (
           <>
             <div className='!scale-300'>
-           <ImageWithText src={portsOnboardWhite} title="Eye Board with Ports" />
+           <ImageWithText src={portsOnboardWhite} title="Anschlüsse und Komponenten der Eye" />
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
                           <NavBlocks href="/docs/hardware/eye/camera" title="Kamera" />
               <NavBlocks href="/docs/hardware/eye/icm20948" title="Beschleunigungssensor" />
               <NavBlocks href="/docs/hardware/eye/rgb-led-esp32" title="RGB-LED" />
-              <NavBlocks href="/docs/hardware/eye/wifi" title="Wifi" />
+              <NavBlocks href="/docs/hardware/eye/wifi" title="WiFi" />
               <NavBlocks href="/docs/hardware/eye/ble" title="Bluetooth" />
               <NavBlocks href="/docs/hardware/eye/lora" title="LoRa" />
               <NavBlocks href="/docs/hardware/eye/sd" title="SD-Karte" />
+              <NavBlocks href="/docs/hardware/eye/button" title="Taster" />
 
             </div>
           </>
