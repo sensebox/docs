@@ -1,0 +1,144 @@
+---
+title: Kamera
+---
+
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import camera from '@site/static/img/eye/camera.png'
+import { useBoardStore } from '@site/src/lib/stores/store'
+
+# Kamera (OV2640)
+
+Mit der Kamera kannst du Farbbilder in einer Auflösung von bis zu 1600x1200 Pixeln aufnehmen.
+
+<ImageWithText size="xl" src={camera} title="OV2640 auf der senseBox Eye" />
+
+:::success Hinweis
+Die senseBox Eye wird bereits mit einer angeschlossenen Kamera ausgeliefert. Behandele vorallem das orangene Flachbandkabel der Kamera mit vorsicht.
+:::
+
+## Programmierung (Arduino)
+
+Dieser Sketch nimmt kontinuierlich Bilder mit der Kamera auf und zeigt diese auf dem OLED-Display an
+
+```cpp
+#include "esp_camera.h"
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+#include "soc/soc.h"
+#include "soc/rtc_cntl_reg.h"
+#include "driver/rtc_io.h"
+
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+#define OLED_RESET -1
+
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+
+void setup() {
+  Wire.begin();
+  Serial.begin(115200);
+  delay(100);
+
+  // Init OLED
+  
+  display.begin(SSD1306_SWITCHCAPVCC, 0x3D);
+  display.setRotation(2);
+  display.display();
+  delay(100);
+  display.clearDisplay();
+  display.setTextSize(1);
+  display.setTextColor(WHITE);
+  display.setCursor(0, 0);
+  display.println("Initializing...");
+  display.display();
+
+  // Camera config
+  camera_config_t config;
+  config.ledc_channel = LEDC_CHANNEL_0;
+  config.ledc_timer = LEDC_TIMER_0;
+  config.pin_d0 = Y2_GPIO_NUM;
+  config.pin_d1 = Y3_GPIO_NUM;
+  config.pin_d2 = Y4_GPIO_NUM;
+  config.pin_d3 = Y5_GPIO_NUM;
+  config.pin_d4 = Y6_GPIO_NUM;
+  config.pin_d5 = Y7_GPIO_NUM;
+  config.pin_d6 = Y8_GPIO_NUM;
+  config.pin_d7 = Y9_GPIO_NUM;
+  config.pin_xclk = XCLK_GPIO_NUM;
+  config.pin_pclk = PCLK_GPIO_NUM;
+  config.pin_vsync = VSYNC_GPIO_NUM;
+  config.pin_href = HREF_GPIO_NUM;
+  config.pin_sccb_sda = SIOD_GPIO_NUM;
+  config.pin_sccb_scl = SIOC_GPIO_NUM;
+  config.pin_pwdn = PWDN_GPIO_NUM;
+  config.pin_reset = RESET_GPIO_NUM;
+  config.xclk_freq_hz = 20000000;
+  config.pixel_format = PIXFORMAT_GRAYSCALE;
+  config.frame_size = FRAMESIZE_96X96; // Small grayscale image
+  config.jpeg_quality = 12;
+  config.fb_count = 1;
+  config.fb_location = CAMERA_FB_IN_DRAM;
+  config.grab_mode = CAMERA_GRAB_WHEN_EMPTY;
+
+  // Initialize camera
+  Serial.println("Init camera...");
+  esp_err_t err = esp_camera_init(&config);
+  if (err != ESP_OK) {
+    Serial.printf("Camera init failed: 0x%x", err);
+    display.println("Camera init failed!");
+    display.display();
+    return;
+  }
+}
+
+void loop() {
+  // Capture image
+  camera_fb_t *fb = esp_camera_fb_get();
+  if (!fb) {
+    Serial.println("Capture failed");
+    display.println("Capture failed!");
+    display.display();
+    return;
+  }
+
+  // Prepare to draw
+  display.clearDisplay();
+
+  const int srcWidth = 96;
+  const int srcHeight = 96;
+  const int targetHeight = 64;
+  const int targetWidth = 64;
+  const int xOffset = (SCREEN_WIDTH - targetWidth) / 2;  // 32
+
+  // Simple nearest-neighbor downscaling from 96x96 -> 64x64
+  for (int y = 0; y < targetHeight; y++) {
+    for (int x = 0; x < targetWidth; x++) {
+      // Map target (x, y) to source (sx, sy)
+      int sx = x * srcWidth / targetWidth;
+      int sy = y * srcHeight / targetHeight;
+      uint8_t pixel = fb->buf[sy * srcWidth + sx];
+
+      if (pixel > 128) {
+        display.drawPixel(x + xOffset, y, WHITE);
+      } else {
+        display.drawPixel(x + xOffset, y, BLACK);
+      }
+    }
+  }
+
+  display.display();
+  esp_camera_fb_return(fb);
+  delay(10);
+}
+```
+
+Schließe dafür den OLED-Display am QWIIC Port der Eye an.
+
+![](/img/eye/display.png)
+
+## Programmierung (Blockly)
+
+In Blockly kannst du den Sensor über folgenden Block auslesen:
+
+![](/img/eye/camera-block.svg)

@@ -87,6 +87,16 @@ const FeatureList = [
     ),
     to: '/docs/boards/mini/mini-overview?board=mini',
   },
+  {
+    title: translateTitle('Eye'),
+    description: (
+      <Translate>
+        Alle relevanten Informationen zum senseBox board mit Kamera findest
+        du hier!
+      </Translate>
+    ),
+    to: '/docs/boards/eye/eye-overview?board=eye',
+  },
 ]
 
 const ThumbNailPreviewList = [
