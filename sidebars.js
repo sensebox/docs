@@ -1,5 +1,6 @@
 import glossarSidebar from './sidebars/glossarSidebar'
 
+const eyeSidebar = require('./sidebars/eyeSidebar')
 const eduSidebar = require('./sidebars/eduSidebar')
 const eduS2Sidebar = require('./sidebars/eduS2Sidebar')
 const bikeSidebar = require('./sidebars/bikeSidebar')
@@ -10,6 +11,7 @@ const blocklySidebar = require('./sidebars/blocklySidebar')
 
 export default {
   senseBoxSidebar: [
+    eyeSidebar,
     eduS2Sidebar,
     eduSidebar,
     bikeSidebar,

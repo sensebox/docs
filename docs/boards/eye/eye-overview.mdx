@@ -1,5 +1,5 @@
 ---
-title: MCU S2 (ESP32)
+title: Eye
 hide_title: true
 ---
 
@@ -25,9 +25,10 @@ import pressureSensor from "@site/static/img/hardware-bilder/luftdruck/bmp_top.p
 import tofSensor from "@site/static/img/hardware-bilder/tof/tofsensor.png";
 import ledMatrix from "@site/static/img/hardware-bilder/led-matrix/led-matrix.png";
 import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
-import mcus2top from '@site/static/img/mcus2/mcus2top.png'
-import mcus2ports from '@site/static/img/en/mcus2/mcus2-ports.png'
-import i2cdaiychain from '@site/static/img/hardware-bilder/i2c/i2c-daisy-chain.png'
+import eye from '@site/static/img/eye/eye.png'
+import eyetop from '@site/static/img/eye/eyetop.png'
+import portsOnboardWhite from '@site/static/img/eye/ports-onboard-white.png'
+import i2cdaiychain from '@site/static/img/eye/I2C-daisy.png'
 import ButtonWithText from '@site/src/components/ButtonWithText/ButtonWithText'
 import {
   Tabs,
@@ -42,14 +43,14 @@ import { PortsOverview, PortItem } from '@site/src/components/PortsOverview/Port
 export const MCUManager = () => {
   const [activeTopTab, setActiveTopTab] = React.useState(null);
   const [activeBottomTab, setActiveBottomTab] = React.useState('Features');
-  const topTabs = ['I2C/Wire Ports', 'Digitale/Analoge Ports','Pinout ↗', 'DataSheet ↗'];
+  const topTabs = ['Pinout ↗', 'DataSheet ↗', 'I2C/Wire Ports', 'Digitale/Analoge Ports'];
   const bottomTabs = ['Features', 'Hardware', 'Tech Specs', 'Blockly', 'Arduino', 'CircuitPython'];
 
 const toggleTopTab = (tab) => {
   if(tab === 'Pinout ↗' || tab === 'DataSheet ↗') {
       const url = tab === 'DataSheet ↗' 
-        ? 'https://sensebox.de/non_img_assets/datenblaetter/pdf_output/Datenblatt-senseBox_MCU_S2.pdf'
-        : 'https://github.com/sensebox/senseBox-MCU-S2-ESP32S2/blob/main/hardware/2.2/SenseBox-MCU-2-2.pdf';
+        ? 'https://sensebox.de/non_img_assets/datenblaetter/pdf_output/Datenblatt-senseBox_Eye.pdf'
+        : 'https://github.com/sensebox/senseBox_Eye/blob/main/hardware/schematics/v1.4/SenseBox-Eye_v1.4.pdf';
       window.open(url, '_blank');
       return;
   } else {  
@@ -106,22 +107,17 @@ return (
       {activeBottomTab === 'Hardware' && (
           <>
             <div className='!scale-300'>
-           <ImageWithText src={mcus2ports} title="MCU S2 Board with Ports" />
+           <ImageWithText src={portsOnboardWhite} title="Anschlüsse und Komponenten der Eye" />
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
-                          <NavBlocks href="/docs/hardware/sensors/temperatur-luftfeuchte" title="Temperatur- und Luftfeuchtesensor" />
-              <NavBlocks href="/docs/hardware/sensors/helligkeit-uv" title="Helligkeits- und UV-Sensor" />
-              <NavBlocks href="/docs/hardware/sensors/luftdruck-temperatur" title="Luftdruck- und Temperatursensor" />
-              <NavBlocks href="/docs/hardware/sensors/photodiode" title="Photodiode" />
-              <NavBlocks href="/docs/hardware/sensors/mpu6050" title="Beschleunigungssensor" />
-              <NavBlocks href="/docs/hardware/sensors/tof" title="Time-of-Flight (ToF) Sensor" />
-              <NavBlocks href="/docs/hardware/bee/bluetooth-bee" title="Bluetooth-Bee" />
-              <NavBlocks href="/docs/hardware/bee/wifi-bee" title="WiFi" />
-              <NavBlocks href="/docs/hardware/bee/sd-bee" title="SD-Modul" />
-              <NavBlocks href="/docs/hardware/accessoires/display" title="OLED Display" />
-              <NavBlocks href="/docs/hardware/accessoires/rgb-led-esp32" title="ESP32 RGB-LED" />
-              <NavBlocks href="/docs/hardware/accessoires/led-matrix" title="LED-Matrix" />
-              <NavBlocks href="/docs/hardware/accessoires/cable_overview" title="Kabelübersicht" />
+                          <NavBlocks href="/docs/hardware/eye/camera" title="Kamera" />
+              <NavBlocks href="/docs/hardware/eye/icm20948" title="Beschleunigungssensor" />
+              <NavBlocks href="/docs/hardware/eye/rgb-led-esp32" title="RGB-LED" />
+              <NavBlocks href="/docs/hardware/eye/wifi" title="WiFi" />
+              <NavBlocks href="/docs/hardware/eye/ble" title="Bluetooth" />
+              <NavBlocks href="/docs/hardware/eye/lora" title="LoRa" />
+              <NavBlocks href="/docs/hardware/eye/sd" title="SD-Karte" />
+              <NavBlocks href="/docs/hardware/eye/button" title="Taster" />
 
             </div>
           </>
@@ -129,27 +125,25 @@ return (
 
       {activeBottomTab === 'Tech Specs' && (
   <TechSpecs
-    name="MCU2"
-    sku="SB-105"
+    name="Eye"
+    sku="SB-150"
     
-    processor="ESP32-S2-MINI"
-    processorDetails="Dual-Core 32-bit mit integrierter WiFi-Funktion"
+    processor="ESP32-S3-WROOM"
+    processorDetails="Dual-Core 32-bit mit integrierter WiFi- und BLE-Funktion"
     
-    i2cPorts="Mehrere (QWIIC-kompatibel)"
-    uartPorts="Mehrere (inkl. XBee Sockel)"
-    spiPorts="Über XBee Sockel verfügbar"
+    i2cPorts="Ein QWIIC-kompatibler"
     digitalIOs="Mehrere digitale I/Os"
     analogIOs="Mehrere analoge I/Os"
     connectorSystem="QWIIC-kompatibel (JST SH)"
     voltage="5V tolerant"
     
-    xbeeSlots="1 (XBee kompatibel)"
-    dataTransferOptions="UART oder SPI Module (WLAN, LAN, LoRa)"
+    dataTransferOptions="UART oder SPI Module (WLAN, BLE, LAN, LoRa)"
     sdCard="Micro-SD Slot (onboard)"
     
     wifi="802.11 b/g/n (integriert)"
+    bluetooth="integriert"
     
-    onboardFeatures="6-achsiger Lagesensor, Lichtsensor, RGB LED, Micro SD Slot, Batterieanschluss, QWIIC System-Anschlüsse"
+    onboardFeatures="kameraanschluss, 6-achsiger Lagesensor, Lichtsensor, RGB LED, Micro SD Slot, Batterieanschluss, QWIIC System-Anschlüsse"
     
     ioVoltage="3.3 V / 5 V tolerant"
     inputVoltage="5 V (via USB) / 3.7 V (externe Batterie)"
@@ -202,12 +196,10 @@ return (
 <div className="flex flex-col md:flex-row items-start justify-between mb-8">
   <div className="flex-1">
     <h1 className="text-4xl font-bold text-black dark:text-gray-100">
-      MCU S2 (ESP32)
+      senseBox Eye
     </h1>
     <p className="text-lg text-gray-700 mb-8 text-black dark:text-gray-100">
-      Der Mikrocontroller auf ESP-32 Basis bietet eine Vielzahl von neuen
-      Möglichkeiten in Hinsicht auf Datenübertragung, Datenaustausch und
-      Bedienung.
+      Die senseBox Eye erweitert die senseBox-Familie um eine leistungsstarke Platine für Bildverarbeitung, KI und vernetzte Anwendungen. Mit dem ESP32-S3 Prozessor bietet sie genügend Rechenleistung für Machine-Learning-Anwendungen direkt auf dem Mikrocontroller. Die integrierte Kamera, der Beschleunigungssensor sowie Kommunikationsmöglichkeiten wie LoRa, WLAN und BLE ermöglichen vielseitige Projekte.
     </p>
     
 
@@ -215,7 +207,7 @@ return (
 
   </div>
   <div className="ml-0 md:ml-9 mt-4 md:mt-0 ">
-   <ImageWithText src={mcus2top} title="MCU S2 Board"  />
+   <ImageWithText src={eye} title="Eye Board"  />
   </div>
 </div>
 

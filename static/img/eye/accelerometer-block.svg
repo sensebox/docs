@@ -1,0 +1,1104 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="276.6000061035156" height="56" viewBox="36 25 276.6000061035156 56">
+                  <defs><style type="text/css" xmlns="http://www.w3.org/1999/xhtml"><![CDATA[.blocklyText, 
+.blocklyFlyoutLabelText {
+font: normal 11pt sans-serif;
+}
+.blocklyText {
+fill: #fff;
+}
+.blocklyNonEditableField>rect,
+.blocklyEditableField>rect {
+fill: #fff;
+fill-opacity: .6;
+stroke: none;
+}
+.blocklyNonEditableField>text,
+.blocklyEditableField>text {
+fill: #000;
+}
+.blocklyFlyoutLabelText {
+fill: #000;
+}
+.blocklyText.blocklyBubbleText {
+fill: #000;
+}
+.blocklyEditableField:not(.blocklyEditing):hover>rect {
+stroke: #fff;
+stroke-width: 2;
+}
+.blocklyHtmlInput {
+font-family: sans-serif;
+font-weight: normal;
+}
+.blocklySelected>.blocklyPath {
+stroke: #fc3;
+stroke-width: 3px;
+}
+.blocklyHighlightedConnectionPath {
+stroke: #fc3;
+}
+.blocklyPath {
+fill-opacity: .5;
+}
+.blocklyPathLight,
+.blocklyPathDark {
+display: none;
+}
+.blocklyInsertionMarker>.blocklyPath {
+fill-opacity: 0.2;
+stroke: none;
+}
+.blocklyInsertionMarker>.blocklyPathLight,
+.blocklyInsertionMarker>.blocklyPathDark {
+fill-opacity: 0.2;
+stroke: none;
+}
+.blocklySvg {
+  background-color: #fff;
+  outline: none;
+  overflow: hidden;  /* IE overflows by default. */
+  position: absolute;
+  display: block;
+}
+
+.blocklyWidgetDiv {
+  display: none;
+  position: absolute;
+  z-index: 99999;  /* big value for bootstrap3 compatibility */
+}
+
+.injectionDiv {
+  height: 100%;
+  position: relative;
+  overflow: hidden;  /* So blocks in drag surface disappear at edges */
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.blocklyBlockCanvas.blocklyCanvasTransitioning,
+.blocklyBubbleCanvas.blocklyCanvasTransitioning {
+  transition: transform .5s;
+}
+
+.blocklyEmboss {
+  filter: var(--blocklyEmbossFilter);
+}
+
+.blocklyTooltipDiv {
+  background-color: #ffffc7;
+  border: 1px solid #ddc;
+  box-shadow: 4px 4px 20px 1px rgba(0,0,0,.15);
+  color: #000;
+  display: none;
+  font: 9pt sans-serif;
+  opacity: .9;
+  padding: 2px;
+  position: absolute;
+  z-index: 100000;  /* big value for bootstrap3 compatibility */
+}
+
+.blocklyDropDownDiv {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  display: none;
+  border: 1px solid;
+  border-color: #dadce0;
+  background-color: #fff;
+  border-radius: 2px;
+  padding: 4px;
+  box-shadow: 0 0 3px 1px rgba(0,0,0,.3);
+}
+
+.blocklyDropDownDiv:focus {
+  box-shadow: 0 0 6px 1px rgba(0,0,0,.3);
+}
+
+.blocklyDropDownContent {
+  max-height: 300px;  /* @todo: spec for maximum height. */
+}
+
+.blocklyDropDownArrow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  z-index: -1;
+  background-color: inherit;
+  border-color: inherit;
+  border-top: 1px solid;
+  border-left: 1px solid;
+  border-top-left-radius: 4px;
+  border-color: inherit;
+}
+
+.blocklyHighlighted>.blocklyPath {
+  filter: var(--blocklyEmbossFilter);
+}
+
+.blocklyHighlightedConnectionPath {
+  fill: none;
+  stroke: #fc3;
+  stroke-width: 4px;
+}
+
+.blocklyPathLight {
+  fill: none;
+  stroke-linecap: round;
+  stroke-width: 1;
+}
+
+.blocklySelected>.blocklyPathLight {
+  display: none;
+}
+
+.blocklyDraggable {
+  cursor: grab;
+  cursor: -webkit-grab;
+}
+
+.blocklyDragging {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+  /* Drag surface disables events to not block the toolbox, so we have to
+   * reenable them here for the cursor values to work. */
+  pointer-events: auto;
+}
+
+  /* Changes cursor on mouse down. Not effective in Firefox because of
+     https://bugzilla.mozilla.org/show_bug.cgi?id=771241 */
+.blocklyDraggable:active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+
+.blocklyDragging.blocklyDraggingDelete,
+.blocklyField {
+  cursor: url("/media/blockly/handdelete.cur"), auto;
+}
+
+.blocklyDragging>.blocklyPath,
+.blocklyDragging>.blocklyPathLight {
+  fill-opacity: .8;
+  stroke-opacity: .8;
+}
+
+.blocklyDragging>.blocklyPathDark {
+  display: none;
+}
+
+.blocklyDisabledPattern>.blocklyPath {
+  fill: var(--blocklyDisabledPattern);
+  fill-opacity: .5;
+  stroke-opacity: .5;
+}
+
+.blocklyDisabled>.blocklyPathLight,
+.blocklyDisabled>.blocklyPathDark {
+  display: none;
+}
+
+.blocklyInsertionMarker>.blocklyPath,
+.blocklyInsertionMarker>.blocklyPathLight,
+.blocklyInsertionMarker>.blocklyPathDark {
+  fill-opacity: .2;
+  stroke: none;
+}
+
+.blocklyNonEditableField>text {
+  pointer-events: none;
+}
+
+.blocklyFlyout {
+  position: absolute;
+  z-index: 20;
+}
+
+.blocklyText text {
+  cursor: default;
+}
+
+/*
+  Don't allow users to select text.  It gets annoying when trying to
+  drag a block and selected text moves instead.
+*/
+.blocklySvg text {
+  user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  cursor: inherit;
+}
+
+.blocklyIconGroup {
+  cursor: default;
+}
+
+.blocklyIconGroup:not(:hover):not(:focus),
+.blocklyIconGroupReadonly {
+  opacity: .6;
+}
+
+.blocklyIconShape {
+  fill: #00f;
+  stroke: #fff;
+  stroke-width: 1px;
+}
+
+.blocklyIconSymbol {
+  fill: #fff;
+}
+
+.blocklyMinimalBody {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.blocklyHtmlInput {
+  border: none;
+  border-radius: 4px;
+  height: 100%;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  display: block;
+  box-sizing: border-box;
+}
+
+/* Remove the increase and decrease arrows on the field number editor */
+input.blocklyHtmlInput[type=number]::-webkit-inner-spin-button,
+input.blocklyHtmlInput[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.blocklyMainBackground {
+  stroke-width: 1;
+  stroke: #c6c6c6;  /* Equates to #ddd due to border being off-pixel. */
+}
+
+.blocklyMutatorBackground {
+  fill: #fff;
+  stroke: #ddd;
+  stroke-width: 1;
+}
+
+.blocklyFlyoutBackground {
+  fill: #ddd;
+  fill-opacity: .8;
+}
+
+.blocklyMainWorkspaceScrollbar {
+  z-index: 20;
+}
+
+.blocklyFlyoutScrollbar {
+  z-index: 30;
+}
+
+.blocklyScrollbarHorizontal,
+.blocklyScrollbarVertical {
+  position: absolute;
+  outline: none;
+}
+
+.blocklyScrollbarBackground {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.blocklyScrollbarHandle {
+  fill: #ccc;
+}
+
+.blocklyScrollbarBackground:hover+.blocklyScrollbarHandle,
+.blocklyScrollbarHandle:hover {
+  fill: #bbb;
+}
+
+/* Darken flyout scrollbars due to being on a grey background. */
+/* By contrast, workspace scrollbars are on a white background. */
+.blocklyScrollbarHandle {
+  fill: #bbb;
+}
+
+.blocklyScrollbarBackground:hover+.blocklyScrollbarHandle,
+.blocklyScrollbarHandle:hover {
+  fill: #aaa;
+}
+
+.blocklyInvalidInput {
+  background: #faa;
+}
+
+.blocklyVerticalMarker {
+  stroke-width: 3px;
+  fill: rgba(255,255,255,.5);
+  pointer-events: none;
+}
+
+.blocklyComputeCanvas {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.blocklyNoPointerEvents {
+  pointer-events: none;
+}
+
+.blocklyContextMenu {
+  border-radius: 4px;
+  max-height: 100%;
+}
+
+.blocklyDropdownMenu {
+  border-radius: 2px;
+  padding: 0 !important;
+}
+
+.blocklyMenuItem {
+  /* 28px on the left for icon or checkbox. */
+  padding-left: 28px;
+}
+
+/* BiDi override for the resting state. */
+.blocklyMenuItemRtl {
+  /* Flip left/right padding for BiDi. */
+  padding-left: 5px;
+  padding-right: 28px;
+}
+
+.blocklyMenu {
+  user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  background: #fff;
+  border: 1px solid transparent;
+  box-shadow: 0 0 3px 1px rgba(0,0,0,.3);
+  font: normal 13px Arial, sans-serif;
+  margin: 0;
+  outline: none;
+  padding: 4px 0;
+  position: absolute;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 100%;
+  z-index: 20000;  /* Arbitrary, but some apps depend on it... */
+}
+
+.blocklyMenu:focus {
+  box-shadow: 0 0 6px 1px rgba(0,0,0,.3);
+}
+
+.blocklyMenu {
+  user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  background: inherit;  /* Compatibility with gapi, reset from goog-menu */
+  border: inherit;  /* Compatibility with gapi, reset from goog-menu */
+  font: normal 13px "Helvetica Neue", Helvetica, sans-serif;
+  outline: none;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 100%;
+  z-index: 20000;  /* Arbitrary, but some apps depend on it... */
+}
+
+/* State: resting. */
+.blocklyMenuItem {
+  border: none;
+  color: #000;
+  cursor: pointer;
+  list-style: none;
+  margin: 0;
+  /* 7em on the right for shortcut. */
+  min-width: 7em;
+  padding: 6px 15px;
+  white-space: nowrap;
+}
+
+/* State: disabled. */
+.blocklyMenuItemDisabled {
+  color: #ccc;
+  cursor: inherit;
+}
+
+/* State: hover. */
+.blocklyMenuItemHighlight {
+  background-color: rgba(0,0,0,.1);
+}
+
+/* State: selected/checked. */
+.blocklyMenuItemCheckbox {
+  background: url(/media/blockly/sprites.png) no-repeat -48px -16px;
+  float: left;
+  margin-left: -24px;
+  width: 16px;
+  height: 16px;
+  position: static;  /* Scroll with the menu. */
+  display: block;
+}
+
+.blocklyMenuItemCheckbox {
+  float: right;
+  margin-right: -24px;
+}
+
+.blocklyMenuSeparator {
+  background-color: #ccc;
+  height: 1px;
+  border: 0;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.blocklyAnimationLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: visible !important;
+  z-index: 80;
+  pointer-events: none;
+}
+
+.blocklyField {
+  cursor: default;
+}
+
+.blocklyInputField {
+  cursor: text;
+}
+
+.blocklyField,
+.blocklyIconGroup {
+  cursor: grabbing;
+}
+
+.blocklyActiveFocus:is(
+  .blocklyFlyout,
+  .blocklyWorkspace,
+  .blocklyField,
+  .blocklyPath,
+  .blocklyHighlightedConnectionPath,
+  .blocklyComment,
+  .blocklyBubble,
+  .blocklyIconGroup,
+  .blocklyTextarea
+) {
+  outline: none;
+}
+
+
+.blocklyZoom>svg>image {
+  opacity: .4;
+}
+
+.blocklyZoom>svg>image:hover {
+  opacity: .6;
+}
+
+.blocklyZoom>svg>image:active {
+  opacity: .8;
+}
+
+
+.blocklyToast {
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: -10rem;
+  right: 2rem;
+  padding: 1rem;
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 0.4rem;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  line-height: 1.5;
+  transition: bottom 0.3s ease-out;
+}
+
+.blocklyToastMessage {
+  maxWidth: 18rem;
+}
+
+.blocklyToastCloseButton {
+  margin: 0;
+  padding: 0.2rem;
+  background-color: transparent;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+
+.injectionDiv {
+  --commentFillColour: #FFFCC7;
+  --commentBorderColour: #F2E49B;
+}
+
+.blocklyTextarea {
+  background-color: var(--commentFillColour);
+  border: 1px solid var(--commentBorderColour);
+  box-sizing: border-box;
+  display: block;
+  outline: 0;
+  padding: 5px;
+  resize: none;
+  width: 100%;
+  height: 100%;
+}
+
+.blocklyTextarea {
+  cursor: inherit;
+}
+
+.blocklyDeleteIcon {
+  width: 20px;
+  height: 20px;
+  display: none;
+  cursor: pointer;
+}
+
+.blocklyFoldoutIcon {
+  width: 20px;
+  height: 20px;
+  transform-origin: 12px 12px;
+  cursor: pointer;
+}
+.blocklyResizeHandle {
+  width: 12px;
+  height: 12px;
+  cursor: se-resize;
+}
+.blocklyResizeHandle {
+  cursor: inherit;
+}
+
+.blocklyCommentTopbarBackground {
+  fill: var(--commentBorderColour);
+  height: 24px;
+}
+
+.blocklyCommentPreview.blocklyText {
+  fill: #000;
+  dominant-baseline: middle;
+  visibility: hidden;
+}
+
+.blocklyCommentPreview {
+  visibility: visible;
+}
+
+.blocklyCommentForeignObject,
+.blocklyResizeHandle {
+  display: none;
+}
+
+.blocklyFoldoutIcon {
+  transform: rotate(-90deg);
+}
+
+.blocklyCommentTopbar {
+  transform: scale(-1, 1);
+}
+
+.blocklyCommentForeignObject {
+  direction: rtl;
+}
+
+.blocklyCommentPreview {
+  /* Revert the scale and control RTL using direction instead. */
+  transform: scale(-1, 1);
+  direction: rtl;
+}
+
+.blocklyResizeHandle {
+  transform: scale(-1, 1);
+  cursor: sw-resize;
+}
+
+.blocklyCommentHighlight {
+  fill: none;
+}
+
+.blocklyCommentText.blocklyActiveFocus {
+  border-color: #fc3;
+  border-width: 2px;
+}
+
+.blocklyCommentHighlight {
+  stroke: #fc3;
+  stroke-width: 3px;
+}
+
+.blocklyCommentHighlight {
+  stroke: none;
+}
+
+.blocklyCommentTopbarBackground {
+  stroke: #fc3;
+  stroke-width: 3px;
+}
+
+
+.blocklyTextarea {
+  background-color: var(--commentFillColour);
+  border: 0;
+  box-sizing: border-box;
+  display: block;
+  outline: 0;
+  padding: 5px;
+  resize: none;
+  width: 100%;
+  height: 100%;
+}
+
+
+.blocklyFlyoutButton {
+  fill: #888;
+  cursor: default;
+}
+
+.blocklyFlyoutButtonShadow {
+  fill: #666;
+}
+
+@media (hover: hover) {
+  .blocklyFlyoutButton:hover {
+    fill: #aaa;
+  }
+}
+
+.blocklyFlyoutButton:active {
+  fill: #aaa;
+}
+
+.blocklyFlyoutLabel {
+  cursor: default;
+}
+
+.blocklyFlyoutLabelBackground {
+  opacity: 0;
+}
+
+
+.blocklyToolboxCategory:not(.blocklyToolboxSelected):hover {
+  background-color: rgba(255, 255, 255, .2);
+}
+
+.blocklyToolboxCategoryContainer {
+  margin: 1px 5px 1px 0;
+}
+
+.blocklyToolboxCategoryContainer {
+  margin: 1px 0 1px 5px;
+}
+
+.blocklyToolboxCategory {
+  height: 22px;
+  line-height: 22px;
+  margin-bottom: 3px;
+  padding-right: 8px;
+  white-space: nowrap;
+}
+
+.blocklyToolboxCategory {
+  margin-left: 8px;
+  padding-right: 0;
+}
+
+.blocklyToolboxCategoryIcon {
+  background-image: url(/media/blockly/sprites.png);
+  height: 16px;
+  vertical-align: middle;
+  visibility: hidden;
+  width: 16px;
+}
+
+.blocklyToolboxCategoryIconClosed {
+  background-position: -32px -1px;
+}
+
+.blocklyToolboxCategoryIconClosed {
+  background-position: 0 -1px;
+}
+
+.blocklyToolboxSelected>.blocklyToolboxCategoryIconClosed {
+  background-position: -32px -17px;
+}
+
+.blocklyToolboxSelected>.blocklyToolboxCategoryIconClosed {
+  background-position: 0 -17px;
+}
+
+.blocklyToolboxCategoryIconOpen {
+  background-position: -16px -1px;
+}
+
+.blocklyToolboxSelected>.blocklyToolboxCategoryIconOpen {
+  background-position: -16px -17px;
+}
+
+.blocklyToolboxCategoryLabel {
+  cursor: default;
+  font: 16px sans-serif;
+  padding: 0 3px;
+  vertical-align: middle;
+}
+
+.blocklyToolboxCategoryLabel {
+  cursor: url("/media/blockly/handdelete.cur"), auto;
+}
+
+.blocklyToolboxCategoryLabel {
+  color: #fff;
+}
+
+
+.blocklyTreeSeparator {
+  border-bottom: solid #e5e5e5 1px;
+  height: 0;
+  margin: 5px 0;
+}
+
+.blocklyTreeSeparator {
+  border-right: solid #e5e5e5 1px;
+  border-bottom: none;
+  height: auto;
+  margin: 0 5px 0 5px;
+  padding: 5px 0;
+  width: 0;
+}
+
+
+.blocklyToolboxDelete {
+  cursor: url("/media/blockly/handdelete.cur"), auto;
+}
+
+.blocklyToolboxGrab {
+  cursor: url("/media/blockly/handclosed.cur"), auto;
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+
+/* Category tree in Toolbox. */
+.blocklyToolbox {
+  box-sizing: border-box;
+  user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  background-color: #ddd;
+  overflow-x: visible;
+  overflow-y: auto;
+  padding: 4px 0 4px 0;
+  position: absolute;
+  z-index: 70;  /* so blocks go under toolbox when dragging */
+  -webkit-tap-highlight-color: transparent;  /* issue #1345 */
+}
+
+.blocklyToolboxCategoryGroup {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.blocklyToolboxCategoryGroup:focus {
+  outline: none;
+}
+
+
+.fieldSliderContainer {
+  align-items: center;
+  display: flex;
+  height: 32px;
+  justify-content: center;
+  width: 150px;
+}
+.fieldSlider {
+  -webkit-appearance: none;
+  background: transparent; /* override white in chrome */
+  margin: 4px;
+  padding: 0;
+  width: 100%;
+}
+.fieldSlider:focus {
+  outline: none;
+}
+/* Webkit */
+.fieldSlider::-webkit-slider-runnable-track {
+  background: #ddd;
+  border-radius: 5px;
+  height: 10px;
+}
+.fieldSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255,255,255,.15);
+  cursor: pointer;
+  height: 24px;
+  margin-top: -7px;
+  width: 24px;
+}
+/* Firefox */
+.fieldSlider::-moz-range-track {
+  background: #ddd;
+  border-radius: 5px;
+  height: 10px;
+}
+.fieldSlider::-moz-range-thumb {
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255,255,255,.15);
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+}
+.fieldSlider::-moz-focus-outer {
+  /* override the focus border style */
+  border: 0;
+}
+/* IE */
+.fieldSlider::-ms-track {
+  /* IE wont let the thumb overflow the track, so fake it */
+  background: transparent;
+  border-color: transparent;
+  border-width: 15px 0;
+  /* remove default tick marks */
+  color: transparent;
+  height: 10px;
+  width: 100%;
+  margin: -4px 0;
+}
+.fieldSlider::-ms-fill-lower  {
+  background: #ddd;
+  border-radius: 5px;
+}
+.fieldSlider::-ms-fill-upper  {
+  background: #ddd;
+  border-radius: 5px;
+}
+.fieldSlider::-ms-thumb {
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255,255,255,.15);
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+}
+
+
+.blocklyHtmlTextAreaInput {
+  font-family: monospace;
+  resize: none;
+  overflow: hidden;
+  height: 100%;
+  text-align: left;
+}
+
+.blocklyHtmlTextAreaInputOverflowedY {
+  overflow-y: scroll;
+}
+
+
+   .blocklyFieldGridContainer {
+     padding: 7px;
+     overflow: auto;
+   }
+   
+  .blocklyFieldGrid {
+    display: grid;
+    grid-gap: 7px;
+    grid-template-columns: repeat(var(--grid-columns), min-content);
+  }
+
+ .blocklyFieldGridItem {
+   border: 1px solid rgba(1, 1, 1, 0.5);
+   border-radius: 4px;
+   color: white;
+   min-width: auto;
+   background: none;
+   white-space: nowrap;
+   cursor: pointer;
+   padding: 6px 15px;
+ }
+ 
+ .blocklyFieldGridRow {
+   display: contents;
+ }
+ 
+ .blocklyFieldGridItem.blocklyFieldGridItemSelected {
+   background-color: rgba(1, 1, 1, 0.25);
+ }
+
+ .blocklyFieldGridItem:focus {
+   box-shadow: 0 0 0 4px hsla(0, 0%, 100%, .2);
+   outline: none;
+ }
+ 
+
+.blocklyFieldGridItemSelected,
+.blocklyFieldGridItemSelected:hover {
+  border-color: #eee !important;
+  outline: 1px solid #333;
+  position: relative;
+}
+
+.blocklyColourSwatch {
+  width: 20px;
+  height: 20px;
+}
+
+.blocklyGridContainer {
+  padding: 0px;
+}
+
+.blocklyFieldGrid {
+  grid-gap: 0px;
+  row-gap: 4px;
+}
+
+.blocklyGridItem {
+  border-radius: 0;
+  padding: 0;
+  border: 0.5px solid #888;
+  cursor: pointer;
+}
+
+.blocklyFieldGridItem {
+  border: 0.5px solid #888;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+}
+
+.blocklyFieldGridItem:focus {
+  border-color: #eee;
+  box-shadow: 2px 2px 7px 2px rgba(0, 0, 0, 0.3);
+  position: relative;
+  border-radius: 0;
+  outline: none;
+}
+
+
+.zoomToFit {
+  opacity: 0.4;
+}
+.zoomToFit:hover {
+  opacity: 0.6;
+}
+.zoomToFit:active {
+  opacity: 0.8;
+}
+
+
+.blocklyBackpack {
+  opacity: 0.4;
+}
+.blocklyBackpackDarken {
+  opacity: 0.6;
+}
+.blocklyBackpack:active {
+  opacity: 0.8;
+}
+
+
+.blocklyModalOverlay {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: fixed;
+}
+.blocklyModalContainer {
+  background-color: #fff;
+  border: 1px solid gray;
+  font-family: Helvetica;
+  font-weight: 300;
+  padding: 1em;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0px 10px 20px grey;
+  z-index: 100;
+  margin: 15% auto;
+}
+.blocklyModalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.blocklyModalHeaderTitle {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.2em;
+  line-height: 1.25;
+}
+.blocklyModalBtn {
+  margin-left: auto;
+  height: fit-content;
+}
+.blocklyModalBtnClose:before {
+  content: "\2715";
+}
+.blocklyModalBtn {
+  margin-right: 0.5em;
+  border: 1px solid gray;
+  font-weight: 500;
+  color: gray;
+  border-radius: 25px;
+}
+.blocklyModalBtnPrimary {
+  background-color: gray;
+  color: #fff;
+}
+
+
+.typedModalTitle {
+  font-weight: bold;
+  font-size: 1em;
+}
+.typedModalVariableInputContainer {
+  margin: 1em 0 1em 0;
+}
+.typedModalVariableLabel{
+  margin-right: 0.5em;
+}
+.typedModalTypes ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+}
+.typedModalTypes li {
+  margin-right: 1em;
+  display: flex;
+}
+.blocklyPath {
+        fill-opacity: 1;
+      }
+      .blocklyPathDark {
+        display: flex;
+      }
+      .blocklyPathLight {
+        display: flex;
+      }  ]]></style></defs>"><g xmlns="http://www.w3.org/2000/svg" class="blocklyBlockCanvas"><g class="sensebox_esp32s2_accelerometer blocklyBlock blocklyDraggable" data-id="+-ZqW8C/N}-vLVncvEuU" transform="translate(36, 25)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#498449" d=" m 8,0  h 267.6000061035156  v 5  H 275.6000061035156  V 5  H 275.6000061035156  V 23  H 275.6000061035156  V 33  H 275.6000061035156  V 51  H 275.6000061035156  V 51  V 55  h -267.6000061035156  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#xA;"/><path class="blocklyPath blocklyPassiveFocus" id="blockly-pb" stroke="none" fill="#5ba55b" tabindex="-1" d=" m 8,0  h 267.6000061035156  v 5  H 275.6000061035156  V 5  H 275.6000061035156  V 23  H 275.6000061035156  V 33  H 275.6000061035156  V 51  H 275.6000061035156  V 51  V 55  h -267.6000061035156  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#xA;"/><path class="blocklyPathLight" stroke="#8cc08c" d=" m 8,0  m 0.5,0.5  H 275.1000061035156  H 275.1000061035156  M 8.5,54.5  M 8.5,54.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#xA;"/><g id="+-ZqW8C/N}-vLVncvEuU_field_blockly-pc" class="blocklyLabelField" transform="translate(18,5)"><text class="blocklyText blocklyFieldText" x="0" y="14">ESP32-S2 Beschleunigungssensor</text></g><g id="+-ZqW8C/N}-vLVncvEuU_field_blockly-pd" class="blocklyLabelField" transform="translate(159.01667022705078,33)"><text class="blocklyText blocklyFieldText" x="0" y="14">Messwert:</text></g><g id="+-ZqW8C/N}-vLVncvEuU_field_blockly-pe" class="blocklyField blocklyDropdownField blocklyEditableField" transform="translate(238.5666732788086,33)"><rect rx="4" ry="4" x="0" y="0" height="18" width="32.03333282470703" class="blocklyFieldRect blocklyDropdownRect" stroke="#8cc08c" fill="transparent"/><text class="blocklyText blocklyFieldText blocklyDropdownText" text-anchor="start" x="5" y="14">X<tspan style="fill: rgb(91, 165, 91);"> ▾</tspan></text><image style="display: none;"/></g></g></g></svg>
