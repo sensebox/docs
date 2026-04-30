@@ -1,0 +1,49 @@
+---
+title: Troubleshooting Guide
+---
+
+# General Steps
+
+If you have any issues collecting data from your senseBox device, follow these troubleshooting steps:
+ - Enable automatic updates for the senseBox:bike app to ensure you're always using the latest version.
+ - Restart the senseBox:bike. Press the power button to turn the device off, wait a few seconds, then press it again to turn it on.
+ - Restart your phone and open the senseBox:bike app.
+
+If none of these steps help, please email us at [kontakt@reedu.de](mailto:kontakt@reedu.de). When contacting support, please provide the following information:
+ - Your phone's operating system and version. For Android, also include your phone's make and model.
+ - The version of the app you are using (senseBox:bike app > Settings > About).
+ - A detailed description of the issue, including when you first noticed it.
+
+# Known issues and their solutions
+
+<details>
+    <summary>App cannot connect to senseBox</summary>
+    - Ensure the senseBox:bike is powered on and fully charged.
+    - Make sure Bluetooth is enabled on your phone and the app has permission to use it.
+
+    If you still cannot connect to the box and you have an iPhone, please take the following steps:
+    - Install [nRF Connect](https://apps.apple.com/de/app/nrf-connect-for-mobile/id1054362403).
+    - Open nRF Connect, find the senseBox, connect to it, then disconnect.
+
+    You should then be able to see the box in the senseBox:bike app again.
+</details>
+
+<details>
+    <summary>Not all sensor data is being recorded (there are gaps in the data)</summary>
+    - Make sure battery saver mode is disabled on your phone.
+    - Ensure only the senseBox:bike is connected to your phone via Bluetooth.
+    - Start recording, take a short ride, and then stop.
+    - Check that you have the same number of data points for all sensors (e.g. speed and temperature).
+</details>
+
+<details>
+    <summary>The app records tracks locally, but does not upload them to openSenseMap</summary>
+    Workaround: You can export the recorded track as a CSV file in an openSenseMap-compatible format and upload it manually to the [openSenseMap website](https://opensensemap.org/).
+
+    - Restart the app and check that real-time sensor data is being displayed.
+    - Ensure your internet connection is stable and the senseBox:bike is close to your phone.
+    - Disable battery saver mode on your phone.
+    - Make sure you're logged into your openSenseMap account in the app and a senseBox is selected.
+    - Start recording and move a few meters.
+    - Log in to openSenseMap and check that the new data shows up in your account.
+</details>
