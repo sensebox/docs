@@ -3,15 +3,15 @@ export function NavGreen({ topTabs, activeTab, onTabChange }) {
   return (
     <div className="bg-green text-white font-medium p-1 rounded-xl shadow-lg dark:bg-emerald-800 dark:text-white">
       <nav>
-        <ul className="flex flex-row flex-wrap list-none p-0 m-0">
+        <ul className="flex flex-row flex-wrap list-none gap-2 p-0 m-0">
           {topTabs.map((tab) => (
             <li key={tab} className="!m-0 flex-shrink-0">
               <button
                 onClick={() => onTabChange(tab)}
-                className={`px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
+                className={`px-4 py-3 rounded-lg  transition-all duration-200 ${
                   activeTab === tab
-                    ? 'bg-green-3 rounded-xl text-green-700 shadow-md dark:bg-green-600 dark:text-green-100'
-                    : 'text-white/90 hover:text-white hover:bg-white/10 rounded-xl dark:text-gray-200 dark:hover:bg-white/10'
+                    ? 'bg-[#45beed] font-bold rounded-xl text-green-700 shadow-md dark:bg-green-600 dark:text-green-100'
+                    : 'text-white/90 font-medium hover:text-white hover:bg-white/10 rounded-xl dark:text-gray-200 dark:hover:bg-white/10'
                 }`}
               >
                 {tab}
@@ -29,15 +29,15 @@ export function NavWhite({ bottomTabs, activeTab, onTabChange }) {
   return (
     <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-1 mb-8 dark:bg-gray-900 dark:border-gray-800 dark:text-gray-200">
       <nav>
-        <ul className="flex flex-row flex-wrap list-none p-0 m-0">
+        <ul className="flex flex-row flex-wrap list-none gap-2 p-0 m-0">
           {bottomTabs.map((tab) => (
             <li key={tab} className="!m-0 flex-shrink-0">
               <button
                 onClick={() => onTabChange(tab)}
-                className={`px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
+                className={`px-4 py-3 rounded-lg  transition-all duration-200 ${
                   activeTab === tab
-                    ? 'text-green-3 bg-green-50 dark:bg-emerald-700 dark:text-white rounded-xl '
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-xl dark:text-gray-200 dark:hover:bg-gray-800'
+                    ? 'text-[#45beed] border border-[#45beed] font-bold bg-green-50 dark:bg-emerald-700 dark:text-white rounded-xl '
+                    : 'text-gray-700 font-medium hover:text-gray-900 hover:bg-gray-100 rounded-xl dark:text-gray-200 dark:hover:bg-gray-800'
                 }`}
               >
                 {tab}

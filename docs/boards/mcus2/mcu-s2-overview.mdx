@@ -42,7 +42,7 @@ import { PortsOverview, PortItem } from '@site/src/components/PortsOverview/Port
 export const MCUManager = () => {
   const [activeTopTab, setActiveTopTab] = React.useState(null);
   const [activeBottomTab, setActiveBottomTab] = React.useState('Features');
-  const topTabs = ['Pinout ↗', 'DataSheet ↗', 'I2C/Wire Ports', 'Digitale/Analoge Ports'];
+  const topTabs = ['I2C/Wire Ports', 'Digitale/Analoge Ports','Pinout ↗', 'DataSheet ↗'];
   const bottomTabs = ['Features', 'Hardware', 'Tech Specs', 'Blockly', 'Arduino', 'CircuitPython'];
 
 const toggleTopTab = (tab) => {
