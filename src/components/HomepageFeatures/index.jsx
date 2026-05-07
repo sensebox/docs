@@ -87,6 +87,16 @@ const FeatureList = [
     ),
     to: '/docs/boards/mini/mini-overview?board=mini',
   },
+  {
+    title: translateTitle('Eye'),
+    description: (
+      <Translate>
+        Alle relevanten Informationen zum senseBox board mit Kamera findest
+        du hier!
+      </Translate>
+    ),
+    to: '/docs/boards/eye/eye-overview?board=eye',
+  },
 ]
 
 const ThumbNailPreviewList = [
@@ -189,10 +199,17 @@ export default function HomepageFeatures() {
               <LogoSensebox />
             </div>
           </div>
-          <div className="flex flex-wrap  justify-center gap-4 lg:flex-row">
-            {FeatureList.map((props, idx) => (
-              <Feature key={idx} {...props} />
-            ))}
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-wrap justify-center gap-4 lg:flex-row">
+              {FeatureList.slice(0, 4).map((props, idx) => (
+                <Feature key={idx} {...props} />
+              ))}
+            </div>
+            <div className="flex flex-wrap justify-center gap-4 lg:flex-row">
+              {FeatureList.slice(4).map((props, idx) => (
+                <Feature key={idx + 4} {...props} />
+              ))}
+            </div>
           </div>
         </div>
       </div>

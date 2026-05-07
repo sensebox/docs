@@ -1,0 +1,37 @@
+---
+title: Taster
+---
+
+import button from '@site/static/img/eye/button.png'
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import AlertBox from '@site/src/components/AlertBox/AlertBox'
+
+# Taster
+
+Auf der Vorderseite der Eye befinden sich drei Taster. Neben einem Taster zum Neustarten des Boards ("Rst") und einem Taster ("Boot"), der manchmal für den Wechsel zwischen bestimmten Modi der Eye verwendet wird, gibt es auch einen frei programmierbaren Taster ("Sw").
+
+<ImageWithText src={button} alt="Taster" title="programmierbarer Taster auf der Eye" />{' '}
+
+:::success Module onBoard
+Der Taster ist auf der Eye verbaut! Du musst hier also nichts weiter anschließen.
+:::
+
+## Programmierung (Arduino)
+
+Dieser Sketch gibt in der seriellen Schnittstelle aus, ob der Taster gerade gedrückt wird.
+
+```cpp
+void setup() {
+  Serial.begin(115200);
+  while (!Serial);
+  Serial.println("bereit...");
+  pinMode(PIN_BUTTON, INPUT_PULLUP);
+}
+
+void loop() {
+  if (digitalRead(PIN_BUTTON) == LOW) {
+    Serial.println("Taster gedrückt");
+    delay(50);
+  }
+}
+```
