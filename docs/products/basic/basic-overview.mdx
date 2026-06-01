@@ -1,0 +1,156 @@
+---
+title: senseBox:basic
+hide_title: true
+---
+
+import React from 'react'
+import ImageWithText from "@site/src/components/ImageWithText/ImageWithText";
+import Ampel from "@site/static/img/co2ampel/image1.jpg";
+import AmpelBauteile from "@site/static/img/co2ampel/image2.jpg";
+import playStoreIcon from "@site/static/img/playstore_icon.png";
+import iosStoreIcon from "@site/static/img/ios_store.png";
+import basicRendering from "@site/static/img/basic/senseBoxbasic_Rendering04.png";
+import ButtonWithText from '@site/src/components/ButtonWithText/ButtonWithText'
+import { NavGreen, NavWhite, NavBlocks } from '@site/src/components/Nav/Nav'
+import { PortsOverview, PortItem } from '@site/src/components/PortsOverview/PortsOverview'
+import basicApp from "@site/static/img/basic/basic_app.png";
+import basicBauteile from "@site/static/img/basic/basic_bauteile.png";
+
+export const MCUManager = () => {
+  const [activeTopTab, setActiveTopTab] = React.useState(null);
+  const [activeBottomTab, setActiveBottomTab] = React.useState('Pflegehinweise');
+  
+const topTabs = ['App', 'Pinout ↗', 'Datasheet ↗'];
+const bottomTabs = ['Bauteile', 'Hardware'];
+
+const toggleTopTab = (tab) => {
+ if(tab === 'Pinout ↗' || tab === 'Datasheet ↗') {
+    window.open(tab === 'Datasheet ↗' ? 'https://sensebox.de/non_img_assets/datenblaetter/pdf_output/Datenblatt-senseBox_MCU_S2.pdf/' : 'https://github.com/sensebox/senseBox-MCU-S2-ESP32S2/blob/main/hardware/2.2/SenseBox-MCU-2-2.pdf', '_blank');
+    return;
+  } else {   
+    if (activeTopTab === tab) {
+      setActiveTopTab(null);
+    } else {
+      setActiveTopTab(tab);
+    }
+  } 
+};
+
+return (
+   <div className="my-8 flex flex-col space-y-8 w-full max-w-none"> 
+      <NavGreen 
+        topTabs={topTabs}
+        activeTab={activeTopTab}
+        onTabChange={toggleTopTab}
+      />
+        
+          {activeTopTab === 'App' && (
+             <div>
+            <h2 className="text-2xl font-bold mb-4 text-black dark:text-gray-100">Die senseBox:basic App</h2>
+            
+            <p className="text-gray-700 mb-6 dark:text-gray-200">
+              Mit der senseBox:basic App können Kinder spielerisch die Welt der Sensoren erkunden. Die intuitive Benutzeroberfläche ermöglicht es, Messwerte in Echtzeit zu visualisieren, einfache Programme zu erstellen und erste Schritte in der digitalen Welt zu machen – alles direkt vom Smartphone oder Tablet aus.
+            </p>
+
+            {/* App Interface Placeholder */}
+            <ImageWithText src={basicApp} title="App-Oberfläche" />
+
+
+            {/* Store Buttons */}
+            <div className="mt-8 text-center">
+              <p className="text-gray-700 dark:text-gray-200 mb-6">
+                Die senseBox:basic App ist ab sofort kostenlos verfügbar und kann direkt heruntergeladen werden.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a 
+                  href="https://apps.apple.com/de/app/sensebox-basic" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-block hover:opacity-80 transition-opacity duration-200"
+                >
+                  <img 
+                    src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/de-de?size=250x83&amp;releaseDate=1280624400&h=7e7b68fad19738b5649a1bbeffd5e22c" 
+                    alt="Laden im App Store" 
+                    className="h-14"
+                  />
+                </a>
+                
+                <a 
+                  href="https://play.google.com/store/apps/details?id=de.sensebox.basic" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-block hover:opacity-80 transition-opacity duration-200"
+                >
+                  <img 
+                    src={playStoreIcon} 
+                    alt="Jetzt bei Google Play" 
+                    className="h-16"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>  
+          )}    
+
+      <NavWhite
+        bottomTabs={bottomTabs}
+        activeTab={activeBottomTab}
+        onTabChange={setActiveBottomTab}
+      />
+      
+
+{activeBottomTab === 'Bauteile' && (
+  <>
+    <ImageWithText src={basicBauteile} title="CO2-Ampel Bauteile" />
+    <h3 className="mb-4 text-gray-700 dark:text-gray-300 font-medium">
+      In der senseBox:basic enthaltene Bauteile:
+    </h3>
+    <ul className="list-disc list-inside text-gray-700 dark:text-gray-300">
+      <li>senseBox MCU-S2 (Microcontroller Unit)</li>
+      <li>Temperatur- und Luftfeuchtigkeitssensor</li>
+      <li>OLED-Display</li>
+    <li>Bluetooth-Modul</li>
+    <li>Batterie + Halterung</li>
+    <li>Anschlusskabel</li>
+    </ul>
+    
+    
+  </>
+)}
+
+    {activeBottomTab === 'Hardware' && (
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
+             <NavBlocks href="/docs/hardware/accessoires/display" title="OLED Display" />
+              <NavBlocks href="/docs/hardware/bee/bluetooth-bee" title="Bluetooth-Bee" />
+              <NavBlocks href="/docs/hardware/sensors/umweltsensor" title="Umweltsensor" />
+
+             <NavBlocks href="/docs/hardware/accessoires/rgb-led" title="RGB-LED" />
+          </div>     
+        )}
+
+
+
+   </div>
+  );
+}; 
+    
+
+<div className="flex flex-col md:flex-row items-start justify-between mb-8 mt-12">
+  <div className="flex-1">
+    <h1 className="text-4xl font-bold text-black dark:text-gray-100">
+     senseBox:basic
+    </h1>
+   
+   <p className="text-lg text-gray-700 dark:text-gray-300 mb-7">
+Kinder wachsen heute ganz selbstverständlich mit digitaler Technik auf. Doch wie funktioniert sie eigentlich? Die senseBox:basic als neuer Bausatz der senseBox:familie konzipiert für den Einsatz ab der Grundschule bietet einen einfachen Einstieg in die Welt von Sensoren und Programmierung, ohne zu überfordern. Mit der senseBox:basic lernen Kinder ab der Grundschule spielerisch erste Grundlagen der Programmierung als Basis für weiterführende Themen wie IoT, Datenanalyse oder komplexere Programmierunglogiken kennen. So wird aus „Technik benutzen“ ein Technik verstehen.
+    </p>
+
+<ButtonWithText href="/docs.sensebox.de/docs/products/co2Ampel/aufbau/aufbau-co2Ampel-schritt-1" title="Los geht's"/>
+
+</div>
+  <div className="ml-0 md:ml-9 mt-4 md:mt-0">
+   <ImageWithText src={basicRendering} title="senseBox:basic " />
+  </div>
+</div>
+
+<MCUManager />

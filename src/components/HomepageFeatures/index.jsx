@@ -87,6 +87,15 @@ const FeatureList = [
     ),
     to: '/docs/boards/mini/mini-overview?board=mini',
   },
+    {
+    title: translateTitle('basic'),
+    description: (
+      <Translate>
+        Digitale Welt verstehen – schon ab der Grundschule 
+      </Translate>
+    ),
+    to: '/docs/products/basic/basic-overview?board=basic',
+  },
   {
     title: translateTitle('Eye'),
     description: (

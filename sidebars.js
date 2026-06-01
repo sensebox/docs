@@ -8,6 +8,7 @@ const homeSidebar = require('./sidebars/homeSidebar')
 const co2AmpelSidebar = require('./sidebars/co2AmpelSidebar')
 const miniSidebar = require('./sidebars/miniSidebar')
 const blocklySidebar = require('./sidebars/blocklySidebar')
+const basicSidebar = require('./sidebars/basicSidebar')
 
 export default {
   senseBoxSidebar: [
@@ -19,6 +20,7 @@ export default {
     co2AmpelSidebar,
     homeSidebar,
     miniSidebar,
+    basicSidebar,
     glossarSidebar,
   ],
 }
