@@ -23,25 +23,29 @@ const basicSidebar = {
       label: 'Erste Schritte',
 	  key: 'basic-gettingStarted',
       items: [
-        'boards/eye/eye-in-betrieb-nehmen',
-        'boards/eye/eye-erster-sketch',
-        'boards/eye/eye-kompilieren',
+        'boards/mcus2/mcus2-in-betrieb-nehmen',
+        'products/basic/basic-erste-schritte',
+        'products/basic/basic-programm-hochladen',
       ],
+    },
+    {
+      type: 'category',
+      label: 'App',
+    key: 'basic-app',
+    items:[
+      'products/basic/app/basic-app-erste-schritte',
+    ]
     },
     {
       type: 'category',
       label: 'Hardware',
 	  key: 'basic-hardware',
       items: [
-        'hardware/eye/camera',
-        'hardware/eye/icm20948',
-        'hardware/eye/rgb-led-esp32',
-        'hardware/eye/wifi',
-        'hardware/eye/ble',
-        'hardware/eye/lora',
-        'hardware/eye/sd',
-        'hardware/eye/button',
-        'boards/eye/eye-ports-and-pins'
+        'hardware/sensors/umweltsensor',
+        'hardware/accessoires/display',
+        'hardware/bee/bluetooth-bee',
+        'hardware/sensors/umweltsensor',
+        'hardware/accessoires/rgb-led',
       ],
     },
   ],
