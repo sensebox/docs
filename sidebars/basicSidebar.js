@@ -25,7 +25,6 @@ const basicSidebar = {
       items: [
         'boards/mcus2/mcus2-in-betrieb-nehmen',
         'products/basic/basic-erste-schritte',
-        'products/basic/basic-programm-hochladen',
       ],
     },
     {
