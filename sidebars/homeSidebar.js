@@ -120,7 +120,7 @@ const homeSidebar = {
       },
       items: [
         'misc/openRoberta',
-        'products/home/erweiterungen/home-erweiterung-LoRa',
+        'products/home/erweiterungen/home-erweiterung-lora',
       ],
     },
   ],
