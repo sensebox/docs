@@ -11,7 +11,7 @@
 
 const eyeSidebar = {
   type: 'category',
-  label: 'Eye',
+  label: ':eye',
   key: 'eye',
   link: {
     type: 'doc',

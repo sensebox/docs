@@ -97,7 +97,7 @@ const FeatureList = [
     to: '/docs/products/basic/basic-overview?board=basic',
   },
   {
-    title: translateTitle('Eye'),
+    title: translateTitle(':eye'),
     description: (
       <Translate>
         Alle relevanten Informationen zum senseBox board mit Kamera findest
