@@ -21,7 +21,7 @@ export const MCUManager = () => {
   const [activeBottomTab, setActiveBottomTab] = React.useState('Pflegehinweise');
   
 const topTabs = ['App', 'Pinout ↗', 'Datasheet ↗'];
-const bottomTabs = ['Bauteile', 'Hardware'];
+const bottomTabs =[ 'Hardware'];
 
 const toggleTopTab = (tab) => {
  if(tab === 'Pinout ↗' || tab === 'Datasheet ↗') {
@@ -99,24 +99,7 @@ return (
       />
       
 
-{activeBottomTab === 'Bauteile' && (
-  <>
-    <ImageWithText src={basicBauteile} title="CO2-Ampel Bauteile" />
-    <h3 className="mb-4 text-gray-700 dark:text-gray-300 font-medium">
-      In der senseBox:basic enthaltene Bauteile:
-    </h3>
-    <ul className="list-disc list-inside text-gray-700 dark:text-gray-300">
-      <li>senseBox MCU-S2 (Microcontroller Unit)</li>
-      <li>Temperatur- und Luftfeuchtigkeitssensor</li>
-      <li>OLED-Display</li>
-    <li>Bluetooth-Modul</li>
-    <li>Batterie + Halterung</li>
-    <li>Anschlusskabel</li>
-    </ul>
-    
-    
-  </>
-)}
+
 
     {activeBottomTab === 'Hardware' && (
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
