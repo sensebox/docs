@@ -88,7 +88,7 @@ const FeatureList = [
     to: '/docs/boards/mini/mini-overview?board=mini',
   },
     {
-    title: translateTitle('basic'),
+    title: translateTitle(':basic'),
     description: (
       <Translate>
         Digitale Welt verstehen – schon ab der Grundschule 
