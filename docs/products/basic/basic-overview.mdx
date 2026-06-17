@@ -11,17 +11,30 @@ import playStoreIcon from "@site/static/img/playstore_icon.png";
 import iosStoreIcon from "@site/static/img/ios_store.png";
 import basicRendering from "@site/static/img/basic/senseBoxbasic_Rendering04.png";
 import ButtonWithText from '@site/src/components/ButtonWithText/ButtonWithText'
+import PlacematViewer from '@site/src/components/PlacematViewer/PlacematViewer'
 import { NavGreen, NavWhite, NavBlocks } from '@site/src/components/Nav/Nav'
 import { PortsOverview, PortItem } from '@site/src/components/PortsOverview/PortsOverview'
 import basicApp from "@site/static/img/basic/basic_app.png";
 import basicBauteile from "@site/static/img/basic/basic_bauteile.png";
+import placemat1Side1 from "@site/static/img/basic/placemats/placemat1_1.jpg";
+import placemat1Side2 from "@site/static/img/basic/placemats/placemat1_2.jpg";
+import placemat2Side1 from "@site/static/img/basic/placemats/placemat2_1.jpg";
+import placemat2Side2 from "@site/static/img/basic/placemats/placemat2_2.jpg";
+import placemat3Side1 from "@site/static/img/basic/placemats/placemat3_1.jpg";
+import placemat3Side2 from "@site/static/img/basic/placemats/placemat3_2.jpg";
+import placemat4Side1 from "@site/static/img/basic/placemats/placemat4_1.jpg";
+import placemat4Side2 from "@site/static/img/basic/placemats/placemat4_2.jpg";
+import placemat1PDF from "@site/static/img/basic/placemats/placemat1.pdf";
+import placemat2PDF from "@site/static/img/basic/placemats/placemat2.pdf";
+import placemat3PDF from "@site/static/img/basic/placemats/placemat3.pdf";
+import placemat4PDF from "@site/static/img/basic/placemats/placemat4.pdf";
 
 export const MCUManager = () => {
   const [activeTopTab, setActiveTopTab] = React.useState(null);
-  const [activeBottomTab, setActiveBottomTab] = React.useState('Pflegehinweise');
+  const [activeBottomTab, setActiveBottomTab] = React.useState('Hardware');
   
 const topTabs = ['App', 'Pinout ↗', 'Datasheet ↗'];
-const bottomTabs =[ 'Hardware'];
+const bottomTabs = ['Hardware', 'Materialien'];
 
 const toggleTopTab = (tab) => {
  if(tab === 'Pinout ↗' || tab === 'Datasheet ↗') {
@@ -114,7 +127,16 @@ return (
              <NavBlocks href="/docs/hardware/accessoires/rgb-led" title="RGB-LED" />
           </div>     
         )}
-
+      {activeBottomTab === 'Materialien' && (
+          <div className="py-8">
+            <PlacematViewer placemats={[
+              { title: 'Party-Beleuchtung', side1: placemat1Side1, side2: placemat1Side2, downloadUrl: placemat1PDF },
+              { title: 'Messung der Luftqualität', side1: placemat2Side1, side2: placemat2Side2, downloadUrl: placemat2PDF },
+              { title: 'Würfel-Spaß', side1: placemat3Side1, side2: placemat3Side2, downloadUrl: placemat3PDF },
+              { title: 'Bau einer Umweltmessstation', side1: placemat4Side1, side2: placemat4Side2, downloadUrl: placemat4PDF }
+            ]} />
+          </div>
+       )}
 
 
    </div>
