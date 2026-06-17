@@ -31,10 +31,8 @@ import placemat4PDF from "@site/static/img/basic/placemats/placemat4.pdf";
 
 export const MCUManager = () => {
   const [activeTopTab, setActiveTopTab] = React.useState(null);
-  const [activeBottomTab, setActiveBottomTab] = React.useState('Hardware');
   
-const topTabs = ['App', 'Pinout ↗', 'Datasheet ↗'];
-const bottomTabs = ['Hardware', 'Materialien'];
+const topTabs = ['App','Materialien', 'Pinout ↗', 'Datasheet ↗'];
 
 const toggleTopTab = (tab) => {
  if(tab === 'Pinout ↗' || tab === 'Datasheet ↗') {
@@ -107,27 +105,9 @@ return (
       </div>
             </div>
           </div>  
-          )}    
-
-      <NavWhite
-        bottomTabs={bottomTabs}
-        activeTab={activeBottomTab}
-        onTabChange={setActiveBottomTab}
-      />
-      
-
-
-
-    {activeBottomTab === 'Hardware' && (
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
-             <NavBlocks href="/docs/hardware/accessoires/display" title="OLED Display" />
-              <NavBlocks href="/docs/hardware/bee/bluetooth-bee" title="Bluetooth-Bee" />
-              <NavBlocks href="/docs/hardware/sensors/umweltsensor" title="Umweltsensor" />
-
-             <NavBlocks href="/docs/hardware/accessoires/rgb-led" title="RGB-LED" />
-          </div>     
-        )}
-      {activeBottomTab === 'Materialien' && (
+          )}
+          
+      {activeTopTab === 'Materialien' && (
           <div className="py-8">
             <PlacematViewer placemats={[
               { title: 'Party-Beleuchtung', side1: placemat1Side1, side2: placemat1Side2, downloadUrl: placemat1PDF },
@@ -136,7 +116,18 @@ return (
               { title: 'Bau einer Umweltmessstation', side1: placemat4Side1, side2: placemat4Side2, downloadUrl: placemat4PDF }
             ]} />
           </div>
-       )}
+       )}    
+
+      <div className="mt-8">
+        <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-gray-100">Hardware</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+             <NavBlocks href="/docs/hardware/accessoires/display" title="OLED Display" />
+              <NavBlocks href="/docs/hardware/bee/bluetooth-bee" title="Bluetooth-Bee" />
+              <NavBlocks href="/docs/hardware/sensors/umweltsensor" title="Umweltsensor" />
+
+             <NavBlocks href="/docs/hardware/accessoires/rgb-led" title="RGB-LED" />
+        </div>
+      </div>
 
 
    </div>

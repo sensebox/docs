@@ -10,7 +10,7 @@ export function NavGreen({ topTabs, activeTab, onTabChange }) {
                 onClick={() => onTabChange(tab)}
                 className={`px-4 py-3 rounded-lg  transition-all duration-200 ${
                   activeTab === tab
-                    ? 'bg-[#45beed] font-bold rounded-xl text-green-700 shadow-md dark:bg-green-600 dark:text-green-100'
+                    ? 'border-4 border-[#45beed] font-bold rounded-xl  shadow-md dark:border-[#45beed] dark:text-[#45beed]'
                     : 'text-white/90 font-medium hover:text-white hover:bg-white/10 rounded-xl dark:text-gray-200 dark:hover:bg-white/10'
                 }`}
               >
