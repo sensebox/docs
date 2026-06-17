@@ -70,10 +70,9 @@ const PlacematViewer = ({ placemats }) => {
         {/* Image */}
         <div className="flex items-center justify-center min-h-[500px]">
           <img 
-            key={`${currentPlacematIndex}-${currentSide}`}
             src={currentSide === 1 ? currentPlacemat.side1 : currentPlacemat.side2} 
             alt={`${currentPlacemat.title} Seite ${currentSide}`} 
-            className="max-w-full max-h-[600px] object-contain rounded-lg shadow-md animate-in fade-in duration-300"
+            className="max-w-full max-h-[600px] object-contain rounded-lg shadow-md transition-opacity duration-300"
           />
         </div>
 

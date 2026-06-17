@@ -10,8 +10,8 @@ export default function StepSlideshow({ steps }) {
     if (isTransitioning) return
     setDirection(dir)
     setIsTransitioning(true)
+    setCurrentStep(newStep)
     setTimeout(() => {
-      setCurrentStep(newStep)
       setIsTransitioning(false)
     }, 300)
   }
@@ -65,13 +65,11 @@ export default function StepSlideshow({ steps }) {
         {/* Image */}
         <div className="flex items-center justify-center min-h-[400px] overflow-hidden">
           <img
-            key={currentStep}
             src={steps[currentStep]}
             alt={`Schritt ${currentStep + 1}`}
             className={cx(
-              'max-w-full max-h-[500px] object-contain',
-              'animate-in fade-in slide-in-from-right-4 duration-300',
-              direction === 'prev' && 'slide-in-from-left-4'
+              'max-w-full max-h-[500px] object-contain transition-opacity duration-300',
+              isTransitioning ? 'opacity-0' : 'opacity-100'
             )}
           />
         </div>
