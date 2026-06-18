@@ -20,12 +20,16 @@ import {
 import { IconItem } from '@site/src/components/icons/IconItem'
 import {
   faCloud,
+  faEthernet,
   faGaugeHigh,
   faMicrophone,
   faPercent,
+  faSdCard,
   faSmog,
   faSun,
   faTemperatureHigh,
+  faTowerBroadcast,
+  faWifi,
   faWind,
 } from '@fortawesome/free-solid-svg-icons'
 
@@ -51,30 +55,60 @@ return (
       />
         
      {activeTopTab === 'Messbare Phänomene' && (
-   <PortsOverview>
-    <IconItem> 
-      <FontAwesomeIcon icon={faTemperatureHigh} />
-      <FontAwesomeIcon icon={faGaugeHigh} />
-      <FontAwesomeIcon icon={faPercent} />
-      <FontAwesomeIcon icon={faSun} />
-      <FontAwesomeIcon icon={faSmog} />
-      <FontAwesomeIcon icon={faCloud} />
-      <FontAwesomeIcon icon={faMicrophone} />
-      <FontAwesomeIcon icon={faWind} />
+  <PortsOverview className="flex flex-wrap gap-4">
+    <IconItem width="14rem" className="flex flex-col items-center p-5">
+      <FontAwesomeIcon icon={faTemperatureHigh} style={{ color: 'green' }} />
+      <span>Temperatur</span>
+    </IconItem>
+    <IconItem width="14rem" className="flex flex-col items-center p-5">
+      <FontAwesomeIcon icon={faGaugeHigh} style={{ color: 'green' }} />
+      <span>Luftdruck</span>
+    </IconItem>
+    <IconItem width="14rem" className="flex flex-col items-center gap-2 p-5">
+      <FontAwesomeIcon icon={faPercent} style={{ color: 'green' }} />
+      <span>Luftfeuchtigkeit</span>
+    </IconItem>
+    <IconItem width="14rem" className="flex flex-col items-center p-5">
+      <FontAwesomeIcon icon={faSun} style={{ color: 'green' }} />
+      <span>Helligkeit</span>
+    </IconItem>
+    <IconItem width="14rem" className="flex flex-col items-center p-5">
+      <FontAwesomeIcon icon={faSmog} style={{ color: 'green' }} />
+      <span>Luftqualität</span>
+    </IconItem>
+    <IconItem width="14rem" className="flex flex-col items-center p-5">
+      <FontAwesomeIcon icon={faCloud} style={{ color: 'green' }} />
+      <span>Wolken</span>
+    </IconItem>
+    <IconItem width="14rem" className="flex flex-col items-center p-5">
+      <FontAwesomeIcon icon={faMicrophone} style={{ color: 'green' }} />
+      <span>Geräuschpegel</span>
+    </IconItem>
+    <IconItem width="14rem" className="flex flex-col items-center p-5">
+      <FontAwesomeIcon icon={faWind} style={{ color: 'green' }} />
+      <span>Wind</span>
     </IconItem>
   </PortsOverview>
  )}
 
 {activeTopTab === 'Datenübertragung' && (
-
-<PortsOverview>
-<IconItem>
-<FontAwesomeIcon icon={faWifi} />
-<FontAwesomeIcon icon={faEthernet} />
-<FontAwesomeIcon icon={faTowerBroadcast} />
-<FontAwesomeIcon icon={faSdCard} />
-</IconItem>
-
+  <PortsOverview className="flex flex-wrap gap-4">
+    <IconItem width="14rem" className="flex flex-col items-center p-5">
+      <FontAwesomeIcon icon={faWifi} style={{ color: 'green' }} />
+      <span>WLAN</span>
+    </IconItem>
+    <IconItem width="14rem" className="flex flex-col items-center p-5">
+      <FontAwesomeIcon icon={faEthernet} style={{ color: 'green' }} />
+      <span>Ethernet</span>
+    </IconItem>
+    <IconItem width="14rem" className="flex flex-col items-center p-5">
+      <FontAwesomeIcon icon={faTowerBroadcast} style={{ color: 'green' }} />
+      <span>Funk</span>
+    </IconItem>
+    <IconItem width="14rem" className="flex flex-col items-center p-5">
+      <FontAwesomeIcon icon={faSdCard} style={{ color: 'green' }} />
+      <span>SD-Karte</span>
+    </IconItem>
   </PortsOverview>
  )}
 
