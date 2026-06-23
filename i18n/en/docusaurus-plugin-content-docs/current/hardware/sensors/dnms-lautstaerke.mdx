@@ -1,0 +1,66 @@
+---
+sidebar_position: 0
+title: Sound Level Meter DNMS
+hide_title: false
+description: Teensy Microphone Sound Level Meter
+---
+
+import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
+
+# DNMS Teensy Sound Level Meter
+
+:::warning
+Work in progress
+:::
+
+The sound level meter consists of a Teensy microcontroller and a digital MEMS microphone IM72D128.
+The Teensy is programmed with specially developed firmware originating from the DNMS project (Digital Noise Measurement Sensor). This software enables the Teensy to process the microphone’s digital audio data in real time, continuously calculate the sound level, and determine the A-weighted sound level values (dB(A)).
+
+The microphone captures sound as digital audio data, while the Teensy continuously analyzes this data. By applying an A-weighting filter, which models human hearing sensitivity, the measured values are frequency-weighted. The system then computes the equivalent continuous sound level (LAeq) as well as the minimum (LAmin) and maximum (LAmax) levels over freely configurable measurement intervals.
+
+The calculated measurement values can be read and further processed by a senseBox MCU via the I²C interface.
+
+## Technical Information
+
+- “Plug-in-and-Go” senseBox compatible
+- Maximum deviation 1%
+- 
+
+## Connection
+
+<TutorialPorts port="i2c" />
+
+## Programming (Arduino)
+
+### Software Library
+
+To program the sound level meter in Arduino, you need to install the software library [DNMSI2C](https://github.com/sensebox/sensebox-dnms-arduino). A detailed guide on how to add libraries can be found in our [documentation](https://docs.sensebox.de/docs/editors/arduino/libraries-hinzufuegen/).
+
+### Code
+
+This sketch reads the three sound level values and outputs them via the serial interface.
+
+```cpp
+#include <DNMSI2C.h> // http://librarymanager/All#DNMSI2C
+
+DNMSI2C sensor;
+
+void setup() {
+  Serial.begin(9600);
+
+  sensor.begin();
+}
+
+void loop() {    
+    sensor.update();
+
+    Serial.print("Average sound level (dB(A)): ");
+    Serial.println(sensor.average());
+    Serial.print("Lowest level (dB(A)): ");
+    Serial.println(sensor.min());
+    Serial.print("Highest level (dB(A)): ");
+    Serial.println(sensor.max());
+
+    delay(1000);
+}
+```
