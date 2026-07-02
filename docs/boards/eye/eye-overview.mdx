@@ -42,50 +42,62 @@ import { PortsOverview, PortItem } from '@site/src/components/PortsOverview/Port
 
 export const MCUManager = () => {
   const [activeTopTab, setActiveTopTab] = React.useState(null);
-  const [activeBottomTab, setActiveBottomTab] = React.useState('Features');
-  const topTabs = ['Pinout ↗', 'DataSheet ↗', 'I2C/Wire Ports', 'Digitale/Analoge Ports'];
-  const bottomTabs = ['Features', 'Hardware', 'Tech Specs', 'Blockly', 'Arduino', 'CircuitPython'];
+  const [activeBottomTab, setActiveBottomTab] = React.useState("Features");
+  const topTabs = [
+    "Pinout ↗",
+    "DataSheet ↗",
+    "I2C/Wire Ports",
+    "Digitale/Analoge Ports",
+  ];
+  const bottomTabs = [
+    "Features",
+    "Hardware",
+    "Tech Specs",
+    "Blockly",
+    "Arduino",
+    "CircuitPython",
+  ];
 
-const toggleTopTab = (tab) => {
-  if(tab === 'Pinout ↗' || tab === 'DataSheet ↗') {
-      const url = tab === 'DataSheet ↗' 
-        ? 'https://sensebox.de/non_img_assets/datenblaetter/pdf_output/Datenblatt-senseBox_Eye.pdf'
-        : 'https://github.com/sensebox/senseBox_Eye/blob/main/hardware/schematics/v1.4/SenseBox-Eye_v1.4.pdf';
-      window.open(url, '_blank');
+  const toggleTopTab = (tab) => {
+    if (tab === "Pinout ↗" || tab === "DataSheet ↗") {
+      const url =
+        tab === "DataSheet ↗"
+          ? "https://sensebox.de/non_img_assets/datenblaetter/pdf_output/Datenblatt-senseBox_Eye.pdf"
+          : "https://github.com/sensebox/senseBox_Eye/blob/main/hardware/schematics/v1.4/SenseBox-Eye_v1.4.pdf";
+      window.open(url, "_blank");
       return;
-  } else {  
-    if (activeTopTab === tab) {
-      setActiveTopTab(null);
     } else {
-      setActiveTopTab(tab);
+      if (activeTopTab === tab) {
+        setActiveTopTab(null);
+      } else {
+        setActiveTopTab(tab);
+      }
     }
-  } 
-};
+  };
 
-return (
-<div className="my-8 flex-grow-3 flex-col space-y-8 "> 
+  return (
+    <div className="my-8 flex-grow-3 flex-col space-y-8 ">
+      <NavGreen
+        topTabs={topTabs}
+        activeTab={activeTopTab}
+        onTabChange={toggleTopTab}
+      />
 
-    <NavGreen 
-      topTabs={topTabs}
-      activeTab={activeTopTab}
-      onTabChange={toggleTopTab}
-    />
+      {activeTopTab === "I2C/Wire Ports" && (
+        <PortsOverview title="Sensoren und Zubehör an den I2C/Wire Anschlüssen">
+          <PortItem src={lightSensor} name="Lichtsensor" />
+          <PortItem src={tempSensor} name="Temperatur" />
+          <PortItem src={pressureSensor} name="Luftdruck" />
+          <PortItem src={tofSensor} name="ToF Sensor" />
+          <PortItem src={display} name="Display" />
+        </PortsOverview>
+      )}
 
-{activeTopTab === 'I2C/Wire Ports' && (
-  <PortsOverview title="Sensoren und Zubehör an den I2C/Wire Anschlüssen">
-    <PortItem src={lightSensor} name="Lichtsensor" />
-    <PortItem src={tempSensor} name="Temperatur" />
-    <PortItem src={pressureSensor} name="Luftdruck" />
-    <PortItem src={tofSensor} name="ToF Sensor" />
-    <PortItem src={display} name="Display" />
-  </PortsOverview>
-)}
-
-{activeTopTab === 'Digitale/Analoge Ports' && (
-  <PortsOverview title="Sensoren und Accessoire an den Digital/Analog Ports">
-    <PortItem src={ledMatrix} name="LED-Matrix" />
-  </PortsOverview>
-)}
+      {activeTopTab === "Digitale/Analoge Ports" && (
+        <PortsOverview title="Sensoren und Accessoire an den Digital/Analog Ports">
+          <PortItem src={ledMatrix} name="LED-Matrix" />
+        </PortsOverview>
+      )}
 
       <NavWhite
         bottomTabs={bottomTabs}
@@ -94,103 +106,178 @@ return (
       />
 
       <div className="bg-white border border-gray-200 rounded-xl p-6 dark:bg-gray-900 dark:border-gray-800 dark:text-gray-200">
-        {activeBottomTab === 'Features' && (
+        {activeBottomTab === "Features" && (
           <div>
-            <h3 className="text-xl font-bold mb-4 text-black dark:text-gray-100">I2C/Wire Daisy Chain</h3>
+            <h3 className="text-xl font-bold mb-4 text-black dark:text-gray-100">
+              I2C/Wire Daisy Chain
+            </h3>
             <p className="text-gray-700 mb-4 dark:text-gray-200">
-              Eine I2C-Daisy-Chain ermöglicht die einfache und effiziente Verbindung mehrerer Geräte in einer seriellen Kommunikationskette unter Verwendung des I2C-Protokolls. Durch die Daisy-Chain-Konfiguration kann jedes Gerät in der Kette Daten senden und empfangen. Diese Methode ist besonders nützlich in Anwendungen, bei denen Platz und Ressourcen begrenzt sind, da sie die Anzahl der benötigten physischen Verbindungen minimiert und gleichzeitig eine robuste und zuverlässige Datenkommunikation ermöglicht.
+              Eine I2C-Daisy-Chain ermöglicht die einfache und effiziente
+              Verbindung mehrerer Geräte in einer seriellen Kommunikationskette
+              unter Verwendung des I2C-Protokolls. Durch die
+              Daisy-Chain-Konfiguration kann jedes Gerät in der Kette Daten
+              senden und empfangen. Diese Methode ist besonders nützlich in
+              Anwendungen, bei denen Platz und Ressourcen begrenzt sind, da sie
+              die Anzahl der benötigten physischen Verbindungen minimiert und
+              gleichzeitig eine robuste und zuverlässige Datenkommunikation
+              ermöglicht.
             </p>
-      <ImageWithText src={i2cdaiychain} title="I2C/Wire daisy chain" />
+            <ImageWithText src={i2cdaiychain} title="I2C/Wire daisy chain" />
           </div>
         )}
 
-      {activeBottomTab === 'Hardware' && (
+        {activeBottomTab === "Hardware" && (
           <>
-            <div className='!scale-300'>
-           <ImageWithText src={portsOnboardWhite} title="Anschlüsse und Komponenten der MCU Eye" />
+            <div className="!scale-300">
+              <ImageWithText
+                src={portsOnboardWhite}
+                title="Anschlüsse und Komponenten der MCU Eye"
+              />
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
-                          <NavBlocks href="/docs/hardware/eye/camera" title="Kamera" />
-              <NavBlocks href="/docs/hardware/eye/icm20948" title="Beschleunigungssensor" />
-              <NavBlocks href="/docs/hardware/eye/rgb-led-esp32" title="RGB-LED" />
+              <NavBlocks href="/docs/hardware/eye/camera" title="Kamera" />
+              <NavBlocks
+                href="/docs/hardware/eye/icm20948"
+                title="Beschleunigungssensor"
+              />
+              <NavBlocks
+                href="/docs/hardware/eye/rgb-led-esp32"
+                title="RGB-LED"
+              />
               <NavBlocks href="/docs/hardware/eye/wifi" title="WiFi" />
               <NavBlocks href="/docs/hardware/eye/ble" title="Bluetooth" />
               <NavBlocks href="/docs/hardware/eye/lora" title="LoRa" />
               <NavBlocks href="/docs/hardware/eye/sd" title="SD-Karte" />
               <NavBlocks href="/docs/hardware/eye/button" title="Taster" />
-
             </div>
           </>
         )}
 
-      {activeBottomTab === 'Tech Specs' && (
-  <TechSpecs
-    name="MCU Eye"
-    sku="SB-150"
-    
-    processor="ESP32-S3-WROOM"
-    processorDetails="Dual-Core 32-bit mit integrierter WiFi- und BLE-Funktion"
-    
-    i2cPorts="Ein QWIIC-kompatibler"
-    digitalIOs="Mehrere digitale I/Os"
-    analogIOs="Mehrere analoge I/Os"
-    connectorSystem="QWIIC-kompatibel (JST SH)"
-    voltage="5V tolerant"
-    
-    dataTransferOptions="UART oder SPI Module (WLAN, BLE, LAN, LoRa)"
-    sdCard="Micro-SD Slot (onboard)"
-    
-    wifi="802.11 b/g/n (integriert)"
-    bluetooth="integriert"
-    
-    onboardFeatures="kameraanschluss, 6-achsiger Lagesensor, Lichtsensor, RGB LED, Micro SD Slot, Batterieanschluss, QWIIC System-Anschlüsse"
-    
-    ioVoltage="3.3 V / 5 V tolerant"
-    inputVoltage="5 V (via USB) / 3.7 V (externe Batterie)"
-    batterySupport="Ja (externer Batterieanschluss)"
-  />
-)}
+        {activeBottomTab === "Tech Specs" && (
+          <TechSpecs
+            name="MCU Eye"
+            sku="SB-150"
 
-                 {activeBottomTab === 'Blockly' && (
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
-              <NavBlocks href="/docs/editors/blockly/blocks/logik" title="Entscheidung" />
-              <NavBlocks href="/docs/editors/blockly/blocks/mathematik" title="Mathematik" />
-              <NavBlocks href="/docs/editors/blockly/blocks/schleifen" title="Schleifen" />
-               <NavBlocks href="/docs/editors/blockly/blocks/sensoren" title="Sensoren" />
-              <NavBlocks href="/docs/editors/blockly/blocks/text" title="Text" />
-              <NavBlocks href="/docs/editors/blockly/blocks/variablen" title="Variablen" />
-               <NavBlocks href="/docs/editors/blockly/blocks/web/opensensemap" title="openSenseMap" />
-              <NavBlocks href="/docs/editors/blockly/blocks/web/wifi" title="Wifi" />
-              <NavBlocks href="/docs/editors/blockly/blocks/zeit" title="Zeit" />
-             </div>
-                 )}
+            processor="ESP32-S3-WROOM"
+            processorDetails="Dual-Core 32-bit mit integrierter WiFi- und BLE-Funktion"
 
-            {activeBottomTab === 'Arduino' && (
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
-              <NavBlocks href="/docs/editors/arduino/installation-arduino-ide" title="Installation der Arduino IDE" />
-              <NavBlocks href="/docs/editors/arduino/installation-bsp" title="Installation des Board-Support-Packages" />
-              <NavBlocks href="/docs/editors/arduino/first-steps" title="Erste Schritte mit Arduino IDE" />
-               <NavBlocks href="/docs/editors/arduino/libraries-hinzufuegen" title="Arduino Software Bibliotheken hinzufügen" />
-                </div>
-                 )}
+            i2cPorts="Ein QWIIC-kompatibler"
+            digitalIOs="Mehrere digitale I/Os"
+            analogIOs="Mehrere analoge I/Os"
+            connectorSystem="QWIIC-kompatibel (JST SH)"
+            voltage="5V tolerant"
 
-             {activeBottomTab === 'CircuitPython' && (
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
-              <NavBlocks href="/docs/editors/circuitpython/circuitpython_esp32" title="CircuitPython installieren" />
-              <NavBlocks href="/docs/editors/circuitpython/circpy_uninstall" title="CircuitPython deinstallieren" />
-              <NavBlocks href="/docs/editors/circuitpython/circpy_first-steps" title="Erste Schritte mit CircuitPython" />
-              <NavBlocks href="/docs/editors/circuitpython/circpy_libraries" title="CircuitPython Bibliotheken" />
-              <NavBlocks href="/docs/editors/circuitpython/circpy_supported-hardware" title="Eingeschränkte Unterstützung" />
-              <NavBlocks href="/docs/editors/circuitpython/circpy_editors" title="CircuitPython Editoren" />
-               <NavBlocks href="/docs/editors/circuitpython/circpy_osem" title="openSenseMap mit CircuitPython" />
-              <NavBlocks href="/docs/editors/circuitpython/circpy_example" title="CircuitPython Beispiel: Brick Breaker" />
-             </div>
-                 )}
-        
+            dataTransferOptions="UART oder SPI Module (WLAN, BLE, LAN, LoRa)"
+            sdCard="Micro-SD Slot (onboard)"
+
+            wifi="802.11 b/g/n (integriert)"
+            bluetooth="integriert"
+
+            onboardFeatures="kameraanschluss, 6-achsiger Lagesensor, Lichtsensor, RGB LED, Micro SD Slot, Batterieanschluss, QWIIC System-Anschlüsse"
+
+            ioVoltage="3.3 V / 5 V tolerant"
+            inputVoltage="5 V (via USB) / 3.7 V (externe Batterie)"
+            batterySupport="Ja (externer Batterieanschluss)"
+          />
+        )}
+
+        {activeBottomTab === "Blockly" && (
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
+            <NavBlocks
+              href="/docs/editors/blockly/blocks/logik"
+              title="Entscheidung"
+            />
+            <NavBlocks
+              href="/docs/editors/blockly/blocks/mathematik"
+              title="Mathematik"
+            />
+            <NavBlocks
+              href="/docs/editors/blockly/blocks/schleifen"
+              title="Schleifen"
+            />
+            <NavBlocks
+              href="/docs/editors/blockly/blocks/sensoren"
+              title="Sensoren"
+            />
+            <NavBlocks href="/docs/editors/blockly/blocks/text" title="Text" />
+            <NavBlocks
+              href="/docs/editors/blockly/blocks/variablen"
+              title="Variablen"
+            />
+            <NavBlocks
+              href="/docs/editors/blockly/blocks/web/opensensemap"
+              title="openSenseMap"
+            />
+            <NavBlocks
+              href="/docs/editors/blockly/blocks/web/wifi"
+              title="Wifi"
+            />
+            <NavBlocks href="/docs/editors/blockly/blocks/zeit" title="Zeit" />
+          </div>
+        )}
+
+        {activeBottomTab === "Arduino" && (
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
+            <NavBlocks
+              href="/docs/editors/arduino/installation-arduino-ide"
+              title="Installation der Arduino IDE"
+            />
+            <NavBlocks
+              href="/docs/editors/arduino/installation-bsp"
+              title="Installation des Board-Support-Packages"
+            />
+            <NavBlocks
+              href="/docs/editors/arduino/first-steps"
+              title="Erste Schritte mit Arduino IDE"
+            />
+            <NavBlocks
+              href="/docs/editors/arduino/libraries-hinzufuegen"
+              title="Arduino Software Bibliotheken hinzufügen"
+            />
+          </div>
+        )}
+
+        {activeBottomTab === "CircuitPython" && (
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
+            <NavBlocks
+              href="/docs/editors/circuitpython/circuitpython_esp32"
+              title="CircuitPython installieren"
+            />
+            <NavBlocks
+              href="/docs/editors/circuitpython/circpy_uninstall"
+              title="CircuitPython deinstallieren"
+            />
+            <NavBlocks
+              href="/docs/editors/circuitpython/circpy_first-steps"
+              title="Erste Schritte mit CircuitPython"
+            />
+            <NavBlocks
+              href="/docs/editors/circuitpython/circpy_libraries"
+              title="CircuitPython Bibliotheken"
+            />
+            <NavBlocks
+              href="/docs/editors/circuitpython/circpy_supported-hardware"
+              title="Eingeschränkte Unterstützung"
+            />
+            <NavBlocks
+              href="/docs/editors/circuitpython/circpy_editors"
+              title="CircuitPython Editoren"
+            />
+            <NavBlocks
+              href="/docs/editors/circuitpython/circpy_osem"
+              title="openSenseMap mit CircuitPython"
+            />
+            <NavBlocks
+              href="/docs/editors/circuitpython/circpy_example"
+              title="CircuitPython Beispiel: Brick Breaker"
+            />
+          </div>
+        )}
       </div>
     </div>
   );
 };
+
 
 
 <div className="flex flex-col md:flex-row items-start justify-between mb-8">
