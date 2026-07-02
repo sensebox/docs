@@ -3,21 +3,63 @@ sidebar_position: 2
 title: Die MCU S2 in Betrieb nehmen
 hide_title: false
 ---
-## Die senseBox mit Strom versorgen
-<div>
-<p>
-Um die senseBox zu verwenden, muss sie natürlich mit Strom versorgt werden. Es gibt zwei Möglichkeiten die senseBox mit Strom zu versorgen:
-</p>
-<h3> 1. USB-Kabel</h3>
-<p>
-Du kannst die senseBox mit Hilfe des beiliegenden USB-C-Kabels mit Strom versorgen. Diese Möglichkeit ist die einfachste, wenn du sowieso am Computer programmierst.
-Stecke das kleinere Ende des USB-Kabels in den USB-Anschluss des senseBox MCU S2. Dieser befindet sich oben neben dem roten Reset-Knopf. Das andere Ende des Kabels wird in den USB-Anschluss deines Computers oder einer Powerbank gesteckt.
-</p>
-<img src="/img/blockly-bilder/inbetriebnahme/s2/1.png" alt="akku"/>
-<h3> 2. Akku       </h3>
-<p>
-Wenn du deine senseBox über einen Akku mit Strom versorgen möchtest, kannst du dies über den zweipoligen JST-Stecker auf der senseBox MCU S2 tun. Stecke dazu einfach den JST-Stecker des Akkus in den JST-Anschluss auf der senseBox MCU S2. Dieser befindet sich oben, neben dem USB-Anschluss.
-</p>
-<img src="/img/blockly-bilder/inbetriebnahme/s2/2.png" alt="akku"/>
 
-</div>
+import React from 'react'
+import { NavGreen } from '@site/src/components/Nav/Nav'
+import ImageWithText from "@site/src/components/ImageWithText/ImageWithText";
+import usbImg from "@site/static/img/blockly-bilder/inbetriebnahme/s2/1.png";
+import akkuImg from "@site/static/img/blockly-bilder/inbetriebnahme/s2/2.png";
+
+export const PowerSupplyManager = () => {
+  const [activeTab, setActiveTab] = React.useState('USB-Kabel');
+  
+  const tabs = ['USB-Kabel', 'Akku'];
+  
+  return (
+    <div className="my-8 flex flex-col space-y-8 w-full max-w-none">
+      <NavGreen 
+        topTabs={tabs}
+        activeTab={activeTab}
+        onTabChange={setActiveTab}
+      />
+      
+      {activeTab === 'USB-Kabel' && (
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-2xl font-bold mb-4 text-black dark:text-gray-100">USB-C Kabel</h3>
+            <p className="text-gray-700 dark:text-gray-200 mb-4">
+              Du kannst die senseBox mit Hilfe des beiliegenden USB-C-Kabels mit Strom versorgen. Diese Möglichkeit ist die einfachste, wenn du sowieso am Computer programmierst.
+            </p>
+            <p className="text-gray-700 dark:text-gray-200 mb-6">
+              Stecke das kleinere Ende des USB-Kabels in den USB-Anschluss des senseBox MCU S2. Dieser befindet sich oben neben dem roten Reset-Knopf. Das andere Ende des Kabels wird in den USB-Anschluss deines Computers oder einer Powerbank gesteckt.
+            </p>
+            <div className="flex justify-center">
+              <ImageWithText src={usbImg} title="USB-C Stromversorgung" size="xl" />
+            </div>
+          </div>
+        </div>
+      )}
+      
+      {activeTab === 'Akku' && (
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-2xl font-bold mb-4 text-black dark:text-gray-100">Akku (JST-Stecker)</h3>
+            <p className="text-gray-700 dark:text-gray-200 mb-4">
+              Wenn du deine senseBox über einen Akku mit Strom versorgen möchtest, kannst du dies über den zweipoligen JST-Stecker auf der senseBox MCU S2 tun.
+            </p>
+            <p className="text-gray-700 dark:text-gray-200 mb-6">
+              Stecke dazu einfach den JST-Stecker des Akkus in den JST-Anschluss auf der senseBox MCU S2. Dieser befindet sich oben, neben dem USB-Anschluss.
+            </p>
+            <div className="flex justify-center">
+              <ImageWithText src={akkuImg} title="Akku Stromversorgung (JST-Stecker)" size="xl" />
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+## Die senseBox mit Strom versorgen
+
+<PowerSupplyManager />

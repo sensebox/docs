@@ -87,6 +87,15 @@ const FeatureList = [
     ),
     to: '/docs/boards/mini/mini-overview?board=mini',
   },
+    {
+    title: translateTitle(':basic'),
+    description: (
+      <Translate>
+        Digitale Welt verstehen – schon ab der Grundschule 
+      </Translate>
+    ),
+    to: '/docs/products/basic/basic-overview?board=basic',
+  },
   {
     title: translateTitle(':eye'),
     description: (
@@ -188,10 +197,10 @@ export default function HomepageFeatures() {
         <div className="flex flex-col gap-20 bg-gradient-to-r from-green to-green-3 p-8">
           <div className="flex flex-col items-center justify-evenly  lg:flex-row">
             <div className="text-center text-white">
-              <h1 className="font-bold">
+              <h1 className="text-4xl font-bold">
                 {translateTitle('senseBox Dokumentation')}
               </h1>
-              <p>
+              <p className="text-lg">
                 <Translate>Der Platz für die senseBox-Dokumentation.</Translate>
               </p>
             </div>

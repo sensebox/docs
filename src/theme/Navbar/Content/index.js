@@ -80,6 +80,7 @@ const BoardDropdown = () => {
       bike: ":bike",
       co2: ":CO2 Ampel",
       mini: ":mini",
+      basic: "basic",
     };
 
     // Überprüfen, ob der Suchbegriff gültig ist, und Board setzen
