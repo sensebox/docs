@@ -135,20 +135,20 @@ export const MCUManager = () => {
               />
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
-              <NavBlocks href="/docs/hardware/eye/camera" title="Kamera" />
+              <NavBlocks href="/docs/hardware/eye/camera?board=eye" title="Kamera" />
               <NavBlocks
-                href="/docs/hardware/eye/icm20948"
+                href="/docs/hardware/eye/icm20948?board=eye"
                 title="Beschleunigungssensor"
               />
               <NavBlocks
-                href="/docs/hardware/eye/rgb-led-esp32"
+                href="/docs/hardware/eye/rgb-led-esp32?board=eye"
                 title="RGB-LED"
               />
-              <NavBlocks href="/docs/hardware/eye/wifi" title="WiFi" />
-              <NavBlocks href="/docs/hardware/eye/ble" title="Bluetooth" />
-              <NavBlocks href="/docs/hardware/eye/lora" title="LoRa" />
-              <NavBlocks href="/docs/hardware/eye/sd" title="SD-Karte" />
-              <NavBlocks href="/docs/hardware/eye/button" title="Taster" />
+              <NavBlocks href="/docs/hardware/eye/wifi?board=eye" title="WiFi" />
+              <NavBlocks href="/docs/hardware/eye/ble?board=eye" title="Bluetooth" />
+              <NavBlocks href="/docs/hardware/eye/lora?board=eye" title="LoRa" />
+              <NavBlocks href="/docs/hardware/eye/sd?board=eye" title="SD-Karte" />
+              <NavBlocks href="/docs/hardware/eye/button?board=eye" title="Taster" />
             </div>
           </>
         )}
@@ -157,24 +157,18 @@ export const MCUManager = () => {
           <TechSpecs
             name="MCU Eye"
             sku="SB-150"
-
             processor="ESP32-S3-WROOM"
             processorDetails="Dual-Core 32-bit mit integrierter WiFi- und BLE-Funktion"
-
             i2cPorts="Ein QWIIC-kompatibler"
             digitalIOs="Mehrere digitale I/Os"
             analogIOs="Mehrere analoge I/Os"
             connectorSystem="QWIIC-kompatibel (JST SH)"
             voltage="5V tolerant"
-
             dataTransferOptions="UART oder SPI Module (WLAN, BLE, LAN, LoRa)"
             sdCard="Micro-SD Slot (onboard)"
-
             wifi="802.11 b/g/n (integriert)"
             bluetooth="integriert"
-
             onboardFeatures="kameraanschluss, 6-achsiger Lagesensor, Lichtsensor, RGB LED, Micro SD Slot, Batterieanschluss, QWIIC System-Anschlüsse"
-
             ioVoltage="3.3 V / 5 V tolerant"
             inputVoltage="5 V (via USB) / 3.7 V (externe Batterie)"
             batterySupport="Ja (externer Batterieanschluss)"
@@ -184,54 +178,54 @@ export const MCUManager = () => {
         {activeBottomTab === "Blockly" && (
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
             <NavBlocks
-              href="/docs/editors/blockly/blocks/logik"
+              href="/docs/editors/blockly/blocks/logik?board=eye"
               title="Entscheidung"
             />
             <NavBlocks
-              href="/docs/editors/blockly/blocks/mathematik"
+              href="/docs/editors/blockly/blocks/mathematik?board=eye"
               title="Mathematik"
             />
             <NavBlocks
-              href="/docs/editors/blockly/blocks/schleifen"
+              href="/docs/editors/blockly/blocks/schleifen?board=eye"
               title="Schleifen"
             />
             <NavBlocks
-              href="/docs/editors/blockly/blocks/sensoren"
+              href="/docs/editors/blockly/blocks/sensoren?board=eye"
               title="Sensoren"
             />
-            <NavBlocks href="/docs/editors/blockly/blocks/text" title="Text" />
+            <NavBlocks href="/docs/editors/blockly/blocks/text?board=eye" title="Text" />
             <NavBlocks
-              href="/docs/editors/blockly/blocks/variablen"
+              href="/docs/editors/blockly/blocks/variablen?board=eye"
               title="Variablen"
             />
             <NavBlocks
-              href="/docs/editors/blockly/blocks/web/opensensemap"
+              href="/docs/editors/blockly/blocks/web/opensensemap?board=eye"
               title="openSenseMap"
             />
             <NavBlocks
-              href="/docs/editors/blockly/blocks/web/wifi"
+              href="/docs/editors/blockly/blocks/web/wifi?board=eye"
               title="Wifi"
             />
-            <NavBlocks href="/docs/editors/blockly/blocks/zeit" title="Zeit" />
+            <NavBlocks href="/docs/editors/blockly/blocks/zeit?board=eye" title="Zeit" />
           </div>
         )}
 
         {activeBottomTab === "Arduino" && (
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
             <NavBlocks
-              href="/docs/editors/arduino/installation-arduino-ide"
+              href="/docs/editors/arduino/installation-arduino-ide?board=eye"
               title="Installation der Arduino IDE"
             />
             <NavBlocks
-              href="/docs/editors/arduino/installation-bsp"
+              href="/docs/editors/arduino/installation-bsp?board=eye"
               title="Installation des Board-Support-Packages"
             />
             <NavBlocks
-              href="/docs/editors/arduino/first-steps"
+              href="/docs/editors/arduino/first-steps?board=eye"
               title="Erste Schritte mit Arduino IDE"
             />
             <NavBlocks
-              href="/docs/editors/arduino/libraries-hinzufuegen"
+              href="/docs/editors/arduino/libraries-hinzufuegen?board=eye"
               title="Arduino Software Bibliotheken hinzufügen"
             />
           </div>
@@ -240,35 +234,35 @@ export const MCUManager = () => {
         {activeBottomTab === "CircuitPython" && (
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
             <NavBlocks
-              href="/docs/editors/circuitpython/circuitpython_esp32"
+              href="/docs/editors/circuitpython/circuitpython_esp32?board=eye"
               title="CircuitPython installieren"
             />
             <NavBlocks
-              href="/docs/editors/circuitpython/circpy_uninstall"
+              href="/docs/editors/circuitpython/circpy_uninstall?board=eye"
               title="CircuitPython deinstallieren"
             />
             <NavBlocks
-              href="/docs/editors/circuitpython/circpy_first-steps"
+              href="/docs/editors/circuitpython/circpy_first-steps?board=eye"
               title="Erste Schritte mit CircuitPython"
             />
             <NavBlocks
-              href="/docs/editors/circuitpython/circpy_libraries"
+              href="/docs/editors/circuitpython/circpy_libraries?board=eye"
               title="CircuitPython Bibliotheken"
             />
             <NavBlocks
-              href="/docs/editors/circuitpython/circpy_supported-hardware"
+              href="/docs/editors/circuitpython/circpy_supported-hardware?board=eye"
               title="Eingeschränkte Unterstützung"
             />
             <NavBlocks
-              href="/docs/editors/circuitpython/circpy_editors"
+              href="/docs/editors/circuitpython/circpy_editors?board=eye"
               title="CircuitPython Editoren"
             />
             <NavBlocks
-              href="/docs/editors/circuitpython/circpy_osem"
+              href="/docs/editors/circuitpython/circpy_osem?board=eye"
               title="openSenseMap mit CircuitPython"
             />
             <NavBlocks
-              href="/docs/editors/circuitpython/circpy_example"
+              href="/docs/editors/circuitpython/circpy_example?board=eye"
               title="CircuitPython Beispiel: Brick Breaker"
             />
           </div>
@@ -290,7 +284,7 @@ export const MCUManager = () => {
     </p>
     
 
-<ButtonWithText href="/docs/boards/eye/eye-in-betrieb-nehmen" title="Los geht's"/>
+<ButtonWithText href="/docs/boards/eye/eye-in-betrieb-nehmen?board=eye" title="Los geht's"/>
 
   </div>
   <div className="ml-0 md:ml-9 mt-4 md:mt-0 ">

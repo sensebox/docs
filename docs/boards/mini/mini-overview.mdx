@@ -135,26 +135,26 @@ export const MCUManager = () => {
         {activeBottomTab === "Hardware" && (
           <>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
-              <NavBlocks href="/docs/hardware/bee/wifi-bee" title="Wifi-Bee" />
-              <NavBlocks href="/docs/hardware/bee/sd-bee" title="SD-Bee" />
+              <NavBlocks href="/docs/hardware/bee/wifi-bee?board=mini" title="Wifi-Bee" />
+              <NavBlocks href="/docs/hardware/bee/sd-bee?board=mini" title="SD-Bee" />
               <NavBlocks
-                href="/docs/hardware/accessoires/display"
+                href="/docs/hardware/accessoires/display?board=mini"
                 title="OLED Display"
               />
               <NavBlocks
-                href="/docs/hardware/sensors/umweltsensor"
+                href="/docs/hardware/sensors/umweltsensor?board=mini"
                 title="Umweltsensor"
               />
               <NavBlocks
-                href="/docs/hardware/accessoires/rgb-led"
+                href="/docs/hardware/accessoires/rgb-led?board=mini"
                 title="RGB-LED"
               />
               <NavBlocks
-                href="/docs/hardware/sensors/niederschlag-rg15"
+                href="/docs/hardware/sensors/niederschlag-rg15?board=mini"
                 title="Niederschlagsensor"
               />
               <NavBlocks
-                href="/docs/hardware/accessoires/cable_overview"
+                href="/docs/hardware/accessoires/cable_overview?board=mini"
                 title="Kabelübersicht"
               />
             </div>
@@ -191,58 +191,58 @@ export const MCUManager = () => {
         {activeBottomTab === "Blockly" && (
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
             <NavBlocks
-              href="/docs/editors/blockly/blocks/logik"
+              href="/docs/editors/blockly/blocks/logik?board=mini"
               title="Entscheidung"
             />
             <NavBlocks
-              href="/docs/editors/blockly/blocks/mathematik"
+              href="/docs/editors/blockly/blocks/mathematik?board=mini"
               title="Mathematik"
             />
             <NavBlocks
-              href="/docs/editors/blockly/blocks/schleifen"
+              href="/docs/editors/blockly/blocks/schleifen?board=mini"
               title="Schleifen"
             />
             <NavBlocks
-              href="/docs/editors/blockly/blocks/sensoren"
+              href="/docs/editors/blockly/blocks/sensoren?board=mini"
               title="Sensoren"
             />
-            <NavBlocks href="/docs/editors/blockly/blocks/text" title="Text" />
+            <NavBlocks href="/docs/editors/blockly/blocks/text?board=mini" title="Text" />
             <NavBlocks
-              href="/docs/editors/blockly/blocks/variablen"
+              href="/docs/editors/blockly/blocks/variablen?board=mini"
               title="Variablen"
             />
             <NavBlocks
-              href="/docs/editors/blockly/blocks/web/opensensemap"
+              href="/docs/editors/blockly/blocks/web/opensensemap?board=mini"
               title="openSenseMap"
             />
             <NavBlocks
-              href="/docs/editors/blockly/blocks/web/wifi"
+              href="/docs/editors/blockly/blocks/web/wifi?board=mini"
               title="Wifi"
             />
-            <NavBlocks href="/docs/editors/blockly/blocks/zeit" title="Zeit" />
+            <NavBlocks href="/docs/editors/blockly/blocks/zeit?board=mini" title="Zeit" />
           </div>
         )}
 
         {activeBottomTab === "Arduino" && (
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
             <NavBlocks
-              href="/docs/editors/arduino/installation-arduino-ide"
+              href="/docs/editors/arduino/installation-arduino-ide?board=mini"
               title="Installation der Arduino IDE"
             />
             <NavBlocks
-              href="/docs/editors/arduino/installation-bsp"
+              href="/docs/editors/arduino/installation-bsp?board=mini"
               title="Installation des Board-Support-Packages"
             />
             <NavBlocks
-              href="/docs/boards/mcu/mcu-sensebox-io-library"
+              href="/docs/boards/mcu/mcu-sensebox-io-library?board=mini"
               title="senseBoxIO Library"
             />
             <NavBlocks
-              href="/docs/editors/arduino/libraries-hinzufuegen"
+              href="/docs/editors/arduino/libraries-hinzufuegen?board=mini"
               title="Arduino Software Bibliotheken hinzufügen"
             />
             <NavBlocks
-              href="/docs/editors/arduino/first-steps"
+              href="/docs/editors/arduino/first-steps?board=mini"
               title="Erste Schritte mit Arduino IDE"
             />
           </div>
@@ -266,7 +266,7 @@ export const MCUManager = () => {
 	</p>
     
 
-<ButtonWithText href="/docs/boards/mcu/mcu-revisions" title="Los geht's"/>
+<ButtonWithText href="/docs/boards/mcu/mcu-revisions?board=mini" title="Los geht's"/>
 
   </div>
   <div className="ml-0 md:ml-9 mt-4 md:mt-0 ">
