@@ -47,6 +47,11 @@ const basicSidebar = {
         'hardware/accessoires/rgb-led',
       ],
     },
+    {
+      type: 'doc',
+      id: 'products/basic/basic-materialien',
+      label: 'Materialien',
+    },
   ],
 }
 

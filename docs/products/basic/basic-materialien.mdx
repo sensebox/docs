@@ -1,0 +1,82 @@
+---
+title: Materialien
+---
+
+import PlacematViewer from '@site/src/components/PlacematViewer/PlacematViewer'
+import placemat1Side1 from '@site/static/img/basic/placemats/placemat1_1.jpg'
+import placemat1Side2 from '@site/static/img/basic/placemats/placemat1_2.jpg'
+import placemat2Side1 from '@site/static/img/basic/placemats/placemat2_1.jpg'
+import placemat2Side2 from '@site/static/img/basic/placemats/placemat2_2.jpg'
+import placemat3Side1 from '@site/static/img/basic/placemats/placemat3_1.jpg'
+import placemat3Side2 from '@site/static/img/basic/placemats/placemat3_2.jpg'
+import placemat4Side1 from '@site/static/img/basic/placemats/placemat4_1.jpg'
+import placemat4Side2 from '@site/static/img/basic/placemats/placemat4_2.jpg'
+import placemat1PDF from '@site/static/img/basic/placemats/placemat1.pdf'
+import placemat2PDF from '@site/static/img/basic/placemats/placemat2.pdf'
+import placemat3PDF from '@site/static/img/basic/placemats/placemat3.pdf'
+import placemat4PDF from '@site/static/img/basic/placemats/placemat4.pdf'
+import introductionPresentation from '@site/static/img/basic/senseBoxbasic_Start-Präsentation.pdf'
+
+## Einführungspräsentation
+
+<div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden mb-4">
+  <iframe
+    src={`${introductionPresentation}#toolbar=0&navpanes=0&scrollbar=0`}
+    className="w-full h-[600px]"
+    title="Einführungspräsentation"
+  />
+</div>
+
+<a
+  href={introductionPresentation}
+  download
+  className="inline-flex items-center justify-center gap-2 py-3 px-6 bg-green text-white rounded-lg font-semibold transition-opacity duration-200 hover:opacity-90"
+>
+  <svg
+    className="w-5 h-5"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2.5}
+      d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2m-4-4l-4 4m0 0l-4-4m4 4V4"
+    />
+  </svg>
+  <span>Präsentation herunterladen</span>
+</a>
+
+---
+
+## Arbeitsmaterialien
+
+<PlacematViewer
+  placemats={[
+    {
+      title: "Bau einer Umweltmessstation",
+      side1: placemat4Side1,
+      side2: placemat4Side2,
+      downloadUrl: placemat4PDF,
+    },
+    {
+      title: "Würfel-Spaß",
+      side1: placemat3Side1,
+      side2: placemat3Side2,
+      downloadUrl: placemat3PDF,
+    },
+    {
+      title: "Messung der Luftqualität",
+      side1: placemat2Side1,
+      side2: placemat2Side2,
+      downloadUrl: placemat2PDF,
+    },
+    {
+      title: "Party-Beleuchtung",
+      side1: placemat1Side1,
+      side2: placemat1Side2,
+      downloadUrl: placemat1PDF,
+    },
+  ]}
+/>
