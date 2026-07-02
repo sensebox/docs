@@ -23,7 +23,6 @@ const basicSidebar = {
       label: 'Erste Schritte',
 	  key: 'basic-gettingStarted',
       items: [
-        'boards/mcus2/mcus2-in-betrieb-nehmen',
         'products/basic/basic-erste-schritte',
       ],
     },
