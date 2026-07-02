@@ -31,16 +31,16 @@ export const MCUManager = () => {
   const [activeTopTab, setActiveTopTab] = React.useState(null);
   const [activeBottomTab, setActiveBottomTab] = React.useState("Features");
   const topTabs = [
-    "I2C/Wire Ports",
-    "UART/Serielle Anschlüsse",
-    "Digitale/Analoge Ports",
-    "XBEE",
     "Pinout ↗",
     "DataSheet ↗",
   ];
   const bottomTabs = [
     "Features",
-    "Hardware",
+    "I2C/Wire Ports",
+    "UART/Serielle Anschlüsse",
+    "Digitale/Analoge Ports",
+    "XBEE",
+    "Hardware", 
     "Tech Specs",
     "Blockly",
     "Arduino",
@@ -72,51 +72,7 @@ export const MCUManager = () => {
         onTabChange={toggleTopTab}
       />
 
-      {activeTopTab === "I2C/Wire Ports" && (
-        <PortsOverview title="Sensoren und Zubehör an den I2C/Wire Anschlüssen">
-          <PortItem src={lightSensor} name="Lichtsensor" />
-          <PortItem src={tempSensor} name="Temperatur" />
-          <PortItem src={pressureSensor} name="Luftdruck" />
-          <PortItem src={tofSensor} name="ToF Sensor" />
-          <PortItem src={display} name="Display" />
-        </PortsOverview>
-      )}
-
-      {activeTopTab === "UART/Serielle Anschlüsse" && (
-        <PortsOverview title="Sensoren und Zubehör an den UART/Serielle Anschlüssen">
-          <PortItem src={feinstaubSds} name="Feinstaub (SDS011)" />
-          <PortItem src={feinstaubSps} name="Feinstaub (SPS30)" />
-        </PortsOverview>
-      )}
-
-      {activeTopTab === "Digitale/Analoge Ports" && (
-        <PortsOverview title="Sensoren und Zubehör an den Digitale/Analoge Anschlüssen">
-          <PortItem src={mikro} name="Kondensatormikrofon" />
-          <PortItem src={ultrasonic} name="Ultraschall-Distanzsensor" />
-          <PortItem src={truebner} name="Bodenfeuchtesensor" />
-        </PortsOverview>
-      )}
-
-      {activeTopTab === "XBEE" && (
-        <>
-          <PortsOverview title="Sensoren und Zubehör an den Digitale/Analoge Anschlüssen">
-            <PortItem src={wifiBee} name="WiFi Bee" />
-            <PortItem src={sdBee} name="SD Bee" />
-            <PortItem src={loraBee} name="LoRa Bee" />
-          </PortsOverview>
-
-          <div className="mt-8">
-            <Admonition type="warning" title="Hinweis zur Verwendung der XBees">
-              <p>
-                In seltenen Fällen kann es vorkommen, dass sich noch eine
-                Schutzfolie auf den Steckplätzen der XBees befindet. Diese lässt
-                sich vorsichtig mit einer Pinzette entfernen, um die Steckplätze
-                nutzen zu können.
-              </p>
-            </Admonition>
-          </div>
-        </>
-      )}
+      
 
       <NavWhite
         bottomTabs={bottomTabs}
@@ -163,6 +119,52 @@ export const MCUManager = () => {
             </p>
           </div>
         )}
+
+      {activeBottomTab === "I2C/Wire Ports" && (
+        <PortsOverview title="Sensoren und Zubehör an den I2C/Wire Anschlüssen">
+          <PortItem src={lightSensor} name="Lichtsensor" />
+          <PortItem src={tempSensor} name="Temperatur" />
+          <PortItem src={pressureSensor} name="Luftdruck" />
+          <PortItem src={tofSensor} name="ToF Sensor" />
+          <PortItem src={display} name="Display" />
+        </PortsOverview>
+      )}
+
+      {activeBottomTab === "UART/Serielle Anschlüsse" && (
+        <PortsOverview title="Sensoren und Zubehör an den UART/Serielle Anschlüssen">
+          <PortItem src={feinstaubSds} name="Feinstaub (SDS011)" />
+          <PortItem src={feinstaubSps} name="Feinstaub (SPS30)" />
+        </PortsOverview>
+      )}
+
+      {activeBottomTab === "Digitale/Analoge Ports" && (
+        <PortsOverview title="Sensoren und Zubehör an den Digitale/Analoge Anschlüssen">
+          <PortItem src={mikro} name="Kondensatormikrofon" />
+          <PortItem src={ultrasonic} name="Ultraschall-Distanzsensor" />
+          <PortItem src={truebner} name="Bodenfeuchtesensor" />
+        </PortsOverview>
+      )}
+
+      {activeBottomTab === "XBEE" && (
+        <>
+          <PortsOverview title="Sensoren und Zubehör an den Digitale/Analoge Anschlüssen">
+            <PortItem src={wifiBee} name="WiFi Bee" />
+            <PortItem src={sdBee} name="SD Bee" />
+            <PortItem src={loraBee} name="LoRa Bee" />
+          </PortsOverview>
+
+          <div className="mt-8">
+            <Admonition type="warning" title="Hinweis zur Verwendung der XBees">
+              <p>
+                In seltenen Fällen kann es vorkommen, dass sich noch eine
+                Schutzfolie auf den Steckplätzen der XBees befindet. Diese lässt
+                sich vorsichtig mit einer Pinzette entfernen, um die Steckplätze
+                nutzen zu können.
+              </p>
+            </Admonition>
+          </div>
+        </>
+      )}
 
         {activeBottomTab === "Hardware" && (
           <>

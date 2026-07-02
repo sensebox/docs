@@ -46,11 +46,11 @@ export const MCUManager = () => {
   const topTabs = [
     "Pinout ↗",
     "DataSheet ↗",
-    "I2C/Wire Ports",
-    "Digitale/Analoge Ports",
   ];
   const bottomTabs = [
     "Features",
+    "I2C/Wire Ports",
+    "Digitale/Analoge Ports",
     "Hardware",
     "Tech Specs",
     "Blockly",
@@ -83,21 +83,6 @@ export const MCUManager = () => {
         onTabChange={toggleTopTab}
       />
 
-      {activeTopTab === "I2C/Wire Ports" && (
-        <PortsOverview title="Sensoren und Zubehör an den I2C/Wire Anschlüssen">
-          <PortItem src={lightSensor} name="Lichtsensor" />
-          <PortItem src={tempSensor} name="Temperatur" />
-          <PortItem src={pressureSensor} name="Luftdruck" />
-          <PortItem src={tofSensor} name="ToF Sensor" />
-          <PortItem src={display} name="Display" />
-        </PortsOverview>
-      )}
-
-      {activeTopTab === "Digitale/Analoge Ports" && (
-        <PortsOverview title="Sensoren und Accessoire an den Digital/Analog Ports">
-          <PortItem src={ledMatrix} name="LED-Matrix" />
-        </PortsOverview>
-      )}
 
       <NavWhite
         bottomTabs={bottomTabs}
@@ -125,6 +110,22 @@ export const MCUManager = () => {
             <ImageWithText src={i2cdaiychain} title="I2C/Wire daisy chain" />
           </div>
         )}
+
+        {activeBottomTab === "I2C/Wire Ports" && (
+        <PortsOverview title="Sensoren und Zubehör an den I2C/Wire Anschlüssen">
+          <PortItem src={lightSensor} name="Lichtsensor" />
+          <PortItem src={tempSensor} name="Temperatur" />
+          <PortItem src={pressureSensor} name="Luftdruck" />
+          <PortItem src={tofSensor} name="ToF Sensor" />
+          <PortItem src={display} name="Display" />
+        </PortsOverview>
+      )}
+
+      {activeBottomTab === "Digitale/Analoge Ports" && (
+        <PortsOverview title="Sensoren und Accessoire an den Digital/Analog Ports">
+          <PortItem src={ledMatrix} name="LED-Matrix" />
+        </PortsOverview>
+      )}
 
         {activeBottomTab === "Hardware" && (
           <>

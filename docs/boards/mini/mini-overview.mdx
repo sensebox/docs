@@ -20,7 +20,7 @@ import { PortsOverview, PortItem } from '@site/src/components/PortsOverview/Port
 export const MCUManager = () => {
   const [activeTopTab, setActiveTopTab] = React.useState(null);
   const [activeBottomTab, setActiveBottomTab] = React.useState("Features");
-  const topTabs = ["Schnittstellen", "Sensoren", "Pinout ↗", "DataSheet ↗"];
+  const topTabs = [  "Pinout ↗", "DataSheet ↗"];
   const bottomTabs = [
     "Features",
     "Hardware",
@@ -54,38 +54,7 @@ export const MCUManager = () => {
         activeTab={activeTopTab}
         onTabChange={toggleTopTab}
       />
-
-      {activeTopTab === "Schnittstellen" && (
-        <PortsOverview title="Schnittstellen von dem SD-Kartenmodul">
-          <ul className="list-disc list-inside space-y-2">
-            <li>2x I2C)</li>
-            <li>1x UART</li>
-            <li>1x Digital Analog Port</li>
-          </ul>
-        </PortsOverview>
-      )}
-
-      {activeTopTab === "Sensoren" && (
-        <>
-          <PortsOverview title="Sensoren und Zubehör an den UART/Serielle Anschlüssen">
-            <PortItem src={wifiBee} name="WiFi Bee" />
-            <PortItem src={display} name="OLED Display" />
-            <PortItem src={umweltsensor} name="Umweltsensor" />
-            <PortItem src={miniRgbLed} name="Neopixel RGB LED" />
-          </PortsOverview>
-          <div className="mt-8">
-            <Admonition type="warning" title="Hinweis zur Verwendung der XBees">
-              <p>
-                In seltenen Fällen kann es vorkommen, dass sich noch eine
-                Schutzfolie auf den Steckplätzen der XBees befindet. Diese lässt
-                sich vorsichtig mit einer Pinzette entfernen, um die Steckplätze
-                nutzen zu können.
-              </p>
-            </Admonition>
-          </div>
-        </>
-      )}
-
+      
       <NavWhite
         bottomTabs={bottomTabs}
         activeTab={activeBottomTab}
@@ -165,10 +134,8 @@ export const MCUManager = () => {
           <TechSpecs
             name="MCU-Mini"
             sku="SB-060"
-
             processor="ATSAMD21G18"
             processorDetails="ARM Cortex-M0+ der SAM D21 Familie"
-
             i2cPorts="2"
             uartPorts="1"
             spiPorts="Über XBee Sockel verfügbar"
@@ -176,13 +143,10 @@ export const MCUManager = () => {
             analogIOs="2 (I/O Anschluss)"
             connectorSystem="QWIIC-System (JST SH4)"
             voltage="5 V"
-
             xbeeSlots="1 (XBee kompatibel)"
             dataTransferOptions="UART oder SPI Module (WLAN, LAN, LoRa, Bluetooth)"
             sdCard="Micro-SD Karte"
-
             onboardFeatures="1x Lüfteranschluss (5V)"
-
             ioVoltage="3.3 V / 5 V"
             inputVoltage="5 V (via USB)"
           />

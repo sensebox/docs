@@ -11,13 +11,14 @@ import C02Sensor from "@site/static/img/hardware-bilder/co2/DSCF9389.jpg";
 import ButtonWithText from '@site/src/components/ButtonWithText/ButtonWithText'
 import { NavGreen, NavWhite, NavBlocks } from '@site/src/components/Nav/Nav'
 import { PortsOverview, PortItem } from '@site/src/components/PortsOverview/PortsOverview'
+
 export const MCUManager = () => {
   const [activeTopTab, setActiveTopTab] = React.useState(null);
   const [activeBottomTab, setActiveBottomTab] =
     React.useState("Pflegehinweise");
 
-  const topTabs = ["CO2 Sensor", "Pinout ↗", "Datasheet ↗"];
-  const bottomTabs = ["Bauteile", "Hardware", "Aufbau"];
+  const topTabs = ["Pinout ↗", "Datasheet ↗"];
+  const bottomTabs = ["CO2 Sensor", "Bauteile", "Hardware", "Aufbau"];
 
   const toggleTopTab = (tab) => {
     if (tab === "Pinout ↗" || tab === "Datasheet ↗") {
@@ -44,30 +45,28 @@ export const MCUManager = () => {
         activeTab={activeTopTab}
         onTabChange={toggleTopTab}
       />
-
-      {activeTopTab === "CO2 Sensor" && (
-        <div>
-          <h2 className="text-2xl font-bold mb-4 text-black dark:text-gray-100">
-            {" "}
-            Der CO2 Sensor
-          </h2>
-          <div className="ml-0 md:ml-9 mt-4 md:mt-0">
-            <ImageWithText src={C02Sensor} title="C02 Sensor" />
-          </div>
-          <p className="text-gray-700 mb-4 dark:text-gray-200">
-            Das Sensormodul nutzt den präzisen Sensirion SCD30 CO₂-Sensor mit
-            optischer NDIR-Messung. Er misst den tatsächlichen CO₂-Gehalt der
-            Raumluft zuverlässig und ist unempfindlich gegenüber Störstoffen, im
-            Gegensatz zu einfachen eCO₂-Sensoren.
-          </p>
-        </div>
-      )}
-
       <NavWhite
         bottomTabs={bottomTabs}
         activeTab={activeBottomTab}
         onTabChange={setActiveBottomTab}
       />
+      {activeBottomTab === "CO2 Sensor" && (
+          <div>
+            <h2 className="text-2xl font-bold mb-4 text-black dark:text-gray-100">
+              {" "}
+              Der CO2 Sensor
+            </h2>
+            <div className="ml-0 md:ml-9 mt-4 md:mt-0">
+              <ImageWithText src={C02Sensor} title="C02 Sensor" />
+            </div>
+            <p className="text-gray-700 mb-4 dark:text-gray-200">
+              Das Sensormodul nutzt den präzisen Sensirion SCD30 CO₂-Sensor mit
+              optischer NDIR-Messung. Er misst den tatsächlichen CO₂-Gehalt der
+              Raumluft zuverlässig und ist unempfindlich gegenüber Störstoffen, im
+              Gegensatz zu einfachen eCO₂-Sensoren.
+            </p>
+          </div>
+        )}
 
       {activeBottomTab === "Bauteile" && (
         <>
@@ -152,6 +151,7 @@ export const MCUManager = () => {
     </div>
   );
 };
+
 
     
 
