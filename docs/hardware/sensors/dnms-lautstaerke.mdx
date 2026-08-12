@@ -1,0 +1,69 @@
+---
+sidebar_position: 0
+title: Lautstärkemesser DNMS
+hide_title: false
+description: Teensy Mikrofon Lautstärkemesser 
+---
+
+import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
+
+# Lautstärkemesser
+
+:::warning
+Work in progress
+:::
+
+Der Lautstärkemesser besteht aus einem Teensy-Mikrocontroller und einem digitalen MEMS-Mikrofon IM72D128.
+Der Teensy ist mit einer speziell entwickelten Firmware programmiert, die aus dem DNMS-Projekt (Digital Noise Measurement Sensor) stammt. Diese Software ermöglicht es dem Teensy, die digitalen Audiodaten des Mikrofons in Echtzeit zu verarbeiten, den Schallpegel kontinuierlich zu berechnen und daraus die A-bewerteten Lautstärkewerte (dB(A)) zu ermitteln.
+
+Das Mikrofon erfasst den Schall als digitale Audiodaten, während der Teensy diese Daten fortlaufend analysiert. Durch Anwendung eines A-Bewertungsfilters, der das menschliche Hörvermögen nachbildet, werden die Messwerte frequenzgewichtet. Anschließend berechnet das System den äquivalenten Dauerschallpegel (LAeq) sowie die Minimal- (LAmin) und Maximalwerte (LAmax) über frei wählbare Messintervalle.
+
+Die berechneten Messwerte können über die I²C-Schnittstelle von einer senseBox MCU abgefragt und weiterverarbeitet werden.
+
+## Technische Informationen
+
+- "Plug-in-and-Go" senseBox kompatibel
+- Maximale Abweichung 1%
+- 
+
+## Anschluss
+
+<TutorialPorts port="i2c" />
+
+## Programmierung (Arduino)
+
+### Software Bibliothek
+
+Um den Lautstärkemesser in Arduino zu programmieren, musst du die Software Bibliothek [DNMSI2C](https://github.com/sensebox/sensebox-dnms-arduino) installieren. Eine detaillierte Anleitung zum Hinzufügen von Bibliotheken findest du in unserer [Dokumentation](https://docs.sensebox.de/docs/editors/arduino/libraries-hinzufuegen/).
+
+### Code
+
+Dieser Sketch liest die drei Lautstärkewerte aus und gibt sie über die serielle Schnittstelle aus.
+
+```cpp
+#include <DNMSI2C.h> // http://librarymanager/All#DNMSI2C
+
+DNMSI2C sensor;
+
+void setup() {
+  Serial.begin(9600);
+
+  sensor.begin();
+}
+
+void loop() {    
+    sensor.update();
+
+    Serial.print("Durchschnittspegel (dB(A)): ");
+    Serial.println(sensor.average());
+    Serial.print("Leisester Pegel (dB(A)): ");
+    Serial.println(sensor.min());
+    Serial.print("Lautester Pegel (dB(A)): ");
+    Serial.println(sensor.max());
+
+    delay(1000);
+}
+```
+
+## Projekte
+
