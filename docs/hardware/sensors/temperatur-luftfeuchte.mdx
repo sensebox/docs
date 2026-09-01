@@ -9,6 +9,7 @@ import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
 import tempSensor from '@site/static/img/hardware-bilder/temperatur-luftfeuchte/sensor_temperatur_luftfeuchte.png'
 import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
 import { useBoardStore } from '@site/src/lib/stores/store'
+import CodeBlock from '@theme/CodeBlock'
 
 # Temperatur- und Luftfeuchtesensor
 
@@ -88,7 +89,7 @@ Im Block kannst du zwischen den verschiedenen Parametern des Temperatur und Luft
 
 <p>Mit dem CircuitPython Editor deiner Wahl kannst du nun den Sensor programmieren und seine Werte auslesen. Dieser Code gibt die Temperatur und die relative Luftfeuchte in der Konsole aus:</p>
 
-<pre><code className="language-python">{`import time
+<CodeBlock language="python">{`import time
 import board
 import digitalio
 from hdc1080 import HDC1080
@@ -107,11 +108,12 @@ sensor = HDC1080(i2c)
 while True:
     temperature = sensor.temperature
     humidity = sensor.humidity
-
+    
     print("Temperature: {:.2f} °C".format(temperature))
     print("Humidity: {:.2f} %".format(humidity))
 
-    time.sleep(2)  # Wait for 2 seconds before next reading`}</code></pre>
+    time.sleep(2)  # Wait for 2 seconds before next reading`}
+</CodeBlock>
 </>
 ))}
 

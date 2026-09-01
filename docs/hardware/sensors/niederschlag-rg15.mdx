@@ -10,6 +10,7 @@ import precipationSensor from '@site/static/img/hardware-bilder/niederschlag/sen
 import adapter from '@site/static/img/hardware-bilder/niederschlag/adapterplatine_rg15.png'
 import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
 import { useBoardStore } from '@site/src/lib/stores/store'
+import CodeBlock from '@theme/CodeBlock'
 
 # Niederschlagssensor
 
@@ -58,7 +59,7 @@ Dieser Code gibt die Niederschlagsintensität im Seriellen Monitor aus. Über di
 {useBoardStore((state) => (state.board === 'MCU-S2' || state.board === ':edu S2') ? (
   <>
     <p>Der Sensor wird im Beispiel über Serial0 initialisiert, was der Standardport auf der senseBox MCU S2, bzw. senseBox:edu S2 ist.</p>
-    <pre><code className="language-cpp">{`#include <RG15.h> // https://github.com/sensebox/rg15-arduino-lib
+    <CodeBlock language="cpp">{`#include <RG15.h> // https://github.com/sensebox/rg15-arduino-lib
 
 // Initialise the RG15 through the serial port
 RG15 rg15_Serial0(Serial0); 
@@ -77,7 +78,7 @@ void loop(){
     Serial.print(intensity);
     Serial.println(" mm/h");
     delay(1000);
-}`}</code></pre>
+}`}</CodeBlock>
   </>
 ) : (
   <>

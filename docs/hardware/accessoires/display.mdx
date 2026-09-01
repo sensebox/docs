@@ -9,6 +9,7 @@ import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
 import display from '@site/static/img/hardware-bilder/oled/display.png'
 import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
 import { useBoardStore } from '@site/src/lib/stores/store'
+import CodeBlock from '@theme/CodeBlock'
 
 # OLED Display
 
@@ -103,7 +104,7 @@ Der `Schreibe Text/Zahl`-Block verfügt über fünf Einstellungsmöglichkeiten:
 
 <p>Mit dem CircuitPython Editor deiner Wahl kannst du nun das Display programmieren und Inhalte anzeigen lassen. Dieser Code zeigt "Hello senseBox!" auf dem Display an:</p>
 
-<pre><code className="language-python">{`
+<CodeBlock language="python">{`
 import board
 import displayio
 import digitalio
@@ -166,7 +167,7 @@ text_area = label.Label(
 splash.append(text_area)
 
 while True:
-    pass`}</code></pre>
+    pass`}</CodeBlock>
 </>
 ))}
 
