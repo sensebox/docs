@@ -38,7 +38,7 @@ const eduSidebar = {
           items: [
             'hardware/bee/wifi-bee',
             'hardware/bee/sd-bee',
-            'hardware/sensors/temperatur-luftfeuchte',
+            'hardware/sensors/temperatur-luftfeuchte/temperatur-luftfeuchte',
             'hardware/sensors/helligkeit-uv',
             'hardware/sensors/distanz',
             'hardware/sensors/mikro',

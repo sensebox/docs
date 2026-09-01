@@ -46,7 +46,7 @@ const eduS2Sidebar = {
             title: 'in der :edu S2 enthaltene Hardware',
           },
           items: [
-            'hardware/sensors/temperatur-luftfeuchte',
+            'hardware/sensors/temperatur-luftfeuchte/temperatur-luftfeuchte',
             'hardware/sensors/helligkeit-uv',
             'hardware/sensors/luftdruck-temperatur',
             'hardware/sensors/photodiode',

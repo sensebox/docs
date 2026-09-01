@@ -2,7 +2,7 @@
 module.exports = {
   darkMode: ['class', "[data-theme='dark']"],
   corePlugins: {
-    preflight: true,
+    preflight: false,
   },
   content: [
     './docs/**/*.{md,mdx}',

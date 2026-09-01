@@ -18,7 +18,7 @@ const glossarSidebar = {
       'hardware/sensors/mikro',
       'hardware/sensors/mpu6050',
       'hardware/sensors/photodiode',
-      'hardware/sensors/temperatur-luftfeuchte',
+      'hardware/sensors/temperatur-luftfeuchte/temperatur-luftfeuchte',
       'hardware/sensors/tof',
       'hardware/sensors/truebner',
       'hardware/sensors/umweltsensor',
