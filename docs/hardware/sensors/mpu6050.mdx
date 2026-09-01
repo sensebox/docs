@@ -5,6 +5,7 @@ title: Beschleunigungssensor
 import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
 import mpu6050 from '@site/static/img/hardware-bilder/mpu6050/mcu-top-mpu.png'
 import { useBoardStore } from '@site/src/lib/stores/store'
+import CodeBlock from '@theme/CodeBlock'
 
 # Beschleunigungssensor (MPU6050)
 
@@ -80,7 +81,7 @@ In Blockly kannst du den Sensor über folgenden Block auslesen:
 
 <p>Mit dem CircuitPython Editor deiner Wahl kannst du nun den integrierten Beschleunigungssensor programmieren und seine Werte auslesen. Dieser Code gibt die Beschleunigungswerte, Gyroskop-Daten und Temperatur in der Konsole aus:</p>
 
-<pre><code className="language-python">{`import time
+<CodeBlock language="python">{`import time
 import busio
 import microcontroller
 import adafruit_mpu6050
@@ -96,6 +97,6 @@ while True:
     print("Gyro X:%.2f, Y: %.2f, Z: %.2f degrees/s"%(mpu.gyro))
     print("Temperature: %.2f C"%mpu.temperature)
     print("")
-    time.sleep(1)`}</code></pre>
+    time.sleep(1)`}</CodeBlock>
 </>
 ))}

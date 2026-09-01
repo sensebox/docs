@@ -8,6 +8,7 @@ import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
 import feinstaubSps from '@site/static/img/hardware-bilder/sps30/sps30.png'
 import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
 import { useBoardStore } from '@site/src/lib/stores/store'
+import CodeBlock from '@theme/CodeBlock'
 
 # Feinstaubsensor SPS30
 
@@ -97,7 +98,7 @@ Den Sensor kannst du mit folgenden Block auslesen.
 
 <p>Mit dem CircuitPython Editor deiner Wahl kannst du nun den Sensor programmieren und seine Werte auslesen. Dieser Code gibt die PM2.5 Werte in der Konsole aus:</p>
 
-<pre><code className="language-python">{`import time
+<CodeBlock language="python">{`import time
 import board
 from adafruit_sps30.i2c import SPS30_I2C
 
@@ -108,6 +109,6 @@ sps = SPS30_I2C(i2c)
 while True:
     aqdata = sps.read()
     print("PM2.5: {:.1f}".format(aqdata["pm25 standard"]))
-    time.sleep(1)`}</code></pre>
+    time.sleep(1)`}</CodeBlock>
 </>
 ))}

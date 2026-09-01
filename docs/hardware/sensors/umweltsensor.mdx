@@ -9,6 +9,7 @@ import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
 import umweltsensor from '@site/static/img/hardware-bilder/umweltsensor/bme.png'
 import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
 import { useBoardStore } from '@site/src/lib/stores/store'
+import CodeBlock from '@theme/CodeBlock'
 
 # Umweltsensor
 
@@ -161,7 +162,7 @@ Im Block kannst du zwischen den verschiedenen Parametern des Umweltsensors ausw√
 
 <p>Mit dem CircuitPython Editor deiner Wahl kannst du nun den Sensor programmieren und seine Werte auslesen. Dieser Code gibt die Temperatur, Gasresistenz, relative Luftfeuchte, Luftdruck und H√∂he in der Konsole aus:</p>
 
-<pre><code className="language-python">{`import adafruit_bme680
+<CodeBlock language="python">{`import adafruit_bme680
 import time
 import board
 
@@ -179,7 +180,7 @@ while True:
     print("Pressure: %0.3f hPa" % bme680.pressure)
     print("Altitude = %0.2f meters" % bme680.altitude)
     
-    time.sleep(2)`}</code></pre>
+    time.sleep(2)`}</CodeBlock>
 </>
 ))}
 
