@@ -9,6 +9,8 @@ hide_title: false
 import wifiModul from '@site/static/img/mcus2/wifi-modul-s2.png'
 import AlertBox from '@site/src/components/AlertBox/AlertBox'
 import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import { useBoardStore } from '@site/src/lib/stores/store'
+import CodeBlock from '@theme/CodeBlock'
 
 # WiFi-Modul
 
@@ -63,6 +65,51 @@ Mit dem `Verbinde mit WLAN`-Block kannst du deine senseBox im Setup() mit einem 
 Mit dem `Initialisiere WLAN Access Point`-Block kann deine senseBox ein WLAN-Netzwerk erstellen, in das du mit anderen Geräten beitreten kannst. Im Textfeld SSID kannst du den Namen deines Netzwerks festlegen.
 
 ![](/img/blockly-bilder/web-wifi/blockly-Web-Wifi-2.svg)
+
+{useBoardStore((state) => (state.board === 'MCU-S2' || state.board === ':edu S2') && (
+<>
+<h2>Programmierung (CircuitPython)</h2>
+
+<p>Um den Sensor mit CircuitPython zu programmieren, muss die senseBox MCU-S2 zunächst mit CircuitPython geflasht werden. Eine Anleitung dazu findest du <a href="https://docs.sensebox.de/docs/editors/circuitpython/circuitpython_esp32">hier</a>.</p>
+
+<h3>Software Bibliothek</h3>
+
+<p>Lade dir die <a href="https://github.com/adafruit/Adafruit_CircuitPython_SCD30/releases/download/2.2.16/adafruit-circuitpython-scd30-10.x-mpy-2.2.16.zip">SCD30 CircuitPython Bibliothek</a> herunter. Entpacke die .zip Datei und kopiere die <code>adafruit_scd30.mpy</code> Datei aus dem <code>lib</code> Ordner in den <code>lib</code> Ordner deiner senseBox (<code>CIRCUITPY</code> Laufwerk).</p>
+
+<h3>Code</h3>
+
+<p>Mit dem CircuitPython Editor deiner Wahl kannst du nun den Sensor programmieren und seine Werte auslesen. Dieser Code gibt die CO<sub>2</sub>-Konzentration, Temperatur und Luftfeuchtigkeit in der Konsole aus:</p>
+
+<CodeBlock language="python">
+{`import time
+import board
+import busio
+import digitalio
+import adafruit_scd30
+
+io_enable_pin = digitalio.DigitalInOut(board.IO_POWER)
+io_enable_pin.direction = digitalio.Direction.OUTPUT
+io_enable_pin.value = True
+
+time.sleep(0.5)
+
+i2c = busio.I2C(board.SCL, board.SDA, frequency=50000)
+scd = adafruit_scd30.SCD30(i2c)
+          
+while True:
+    if scd.data_available:
+        print("Data Available!")
+        print("CO2:", scd.CO2, "PPM")
+        print("Temperature:", scd.temperature, "degrees C")
+        print("Humidity:", scd.relative_humidity, "%%rH")
+        print("")
+        print("Waiting for new data...")
+        print("")
+
+    time.sleep(0.5)`}
+</CodeBlock>
+</>
+))}
 
 ## Projekte
 
