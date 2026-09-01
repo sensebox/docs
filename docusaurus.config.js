@@ -51,6 +51,19 @@ const config = {
         },
       }
     },
+    async function rawSourceLoaderPlugin(context, options) {
+      return {
+        name: 'raw-source-loader',
+        configureWebpack() {
+          return {
+            module: {
+              // import .py/.ino files as their raw text content instead of executing them
+              rules: [{ test: /\.(py|ino)$/, type: 'asset/source' }],
+            },
+          }
+        },
+      }
+    },
   ],
   presets: [
     [
