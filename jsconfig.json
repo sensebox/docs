@@ -8,6 +8,6 @@
       "$libs/*": ["src/libs/*"]
     }
   },
-  "include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.jsx"],
+  "include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.jsx", "src/components/ui/tabs.tsx"],
   "exclude": ["node_modules", "**/node_modules", "dist"]
 }
