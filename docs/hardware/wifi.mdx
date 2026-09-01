@@ -70,43 +70,22 @@ Mit dem `Initialisiere WLAN Access Point`-Block kann deine senseBox ein WLAN-Net
 <>
 <h2>Programmierung (CircuitPython)</h2>
 
-<p>Um den Sensor mit CircuitPython zu programmieren, muss die senseBox MCU-S2 zunächst mit CircuitPython geflasht werden. Eine Anleitung dazu findest du <a href="https://docs.sensebox.de/docs/editors/circuitpython/circuitpython_esp32">hier</a>.</p>
-
-<h3>Software Bibliothek</h3>
-
-<p>Lade dir die <a href="https://github.com/adafruit/Adafruit_CircuitPython_SCD30/releases/download/2.2.16/adafruit-circuitpython-scd30-10.x-mpy-2.2.16.zip">SCD30 CircuitPython Bibliothek</a> herunter. Entpacke die .zip Datei und kopiere die <code>adafruit_scd30.mpy</code> Datei aus dem <code>lib</code> Ordner in den <code>lib</code> Ordner deiner senseBox (<code>CIRCUITPY</code> Laufwerk).</p>
-
-<h3>Code</h3>
-
-<p>Mit dem CircuitPython Editor deiner Wahl kannst du nun den Sensor programmieren und seine Werte auslesen. Dieser Code gibt die CO<sub>2</sub>-Konzentration, Temperatur und Luftfeuchtigkeit in der Konsole aus:</p>
+<p>Mit dem CircuitPython Editor deiner Wahl kannst du deine senseBox mit einem WLAN-Netzwerk verbinden. Trage dazu in den Variablen `CIRCUITPY_WIFI_SSID` und `CIRCUITPY_WIFI_PASSWORD` den Namen deines WLANs und das zugehörige Passwort ein. Anschließend wird die WLAN-Verbindung hergestellt und der Verbindungsstatus in der Konsole ausgegeben.</p>
 
 <CodeBlock language="python">
-{`import time
-import board
-import busio
-import digitalio
-import adafruit_scd30
+{`import wifi
 
-io_enable_pin = digitalio.DigitalInOut(board.IO_POWER)
-io_enable_pin.direction = digitalio.Direction.OUTPUT
-io_enable_pin.value = True
+# WLAN Zugangsdaten
+CIRCUITPY_WIFI_SSID = "SSID"
+CIRCUITPY_WIFI_PASSWORD = "Password"
 
-time.sleep(0.5)
-
-i2c = busio.I2C(board.SCL, board.SDA, frequency=50000)
-scd = adafruit_scd30.SCD30(i2c)
-          
-while True:
-    if scd.data_available:
-        print("Data Available!")
-        print("CO2:", scd.CO2, "PPM")
-        print("Temperature:", scd.temperature, "degrees C")
-        print("Humidity:", scd.relative_humidity, "%%rH")
-        print("")
-        print("Waiting for new data...")
-        print("")
-
-    time.sleep(0.5)`}
+# Verbindung zum WiFi herstellen
+print(f"Connecting to {CIRCUITPY_WIFI_SSID}")
+wifi.radio.connect(
+    CIRCUITPY_WIFI_SSID, 
+    CIRCUITPY_WIFI_PASSWORD
+)
+print(f"Connected!")`}
 </CodeBlock>
 </>
 ))}
