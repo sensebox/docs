@@ -53,7 +53,7 @@ const eduS2Sidebar = {
             'hardware/sensors/mpu6050/mpu6050',
             'hardware/sensors/tof/tof',
             'hardware/bee/bluetooth-bee',
-            'hardware/wifi',
+            'hardware/wifi/wifi',
             'hardware/sd',
             'hardware/accessoires/display/display',
             'hardware/accessoires/rgb-led-esp32/rgb-led-esp32',

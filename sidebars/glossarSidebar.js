@@ -28,7 +28,7 @@ const glossarSidebar = {
       'hardware/bee/lora-bee',
       'hardware/bee/sd-bee',
       'hardware/bee/wifi-bee',
-      'hardware/wifi',
+      'hardware/wifi/wifi',
       'hardware/sd',
       'hardware/accessoires/display/display',
       'hardware/accessoires/expander',
