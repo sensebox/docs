@@ -9,6 +9,8 @@ hide_title: false
 import wifiModul from '@site/static/img/mcus2/wifi-modul-s2.png'
 import AlertBox from '@site/src/components/AlertBox/AlertBox'
 import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import { useBoardStore } from '@site/src/lib/stores/store'
+import CodeBlock from '@theme/CodeBlock'
 
 # WiFi-Modul
 
@@ -63,6 +65,30 @@ Mit dem `Verbinde mit WLAN`-Block kannst du deine senseBox im Setup() mit einem 
 Mit dem `Initialisiere WLAN Access Point`-Block kann deine senseBox ein WLAN-Netzwerk erstellen, in das du mit anderen Geräten beitreten kannst. Im Textfeld SSID kannst du den Namen deines Netzwerks festlegen.
 
 ![](/img/blockly-bilder/web-wifi/blockly-Web-Wifi-2.svg)
+
+{useBoardStore((state) => (state.board === 'MCU-S2' || state.board === ':edu S2') && (
+<>
+<h2>Programmierung (CircuitPython)</h2>
+
+<p>Mit dem CircuitPython Editor deiner Wahl kannst du deine senseBox mit einem WLAN-Netzwerk verbinden. Trage dazu in den Variablen `CIRCUITPY_WIFI_SSID` und `CIRCUITPY_WIFI_PASSWORD` den Namen deines WLANs und das zugehörige Passwort ein. Anschließend wird die WLAN-Verbindung hergestellt und der Verbindungsstatus in der Konsole ausgegeben.</p>
+
+<CodeBlock language="python">
+{`import wifi
+
+# WLAN Zugangsdaten
+CIRCUITPY_WIFI_SSID = "SSID"
+CIRCUITPY_WIFI_PASSWORD = "Password"
+
+# Verbindung zum WiFi herstellen
+print(f"Connecting to {CIRCUITPY_WIFI_SSID}")
+wifi.radio.connect(
+    CIRCUITPY_WIFI_SSID, 
+    CIRCUITPY_WIFI_PASSWORD
+)
+print(f"Connected!")`}
+</CodeBlock>
+</>
+))}
 
 ## Projekte
 
