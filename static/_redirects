@@ -30,8 +30,8 @@
 /hardware/rtc-modul/ /docs/hardware/accessoires/rtc-modul
 /en/hardware/rtc-modul/ /en/docs/hardware/accessoires/rtc-modul
 
-/hardware/zubehoer-display/ /docs/hardware/accessoires/display
-/en/hardware/zubehoer-display/ /en/docs/hardware/accessoires/display
+/hardware/zubehoer-display/ /docs/hardware/accessoires/display/display
+/en/hardware/zubehoer-display/ /en/docs/hardware/accessoires/display/display
 
 /hardware/sensoren-co2/ /docs/hardware/sensors/co2
 /en/hardware/sensoren-co2/ /en/docs/hardware/sensors/co2
@@ -48,8 +48,8 @@
 /hardware/bee-sd/ /docs/hardware/bee/sd-bee
 /en/hardware/bee-sd/ /en/docs/hardware/bee/sd-bee
 
-/hardware/sensoren-luftdruck-temperatur/ /docs/hardware/sensors/luftdruck-temperatur
-/en/hardware/sensoren-luftdruck-temperatur/ /en/docs/hardware/sensors/luftdruck-temperatur
+/hardware/sensoren-luftdruck-temperatur/ /docs/hardware/sensors/luftdruck-temperatur/luftdruck-temperatur
+/en/hardware/sensoren-luftdruck-temperatur/ /en/docs/hardware/sensors/luftdruck-temperatur/luftdruck-temperatur
 
 /hardware/sensoren-temperatur-luftfeuchte/ /docs/hardware/sensors/temperatur-luftfeuchte
 /en/hardware/sensoren-temperatur-luftfeuchte/ /en/docs/hardware/sensors/temperatur-luftfeuchte
@@ -84,8 +84,8 @@
 /hardware/bee-wifi/ /docs/hardware/bee/wifi-bee
 /en/hardware/bee-wifi/ /en/docs/hardware/bee/wifi-bee
 
-/blockly/blockly-display/ /docs/hardware/accessoires/display
-/en/blockly/blockly-display/ /en/docs/hardware/accessoires/display
+/blockly/blockly-display/ /docs/hardware/accessoires/display/display
+/en/blockly/blockly-display/ /en/docs/hardware/accessoires/display/display
 
 /blockly/blockly-web-lora/ /docs/editors/blockly/blocks/lora
 /en/blockly/blockly-web-lora/ /en/docs/editors/blockly/blocks/lora
