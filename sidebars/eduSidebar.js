@@ -38,7 +38,7 @@ const eduSidebar = {
           items: [
             'hardware/bee/wifi-bee',
             'hardware/bee/sd-bee',
-            'hardware/sensors/temperatur-luftfeuchte',
+            'hardware/sensors/temperatur-luftfeuchte/temperatur-luftfeuchte',
             'hardware/sensors/helligkeit-uv/helligkeit-uv',
             'hardware/sensors/distanz',
             'hardware/sensors/mikro',
@@ -62,7 +62,7 @@ const eduSidebar = {
             'hardware/bee/lora-bee',
             'hardware/sensors/co2',
             'hardware/sensors/truebner',
-            'hardware/sensors/umweltsensor',
+            'hardware/sensors/umweltsensor/umweltsensor',
 			'hardware/sensors/niederschlag-rg15',
             'hardware/bee/ethernet-bee',
             'hardware/accessoires/gps',

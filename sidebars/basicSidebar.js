@@ -39,10 +39,10 @@ const basicSidebar = {
       label: 'Hardware',
 	  key: 'basic-hardware',
       items: [
-        'hardware/sensors/umweltsensor',
+        'hardware/sensors/umweltsensor/umweltsensor',
         'hardware/accessoires/display/display',
         'hardware/bee/bluetooth-bee',
-        'hardware/sensors/umweltsensor',
+        'hardware/sensors/umweltsensor/umweltsensor',
         'hardware/accessoires/rgb-led',
       ],
     },

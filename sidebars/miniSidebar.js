@@ -27,7 +27,7 @@ const miniSidebar = {
           items: [
             'hardware/bee/wifi-bee',
             'hardware/bee/sd-bee',
-            'hardware/sensors/umweltsensor',
+            'hardware/sensors/umweltsensor/umweltsensor',
             'hardware/accessoires/display/display',
             'hardware/accessoires/rgb-led',
 			'hardware/sensors/niederschlag-rg15',
@@ -52,7 +52,7 @@ const miniSidebar = {
             'hardware/accessoires/gps',
             'hardware/sensors/wassertemperatur',
             'hardware/accessoires/multiplexer',
-            'hardware/sensors/temperatur-luftfeuchte',
+            'hardware/sensors/temperatur-luftfeuchte/temperatur-luftfeuchte',
             'hardware/sensors/helligkeit-uv/helligkeit-uv',
             'hardware/sensors/distanz',
             'hardware/sensors/mikro',
