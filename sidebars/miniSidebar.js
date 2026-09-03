@@ -53,7 +53,7 @@ const miniSidebar = {
             'hardware/sensors/wassertemperatur',
             'hardware/accessoires/multiplexer',
             'hardware/sensors/temperatur-luftfeuchte',
-            'hardware/sensors/helligkeit-uv',
+            'hardware/sensors/helligkeit-uv/helligkeit-uv',
             'hardware/sensors/distanz',
             'hardware/sensors/mikro',
             'hardware/sensors/luftdruck-temperatur',

@@ -12,7 +12,7 @@ const glossarSidebar = {
       'hardware/sensors/distanz',
       'hardware/sensors/feinstaub-sps30',
       'hardware/sensors/feinstaub-sds011',
-      'hardware/sensors/helligkeit-uv',
+      'hardware/sensors/helligkeit-uv/helligkeit-uv',
       'hardware/sensors/lautstaerke',
       'hardware/sensors/luftdruck-temperatur',
       'hardware/sensors/mikro',

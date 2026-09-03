@@ -39,7 +39,7 @@ const homeSidebar = {
             'hardware/bee/wifi-bee',
             'hardware/bee/sd-bee',
             'hardware/sensors/temperatur-luftfeuchte',
-            'hardware/sensors/helligkeit-uv',
+            'hardware/sensors/helligkeit-uv/helligkeit-uv',
             'hardware/sensors/distanz',
             'hardware/sensors/mikro',
             'hardware/sensors/luftdruck-temperatur',

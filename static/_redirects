@@ -57,8 +57,8 @@
 /hardware/sensoren-distanz/ /docs/hardware/sensors/distanz
 /en/hardware/sensoren-distanz/ /en/docs/hardware/sensors/distanz
 
-/hardware/sensoren-helligkeit-uv/ /docs/hardware/sensors/helligkeit-uv
-/en/hardware/sensoren-helligkeit-uv/ /en/docs/hardware/sensors/helligkeit-uv
+/hardware/sensoren-helligkeit-uv/ /docs/hardware/sensors/helligkeit-uv/helligkeit-uv
+/en/hardware/sensoren-helligkeit-uv/ /en/docs/hardware/sensors/helligkeit-uv/helligkeit-uv
 
 /hardware/sensoren-gps/ /docs/hardware/accessoires/gps
 /en/hardware/sensoren-gps/ /en/docs/hardware/accessoires/gps

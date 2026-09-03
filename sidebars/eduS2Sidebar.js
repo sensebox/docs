@@ -47,7 +47,7 @@ const eduS2Sidebar = {
           },
           items: [
             'hardware/sensors/temperatur-luftfeuchte',
-            'hardware/sensors/helligkeit-uv',
+            'hardware/sensors/helligkeit-uv/helligkeit-uv',
             'hardware/sensors/luftdruck-temperatur',
             'hardware/sensors/photodiode',
             'hardware/sensors/mpu6050',
