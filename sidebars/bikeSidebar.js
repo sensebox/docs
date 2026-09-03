@@ -30,7 +30,7 @@ const bikeSidebar = {
 		  key: 'bike-sensors', 
           items: [
             "hardware/sensors/temperatur-luftfeuchte", 
-            "hardware/sensors/mpu6050", 
+            "hardware/sensors/mpu6050/mpu6050", 
             "hardware/sensors/feinstaub-sps30", 
             "hardware/sensors/distanz"
           ]
