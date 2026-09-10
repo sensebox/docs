@@ -8,6 +8,7 @@ import tofSensor from '@site/static/img/hardware-bilder/tof/tofsensor.png'
 import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
 import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
 import { useBoardStore } from '@site/src/lib/stores/store'
+import CodeBlock from '@theme/CodeBlock'
 
 # Time-of-Flight (ToF) Sensor
 
@@ -106,7 +107,7 @@ In Blockly kann der Sensor über folgenden Block ausgelesen werden:
 
 <p>Mit dem CircuitPython Editor deiner Wahl kannst du nun den ToF-Sensor programmieren und Entfernungen messen. Dieser Code initialisiert den Sensor und liest kontinuierlich Entfernungsdaten aus:</p>
 
-<pre><code className="language-python">{`from vl53lxcx import (
+<CodeBlock language="python">{`from vl53lxcx import (
     DATA_DISTANCE_MM,
     DATA_TARGET_STATUS,
     RESOLUTION_8X8,
@@ -143,7 +144,7 @@ def main():
             status = results.target_status
             # enumerate(distance) ...
 
-main()`}</code></pre>
+main()`}</CodeBlock>
 </>
 ))}
 

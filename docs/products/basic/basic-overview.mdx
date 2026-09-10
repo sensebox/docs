@@ -72,7 +72,7 @@ return (
       />
 
       <div className="mt-8">
-        {activeBottomTab === "App" && (
+        <div className={activeBottomTab === "App" ? "" : "hidden"}>
         <div>
           <h2 className="text-2xl font-bold mb-4 text-black dark:text-gray-100">
             Die senseBox:basic App
@@ -130,9 +130,9 @@ return (
             </div>
           </div>
         </div>
-      )}
+      </div>
 
-      {activeBottomTab === "Materialien" && (
+      <div className={activeBottomTab === "Materialien" ? "" : "hidden"}>
         <div className="py-8">
           <div className="mb-8">
             <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">
@@ -199,15 +199,15 @@ return (
             ]}
           />
         </div>
-      )}
-      {activeBottomTab === "Hardware" && (
+      </div>
+      <div className={activeBottomTab === "Hardware" ? "" : "hidden"}>
          <div>
           <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-gray-100">
             Hardware
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             <NavBlocks
-              href="/docs/hardware/accessoires/display"
+              href="/docs/hardware/accessoires/display/display"
               title="OLED Display"
             />
             <NavBlocks
@@ -215,7 +215,7 @@ return (
               title="Bluetooth-Bee"
             />
             <NavBlocks
-              href="/docs/hardware/sensors/umweltsensor"
+              href="/docs/hardware/sensors/umweltsensor/umweltsensor"
               title="Umweltsensor"
             />
 
@@ -225,8 +225,8 @@ return (
             />
           </div>
         </div>
-      )}
-      {activeBottomTab === "Technische Daten" && (
+      </div>
+      <div className={activeBottomTab === "Technische Daten" ? "" : "hidden"}>
           <TechSpecs
             name="MCU2"
             sku="SB-105"
@@ -248,7 +248,7 @@ return (
             inputVoltage="5 V (via USB) / 3.7 V (externe Batterie)"
             batterySupport="Ja (externer Batterieanschluss)"
           />
-      )}
+      </div>
       </div>
     </div>
 

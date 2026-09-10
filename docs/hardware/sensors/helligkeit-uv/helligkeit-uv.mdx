@@ -9,6 +9,7 @@ import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
 import lightSensor from '@site/static/img/hardware-bilder/helligkeit-uv/sensor_helligkeit_uv.png'
 import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
 import { useBoardStore } from '@site/src/lib/stores/store'
+import CodeBlock from '@theme/CodeBlock'
 
 # Helligkeits- und UV-Sensor
 
@@ -188,7 +189,7 @@ Im Block kannst du zwischen den verschiedenen Parametern des Helligkeits-/UV-Sen
 
 <p>Mit dem CircuitPython Editor deiner Wahl kannst du nun den UV-Sensor programmieren und seine Werte auslesen. Dieser Code gibt die UV-Intensität und das Risikolevel in der Konsole aus:</p>
 
-<pre><code className="language-python">{`import time
+<CodeBlock language="python">{`import time
 import board
 from adafruit_veml6070 import VEML6070
 
@@ -203,7 +204,7 @@ with board.I2C() as i2c:
         uv_raw = uv.uv_raw
         risk_level = uv.get_index(uv_raw)
         print('Reading: {0} | Risk Level: {1}'.format(uv_raw, risk_level))
-        time.sleep(1)`}</code></pre>
+        time.sleep(1)`}</CodeBlock>
 </>
 ))}
 

@@ -8,6 +8,7 @@ import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
 import CO2Sensor from '@site/static/img/hardware-bilder/co2/scd30.png'
 import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
 import { useBoardStore } from '@site/src/lib/stores/store'
+import CodeBlock from '@theme/CodeBlock'
 
 # CO2 Sensor
 
@@ -95,7 +96,8 @@ Den CO<sub>2</sub> Sensor kannst du mit folgendem Block auslesen.
 
 <p>Mit dem CircuitPython Editor deiner Wahl kannst du nun den Sensor programmieren und seine Werte auslesen. Dieser Code gibt die CO<sub>2</sub>-Konzentration, Temperatur und Luftfeuchtigkeit in der Konsole aus:</p>
 
-<pre><code className="language-python">{`import time
+<CodeBlock language="python">
+{`import time
 import board
 import busio
 import digitalio
@@ -109,7 +111,7 @@ time.sleep(0.5)
 
 i2c = busio.I2C(board.SCL, board.SDA, frequency=50000)
 scd = adafruit_scd30.SCD30(i2c)
-
+          
 while True:
     if scd.data_available:
         print("Data Available!")
@@ -120,7 +122,8 @@ while True:
         print("Waiting for new data...")
         print("")
 
-    time.sleep(0.5)`}</code></pre>
+    time.sleep(0.5)`}
+</CodeBlock>
 </>
 ))}
 

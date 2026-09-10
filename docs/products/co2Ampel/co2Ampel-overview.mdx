@@ -50,7 +50,7 @@ export const MCUManager = () => {
         activeTab={activeBottomTab}
         onTabChange={setActiveBottomTab}
       />
-      {activeBottomTab === "CO2 Sensor" && (
+      <div className={activeBottomTab === "CO2 Sensor" ? "" : "hidden"}>
           <div>
             <h2 className="text-2xl font-bold mb-4 text-black dark:text-gray-100">
               {" "}
@@ -66,9 +66,9 @@ export const MCUManager = () => {
               Gegensatz zu einfachen eCO₂-Sensoren.
             </p>
           </div>
-        )}
+        </div>
 
-      {activeBottomTab === "Bauteile" && (
+      <div className={activeBottomTab === "Bauteile" ? "" : "hidden"}>
         <>
           <ImageWithText src={AmpelBauteile} title="CO2-Ampel Bauteile" />
           <h3 className="mb-4 text-gray-700 dark:text-gray-300 font-medium">
@@ -113,12 +113,12 @@ export const MCUManager = () => {
             </div>
           </div>
         </>
-      )}
+      </div>
 
-      {activeBottomTab === "Hardware" && (
+      <div className={activeBottomTab === "Hardware" ? "" : "hidden"}>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
           <NavBlocks
-            href="/docs/hardware/accessoires/display"
+            href="/docs/hardware/accessoires/display/display"
             title="OLED Display"
           />
           <NavBlocks href="/docs/hardware/sensors/co2" title="CO2 Sensor" />
@@ -127,8 +127,8 @@ export const MCUManager = () => {
             title="RGB-LED"
           />
         </div>
-      )}
-      {activeBottomTab === "Aufbau" && (
+      </div>
+      <div className={activeBottomTab === "Aufbau" ? "" : "hidden"}>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
           <NavBlocks
             href="/docs/products/co2Ampel/aufbau/aufbau-co2Ampel-schritt-1"
@@ -147,7 +147,7 @@ export const MCUManager = () => {
             title="senseBox ins Gehäuse einbauen"
           />
         </div>
-      )}
+      </div>
     </div>
   );
 };

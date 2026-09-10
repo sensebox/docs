@@ -126,7 +126,7 @@ export const MCUManager = () => {
         onTabChange={setActiveBottomTab}
       />
 
-      {activeBottomTab === "Bauteile" && (
+      <div className={activeBottomTab === "Bauteile" ? "" : "hidden"}>
         <>
           <ImageWithText src={homeBauteile} title="senseBox:home Bauteile" />
           <h3 className="mb-4 text-gray-700 dark:text-gray-300 font-medium">
@@ -144,9 +144,9 @@ export const MCUManager = () => {
             </div>
           </div>
         </>
-      )}
+      </div>
 
-      {activeBottomTab === "Hardware" && (
+      <div className={activeBottomTab === "Hardware" ? "" : "hidden"}>
         <>
           <div className="!scale-300">
             <ImageWithText src={mcuPorts} title="senseBox MCU with Ports" />
@@ -155,11 +155,11 @@ export const MCUManager = () => {
             <NavBlocks href="/docs/hardware/bee/wifi-bee" title="Wifi-Bee" />
             <NavBlocks href="/docs/hardware/bee/sd-bee" title="SD-Bee" />
             <NavBlocks
-              href="/docs/hardware/sensors/temperatur-luftfeuchte"
+              href="/docs/hardware/sensors/temperatur-luftfeuchte/temperatur-luftfeuchte"
               title="Temperatur- und Luftfeuchtesensor"
             />
             <NavBlocks
-              href="/docs/hardware/sensors/helligkeit-uv"
+              href="/docs/hardware/sensors/helligkeit-uv/helligkeit-uv"
               title="Helligkeits- und UV-Sensor"
             />
             <NavBlocks
@@ -168,11 +168,11 @@ export const MCUManager = () => {
             />
             <NavBlocks href="/docs/hardware/sensors/mikro" title="Mikrofon" />
             <NavBlocks
-              href="/docs/hardware/sensors/luftdruck-temperatur"
+              href="/docs/hardware/sensors/luftdruck-temperatur/luftdruck-temperatur"
               title="Luftdruck- und Temperatursensor"
             />
             <NavBlocks
-              href="/docs/hardware/accessoires/display"
+              href="/docs/hardware/accessoires/display/display"
               title="OLED Display"
             />
             <NavBlocks
@@ -185,13 +185,13 @@ export const MCUManager = () => {
             />
           </div>
         </>
-      )}
+      </div>
 
-      {activeBottomTab === "Aufbau" && (
+      <div className={activeBottomTab === "Aufbau" ? "" : "hidden"}>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
           <p> Comming Soon</p>
         </div>
-      )}
+      </div>
     </div>
   );
 };
