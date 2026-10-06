@@ -3,8 +3,33 @@ import { useState } from "react";
 import { useBoardStore } from "@site/src/lib/stores/store";
 import CodeBlock from "@theme/CodeBlock";
 
-export function ProgrammingTabs() {
+export function ProgrammingTabs( { sensor } ) {
+
     const [activeTab, setActiveTab] = useState('arduino');
+
+    const files = {
+    arduino: loadExampleCode(sensor, `arduino-${sensor}.ino`),
+    circuitpython: loadExampleCode(sensor, `circuitpy-${sensor}.py`)
+    }
+
+    const activeCode = files[activeTab]
+
+    const examples = require.context(
+        "../../../docs/hardware/sensors",
+        true,
+        /\/(arduino-[^/]+\.ino|circuitpy-[^/]+\.py)$/
+    )
+
+    function loadExampleCode(sensor, fileName) {
+        try {
+            const filePath = `./${sensor}/${fileName}`;
+            const fileContent = examples(filePath);
+            return fileContent.default ?? fileContent;
+        } catch (error) {
+            console.error(`Error loading example code for ${sensor}/${fileName}:`, error);
+            return null;
+        }
+    }
 
     return (
         <>
@@ -16,11 +41,15 @@ export function ProgrammingTabs() {
                     Arduino
                 </Button>
                 <Button
-                    variant={activeTab === 'python' ? "default" : "outline"}
-                    onClick={() => setActiveTab('Circuitpython')}
+                    variant={activeTab === 'circuitpython' ? "default" : "outline"}
+                    onClick={() => setActiveTab('circuitpython')}
                 >
-                    Circuitython
+                    Circuitpython
                 </Button>
+
+                <CodeBlock >
+                    {activeCode}
+                </CodeBlock>
             </div>
         </>
     
