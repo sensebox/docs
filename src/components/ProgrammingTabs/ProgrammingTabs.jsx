@@ -4,38 +4,37 @@ import { useBoardStore } from "@site/src/lib/stores/store";
 import CodeBlock from "@theme/CodeBlock";
 
 const examples = require.context(
-    "../../../docs/hardware/sensors",
-    true,
-    /\/(arduino-[^/]+\.ino|circuitpy-[^/]+\.py)$/
+  "../../../docs/hardware/sensors",
+  true,
+  /\/(arduino\/[^/]+\.ino|circuitpython\/[^/]+\.py)$/
 )
 
-function loadExampleCode(sensor, fileName) {
+function loadExampleCode(project, language, sensor) {
+    const extension = language === "arduino" ? ".ino" : ".py"
     try {
-        const filePath = `./${sensor}/${fileName}`;
-        // const fileContent = examples(filePath);
-        return filePath.default ?? filePath;
+        const filePath = `./${project}/${language}/${sensor}${extension}`;
+        const fileContent = examples(filePath);
+        return fileContent.default ?? fileContent;
     } catch (error) {
-        console.error(`Error loading example code for ${sensor}/${fileName}:`, error);
+        console.error(`Error loading example code for ${project}/${language}/${sensor}${extension}:`, error);
         return null;
     }
 }
 
-export function ProgrammingTabs( { sensor, instructions } ) {
-
+export function ProgrammingTabs( { project, sensor, instructions = {} } ) {
 
     const [activeTab, setActiveTab] = useState('arduino');
 
     const board = useBoardStore((state) => state.board);
 
     const files = {
-        arduino: loadExampleCode(sensor, `arduino-${sensor}.ino`),
-        circuitpython: loadExampleCode(sensor, `circuitpy-${sensor}.py`)
+        arduino: loadExampleCode(project, "arduino", sensor),
+        circuitpython: loadExampleCode(project, "circuitpython", sensor)
     }
 
     const activeCode = files[activeTab]
 
     return (
-        <>
             <div>
                 <Button
                     variant={activeTab === 'arduino' ? "default" : "outline"}
@@ -61,6 +60,5 @@ export function ProgrammingTabs( { sensor, instructions } ) {
                         <p>No example code available for {sensor} in {activeTab}.</p>
                     )}
             </div>
-        </>
     )
 }
