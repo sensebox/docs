@@ -50,12 +50,12 @@ export default function ProgrammingTabs( { project, sensor, instructions = {} } 
                     Circuitpython
                 </Button>}
                     {activeCode ? (
-                        <>
+                        <div className="markdown">
                             {instructions[activeTab]}
                             <CodeBlock language={activeTab === 'arduino' ? 'cpp' : 'python'}>
                                 {activeCode}
                             </CodeBlock>
-                        </>
+                        </div>
                     ) : (
                         <p>No example code available for {sensor} in {activeTab}.</p>
                     )}
