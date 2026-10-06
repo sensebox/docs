@@ -4,6 +4,7 @@ title: Photodiode
 
 import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
 import photodiode from '@site/static/img/hardware-bilder/photodiode/mcu-top-photodiode.png'
+import ProgrammingTabs from '@site/src/components/ProgrammingTabs/ProgrammingTabs'
 
 # Photodiode
 
@@ -19,29 +20,31 @@ Eine Photodiode ist ein lichtempfindlicher Halbleiter, der Licht in elektrische 
 Die Photodiode ist auf der MCU S2 verbaut! Du musst hier also nichts weiter anschließen.
 :::
 
-## Programmierung (Arduino)
+## Programmierung
 
-Um die Photodiode zu testen lade diesen Sketch auf deine senseBox hoch!
+<ProgrammingTabs
+    project = "photodiode"
+    sensor = "photodiode"
+    instructions = {{
+      arduino: (
+        <>
+          <p>Um die Photodiode zu testen lade diesen Sketch auf deine senseBox hoch!</p>
+          <p>Im Seriellen Monitor werden dir nun die Werte für die Photodiode ausgegeben. Du kannst dir den Verlauf der Werte auch in einem Graph im Seriellen Plotter (Werkzeuge -&gt; Serieller Plotter) anzeigen lassen.</p>
+          
+          <h3>Code</h3>
 
-```cpp
-void setup() {
-  // put your setup code here, to run once:
-  pinMode(PD_ENABLE, OUTPUT);
-  analogReadResolution(12);
-  digitalWrite(PD_ENABLE, HIGH);
+        </>
+      ),
+      circuitpython: (
+        <>
+          <p>Im Seriellen Monitor werden dir nun die Werte für die Photodiode ausgegeben.</p>
 
-  Serial.begin(9600);
-}
+          <h3>Code</h3>
 
-void loop() {
-  // put your main code here, to run repeatedly:
-
-  Serial.println(analogRead(PD_SENSE));
-  delay(100);
-}
-```
-
-Im Seriellen Monitor werden dir nun die Werte für die Photodiode ausgegeben. Du kannst dir den Verlauf der Werte auch in einem Graph im Seriellen Plotter (Werkzeuge -> Serieller Plotter) anzeigen lassen.
+        </>
+      )
+    }}
+  />
 
 ## Programmierung (Blockly)
 
