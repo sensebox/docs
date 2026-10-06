@@ -10,6 +10,7 @@ import tempSensor from '@site/static/img/hardware-bilder/temperatur-luftfeuchte/
 import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
 import { useBoardStore } from '@site/src/lib/stores/store'
 import CodeBlock from '@theme/CodeBlock'
+import ProgrammingTabs from '@site/src/components/ProgrammingTabs/ProgrammingTabs'
 
 # Temperatur- und Luftfeuchtesensor
 
@@ -36,33 +37,51 @@ Der HDC1080 ist ein digitaler Feuchtigkeits- und Temperatursensor. Der Sensor ha
 
 <TutorialPorts port="i2c" />
 
-## Programmierung (Arduino)
+## Programmierung
+<h3>test</h3>
 
-### Software Bibliothek
+<ProgrammingTabs 
+    project = "temperatur-luftfeuchte"
+    sensor = "hdc1080"
+    instructions = {{
+        arduino: (
+            <>
+                <h3>Software Bibliothek</h3>
 
-Um den Sensor in Arduino zu Programmieren musst du die Software Bibliothek [Adafruit HDC1000 Library](https://www.arduino.cc/reference/en/libraries/adafruit-hdc1000-library/) installieren.
+                <p>
+                    Um den Sensor in Arduino zu programmieren, musst du die Software Bibliothek{" "}
+                    <a href="https://www.arduino.cc/reference/en/libraries/adafruit-hdc1000-library/">
+                    Adafruit HDC1000 Library
+                    </a>{" "}
+                    installieren.
+                </p>
 
-### Code
+                <h3>Code</h3>
+                
+                <p>
+                Dieser Code gibt die Temperatur und die relative Luftfeuchte im Seriellen Monitor aus.
+                </p>
+            </>
+        ),
+        circuitpython: (
+            <>
 
-Dieser Code gibt die Temperatur und die relative Luftfeuchte im Seriellen Monitor aus.
+                <p>Um den Sensor mit CircuitPython zu programmieren, muss die senseBox MCU-S2 zunächst mit CircuitPython geflasht werden. Eine Anleitung dazu findest du <a href="https://docs.sensebox.de/docs/editors/circuitpython/circuitpython_esp32">hier</a>.</p>
 
-```cpp
-#include <Adafruit_HDC1000.h> // http://librarymanager/All#Adafruit_HDC1000_Library
+                <h3>Software Bibliothek</h3>
 
-Adafruit_HDC1000 hdc = Adafruit_HDC1000();
+                <p>Lade dir die <a href="https://github.com/sensebox/CircuitPython_HDC1080/releases/download/1.0.0/circuitpython-hdc1080-9.x-mpy-1.0.0.zip">HDC1080 CircuitPython Bibliothek</a> herunter. Entpacke die .zip Datei und kopiere die <code>hdc1080.mpy</code> Datei aus dem <code>lib</code> Ordner in den <code>lib</code> Ordner deiner senseBox (<code>CIRCUITPY</code> Laufwerk).</p>
 
-void setup(){
-    Serial.begin(9600);
-    hdc.begin();
-}
+                <h3>Code</h3>
 
-void loop(){
-    Serial.print("Temperature: ");
-    Serial.println(hdc.readTemperature());
-    Serial.print("Humidity: ");
-    Serial.println(hdc.readHumidity());
-}
-```
+                <p>Mit dem CircuitPython Editor deiner Wahl kannst du nun den Sensor programmieren und seine Werte auslesen. Dieser Code gibt die Temperatur und die relative Luftfeuchte in der Konsole aus:</p>
+                
+            </>
+        )
+    }}
+    />
+
+
 
 ## Programmierung (Blockly)
 
@@ -79,15 +98,6 @@ Im Block kannst du zwischen den verschiedenen Parametern des Temperatur und Luft
 <>
 <h2>Programmierung (CircuitPython)</h2>
 
-<p>Um den Sensor mit CircuitPython zu programmieren, muss die senseBox MCU-S2 zunächst mit CircuitPython geflasht werden. Eine Anleitung dazu findest du <a href="https://docs.sensebox.de/docs/editors/circuitpython/circuitpython_esp32">hier</a>.</p>
-
-<h3>Software Bibliothek</h3>
-
-<p>Lade dir die <a href="https://github.com/sensebox/CircuitPython_HDC1080/releases/download/1.0.0/circuitpython-hdc1080-9.x-mpy-1.0.0.zip">HDC1080 CircuitPython Bibliothek</a> herunter. Entpacke die .zip Datei und kopiere die <code>hdc1080.mpy</code> Datei aus dem <code>lib</code> Ordner in den <code>lib</code> Ordner deiner senseBox (<code>CIRCUITPY</code> Laufwerk).</p>
-
-<h3>Code</h3>
-
-<p>Mit dem CircuitPython Editor deiner Wahl kannst du nun den Sensor programmieren und seine Werte auslesen. Dieser Code gibt die Temperatur und die relative Luftfeuchte in der Konsole aus:</p>
 
 <CodeBlock language="python">{`import time
 import board

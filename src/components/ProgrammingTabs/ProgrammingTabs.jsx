@@ -21,7 +21,7 @@ function loadExampleCode(project, language, sensor) {
     }
 }
 
-export function ProgrammingTabs( { project, sensor, instructions = {} } ) {
+export default function ProgrammingTabs( { project, sensor, instructions = {} } ) {
 
     const [activeTab, setActiveTab] = useState('arduino');
 
