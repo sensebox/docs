@@ -137,7 +137,7 @@ export const MCUManager = () => {
         onTabChange={setActiveBottomTab}
       />
 
-      {activeBottomTab === "Sensoren" && (
+      <div className={activeBottomTab === "Sensoren" ? "" : "hidden"}>
         <>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
             <NavBlocks
@@ -158,9 +158,9 @@ export const MCUManager = () => {
             />
           </div>
         </>
-      )}
+      </div>
 
-      {activeBottomTab === "Halterung" && (
+      <div className={activeBottomTab === "Halterung" ? "" : "hidden"}>
         <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
           <h3 className="text-xl font-bold mb-4">Halterung am Fahrrad</h3>
           <NavBlocks
@@ -168,15 +168,15 @@ export const MCUManager = () => {
             title="Halterung"
           />
         </div>
-      )}
+      </div>
 
-      {activeBottomTab === "App" && (
+      <div className={activeBottomTab === "App" ? "" : "hidden"}>
         <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
           <h3 className="text-xl font-bold mb-4">Die senseBox:bike App</h3>
           <NavBlocks href="/docs/products/bike/app/download" title="Download" />
           <NavBlocks href="/docs/products/bike/app/benutzung" title="Nutzung" />
         </div>
-      )}
+      </div>
     </div>
   );
 };

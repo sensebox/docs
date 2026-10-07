@@ -90,7 +90,7 @@ export const MCUManager = () => {
 
       <div className="bg-white border border-gray-200 rounded-xl p-6 dark:bg-gray-900 dark:border-gray-800 dark:text-gray-200">
         
-        {activeBottomTab === "Features" && (
+        <div className={activeBottomTab === "Features" ? "" : "hidden"}>
           <div>
             <h3 className="text-xl font-bold mb-4 text-black dark:text-gray-100">
               I2C/Wire Daisy Chain
@@ -108,9 +108,9 @@ export const MCUManager = () => {
             </p>
             <ImageWithText src={i2cdaiychain} title="I2C/Wire daisy chain" />
           </div>
-        )}
+        </div>
 
-        {activeBottomTab === "I2C/Wire Ports" && (
+        <div className={activeBottomTab === "I2C/Wire Ports" ? "" : "hidden"}>
         <PortsOverview title="Sensoren und Zubehör an den I2C/Wire Anschlüssen">
           <PortItem src={lightSensor} name="Lichtsensor" />
           <PortItem src={tempSensor} name="Temperatur" />
@@ -118,16 +118,16 @@ export const MCUManager = () => {
           <PortItem src={tofSensor} name="ToF Sensor" />
           <PortItem src={display} name="Display" />
         </PortsOverview>
-      )}
+      </div>
 
-      {activeBottomTab === "Digitale/Analoge Ports" && (
+      <div className={activeBottomTab === "Digitale/Analoge Ports" ? "" : "hidden"}>
         <PortsOverview title="Sensoren und Accessoire an den Digital/Analog Ports">
           <PortItem src={ledMatrix} name="LED-Matrix" />
         </PortsOverview>
-      )}
+      </div>
 
 
-        {activeBottomTab === "Hardware" && (
+        <div className={activeBottomTab === "Hardware" ? "" : "hidden"}>
           <>
             <div className="!scale-300">
               <ImageWithText src={mcus2ports} title="MCU S2 Board with Ports" />
@@ -181,9 +181,9 @@ export const MCUManager = () => {
               />
             </div>
           </>
-        )}
+        </div>
 
-        {activeBottomTab === "Tech Specs" && (
+        <div className={activeBottomTab === "Tech Specs" ? "" : "hidden"}>
           <TechSpecs
             name="MCU2"
             sku="SB-105"
@@ -211,9 +211,9 @@ export const MCUManager = () => {
             inputVoltage="5 V (via USB) / 3.7 V (externe Batterie)"
             batterySupport="Ja (externer Batterieanschluss)"
           />
-        )}
+        </div>
 
-        {activeBottomTab === "Blockly" && (
+        <div className={activeBottomTab === "Blockly" ? "" : "hidden"}>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
             <NavBlocks
               href="/docs/editors/blockly/blocks/logik?board=edus2"
@@ -246,9 +246,9 @@ export const MCUManager = () => {
             />
             <NavBlocks href="/docs/editors/blockly/blocks/zeit?board=edus2" title="Zeit" />
           </div>
-        )}
+        </div>
 
-        {activeBottomTab === "Arduino" && (
+        <div className={activeBottomTab === "Arduino" ? "" : "hidden"}>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
             <NavBlocks
               href="/docs/editors/arduino/installation-arduino-ide?board=edus2"
@@ -267,9 +267,9 @@ export const MCUManager = () => {
               title="Arduino Software Bibliotheken hinzufügen"
             />
           </div>
-        )}
+        </div>
 
-        {activeBottomTab === "CircuitPython" && (
+        <div className={activeBottomTab === "CircuitPython" ? "" : "hidden"}>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
             <NavBlocks
               href="/docs/editors/circuitpython/circuitpython_esp32?board=edus2"
@@ -304,7 +304,7 @@ export const MCUManager = () => {
               title="CircuitPython Beispiel: Brick Breaker"
             />
           </div>
-        )}
+        </div>
       </div>
     </div>
   );

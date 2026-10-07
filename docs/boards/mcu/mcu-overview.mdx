@@ -81,7 +81,7 @@ export const MCUManager = () => {
       />
 
       <div className="bg-white border border-gray-200 rounded-xl p-6 dark:bg-gray-900 dark:border-gray-800 dark:text-gray-200">
-        {activeBottomTab === "Features" && (
+        <div className={activeBottomTab === "Features" ? "" : "hidden"}>
           <div>
             <h3 className="text-xl font-bold mb-4 text-black dark:text-gray-100">
               Prozessor
@@ -118,9 +118,9 @@ export const MCUManager = () => {
               programmiert werden.
             </p>
           </div>
-        )}
+        </div>
 
-      {activeBottomTab === "I2C/Wire Ports" && (
+      <div className={activeBottomTab === "I2C/Wire Ports" ? "" : "hidden"}>
         <PortsOverview title="Sensoren und Zubehör an den I2C/Wire Anschlüssen">
           <PortItem src={lightSensor} name="Lichtsensor" />
           <PortItem src={tempSensor} name="Temperatur" />
@@ -128,24 +128,24 @@ export const MCUManager = () => {
           <PortItem src={tofSensor} name="ToF Sensor" />
           <PortItem src={display} name="Display" />
         </PortsOverview>
-      )}
+      </div>
 
-      {activeBottomTab === "UART/Serielle Anschlüsse" && (
+      <div className={activeBottomTab === "UART/Serielle Anschlüsse" ? "" : "hidden"}>
         <PortsOverview title="Sensoren und Zubehör an den UART/Serielle Anschlüssen">
           <PortItem src={feinstaubSds} name="Feinstaub (SDS011)" />
           <PortItem src={feinstaubSps} name="Feinstaub (SPS30)" />
         </PortsOverview>
-      )}
+      </div>
 
-      {activeBottomTab === "Digitale/Analoge Ports" && (
+      <div className={activeBottomTab === "Digitale/Analoge Ports" ? "" : "hidden"}>
         <PortsOverview title="Sensoren und Zubehör an den Digitale/Analoge Anschlüssen">
           <PortItem src={mikro} name="Kondensatormikrofon" />
           <PortItem src={ultrasonic} name="Ultraschall-Distanzsensor" />
           <PortItem src={truebner} name="Bodenfeuchtesensor" />
         </PortsOverview>
-      )}
+      </div>
 
-      {activeBottomTab === "XBEE" && (
+      <div className={activeBottomTab === "XBEE" ? "" : "hidden"}>
         <>
           <PortsOverview title="Sensoren und Zubehör an den Digitale/Analoge Anschlüssen">
             <PortItem src={wifiBee} name="WiFi Bee" />
@@ -164,9 +164,9 @@ export const MCUManager = () => {
             </Admonition>
           </div>
         </>
-      )}
+      </div>
 
-        {activeBottomTab === "Hardware" && (
+        <div className={activeBottomTab === "Hardware" ? "" : "hidden"}>
           <>
             <div className="!scale-300">
               <ImageWithText src={mcuPorts} title="senseBox MCU mit Ports" />
@@ -205,9 +205,9 @@ export const MCUManager = () => {
               />
             </div>
           </>
-        )}
+        </div>
 
-        {activeBottomTab === "Tech Specs" && (
+        <div className={activeBottomTab === "Tech Specs" ? "" : "hidden"}>
           <TechSpecs
             name="MCU"
             sku="SB-003"
@@ -234,9 +234,9 @@ export const MCUManager = () => {
             ioVoltage="3.3 V / 5 V tolerant"
             inputVoltage="5 V (via USB)"
           />
-        )}
+        </div>
 
-        {activeBottomTab === "Blockly" && (
+        <div className={activeBottomTab === "Blockly" ? "" : "hidden"}>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
             <NavBlocks
               href="/docs/editors/blockly/blocks/logik?board=edu"
@@ -269,9 +269,9 @@ export const MCUManager = () => {
             />
             <NavBlocks href="/docs/editors/blockly/blocks/zeit?board=edu" title="Zeit" />
           </div>
-        )}
+        </div>
 
-        {activeBottomTab === "Arduino" && (
+        <div className={activeBottomTab === "Arduino" ? "" : "hidden"}>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
             <NavBlocks
               href="/docs/editors/arduino/installation-arduino-ide?board=edu"
@@ -294,9 +294,9 @@ export const MCUManager = () => {
               title="Erste Schritte mit Arduino IDE"
             />
           </div>
-        )}
+        </div>
 
-        {activeBottomTab === "Besonderheiten" && (
+        <div className={activeBottomTab === "Besonderheiten" ? "" : "hidden"}>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
             <NavBlocks href="/docs/misc/openRoberta?board=edu" title="openRoberta" />
             <NavBlocks
@@ -304,7 +304,7 @@ export const MCUManager = () => {
               title="senseBox:home mit LoRa"
             />
           </div>
-        )}
+        </div>
       </div>
     </div>
   );

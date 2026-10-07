@@ -126,7 +126,7 @@ export const MCUManager = () => {
         onTabChange={setActiveBottomTab}
       />
 
-      {activeBottomTab === "Bauteile" && (
+      <div className={activeBottomTab === "Bauteile" ? "" : "hidden"}>
         <>
           <ImageWithText src={homeBauteile} title="senseBox:home Bauteile" />
           <h3 className="mb-4 text-gray-700 dark:text-gray-300 font-medium">
@@ -144,9 +144,9 @@ export const MCUManager = () => {
             </div>
           </div>
         </>
-      )}
+      </div>
 
-      {activeBottomTab === "Hardware" && (
+      <div className={activeBottomTab === "Hardware" ? "" : "hidden"}>
         <>
           <div className="!scale-300">
             <ImageWithText src={mcuPorts} title="senseBox MCU with Ports" />
@@ -185,13 +185,13 @@ export const MCUManager = () => {
             />
           </div>
         </>
-      )}
+      </div>
 
-      {activeBottomTab === "Aufbau" && (
+      <div className={activeBottomTab === "Aufbau" ? "" : "hidden"}>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
           <p> Comming Soon</p>
         </div>
-      )}
+      </div>
     </div>
   );
 };

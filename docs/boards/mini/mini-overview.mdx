@@ -62,7 +62,7 @@ export const MCUManager = () => {
       />
 
       <div className="bg-white border border-gray-200 rounded-xl p-6 dark:bg-gray-900 dark:border-gray-800 dark:text-gray-200">
-        {activeBottomTab === "Features" && (
+        <div className={activeBottomTab === "Features" ? "" : "hidden"}>
           <div>
             <h3 className="text-xl font-bold mb-4 text-black dark:text-gray-100">
               {" "}
@@ -99,9 +99,9 @@ export const MCUManager = () => {
               ist außerdem vollständig Arduino kompatibel
             </p>
           </div>
-        )}
+        </div>
 
-        {activeBottomTab === "Hardware" && (
+        <div className={activeBottomTab === "Hardware" ? "" : "hidden"}>
           <>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
               <NavBlocks href="/docs/hardware/bee/wifi-bee?board=mini" title="Wifi-Bee" />
@@ -128,9 +128,9 @@ export const MCUManager = () => {
               />
             </div>
           </>
-        )}
+        </div>
 
-        {activeBottomTab === "Tech Specs" && (
+        <div className={activeBottomTab === "Tech Specs" ? "" : "hidden"}>
           <TechSpecs
             name="MCU-Mini"
             sku="SB-060"
@@ -150,9 +150,9 @@ export const MCUManager = () => {
             ioVoltage="3.3 V / 5 V"
             inputVoltage="5 V (via USB)"
           />
-        )}
+        </div>
 
-        {activeBottomTab === "Blockly" && (
+        <div className={activeBottomTab === "Blockly" ? "" : "hidden"}>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
             <NavBlocks
               href="/docs/editors/blockly/blocks/logik?board=mini"
@@ -185,9 +185,9 @@ export const MCUManager = () => {
             />
             <NavBlocks href="/docs/editors/blockly/blocks/zeit?board=mini" title="Zeit" />
           </div>
-        )}
+        </div>
 
-        {activeBottomTab === "Arduino" && (
+        <div className={activeBottomTab === "Arduino" ? "" : "hidden"}>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
             <NavBlocks
               href="/docs/editors/arduino/installation-arduino-ide?board=mini"
@@ -210,7 +210,7 @@ export const MCUManager = () => {
               title="Erste Schritte mit Arduino IDE"
             />
           </div>
-        )}
+        </div>
       </div>
     </div>
   );
