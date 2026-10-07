@@ -35,8 +35,7 @@ In Blockly hast du verschiedene Möglichkeiten, Projekte umzusetzen, die mit dem
 ## Programmierung
 
 <ProgrammingTabs
-  project = "wifi"
-  sensor = "wifi"
+  fileName = "wifi"
   instructions = {{
     arduino: (
       <>
@@ -50,20 +49,34 @@ In Blockly hast du verschiedene Möglichkeiten, Projekte umzusetzen, die mit dem
         <p>Mit dem CircuitPython Editor deiner Wahl kannst du deine senseBox mit einem WLAN-Netzwerk verbinden. Trage dazu in den Variablen `CIRCUITPY_WIFI_SSID` und `CIRCUITPY_WIFI_PASSWORD` den Namen deines WLANs und das zugehörige Passwort ein. Anschließend wird die WLAN-Verbindung hergestellt und der Verbindungsstatus in der Konsole ausgegeben.</p>
         <h3>Code</h3>
       </>
+    ),
+    blockly: (
+      <>
+        <p>
+          Mit dem <code>Verbinde mit WLAN</code>-Block kannst du deine senseBox im
+          <code>Setup()</code> mit einem WLAN-Netzwerk verbinden. Unter SSID muss der
+          Netzwerkname und unter Passwort das WLAN-Zugangspasswort eingegeben werden.
+        </p>
+
+        <img
+          src="/img/blockly-bilder/web-wifi/blockly-Web-Wifi-1.svg"
+          alt="Blockly Block zum Verbinden mit einem WLAN-Netzwerk"
+        />
+
+        <p>
+          Mit dem <code>Initialisiere WLAN Access Point</code>-Block kann deine senseBox
+          ein WLAN-Netzwerk erstellen, in das du mit anderen Geräten beitreten kannst.
+          Im Textfeld SSID kannst du den Namen deines Netzwerks festlegen.
+        </p>
+
+        <img
+          src="/img/blockly-bilder/web-wifi/blockly-Web-Wifi-2.svg"
+          alt="Blockly Block zum Erstellen eines WLAN Access Points"
+        />
+      </>
     )
   }}
 />
-
-
-## Programmierung (Blockly)
-
-Mit dem `Verbinde mit WLAN`-Block kannst du deine senseBox im Setup() mit einem WLAN-Netzwerk verbinden. Unter SSID muss der Netzwerkname und unter Passwort das WLAN-Zugangspasswort eingegeben werden.
-
-![](/img/blockly-bilder/web-wifi/blockly-Web-Wifi-1.svg)
-
-Mit dem `Initialisiere WLAN Access Point`-Block kann deine senseBox ein WLAN-Netzwerk erstellen, in das du mit anderen Geräten beitreten kannst. Im Textfeld SSID kannst du den Namen deines Netzwerks festlegen.
-
-![](/img/blockly-bilder/web-wifi/blockly-Web-Wifi-2.svg)
 
 ## Projekte
 

@@ -35,8 +35,7 @@ Mit dem Sensor BME680 kannst du eine verschiedene Auswahl an Phänomenen messen.
 ## Programmierung
 
 <ProgrammingTabs 
-    project = "sensors/umweltsensor"
-    sensor = "bme680"
+    fileName = "bme680"
     instructions = {{
         arduino: (
             <>
@@ -74,25 +73,34 @@ Mit dem Sensor BME680 kannst du eine verschiedene Auswahl an Phänomenen messen.
 
                 <p>Mit dem CircuitPython Editor deiner Wahl kannst du nun den Sensor programmieren und seine Werte auslesen. Dieser Code gibt die Temperatur, Gasresistenz, relative Luftfeuchte, Luftdruck und Höhe in der Konsole aus:</p>
             </>
+        ),
+        blockly: (
+            <>
+                <p>In Blockly kann der Sensor über folgenden Block ausgelesen werden:</p>
+
+                <img
+                src="/img/hardware-bilder/umweltsensor/block_umweltsensor.svg"
+                alt="Blockly Block für den Umweltsensor"
+                />
+
+                <p>
+                Im Block kannst du zwischen den verschiedenen Parametern des Umweltsensors
+                auswählen:
+                </p>
+
+                <ul>
+                <li>Temperatur in Grad Celsius (°C)</li>
+                <li>Luftfeuchtigkeit in %</li>
+                <li>Luftdruck in Pa</li>
+                <li>Innenraumluftqualität (IAQ)</li>
+                <li>Kalibrierungswert</li>
+                <li>CO<sub>2</sub> Äquivalent</li>
+                <li>Atemluft VOC Äquivalent</li>
+                </ul>
+            </>
         )
     }}
 />
-
-## Programmierung (Blockly)
-
-In Blockly kann der Sensor über folgenden Block ausgelesen werden:
-
-![](/img/hardware-bilder/umweltsensor/block_umweltsensor.svg)
-
-Im Block kannst du zwischen den verschiedenen Parametern des Umweltsensors auswählen:
-
-- Temperatur in Grad Celsius (°C)
-- Luftfeuchtigkeit in %
-- Luftdruck in Pa
-- Innenraumluftqualität (IAQ)
-- Kalibrierungswert
-- CO<sub>2</sub> Äquivalent
-- Atemluft VOC Äquivalent
 
 ## Kalibrierungswert
 

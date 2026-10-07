@@ -54,162 +54,67 @@ Der zweite Sensor ist ein Vishay VEML6070 Ultravioletter (UV)-Lichtsensor. Diese
 
 ## Programmierung
 
+<ProgrammingTabs
+  fileName = "veml6070"
+  instructions = {{
+    arduino: (
+      <>
+        <h3>Software Bibliothek</h3>
 
-### Software Bibliothek
+        <p>
+          Um den Sensor in Arduino zu programmieren, musst du die Software Bibliothek
+          <a href="https://www.arduino.cc/reference/en/libraries/adafruit-ltr329-and-ltr303/">
+            Adafruit LTR329 and LTR303
+          </a>
+          sowie
+          <a href="https://www.arduino.cc/reference/en/libraries/adafruit-veml6070-library/">
+            Adafruit VEML6070 Library
+          </a>
+          installieren.
+        </p>
 
-Um den Sensor in Arduino zu Programmieren musst du die Software Bibliothek [Adafruit LTR329 and LTR303](https://www.arduino.cc/reference/en/libraries/adafruit-ltr329-and-ltr303/) **sowie** [Adafruit VEML6070 Library](https://www.arduino.cc/reference/en/libraries/adafruit-veml6070-library/) installieren.
+        <h3>Code</h3>
 
-### Code
+        <p>
+          Dieser Code gibt die Werte für Lux und die UV-Intensität im Seriellen Monitor
+          aus.
+        </p>
+      </>
+    ),
+  circuitpython: (
+    <>
+      <p>Um den Sensor mit CircuitPython zu programmieren, muss die senseBox MCU-S2 zunächst mit CircuitPython geflasht werden. Eine Anleitung dazu findest du <a href="https://docs.sensebox.de/docs/editors/circuitpython/circuitpython_esp32">hier</a>.</p>
 
-Dieser Code gibt die Werte für Lux und der UV-Intensität im Seriellen Monitor aus
+      <h3>Software Bibliothek</h3>
 
-```cpp
-#include <SPI.h>
-#include <LTR329.h>
-#include <Wire.h>
-#include <VEML6070.h>
+      <p>Lade dir die <a href="https://github.com/adafruit/Adafruit_CircuitPython_VEML6070/releases/download/3.1.24/adafruit-circuitpython-veml6070-10.x-mpy-3.1.24.zip">VEML6070 CircuitPython Bibliothek</a> herunter. Entpacke die .zip Datei und kopiere die <code>adafruit_veml6070.mpy</code> Datei aus dem <code>lib</code> Ordner in den <code>lib</code> Ordner deiner senseBox (<code>CIRCUITPY</code> Laufwerk).</p>
 
-bool lightsensortype = 0; //0 for tsl - 1 for ltr
-//settings for LTR sensor
-LTR329 LTR;
-unsigned char gain = 1;
-unsigned char integrationTime = 0;
-unsigned char measurementRate = 3;
-VEML6070 veml;
+      <h3>Code</h3>
 
+      <p>Mit dem CircuitPython Editor deiner Wahl kannst du nun den UV-Sensor programmieren und seine Werte auslesen. Dieser Code gibt die UV-Intensität und das Risikolevel in der Konsole aus:</p>
+    </>
+  ),
+  blockly: (
+    <>
+      <p>In Blockly kann der Sensor über folgenden Block ausgelesen werden:</p>
 
-int read_reg(byte address, uint8_t reg)
-  {
-    int i = 0;
-    Wire.beginTransmission(address);
-    Wire.write(reg);
-    Wire.endTransmission();
-    Wire.requestFrom((uint8_t)address, (uint8_t)1);
-    delay(1);
-    if(Wire.available())
-      i = Wire.read();
-    return i;
-  }
+      <img
+        src="/img/hardware-bilder/helligkeit-uv/block_helligkeit_uv.svg"
+        alt="Blockly Block für den Helligkeits- und UV-Sensor"
+      />
 
+      <p>
+        Im Block kannst du zwischen den verschiedenen Parametern des Helligkeits-/UV-Sensors auswählen:
+      </p>
 
-void write_reg(byte address, uint8_t reg, uint8_t val)
-  {
-    Wire.beginTransmission(address);
-    Wire.write(reg);
-    Wire.write(val);
-    Wire.endTransmission();
-  }
-
-void Lightsensor_begin()
-  {
-    Wire.begin();
-    unsigned int u = 0;
-    u = read_reg(0x29, 0x80 | 0x0A); //id register
-    if ((u & 0xF0) == 0xA0)            // TSL45315
-      {
-        write_reg(0x29, 0x80 | 0x00, 0x03); //control: power on
-        write_reg(0x29, 0x80 | 0x01, 0x02); //config: M=4 T=100ms
-        delay(120);
-        lightsensortype = 0; //TSL45315
-      }
-    else
-      {
-        LTR.begin();
-        LTR.setControl(gain, false, false);
-        LTR.setMeasurementRate(integrationTime, measurementRate);
-        LTR.setPowerUp(); //power on with default settings
-        delay(10); //Wait 10 ms (max) - wakeup time from standby
-        lightsensortype = 1;                     //
-      }
-  }
-
-
-unsigned int Lightsensor_getIlluminance()
-  {
-    unsigned int lux = 0;
-    if (lightsensortype == 0) // TSL45315
-    {
-      unsigned int u = (read_reg(0x29, 0x80 | 0x04) << 0);  //data low
-      u |= (read_reg(0x29, 0x80 | 0x05) << 8); //data high
-      lux = u * 4; // calc lux with M=4 and T=100ms
-    }
-    else if (lightsensortype == 1) //LTR-329ALS-01
-    {
-      delay(100);
-      unsigned int data0, data1;
-      for (int i = 0; i < 5; i++) {
-        if (LTR.getData(data0, data1)) {
-          if(LTR.getLux(gain, integrationTime, data0, data1, lux));
-          if(lux > 0) break;
-          else delay(10);
-        }
-        else {
-        byte error = LTR.getError();
-      }
-    }
-  }
-  return lux;
-  }
-
-
-void setup() {
-    Serial.begin(9600);
-    Lightsensor_begin();
-    veml.begin();
-
-}
-
-void loop() {
-    Serial.print("Illuminance: ");
-    Serial.println(ightsensor_getIlluminance());
-    Serial.print("UV-Intensity: ");
-    Serial.println(veml.getUV());
-}
-```
-
-## Programmierung (Blockly)
-
-In Blockly kann der Sensor über folgenden Block ausgelesen werden:
-
-![](/img/hardware-bilder/helligkeit-uv/block_helligkeit_uv.svg)
-
-Im Block kannst du zwischen den verschiedenen Parametern des Helligkeits-/UV-Sensors auswählen:
-
-- Helligkeit in LUX
-- UV-Belastung in µW/cm^2
-
-{useBoardStore((state) => (state.board === 'MCU-S2' || state.board === ':edu S2') && (
-<>
-<h2>Programmierung (CircuitPython)</h2>
-
-<p>Um den Sensor mit CircuitPython zu programmieren, muss die senseBox MCU-S2 zunächst mit CircuitPython geflasht werden. Eine Anleitung dazu findest du <a href="https://docs.sensebox.de/docs/editors/circuitpython/circuitpython_esp32">hier</a>.</p>
-
-<h3>Software Bibliothek</h3>
-
-<p>Lade dir die <a href="https://github.com/adafruit/Adafruit_CircuitPython_VEML6070/releases/download/3.1.24/adafruit-circuitpython-veml6070-10.x-mpy-3.1.24.zip">VEML6070 CircuitPython Bibliothek</a> herunter. Entpacke die .zip Datei und kopiere die <code>adafruit_veml6070.mpy</code> Datei aus dem <code>lib</code> Ordner in den <code>lib</code> Ordner deiner senseBox (<code>CIRCUITPY</code> Laufwerk).</p>
-
-<h3>Code</h3>
-
-<p>Mit dem CircuitPython Editor deiner Wahl kannst du nun den UV-Sensor programmieren und seine Werte auslesen. Dieser Code gibt die UV-Intensität und das Risikolevel in der Konsole aus:</p>
-
-<CodeBlock language="python">{`import time
-import board
-from adafruit_veml6070 import VEML6070
-
-with board.I2C() as i2c:
-    uv = VEML6070(i2c)
-    # Alternative constructors with parameters
-    #uv = VEML6070(i2c, 'VEML6070_1_T')
-    #uv = VEML6070(i2c, 'VEML6070_HALF_T', True)
-
-    # take 10 readings
-    for j in range(10):
-        uv_raw = uv.uv_raw
-        risk_level = uv.get_index(uv_raw)
-        print('Reading: {0} | Risk Level: {1}'.format(uv_raw, risk_level))
-        time.sleep(1)`}</CodeBlock>
-</>
-))}
+      <ul>
+        <li>Helligkeit in LUX</li>
+        <li>UV-Belastung in µW/cm<sup>2</sup></li>
+      </ul>
+    </>
+  )
+  }}
+/>
 
 ## Projekte
 

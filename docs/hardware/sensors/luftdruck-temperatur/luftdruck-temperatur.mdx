@@ -44,8 +44,7 @@ Der DPS310 ersetzt den Luftdruck und Temperatursensor BMP280. Welchen von beiden
 ## Programmierung
 
 <ProgrammingTabs
-  arduinoFile = "./sensors/luftdruck-temperatur/arduino/dps310.ino"
-  circuitpythonFile = "./sensors/luftdruck-temperatur/circuitpython/dps310.py"
+  fileName = "dps310"
   instructions = {{
     arduino: (
       <>
@@ -63,21 +62,30 @@ Der DPS310 ersetzt den Luftdruck und Temperatursensor BMP280. Welchen von beiden
         <h3>Code</h3>
         <p>Mit dem CircuitPython Editor deiner Wahl kannst du nun den Sensor programmieren und seine Werte auslesen. Dieser Code gibt den Luftdruck und die Temperatur in der Konsole aus:</p>
     </>
+    ),
+    blockly: (
+      <>
+        <p>In Blockly kann der Sensor über folgenden Block ausgelesen werden:</p>
+
+        <img
+          src="/img/hardware-bilder/luftdruck/block_luftdruck_temperatur.svg"
+          alt="Blockly Block für Luftdruck und Temperatur"
+        />
+
+        <p>
+          Im Block kannst du zwischen den verschiedenen Parametern des
+          Luftdruck-/Temperatursensors auswählen:
+        </p>
+
+        <ul>
+          <li>Luftdruck in Pascal (Pa)</li>
+          <li>Temperatur in Celsius (°C)</li>
+          <li>Höhe über NN in m (dazu wird ein Referenzluftdruck benötigt)</li>
+        </ul>
+      </>
     )
   }}
 />
-
-## Programmierung (Blockly)
-
-In Blockly kann der Sensor über folgenden Block ausgelesen werden:
-
-![](/img/hardware-bilder/luftdruck/block_luftdruck_temperatur.svg)
-
-Im Block kannst du zwischen den verschiedenen Parametern des Luftdruck-/Temperatursensor auswählen:
-
-- Luftdruck in Pascal (Pa)
-- Temperatur in Celsius (°C)
-- Höhe über NN in m (dazu wird ein Referenzluftdruck benötigt)
 
 ## Projekte
 
