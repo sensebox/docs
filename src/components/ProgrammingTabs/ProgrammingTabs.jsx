@@ -1,165 +1,6 @@
-// import { Button } from "../ui/button";
-// import { useState } from "react";
-// import { useBoardStore } from "@site/src/lib/stores/store";
-// import CodeBlock from "@theme/CodeBlock";
-
-// const examples = require.context(
-//   "../../../docs/hardware",
-//   true,
-//   /\/(arduino\/[^/]+\.ino|circuitpython\/[^/]+\.py)$/
-// )
-
-
-// function loadExampleCode(project, language, sensor) {
-//     const extension = language === "arduino" ? ".ino" : ".py"
-//     try {
-//         const filePath = `./${project}/${language}/${sensor}${extension}`;
-//         const fileContent = examples(filePath);
-//         return fileContent.default ?? fileContent;
-//     } catch (error) {
-//         console.error(`Error loading example code for ${project}/${language}/${sensor}${extension}:`, error);
-//         return null;
-//     }
-// }
-
-
-
-// export default function ProgrammingTabs( { project, sensor, instructions = {} } ) {
-    
-//     const [activeTab, setActiveTab] = useState('arduino');
-
-//     const board = useBoardStore((state) => state.board);
-
-//     const files = {
-//         arduino: loadExampleCode(project, "arduino", sensor),
-//         circuitpython: loadExampleCode(project, "circuitpython", sensor)
-//     }
-
-//     const activeCode = files[activeTab]
-
-//     return (
-//             <div>
-//                 <Button
-//                     variant={activeTab === 'arduino' ? "default" : "outline"}
-//                     onClick={() => setActiveTab('arduino')}
-//                 >
-//                     Arduino
-//                 </Button>
-                
-//                 {(board === "MCU-S2" || board === ":edu S2") && <Button
-//                     variant={activeTab === 'circuitpython' ? "default" : "outline"}
-//                     onClick={() => setActiveTab('circuitpython')}
-//                 >
-//                     Circuitpython
-//                 </Button>}
-//                     {activeCode ? (
-//                         <>
-//                             {instructions[activeTab]}
-//                             <CodeBlock language={activeTab === 'arduino' ? 'cpp' : 'python'}>
-//                                 {activeCode}
-//                             </CodeBlock>
-//                         </>
-//                     ) : (
-//                         <p>No example code available for {sensor} in {activeTab}.</p>
-//                     )}
-//             </div>
-//     )
-// }
-
-//des
-
-
-// import { Button } from "../ui/button";
-// import { useState } from "react";
-// import { useBoardStore } from "@site/src/lib/stores/store";
-// import CodeBlock from "@theme/CodeBlock";
-
-// const examples = require.context(
-//   "../../../docs/hardware",
-//   true,
-//   /\/[^/]+\.(ino|py)$/
-// );
-
-
-// function loadExampleCode(filePath) {
-//   try {
-//     const fileContent = examples(filePath);
-//     return fileContent.default ?? fileContent;
-//   } catch (error) {
-//     console.warn(`Error loading example code for ${filePath}:`, error);
-//     return null;
-//   }
-// }
-
-// export default function ProgrammingTabs({
-//   arduinoFile,
-//   circuitpythonFile,
-//   instructions = {}
-// }) {
-
-//   const [activeTab, setActiveTab] = useState("arduino");
-
-//   const board = useBoardStore((state) => state.board);
-
-//   const files = {
-//     arduino: loadExampleCode(arduinoFile),
-//     circuitpython: loadExampleCode(circuitpythonFile)
-//   };
-
-//   const activeCode = files[activeTab];
-
-//   return (
-//     <div>
-//       <Button
-//         variant={activeTab === "arduino" ? "default" : "outline"}
-//         onClick={() => setActiveTab("arduino")}
-//       >
-//         Arduino
-//       </Button>
-
-//       <Button
-//         variant={activeTab === "blockly" ? "default" : "outline"}
-//         onClick={() => setActiveTab("blockly")}
-//       >
-//         Blockly
-//       </Button>
-
-//       {(board === "MCU-S2" || board === ":edu S2") && (
-//         <Button
-//           variant={
-//             activeTab === "circuitpython" ? "default" : "outline"
-//           }
-//           onClick={() => setActiveTab("circuitpython")}
-//         >
-//           CircuitPython
-//         </Button>
-//       )}
-    
-//       {activeTab !== "blockly" ? (
-//         activeCode ? (
-//           <>
-//             {instructions[activeTab]}
-
-//             <CodeBlock
-//               language={activeTab === "arduino" ? "cpp" : "python"}
-//             >
-//               {activeCode}
-//             </CodeBlock>
-//           </>
-//         ) : (
-//           <p>No example code available for {activeTab}.</p>
-//         )
-//       ) : (
-//         <div>{instructions.blockly || null}</div>
-//       )}
-//     </div>
-//   );
-// }
-
-// des
-
 import { Button } from "../ui/button";
-import { useState } from "react";
+import { useId, useState } from "react";
+import { LayoutGroup, motion, useReducedMotion } from "framer-motion";
 import { useBoardStore } from "@site/src/lib/stores/store";
 import CodeBlock from "@theme/CodeBlock";
 
@@ -193,6 +34,8 @@ export default function ProgrammingTabs({
   notes = {}
 }) {
   const [selectedTab, setActiveTab] = useState("arduino");
+  const animationId = useId();
+  const reduceMotion = useReducedMotion();
 
   const board = useBoardStore((state) => state.board);
 
@@ -223,16 +66,40 @@ export default function ProgrammingTabs({
   }
 
   return (
-    <div>
-      {availableTabs.map((tab) => (
-        <Button
-          key={tab.value}
-          variant={activeTab === tab.value ? "default" : "outline"}
-          onClick={() => setActiveTab(tab.value)}
-        >
-          {tab.label}
-        </Button>
-      ))}
+    <div className="bg-[#1a1e2b] shadow-lg shadow-black/30 rounded-3xl m-2 p-4">
+      <LayoutGroup id={animationId}>
+        <div className="mb-4 flex justify-evenly w-full gap-2 overflow-x-auto">
+          {availableTabs.map((tab) => (
+            <Button
+              key={tab.value}
+              type="button"
+              variant="ghost"
+              aria-pressed={activeTab === tab.value}
+              className={`relative isolate flex-1 border-2 border-solid border-red-500 hover:bg-transparent ${
+                activeTab === tab.value
+                  ? "text-white hover:text-white"
+                  : "text-[var(--ifm-font-color-base)] hover:text-[var(--ifm-font-color-base)]"
+              }`}
+              onClick={() => setActiveTab(tab.value)}
+            >
+              {activeTab === tab.value && (
+                <motion.span
+                  layoutId="active-tab-highlight"
+                  aria-hidden="true"
+                  initial={false}
+                  className="pointer-events-none absolute inset-0 rounded-md bg-[var(--ifm-color-primary)] shadow-sm"
+                  transition={
+                    reduceMotion
+                      ? { duration: 0 }
+                      : { type: "spring", stiffness: 450, damping: 35 }
+                  }
+                />
+              )}
+              <span className="relative z-10">{tab.label}</span>
+            </Button>
+          ))}
+        </div>
+      </LayoutGroup>
 
       {activeTab !== "blockly" ? (
         activeCode ? (
@@ -240,6 +107,7 @@ export default function ProgrammingTabs({
             {instructions[activeTab]}
 
             <CodeBlock
+              className="m-2"
               language={activeTab === "arduino" ? "cpp" : "python"}
             >
               {activeCode}
