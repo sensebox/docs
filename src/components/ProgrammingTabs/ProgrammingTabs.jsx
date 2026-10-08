@@ -175,7 +175,6 @@ function loadExampleCode(fileName, extension) {
     .find((path) => path.endsWith(`/${fileName}.${extension}`));
 
   if (!filePath) {
-    console.warn(`No example file found for ${fileName}.${extension}`);
     return null;
   }
 
@@ -193,7 +192,7 @@ export default function ProgrammingTabs({
   instructions = {},
   notes = {}
 }) {
-  const [activeTab, setActiveTab] = useState("arduino");
+  const [selectedTab, setActiveTab] = useState("arduino");
 
   const board = useBoardStore((state) => state.board);
 
@@ -202,34 +201,38 @@ export default function ProgrammingTabs({
     circuitpython: loadExampleCode(fileName, "py")
   };
 
+  const availableTabs = [
+    { value: "arduino", label: "Arduino", available: !!files.arduino?.trim() },
+    { value: "blockly", label: "Blockly", available: !!instructions.blockly },
+    {
+      value: "circuitpython",
+      label: "CircuitPython",
+      available:
+        (board === "MCU-S2" || board === ":edu S2") &&
+        !!files.circuitpython?.trim()
+    }
+  ].filter((tab) => tab.available);
+
+  const activeTab = availableTabs.some((tab) => tab.value === selectedTab)
+    ? selectedTab
+    : availableTabs[0]?.value;
   const activeCode = files[activeTab];
+
+  if (!activeTab) {
+    return null;
+  }
 
   return (
     <div>
-      <Button
-        variant={activeTab === "arduino" ? "default" : "outline"}
-        onClick={() => setActiveTab("arduino")}
-      >
-        Arduino
-      </Button>
-
-      <Button
-        variant={activeTab === "blockly" ? "default" : "outline"}
-        onClick={() => setActiveTab("blockly")}
-      >
-        Blockly
-      </Button>
-
-      {(board === "MCU-S2" || board === ":edu S2") && (
+      {availableTabs.map((tab) => (
         <Button
-          variant={
-            activeTab === "circuitpython" ? "default" : "outline"
-          }
-          onClick={() => setActiveTab("circuitpython")}
+          key={tab.value}
+          variant={activeTab === tab.value ? "default" : "outline"}
+          onClick={() => setActiveTab(tab.value)}
         >
-          CircuitPython
+          {tab.label}
         </Button>
-      )}
+      ))}
 
       {activeTab !== "blockly" ? (
         activeCode ? (
