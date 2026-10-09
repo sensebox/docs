@@ -66,7 +66,7 @@ export default function ProgrammingTabs({
   }
 
   return (
-    <div className="bg-[#1a1e2b] shadow-lg shadow-black/30 rounded-3xl m-2 p-4">
+    <div className="bg-[#f2f2f2] text-black dark:bg-[#1a1e2b] dark:text-white shadow-lg shadow-black/30 rounded-3xl m-2 p-4">
       <LayoutGroup id={animationId}>
         <div className="mb-4 flex justify-evenly w-full gap-2 overflow-x-auto">
           {availableTabs.map((tab) => (
@@ -75,11 +75,7 @@ export default function ProgrammingTabs({
               type="button"
               variant="ghost"
               aria-pressed={activeTab === tab.value}
-              className={`relative isolate flex-1 border-2 border-solid border-red-500 hover:bg-transparent ${
-                activeTab === tab.value
-                  ? "text-white hover:text-white"
-                  : "text-[var(--ifm-font-color-base)] hover:text-[var(--ifm-font-color-base)]"
-              }`}
+              className="relative isolate flex-1 cursor-pointer text-black hover:bg-transparent hover:text-black dark:text-white dark:hover:text-white"
               onClick={() => setActiveTab(tab.value)}
             >
               {activeTab === tab.value && (
