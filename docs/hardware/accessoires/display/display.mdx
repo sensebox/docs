@@ -39,14 +39,14 @@ Mit dem senseBox OLED Display lassen sich auf 128x64 Pixeln Messwerte, Statusmel
                 <h3>Software Bibliothek</h3>
 
                 <p>
-                    Um den Sensor in Arduino zu programmieren, musst du die Software Bibliothek
+                    Um den Sensor in Arduino zu programmieren, musst du die Software Bibliothek{" "}
                     <a href="https://www.arduino.cc/reference/en/libraries/adafruit-gfx-library/">
                     Adafruit GFX Library
-                    </a>
-                    <strong>sowie</strong>
+                    </a>{" "}
+                    <strong>sowie</strong>{" "}
                     <a href="https://www.arduino.cc/reference/en/libraries/adafruit-ssd1306/">
                     Adafruit SSD1306
-                    </a>
+                    </a>{" "}
                     installieren.
                 </p>
 
@@ -57,15 +57,39 @@ Mit dem senseBox OLED Display lassen sich auf 128x64 Pixeln Messwerte, Statusmel
         ),
         circuitpython: (
             <>
-                <p>Um das Display mit CircuitPython zu programmieren, muss die senseBox MCU-S2 zunächst mit CircuitPython geflasht werden. Eine Anleitung dazu findest du <a href="https://docs.sensebox.de/docs/editors/circuitpython/circuitpython_esp32">hier</a>.</p>
+                <p>
+                    Um das Display mit CircuitPython zu programmieren, muss die
+                    senseBox MCU-S2 zunächst mit CircuitPython geflasht werden.
+                    Eine Anleitung dazu findest du{" "}
+                    <a href="https://docs.sensebox.de/docs/editors/circuitpython/circuitpython_esp32">
+                        hier
+                    </a>.
+                </p>
 
                 <h3>Software Bibliothek</h3>
 
-                <p>Lade dir die <a href="https://github.com/adafruit/Adafruit_CircuitPython_DisplayIO_SSD1306/releases/download/3.0.3/adafruit-circuitpython-displayio-ssd1306-10.x-mpy-3.0.3.zip">SSD1306 CircuitPython Bibliothek</a> <b>und</b> die <a href="https://github.com/adafruit/Adafruit_CircuitPython_Display_Text/releases/download/3.3.3/adafruit-circuitpython-display-text-10.x-mpy-3.3.3.zip ">adafruit_display_text Bibliothek</a> herunter. Entpacke die .zip Dateien und kopiere die <code>.mpy</code> Dateien aus den <code>lib</code> Ordnern in den <code>lib</code> Ordner deiner senseBox (<code>CIRCUITPY</code> Laufwerk).</p>
+                <p>
+                    Lade dir die{" "}
+                    <a href="https://github.com/adafruit/Adafruit_CircuitPython_DisplayIO_SSD1306/releases/download/3.0.3/adafruit-circuitpython-displayio-ssd1306-10.x-mpy-3.0.3.zip">
+                        SSD1306 CircuitPython Bibliothek
+                    </a>{" "}
+                    <b>und</b> die{" "}
+                    <a href="https://github.com/adafruit/Adafruit_CircuitPython_Display_Text/releases/download/3.3.3/adafruit-circuitpython-display-text-10.x-mpy-3.3.3.zip ">
+                        adafruit_display_text Bibliothek
+                    </a>{" "}
+                    herunter. Entpacke die .zip Dateien und kopiere die{" "}
+                    <code>.mpy</code> Dateien aus den <code>lib</code> Ordnern in
+                    den <code>lib</code> Ordner deiner senseBox
+                    (<code>CIRCUITPY</code> Laufwerk).
+                </p>
 
                 <h3>Code</h3>
 
-                <p>Mit dem CircuitPython Editor deiner Wahl kannst du nun das Display programmieren und Inhalte anzeigen lassen. Dieser Code zeigt "Hello senseBox!" auf dem Display an:</p>
+                <p>
+                    Mit dem CircuitPython Editor deiner Wahl kannst du nun das
+                    Display programmieren und Inhalte anzeigen lassen.
+                    Dieser Code zeigt "Hello senseBox!" auf dem Display an:
+                </p>
 
             </>
         ),

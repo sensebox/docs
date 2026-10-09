@@ -25,22 +25,46 @@ Der Beschleunigungssensor ist auf der MCU S2 verbaut! Du musst hier also nichts 
   instructions = {{
     arduino: (
       <>
-        <p>Dieser Sketch liest die Beschleunigungswerte des MPU6050 aus und gibt sie über die serielle Schnittstelle aus. Über den Seriellen Plotter kannst du dir die Werte in einem Diagramm anzeigen lassen.</p>
+        <p>
+          Dieser Sketch liest die Beschleunigungswerte des MPU6050 aus und gibt sie
+          über die serielle Schnittstelle aus. Über den Seriellen Plotter kannst du
+          dir die Werte in einem Diagramm anzeigen lassen.
+        </p>
 
         <h3>Code</h3>
       </>
     ),
     circuitpython: (
       <>
-        <p>Um den Sensor mit CircuitPython zu programmieren, muss die senseBox MCU-S2.1 zunächst mit CircuitPython geflasht werden. Eine Anleitung dazu findest du <a href="https://docs.sensebox.de/docs/editors/circuitpython/circuitpython_esp32">hier</a>.</p>
+        <p>
+          Um den Sensor mit CircuitPython zu programmieren, muss die senseBox
+          MCU-S2.1 zunächst mit CircuitPython geflasht werden. Eine Anleitung dazu
+          findest du{" "}
+          <a href="https://docs.sensebox.de/docs/editors/circuitpython/circuitpython_esp32">
+            hier
+          </a>.
+        </p>
 
         <h3>Software Bibliothek</h3>
 
-        <p>Lade dir die <a href="https://github.com/adafruit/Adafruit_CircuitPython_MPU6050/releases/download/1.3.4/adafruit-circuitpython-mpu6050-10.x-mpy-1.3.4.zip">MPU6050 CircuitPython Bibliothek</a> herunter. Entpacke die .zip Datei und kopiere die <code>adafruit_mpu6050.mpy</code> Datei aus dem <code>lib</code> Ordner in den <code>lib</code> Ordner deiner senseBox (<code>CIRCUITPY</code> Laufwerk).</p>
+        <p>
+          Lade dir die{" "}
+          <a href="https://github.com/adafruit/Adafruit_CircuitPython_MPU6050/releases/download/1.3.4/adafruit-circuitpython-mpu6050-10.x-mpy-1.3.4.zip">
+            MPU6050 CircuitPython Bibliothek
+          </a>{" "}
+          herunter. Entpacke die .zip Datei und kopiere die{" "}
+          <code>adafruit_mpu6050.mpy</code> Datei aus dem <code>lib</code> Ordner in
+          den <code>lib</code> Ordner deiner senseBox (<code>CIRCUITPY</code> Laufwerk).
+        </p>
 
         <h3>Code</h3>
 
-        <p>Mit dem CircuitPython Editor deiner Wahl kannst du nun den integrierten Beschleunigungssensor programmieren und seine Werte auslesen. Dieser Code gibt die Beschleunigungswerte, Gyroskop-Daten und Temperatur in der Konsole aus:</p>
+        <p>
+          Mit dem CircuitPython Editor deiner Wahl kannst du nun den integrierten
+          Beschleunigungssensor programmieren und seine Werte auslesen. Dieser Code
+          gibt die Beschleunigungswerte, Gyroskop-Daten und Temperatur in der
+          Konsole aus:
+        </p>
       </>
     ),
     blockly: (

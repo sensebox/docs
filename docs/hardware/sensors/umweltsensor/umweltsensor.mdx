@@ -34,7 +34,7 @@ Mit dem Sensor BME680 kannst du eine verschiedene Auswahl an Phänomenen messen.
 
 ## Programmierung
 
-<ProgrammingTabs 
+<ProgrammingTabs
     fileName = "bme680"
     instructions = {{
         arduino: (
@@ -42,9 +42,10 @@ Mit dem Sensor BME680 kannst du eine verschiedene Auswahl an Phänomenen messen.
                 <h3>Software Bibliothek</h3>
 
                 <p>
-                    Um den Sensor in Arduino zu programmieren, musst du die Software Bibliothek{" "}
+                    Um den Sensor in Arduino zu programmieren, musst du die
+                    Software Bibliothek{" "}
                     <a href="https://www.arduino.cc/reference/en/libraries/bsec-software-library/">
-                    BSEC Software Library
+                        BSEC Software Library
                     </a>{" "}
                     installieren.
                 </p>
@@ -52,50 +53,75 @@ Mit dem Sensor BME680 kannst du eine verschiedene Auswahl an Phänomenen messen.
                 <h3>Code</h3>
 
                 <p>
-                    Dieser Code liest die Temperatur des BME680 Sensors und gibt sie im Seriellen
-                    Monitor aus. Über die Variablen <code>bmeTemperatur</code>,{" "}
-                    <code>bmeHumidity</code>, <code>bmePressure</code>, <code>bmeIAQ</code>,{" "}
+                    Dieser Code liest die Temperatur des BME680 Sensors und gibt
+                    sie im Seriellen Monitor aus. Über die Variablen{" "}
+                    <code>bmeTemperatur</code>, <code>bmeHumidity</code>,{" "}
+                    <code>bmePressure</code>, <code>bmeIAQ</code>,{" "}
                     <code>bmeIAQAccuracy</code>, <code>bmeCO2</code> und{" "}
-                    <code>bmeBreathVocEquivalent</code> kannst du auf die anderen Messwerte
-                    zugreifen.
+                    <code>bmeBreathVocEquivalent</code> kannst du auf die anderen
+                    Messwerte zugreifen.
                 </p>
             </>
         ),
         circuitpython: (
             <>
-                <p>Um den Sensor mit CircuitPython zu programmieren, muss die senseBox MCU-S2 zunächst mit CircuitPython geflasht werden. Eine Anleitung dazu findest du <a href="https://sensebox.de/docs/category/circuitpython">hier</a>.</p>
+                <p>
+                    Um den Sensor mit CircuitPython zu programmieren, muss die
+                    senseBox MCU-S2 zunächst mit CircuitPython geflasht werden.
+                    Eine Anleitung dazu findest du{" "}
+                    <a href="https://sensebox.de/docs/category/circuitpython">
+                        hier
+                    </a>.
+                </p>
 
                 <h3>Software Bibliothek</h3>
 
-                <p>Lade dir die <a href="https://github.com/adafruit/Adafruit_CircuitPython_BME680/releases/download/3.7.13/adafruit-circuitpython-bme680-10.x-mpy-3.7.13.zip">BME680 CircuitPython Bibliothek</a> herunter. Entpacke die .zip Datei und kopiere die <code>adafruit_bme680.mpy</code> Datei aus dem <code>lib</code> Ordner in den <code>lib</code> Ordner deiner senseBox (<code>CIRCUITPY</code> Laufwerk).</p>
+                <p>
+                    Lade dir die{" "}
+                    <a href="https://github.com/adafruit/Adafruit_CircuitPython_BME680/releases/download/3.7.13/adafruit-circuitpython-bme680-10.x-mpy-3.7.13.zip">
+                        BME680 CircuitPython Bibliothek
+                    </a>{" "}
+                    herunter. Entpacke die .zip Datei und kopiere die{" "}
+                    <code>adafruit_bme680.mpy</code> Datei aus dem <code>lib</code>{" "}
+                    Ordner in den <code>lib</code> Ordner deiner senseBox
+                    (<code>CIRCUITPY</code> Laufwerk).
+                </p>
 
                 <h3>Code</h3>
 
-                <p>Mit dem CircuitPython Editor deiner Wahl kannst du nun den Sensor programmieren und seine Werte auslesen. Dieser Code gibt die Temperatur, Gasresistenz, relative Luftfeuchte, Luftdruck und Höhe in der Konsole aus:</p>
+                <p>
+                    Mit dem CircuitPython Editor deiner Wahl kannst du nun den
+                    Sensor programmieren und seine Werte auslesen. Dieser Code
+                    gibt die Temperatur, Gasresistenz, relative Luftfeuchte,
+                    Luftdruck und Höhe in der Konsole aus:
+                </p>
             </>
         ),
         blockly: (
             <>
-                <p>In Blockly kann der Sensor über folgenden Block ausgelesen werden:</p>
+                <p>
+                    In Blockly kann der Sensor über folgenden Block ausgelesen
+                    werden:
+                </p>
 
                 <img
-                src="/img/hardware-bilder/umweltsensor/block_umweltsensor.svg"
-                alt="Blockly Block für den Umweltsensor"
+                    src="/img/hardware-bilder/umweltsensor/block_umweltsensor.svg"
+                    alt="Blockly Block für den Umweltsensor"
                 />
 
                 <p>
-                Im Block kannst du zwischen den verschiedenen Parametern des Umweltsensors
-                auswählen:
+                    Im Block kannst du zwischen den verschiedenen Parametern des
+                    Umweltsensors auswählen:
                 </p>
 
                 <ul>
-                <li>Temperatur in Grad Celsius (°C)</li>
-                <li>Luftfeuchtigkeit in %</li>
-                <li>Luftdruck in Pa</li>
-                <li>Innenraumluftqualität (IAQ)</li>
-                <li>Kalibrierungswert</li>
-                <li>CO<sub>2</sub> Äquivalent</li>
-                <li>Atemluft VOC Äquivalent</li>
+                    <li>Temperatur in Grad Celsius (°C)</li>
+                    <li>Luftfeuchtigkeit in %</li>
+                    <li>Luftdruck in Pa</li>
+                    <li>Innenraumluftqualität (IAQ)</li>
+                    <li>Kalibrierungswert</li>
+                    <li>CO<sub>2</sub> Äquivalent</li>
+                    <li>Atemluft VOC Äquivalent</li>
                 </ul>
             </>
         )

@@ -62,15 +62,15 @@ Der zweite Sensor ist ein Vishay VEML6070 Ultravioletter (UV)-Lichtsensor. Diese
         <h3>Software Bibliothek</h3>
 
         <p>
-          Um den Sensor in Arduino zu programmieren, musst du die Software Bibliothek
+          Um den Sensor in Arduino zu programmieren, musst du die Software Bibliothek{" "}
           <a href="https://www.arduino.cc/reference/en/libraries/adafruit-ltr329-and-ltr303/">
             Adafruit LTR329 and LTR303
           </a>
-          sowie
+          {" "}sowie{" "}
           <a href="https://www.arduino.cc/reference/en/libraries/adafruit-veml6070-library/">
             Adafruit VEML6070 Library
           </a>
-          installieren.
+          {" "}installieren.
         </p>
 
         <h3>Code</h3>
@@ -83,15 +83,33 @@ Der zweite Sensor ist ein Vishay VEML6070 Ultravioletter (UV)-Lichtsensor. Diese
     ),
   circuitpython: (
     <>
-      <p>Um den Sensor mit CircuitPython zu programmieren, muss die senseBox MCU-S2 zunächst mit CircuitPython geflasht werden. Eine Anleitung dazu findest du <a href="https://docs.sensebox.de/docs/editors/circuitpython/circuitpython_esp32">hier</a>.</p>
+      <p>
+        Um den Sensor mit CircuitPython zu programmieren, muss die senseBox MCU-S2
+        zunächst mit CircuitPython geflasht werden. Eine Anleitung dazu findest du{" "}
+        <a href="https://docs.sensebox.de/docs/editors/circuitpython/circuitpython_esp32">
+          hier
+        </a>.
+      </p>
 
       <h3>Software Bibliothek</h3>
 
-      <p>Lade dir die <a href="https://github.com/adafruit/Adafruit_CircuitPython_VEML6070/releases/download/3.1.24/adafruit-circuitpython-veml6070-10.x-mpy-3.1.24.zip">VEML6070 CircuitPython Bibliothek</a> herunter. Entpacke die .zip Datei und kopiere die <code>adafruit_veml6070.mpy</code> Datei aus dem <code>lib</code> Ordner in den <code>lib</code> Ordner deiner senseBox (<code>CIRCUITPY</code> Laufwerk).</p>
+      <p>
+        Lade dir die{" "}
+        <a href="https://github.com/adafruit/Adafruit_CircuitPython_VEML6070/releases/download/3.1.24/adafruit-circuitpython-veml6070-10.x-mpy-3.1.24.zip">
+          VEML6070 CircuitPython Bibliothek
+        </a>{" "}
+        herunter. Entpacke die .zip Datei und kopiere die{" "}
+        <code>adafruit_veml6070.mpy</code> Datei aus dem <code>lib</code> Ordner in
+        den <code>lib</code> Ordner deiner senseBox (<code>CIRCUITPY</code> Laufwerk).
+      </p>
 
       <h3>Code</h3>
 
-      <p>Mit dem CircuitPython Editor deiner Wahl kannst du nun den UV-Sensor programmieren und seine Werte auslesen. Dieser Code gibt die UV-Intensität und das Risikolevel in der Konsole aus:</p>
+      <p>
+        Mit dem CircuitPython Editor deiner Wahl kannst du nun den UV-Sensor
+        programmieren und seine Werte auslesen. Dieser Code gibt die UV-Intensität
+        und das Risikolevel in der Konsole aus:
+      </p>
     </>
   ),
   blockly: (

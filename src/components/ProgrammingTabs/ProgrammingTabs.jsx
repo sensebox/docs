@@ -75,7 +75,11 @@ export default function ProgrammingTabs({
               type="button"
               variant="ghost"
               aria-pressed={activeTab === tab.value}
-              className="relative isolate flex-1 cursor-pointer text-black hover:bg-transparent hover:text-black dark:text-white dark:hover:text-white"
+              className={`relative isolate flex-1 cursor-pointer rounded-[6px] hover:bg-transparent ${
+                activeTab === tab.value
+                  ? "text-white hover:text-white"
+                  : "text-[#222222] hover:text-[#222222] dark:text-white dark:hover:text-white border border-solid outline-gray-400 bg-white dark:bg-[var(--ifm-background-color)]"
+              }`}
               onClick={() => setActiveTab(tab.value)}
             >
               {activeTab === tab.value && (
@@ -83,7 +87,7 @@ export default function ProgrammingTabs({
                   layoutId="active-tab-highlight"
                   aria-hidden="true"
                   initial={false}
-                  className="pointer-events-none absolute inset-0 rounded-md bg-[var(--ifm-color-primary)] shadow-sm"
+                  className="pointer-events-none absolute inset-0 rounded-[6px] bg-[#43a238] shadow-sm"
                   transition={
                     reduceMotion
                       ? { duration: 0 }
