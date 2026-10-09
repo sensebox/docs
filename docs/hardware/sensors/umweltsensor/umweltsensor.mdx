@@ -10,6 +10,7 @@ import umweltsensor from '@site/static/img/hardware-bilder/umweltsensor/bme.png'
 import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
 import { useBoardStore } from '@site/src/lib/stores/store'
 import CodeBlock from '@theme/CodeBlock'
+import ProgrammingTabs from '@site/src/components/ProgrammingTabs/ProgrammingTabs'
 
 # Umweltsensor
 
@@ -31,158 +32,101 @@ Mit dem Sensor BME680 kannst du eine verschiedene Auswahl an Phänomenen messen.
 **Achtung** Der BME Gassensor ist nicht mit dem BMP280 Luftdrucksensor kompatibel. Das heißt du kannst nur einen der beiden gleichzeitig anschließen und auslesen!
 :::
 
-## Programmierung (Arduino)
+## Programmierung
 
-### Software Bibliothek
+<ProgrammingTabs
+    fileName = "bme680"
+    instructions = {{
+        arduino: (
+            <>
+                <h3>Software Bibliothek</h3>
 
-Um den Sensor in Arduino zu Programmieren musst du die Software Bibliothek [BSEC Software Library](https://www.arduino.cc/reference/en/libraries/bsec-software-library/) installieren.
+                <p>
+                    Um den Sensor in Arduino zu programmieren, musst du die
+                    Software Bibliothek{" "}
+                    <a href="https://www.arduino.cc/reference/en/libraries/bsec-software-library/">
+                        BSEC Software Library
+                    </a>{" "}
+                    installieren.
+                </p>
 
-### Code
+                <h3>Code</h3>
 
-Dieser Code liest die Temperatur des BME680 Sensors und gibt sie im Seriellen Monitor aus. Über die Variablen `bmeTemperatur`, `bmeHumidity`, `bmePressure`, `bmeIAQ`, `bmeIAQAccuracy`, `bmeCO2` und `bmeBreathVocEquivalent` kannst du auf die anderen Messwerte zugreifen.
+                <p>
+                    Dieser Code liest die Temperatur des BME680 Sensors und gibt
+                    sie im Seriellen Monitor aus. Über die Variablen{" "}
+                    <code>bmeTemperatur</code>, <code>bmeHumidity</code>,{" "}
+                    <code>bmePressure</code>, <code>bmeIAQ</code>,{" "}
+                    <code>bmeIAQAccuracy</code>, <code>bmeCO2</code> und{" "}
+                    <code>bmeBreathVocEquivalent</code> kannst du auf die anderen
+                    Messwerte zugreifen.
+                </p>
+            </>
+        ),
+        circuitpython: (
+            <>
+                <p>
+                    Um den Sensor mit CircuitPython zu programmieren, muss die
+                    senseBox MCU-S2 zunächst mit CircuitPython geflasht werden.
+                    Eine Anleitung dazu findest du{" "}
+                    <a href="https://sensebox.de/docs/category/circuitpython">
+                        hier
+                    </a>.
+                </p>
 
-```cpp
-#include <senseBoxIO.h>
-#include <bsec.h> // http://librarymanager/All#BSEC_Software_Library
+                <h3>Software Bibliothek</h3>
 
-float bmeTemperatur;
-float bmeHumidity;
-double bmePressure;
-float bmeIAQ;
-float bmeIAQAccuracy;
-int bmeCO2;
-float bmeBreathVocEquivalent;
+                <p>
+                    Lade dir die{" "}
+                    <a href="https://github.com/adafruit/Adafruit_CircuitPython_BME680/releases/download/3.7.13/adafruit-circuitpython-bme680-10.x-mpy-3.7.13.zip">
+                        BME680 CircuitPython Bibliothek
+                    </a>{" "}
+                    herunter. Entpacke die .zip Datei und kopiere die{" "}
+                    <code>adafruit_bme680.mpy</code> Datei aus dem <code>lib</code>{" "}
+                    Ordner in den <code>lib</code> Ordner deiner senseBox
+                    (<code>CIRCUITPY</code> Laufwerk).
+                </p>
 
-Bsec iaqSensor;
+                <h3>Code</h3>
 
-void checkIaqSensorStatus(void)
-    {
-    if (iaqSensor.bsecStatus != BSEC_OK) {
-        if (iaqSensor.bsecStatus < BSEC_OK) {
-        for (;;)
-            errLeds(); /* Halt in case of failure */
-        }
-    }
+                <p>
+                    Mit dem CircuitPython Editor deiner Wahl kannst du nun den
+                    Sensor programmieren und seine Werte auslesen. Dieser Code
+                    gibt die Temperatur, Gasresistenz, relative Luftfeuchte,
+                    Luftdruck und Höhe in der Konsole aus:
+                </p>
+            </>
+        ),
+        blockly: (
+            <>
+                <p>
+                    In Blockly kann der Sensor über folgenden Block ausgelesen
+                    werden:
+                </p>
 
-    if (iaqSensor.bme68xStatus != BME68X_OK) {
-        if (iaqSensor.bme68xStatus < BME68X_OK) {
-        for (;;)
-            errLeds(); /* Halt in case of failure */
-        }
-    }
-}
+                <img
+                    src="/img/hardware-bilder/umweltsensor/block_umweltsensor.svg"
+                    alt="Blockly Block für den Umweltsensor"
+                />
 
+                <p>
+                    Im Block kannst du zwischen den verschiedenen Parametern des
+                    Umweltsensors auswählen:
+                </p>
 
-void errLeds(void)
-{
-    pinMode(LED_BUILTIN, OUTPUT);
-    digitalWrite(LED_BUILTIN, HIGH);
-    delay(100);
-    digitalWrite(LED_BUILTIN, LOW);
-    delay(100);
-}
-
-
-void setup() {
-    Wire.begin();
-    iaqSensor.begin(BME68X_I2C_ADDR_LOW, Wire);
-    checkIaqSensorStatus();
-
-    bsec_virtual_sensor_t sensorList[13] = {
-        BSEC_OUTPUT_IAQ,
-        BSEC_OUTPUT_STATIC_IAQ,
-        BSEC_OUTPUT_CO2_EQUIVALENT,
-        BSEC_OUTPUT_BREATH_VOC_EQUIVALENT,
-        BSEC_OUTPUT_RAW_TEMPERATURE,
-        BSEC_OUTPUT_RAW_PRESSURE,
-        BSEC_OUTPUT_RAW_HUMIDITY,
-        BSEC_OUTPUT_RAW_GAS,
-        BSEC_OUTPUT_STABILIZATION_STATUS,
-        BSEC_OUTPUT_RUN_IN_STATUS,
-        BSEC_OUTPUT_SENSOR_HEAT_COMPENSATED_TEMPERATURE,
-        BSEC_OUTPUT_SENSOR_HEAT_COMPENSATED_HUMIDITY,
-        BSEC_OUTPUT_GAS_PERCENTAGE
-    };
-
-
-    iaqSensor.updateSubscription(sensorList, 13, BSEC_SAMPLE_RATE_LP);
-    checkIaqSensorStatus();
-
-
-
-}
-
-
-void loop() {
-
-    if (iaqSensor.run()) {
-      bmeTemperatur = iaqSensor.temperature;
-      bmeHumidity = iaqSensor.humidity;
-      bmePressure = iaqSensor.pressure;
-      bmeIAQ = iaqSensor.iaq;
-      bmeIAQAccuracy = iaqSensor.iaqAccuracy;
-      bmeCO2 = iaqSensor.co2Equivalent;
-      bmeBreathVocEquivalent = iaqSensor.breathVocEquivalent;
-    } else {
-      checkIaqSensorStatus();
-    }
-
-    Serial.println(bmeTemperatur);
-
-}
-```
-
-## Programmierung (Blockly)
-
-In Blockly kann der Sensor über folgenden Block ausgelesen werden:
-
-![](/img/hardware-bilder/umweltsensor/block_umweltsensor.svg)
-
-Im Block kannst du zwischen den verschiedenen Parametern des Umweltsensors auswählen:
-
-- Temperatur in Grad Celsius (°C)
-- Luftfeuchtigkeit in %
-- Luftdruck in Pa
-- Innenraumluftqualität (IAQ)
-- Kalibrierungswert
-- CO<sub>2</sub> Äquivalent
-- Atemluft VOC Äquivalent
-
-{useBoardStore((state) => (state.board === 'MCU-S2' || state.board === ':edu S2') && (
-<>
-<h2>Programmierung (CircuitPython)</h2>
-
-<p>Um den Sensor mit CircuitPython zu programmieren, muss die senseBox MCU-S2 zunächst mit CircuitPython geflasht werden. Eine Anleitung dazu findest du <a href="https://sensebox.de/docs/category/circuitpython">hier</a>.</p>
-
-<h3>Software Bibliothek</h3>
-
-<p>Lade dir die <a href="https://github.com/adafruit/Adafruit_CircuitPython_BME680/releases/download/3.7.13/adafruit-circuitpython-bme680-10.x-mpy-3.7.13.zip">BME680 CircuitPython Bibliothek</a> herunter. Entpacke die .zip Datei und kopiere die <code>adafruit_bme680.mpy</code> Datei aus dem <code>lib</code> Ordner in den <code>lib</code> Ordner deiner senseBox (<code>CIRCUITPY</code> Laufwerk).</p>
-
-<h3>Code</h3>
-
-<p>Mit dem CircuitPython Editor deiner Wahl kannst du nun den Sensor programmieren und seine Werte auslesen. Dieser Code gibt die Temperatur, Gasresistenz, relative Luftfeuchte, Luftdruck und Höhe in der Konsole aus:</p>
-
-<CodeBlock language="python">{`import adafruit_bme680
-import time
-import board
-
-# Create sensor object, communicating over the board's default I2C bus
-i2c = board.I2C()   # uses board.SCL and board.SDA
-bme680 = adafruit_bme680.Adafruit_BME680_I2C(i2c, address = 0x76)
-
-# change this to match the location's pressure (hPa) at sea level
-bme680.sea_level_pressure = 1013.25
-
-while True:
-    print("\\nTemperature: %0.1f C" % bme680.temperature)
-    print("Gas: %d ohm" % bme680.gas)
-    print("Humidity: %0.1f %%" % bme680.relative_humidity)
-    print("Pressure: %0.3f hPa" % bme680.pressure)
-    print("Altitude = %0.2f meters" % bme680.altitude)
-    
-    time.sleep(2)`}</CodeBlock>
-</>
-))}
+                <ul>
+                    <li>Temperatur in Grad Celsius (°C)</li>
+                    <li>Luftfeuchtigkeit in %</li>
+                    <li>Luftdruck in Pa</li>
+                    <li>Innenraumluftqualität (IAQ)</li>
+                    <li>Kalibrierungswert</li>
+                    <li>CO<sub>2</sub> Äquivalent</li>
+                    <li>Atemluft VOC Äquivalent</li>
+                </ul>
+            </>
+        )
+    }}
+/>
 
 ## Kalibrierungswert
 

@@ -10,6 +10,7 @@ import tempSensor from '@site/static/img/hardware-bilder/temperatur-luftfeuchte/
 import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
 import { useBoardStore } from '@site/src/lib/stores/store'
 import CodeBlock from '@theme/CodeBlock'
+import ProgrammingTabs from '@site/src/components/ProgrammingTabs/ProgrammingTabs'
 
 # Temperatur- und Luftfeuchtesensor
 
@@ -36,86 +37,93 @@ Der HDC1080 ist ein digitaler Feuchtigkeits- und Temperatursensor. Der Sensor ha
 
 <TutorialPorts port="i2c" />
 
-## Programmierung (Arduino)
+## Programmierung
 
-### Software Bibliothek
+<ProgrammingTabs
+    fileName = "hdc1080"
+    instructions = {{
+        arduino: (
+            <>
+                <h3>Software Bibliothek</h3>
 
-Um den Sensor in Arduino zu Programmieren musst du die Software Bibliothek [Adafruit HDC1000 Library](https://www.arduino.cc/reference/en/libraries/adafruit-hdc1000-library/) installieren.
+                <p>
+                    Um den Sensor in Arduino zu programmieren, musst du die
+                    Software Bibliothek{" "}
+                    <a href="https://www.arduino.cc/reference/en/libraries/adafruit-hdc1000-library/">
+                        Adafruit HDC1000 Library
+                    </a>{" "}
+                    installieren.
+                </p>
 
-### Code
+                <h3>Code</h3>
 
-Dieser Code gibt die Temperatur und die relative Luftfeuchte im Seriellen Monitor aus.
+                <p>
+                    Dieser Code gibt die Temperatur und die relative Luftfeuchte
+                    im Seriellen Monitor aus.
+                </p>
+            </>
+        ),
+        circuitpython: (
+            <>
 
-```cpp
-#include <Adafruit_HDC1000.h> // http://librarymanager/All#Adafruit_HDC1000_Library
+                <p>
+                    Um den Sensor mit CircuitPython zu programmieren, muss die
+                    senseBox MCU-S2 zunächst mit CircuitPython geflasht werden.
+                    Eine Anleitung dazu findest du{" "}
+                    <a href="https://docs.sensebox.de/docs/editors/circuitpython/circuitpython_esp32">
+                        hier
+                    </a>.
+                </p>
 
-Adafruit_HDC1000 hdc = Adafruit_HDC1000();
+                <h3>Software Bibliothek</h3>
 
-void setup(){
-    Serial.begin(9600);
-    hdc.begin();
-}
+                <p>
+                    Lade dir die{" "}
+                    <a href="https://github.com/sensebox/CircuitPython_HDC1080/releases/download/1.0.0/circuitpython-hdc1080-9.x-mpy-1.0.0.zip">
+                        HDC1080 CircuitPython Bibliothek
+                    </a>{" "}
+                    herunter. Entpacke die .zip Datei und kopiere die{" "}
+                    <code>hdc1080.mpy</code> Datei aus dem <code>lib</code> Ordner
+                    in den <code>lib</code> Ordner deiner senseBox
+                    (<code>CIRCUITPY</code> Laufwerk).
+                </p>
 
-void loop(){
-    Serial.print("Temperature: ");
-    Serial.println(hdc.readTemperature());
-    Serial.print("Humidity: ");
-    Serial.println(hdc.readHumidity());
-}
-```
+                <h3>Code</h3>
 
-## Programmierung (Blockly)
+                <p>
+                    Mit dem CircuitPython Editor deiner Wahl kannst du nun den
+                    Sensor programmieren und seine Werte auslesen. Dieser Code
+                    gibt die Temperatur und die relative Luftfeuchte in der
+                    Konsole aus:
+                </p>
 
-In Blockly kann der Sensor über folgenden Block ausgelesen werden:
+            </>
+        ),
+        blockly: (
+            <>
+                <p>
+                    In Blockly kann der Sensor über folgenden Block ausgelesen
+                    werden:
+                </p>
 
-![](/img/hardware-bilder/temperatur-luftfeuchte/block_temperatur_luftfeuchte.svg)
+                <img
+                    src="/img/hardware-bilder/temperatur-luftfeuchte/block_temperatur_luftfeuchte.svg"
+                    alt="Blockly Block für Temperatur und Luftfeuchtigkeit"
+                />
 
-Im Block kannst du zwischen den verschiedenen Parametern des Temperatur und Luftfeuchtigkeitsensor auswählen:
+                <p>
+                    Im Block kannst du zwischen den verschiedenen Parametern des
+                    Temperatur- und Luftfeuchtigkeitssensors auswählen:
+                </p>
 
-- Temperatur in Grad Celsius (°C)
-- Luftfeuchtigkeit in Prozent (%)
-
-{useBoardStore((state) => (state.board === 'MCU-S2' || state.board === ':edu S2') && (
-<>
-<h2>Programmierung (CircuitPython)</h2>
-
-<p>Um den Sensor mit CircuitPython zu programmieren, muss die senseBox MCU-S2 zunächst mit CircuitPython geflasht werden. Eine Anleitung dazu findest du <a href="https://docs.sensebox.de/docs/editors/circuitpython/circuitpython_esp32">hier</a>.</p>
-
-<h3>Software Bibliothek</h3>
-
-<p>Lade dir die <a href="https://github.com/sensebox/CircuitPython_HDC1080/releases/download/1.0.0/circuitpython-hdc1080-9.x-mpy-1.0.0.zip">HDC1080 CircuitPython Bibliothek</a> herunter. Entpacke die .zip Datei und kopiere die <code>hdc1080.mpy</code> Datei aus dem <code>lib</code> Ordner in den <code>lib</code> Ordner deiner senseBox (<code>CIRCUITPY</code> Laufwerk).</p>
-
-<h3>Code</h3>
-
-<p>Mit dem CircuitPython Editor deiner Wahl kannst du nun den Sensor programmieren und seine Werte auslesen. Dieser Code gibt die Temperatur und die relative Luftfeuchte in der Konsole aus:</p>
-
-<CodeBlock language="python">{`import time
-import board
-import digitalio
-from hdc1080 import HDC1080
-
-# IO Enable Pin (only needed for senseBox MCU-S2)
-io_enable_pin = digitalio.DigitalInOut(board.IO_POWER)
-io_enable_pin.direction = digitalio.Direction.OUTPUT
-io_enable_pin.value = False
-
-# Initialize I2C bus
-i2c = board.I2C()
-
-# Initialize HDC1080 sensor
-sensor = HDC1080(i2c)
-
-while True:
-    temperature = sensor.temperature
-    humidity = sensor.humidity
-    
-    print("Temperature: {:.2f} °C".format(temperature))
-    print("Humidity: {:.2f} %".format(humidity))
-
-    time.sleep(2)  # Wait for 2 seconds before next reading`}
-</CodeBlock>
-</>
-))}
+                <ul>
+                    <li>Temperatur in Grad Celsius (°C)</li>
+                    <li>Luftfeuchtigkeit in Prozent (%)</li>
+                </ul>
+            </>
+        )
+    }}
+/>
 
 ## Projekte
 

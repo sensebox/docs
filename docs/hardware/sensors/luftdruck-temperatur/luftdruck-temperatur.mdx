@@ -11,6 +11,7 @@ import pressureSensor from '@site/static/img/hardware-bilder/luftdruck/bmp_top.p
 import { useBoardStore } from '@site/src/lib/stores/store'
 import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
 import CodeBlock from '@theme/CodeBlock'
+import ProgrammingTabs from '@site/src/components/ProgrammingTabs/ProgrammingTabs'
 
 # Luftdruck- und Temperatursensor
 
@@ -40,79 +41,78 @@ Der DPS310 ersetzt den Luftdruck und Temperatursensor BMP280. Welchen von beiden
 
 <TutorialPorts port="i2c" />
 
-## Programmierung (Arduino)
+## Programmierung
 
-### Software Bibliothek
+<ProgrammingTabs
+  fileName = "dps310"
+  instructions = {{
+    arduino: (
+      <>
+        <h3>Software Bibliothek</h3>
+        <p>
+          Um den Sensor in Arduino zu Programmieren musst du die Software Bibliothek{" "}
+          <a href="https://www.arduino.cc/reference/en/libraries/adafruit-dps310/">
+            Adafruit DPS310
+          </a>{" "}
+          installieren.
+        </p>
+        <h3>Code</h3>
+        <p>
+          Dieser Sketch liest den Luftdruck und die Temperatur aus und gibt die
+          Werte über die serielle Schnittstelle aus.
+        </p>
+      </>
+      ),
+    circuitpython: (
+      <>
+        <p>
+          Um den Sensor mit CircuitPython zu programmieren, muss die senseBox MCU-S2
+          zunächst mit CircuitPython geflasht werden. Eine Anleitung dazu findest du{" "}
+          <a href="https://docs.sensebox.de/docs/editors/circuitpython/circuitpython_esp32">
+            hier
+          </a>.
+        </p>
+        <h3>Software Bibliothek</h3>
+        <p>
+          Lade dir die{" "}
+          <a href="https://github.com/adafruit/Adafruit_CircuitPython_DPS310/releases/download/2.1.19/adafruit-circuitpython-dps310-10.x-mpy-2.1.19.zip">
+            DPS310 CircuitPython Bibliothek
+          </a>{" "}
+          herunter. Entpacke die .zip Datei und kopiere die{" "}
+          <code>adafruit_dps310</code> Ordner aus dem <code>lib</code> Ordner in den{" "}
+          <code>lib</code> Ordner deiner senseBox (<code>CIRCUITPY</code> Laufwerk).
+        </p>
+        <h3>Code</h3>
+        <p>
+          Mit dem CircuitPython Editor deiner Wahl kannst du nun den Sensor
+          programmieren und seine Werte auslesen. Dieser Code gibt den Luftdruck
+          und die Temperatur in der Konsole aus:
+        </p>
+    </>
+    ),
+    blockly: (
+      <>
+        <p>In Blockly kann der Sensor über folgenden Block ausgelesen werden:</p>
 
-Um den Sensor in Arduino zu Programmieren musst du die Software Bibliothek [Adafruit DPS310](https://www.arduino.cc/reference/en/libraries/adafruit-dps310/) installieren.
+        <img width="317"
+          src="/img/hardware-bilder/luftdruck/block_luftdruck_temperatur.svg"
+          alt="Blockly Block für Luftdruck und Temperatur"
+        />
 
-### Code
+        <p>
+          Im Block kannst du zwischen den verschiedenen Parametern des
+          Luftdruck-/Temperatursensors auswählen:
+        </p>
 
-Dieser Sketch liest den Luftdruck und die Temperatur aus und gibt die Werte über die serielle Schnittstelle aus.
-
-```cpp
-#include <Adafruit_DPS310.h> // http://librarymanager/All#Adafruit_DPS310
-
-Adafruit_DPS310 dps;
-
-void setup() {
-  Serial.begin(9600);
-
-  dps.begin_I2C(0x76);
-  dps.configurePressure(DPS310_64HZ, DPS310_64SAMPLES);
-  dps.configureTemperature(DPS310_64HZ, DPS310_64SAMPLES);
-
-}
-
-void loop() {
-    sensors_event_t temp_event, pressure_event;
-    dps.getEvents(&temp_event, &pressure_event);
-
-    Serial.print("Pressure: ");
-    Serial.println(pressure_event.pressure);
-    Serial.print("Temperature: ");
-    Serial.println(temp_event.temperature);
-}
-```
-
-## Programmierung (Blockly)
-
-In Blockly kann der Sensor über folgenden Block ausgelesen werden:
-
-![](/img/hardware-bilder/luftdruck/block_luftdruck_temperatur.svg)
-
-Im Block kannst du zwischen den verschiedenen Parametern des Luftdruck-/Temperatursensor auswählen:
-
-- Luftdruck in Pascal (Pa)
-- Temperatur in Celsius (°C)
-- Höhe über NN in m (dazu wird ein Referenzluftdruck benötigt)
-
-{useBoardStore((state) => (state.board === 'MCU-S2' || state.board === ':edu S2') && (
-<>
-<h2>Programmierung (CircuitPython)</h2>
-<p>Um den Sensor mit CircuitPython zu programmieren, muss die senseBox MCU-S2 zunächst mit CircuitPython geflasht werden. Eine Anleitung dazu findest du <a href="https://docs.sensebox.de/docs/editors/circuitpython/circuitpython_esp32">hier</a>.</p>
-<h3>Software Bibliothek</h3>
-<p>Lade dir die <a href="https://github.com/adafruit/Adafruit_CircuitPython_DPS310/releases/download/2.1.19/adafruit-circuitpython-dps310-10.x-mpy-2.1.19.zip">DPS310 CircuitPython Bibliothek</a> herunter. Entpacke die .zip Datei und kopiere die <code>adafruit_dps310</code> Ordner aus dem <code>lib</code> Ordner in den <code>lib</code> Ordner deiner senseBox (<code>CIRCUITPY</code> Laufwerk).</p>
-<h3>Code</h3>
-<p>Mit dem CircuitPython Editor deiner Wahl kannst du nun den Sensor programmieren und seine Werte auslesen. Dieser Code gibt den Luftdruck und die Temperatur in der Konsole aus:</p>
-<CodeBlock language="python">{`import time
-import board
-import digitalio
-from adafruit_dps310.basic import DPS310
-# IO Enable
-io_enable_pin = digitalio.DigitalInOut(board.IO_POWER)
-io_enable_pin.direction = digitalio.Direction.OUTPUT
-io_enable_pin.value = False
-i2c = board.I2C()
-dps310 = DPS310(i2c, 0x76)
-while True:
-    print("Temperature = %.2f *C" % dps310.temperature)
-    print("Pressure = %.2f hPa" % dps310.pressure)
-    print("")
-    time.sleep(1.0)`}</CodeBlock>
-</>
-))}
-
+        <ul>
+          <li>Luftdruck in Pascal (Pa)</li>
+          <li>Temperatur in Celsius (°C)</li>
+          <li>Höhe über NN in m (dazu wird ein Referenzluftdruck benötigt)</li>
+        </ul>
+      </>
+    )
+  }}
+/>
 
 ## Projekte
 
