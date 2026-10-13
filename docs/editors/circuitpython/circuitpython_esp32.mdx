@@ -4,16 +4,31 @@ title: "CircuitPython installieren"
 description: CircuitPython auf der senseBox MCU-S2 installieren
 ---
 import  AlertBox from "@site/src/components/AlertBox/AlertBox";
+import { Button } from "@site/src/components/ui/button";
 
 # CircuitPython installieren
 
-CircuitPython ist eine Variante von MicroPython, die von Adafruit entwickelt wurde. Es ist eine vereinfachte Version von Python, speziell für Mikrocontroller. CircuitPython ist eine großartige Möglichkeit, um schnell und einfach mit der Programmierung von Mikrocontrollern zu beginnen. In diesem Tutorial zeigen wir dir, wie du CircuitPython auf deiner senseBox MCU-S2 installieren kannst.
+Mit CircuitPython kannst du deine senseBox MCU-S2 ganz einfach mit der Programmiersprache Python programmieren.
+In dieser Anleitung zeigen wir dir Schritt für Schritt, wie du CircuitPython auf deiner senseBox MCU-S2 installierst. Du benötigst dafür keine Programmierkenntnisse.
 
-![CircuitPython Logo](https://s3.amazonaws.com/adafruit-circuit-python/CircuitPython_Repo_header_logo.png)
+<img
+  src="https://s3.amazonaws.com/adafruit-circuit-python/CircuitPython_Repo_header_logo.png"
+  alt="CircuitPython Logo"
+  className="mx-auto my-6 block h-auto w-full max-w-lg"
+/>
 
 <AlertBox type="info" title="Web-Browser!" >
-    <p>Beide Installationsmethoden funktionieren nur mit Google Chrome oder Microsoft Edge.</p>
+    <p>Für die Installation benötigst du Google Chrome oder Microsoft Edge. Andere Browser werden von dieser Anleitung nicht unterstützt.</p>
 </AlertBox>
+
+## Voraussetzungen
+
+Für die Installation benötigst du:
+
+- Eine **senseBox MCU-S2**
+- Ein **USB-Kabel**, das Daten übertragen kann (nicht nur zum Laden)
+- Einen **Computer** mit Internetverbindung
+- Den Webbrowser **Google Chrome** oder **Microsoft Edge**
 
 ## Installation mit dem senseBox Flash-Tool
 
@@ -24,16 +39,82 @@ Mit dem **senseBox Flash-Tool** kannst du CircuitPython einfach und schnell auf 
 3. Verbinde deine senseBox MCU-S2 über ein USB-Kabel mit deinem Computer.
 4. **Aktiviere den Bootloader-Modus:**
    - Halte den `BootSwitch`-Button gedrückt.
-   - Drücke kurz den `Reset`-Button.
+   - Halte `BootSwitch` weiterhin gedrückt und drücke gleichzeitig einmal kurz den Button `Reset`.
    - Lasse anschließend den `BootSwitch`-Button los.
-<img src="/img/circuitpython/mcu-s2-bootloader-board-transparent.gif" width="680" alt="Bootloader-Modus aktivieren" />
-5. Klicke auf `Board suchen`. Wähle im geöffneten Fenster das Gerät mit `ESP32-S2` im Namen aus und bestätige mit `Verbinden`.
-<img src="/img/circuitpython/circuitpython_flash.png" alt="CircuitPython flashen" />
-6. Klicke auf `Sketch hochladen!`, um CircuitPython zu installieren. **Die Installation kann einige Minuten dauern.**
-7. Drücke nach Abschluss der Installation kurz den `Reset`-Button auf deiner senseBox MCU-S2.
-8. Warte einige Sekunden, bis das Laufwerk `CIRCUITPY` auf deinem Computer erscheint.
 
-**Fertig!** CircuitPython ist installiert. Du kannst jetzt mit der Programmierung deiner senseBox MCU-S2 beginnen.
+   Das folgende GIF zeigt dir, wie es funktioniert.
+
+   <figure className="mx-auto my-6 w-full max-w-lg">
+     <img
+       src="/img/circuitpython/mcu-s2-bootloader-board-transparent.gif"
+       alt="BootSwitch gedrückt halten, Reset kurz drücken und BootSwitch loslassen"
+       className="block h-auto w-full"
+       loading="lazy"
+     />
+     <figcaption className="mt-2 text-center text-sm">
+       Bootloader-Modus auf der senseBox MCU-S2 aktivieren.
+     </figcaption>
+     <div className="mt-3 flex justify-center">
+       <Button
+         asChild
+         variant="outline"
+         size="sm"
+         className="border-gray-300 bg-transparent !no-underline hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-800"
+       >
+         <a
+           href="/img/circuitpython/mcu-s2-bootloader-board-transparent.gif"
+           target="_blank"
+           rel="noopener noreferrer"
+         >
+           Bild vergrößern
+         </a>
+       </Button>
+     </div>
+   </figure>
+
+5. Klicke auf `Board suchen`. Wähle im geöffneten Fenster das Gerät mit `ESP32-S2` im Namen aus und bestätige mit `Verbinden`.
+   **Hinweis:** Wird kein Gerät angezeigt, überprüfe die USB-Verbindung und wiederhole Schritt 4.
+
+   <figure className="mx-auto my-6 w-full max-w-md">
+     <a href="/img/circuitpython/circuitpython_flash.png" target="_blank" rel="noopener noreferrer">
+       <img
+         src="/img/circuitpython/circuitpython_flash.png"
+         alt="Browserdialog mit ausgewählter senseBox MCU-S2 ESP32S2 und dem Button Verbinden"
+         className="block h-auto w-full rounded-lg"
+         loading="lazy"
+       />
+     </a>
+     <figcaption className="mt-2 text-center text-sm">
+       senseBox MCU-S2 auswählen und mit „Verbinden“ bestätigen.
+     </figcaption>
+     <div className="mt-3 flex justify-center">
+       <Button
+         asChild
+         variant="outline"
+         size="sm"
+         className="border-gray-300 bg-transparent !no-underline hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-800"
+       >
+         <a
+           href="/img/circuitpython/circuitpython_flash.png"
+           target="_blank"
+           rel="noopener noreferrer"
+         >
+           Bild vergrößern
+         </a>
+       </Button>
+     </div>
+   </figure>
+
+6. Klicke auf `Sketch hochladen!`, um CircuitPython zu installieren. **Wichtig:** Trenne die senseBox während der Installation nicht vom Computer. Die Installation kann einige Minuten dauern.
+
+7. Drücke nach Abschluss der Installation kurz den `Reset`-Button auf deiner senseBox MCU-S2.
+
+8. Warte einige Sekunden. Deine senseBox sollte jetzt als neues USB-Laufwerk mit dem Namen CIRCUITPY auf deinem Computer erscheinen.
+Du findest das Laufwerk unter Windows im Datei-Explorer oder unter macOS im Finder.
+
+**Geschafft!**
+CircuitPython ist jetzt auf deiner senseBox MCU-S2 installiert. Du kannst mit deinem ersten Python-Programm beginnen!
+
 ## Projekte
 
 * #### [CO2 Ampel](https://sensebox.de/projects/de/2024-04-02-circuitpython-co2-ampel)
