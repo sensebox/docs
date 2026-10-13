@@ -23,6 +23,14 @@ In dieser Anleitung zeigen wir dir Schritt für Schritt, wie du CircuitPython au
     <p>Für die Installation benötigst du Google Chrome oder Microsoft Edge. Andere Browser werden von dieser Anleitung nicht unterstützt.</p>
 </AlertBox>
 
+
+ <FlashTool
+      onFlashed={() => console.log("done!")}
+      onError={(err) => console.error(err)}
+      firmwareType="circuitpy"
+      language="de"
+    />
+
 ## Voraussetzungen
 
 Für die Installation benötigst du:
@@ -31,28 +39,6 @@ Für die Installation benötigst du:
 - Ein **USB-Kabel**, das Daten übertragen kann (nicht nur zum Laden)
 - Einen **Computer** mit Internetverbindung
 - Den Webbrowser **Google Chrome** oder **Microsoft Edge**
-
-## Installation mit dem senseBox Flash-Tool
-
-Mit dem **senseBox Flash-Tool** kannst du CircuitPython direkt über deinen Browser auf deiner senseBox MCU-S2 installieren.
-
-1. Verbinde deine **senseBox MCU-S2** über ein USB-Kabel mit deinem Computer.
-2. Klicke im Flash-Tool auf dieser Seite auf den grünen Button `Connect board`.
-3. Wähle im geöffneten Fenster deine `senseBox MCU-S2 ESP32S2` aus und bestätige mit `Verbinden`.
-4. Das Flash-Tool startet die Installation automatisch. Du musst keine weiteren Einstellungen vornehmen oder Buttons auf deiner senseBox drücken.
-
-   **Wichtig:** Trenne die senseBox während der Installation nicht vom Computer. Die Installation kann einige Minuten dauern.
-
-5. Warte, bis die Meldung `Upload complete` erscheint. Die Installation ist jetzt abgeschlossen.
-
-**Geschafft!** CircuitPython ist jetzt auf deiner senseBox MCU-S2 installiert. Du kannst mit deinem ersten Python-Programm beginnen!
-
- <FlashTool
-      onFlashed={() => console.log("done!")}
-      onError={(err) => console.error(err)}
-      firmwareType="circuitpy"
-    />
-
 
 ## Projekte
 

@@ -8,10 +8,17 @@ import { FlashTool } from "@sensebox/flash-tool";
 import "@sensebox/flash-tool/style.css";
 
 # CircuitPython deinstallieren
+
 Wenn du CircuitPython nicht mehr nutzen möchtest, kannst du deine senseBox MCU-S2 wieder auf Arduino zurücksetzen. In diesem Tutorial zeigen wir dir, wie du CircuitPython von deiner senseBox MCU-S2 entfernst.
 
 ![CircuitPython Logo](https://s3.amazonaws.com/adafruit-circuit-python/CircuitPython_Repo_header_logo.png)
 
+ <FlashTool
+      onFlashed={() => console.log("done!")}
+      onError={(err) => console.error(err)}
+      firmwareType="circuitpy"
+      language="de"
+    />
 
 ## CircuitPython per Knopfdruck deinstallieren
 Wenn du CircuitPython per Knopfdruck von deiner senseBox MCU-S2 deinstallieren möchtest um wieder Blockly oder Arduino verwenden zu können, musst du die folgenden Schritte durchführen:
@@ -24,9 +31,3 @@ Wenn du CircuitPython per Knopfdruck von deiner senseBox MCU-S2 deinstallieren m
    **Wichtig:** Trenne die senseBox während der Installation nicht vom Computer. Die Installation kann einige Minuten dauern.
 
 5. Warte, bis die Meldung `Upload complete` erscheint. Die Installation ist jetzt abgeschlossen.
-
- <FlashTool
-      onFlashed={() => console.log("done!")}
-      onError={(err) => console.error(err)}
-      firmwareType="standard"
-    />
