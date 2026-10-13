@@ -15,35 +15,25 @@ CircuitPython ist eine Variante von MicroPython, die von Adafruit entwickelt wur
     <p>Beide Installationsmethoden funktionieren nur mit Google Chrome oder Microsoft Edge.</p>
 </AlertBox>
 
-## Installation mit dem CircuitPython Web-Installer
-Um CircuitPython auf deiner senseBox MCU-S2 mit dem offiziellen CircuitPython Web-Installer zu installieren musst du die folgenden Schritte durchführen:
-
-1. Besuche die [CircuitPython Download-Seite](https://circuitpython.org/board/sensebox_mcu_esp32s2/).
-2. Schließe deine senseBox MCU-S2 über ein USB-Kabel an deinen Computer an.
-3. Halte den Boot-Button auf der senseBox MCU-S2 gedrückt und drücke dann den Reset-Button. Lasse dann den Boot-Button los.
-4. Klicke auf den `OPEN INSTALLER` Button und wähle `Full CircuitPython X.X.X Install` aus (X.X.X steht für die aktuellste CircuitPython Version).
-5. Klicke auf `Next` und verbinde dich im nächsten Menü mit deiner senseBox MCU-S2. Klicke dafür auf den `Connect` Button und wähle die `ESP32-S2` als Device aus.
-7. Klicke auf `Continue` und warte bis der Flash gelöscht und die combined.bin Datei geflasht wurde. Der Prozess kann einige Minuten dauern.
-8. Drücke danach den Reset-Button auf der senseBox MCU-S2, um den Bootloader zu starten. Es erscheint ein neues Laufwerk mit dem Namen `senseBox`.
-9. Klicke nun auf `Select Bootloader Drive` und wähle das Laufwerk `senseBox` aus.
-9. Nun wird CircuitPython auf die MCU geladen. Nach ein paar Sekunden solltest du nun ein neues Laufwerk mit dem Namen `CIRCUITPY` sehen.
-10. CircuitPython wurde erfolgreich installiert. Im Web-Installer wird leider nicht angezeigt, dass der Prozess abgeschlossen ist. Du kannst den Web-Installer also einfach schließen.
-11. Nun kannst du CircuitPython auf deiner senseBox MCU-S2 verwenden.
-
 ## Installation mit dem senseBox Flash-Tool
 
-Alternativ kannst du auch das senseBox Flash-Tool nutzen. Das ist besonders intuitiv und einfach zu benutzen.
+Mit dem **senseBox Flash-Tool** kannst du CircuitPython einfach und schnell auf deiner senseBox MCU-S2 installieren.
 
-1. Besuche die [Flash senseBox Website](https://flashsensebox.netlify.app/).
-2. Klicke im Reiter `Upload` auf `Sketch auswählen` und wähle `CircuitPython` aus.
-3. Schließe deine senseBox MCU-S2 über ein USB-Kabel an deinen Computer an.
-4. Aktiviere den Dev-Modus, indem du den BootSwitch-Button auf der senseBox MCU-S2 gedrückt hältst und dann einmal den Reset-Button drückst. Lasse dann den BootSwitch-Button los.
-5. Klicke auf den `Board suchen` Button. Ein Fenster wird geöffnet, in dem die angeschlossenen Geräte angezeigt werden. Dein Gerät sollte `ESP32-S2` im Namen haben. Wähle es aus und klicke auf `Verbinden`.
-6. Klicke auf `Sketch hochladen!` um CircuitPython zu installieren. Der Prozess kann einige Minuten dauern.
-7. Drücke den Reset-Button auf der senseBox MCU-S2.
-8. Nach ein paar Sekunden solltest du ein neues Laufwerk mit dem Namen `CIRCUITPY` sehen.
-9. CircuitPython wurde erfolgreich installiert und du kannst nun mit der Programmierung beginnen.
+1. Öffne das [senseBox Flash-Tool](https://flash.sensebox.de/).
+2. Wechsle zum Reiter `Upload`, klicke auf `Sketch auswählen` und wähle `CircuitPython` aus.
+3. Verbinde deine senseBox MCU-S2 über ein USB-Kabel mit deinem Computer.
+4. **Aktiviere den Bootloader-Modus:**
+   - Halte den `BootSwitch`-Button gedrückt.
+   - Drücke kurz den `Reset`-Button.
+   - Lasse anschließend den `BootSwitch`-Button los.
+<img src="/img/circuitpython/mcu-s2-bootloader-board-transparent.gif" width="680" alt="Bootloader-Modus aktivieren" />
+5. Klicke auf `Board suchen`. Wähle im geöffneten Fenster das Gerät mit `ESP32-S2` im Namen aus und bestätige mit `Verbinden`.
+<img src="/img/circuitpython/circuitpython_flash.png" alt="CircuitPython flashen" />
+6. Klicke auf `Sketch hochladen!`, um CircuitPython zu installieren. **Die Installation kann einige Minuten dauern.**
+7. Drücke nach Abschluss der Installation kurz den `Reset`-Button auf deiner senseBox MCU-S2.
+8. Warte einige Sekunden, bis das Laufwerk `CIRCUITPY` auf deinem Computer erscheint.
 
+**Fertig!** CircuitPython ist installiert. Du kannst jetzt mit der Programmierung deiner senseBox MCU-S2 beginnen.
 ## Projekte
 
 * #### [CO2 Ampel](https://sensebox.de/projects/de/2024-04-02-circuitpython-co2-ampel)

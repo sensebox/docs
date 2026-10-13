@@ -10,6 +10,7 @@ import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
 import { useBoardStore } from '@site/src/lib/stores/store'
 import CodeBlock from '@theme/CodeBlock'
 import ProgrammingTabs from '@site/src/components/ProgrammingTabs/ProgrammingTabs'
+import CircuitPythonSupport from '@site/src/components/CircuitPythonSupport/CircuitPythonSupport';
 
 # Time-of-Flight (ToF) Sensor
 
@@ -18,6 +19,7 @@ import ProgrammingTabs from '@site/src/components/ProgrammingTabs/ProgrammingTab
   alt="Time of Flight (ToF Sensor)"
   title="Time of Flight (ToF Sensor)"
 />{' '}
+<CircuitPythonSupport />
 
 Time-of-Flight (ToF)-Kameras sind in der Lage, hochauflösende Tiefenbilder zu erzeugen. Diese Sensoren senden Infrarotlicht aus und messen die Zeit, die benötigt wird, bis das Licht wieder zurückreflektiert wird. Unser ToF-Sensor ist ein Multizone-Sensor, der die Entfernung nicht nur an einem Punkt, sondern in mehreren Zonen (8x8 Zonen) misst. Laut Hersteller sind Messungen bis zu 400 cm möglich. Die maximale messbare Distanz variiert jedoch je nach aktuellen Lichtverhältnissen (bei mehr Sonnenlicht wird eine geringere Distanz gemessen). Die Framerate kann bis zu 60 Hz betragen.
 
