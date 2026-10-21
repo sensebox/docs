@@ -132,6 +132,7 @@ const eduS2Sidebar = {
 		'editors/circuitpython/circpy_uninstall',
 		'editors/circuitpython/circpy_first-steps',
 		'editors/circuitpython/circpy_libraries',
+		'editors/circuitpython/circpy_oled_display',
 		'editors/circuitpython/circpy_supported-hardware',
 		'editors/circuitpython/circpy_editors',
 		'editors/circuitpython/circpy_osem',
