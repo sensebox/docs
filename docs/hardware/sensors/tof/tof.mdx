@@ -9,6 +9,7 @@ import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
 import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
 import { useBoardStore } from '@site/src/lib/stores/store'
 import CodeBlock from '@theme/CodeBlock'
+import ProgrammingTabs from '@site/src/components/ProgrammingTabs/ProgrammingTabs'
 
 # Time-of-Flight (ToF) Sensor
 
@@ -28,125 +29,72 @@ Time-of-Flight (ToF)-Kameras sind in der Lage, hochauflösende Tiefenbilder zu e
 
 <TutorialPorts port="i2c" />
 
-## Programmierung (Arduino)
+## Programmierung
 
-Für die Programmierung des Time-of-Flight Sensors muss zusätzlich noch [diese](https://github.com/stm32duino/VL53L8CX/tree/main) Library in Arduino installiert werden. Dieser Sketch gibt die minimale Distanz in cm im Seriellen Monitor aus, die der Sensor gemessen hat.
+<ProgrammingTabs
+  fileName = "vl53lxcx"
+  instructions = {{
+    arduino: (
+      <>
+        <p>
+          Für die Programmierung des Time-of-Flight Sensors muss zusätzlich noch{" "}
+          <a href="https://github.com/stm32duino/VL53L8CX/tree/main">
+            diese
+          </a>{" "}
+          Library in Arduino installiert werden. Dieser Sketch gibt die minimale
+          Distanz in cm im Seriellen Monitor aus, die der Sensor gemessen hat.
+        </p>
+        <h3>Code</h3>
+      </>
+    ),
+    circuitpython: (
+      <>
+        <h2>Programmierung (CircuitPython)</h2>
 
-```cpp
-#include <Wire.h>
-#include <vl53l8cx.h>
+        <p>
+          Um den Sensor mit CircuitPython zu programmieren, muss die senseBox MCU-S2
+          zunächst mit CircuitPython geflasht werden. Eine Anleitung dazu findest du{" "}
+          <a href="https://docs.sensebox.de/docs/editors/circuitpython/circuitpython_esp32">
+            hier
+          </a>.
+        </p>
 
-VL53L8CX sensor_vl53l8cx(&Wire, -1, -1);
-float oldVl53l8cxMin = -1.0;
+        <h3>Software Bibliothek</h3>
 
-// Function to get the minimum distance measured by the ToF sensor (VL53L8CX)
-// Funktion um die minimale Distanz gemessen durch den ToF Sensor (VL53L8CX) zu erhalten
-float getVl53l8cxMin() {
-      VL53L8CX_ResultsData Results;
-      uint8_t NewDataReady = 0;
-      uint8_t status;
+        <p>
+          Lade dir die{" "}
+          <a href="https://github.com/sensebox/CircuitPython_VL53LxCX/releases/download/0.0.5/circuitpython-vl53lxcx-10.x-mpy-0.0.5.zip">
+            VL53LxCX CircuitPython Bibliothek
+          </a>{" "}
+          herunter. Entpacke die .zip Datei und kopiere den <code>vl53lxcx</code>{" "}
+          Ordner aus dem <code>lib</code> Ordner in den <code>lib</code> Ordner
+          deiner senseBox (<code>CIRCUITPY</code> Laufwerk).
+        </p>
 
-      status = sensor_vl53l8cx.check_data_ready(&NewDataReady);
+        <h3>Code</h3>
 
-      if ((!status) && (NewDataReady != 0)) {
-        sensor_vl53l8cx.get_ranging_data(&Results);
-        float min = 10000.0;
-        for(int i = 0; i < VL53L8CX_RESOLUTION_8X8*VL53L8CX_NB_TARGET_PER_ZONE; i++) {
-          if((&Results)->target_status[i]!=255){
-            float distance = (&Results)->distance_mm[i];
-            if(min > distance) {
-              min = distance;
-            }
-          }
-        }
-        oldVl53l8cxMin = (min==10000.0) ? 0.0 : min;
-      }
-      return oldVl53l8cxMin;
-      }
+        <p>
+          Mit dem CircuitPython Editor deiner Wahl kannst du nun den ToF-Sensor
+          programmieren und Entfernungen messen. Dieser Code initialisiert den
+          Sensor und liest kontinuierlich Entfernungsdaten aus:
+        </p>
+      </>
+    ),
+    blockly: (
+      <>
+        <p>
+          In Blockly kann der Sensor über folgenden Block ausgelesen werden:
+        </p>
 
-
-
-void setup(){
-    Serial.begin(9600);
-    Wire.begin();
-    Wire.setClock(1000000); //Sensor has max I2C freq of 1MHz
-    sensor_vl53l8cx.set_i2c_address(0x51); // need to change address first, because default address is shared with LTR329
-    sensor_vl53l8cx.begin();
-    sensor_vl53l8cx.init();
-    sensor_vl53l8cx.set_ranging_frequency_hz(30);
-    sensor_vl53l8cx.set_resolution(VL53L8CX_RESOLUTION_8X8);
-    sensor_vl53l8cx.start_ranging();
-
-}
-
-void loop(){
-  Serial.println(getVl53l8cxMin());
-  delay(10); // delay, to keep serial connection from overflowing
-}
-
-
-```
-
-## Programmierung (Blockly)
-
-In Blockly kann der Sensor über folgenden Block ausgelesen werden:
-
-![](/img/hardware-bilder/tof/tof_block.svg)
-
-{useBoardStore((state) => (state.board === 'MCU-S2' || state.board === ':edu S2') && (
-<>
-<h2>Programmierung (CircuitPython)</h2>
-
-<p>Um den Sensor mit CircuitPython zu programmieren, muss die senseBox MCU-S2 zunächst mit CircuitPython geflasht werden. Eine Anleitung dazu findest du <a href="https://docs.sensebox.de/docs/editors/circuitpython/circuitpython_esp32">hier</a>.</p>
-
-<h3>Software Bibliothek</h3>
-
-<p>Lade dir die <a href="https://github.com/sensebox/CircuitPython_VL53LxCX/releases/download/0.0.5/circuitpython-vl53lxcx-10.x-mpy-0.0.5.zip">VL53LxCX CircuitPython Bibliothek</a> herunter. Entpacke die .zip Datei und kopiere den <code>vl53lxcx</code> Ordner aus dem <code>lib</code> Ordner in den <code>lib</code> Ordner deiner senseBox (<code>CIRCUITPY</code> Laufwerk).</p>
-
-<h3>Code</h3>
-
-<p>Mit dem CircuitPython Editor deiner Wahl kannst du nun den ToF-Sensor programmieren und Entfernungen messen. Dieser Code initialisiert den Sensor und liest kontinuierlich Entfernungsdaten aus:</p>
-
-<CodeBlock language="python">{`from vl53lxcx import (
-    DATA_DISTANCE_MM,
-    DATA_TARGET_STATUS,
-    RESOLUTION_8X8,
-    STATUS_VALID,
-    VL53L8CX,
-)
-import busio
-import board
-from digitalio import DigitalInOut, Direction
-
-i2c = busio.I2C(board.SCL, board.SDA, frequency=1_000_000)
-lpn = DigitalInOut(board.D3)
-lpn.direction = Direction.OUTPUT
-lpn.value = True
-
-tof = VL53L8CX(i2c, lpn=lpn)
-
-def main():
-    tof.reset()
-    if not tof.is_alive():
-        raise ValueError("VL53L8CX not detected")
-    
-    tof.init()
-    tof.resolution = RESOLUTION_8X8
-    grid = 7
-    tof.ranging_freq = 2
-    
-    tof.start_ranging({DATA_DISTANCE_MM, DATA_TARGET_STATUS})
-    
-    while True:
-        if tof.check_data_ready():
-            results = tof.get_ranging_data()
-            distance = results.distance_mm
-            status = results.target_status
-            # enumerate(distance) ...
-
-main()`}</CodeBlock>
-</>
-))}
+        <img
+          width="298"
+          src="/img/hardware-bilder/tof/tof_block.svg"
+          alt="Blockly Block für den ToF-Sensor"
+        />
+      </>
+    )
+  }}
+/>
 
 ## Projekte
 
