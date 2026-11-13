@@ -1,0 +1,59 @@
+---
+sidebar_position: 8
+title:  Mikrofon
+hide_title: false
+description: Kondensator Mikrofon
+slug: /hardware/sensors/mikro
+---
+
+import ProgrammingTabs from '@site/src/components/ProgrammingTabs/ProgrammingTabs'
+import ImageWithText  from "@site/src/components/ImageWithText/ImageWithText"
+import mikro from "@site/static/img/hardware-bilder/mikro/mic.png"
+import mikroBuild from "@site/static/img/hardware-bilder/mikro/mikro-aufbau.png"
+
+# Mikrofon
+
+Das Kondesatormikrofon von Watterott Electronics ist mit einem Verstärker ausgestattet und kann Geräusche zwischen 58 und 110 dB wahrnehmen.
+Es gibt die gemessenen Geräusche in einem Pegel von 0-5V aus.
+
+<ImageWithText src={mikro} title="Kondesatormikrofon in der senseBox:edu"/>
+
+## Technische Informationen
+
+* Maße: 30mm x 11mm x 7,5mm
+* Betriebsspannung von 2,7 - 5,5V DC
+* Wahrnehmung von Geräuschen zwischen 58 und 110dB
+
+<ImageWithText src={mikroBuild} title="Aufbau für das Kondesatormikrofon"/>
+
+
+## Programmierung
+
+<ProgrammingTabs
+  fileName="mikro"
+  instructions={{
+    arduino: (
+      <>
+        <h3>Code</h3>
+
+        <p>
+          Dieser Code gibt den gemessenen Volt Wert im Seriellen Monitor aus.
+        </p>
+      </>
+    ),
+    blockly: (
+      <>
+        <p>
+          In Blockly kann der Sensor über folgenden Block ausgelesen werden:
+        </p>
+
+        <img src="/img/hardware-bilder/mikro/mikro-block.svg" alt="" />
+
+        <p>
+          Wähle den Port, an dem du den Sensor angeschlossen hast über das
+          Dropdown-Menü aus.
+        </p>
+      </>
+    ),
+  }}
+/>

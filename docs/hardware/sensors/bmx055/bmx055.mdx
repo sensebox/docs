@@ -1,0 +1,79 @@
+---
+sidebar_position: 1
+title: Absoluter Orientierungssensor
+hide_title: false
+description: Bosch BMX055
+slug: /hardware/sensors/bmx055
+---
+
+import ProgrammingTabs from '@site/src/components/ProgrammingTabs/ProgrammingTabs'
+
+# Absoluter Orientierungssensor
+
+:::warning
+Der BMX055 auf einer Charge der senseBox MCU nicht vorhanden. Um zu überprüfen ob deine MCU den Orientierungssensor besitzt, schaue [hier](/docs/boards/mcu/mcu-revisions) nach
+:::
+Der Bosch BMX055 ist bereits auf der senseBox MCU aufgelötet und kann ohne weitere Aufbauarbeiten verwendet werden. Der Sensor komibiniert einen Beschleunigungssensor, ein Gyroskop und ein präzises Magnetometer
+
+## Technische Informationen
+
+____________________________________________________________________
+| Parameter | Technische Daten |
+| --- | --- |
+|digitale Auflösung|Accelerometer (A): 0.98 mg <br/> Gyroscope (G): 0.004 °/s <br/> Magnetometer: (M): 0.3 μT |
+| Messbereiche (programmierbar) |(A): ±2g, ±4g, ±8g, ±16 g <br/> (G):±125°/s, ±250°/s, ±500°/s, ±1000°/s, ±2000°/s <br/> (M): ±1300μT (x,y), ±2500μT (z) |
+| Sensitivität(kalibriert)|  (A): ±2g: 1024LSB/g, ±4g: 512LSB/g, ±8g: 256LSB/g, ±16g: 128LSB/g <br/> (G): ±125°/s: 262.4 LSB/°/s, ±250°/s: 131.2 LSB/°/s, ±500°/s: 65.6 LSB/°/s, ±1000°/s: 32.8 LSB/°/s, ±2000°/s: 16.4 LSB/°/s <br/> (M): 3.3 LSB/μT |
+
+
+## Programmierung
+
+<ProgrammingTabs
+  fileName="bmx055"
+  instructions={{
+    arduino: (
+      <>
+        <h3>Software Bibliothek</h3>
+
+        <p>
+          Um den Sensor in Arduino zu Programmieren musst du die Software
+          Bibliothek{' '}
+          <a href="https://github.com/sensebox/BMX055-Arduino-Library/">
+            BMX 055 Arduino
+          </a>{' '}
+          installieren.
+        </p>
+
+        <h3>Code</h3>
+
+        <p>
+          Mit diesem Code werden die Werte des Beschleunigungssensors im
+          Seriellen Monitor ausgegeben. Alternativ kannst du dir die Werte
+          auch im Seriellen Plotter anzeigen lassen.
+        </p>
+      </>
+    ),
+    blockly: (
+      <>
+        <p>
+          In Blockly kann der Beschleunigungssensor über folgenden Block
+          ausgelesen werden:
+        </p>
+
+        <img src="/img/hardware-bilder/absolut-gps/bmx-block.svg" alt="" />
+      </>
+    ),
+  }}
+  notes={{
+    arduino: (
+      <>
+        <p>
+          Die Ergebnisse kannst du in Arduino anzeigen unter{' '}
+          <code>Werkzeuge -&gt; Serieller Plotter</code> oder über das
+          Terminalprogramm deiner Wahl.
+        </p>
+
+        <img src="/img/hardware-bilder/mpu6050/mpu-6050-plotter.png" alt="" />
+      </>
+    ),
+  }}
+/>

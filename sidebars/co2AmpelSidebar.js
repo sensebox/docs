@@ -31,7 +31,7 @@ const co2Ampel = {
         title: "Hardware",
       },
       items: [
-        "hardware/sensors/co2",
+        "hardware/sensors/co2/co2",
         "hardware/accessoires/display/display",
         "hardware/accessoires/rgb-led",
       ],

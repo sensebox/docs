@@ -1,0 +1,72 @@
+---
+title: Wassertemperatursensor
+slug: /hardware/sensors/wassertemperatur
+---
+
+import ProgrammingTabs from '@site/src/components/ProgrammingTabs/ProgrammingTabs'
+import waterTempSensor from '@site/static/img/hardware-bilder/wassertemperatur/wassertemperatur.JPG'
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
+
+# Wassertemperatursensor (DS18B20)
+
+Der DS18B20 ist ein digitaler Temperatursensor, der über einen 1-Wire-Bus angesprochen wird. Er kann Temperaturen von -55°C bis +125°C messen und ist wasserdicht. Er eignet sich somit ideal für die Messung der Wassertemperatur.
+
+:::warning
+Um den Sensor mit der senseBox zu benutzen benötigst du zusätzlich den 1-Wire-Adapter. Diesen kannst du [hier](https://sensebox.kaufen/products/sensebox-one-wire-adapter-fur-wasserthermometer) erwerben.
+:::
+
+<ImageWithText
+  src={waterTempSensor}
+  alt="Wassertemperatursensor"
+  title="Wassertemperatursensor"
+/>
+
+## Anschluss
+
+<TutorialPorts port="i2c" />
+
+## Programmierung
+
+<ProgrammingTabs
+  fileName="ds18b20"
+  instructions={{
+    arduino: (
+      <>
+        <h3>Software Bibliothek</h3>
+
+        <p>
+          Um den Sensor in Arduino zu Programmieren musst du die Software
+          Bibliothek{' '}
+          <a href="https://www.arduino.cc/reference/en/libraries/onewire/">
+            OneWire
+          </a>{' '}
+          <strong>sowie</strong>{' '}
+          <a href="https://www.arduino.cc/reference/en/libraries/dallastemperature/">
+            DallasTemperature
+          </a>{' '}
+          installieren.
+        </p>
+
+        <h3>Code</h3>
+
+        <p>
+          Dieser Code liest die Temperatur des Sensors aus und gibt sie über
+          die serielle Schnittstelle aus.
+        </p>
+      </>
+    ),
+    blockly: (
+      <>
+        <p>
+          In Blockly kann der Sensor über folgenden Block ausgelesen werden:
+        </p>
+
+        <img
+          src="/img/hardware-bilder/wassertemperatur/wassertemperatur-block.png"
+          alt=""
+        />
+      </>
+    ),
+  }}
+/>
