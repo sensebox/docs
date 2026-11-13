@@ -33,13 +33,13 @@ const eyeSidebar = {
       label: 'Hardware',
 	  key: 'eye-hardware',
       items: [
-        'hardware/eye/camera',
-        'hardware/eye/icm20948',
+        'hardware/eye/camera/camera',
+        'hardware/eye/icm20948/icm20948',
         'hardware/eye/rgb-led-esp32',
-        'hardware/eye/wifi',
+        'hardware/eye/wifi/wifi',
         'hardware/eye/ble',
         'hardware/eye/lora',
-        'hardware/eye/sd',
+        'hardware/eye/sd/sd',
         'hardware/eye/button',
         'boards/eye/eye-ports-and-pins'
       ],

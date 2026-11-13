@@ -1,0 +1,50 @@
+---
+title: Kamera
+slug: /hardware/eye/camera
+---
+
+import ProgrammingTabs from '@site/src/components/ProgrammingTabs/ProgrammingTabs'
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import camera from '@site/static/img/eye/camera.png'
+
+# Kamera (OV2640)
+
+Mit der Kamera kannst du Farbbilder in einer Auflösung von bis zu 1600x1200 Pixeln aufnehmen.
+
+<ImageWithText size="xl" src={camera} title="OV2640 auf der senseBox MCU Eye" />
+
+:::success Hinweis
+Die senseBox MCU Eye wird bereits mit einer angeschlossenen Kamera ausgeliefert. Behandele vorallem das orangene Flachbandkabel der Kamera mit vorsicht.
+:::
+
+## Programmierung
+
+<ProgrammingTabs
+  fileName="camera-eye"
+  instructions={{
+    arduino: (
+      <>
+        <p>
+          Dieser Sketch nimmt kontinuierlich Bilder mit der Kamera auf und
+          zeigt diese auf dem OLED-Display an
+        </p>
+      </>
+    ),
+    blockly: (
+      <>
+        <p>In Blockly kannst du den Sensor über folgenden Block auslesen:</p>
+
+        <img src="/img/eye/camera-block.svg" alt="" />
+      </>
+    ),
+  }}
+  notes={{
+    arduino: (
+      <>
+        <p>Schließe dafür den OLED-Display am QWIIC Port der MCU Eye an.</p>
+
+        <img src="/img/eye/display.png" alt="" />
+      </>
+    ),
+  }}
+/>

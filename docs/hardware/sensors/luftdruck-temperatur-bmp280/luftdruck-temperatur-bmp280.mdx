@@ -1,0 +1,74 @@
+---
+date: 2020-03-11
+title: Luftdruck- und Temperatursensor (BMP280) [DEPRECATED]
+categories: hardware
+description: Luftdruck- und Temperatursensor (BMP280)
+type: Document
+resources:
+  - name: 'Shop'
+    link: https://sensebox.kaufen/products/luftdruck-und-temperatursensor
+  - name: 'Bosch BMP280 Data sheet'
+    link: https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp280-ds001.pdf
+block: /images/2020-03-11-sensoren-luftdruck-temperatur/block_luftdruck_temperatur.svg
+slug: /hardware/sensors/luftdruck-temperatur-bmp280
+---
+
+import ProgrammingTabs from '@site/src/components/ProgrammingTabs/ProgrammingTabs'
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import pressureSensor from '@site/static/img/hardware-bilder/luftdruck/bmp_top.png'
+import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
+
+# Luftdruck- und Temperatursensor (BMP280)
+
+Dieser Sensor misst den Luftdruck und die Temperatur und basiert auf dem BMP280 Sensor von Bosch.
+
+<ImageWithText
+  src={pressureSensor}
+  alt="Pressure Sensor"
+  title="Luftdruck und Temperatursensor"
+/>
+
+## Technische Informationen
+
+- "Plug-in-and-Go" senseBox kompatibel
+- Betriebsdruck 300 bis 1100 hPa
+- Relative Präzision ±0.12 hPa
+- Absolute Präzision ±1 hPa
+- Betriebsversorgungsstrom 2.7μA bei 1 Hz Sampling Frequenz
+- Maße: 25mm x 25mm x 9mm
+- Gewicht: 2,4 g
+
+## Anschluss
+
+<TutorialPorts port="i2c" />
+
+## Programmierung
+
+<ProgrammingTabs
+  fileName="bmp280"
+  instructions={{
+    arduino: <></>,
+    blockly: (
+      <>
+        <p>
+          In Blockly kann der Sensor über folgenden Block ausgelesen werden:
+        </p>
+
+        <img src="/img/hardware-bilder/luftdruck/block-bmp280.png" alt="" />
+
+        <p>
+          Im Block kannst du zwischen den verschiedenen Parametern des
+          Luftdruck-/Temperatursensor auswählen:
+        </p>
+
+        <ul>
+          <li>Luftdruck in Pascal (Pa)</li>
+          <li>Temperatur in Celsius (°C)</li>
+          <li>
+            Höhe über NN in m (dazu wird ein Referenzluftdruck benötigt)
+          </li>
+        </ul>
+      </>
+    ),
+  }}
+/>

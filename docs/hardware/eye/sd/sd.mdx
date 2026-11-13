@@ -1,0 +1,85 @@
+---
+sidebar_position: 10
+title: SD-Karte
+description: Speichere Daten auf einer microSD-Karte!
+categories: hardware
+hide_title: false
+slug: /hardware/eye/sd
+---
+
+import ProgrammingTabs from '@site/src/components/ProgrammingTabs/ProgrammingTabs'
+import AlertBox from '@site/src/components/AlertBox/AlertBox'
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import sdModul from '@site/static/img/eye/SD.png'
+
+# SD-Modul
+
+<ImageWithText
+  src={sdModul}
+  size="xl"
+  alt="SD Modul"
+  title="Das SD Modul findest du hier auf der Rückseite der MCU Eye"
+/>{' '}
+
+Mit der senseBox kannst du Daten auf einer microSD-Karte speichern, um sie später am Computer auszuwerten.
+
+:::success Modul onBoard
+Das SD-Modul ist auf der MCU Eye verbaut! Du musst hier also nichts weiter anschließen.
+:::
+
+## Programmierung
+
+<ProgrammingTabs
+  fileName="sd-eye"
+  instructions={{
+    arduino: (
+      <>
+        <p>
+          In diesem Sketch werden die Werte von einem Sensor(in diesem Fall
+          der HDC1080) ausgelesen und auf der SD-Karte gespeichert. Wir
+          verwenden hier ein Interval welches alle 60 Sekunden feuert.
+        </p>
+      </>
+    ),
+    blockly: (
+      <>
+        <p>
+          Mit dem <code>Erstelle Datei auf SD-Karte</code>-Block kann im
+          Setup() eine neue Datei auf der SD-Karte erstellt werden. Im
+          Dropdown-Menü des Blocks kann der Name der Datei geändert werden.
+        </p>
+
+        <img src="/img/blockly-bilder/sd-karte/blockly-sd-1.svg" alt="" />
+
+        <p>
+          Mit dem <code>Öffne Datei auf SD-Karte</code>-Block kann
+          anschließend in der Endlosschleife die zuvor erstellte Datei
+          geöffnet werden.
+        </p>
+
+        <img src="/img/blockly-bilder/sd-karte/blockly-sd-2.svg" alt="" />
+
+        <p>
+          Im freien Blockabschnitt des <code>Öffne Datei auf SD-Karte</code>
+          -Blocks kann dann der <code>Schreibe Daten auf SD-Karte</code>-Block
+          platziert werden. In diesem kann im freien Blockabschnitt wiederum
+          der zu schreibende Text oder die zu schreibende Zahl platziert
+          werden. Zusätzlich kann durch setzen des Häkchens bei{' '}
+          <code>Zeilenumbruch</code> festgelegt werden, ob nach jedem Messwert
+          ein Zeilenumbruch eingefügt werden soll oder nicht.
+        </p>
+
+        <p>
+          Zusätzlich holen wir aus der Kategorie <code>Zeit</code> den Block
+          für ein Interval und aus der Kategorie <code>Sensoren</code> den
+          gewünschten Sensor. Danach fügen wir alles zusammen und erhalten
+          folgenden Sketch.
+        </p>
+
+        <img src="/img/blockly-bilder/sd-karte/blockly-sd-3.svg" alt="" />
+      </>
+    ),
+  }}
+/>
+
+> - [Blockly.senseBox.de](https://blockly.sensebox.de/)

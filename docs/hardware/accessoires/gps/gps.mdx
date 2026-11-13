@@ -1,0 +1,89 @@
+---
+sidebar_position: 4
+title: GPS
+hide_title: false
+description: GPS u-blox CAM-M8Q Multi GNSS Modul
+slug: /hardware/accessoires/gps
+---
+
+import ProgrammingTabs from '@site/src/components/ProgrammingTabs/ProgrammingTabs'
+import ImageWithText from '@site/src/components/ImageWithText/ImageWithText'
+import gps from '@site/static/img/hardware-bilder/gps/gps.png'
+import TutorialPorts from '@site/src/components/TutorialPorts/TutorialPorts'
+
+# GPS
+
+Das GPS-Modul empfängt die Position (Längengrad/Breitengrad/Höhe) der senseBox. Diese kann für mobile Anwendungen, z.B. die mobile Datenübertragung auf die openSenseMap, genutzt werden. Dieser Sensor ist kompatibel mit den gängingen GNS Systemen (GPS, QZSS, GLONASS, BeiDou, Galileo) und basiert auf dem u-blox CAM-M8Q Multi GNSS Modul.
+
+<ImageWithText src={gps} title="GPS Modul" />
+
+Der GPS Sensor wird an einen I2C-Port angeschlossen.
+
+## Technische Details
+
+- "Plug-in-and-Go" senseBox kompatibel durch Breakout-Board mit JST-Anschluss
+- Simultanempfang von GPS, QZSS, GLONASS, BeiDou
+- Navigationsempfindlichkeit von –167 dBm
+- Empfänger: 72-Kanal u-blox M8
+- Update-Rate: Single GNSS - bis zu 18Hz, Dual GNSS bis zu 10Hz
+- Stromaufnahme: 30mA im Dauerbetrieb bzw. 10mA Power Save Mode 1Hz bei 3V
+
+## Anschluss
+
+<TutorialPorts port="i2c" />
+
+## Programmierung
+
+<ProgrammingTabs
+  fileName="gps"
+  instructions={{
+    arduino: (
+      <>
+        <h3>Software Bibliothek</h3>
+
+        <p>
+          Um den Sensor in Arduino zu Programmieren musst du die Software
+          Bibliothek{' '}
+          <a href="https://www.arduino.cc/reference/en/libraries/sparkfun-u-blox-gnss-arduino-library/">
+            SparkFun u-blox GNSS Arduino Library
+          </a>{' '}
+          installieren.
+        </p>
+
+        <h3>Code</h3>
+
+        <p>
+          Dieser Code speichert die Werte für Längen- und Breitengrad in den
+          Variablen <code>latitude</code> und <code>longitude</code>.
+        </p>
+      </>
+    ),
+    blockly: (
+      <>
+        <p>
+          In Blockly kann der Sensor über folgenden Block ausgelesen werden:
+        </p>
+
+        <img src="/img/hardware-bilder/gps/block_gps.svg" alt="" />
+
+        <p>
+          Im Block kannst du zwischen den verschiedenen Parametern des GPS
+          Modules auswählen:
+        </p>
+
+        <ul>
+          <li>Längengrad</li>
+          <li>Breitengrad</li>
+          <li>Höhe</li>
+          <li>Zeitstempel (RFC3339)</li>
+          <li>Geschwindigkeit</li>
+          <li>Datum</li>
+          <li>Zeit</li>
+        </ul>
+      </>
+    ),
+  }}
+/>
+
+> - [Shop](https://sensebox.kaufen/products/gps-empfanger)
+> - [CAM M8Q](https://sensebox.de/docs/datenblatt/senseBox-CAM-M8Q_v20.pdf)
